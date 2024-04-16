@@ -20,6 +20,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Content.Shared.DeltaV.Traits.Synthetic; // Delta-V: Synthetics
 
 namespace Content.Shared.Humanoid;
 
@@ -39,6 +40,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] protected readonly SharedSynthSystem _synthSystem = default!; // DeltaV: Proper appearance and cloning of synths
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
@@ -448,6 +450,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         humanoid.Age = profile.Age;
         humanoid.Height = profile.Height; // CD - Character Records
+        if (profile.TraitPreferences.Any(trait => trait == SynthComponent.SyntheticTrait)) // DeltaV - synthetics
+        {
+            humanoid.Synthetic = true;
+            _synthSystem.EnsureSynthetic(uid);
+        }
 
         RaiseLocalEvent(uid, new ProfileLoadFinishedEvent()); // Shitmed Change
         Dirty(uid, humanoid);
@@ -515,6 +522,24 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var markingObject = new Marking(marking, colors);
         markingObject.Forced = forced;
         humanoid.MarkingSet.AddBack(prototype.MarkingCategory, markingObject);
+
+        if (sync)
+            Dirty(uid, humanoid);
+    }
+
+    /// <summary>
+    ///     Delta-V: Set synthetic status of a mob.
+    /// </summary>
+    /// <param name="uid">The humanoid mob's UID.</param>
+    /// <param name="isSynthetic">Whether the humanoid should be synthetic or not.</param>
+    /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not.</param>
+    /// <param name="humanoid">Humanoid component of the entity</param>
+    public void SetSynthetic(EntityUid uid, bool isSynthetic, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid) || humanoid.Synthetic == isSynthetic)
+            return;
+
+        humanoid.Synthetic = isSynthetic;
 
         if (sync)
             Dirty(uid, humanoid);
