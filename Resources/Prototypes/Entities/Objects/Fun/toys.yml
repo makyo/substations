@@ -1054,3 +1054,13 @@
 #      params:
 #        volume: -9
 #        maxDistance: 3
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieShadowkin
+  name: shadowkin plushie
+  description: A plushie of a Shadowkin. It's very soft.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: shadowkin

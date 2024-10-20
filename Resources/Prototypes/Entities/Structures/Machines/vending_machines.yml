@@ -91,6 +91,7 @@
   - type: Electrified
     enabled: false
     usesApcPower: true
+  - type: EtherealLight
   - type: PointLight
     enabled: false
     castShadows: false

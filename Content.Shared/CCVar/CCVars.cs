@@ -43,4 +43,10 @@ public sealed partial class CCVars : CVars
     /// </summary>
     public static readonly CVarDef<float> SiliconNpcUpdateTime =
         CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// EE — Allow Ethereal Ent to PassThrough Walls/Objects while in Ethereal.
+    /// </summary>
+    public static readonly CVarDef<bool> EtherealPassThrough =
+        CVarDef.Create("ic.EtherealPassThrough", false, CVar.SERVER);
 }

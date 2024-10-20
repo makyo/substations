@@ -57,3 +57,6 @@ trait-italian-desc = Mamma mia! You seem to have lived in space Italy!
 
 trait-painnumbness-name = Numb
 trait-painnumbness-desc = You lack any sense of feeling pain, being unaware of how hurt you may be.
+
+trait-name-ShadowkinBlackeye = Blackeye
+trait-description-ShadowkinBlackeye = You lose your special Shadowkin powers, in return for some points.

@@ -83,6 +83,10 @@ public sealed class RespiratorSystem : EntitySystem
             if (_mobState.IsDead(uid) || HasComp<BreathingImmunityComponent>(uid)) // Shitmed: BreathingImmunity
                 continue;
 
+            // EE — Shadowkin
+            if (HasComp<RespiratorImmuneComponent>(uid))
+                continue;
+
             // Begin DeltaV Additions
             var organs = _bodySystem.GetBodyOrganEntityComps<LungComponent>((uid, body));
             var multiplier = -1f;

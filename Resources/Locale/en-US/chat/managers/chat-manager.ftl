@@ -52,6 +52,8 @@ chat-manager-admin-channel-name = ADMIN
 chat-manager-rate-limited = You are sending messages too quickly!
 chat-manager-rate-limit-admin-announcement = Rate limit warning: { $player }
 
+chat-manager-send-empathy-chat-wrap-message = {$source}: {$message}
+
 ## Speech verbs for chat
 
 chat-speech-verb-suffix-exclamation = !
@@ -163,3 +165,5 @@ chat-speech-verb-wawa-1 = intones
 chat-speech-verb-wawa-2 = states
 chat-speech-verb-wawa-3 = declares
 chat-speech-verb-wawa-4 = ponders
+
+chat-speech-verb-marish = Mars

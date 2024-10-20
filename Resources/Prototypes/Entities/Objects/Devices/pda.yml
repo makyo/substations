@@ -63,6 +63,7 @@
     - idcard
     - Belt
   - type: UnpoweredFlashlight
+  - type: EtherealLight
   - type: PointLight
     enabled: false
     radius: 1.5

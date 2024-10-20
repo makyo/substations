@@ -23,6 +23,7 @@
     - Kitsune
     # ImpStation additions
     - Thaven
+    - Shadowkin
 
 - type: guideEntry
   id: Arachnid
@@ -68,3 +69,8 @@
   id: IPC
   name: species-name-ipc
   text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+
+- type: guideEntry
+  id: Shadowkin
+  name: species-name-shadowkin
+  text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"

@@ -16,5 +16,7 @@ namespace Content.Shared.Eye
         CosmicCultMonument = 1 << 4, // DeltaV - Cosmic Cult
         // L5 - was 3
         Admin = 1 << 5, // Reserved for admins in stealth mode and admin tools.
+        // EE — Shadowkin
+        Ethereal = 1 << 6,
     }
 }

@@ -152,6 +152,8 @@
   - type: Hands
   - type: ComplexInteraction
   - type: Internals
+  - type: Inventory
+  - type: InventorySlots
   - type: FloatingVisuals
   - type: Climbing
   - type: Cuffable

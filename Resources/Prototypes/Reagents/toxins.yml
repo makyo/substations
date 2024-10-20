@@ -573,6 +573,12 @@
           type: Vox
         reagent: Protein
         amount: 0.25
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+        reagent: Protein
+        amount: 0.5
 
 - type: reagent
   id: Allicin

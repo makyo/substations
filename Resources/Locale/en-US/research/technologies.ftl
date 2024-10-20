@@ -47,6 +47,7 @@ research-technology-basic-xenoarcheology = Basic XenoArcheology
 research-technology-alternative-research = Alternative Research
 research-technology-magnets-tech = Localized Magnetism
 research-technology-advanced-parts = Advanced Parts
+research-technology-advanced-bluespace = Advanced Bluespace Research
 research-technology-anomaly-harnessing = Anomaly Core Harnessing
 research-technology-abnormal-artifact-manipulation = Artifact Recycling
 research-technology-gravity-manipulation = Gravity Manipulation

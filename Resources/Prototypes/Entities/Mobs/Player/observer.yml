@@ -55,6 +55,7 @@
       - Ghost
       - Normal
       - CosmicCultMonument # DeltaV - Cosmic Cult
+      - Ethereal
   - type: Input
     context: "ghost"
   - type: Examiner
