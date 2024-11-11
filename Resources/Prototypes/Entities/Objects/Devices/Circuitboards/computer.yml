@@ -456,6 +456,8 @@
     - HandHeldMassScanner
   - type: ComputerTabletopBoard # Frontier
     prototype: ComputerTabletopRadar # Frontier
+  - type: ComputerWallmountBoard # Frontier
+    prototype: ComputerWallmountRadar # Frontier
 
 - type: entity
   parent: BaseComputerCircuitboard
