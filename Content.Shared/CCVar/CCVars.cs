@@ -43,4 +43,10 @@ public sealed partial class CCVars : CVars
     /// </summary>
     public static readonly CVarDef<float> SiliconNpcUpdateTime =
         CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     EE: Is ore material enabled.
+    /// </summary>
+    public static readonly CVarDef<bool> SiloEnabled =
+        CVarDef.Create("silo.silo_enabled", true, CVar.SERVER | CVar.REPLICATED);
 }
