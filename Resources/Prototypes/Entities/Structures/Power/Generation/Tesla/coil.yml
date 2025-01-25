@@ -5,7 +5,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: SupermatterImmune
   - type: Transform
     anchored: true
   - type: Physics
@@ -106,6 +105,7 @@
     guides:
     - TeslaEngine
     - SingularityTeslaEngine
+  - type: SupermatterImmune # imp
 
 - type: entity
   id: TeslaGroundingRod
@@ -114,7 +114,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: SupermatterImmune
   - type: Transform
     anchored: true
   - type: Physics
@@ -193,3 +192,5 @@
     guides:
     - TeslaEngine
     - SingularityTeslaEngine
+  - type: SupermatterImmune # imp
+
