@@ -22,7 +22,7 @@
       time: 72000 # 20hr
   storage:
     back:
-      - PlushieLizardJobHeadofpersonnel
+    - PlushieLizardJobHeadofpersonnel
 
 - type: loadout
   id: LizardPlushiePassenger
@@ -34,7 +34,7 @@
       time: 72000 # 20hr
   storage:
     back:
-      - PlushieLizardJobPassenger
+    - PlushieLizardJobPassenger
 
 - type: loadout
   id: LizardPlushieBartender
@@ -291,7 +291,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: Science
+      department: Epistemics # DeltaV
       time: 72000 # 20hr
   storage:
     back:
@@ -348,11 +348,11 @@
 - type: loadout
   id: SecStar
   effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:DepartmentTimeRequirement
-        department: Security
-        time: 100h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Security
+      time: 100h
   storage:
     back:
     - Dinkystar
@@ -456,14 +456,14 @@
 - type: loadout
   id: LizardPlushieBoxer
   effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:RoleTimeRequirement
-        role: JobBoxer
-        time: 72000 # 20hr
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBoxer
+      time: 72000 # 20hr
   storage:
     back:
-      - PlushieLizardJobBoxer
+    - PlushieLizardJobBoxer
 
 - type: loadout
   id: LizardPlushieZookeeper

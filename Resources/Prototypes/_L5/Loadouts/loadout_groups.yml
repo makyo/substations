@@ -30,3 +30,11 @@
   - WinterCoatBlack
   - WinterCoatBrown
   - CorporateJacket
+
+- type: loadoutGroup
+  id: AdminAssistantGloves
+  name: loadout-group-admin-assistant-gloves
+  minLimit: 0
+  loadouts:
+  - HoPGloves
+  - InspectionGloves
