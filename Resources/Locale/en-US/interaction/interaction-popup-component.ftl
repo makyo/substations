@@ -63,6 +63,7 @@ petting-success-mimebot = You pet {THE($target)} on {POSS-ADJ($target)} cold met
 petting-success-cleanbot = You pet {THE($target)} on {POSS-ADJ($target)} damp metal head.
 petting-success-plantbot = You pet {THE($target)} on {POSS-ADJ($target)} muddy metal head.
 petting-success-medibot = You pet {THE($target)} on {POSS-ADJ($target)} sterile metal head.
+petting-success-weldbot = You pet {THE($target)} on {POSS-ADJ($target)} stained metal head.
 petting-success-firebot = You pet {THE($target)} on {POSS-ADJ($target)} warm metal head.
 petting-success-generic-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} metal head.
 petting-success-salvage-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} dirty metal head.
@@ -80,6 +81,7 @@ petting-failure-cleanbot = You reach out to pet {THE($target)}, but {SUBJECT($ta
 petting-failure-plantbot = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} clippers nearly snip your fingers off!
 petting-failure-mimebot = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy miming!
 petting-failure-medibot = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} syringe nearly stabs your hand!
+petting-failure-weldbot = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} welder nearly burns your hand!
 petting-failure-firebot = You reach out to pet {THE($target)}, but {SUBJECT($target)} sprays you in the face before you can get close!
 # L5 - laws to directives (or removed, in this case)
 petting-failure-generic-cyborg = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy beeping!

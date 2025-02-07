@@ -252,6 +252,7 @@
     - SiliconEmotes
     - Synth # L5
     - Unimplantable
+    - SiliconMob
   - type: Emoting
   - type: GuideHelp
     guides:
