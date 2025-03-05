@@ -1,3 +1,47 @@
+# head
+- type: loadout
+  id: ChaplainHeadVeil
+  equipment:
+    head: ClothingHeadHatVeil
+
+- type: loadout
+  id: ChaplainHeadDruid
+  equipment:
+    head: ClothingHeadHatDruid
+
+- type: loadout
+  id: ChaplainHeadMoon
+  equipment:
+    head: ClothingHeadHatMoon
+
+- type: loadout
+  id: ChaplainHeadSun
+  equipment:
+    head: ClothingHeadHatSun
+
+- type: loadout
+  id: ChaplainHeadTidal
+  equipment:
+    head: ClothingHeadHatTidal
+
+# eyes
+- type: loadout
+  id: ChaplainBlindfold
+  equipment:
+    eyes: ClothingEyesChaplainBlindfold
+
+# mask
+- type: loadout
+  id: ChaplainMaskClayshaper
+  equipment:
+    mask: ClothingMaskClayshaper
+
+- type: loadout
+  id: ChaplainMaskFire
+  equipment:
+    mask: ClothingMaskFire
+
+# jumpsuits
 - type: loadout
   id: ClothingUniformFuneralSuit
   equipment:
@@ -7,3 +51,82 @@
   id: ClothingUniformFuneralSuitSkirt
   equipment:
     jumpsuit: ClothingUniformFuneralSuitSkirt #imp
+
+# books
+- type: loadout
+  id: ChaplainBookBible
+  storage:
+    back:
+    - Bible
+
+- type: loadout
+  id: ChaplainBookQuran
+  storage:
+    back:
+    - HolyTextQuran
+
+- type: loadout
+  id: ChaplainBookTanakh
+  storage:
+    back:
+    - HolyTextTanakh
+
+- type: loadout
+  id: ChaplainBookBibble
+  storage:
+    back:
+    - HolyTextBibble
+
+- type: loadout
+  id: ChaplainBookTao
+  storage:
+    back:
+    - HolyTextTaoTeachings
+
+- type: loadout
+  id: ChaplainBookKojiki
+  storage:
+    back:
+    - HolyTextKojiki
+
+- type: loadout
+  id: ChaplainBookGrimoire
+  storage:
+    back:
+    - HolyTextChaplainsGrimoire
+
+- type: loadout
+  id: ChaplainBookDiscordia
+  storage:
+    back:
+    - HolyTextPrincipiaDiscordia
+
+- type: loadout
+  id: ChaplainBookUnitology
+  storage:
+    back:
+    - HolyTextUnitologyTome
+
+- type: loadout
+  id: ChaplainBookScroll
+  storage:
+    back:
+    - HolyTextHolyScroll
+
+- type: loadout
+  id: ChaplainBookTablet
+  storage:
+    back:
+    - HolyTextHolyTablet
+
+- type: loadout
+  id: ChaplainBookGreybible
+  storage:
+    back:
+    - HolyTextGreybible
+
+- type: loadout
+  id: ChaplainBookETB
+  storage:
+    back:
+    - HolyTextExtremeTeenBible
