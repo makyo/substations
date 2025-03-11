@@ -1,4 +1,3 @@
-using Content.Shared._EinsteinEngines.CCVar;
 using Content.Shared._EinsteinEngines.Supermatter.Components;
 using Content.Shared._EinsteinEngines.Supermatter.Consoles;
 using Content.Shared.Atmos;
@@ -6,6 +5,7 @@ using Content.Shared.Radiation.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using System.Linq;
+using Content.Shared._EE.CCVars;
 
 namespace Content.Server._EinsteinEngines.Supermatter.Console.Systems;
 
@@ -171,7 +171,8 @@ public sealed class SupermatterConsoleSystem : SharedSupermatterConsoleSystem
         if (sm.GasStorage != null)
             gases = sm.GasStorage;
 
-        var tempThreshold = Atmospherics.T0C + _config.GetCVar(EinsteinCCVars.SupermatterHeatPenaltyThreshold);
+        var tempThreshold = Atmospherics.T0C + _config.GetCVar(SMCCVars.SupermatterHeatPenaltyThreshold);
+        var gasEfficiency = sm.GasEfficiency / (sm.Power > 0 ? 1 : _config.GetCVar(SMCCVars.SupermatterGasEfficiencyGraceModifier));
 
         return new SupermatterFocusData(
             GetNetEntity(focusSupermatter.Value),
@@ -184,7 +185,7 @@ public sealed class SupermatterConsoleSystem : SharedSupermatterConsoleSystem
             tempThreshold * sm.DynamicHeatResistance,
             sm.HeatModifier,
             sm.GasHeatModifier,
-            sm.GasEfficiency * 100);
+            gasEfficiency * 100);
     }
 
     private static float GetIntegrity(SupermatterComponent sm)
