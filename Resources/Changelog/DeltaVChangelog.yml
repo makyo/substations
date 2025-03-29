@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Big Orthagonal
-  changes:
-  - message: Diagonal secborgs are not real and were never real.
-    type: Fix
-  id: 706
-  time: '2024-11-24T11:57:37.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/2278
 - author: deltanedas
   changes:
   - message: Fixed salvage debris not having anything.
@@ -4029,3 +4022,11 @@
   id: 1214
   time: '2025-04-01T01:04:29.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/3219
+- author: Stop-Signs
+  changes:
+  - message: New superweapon! The Gamblagator is a powerful laser sniper rifle that
+      uses special fuses as ammo.
+    type: Add
+  id: 1207
+  time: '2025-03-29T16:46:04.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3326
