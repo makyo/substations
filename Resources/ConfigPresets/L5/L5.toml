@@ -1,0 +1,99 @@
+[game]
+hostname                = "[EN][HRP][18+] Lagrange Substations"
+desc                    = "An HRP Space Station 14 server centered around the System, a machine that dreams. You, however,w ill be stationed on one of the support substations."
+lobbyenabled            = true
+lobbyduration           = 300
+round_restart_time      = 600
+round_end_pacifist      = true
+contraband_examine      = false # Doubtful that it's desired at all, and would require going over every item in accordance with SOP
+soft_max_players        = 50
+showgreentext           = false # focus more on telling a story
+secret_weight_prototype = "SecretDeltaV"
+role_timers             = false # no time requirements for roles
+cryo_sleep_rejoining    = true
+
+[vote]
+preset_enabled = true
+map_enabled    = true
+
+[whitelist]
+enabled = true
+
+[chat]
+max_announcement_length = 1000
+
+[ooc]
+enable_during_round = true
+
+[ic]
+flavor_text      = true
+punctuation      = true
+name_case        = false
+restricted_names = false
+
+[ambience]
+restart_sounds_enabled = false
+
+[atmos]
+space_wind   = true
+grid_impulse = true
+
+[shuttle]
+arrivals                       = false # doesn't work very well :c
+emergency_dock_time            = 360 # an extra 2 minutes over the default
+emergency_transit_time_min     = 90
+auto_call_time                 = 0 # don't automatically call the shuttle
+emergency_early_launch_allowed = true # MRP server command ban time
+recall_turning_point           = 0.33
+
+[biomass]
+easy_mode = false # reclaimer can work on soul-ful bodies, mrp server
+
+[surgery]
+can_operate_on_self = false # mrp...
+
+# Disabled because it causes giga lag
+#[worldgen]
+#enabled = true
+
+[rules]
+time = 30
+
+[infolinks]
+github     = "https://github.com/lagrange14/substations"
+website    = "https://lagrange14.com/"
+wiki       = "https://wiki.lagrange14.com/wiki/Main_Page"
+bug_report = "https://github.com/lagrange14/substations/issues/new/choose"
+
+[net]
+max_connections = 1024
+tickrate        = 30
+
+[netres]
+limit = 10.0
+
+[admin]
+see_own_notes           = true
+deadmin_on_join         = true
+allow_multi_server_play = true
+[admin.alert]
+min_players_sharing_connection = 2
+
+[ahelp]
+admin_prefix         = false
+admin_prefix_webhook = false
+
+[server]
+id           = "lagrange14_substations"
+rules_header = "Lagrange Station Guidelines"
+rules_file   = "DeltaVRuleset"
+uptime_restart_minutes = 10080 # 1 week
+
+[rmc]
+mentor_help_sound = "/Audio/_DV/Effects/Admin/chord2.ogg" # we get our own sound
+
+[control]
+storage_limit = 2
+
+[discord]
+rich_main_icon_id = "deltav"
