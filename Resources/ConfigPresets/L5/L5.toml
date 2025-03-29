@@ -1,6 +1,6 @@
 [game]
 hostname                = "[EN][HRP][18+] Lagrange Substations"
-desc                    = "An HRP Space Station 14 server centered around the System, a machine that dreams. You, however,w ill be stationed on one of the support substations."
+desc                    = "An HRP Space Station 14 server centered around the System, a machine that dreams. You, however, will be stationed on one of the support substations."
 lobbyenabled            = true
 lobbyduration           = 300
 round_restart_time      = 600
@@ -11,6 +11,7 @@ showgreentext           = false # focus more on telling a story
 secret_weight_prototype = "SecretDeltaV"
 role_timers             = false # no time requirements for roles
 cryo_sleep_rejoining    = true
+hostname_in_titlebar    = false # use "$defaultwindowtitle" instead of "$hostname - $defaultwindowtitle" since there is only one server
 
 [vote]
 preset_enabled = true
