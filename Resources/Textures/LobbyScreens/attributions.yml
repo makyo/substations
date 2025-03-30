@@ -1,19 +1,19 @@
 - files: ["monologue.png", "neviim-back.png", "qoheleth-back.png"]
-  license: "Copyright"
-  copyright: "Iris Jay"
+  license: "Custom"
+  copyright: "copyright Iris Jay"
   source: "https://irisjay.net"
 
 - files: ["hadje.png"]
-  license: "Copyright"
-  copyright: "Nat on discord"
+  license: "Custom"
+  copyright: "copyright Nathan Mcardle-Mott-MMerrifield on discord"
   source: "https://post-self.ink/"
 
 - files: ["full-of-skunks.png"]
-  license: "Copyright"
-  copyright: "Fudge"
+  license: "Custom"
+  copyright: "copyright Fudge"
   source: "https://vulpine.club/@fudge_the_sphinx"
 
 - files: ["wileling.png"]
-  license: "Copyright"
-  copyright: "Echo"
+  license: "Custom"
+  copyright: "copyright Echo"
   source: "https://everdream.space"
