@@ -1,59 +1,18 @@
-﻿- type: lobbyBackground
-  id: MedbayMadness
-  background: /Textures/LobbyScreens/MedbayMadness.webp
-
 - type: lobbyBackground
-  id: Revenant
-  background: /Textures/LobbyScreens/revenant.webp
-
+  id: FullOfSkunks
+  background: /Textures/LobbyScreens/full-of-skunks.png
 - type: lobbyBackground
-  id: Oracle
-  background: /Textures/LobbyScreens/oracle.webp
-
+  id: Hadje
+  background: /Textures/LobbyScreens/hadje.png
 - type: lobbyBackground
-  id: aBadShift
-  background: /Textures/LobbyScreens/aBadShift.webp
-
+  id: Wileling
+  background: /Textures/LobbyScreens/wileling.png
 - type: lobbyBackground
-  id: Bar
-  background: /Textures/LobbyScreens/Bar.webp
-
+  id: Monologue
+  background: /Textures/LobbyScreens/monologue.png
 - type: lobbyBackground
-  id: CodeDeltaGamma
-  background: /Textures/LobbyScreens/CodeDeltaGamma.webp
-
+  id: QohelethBack
+  background: /Textures/LobbyScreens/qoheleth-back.png
 - type: lobbyBackground
-  id: CupOfVelta
-  background: /Textures/LobbyScreens/CupOfVelta.webp
-
-- type: lobbyBackground
-  id: Epistemics
-  background: /Textures/LobbyScreens/Epistemics.webp
-
-- type: lobbyBackground
-  id: Singulo
-  background: /Textures/LobbyScreens/Singulo.webp
-
-- type: lobbyBackground
-  id: TechnologicalProgress
-  background: /Textures/LobbyScreens/DeltaV__Technological_Progress_by_threlo.webp
-
-- type: lobbyBackground
-  id: OperatorPlush
-  background: /Textures/LobbyScreens/OperatorPlush.webp
-
-- type: lobbyBackground
-  id: breakingspace
-  background: /Textures/LobbyScreens/breakingspace.webp
-
-- type: lobbyBackground
-  id: StationCrewBoard
-  background: /Textures/LobbyScreens/station-crew-board.webp
-
-- type: lobbyBackground
-  id: CorporateRats
-  background: /Textures/LobbyScreens/Corporate_Rats.webp
-
-- type: lobbyBackground
-  id: SecurityCamera
-  background: /Textures/LobbyScreens/DeltaVContestWinner.webp
+  id: NeviimBack
+  background: /Textures/LobbyScreens/neviim-back.png
