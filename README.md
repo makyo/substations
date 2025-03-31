@@ -1,16 +1,16 @@
-<p align="center"> <img alt="Space Station 14 Delta-V Logo" width="128" height="128" src="https://raw.githubusercontent.com/DeltaV-Station/Delta-v/master/Resources/Textures/Logo/logo.png" /></p>
+<p align="center"> <img alt="Space Station 14 Lagrange Logo" width="128" height="128" src="/Resources/Textures/Logo/logo.png" /></p>
 <!---<p align="center"> <img alt="Space Station 14 Delta-V Banner" width="512" height="126" src="https://raw.githubusercontent.com/DeltaV-Station/Delta-v/master/Resources/Textures/Logo/banner.png" /></p>-->
 
-Delta-V is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14), embracing a mixture of classic SS13 chaos and experimentation only possible with the new engine.
+Lagrange Substations is a fork of [Space Station 14](https://github.com/space-wizards/space-station-14), embracing a mixture of classic SS13 chaos and experimentation only possible with the new engine.
 
 Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a homegrown engine written in C#.
 
-### Delta-V is a continuation of the [Nyanotrasen](https://www.nyanotrasen.moe/) fork. Any work done in a non-base namespace may contain incorrect attributes due to rewrites and recommitting.
+### Lagrange Substations is a fork of [Delta-V](https://www.deltav.gay/). Any work done in a non-base namespace may contain incorrect attributes due to rewrites and recommitting.
 
 ## Links
 
-#### DeltaV
-[Website](https://deltav.gay/) | [Wiki](https://wiki.deltav.gay/view/Main_Page) | [Discord](https://discord.gg/deltav)
+#### Lagrange
+[Website](https://lagrange14.com/) | [Wiki](https://wiki.lagrange14.com/wiki/Main_Page) <!--| [Discord](https://discord.gg/deltav)-->
 
 #### Space Station 14
 
@@ -22,7 +22,7 @@ The [docs site](https://docs.spacestation14.io/) has documentation on SS14s cont
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/DeltaV-Station/Delta-v/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
+We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/lagrange14/substations/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
 
 Make sure to read [CONTRIBUTING.md](/CONTRIBUTING.md) if you are new to Delta-V!
 
@@ -43,7 +43,7 @@ To be more specific, code in `Content.*/DeltaV`, `Resources/*/DeltaV` and any De
 
 [87c70a89a67d0521a56388e6b1c3f2cb947943e4](https://github.com/DeltaV-Station/Delta-v/commit/87c70a89a67d0521a56388e6b1c3f2cb947943e4) was pushed on February 17th 2024 at 21:48 UTC
 
-Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/DeltaV-Station/Delta-v/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
 Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
 
