@@ -3991,3 +3991,41 @@
   id: 1205
   time: '2025-03-27T19:50:05.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/3296
+- author: Eternally-Confused
+  changes:
+  - message: Justice and prison radios can now be affected by solar flares
+    type: Fix
+  id: 1206
+  time: '2025-03-29T01:00:13.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3333
+- author: Radezolid
+  changes:
+  - message: Hand labelers are now available to be printed at every techfab but security's.
+    type: Tweak
+  - message: Regular 50 units beakers are available to be printed at the service techfab.
+    type: Tweak
+  id: 1208
+  time: '2025-03-30T04:47:00.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3338
+- author: deltanedas
+  changes:
+  - message: Fixed crates and artifact containers not blocking radiation.
+    type: Fix
+  id: 1209
+  time: '2025-03-30T19:22:08.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3344
+- author: SirrRequiem
+  changes:
+  - message: Changed pill buffer to pull chemicals from beaker instead of chemmaster
+      to inject into pills
+    type: Tweak
+  id: 1211
+  time: '2025-03-31T13:58:38.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3329
+- author: SolStar
+  changes:
+  - message: Paramedics now get Jaws of Life in order to get into places in an emergency
+    type: Tweak
+  id: 1214
+  time: '2025-04-01T01:04:29.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3219
