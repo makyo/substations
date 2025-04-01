@@ -11,7 +11,7 @@
   - type: RespawnDeadRule
     alwaysRespawnDead: true
   - type: RespawnTracker
-    respawnDelay: 10
+    respawnDelay: 0
     deleteBody: false
 
 - type: entity
@@ -434,7 +434,7 @@
   - type: BasicStationEventScheduler
     minimumTimeUntilFirstEvent: 2700 # 45 mins #shows up like half way through shift.
     minMaxEventTiming:
-      min: 1200 # 20 mins
+      min: 1800 # L5 - 30 mins
       max: 7200 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
     scheduledGameRules: !type:NestedSelector
       tableId: SpaceTrafficControlTable

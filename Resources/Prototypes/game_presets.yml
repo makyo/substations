@@ -42,7 +42,7 @@
     - Nukeops
     - Traitor
     - Revolutionary
-    - Zombie
+    #- Zombie # L5
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
@@ -63,7 +63,7 @@
     - Nukeops
     - Traitor
     - Revolutionary
-    - Zombie
+    #- Zombie # L5
     - BasicStationEventScheduler
     - KesslerSyndromeScheduler
     - MeteorSwarmMildScheduler

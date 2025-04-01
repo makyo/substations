@@ -40,7 +40,7 @@
     - id: ParadoxCloneSpawn
     - id: RevenantSpawn
     - id: SleeperAgents
-    - id: ZombieOutbreak
+    #- id: ZombieOutbreak # L5
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
     #- id: WizardSpawn # DeltaV - disabled until its touched up
