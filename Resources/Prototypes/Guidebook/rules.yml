@@ -5,8 +5,8 @@
   id: DefaultRuleset
   name: guide-entry-rules
   ruleEntry: true
-  priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
+  priority: 0
+  text: "/ServerInfo/Guidebook/_L5/Rules/L5Ruleset.xml" # L5
 
 - type: guideEntry # DeltaV: Nukes all wizden rules except for the following ones
   id: RoleTypes
