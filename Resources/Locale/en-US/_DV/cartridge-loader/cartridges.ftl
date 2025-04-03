@@ -70,7 +70,8 @@ crime-assist-question-falselyreportingtosecurity = Has the suspect made a report
 crime-assist-question-happenincourt = Was the suspect a nuisance in court?
 crime-assist-question-duringactiveinvestigation = Was the suspect a nuisance during an active investigation, and hindered the investigation as a result?
 crime-assist-question-tocommandstaff = Did the suspect overthrow or compromise a lawfully established Chain of Command, or attempt to do so?
-crime-assist-question-wasitcommanditself = Was a command staff or department head abusing authority over another sophont?
+# L5
+crime-assist-question-wasitcommanditself = Was a member of leadership staff or department head abusing authority over another sophont?
 
 # Crime details
 crime-assist-crimedetail-innocent = Crime could not be determined. Use your best judgement to resolve the situation.

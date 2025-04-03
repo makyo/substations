@@ -6,9 +6,10 @@ comms-console-menu-announcement-button-tooltip = Send your message as a station-
 comms-console-menu-broadcast-button = Broadcast
 comms-console-menu-broadcast-button-tooltip = Broadcast your message to wall-mounted screens around the station. Note: They fit only ten characters!
 comms-console-menu-alert-level-button-tooltip = Change the station alert level. Applies immediately on selecting.
-comms-console-menu-call-shuttle = Call emergency shuttle
-comms-console-menu-recall-shuttle = Recall emergency shuttle
-comms-console-menu-emergency-shuttle-button-tooltip = Calls or recalls the emergency shuttle. You can only recall when there's enough time left.
+# L5
+comms-console-menu-call-shuttle = Call evacuation shuttle
+comms-console-menu-recall-shuttle = Recall evacuation shuttle
+comms-console-menu-emergency-shuttle-button-tooltip = Calls or recalls the evacuation shuttle. You can only recall when there's enough time left.
 comms-console-menu-time-remaining = Time remaining: {$time}
 
 # Popup
@@ -22,7 +23,8 @@ comms-console-announcement-unknown-sender = Unknown
 
 # Comms console variant titles
 comms-console-announcement-title-station = Communications Console
-comms-console-announcement-title-centcom = Central Command
+comms-console-announcement-title-centcom = Central Administration
 comms-console-announcement-title-nukie = Syndicate Nuclear Operative
-comms-console-announcement-title-station-ai = Station AI
+# L5
+comms-console-announcement-title-station-ai = Station Sys-Side Representative
 comms-console-announcement-title-wizard = Wizard

@@ -1,3 +1,3 @@
-department-Epistemics = Epistemics
+department-Epistemics = Research
 department-Logistics = Logistics
 department-Justice = Justice

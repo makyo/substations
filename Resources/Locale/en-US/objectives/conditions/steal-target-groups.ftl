@@ -6,8 +6,9 @@ steal-target-groups-hand-teleporter = hand teleporter
 steal-target-groups-clothing-shoes-boots-mag-adv = advanced magboots
 steal-target-groups-box-folder-qm-clipboard = requisition digi-board
 steal-target-groups-food-meat-corgi = prime-cut corgi meat
-steal-target-groups-captain-id-card = captain ID card
-steal-target-groups-jetpack-captain-filled = captain's jetpack
+# L5
+steal-target-groups-captain-id-card = station admin ID card
+steal-target-groups-jetpack-captain-filled = station admin's jetpack
 steal-target-groups-weapon-antique-laser = antique laser pistol
 steal-target-groups-nuke-disk = nuclear authentication disk
 steal-target-groups-weapon-energy-shot-gun = energy shotgun
@@ -45,15 +46,18 @@ steal-target-groups-clothing-neck-clownmedal = clown medal
 # Thief structures
 steal-target-groups-teg = teg generator part
 steal-target-groups-freezer-heater = freezer or heater
-steal-target-groups-altar-nanotrasen = nanotrasen altar (any)
+# L5
+steal-target-groups-altar-nanotrasen = SysCon or UN altar (any)
 
 steal-target-groups-nuclear-bomb = nuclear fission explosive
-steal-target-groups-fax-machine-captain = captain long range fax machine
+# L5
+steal-target-groups-fax-machine-captain = station admin's long range fax machine
 steal-target-groups-chem-dispenser = chemical dispenser
 steal-target-groups-xeno-artifact = alien artifact
 steal-target-groups-booze-dispenser = booze dispenser
 # DeltaV - Epistemics Department - Replace RD with Mystagogue
-steal-target-groups-plant-rd = "Mystagogue's potted plant"
+# L5 undo that :P
+steal-target-groups-plant-rd = "Research Director's potted plant"
 steal-target-groups-toilet-golden-dirty-water = golden toilet
 
 # Thief Animal

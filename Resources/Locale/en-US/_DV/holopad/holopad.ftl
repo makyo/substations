@@ -1,18 +1,19 @@
 # Command
-holopad-command-lo = Command - LO
-holopad-command-mysta = Command - Mysta
-holopad-command-cj = Command - CJ
-holopad-command-evac = Command - Evac
+# L5
+holopad-command-lo = Leadership - LO
+holopad-command-mysta = Leadership - RD
+holopad-command-cj = Leadership - CJ
+holopad-command-evac = Leadership - Evac
 
 # Epistemics
-holopad-epistemics-anomaly = Epistemics - Anomaly
-holopad-epistemics-artifact = Epistemics - Artifact
-holopad-epistemics-robotics = Epistemics - Robotics
-holopad-epistemics-rnd = Epistemics - R&D
-holopad-epistemics-front = Epistemics - Front
-holopad-epistemics-breakroom = Epistemics - Breakroom
-holopad-epistemics-mantis = Epistemics - Mantis
-holopad-epistemics-oracle = Epistemics - Oracle
+holopad-epistemics-anomaly = Research - Anomaly
+holopad-epistemics-artifact = Research - Artifact
+holopad-epistemics-robotics = Research - Robotics
+holopad-epistemics-rnd = Research - R&D
+holopad-epistemics-front = Research - Front
+holopad-epistemics-breakroom = Research - Breakroom
+holopad-epistemics-mantis = Research - Mantis
+holopad-epistemics-oracle = Research - Oracle
 
 # Logistics
 holopad-logistics-front = Logistics - Front

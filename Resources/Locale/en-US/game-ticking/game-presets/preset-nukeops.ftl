@@ -1,9 +1,10 @@
 ﻿nukeops-title = Nuclear Operatives
 nukeops-description = Nuclear operatives have targeted the station. Try to keep them from arming and detonating the nuke by protecting the nuke disk!
 
+# L5
 nukeops-welcome =
-    You are a nuclear operative. Your goal is to blow up {$station}, and ensure that it is nothing but a pile of rubble. Your bosses, the Syndicate, have provided you with the tools you'll need for the task.
-    Operation {$name} is a go ! Death to Nanotrasen!
+    You are a nuclear operative. Your goal is to blow up {$station}, and ensure that it is nothing but a pile of rubble. Your bosses, the Greater Expansion Collective, have provided you with the tools you'll need for the task.
+    Operation {$name} is a go ! Death to the System!
 nukeops-briefing = Your objectives are simple. Deliver the payload and get out before the payload detonates. Begin mission.
 
 nukeops-opsmajor = [color=crimson]Syndicate major victory![/color]
@@ -16,7 +17,8 @@ nukeops-cond-nukeexplodedoncorrectstation = The nuclear operatives managed to bl
 nukeops-cond-nukeexplodedonnukieoutpost = The nuclear operative outpost was destroyed by a nuclear blast.
 nukeops-cond-nukeexplodedonincorrectlocation = The nuclear bomb was detonated off-station.
 nukeops-cond-nukeactiveinstation = The nuclear bomb was left armed on-station.
-nukeops-cond-nukeactiveatcentcom = The nuclear bomb was delivered to Central Command!
+# L5
+nukeops-cond-nukeactiveatcentcom = The nuclear bomb was delivered to Central Administration!
 nukeops-cond-nukediskoncentcom = The crew escaped with the nuclear authentication disk.
 nukeops-cond-nukedisknotoncentcom = The crew left the nuclear authentication disk behind.
 nukeops-cond-nukiesabandoned = The nuclear operatives were abandoned.

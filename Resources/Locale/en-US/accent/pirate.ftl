@@ -87,7 +87,7 @@ accent-pirate-replacement-27 = landlubber
 accent-pirate-replaced-28 = tider
 accent-pirate-replacement-28 = landlubber
 
-accent-pirate-replaced-29 = captain
+accent-pirate-replaced-29 = station administrator
 accent-pirate-replacement-29 = cap'n
 
 accent-pirate-replaced-30 = pistol
@@ -98,3 +98,6 @@ accent-pirate-replacement-31 = musket
 
 accent-pirate-replaced-32 = ammo
 accent-pirate-replacement-32 = gunpowder
+
+accent-pirate-replaced-33 = station admin
+accent-pirate-replacement-33 = cap'n

@@ -1,11 +1,13 @@
 ## Rev Head
 
+# L5
 roles-antag-rev-head-name = Head Revolutionary
-roles-antag-rev-head-objective = Your objective is to take over the station by converting people to your cause and killing all Command staff on station.
+roles-antag-rev-head-objective = Your objective is to take over the station by converting people to your cause and killing all Leadership staff on station.
 
+# L5
 head-rev-role-greeting =
     You are a Head Revolutionary.
-    You are tasked with removing all of Command from station via conversion, death or imprisonment.
+    You are tasked with removing all of Leadership from station via conversion, death or imprisonment.
     The Syndicate has sponsored you with a flash that converts the crew to your side.
     Beware, this won't work on those with a mindshield or wearing eye protection.
     Viva la revolución!
@@ -23,10 +25,11 @@ roles-antag-rev-objective = Your objective is to ensure the safety and follow th
 
 rev-break-control = {$name} has remembered their true allegiance!
 
+# L5
 rev-role-greeting =
     You are a Revolutionary.
     You are tasked with taking over the station and protecting the Head Revolutionaries.
-    Get rid of all of or convert the Command staff.
+    Get rid of all of or convert the Leadership staff.
     Viva la revolución!
 
 rev-briefing = Help your head revolutionaries get rid of every head to take over the station.
@@ -42,11 +45,12 @@ rev-no-heads = There were no Head Revolutionaries to be selected. Can't start a 
 
 rev-won = The Head Revs survived and successfully seized control of the station.
 
-rev-lost = Command survived and killed all of the Head Revs.
+rev-lost = Leadership survived and killed all of the Head Revs.
 
-rev-stalemate = All of the Head Revs and Command died. It's a draw.
+# L5
+rev-stalemate = All of the Head Revs and Leadership staff died. It's a draw.
 
-rev-reverse-stalemate = Both Command and Head Revs survived.
+rev-reverse-stalemate = Both Leadership staff and Head Revs survived.
 
 rev-headrev-count = {$initialCount ->
     [one] There was one Head Revolutionary:

@@ -1,8 +1,9 @@
 stamp-component-stamped-name-default = A very important person
 stamp-component-stamped-name-detective = Detective
 stamp-component-stamped-name-mime = Mime
-stamp-component-stamped-name-captain = Captain
-stamp-component-stamped-name-centcom = CentComm
+# L5
+stamp-component-stamped-name-captain = Station Administrator
+stamp-component-stamped-name-centcom = Central Administration
 stamp-component-stamped-name-chaplain = Chaplain
 stamp-component-stamped-name-lawyer = Lawyer
 stamp-component-stamped-name-clown = Clown
@@ -12,7 +13,8 @@ stamp-component-stamped-name-approved = APPROVED
 stamp-component-stamped-name-hop = Head of Personnel
 stamp-component-stamped-name-hos = Head of Security
 stamp-component-stamped-name-qm = Logistics Officer
-stamp-component-stamped-name-rd = Mystagogue
+# L5
+stamp-component-stamped-name-rd = Research Director
 stamp-component-stamped-name-warden = Warden
 stamp-component-stamped-name-trader = Trader
 stamp-component-stamped-name-syndicate = Syndicate

@@ -4,7 +4,7 @@ sandbox-window-map-editing-label = Editing
 sandbox-window-visibility-label = Visibility
 sandbox-window-your-character-label = Your Character
 
-sandbox-window-ai-overlay-button = AI Overlay
+sandbox-window-ai-overlay-button = Station Sys-Side Representative Overlay
 sandbox-window-respawn-button = Respawn
 sandbox-window-spawn-entities-button = Spawn Entities
 sandbox-window-spawn-tiles-button = Spawn Tiles

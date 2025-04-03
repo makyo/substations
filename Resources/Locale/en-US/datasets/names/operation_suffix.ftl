@@ -8,7 +8,8 @@ names-operation-suffix-dataset-7 = Bomb
 names-operation-suffix-dataset-8 = Bones
 names-operation-suffix-dataset-9 = Botanist
 names-operation-suffix-dataset-10 = Cannon
-names-operation-suffix-dataset-11 = Captain
+# L5
+names-operation-suffix-dataset-11 = Administrator
 names-operation-suffix-dataset-12 = Chef
 names-operation-suffix-dataset-13 = City
 names-operation-suffix-dataset-14 = Clown

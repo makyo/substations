@@ -4,8 +4,9 @@
 loadout-group-survival-corpsman = Corpsman Survival Box
 
 # Command
-loadout-group-captain-gloves = Captain gloves
-loadout-group-captain-shoes = Captain shoes
+# L5
+loadout-group-captain-gloves = Station administrator's gloves
+loadout-group-captain-shoes = Station administrator's shoes
 loadout-group-hop-gloves = Head of Personnel gloves
 loadout-group-hop-shoes = Head of Personnel shoes
 

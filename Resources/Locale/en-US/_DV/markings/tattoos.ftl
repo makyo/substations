@@ -7,5 +7,5 @@ marking-TattooNightlingChestMale = Chest Tattoo (Nightling)
 marking-TattooNightlingChestFemale-tattoo_nightling_female = Chest Tattoo (Nightling)
 marking-TattooNightlingChestFemale = Chest Tattoo (Nightling)
 
-marking-TattooNanotrasenChest-tattoo_nanotrasen_chest = Chest Tattoo (Nanotrasen)
-marking-TattooNanotrasenChest = Chest Tattoo (Nanotrasen)
+marking-TattooNanotrasenChest-tattoo_nanotrasen_chest = Chest Tattoo (System)
+marking-TattooNanotrasenChest = Chest Tattoo (System)
