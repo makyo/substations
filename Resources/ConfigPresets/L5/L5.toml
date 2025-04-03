@@ -58,7 +58,7 @@ can_operate_on_self = false # mrp...
 #enabled = true
 
 [rules]
-time = 30
+time = 15
 
 [infolinks]
 github     = "https://github.com/lagrange14/substations"
@@ -87,7 +87,7 @@ admin_prefix_webhook = false
 [server]
 id           = "lagrange14_substations"
 rules_header = "Lagrange Station Guidelines"
-rules_file   = "DeltaVRuleset"
+rules_file   = "L5Ruleset"
 uptime_restart_minutes = 10080 # 1 week
 
 [rmc]

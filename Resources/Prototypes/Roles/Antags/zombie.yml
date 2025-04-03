@@ -11,7 +11,7 @@
     inverted: true
     species:
     - IPC
-  guides: [ Zombies ]
+  #guides: [ Zombies ] # L5
 
 - type: antag
   id: Zombie
@@ -24,4 +24,4 @@
     inverted: true
     species:
     - IPC
-  guides: [ Zombies ]
+  #guides: [ Zombies ] # L5
