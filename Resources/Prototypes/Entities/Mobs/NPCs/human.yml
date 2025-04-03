@@ -10,7 +10,7 @@
     prototypes: [LimitedPassengerGear]
   - type: NpcFactionMember
     factions:
-    - NanoTrasen
+    - SysCon # L5
 
 - type: entity
   name: salvager

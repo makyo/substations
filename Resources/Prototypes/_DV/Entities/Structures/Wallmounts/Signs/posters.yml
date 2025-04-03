@@ -1,8 +1,9 @@
+# L5
 - type: entity
   parent: PosterBase
   id: PosterLegitFuckAround
   name: Fuck Around...
-  description: ...and find out. Sponsored by the Intergalactic Bartenders' Federation, Delta branch.
+  description: ...and find out. Sponsored by the Solar Bartenders' Federation, Delta branch.
   components:
   - type: Sprite
     sprite: _DV/Structures/Wallmounts/Posters/TJohnson.rsi
@@ -28,21 +29,23 @@
     sprite: _DV/Structures/Wallmounts/Posters/mailposter.rsi
     state: mailposter
 
+# L5
 - type: entity
   parent: PosterBase
   id: PosterLegitWork
   name: "Work, Achieve, Prosper"
-  description: "A poster depicting a vaugely slime-like man with white eyes telling you to \"Work, Achieve, and Prosper.\" You can't tell why, but you swear you've seen this figure in NanoTrasen advertisements before."
+  description: "A poster depicting a vaugely slime-like man with white eyes telling you to \"Work, Achieve, and Prosper.\" You can't tell why, but you swear you've seen this figure in SysCon advertisements before."
   components:
   - type: Sprite
     sprite: _DV/Structures/Wallmounts/Posters/grayposters.rsi
     state: posterworknanotrasen
-    
+
+# L5
 - type: entity
   parent: PosterBase
   id: PosterLegitEarth
-  name: "NanoTrasen And You"
-  description: "An overly optimistic poster depicting a much greener Earth with the NanoTrasen logo above. The blurb on it details the overall mission of the company. You swear Earth doesn't look like this anymore."
+  name: "SysCon And You"
+  description: "An overly optimistic poster depicting a much greener Earth with the System Consortium logo above. The blurb on it details the overall mission of the company. You swear Earth doesn't look like this anymore."
   components:
   - type: Sprite
     sprite: _DV/Structures/Wallmounts/Posters/grayposters.rsi
@@ -57,17 +60,18 @@
   - type: Sprite
     sprite: _DV/Structures/Wallmounts/Posters/grayposters.rsi
     state: posterworksyndicate
-    
+
+   # L5
 - type: entity
   parent: PosterBase
   id: PosterContrabandRoid
   name: "Syndicate and You"
-  description: "A poster advertising syndicate recruitment. It details how your planet might be doomed to fail because of NanoTrasen research practices. \"Join the Winning Side,\" it says at the bottom. You swear there's a very fine print in the corner, but it might just be dirt."
+  description: "A poster advertising syndicate recruitment. It details how your planet might be doomed to fail because of SysCon research practices. \"Join the Winning Side,\" it says at the bottom. You swear there's a very fine print in the corner, but it might just be dirt."
   components:
   - type: Sprite
     sprite: _DV/Structures/Wallmounts/Posters/grayposters.rsi
     state: posterroidsyndicate
-    
+
 - type: entity
   parent: PosterBase
   id: PosterLegitGetToWork
@@ -77,7 +81,7 @@
   - type: Sprite
     sprite: _DV/Structures/Wallmounts/Posters/grayposters.rsi
     state: work
-    
+
 - type: entity
   parent: PosterBase
   id: PosterContrabandL6
@@ -87,7 +91,7 @@
   - type: Sprite
     sprite: _DV/Structures/Wallmounts/Posters/grayposters.rsi
     state: litdakka
-    
+
 - type: entity
   parent: PosterBase
   id: PosterLegitBananaWarning

@@ -34,7 +34,7 @@
   parent: PosterBase
   id: PosterLegitDejaVu
   name: "Deja Vu Area"
-  description: "This is your first time here. If this station feels familiar, immediately alert a NanoTrasen employee."
+  description: "This is your first time here. If this station feels familiar, immediately alert a SysCon employee." # L5
   components:
   - type: Sprite
     sprite: Nyanotrasen/Structures/Wallmounts/Posters/Vordenburg.rsi

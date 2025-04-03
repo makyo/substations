@@ -401,11 +401,12 @@
 
 #ANTAG HARDSUITS
 #Blood-red Hardsuit
+# L5
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSyndie
   name: blood-red hardsuit helmet
-  description: A heavily armored helmet designed for work in special operations. Property of Gorlex Marauders.
+  description: A heavily armored helmet designed for work in special operations. Property of GEX Marauders.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/syndicate.rsi
@@ -502,11 +503,12 @@
         Heat: 0.9
 
 #Cybersun Juggernaut Hardsuit
+# L5
 - type: entity
   parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetHardsuitCybersun
-  name: cybersun juggernaut helmet
-  description: Made of compressed red matter, this helmet was designed in the Tau chromosphere facility.
+  name: CNZ juggernaut helmet
+  description: Made of compressed red matter, this helmet was designed in the Io chromosphere facility.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/cybersun.rsi

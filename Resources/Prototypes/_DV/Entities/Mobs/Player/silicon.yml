@@ -108,11 +108,12 @@
   - type: SiliconLawProvider
     laws: AquariusLaws
 
+# L5
 - type: entity
   id: StreamerCircuitBoard
   parent: BaseElectronics
   name: law board (streamer)
-  description: An electronics board containing the Nanotrasen Streamer lawset from experimental stations designed to create viral content.
+  description: An electronics board containing the System Consortium Streamer lawset from experimental stations designed to create viral content.
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi

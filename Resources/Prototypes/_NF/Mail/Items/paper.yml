@@ -101,7 +101,7 @@
 
 - type: entity
   id: PaperMailNFVagueThreat8
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   suffix: "vague mail threat 8, formatted"
   parent: Paper
   components:
@@ -243,6 +243,7 @@
 
         [head=2]Ask your barkeep for a Sui Dream today![/head]
 
+# L5
 - type: entity
   id: PaperMailNTSoapAd1
   categories: [ HideSpawnMenu ]
@@ -256,18 +257,18 @@
 #      stampType: Signature # DeltaV - Not compatible with our signatures code stuff apparently
     content: |2
       [head=3]Hello Valued Customer,[/head]
-      You have been selected to receive a complimentary sampler of scented soaps that Nanotrasen has to offer.
+      You have been selected to receive a complimentary sampler of scented soaps that SysCon has to offer.
 
       Why not enjoy a nice warm shower with our scented soaps?  Tested and effective vs. vent crud and mold.
 
       We hope you enjoy.
 
       Sincerely,
-            Christopher Cleanman, Vice President, NT Habs - Toiletries Dept.
+            Christopher Cleanman, Vice President, SysCon Habs - Toiletries Dept.
 
 - type: entity
   id: PaperMailNTSoapAd2
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   suffix: "soap ad 2" # DeltaV - Edited to not be addressed to Frontier Citizens, localized
   parent: Paper
   components:
@@ -312,7 +313,7 @@
 - type: entity
   id: PaperMailNFPaperPusherAd
   categories: [ HideSpawnMenu ]
-  suffix: "paper pusher" 
+  suffix: "paper pusher"
   parent: Paper
   components:
   - type: Paper
@@ -336,7 +337,7 @@
   components:
   - type: Paper
     content: |2
-      
+
       [head=1]HÖGANÄS[/head]
 
       [italic](There is a black and white picture of a pet bed on the first page.)[/italic]
@@ -435,7 +436,7 @@
       stampedName: Chief Friendship Officer
     - stampedColor: '#333333FF'
       stampedName: Cuts-With-Scalpel
-#      stampType: Signature  # DeltaV - Not compatible with our signatures code stuff apparently. 
+#      stampType: Signature  # DeltaV - Not compatible with our signatures code stuff apparently.
     content: |2
 
       [head=1]Note of Adoption[/head]

@@ -92,11 +92,12 @@
   - type: Clothing
     sprite: _DV/Clothing/Head/Hats/surgcap_cyan.rsi
 
+# L5
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatSurgcapCybersun
   name: surgical cap
-  description: A surgical cap worn by members of Cybersun's Biotechnology division.
+  description: A surgical cap worn by members of the Conclave of New Zealots's Biotechnology division.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hats/surgcap_cybersun.rsi

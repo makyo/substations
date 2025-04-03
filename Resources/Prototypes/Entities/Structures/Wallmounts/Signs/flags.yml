@@ -18,11 +18,12 @@
   - type: Sprite
     state: blank_flag
 
+# L5
 - type: entity
   parent: BaseFlag
   id: NTFlag
-  name: Nanotrasen flag
-  description: Glory to NT! Wait, they really made a flag for a corporation?
+  name: System flag
+  description: Joy to System! Wait, they really made a flag for a system of uploaded consciousnesses?
   components:
   - type: Sprite
     state: NT_flag
@@ -31,11 +32,11 @@
   parent: BaseFlag
   id: SyndieFlag
   name: syndicate flag
-  description: Smells bloody. Death to NT!
+  description: Smells bloody. Death to SysCon! # L5
   components:
   - type: Sprite
     state: syndie_flag
-    
+
 - type: entity
   parent: BaseFlag
   id: LGBTQFlag
@@ -44,7 +45,7 @@
   components:
   - type: Sprite
     state: lgbtq_flag
-    
+
 - type: entity
   parent: BaseFlag
   id: PirateFlag

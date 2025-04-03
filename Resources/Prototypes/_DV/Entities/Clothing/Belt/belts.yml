@@ -118,11 +118,12 @@
   - type: Clothing
     sprite: _DV/Clothing/Belt/syndbelt_overlay.rsi
 
+# L5
 - type: entity
   parent: ClothingBeltMilitaryWebbing
   id: ClothingBeltMilitaryWebbingHostageWarden
   name: warden chest rig
-  description: A set of tactical webbing worn by the Gorlex Marauder hostage specialist team.
+  description: A set of tactical webbing worn by the GEX Marauder hostage specialist team.
   suffix: Filled
   components:
   - type: EntityTableContainerFill

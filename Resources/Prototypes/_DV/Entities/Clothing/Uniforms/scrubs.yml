@@ -53,11 +53,12 @@
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Scrubs/white.rsi
 
+# L5
 - type: entity
   parent: ClothingUniformBase
   id: UniformScrubsColorCybersun
-  name: cybersun scrubs
-  description: The official uniform of Cybersun's biotechnology division
+  name: CNZ scrubs
+  description: The official uniform of the Conclave of New Zealots's biotechnology division
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Scrubs/cybersun.rsi

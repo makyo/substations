@@ -2,7 +2,7 @@
   name: Mk32 "Universal" # DeltaV - update Mk32
   parent: BaseWeaponPistol
   id: WeaponPistolUniversal
-  description: The Mark 32 Offensive Handgun, produced by NanoTrasen's Small Arms Division. Uses .45 magnum ammo. # DeltaV - update Mk32
+  description: The Mark 32 Offensive Handgun, produced by DCU's Small Arms Division. Uses .45 magnum ammo. # DeltaV - update Mk32 # L5 DCU (Defense Contractors United)
   components:
   - type: Sprite
     sprite: _DV/Objects/Weapons/Guns/Pistols/universal.rsi # DeltaV - update Mk32

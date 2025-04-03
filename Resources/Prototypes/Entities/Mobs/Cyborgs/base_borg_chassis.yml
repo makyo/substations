@@ -2,7 +2,7 @@
   parent: [BaseMob, StripableInventoryBase]
   id: BaseBorgChassis
   name: cyborg
-  description: A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
+  description: A chassis housing a positronic brain containing a cladist that assists in station activity. They love being asked to state their laws over and over. # L5
   save: false
   abstract: true
   components:
@@ -307,7 +307,7 @@
     - NamesBorg
   - type: NpcFactionMember
     factions:
-    - NanoTrasen
+    - SysCon # L5
   - type: Access
     enabled: false
     groups:
@@ -370,7 +370,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - NanoTrasen #The seemingly best fit. It was a regular NT cyborg once, after all.
+    - The System Consortium #The seemingly best fit. It was a regular NT cyborg once, after all. # L5
   - type: Access
     enabled: false # DeltaV - comment to prevent upstream removing, borg id chips
     groups:

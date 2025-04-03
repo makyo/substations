@@ -23,7 +23,7 @@
     - type: CanHostGuardian
     - type: NpcFactionMember
       factions:
-        - NanoTrasen
+        - SysCon # L5
     - type: Respirator
       damage:
        types:

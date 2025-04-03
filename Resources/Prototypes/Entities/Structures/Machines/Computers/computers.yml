@@ -375,7 +375,7 @@
   parent: BaseComputerAiAccess
   id: ComputerCriminalRecords
   name: criminal records computer
-  description: This can be used to check criminal records. Only security and justice can modify them. # DeltaV Justice can access too 
+  description: This can be used to check criminal records. Only security and justice can modify them. # DeltaV Justice can access too
   components:
   - type: CriminalRecordsConsole
   - type: UserInterface
@@ -411,7 +411,7 @@
   - type: Computer
     board: CriminalRecordsComputerCircuitboard
   - type: AccessReader
-    access: [["Security"], ["Justice"]] # DeltaV Justice can access too 
+    access: [["Security"], ["Justice"]] # DeltaV Justice can access too
   - type: GuideHelp
     guides:
     - CriminalRecords
@@ -588,7 +588,7 @@
   parent: BaseComputerAiAccess
   id: ComputerId
   name: ID card computer
-  description: Terminal for programming Nanotrasen employee ID cards to access parts of the station.
+  description: Terminal for programming SysCon employee ID cards to access parts of the station. # L5
   components:
   - type: IdCardConsole
     privilegedIdSlot:
