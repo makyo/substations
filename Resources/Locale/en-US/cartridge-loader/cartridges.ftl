@@ -62,6 +62,7 @@ nano-task-ui-new-task = New Task
 nano-task-ui-description-label = Description:
 nano-task-ui-description-placeholder = Get something important
 nano-task-ui-requester-label = Requester:
+# L5
 nano-task-ui-requester-placeholder = John SysCon
 nano-task-ui-item-title = Edit Task
 nano-task-printed-description = Description: {$description}

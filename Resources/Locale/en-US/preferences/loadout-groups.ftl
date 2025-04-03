@@ -20,6 +20,7 @@ loadout-group-pocket-tank-double = Species-specific double emergency tank in poc
 loadout-group-survival-mime = Mime Survival Box
 
 # Command
+# L5
 loadout-group-captain-head = System Administrator head
 loadout-group-captain-jumpsuit = System Administrator jumpsuit
 loadout-group-captain-neck = System Administrator neck

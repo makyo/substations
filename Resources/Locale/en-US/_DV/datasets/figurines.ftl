@@ -48,6 +48,7 @@ figurines-lpo-4 = Nobody reads faxes...
 figurines-synthesis-1 = Uranium please.
 figurines-synthesis-2 = Hey kid wanna buy some stims?
 figurines-synthesis-3 = For the health of Hu- I mean Sophontkind.
+# L5
 figurines-synthesis-4 = Interdynes, the only Cigarette worth smoking.
 
 figurines-recruiter-1 = Use my pen. why? Its company policy.

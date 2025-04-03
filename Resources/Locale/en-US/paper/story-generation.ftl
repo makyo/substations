@@ -68,6 +68,7 @@ story-gen-book-character11 = chemist
 story-gen-book-character12 = prisoner
 story-gen-book-character13 = researcher
 story-gen-book-character14 = trader
+# L5
 story-gen-book-character15 = station administrator
 story-gen-book-character16 = lizard
 story-gen-book-character17 = moth

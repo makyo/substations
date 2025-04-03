@@ -1,4 +1,5 @@
 ## AnnounceCustomCommand
+# L5
 cmd-announcecustom-desc = Send an in-game announcement with custom color and sound.
 cmd-announcecustom-help = {$command} <message> [sender] [color] [sound] - Send announcement. Sender defaults to SysCon, color to Gold, sound to announce.ogg
 

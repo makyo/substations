@@ -54,6 +54,7 @@ id-card-access-level-syndicate-agent = Syndicate Agent
 
 id-card-access-level-unused = You shouldn't see this
 
+# L5
 id-card-access-level-central-command = Central Administration
 
 id-card-access-level-wizard = Wizard

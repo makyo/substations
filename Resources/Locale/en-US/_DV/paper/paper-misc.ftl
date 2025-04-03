@@ -10,6 +10,8 @@ book-text-lunchbox-unhealthy = Hello Honey!
       I've packed you something fun for this shift! I hope you enjoy it!!
       Love you so so much,
        - Mum.
+
+# L5
 book-text-subscription-notice = [head=2]Greetings loyal subscriber,[/head]
 
       We hope you enjoy this months edition of GEX Girlfriends™ sponsored by the Syndicate.

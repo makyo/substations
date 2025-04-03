@@ -147,6 +147,7 @@ holopad-service-clown-mime = Service - Clown/Mime
 holopad-service-gameroom = Service - Game Room
 
 # AI
+# L5: SSR
 holopad-ai-core = SSR - Core
 holopad-ai-main = SSR - Main
 holopad-ai-upload = SSR - Upload

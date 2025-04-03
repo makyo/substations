@@ -5,7 +5,8 @@ holopad-command-mysta = Leadership - RD
 holopad-command-cj = Leadership - CJ
 holopad-command-evac = Leadership - Evac
 
-# Epistemics
+# Research
+# L5
 holopad-epistemics-anomaly = Research - Anomaly
 holopad-epistemics-artifact = Research - Artifact
 holopad-epistemics-robotics = Research - Robotics

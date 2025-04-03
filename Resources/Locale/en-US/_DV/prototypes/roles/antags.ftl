@@ -1,3 +1,4 @@
+# L5
 roles-antag-paradox-anomaly-name = Unauthorized Duplicate
 roles-antag-paradox-anomaly-objective = Replace your double, or befriend them.
 

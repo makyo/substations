@@ -5,10 +5,12 @@ chat-radio-message-wrap-bold = [color={$color}]{$channel} {$name} {$verb}, [font
 examine-headset-default-channel = Use {$prefix} for the default channel ([color={$color}]{$channel}[/color]).
 
 chat-radio-common = Common
+# L5
 chat-radio-centcom = SysCon
 chat-radio-command = Leadership
 chat-radio-engineering = Engineering
 chat-radio-medical = Medical
+# L5
 chat-radio-science = Research
 chat-radio-security = Security
 chat-radio-service = Service

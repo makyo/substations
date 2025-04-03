@@ -178,6 +178,7 @@ ghost-role-information-ert-medical-name = ERT Medical
 ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
 
 ghost-role-information-cburn-agent-name = CBURN Agent
+# L5
 ghost-role-information-cburn-agent-description = A highly trained Central Admin agent, capable of dealing with various threats.
 
 ghost-role-information-centcom-official-name = Central Admin Official
@@ -274,6 +275,7 @@ ghost-role-information-science-description = You are part of a science team, but
 
 ghost-role-information-civilian-name = Civilian
 ghost-role-information-civilian-description = You were just hanging out, but seem to have found yourself in a strange situation...
+# L5
 ghost-role-information-civilian-centcom-lawyer-name = Central Admin Lawyer
 ghost-role-information-civilian-centcom-lawyer-description = A lawyer direct from the Central Legal Division.
 
