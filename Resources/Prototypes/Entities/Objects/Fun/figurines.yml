@@ -252,11 +252,12 @@
   - type: SpeakOnTrigger
     pack: FigurinesAtmosTech
 
+# L5
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineResearchDirector
-  name: mystagogue figure # DeltaV - Epistemics Department replacing Science
-  description: A figurine depicting the glorious head of the Epistemics department. # DeltaV - Epistemics Department replacing Science
+  name: RD figure # DeltaV - Epistemics Department replacing Science
+  description: A figurine depicting the glorious head of the Research department. # DeltaV - Epistemics Department replacing Science
   components:
   - type: Sprite
     state: rd

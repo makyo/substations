@@ -161,7 +161,7 @@
     - Bingus Day
     - Foster's Feast
     # Begin DeltaV Additions
-    - Preston’s Tomato Incident 
+    - Preston’s Tomato Incident
     - Submarine's Memorial
     - Pranksgiving
     - Sector Delta Employee Appreciation Week
@@ -180,7 +180,7 @@
     - the Talent Show
     - Luperthavia
     - Penny's Big Day
-    - Taco Tuesday 
+    - Taco Tuesday
     # End DeltaV Additions
 
 - type: dataset
@@ -204,16 +204,16 @@
 - type: dataset
   id: CommandRoles
   values:
-    - Captain
+    - Station Administrator # L5
     - Logistics Officer # DeltaV - what is a quartermaster
     - Head of Security
     - Head of Personnel
     - Chief Engineer
     - Chief Medical Officer
     # Begin DeltaV Additions
-    - Mystagogue
+    - Research Director # L5
     - Chief Justice
-    - Administrative Assistant 
+    - Administrative Assistant
     # End DeltaV Additions
 
 - type: dataset

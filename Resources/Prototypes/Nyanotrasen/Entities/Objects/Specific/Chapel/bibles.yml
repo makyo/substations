@@ -2,7 +2,7 @@
   parent: Bible
   id: BibleMystagogue
   name: book of mysteries
-  description: The mystagogue's holy book.
+  description: The RD's book, chock full of mysteries. # L5
   components:
   - type: Sprite
     sprite: Nyanotrasen/Objects/Specific/Chapel/holylight.rsi

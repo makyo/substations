@@ -136,4 +136,4 @@
 - type: entity
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatRndMysta]
   id: ClothingOuterCoatRndMystaOpened
-  name: mystagogue lab coat
+  name: RD lab coat # L5

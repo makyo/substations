@@ -596,7 +596,7 @@
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
   id: ClothingOuterWinterRD
-  name: mystagogue's winter coat # DeltaV - Epistemics Department replacing Science
+  name: Research Director's winter coat # DeltaV - Epistemics Department replacing Science # L5 undooo
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi

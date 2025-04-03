@@ -454,7 +454,7 @@
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterRD
   categories: [ HideSpawnMenu ]
-  name: mystagogue's coat hood # DeltaV - Epistemics Department replacing Science
+  name: Research Director's coat hood # DeltaV - Epistemics Department replacing Science # L5
   components:
   - type: Sprite
     sprite: Clothing/Head/Hoods/Coat/hoodrd.rsi

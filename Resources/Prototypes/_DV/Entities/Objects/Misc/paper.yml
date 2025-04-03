@@ -407,7 +407,7 @@
   parent: PaperStationWarrant
   id: PaperFugitiveReport
   name: fugitive report
-  description: An arrest warrant for a space fugitive sent from GALPOL.
+  description: An arrest warrant for a space fugitive sent from UN Security.
 
 - type: entity
   parent: Paper

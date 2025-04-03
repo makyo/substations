@@ -57,7 +57,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakRd
-  name: mystagogue's cloak # DeltaV - Epistemics Department replacing Science
+  name: Research Director's cloak # DeltaV - Epistemics Department replacing Science # L5
   description: A white cloak with violet stripes, showing your status as the arbiter of cutting-edge technology.
   components:
   - type: Sprite

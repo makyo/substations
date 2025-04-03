@@ -101,7 +101,7 @@
     allowMovement: true
     allowSpeech: true
     name: "Ifriit"
-    description: "You are a servant of the mystagogue. Obey them directly."
+    description: "You are a servant of the Research Director. Obey them directly." # L5
     requirements:
     - !type:DepartmentTimeRequirement
       department: Epistemics

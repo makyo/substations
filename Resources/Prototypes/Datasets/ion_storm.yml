@@ -238,7 +238,7 @@
   - THE BATHROOM
   - THE BRIDGE
   - THE BRIG
-  - THE EMERGENCY SHUTTLE
+  - THE EVACUATION SHUTTLE # L5
   - THE ESCAPE PODS
   - THE GALAXY
   - THE GAS GIANT, WHICH IS TOTALLY REAL
@@ -353,8 +353,8 @@
   # DeltaV - Logistics Department - Replace Quartermaster with Logistics Officer
   - LOGISTICS OFFICERS
   # End of modified code
-  # DeltaV - Epistemics Department - Replace Research Director with Mystagogue
-  - MYSTAGOGUES
+  # DeltaV - Epistemics Department - Replace Research Director with Mystagogue # L5 undooo
+  - RESEARCH DIRECTORS
   # End of modified code
   - ROBOTICISTS
   - RODENTS
