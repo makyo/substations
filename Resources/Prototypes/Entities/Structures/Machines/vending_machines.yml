@@ -1309,7 +1309,7 @@
   parent: VendingMachine
   id: VendingMachineGames
   name: Good Clean Fun
-  description: Vends things that the Captain and Head of Personnel are probably not going to appreciate you fiddling with instead of your job...
+  description: Vends things that the Station Administrator and Head of Personnel are probably not going to appreciate you fiddling with instead of your job... # L5
   components:
   - type: VendingMachine
     pack: GoodCleanFunInventory

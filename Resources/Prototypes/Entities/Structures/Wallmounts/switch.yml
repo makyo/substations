@@ -256,7 +256,7 @@
 
 - type: entity
   id: LockableButtonCaptain
-  suffix: Captain
+  suffix: StationAdministrator # L5
   parent: LockableButton
   components:
   - type: AccessReader

@@ -11,7 +11,7 @@
 - type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesBootsWinterCap
-  name: captain's winter boots
+  name: station administrator's winter boots # L5
   components:
   - type: Sprite
     sprite: _DV/Clothing/Shoes/Boots/winterbootscap.rsi

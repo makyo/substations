@@ -43,7 +43,7 @@
     categories: []
 
 - type: entity
-  name: captain's rubber stamp
+  name: station administrator's rubber stamp
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampCaptain
   categories: [ DoNotMap ]

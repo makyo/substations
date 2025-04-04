@@ -110,7 +110,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakCapFormal
-  name: captain's formal cloak
+  name: station administrator's formal cloak # L5
   description: A lavish and decorated cloak for special occasions.
   components:
   - type: Sprite

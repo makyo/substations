@@ -62,7 +62,7 @@
 - type: entity
   id: LockerCaptain
   parent: LockerBaseSecure
-  name: captain's locker
+  name: station administrator's locker # L5
   components:
   - type: Appearance
   - type: EntityStorageVisuals

@@ -12,7 +12,7 @@
   parent: BaseFigurineDeltaV
   id: ToyFigurineAdminAssistant
   name: administrative assistant figure
-  description: A figurine depicting the administrative assistant, on their way to fetch coffee for the Captain.
+  description: A figurine depicting the administrative assistant, on their way to fetch coffee for the station administrator.
   components:
   - type: Sprite
     state: adminassistant
@@ -133,7 +133,7 @@
   parent: BaseFigurineDeltaV
   id: ToyFigurineLPO
   name: listening post operator figure
-  description: A figurine depicting a listening post operator, impersonating the dead captain as usual.
+  description: A figurine depicting a listening post operator, impersonating the dead station admin as usual. # L5
   components:
   - type: Sprite
     state: lpo

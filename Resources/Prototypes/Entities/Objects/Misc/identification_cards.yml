@@ -106,7 +106,7 @@
 - type: entity
   parent: [IDCardStandard, BaseGrandTheftContraband]
   id: CaptainIDCard
-  name: captain ID card
+  name: station administrator ID card # L5
   components:
   - type: Sprite
     layers:

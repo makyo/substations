@@ -217,7 +217,7 @@
 - type: entity
   id: SuitStorageCaptain
   parent: SuitStorageBase
-  suffix: Captain
+  suffix: StationAdministrator
   components:
   - type: EntityTableContainerFill
     containers:

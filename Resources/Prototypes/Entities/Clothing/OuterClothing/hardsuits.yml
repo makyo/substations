@@ -321,11 +321,12 @@
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
 
 #Captain's Hardsuit
+# L5
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitCap
-  name: captain's armored spacesuit
-  description: A formal armored spacesuit, made for the station's captain.
+  name: station administrator's armored spacesuit
+  description: A formal armored spacesuit, made for the station's administrator.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/capspace.rsi

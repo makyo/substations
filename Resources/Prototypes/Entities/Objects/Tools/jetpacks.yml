@@ -152,7 +152,7 @@
 - type: entity
   id: JetpackCaptain
   parent: [BaseJetpack, BaseGrandTheftContraband]
-  name: captain's jetpack
+  name: station administrator's jetpack # L5
   suffix: Empty
   components:
   - type: Sprite
@@ -176,7 +176,7 @@
 - type: entity
   id: JetpackCaptainFilled
   parent: JetpackCaptain
-  name: captain's jetpack
+  name: station administrator's jetpack # L5
   suffix: Filled
   components:
   - type: GasTank

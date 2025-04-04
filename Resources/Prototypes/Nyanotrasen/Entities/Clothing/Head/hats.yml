@@ -153,11 +153,12 @@
         Slash: 0.95
         Piercing: 0.95
 
+# L5
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretCap
-  name: captain's beret
-  description: A blue beret with a captain's rank emblem. For captains that are more inclined towards style than safety.
+  name: station administrator's beret
+  description: A blue beret with a station admin's emblem. For administrators that are more inclined towards style than safety.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Head/Hats/beret_cap.rsi

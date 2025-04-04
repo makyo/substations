@@ -57,11 +57,12 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
 
+# L5
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBaseImpstation] # imp - Add foldable uniform jumpsuits
   id: ClothingUniformJumpsuitCaptain
-  name: captain's jumpsuit
-  description: It's a blue jumpsuit with some gold markings denoting the rank of "Captain".
+  name: station administrator's jumpsuit
+  description: It's a blue jumpsuit with some gold markings denoting the rank of "Station Administrator".
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/captain.rsi
@@ -763,7 +764,7 @@
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitCapFormal
-  name: captain's formal suit
+  name: station administrator's formal suit # L5
   description: A suit for special occasions.
   components:
   - type: Sprite

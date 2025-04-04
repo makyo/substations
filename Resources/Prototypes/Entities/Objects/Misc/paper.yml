@@ -136,11 +136,12 @@
     # Make this a wide dot-matrix printer
     maxWritableArea: 400.0, 0.0
 
+# L5
 - type: entity
-  name: captain's thoughts
+  name: station administrator's thoughts
   parent: Paper
   id: PaperCaptainsThoughts
-  description: "A page of the captain's journal. In luxurious lavender."
+  description: "A page of the station administrator's journal. In luxurious lavender."
   components:
   - type: Sprite
     layers:

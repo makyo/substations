@@ -23,7 +23,7 @@
   name: captain's sabre
   parent: [ BaseSword, BaseCommandContraband ]
   id: CaptainSabre
-  description: A ceremonial weapon belonging to the captain of the station.
+  description: A ceremonial weapon belonging to the administrator of the station. # L5
   components:
   - type: Sprite
     sprite: Objects/Weapons/Melee/captain_sabre.rsi

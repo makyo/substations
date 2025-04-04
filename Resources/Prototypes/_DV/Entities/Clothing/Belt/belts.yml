@@ -78,7 +78,7 @@
   parent: ClothingBeltSheath
   id: ClothingBeltFoamSheath
   name: foam sheath
-  description: A foam sheath to cosplay as the captain! It seems to be able to fit a real sabre in it.
+  description: A foam sheath to cosplay as the station administrator! It seems to be able to fit a real sabre in it. # L5
   components:
   - type: Sprite
     sprite: _DV/Clothing/Belt/foamsheath.rsi

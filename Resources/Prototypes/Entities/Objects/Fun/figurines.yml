@@ -120,11 +120,12 @@
   - type: SpeakOnTrigger
     pack: FigurinesBoxer
 
+# L5
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineCaptain
-  name: captain figure
-  description: A figurine depicting the standard outfit of a station administrator belonging to a civilian-sector SysCon vessel. # L5
+  name: station administrataor figure
+  description: A figurine depicting the standard outfit of a station administrator belonging to a civilian-sector SysCon vessel.
   components:
   - type: Sprite
     state: captain

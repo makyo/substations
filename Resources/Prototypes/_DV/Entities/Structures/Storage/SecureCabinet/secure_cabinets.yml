@@ -116,7 +116,7 @@
 - type: entity
   parent: FilledSecureCabinet
   id: SecureCabinetCaptain
-  suffix: Captain
+  suffix: Station Administrator # L5
   components:
   - type: AccessReader
     access: [["Captain"]]
