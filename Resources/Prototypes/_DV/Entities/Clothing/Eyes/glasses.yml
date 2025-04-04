@@ -34,7 +34,7 @@
     - GlassesCorpsman # Added for prescription glasses.
     - HamsterWearable
     - WhitelistChameleon
-    - SecDogWearable 
+    - SecDogWearable
   - type: GuideHelp
     guides:
     - Security
@@ -87,7 +87,7 @@
 - type: entity
   parent: [ClothingEyesGlassesChemical, ShowMedicalIcons]
   id: ClothingEyesGlassesChemicalInterdyne
-  name: interdyne chemical analysis goggles
+  name: International Trinitarian chemical analysis goggles
   description: Goggles engineered to be unable to get a stain on the lenses. It comes with a medical HUD incorporated.
   components:
     - type: Sprite

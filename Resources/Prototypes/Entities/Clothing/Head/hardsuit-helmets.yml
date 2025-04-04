@@ -454,7 +454,7 @@
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSyndieElite
   name: syndicate thermal helmet # DeltaV change elite to thermal
-  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of GEX Marauders. # L5
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/syndieelite.rsi

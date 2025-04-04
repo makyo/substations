@@ -142,7 +142,8 @@ mail-metrics-damaged = Losses (Damaged)
 mail-metrics-tampered = Losses (Tampered)
 mail-metrics-unopened = Unopened
 mail-metrics-count-header = Packages
-mail-metrics-money-header = Spesos
+# L5
+mail-metrics-money-header = RACs
 mail-metrics-total = Total
 mail-metrics-progress = {$opened} out of {$total} packages opened!
 mail-metrics-progress-percent = Success rate: {$successRate}%

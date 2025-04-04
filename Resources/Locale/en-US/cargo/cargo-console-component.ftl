@@ -4,7 +4,8 @@ cargo-console-menu-account-name-label = Account name:{" "}
 cargo-console-menu-account-name-none-text = None
 cargo-console-menu-shuttle-name-label = Shuttle name:{" "}
 cargo-console-menu-shuttle-name-none-text = None
-cargo-console-menu-points-label = Spesos:{" "}
+# L5
+cargo-console-menu-points-label = RACs:{" "}
 cargo-console-menu-points-amount = ${$amount}
 cargo-console-menu-shuttle-status-label = Shuttle status:{" "}
 cargo-console-menu-shuttle-status-away-text = Away

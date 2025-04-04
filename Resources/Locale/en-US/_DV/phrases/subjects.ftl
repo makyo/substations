@@ -98,7 +98,8 @@ phrase-mail = mail
 phrase-order = order
 phrase-ore-processor = ore processor
 phrase-request = request
-phrase-spesos = spesos
+# L5
+phrase-spesos = RACs
 phrase-restock = restock
 phrase-fulton = fulton
 phrase-jetpack = jetpack

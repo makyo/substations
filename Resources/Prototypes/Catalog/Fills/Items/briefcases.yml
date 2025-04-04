@@ -31,7 +31,7 @@
 - type: entity
   id: BriefcaseSyndieLobbyingBundleFilled
   parent: CybersunBriefcase # DeltaV
-  suffix: Syndicate, Spesos
+  suffix: Syndicate, RACs # L5
   components:
   - type: StorageFill
     contents:
@@ -54,7 +54,7 @@
 - type: entity
   id: BriefcaseThiefBribingBundleFilled
   parent: BriefcaseSyndie
-  suffix: Thief, Spesos
+  suffix: Thief, RACs # L5
   components:
   - type: StorageFill
     contents:
