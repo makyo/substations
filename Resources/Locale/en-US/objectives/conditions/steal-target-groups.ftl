@@ -57,7 +57,7 @@ steal-target-groups-xeno-artifact = alien artifact
 steal-target-groups-booze-dispenser = booze dispenser
 # DeltaV - Epistemics Department - Replace RD with Mystagogue
 # L5 undo that :P
-steal-target-groups-plant-rd = "Research Director's potted plant"
+steal-target-groups-plant-rd = "research director's potted plant"
 steal-target-groups-toilet-golden-dirty-water = golden toilet
 
 # Thief Animal

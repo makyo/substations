@@ -63,8 +63,8 @@ station-beacon-janitor = Janitor
 
 # L5
 station-beacon-ai = Station Sys-Side Representative
-station-beacon-ai-sat = SSR Sat
-station-beacon-ai-core = SSR Core
+station-beacon-ai-sat = System Sat
+station-beacon-ai-core = System Nucleus
 
 station-beacon-arrivals = Arrivals
 station-beacon-evac = Evac

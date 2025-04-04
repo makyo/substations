@@ -370,7 +370,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - The System Consortium #The seemingly best fit. It was a regular NT cyborg once, after all. # L5
+    - NanoTrasen #The seemingly best fit. It was a regular NT cyborg once, after all.
   - type: Access
     enabled: false # DeltaV - comment to prevent upstream removing, borg id chips
     groups:

@@ -79,7 +79,7 @@
 - type: entity
   parent: [ClothingMaskGasAtmos, BaseCommandContraband]
   id: ClothingMaskGasCaptain
-  name: Station Administrator's gas mask
+  name: station administrator's gas mask
   description: SysCon cut corners and repainted a spare atmospheric gas mask, but don't tell anyone.
   components:
   - type: Sprite

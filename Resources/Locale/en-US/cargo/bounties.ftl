@@ -73,12 +73,12 @@ bounty-item-tooth-sharkminnow = Sharkminnow Tooth
 bounty-description-artifact = UN Agricultural agents are in some hot water for stealing artifacts from non-spacefaring planets. Return one and we'll compensate you for it.
 bounty-description-baseball-bat = Baseball fever is going on at Central! Be a dear and ship them some baseball bats, so that management can live out their childhood dream.
 bounty-description-box-hugs = Several chief officials have sustained serious boo-boos. A box of hugs is urgently needed to aid in their recovery.
-bounty-description-brain = Commander Caldwell was rendered brain-dead by a recent space lube accident. Unfortunately, we can't hire a replacement, so just send us a new brain to put in her instead.
+bounty-description-brain = Administrator Caldwell was rendered brain-dead by a recent space lube accident. Unfortunately, we can't hire a replacement, so just send us a new brain to put in her instead.
 bounty-description-bread = Problems with central planning have led to bread prices skyrocketing. Ship some bread to ease tensions.
 bounty-description-carrot = After failing to watch instructional videos for proper welder safety, the salvage division on Station 15 has been blinded. Ship them some carrots so they can restore their eyesight.
 bounty-description-carrot-fries = Night sight can mean life or death! A shipment of carrot fries is the order.
 # L5
-bounty-description-carp = Admiral Pavlov has gone on strike ever since Central Administration confiscated her "pet." She is demanding a space carp as a replacement, dead or alive.
+bounty-description-carp = Senior Administrator Pavlov has gone on strike ever since Central Administration confiscated her "pet." She is demanding a space carp as a replacement, dead or alive.
 bounty-description-clown-costume = Due to a recent issue at a space carp petting zoo, we've unfortunately lost Bonobobonobo the Clown. Send us a new costume so the kids can see him once more.
 bounty-description-corn = After the recent destruction of Space Ohio, our corn imports are down 80%. Send us some so we can make up for it.
 bounty-description-crayon = Dr Jones' kid ate all our crayons again. Please send us yours.
@@ -89,16 +89,18 @@ bounty-description-donk-pocket = Consumer safety recall: Warning. Donk-Pockets m
 bounty-description-donut = Central's security forces are facing heavy losses against the Syndicate. Ship donuts to raise morale.
 bounty-description-figurine = The vice president's son saw an ad for action figures on the telescreen and now he won't shut up about them. Ship some to ease his complaints.
 bounty-description-flesh-monster = We've recently receieved reports of some kind of flesh monster infestation onboard several stations. Send us a few samples of these creatures so we can investigate new botanical opportunities.
-bounty-description-flower = Commander Zot really wants to sweep Security Officer Olivia off her feet. Send a shipment of flowers and he'll happily reward you.
+# L5
+bounty-description-flower = Administrator Zot really wants to sweep Security Officer Olivia off her feet. Send a shipment of flowers and he'll happily reward you.
 bounty-description-galaxythistle = After a particularly nasty foam backpressure from a scrubber, a high-ranking officer got badly poisoned. Send us some galaxythistle so we can prepare him a homeopathic remedy.
 # L5
 bounty-description-handcuffs = A large influx of escaped convicts have arrived at Central Administration. Now is the perfect time to ship out spare handcuffs (or restraints).
 # L5
 bounty-description-instrument = The hottest new band in the Sol System, Cindy Kate and the Saboteurs, lost their gear in a cargo shuttle collision. Send them a new set of instruments so they can play their show.
 # L5
-bounty-description-knife = One of our top admins recently won a brand new set of knives on an official SysCon gameshow. Unforunately, we don't have a set on hand. Send us a bunch of sharp things so we can throw something together,
+bounty-description-knife = One of our top admins recently won a brand new set of knives on an official Pierrot Lunaire gameshow. Unforunately, we don't have a set on hand. Send us a bunch of sharp things so we can throw something together,
 bounty-description-lemon = Dr Jones's kid is starting up a lemonade stand. Small issue: lemons don't get shipped to this sector. Fix that for a nice reward.
-bounty-description-lime = After a heavy drinking session, Admiral Pastich developed a strong addiction to fresh lime wedges. Send us some limes so we can prepare him his new favorite snack.
+# L5
+bounty-description-lime = After a heavy drinking session, Senior Administrator Pastich developed a strong addiction to fresh lime wedges. Send us some limes so we can prepare him his new favorite snack.
 bounty-description-lung = The pro-smoking league has been fighting to keep cigarettes on our stations for millennia. Unfortunately, their lungs aren't fighting so hard anymore. Send them some new ones.
 # L5
 bounty-description-monkey-cube = Due to a recent genetics accident, Central Administration is in serious need of monkeys. Your mission is to ship monkey cubes.
@@ -107,7 +109,7 @@ bounty-description-mouse = Station 13 ran out of freeze-dried mice. Ship some fr
 bounty-description-pancake = Here at SysCon we consider employees to be family. And you know what families love? Pancakes. Ship a baker's dozen.
 bounty-description-pen = We are hosting the intergalactic pen balancing competition. We need you to send us some standardized ball point pens.
 # L5
-bounty-description-percussion = Due to a poorly timed barfight, the Solar system-wide Mixed Percussion Ensemble lost all of their instruments. Send them a new set so they can jam once more.
+bounty-description-percussion = Due to a poorly timed barfight, the Solar System-wide Mixed Percussion Ensemble lost all of their instruments. Send them a new set so they can jam once more.
 # L5
 bounty-description-pie = 3.14159? No! Central Admin management wants edible pie! Ship a whole one.
 bounty-description-prison-uniform = The UN has been unable to source any new prisoner uniforms, so if you have any spares, we'll take them off your hands.
@@ -117,9 +119,11 @@ bounty-description-research-disk = Turns out those bozos in the Research departm
 bounty-description-shiv = Bzzzt... Transmission from prison planet OC-1001: we're facing an onslaught of uhm... "invaders." Yeah, invaders. Send us some shivs to fight them off with.
 # L5
 bounty-description-soap = Soap has gone missing from Central's bathrooms and nobody knows who took it. Replace it and be the hero Central needs.
-bounty-description-soup = To quell the appetites of the crew, SysCon will be serving soup to all underpaid workers. Ship any type of soup.
+# L5
+bounty-description-soup = To quell the appetites of our engineering away-team, SysCon will be sending them crates of food. Ship any type of soup.
 bounty-description-spear = Central's security forces are going through budget cuts. You will be paid if you ship a set of spears.
-bounty-description-syringe = The SysCon anti-drug task force is in need of some syringes in order to distribute them to low-income communities. Help some keep some peoples' jobs secure.
+# L5
+bounty-description-syringe = UN Medical's Outreach Task Force is in need of some syringes in order to distribute them to nearby communities. Help save some lives!
 bounty-description-toolbox = There's an absence of robustness at Central Administration. Hurry up and ship some toolboxes as a solution.
 bounty-description-tech-disk = The new research assistant on Station 13 spilled a soda on the RND server. Send them some technology disks so they can build up their recipes.
 # L5
@@ -137,8 +141,8 @@ bounty-description-fruit = A heroic monkey helped the chaplain catch a troublema
 bounty-description-vegetable = The new chef is a vegetarian, and botany can't keep up with their demands. We need some additional veggies to help keep things stocked.
 # L5
 bounty-description-chili = Today's the Central Administration Chili Cookoff, and, well, a few of us forgot to make some. Please help cover for us.
-# Central
-bounty-description-rollerskates = Central Security is proposing a new strategy for helping officers win foot pursuits. Send them a couple so they cna learn how bad an idea this is.
+# L5
+bounty-description-rollerskates = Central Security is proposing a new strategy for helping officers win foot pursuits. Send them a couple so they can learn how bad an idea this is.
 bounty-description-bedsheet = Someone in Atmos keeps turning down the heater, and we're all shivering in our beds. Please send us some extra sheets to stay warm.
 bounty-description-bandana =  Bzzzt... Transmission from prison planet OC-1001: We're... reorganizing our command structure. Send us some bandanas so we can tell gan- I mean, departments apart.
 bounty-description-steak = The vegetarian cook is refusing to make us anything with meat, and the lizards are getting restless. Can you smuggle us a few steaks to keep them happy?

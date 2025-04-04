@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHoodMysta
-  name: RD's muffin cap # Delta V - Mystagogue new hat # L5
+  name: research director's muffin cap # Delta V - Mystagogue new hat # L5
   description: Contrary to its silly name, it's actually a symbol of great academic achievement.
   components:
   - type: Sprite
@@ -179,7 +179,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretMysta
-  name: RD's beret # L5
+  name: research director's beret # L5
   description: A purple beret with a blue epistemics emblem. Mystical and stylish.
   components:
   - type: Sprite

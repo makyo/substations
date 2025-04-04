@@ -170,7 +170,7 @@
 - type: entity
   parent: FilledSecureCabinet
   id: SecureCabinetMG
-  suffix: RD # L5
+  suffix: Research Director # L5
   components:
   - type: AccessReader
     access: [["ResearchDirector"]]

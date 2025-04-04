@@ -1,8 +1,8 @@
 # General
 # L5
 ai-wire-snipped = Wire has been cut at {$coords}.
-wire-name-ai-vision-light = AIV
-wire-name-ai-act-light = AIA
+wire-name-ai-vision-light = SSRV
+wire-name-ai-act-light = SSRA
 station-ai-takeover = SSR takeover
 
 # Radial actions

@@ -190,7 +190,7 @@
     state: stamp-qm
 
 - type: entity
-  name: Research Director's rubber stamp # DeltaV - Epistemics Department replacing Science # L5 undooo
+  name: research director's rubber stamp # DeltaV - Epistemics Department replacing Science # L5 undooo
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampRd
   categories: [ DoNotMap ]

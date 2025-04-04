@@ -33,7 +33,7 @@ figurines-boxer-3 = I. AM. THE. CHAMPION!!
 figurines-boxer-4 = Don't look at me, he was shot, not punched.
 
 # L5
-#figurines-captain-1 = Glory to NT!
+figurines-captain-1 = I just joined for the sword...
 figurines-captain-2 = How did I get hired? Yes.
 figurines-captain-3 = The nuclear disk is secure. Where? Somewhere.
 

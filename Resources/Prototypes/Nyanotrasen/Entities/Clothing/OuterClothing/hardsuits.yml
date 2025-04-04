@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingOuterHardsuitRd
   id: ClothingOuterHardsuitMystagogue
-  name: RD's hardsuit
+  name: research director's hardsuit
   description: Lightweight hardsuit that has a helmet with a galaxy-first psionic passthrough system.
   components:
   - type: ToggleableClothing

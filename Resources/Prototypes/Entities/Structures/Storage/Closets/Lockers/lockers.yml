@@ -275,7 +275,7 @@
 - type: entity
   id: LockerResearchDirector
   parent: LockerBaseSecure # DeltaV - replaced the parent (previously LockerBase) with LockerBaseSecure to ensure locker had 75 health instead of 50
-  name: Research Director's locker # DeltaV - Epistemics Department replacing Science # L5 awaaa
+  name: research director's locker # DeltaV - Epistemics Department replacing Science # L5 awaaa
   components:
   - type: Appearance
   - type: EntityStorageVisuals

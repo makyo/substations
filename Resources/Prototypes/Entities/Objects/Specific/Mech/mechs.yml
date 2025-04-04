@@ -245,7 +245,7 @@
   parent: BaseMech
   id: MechVim
   name: Vim
-  description: A miniature exosuit from IPX, developed to let the irreplaceable station pets live a little longer. # L5
+  description: A miniature exosuit from IPX Robotics, developed to let the irreplaceable station pets live a little longer. # L5
   components:
   - type: Sprite
     drawdepth: Mobs

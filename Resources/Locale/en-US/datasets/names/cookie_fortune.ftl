@@ -47,7 +47,7 @@ descriptions-cookie-fortune-dataset-44 = The real treasure is the friends you ma
 descriptions-cookie-fortune-dataset-45 = Allan please add details
 descriptions-cookie-fortune-dataset-46 = You are the greatest person who ever lived!
 # L5
-descriptions-cookie-fortune-dataset-47 = SysCon is forcing me to make fortunes for these cookies, please help!
+descriptions-cookie-fortune-dataset-47 = My dog is forcing me to write fortunes for these cookies, please help!
 descriptions-cookie-fortune-dataset-48 = Buy Mr. Chang's today!
 descriptions-cookie-fortune-dataset-49 = You love Mr. Chang!
 descriptions-cookie-fortune-dataset-50 = Don't buy Discount Dan. Buy Mr. Chang!

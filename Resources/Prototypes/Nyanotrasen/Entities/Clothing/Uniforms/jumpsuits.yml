@@ -24,17 +24,16 @@
 #  - type: FactionClothing
 #    faction: Mailman
 
-# L5 - MG→RD
 - type: entity
   parent: ClothingUniformJumpsuitResearchDirector
   id: ClothingUniformJumpsuitMystagogue
-  name: RD's turtleneck
+  name: research director's turtleneck # L5
   description: It's a turtleneck worn by those with the holy aura to achieve the role of Research Director. You can practically feel the psychic energies radiating from this thing, not to mention the actual radiation.
 
 - type: entity
   parent: ClothingUniformJumpskirtResearchDirector
   id: ClothingUniformJumpskirtMystagogue
-  name: mystagogue's turtleneck
+  name: research director's turtleneck # L5
   description: It's a turtleneck worn by those with the holy aura to achieve the role of Research Director. You can practically feel the psychic energies radiating from this thing, not to mention the actual radiation.
 
 - type: entity
