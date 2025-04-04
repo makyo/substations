@@ -899,11 +899,12 @@
     weight: 0.0002 # 5,000 times less likely than 1 regular animal
   - type: BlockMovement
 
+# L5
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcomcap
-  name: CentComm cap
-  description: An extravagant, fancy Central Commander cap.
+  name: Central Administration cap
+  description: An extravagant, fancy Central Administrator cap.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/comcap.rsi

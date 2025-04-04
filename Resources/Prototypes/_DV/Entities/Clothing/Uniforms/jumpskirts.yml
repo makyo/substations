@@ -239,7 +239,7 @@
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCentcomDirector
   name: director's jumpskirt
-  description: A sharp and professional jumpskirt worn by a high-ranking member of Central Command.
+  description: A sharp and professional jumpskirt worn by a high-ranking member of Central Administration. # L5
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/centcom_officer.rsi

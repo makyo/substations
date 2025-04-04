@@ -145,7 +145,7 @@
 - type: entity
   parent: AirlockCommand # if you get centcom door somehow it counts as command, also inherit panel
   id: AirlockCentralCommand
-  suffix: Central Command
+  suffix: Central Administration
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Standard/centcomm.rsi #Delta V - Resprite Doors
@@ -210,7 +210,7 @@
 - type: entity
   parent: AirlockGlass
   id: AirlockHydroponicsGlass
-  suffix: Hydroponics 
+  suffix: Hydroponics
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Glass/hydroponics.rsi # DeltaV - Resprite Doors
@@ -303,7 +303,7 @@
 - type: entity
   parent: AirlockCommandGlass # see standard
   id: AirlockCentralCommandGlass
-  suffix: Central Command
+  suffix: Central Administration # L5
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Glass/centcomm.rsi #Delta V - Resprite Doors

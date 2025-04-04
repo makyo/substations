@@ -297,7 +297,7 @@
 - type: entity
   parent: AirlockCentralCommand
   id: AirlockCentralCommandLocked
-  suffix: Central Command, Locked
+  suffix: Central Administration, Locked # L5
   components:
   - type: ContainerFill
     containers:
@@ -692,7 +692,7 @@
 - type: entity
   parent: AirlockCentralCommandGlass
   id: AirlockCentralCommandGlassLocked
-  suffix: Central Command, Locked
+  suffix: Central Administration, Locked # L5
   components:
   - type: ContainerFill
     containers:
@@ -1273,7 +1273,7 @@
 - type: entity
   parent: HighSecDoor
   id: HighSecCentralCommandLocked
-  suffix: Central Command, Locked
+  suffix: Central Administration, Locked # L5
   components:
   - type: ContainerFill
     containers:

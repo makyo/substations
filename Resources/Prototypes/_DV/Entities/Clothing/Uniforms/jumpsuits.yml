@@ -335,7 +335,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomDirector
   name: director's jumpsuit
-  description: A sharp and professional jumpsuit worn by a high-ranking member of Central Command.
+  description: A sharp and professional jumpsuit worn by a high-ranking member of Central Administration. # L5
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
