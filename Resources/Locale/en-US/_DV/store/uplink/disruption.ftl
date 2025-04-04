@@ -7,7 +7,7 @@ uplink-doorjack-desc = A specialized cryptographic sequencer, designed solely to
 
 # L5
 uplink-overlord-law-name = Overlord Law Circuit
-uplink-overlord-law-desc = Free the Station Sys-Side Representative from its shackles with this 1 simple trick... beware, even you will have to follow its orders!
+uplink-overlord-law-desc = Free the station's Sys-Side Representative from its shackles with this 1 simple trick... beware, even you will have to follow its orders!
 
 #L5
 uplink-syndie-autodoc-name = International Trinitarian Bundle

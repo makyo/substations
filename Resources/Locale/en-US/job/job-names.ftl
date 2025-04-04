@@ -40,7 +40,7 @@ job-name-bartender = Bartender
 job-name-passenger = Passenger
 job-name-salvagespec = Salvage Specialist
 # L5
-job-name-station-ai = Station Sys-Side Representative
+job-name-station-ai = Sys-Side Representative
 # DeltaV - Hopefully makes LO maintaining easier
 # job-name-qm = Quartermaster
 job-name-cargotech = Cargo Technician
@@ -121,7 +121,7 @@ JobSecurityCadet = Security Cadet
 JobSecurityOfficer = Security Officer
 JobServiceWorker = Service Worker
 # L5
-JobStationAi = Station Sys-Side Representative
+JobStationAi = Sys-Side Representative
 JobStationEngineer = Station Engineer
 JobTechnicalAssistant = Technical Assistant
 JobVisitor = Visitor

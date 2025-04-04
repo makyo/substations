@@ -32,7 +32,7 @@ warp-point-reporter = Reporter
 warp-point-lawyer = Lawyer
 
 # L5
-warp-point-ai = Station Sys-Side Representative
+warp-point-ai = Sys-Side Representative
 warp-point-arrivals = Arrivals
 warp-point-evac = Evac
 warp-point-cryo = Cryo
