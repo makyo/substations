@@ -78,6 +78,7 @@ descriptions-cookie-fortune-dataset-73 = The person next to you is up to somethi
 descriptions-cookie-fortune-dataset-74 = Did you know? Monkeys are not what they seem.
 descriptions-cookie-fortune-dataset-75 = Did you know that half of salvage specialists go missing on the job?
 descriptions-cookie-fortune-dataset-76 = Also try out sashimi with galaxythystle sauce!
-#descriptions-cookie-fortune-dataset-77 = Did you know that 70% of Nanotrasen applicants go missing within the first years of their contract? The more you know!!
+# L5
+descriptions-cookie-fortune-dataset-77 = Did you know that 70% of new uploads never phone home? The more you know!!
 descriptions-cookie-fortune-dataset-78 = This shift you are going to do a very robust move in front of everyone.
 descriptions-cookie-fortune-dataset-79 = Robustness is not just about how good you are, but how good of a person you are.
