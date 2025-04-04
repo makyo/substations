@@ -64,7 +64,7 @@
   parent: PaperBiscuit
   id: PaperBiscuitCorporate
   name: confidential biscuit card
-  description: A confidential biscuit card. The tasteful blue color and NT logo on the front makes it look a little like a chocolate bar.
+  description: A confidential biscuit card. The tasteful blue color and SysCon logo on the front makes it look a little like a chocolate bar. # L5
   components:
     - type: Sprite
       sprite: _DV/Objects/Misc/biscuits.rsi

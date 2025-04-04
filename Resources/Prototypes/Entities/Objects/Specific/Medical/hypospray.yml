@@ -33,7 +33,7 @@
 - type: entity
   name: GEX hypospray
   parent: BaseItem
-  description: Using reverse engineered designs from NT, the Conclave of New Zealots produced these in limited quantities for the Greater Expansion Collective Marauder operatives.
+  description: Using reverse engineered designs from UN Medical, the Conclave of New Zealots produced these in limited quantities for the Greater Expansion Collective Marauder operatives.
   id: SyndiHypo
   components:
   - type: Sprite

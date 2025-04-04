@@ -1031,7 +1031,7 @@
   parent: VendingMachineSnack
   id: VendingMachineSustenance
   name: Sustenance Vendor
-  description: A vending machine which vends food, as required by section 47-C of the NT's Prisoner Ethical Treatment Agreement.
+  description: A vending machine which vends food, as required by section 47-C of the UN's Prisoner Ethical Treatment Agreement. # L5
   components:
   - type: VendingMachine
     pack: SustenanceInventory

@@ -164,13 +164,13 @@
     - Preston’s Tomato Incident
     - Submarine's Memorial
     - Pranksgiving
-    - Sector Delta Employee Appreciation Week
-    - Intergalactic Hug A Robot Day
+    - Station-side Employee Appreciation Week # L5
+    - Interplanetary Hug A Robot Day # L5
     - Todaybor Day
     - Teo's First Contact Day
     - Wear Pajamas to Work Day
     - Roy’s Birthday
-    - NT Corporate Mindfulness Day
+    - SysCon Corporate Mindfulness Day # L5
     - Night of Holy Herbs
     - Logistics Appreciation Week
     - Big Ear Syndrome Awareness Day
@@ -182,6 +182,11 @@
     - Penny's Big Day
     - Taco Tuesday
     # End DeltaV Additions
+    # Begin L5 Additions
+    # TODO: find where these are actuallyused
+    - Restoration Day
+    - Century Attack Anniversary
+    # End L5 Additions
 
 - type: dataset
   id: Clothes

@@ -2,7 +2,7 @@
 - type: entity
   id: LockerOldAISat
   name: closet
-  suffix: NTSRA voidsuit locker
+  suffix: SCSRA voidsuit locker # L5
   parent: LockerSyndicate
   components:
   - type: StorageFill
@@ -29,7 +29,7 @@
         prob: 0.2
       - id: ClothingBeltMilitaryWebbing
         prob: 0.2
-        
+
 #Garunteed chameleon kit spawn, for the syndicate dropship
 - type: entity
   id: LockerSyndicateShipGearBasicChameleonKit

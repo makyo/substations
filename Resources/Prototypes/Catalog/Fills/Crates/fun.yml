@@ -50,7 +50,7 @@
   id: CrateFunPlushie
   parent: CrateGenericSteel
   name: plushie crate
-  description: A buncha soft plushies. Throw them around and then wonder how you're gonna explain this purchase to NT.
+  description: A buncha soft plushies. Throw them around and then wonder how you're gonna explain this purchase to SysCon.
   components:
   - type: EntityTableContainerFill
     containers:
@@ -63,7 +63,7 @@
   id: CrateFunLizardPlushieBulk
   parent: CrateGenericSteel
   name: bulk lizard plushie crate
-  description: A buncha soft lizard plushies. Throw them around and then wonder how you're gonna explain this purchase to NT.
+  description: A buncha soft lizard plushies. Throw them around and then wonder how you're gonna explain this purchase to SysCon.
   components:
   - type: EntityTableContainerFill
     containers:
