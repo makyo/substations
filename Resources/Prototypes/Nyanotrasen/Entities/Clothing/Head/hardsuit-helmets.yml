@@ -2,7 +2,7 @@
   parent: ClothingHeadHelmetHardsuitRd
   id: ClothingHeadHelmetHardsuitMystagogue
   categories: [ HideSpawnMenu ]
-  name: mystagogue's hardsuit helmet
+  name: research director's hardsuit helmet # L5
   description: Lightweight hardsuit helmet that has a galaxy-first psionic passthrough system.
   components:
   - type: Psionic
@@ -44,7 +44,7 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitERTLeader
   id: ClothingHeadHelmetHardsuitERTCentcomm
-  name: CentComm hardsuit helmet
+  name: Central Administration hardsuit helmet
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Head/Hardsuits/ERThelmets/ertcentcomm.rsi

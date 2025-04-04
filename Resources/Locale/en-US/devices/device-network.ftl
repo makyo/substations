@@ -14,9 +14,11 @@ device-frequency-prototype-name-robotics-console = Robotics Console
 device-frequency-prototype-name-surveillance-camera-test = Subnet Test
 device-frequency-prototype-name-surveillance-camera-engineering = Engineering Cameras
 device-frequency-prototype-name-surveillance-camera-security = Security Cameras
-device-frequency-prototype-name-surveillance-camera-science = Epistemics Cameras
+# L5
+device-frequency-prototype-name-surveillance-camera-science = Research Cameras
 device-frequency-prototype-name-surveillance-camera-supply = Supply Cameras
-device-frequency-prototype-name-surveillance-camera-command = Command Cameras
+# L5
+device-frequency-prototype-name-surveillance-camera-command = Leadership Cameras
 device-frequency-prototype-name-surveillance-camera-service = Service Cameras
 device-frequency-prototype-name-surveillance-camera-medical = Medical Cameras
 device-frequency-prototype-name-surveillance-camera-general = General Cameras

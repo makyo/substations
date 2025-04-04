@@ -1,4 +1,5 @@
-﻿ui-options-tab-deltav = DeltaV
+﻿# L5 - generic
+ui-options-tab-deltav = Fork-specific
 ui-options-general-forknotice = Note: These settings are fork-specific and might not apply on other servers.
 
 ui-options-no-filters = Disable species vision filters

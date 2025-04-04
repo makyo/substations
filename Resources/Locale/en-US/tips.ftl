@@ -40,7 +40,8 @@ tips-dataset-39 = As a Traitor, dehydrated carps are useful for killing a large 
 tips-dataset-40 = As a Traitor, have you tried injecting plasma into batteries? In the case of a defibrillator, it explodes on use; hurting the user and the patient!
 tips-dataset-41 = As a Nuclear Operative, stick together! While your equipment is robust, your fellow operatives are much better at saving your life: they can drag you away from danger while stunned and provide cover fire.
 tips-dataset-42 = As a Nuclear Operative, communication is key! Use your radio to speak to your fellow operatives and coordinate an attack plan.
-tips-dataset-43 = As a Nuclear Operative, remember that stealth is an option. It'll be hard for the captain to fight back if he gets caught off guard by what he thinks is just a regular passenger!
+# L5
+tips-dataset-43 = As a Nuclear Operative, remember that stealth is an option. It'll be hard for the station administrator to fight back if he gets caught off guard by what he thinks is just a regular passenger!
 tips-dataset-44 = As an antagonist, be mindful of the power of destroying telecommunications. It'll be a lot harder for people to call you out if they can't do so effectively!
 tips-dataset-45 = You can examine your headset to see which radio channels you have available and how to speak in them.
 tips-dataset-46 = As a Salvage Specialist, always carry a GPS on you and take note of the station's coordinates in case your salvage is lost to space.
@@ -73,10 +74,11 @@ tips-dataset-71 = As an Engineer, you can repair cracked windows by using a lit 
 tips-dataset-72 = As an Engineer, you can electrify grilles by placing powered cables beneath them.
 tips-dataset-73 = As an Engineer, always double check when you're setting up the singularity. It is easier than you think to loose it!
 tips-dataset-74 = As an Engineer, you can use plasma glass to reinforce an area and prevent radiation. Uranium glass can also be used to prevent radiation.
-tips-dataset-75 = As the Captain, you are one of the highest priority targets on the station. Everything from revolutions, to nuclear operatives, to traitors that need to rob you of your unique laser pistol or your life are things to worry about.
-tips-dataset-76 = As the Captain, always take the nuclear disk and pinpointer with you every shift. It's a good idea to give one of these to another head you can trust with keeping it safe.
-tips-dataset-77 = As the Captain, you have absolute access and control over the station, but this does not mean that being a horrible person won't result in mutiny.
-tips-dataset-78 = As the Captain, try to be active and patrol the station. Staying in the bridge might be tempting, but you'll just end up putting a bigger target on your back!
+# L5
+tips-dataset-75 = As the station administrator, you are one of the highest priority targets on the station. Everything from revolutions, to nuclear operatives, to traitors that need to rob you of your unique laser pistol or your life are things to worry about.
+tips-dataset-76 = As the station administrator, always take the nuclear disk and pinpointer with you every shift. It's a good idea to give one of these to another head you can trust with keeping it safe.
+tips-dataset-77 = As the station administrator, you have absolute access and control over the station, but this does not mean that being a horrible person won't result in mutiny.
+tips-dataset-78 = As the station administrator, try to be active and patrol the station. Staying in the bridge might be tempting, but you'll just end up putting a bigger target on your back!
 tips-dataset-79 = As a Scientist, you can try random things on an artifact while the scanner is on cooldown to speed up the point extraction process significantly.
 tips-dataset-80 = As a Scientist, you can utilize upgraded versions of machines to increase its effectiveness. This can make certain machines significantly better; salvage will love you if you upgrade their ore processor!
 tips-dataset-81 = As a Scientist, you can build cyborgs using positronic brains and a chassis, they are just as useful as a new crew member.
@@ -135,4 +137,5 @@ tips-dataset-133 = Monkeys and kobolds have a rare chance to be sentient. Ook!
 tips-dataset-134 = You can tell if an area with firelocks up is spaced by looking to see if the firelocks have lights beside them.
 tips-dataset-135 = Instead of picking it up, you can alt-click food to eat it. This also works for mice and other creatures without hands.
 tips-dataset-136 = If you're trapped behind an electrified door, disable the APC or throw your ID at the door to avoid getting shocked!
-tips-dataset-137 = If the AI electrifies a door and you have insulated gloves, snip and mend the power wire to reset their electrification!
+# L5
+tips-dataset-137 = If the station's Sys-Side Representative electrifies a door and you have insulated gloves, snip and mend the power wire to reset their electrification!

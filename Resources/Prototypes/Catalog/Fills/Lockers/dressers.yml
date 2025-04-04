@@ -1,7 +1,7 @@
 - type: entity
   id: DresserCaptainFilled
   parent: Dresser
-  suffix: Filled, Captain
+  suffix: Filled, StationAdministrator
   components:
   - type: StorageFill
     contents:

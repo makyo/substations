@@ -45,11 +45,12 @@
       storagebase: !type:Container
         ents: []
 
+# L5
 - type: entity
   parent: ClothingOuterArmoredWinterCoat
   id: ClothingOuterWinterCCWarden
-  name: central command's armored winter coat
-  description: A tough, utilitarian coat designed for the wardens of Central Command. Reinforced kevlar plating and high quality fur allow the user to look stylish while staying protected.
+  name: Central Adminstration's armored winter coat
+  description: A tough, utilitarian coat designed for the wardens of Central Administration. Reinforced kevlar plating and high quality faux fur allow the user to look stylish while staying protected.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/WinterCoats/cc_warden_winter_coat.rsi
@@ -63,11 +64,12 @@
         Piercing: 0.4 #Stronger than the warden's armored jacket, because shenanigans and CC spends alot of money.
         Heat: 0.75
 
+# L5
 - type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingOuterCorporateJacket
-  name: Nanotrasen Corporate Jacket
-  description: A cozy jacket with the Nanotrasen logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
+  name: SysCon Corporate Jacket
+  description: A cozy jacket with the SysCon logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/WinterCoats/corpo_jacket.rsi

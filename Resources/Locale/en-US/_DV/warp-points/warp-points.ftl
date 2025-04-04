@@ -31,7 +31,8 @@ warp-point-janitor = Janitor
 warp-point-reporter = Reporter
 warp-point-lawyer = Lawyer
 
-warp-point-ai = AI
+# L5
+warp-point-ai = Sys-Side Representative
 warp-point-arrivals = Arrivals
 warp-point-evac = Evac
 warp-point-cryo = Cryo

@@ -75,11 +75,12 @@
       - EncryptionKeyCommand
       - EncryptionKeyCommon
 
+# L5
 - type: entity
   parent: [ ClothingHeadset, BaseCentcommContraband ]
   id: ClothingHeadsetCentCom
-  name: CentComm headset
-  description: A headset used by the upper echelons of Nanotrasen.
+  name: Central Admin headset
+  description: A headset used by the upper echelons of SysCon.
   components:
   - type: ContainerFill
     containers:

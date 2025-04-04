@@ -50,7 +50,7 @@
   parent: BaseItem
   id: FoamSabre
   name: foam sabre
-  description: Cosplay as a captain and command your group of friends!
+  description: Cosplay as a station administrator and command your group of friends!
   components:
   - type: Sprite
     sprite: _DV/Objects/Fun/Toys/foam_sabre.rsi

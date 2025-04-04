@@ -20,11 +20,12 @@ loadout-group-pocket-tank-double = Species-specific double emergency tank in poc
 loadout-group-survival-mime = Mime Survival Box
 
 # Command
-loadout-group-captain-head = Captain head
-loadout-group-captain-jumpsuit = Captain jumpsuit
-loadout-group-captain-neck = Captain neck
-loadout-group-captain-backpack = Captain backpack
-loadout-group-captain-outerclothing = Captain outer clothing
+# L5
+loadout-group-captain-head = System Administrator head
+loadout-group-captain-jumpsuit = System Administrator jumpsuit
+loadout-group-captain-neck = System Administrator neck
+loadout-group-captain-backpack = System Administrator backpack
+loadout-group-captain-outerclothing = System Administrator outer clothing
 
 loadout-group-hop-head = Head of Personnel head
 loadout-group-hop-jumpsuit = Head of Personnel jumpsuit
@@ -126,11 +127,12 @@ loadout-group-atmospheric-technician-outerclothing = Atmospheric Technician oute
 loadout-group-atmospheric-technician-shoes = Atmospheric Technician shoes
 
 # Science
-loadout-group-research-director-head = Mystagogue head
-loadout-group-research-director-neck = Mystagogue neck
-loadout-group-research-director-jumpsuit = Mystagogue jumpsuit
-loadout-group-research-director-outerclothing = Mystagogue outer clothing
-loadout-group-research-director-shoes = Mystagogue shoes
+# L5
+loadout-group-research-director-head = Research Director head
+loadout-group-research-director-neck = Research Director neck
+loadout-group-research-director-jumpsuit = Research Director jumpsuit
+loadout-group-research-director-outerclothing = Research Director outer clothing
+loadout-group-research-director-shoes = Research Director shoes
 
 loadout-group-scientist-head = Scientist head
 loadout-group-scientist-neck = Scientist neck

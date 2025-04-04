@@ -183,7 +183,7 @@
 - type: entity
   id: CigPackSyndicate
   parent: [CigPackBase, BaseSyndicateContraband]
-  name: Interdyne herbals packet
+  name: International Trinitarian herbals packet
   description: Elite cigarettes for elite syndicate agents. Infused with medicine for when you need to do more than calm your nerves.
   components:
   - type: Sprite
@@ -200,7 +200,7 @@
   parent: CigPackMixedBase
   name: Dan's soaked smokes
   suffix: Medical
-  description: Dan worked with NT chemistry to dispose of excess chemicals, ENJOY.
+  description: Dan worked with SysCon chemistry to dispose of excess chemicals, ENJOY.
   components:
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/mixed.rsi
@@ -228,7 +228,7 @@
   parent: CigPackMixedBase
   name: Dan's soaked smokes
   suffix: Mixed
-  description: Dan worked with NT chemistry to dispose of excess chemicals, ENJOY.
+  description: Dan worked with SysCon chemistry to dispose of excess chemicals, ENJOY.
   components:
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/mixed.rsi
@@ -262,7 +262,7 @@
   parent: CigPackMixedBase
   name: Dan's soaked smokes
   suffix: Nasty
-  description: Dan worked with NT chemistry to dispose of excess chemicals, ENJOY.
+  description: Dan worked with SysCon chemistry to dispose of excess chemicals, ENJOY.
   components:
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/mixed.rsi

@@ -23,33 +23,34 @@ autodoc-error-patient-unsedated = PATIENT REQUIRES SEDATION
 
 # These intentionally have russian alongside them for ostranauts-like aesthetic.
 # If you are a russian fork, these don't need translating :)
+# L5: added |
 # Если вы являетесь русскоязычным форком, то вы не нуждаетесь в переводе :)
-autodoc-title = AUTODOC АВТОДОК MK.XIV
-autodoc-create-program = NEW PROGRAM НОВАЯ ПРОГРАММА
-autodoc-program-title = PROGRAM TITLE НАЗВАНИЕ ПРОГРАММЫ
+autodoc-title = AUTODOC | АВТОДОК MK.XIV
+autodoc-create-program = NEW PROGRAM | НОВАЯ ПРОГРАММА
+autodoc-program-title = PROGRAM TITLE | НАЗВАНИЕ ПРОГРАММЫ
 autodoc-program-title-placeholder = Program {$number}
-autodoc-abort-program = ABORT PROGRAM ОТМЕНИТЬ ПРОГРАММУ
+autodoc-abort-program = ABORT PROGRAM | ОТМЕНИТЬ ПРОГРАММУ
 
-autodoc-view-program-title = VIEW PROGRAM ПРОСМОТР
-autodoc-safety-enabled = SAFETY ON БЕЗОПАСНОСТЬ ВКЛ.
-autodoc-safety-disabled = SAFETY OFF БЕЗОПАСНОСТЬ ВЫКЛ.
-autodoc-remove-program = REMOVE PROGRAM УДАЛИТЬ ПРОГРАММУ 
-autodoc-add-step = ADD STEP ДОБАВИТЬ ДЕЙСТВИЕ 
-autodoc-remove-step = REMOVE STEP УДАЛИТЬ ДЕЙСТВИЕ 
-autodoc-start-program = START PROGRAM ЗАПУСТИТЬ ПРОГРАММУ 
-autodoc-import-program = IMPORT PROGRAM ИМПОРТ ПРОГРАММЫ 
-autodoc-export-program = EXPORT PROGRAM ЭКСПОРТ ПРОГРАММЫ
+autodoc-view-program-title = VIEW PROGRAM | ПРОСМОТР
+autodoc-safety-enabled = SAFETY ON | БЕЗОПАСНОСТЬ ВКЛ.
+autodoc-safety-disabled = SAFETY OFF | БЕЗОПАСНОСТЬ ВЫКЛ.
+autodoc-remove-program = REMOVE PROGRAM | УДАЛИТЬ ПРОГРАММУ
+autodoc-add-step = ADD STEP | ДОБАВИТЬ ДЕЙСТВИЕ
+autodoc-remove-step = REMOVE STEP | УДАЛИТЬ ДЕЙСТВИЕ
+autodoc-start-program = START PROGRAM | ЗАПУСТИТЬ ПРОГРАММУ
+autodoc-import-program = IMPORT PROGRAM | ИМПОРТ ПРОГРАММЫ
+autodoc-export-program = EXPORT PROGRAM | ЭКСПОРТ ПРОГРАММЫ
 
-autodoc-add-step-surgery = PERFORM SURGERY ВЫПОЛНИТЬ ОПЕРАЦИЮ
-autodoc-add-step-grab-item = GRAB ITEM ВЗЯТЬ ОБЪЕКТ
+autodoc-add-step-surgery = PERFORM SURGERY | ВЫПОЛНИТЬ ОПЕРАЦИЮ
+autodoc-add-step-grab-item = GRAB ITEM | ВЗЯТЬ ОБЪЕКТ
 autodoc-add-step-grab-item-prompt = Item name
 autodoc-add-step-grab-item-placeholder = dwarf heart
-autodoc-add-step-grab-organ = GRAB ORGAN ВЗЯТЬ ОРГАН
-autodoc-add-step-grab-part = GRAB BODY PART ВЗЯТЬ ЧАСТЬ ТЕЛА
-autodoc-add-step-store-item = STORE ITEM СОХРАНИТЬ ОБЪЕКТ
-autodoc-add-step-set-label = SET LABEL ПОВЕСИТЬ ЯРЛЫК
+autodoc-add-step-grab-organ = GRAB ORGAN | ВЗЯТЬ ОРГАН
+autodoc-add-step-grab-part = GRAB BODY PART | ВЗЯТЬ ЧАСТЬ ТЕЛА
+autodoc-add-step-store-item = STORE ITEM | СОХРАНИТЬ ОБЪЕКТ
+autodoc-add-step-set-label = SET LABEL | ПОВЕСИТЬ ЯРЛЫК
 autodoc-add-step-set-label-prompt = Label
-autodoc-add-step-wait = WAIT ЖДАТЬ
+autodoc-add-step-wait = WAIT | ЖДАТЬ
 autodoc-add-step-wait-prompt = Seconds to wait
 
 autodoc-body-part-Other = Other

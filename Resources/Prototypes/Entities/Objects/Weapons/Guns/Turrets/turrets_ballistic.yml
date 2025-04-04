@@ -59,7 +59,7 @@
 - type: entity
   parent: BaseWeaponBallisticTurret
   id: WeaponTurretNanoTrasen
-  suffix: NanoTrasen
+  suffix: SysCon
   components:
   - type: NpcFactionMember
     factions:

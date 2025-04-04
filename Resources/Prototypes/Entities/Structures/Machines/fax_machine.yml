@@ -73,11 +73,12 @@
   - type: RequireProjectileTarget
 
 # Special
+# L5
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineCentcom
-  name: CentComm long range fax machine
-  suffix: CentCom
+  name: Central Admin long range fax machine
+  suffix: Central
   components:
   - type: Sprite
     layers:
@@ -85,7 +86,7 @@
         map: [ "base" ]
         color: "#bfe3ff"
   - type: FaxMachine
-    name: "Central Command"
+    name: "Central Administration"
     notifyAdmins: true
 
 - type: entity
@@ -109,11 +110,11 @@
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineCaptain
-  name: captain long range fax machine
+  name: station administrator long range fax machine
   suffix: NukeCodes
   components:
     - type: FaxMachine
-      name: "Captain's Office"
+      name: "Station Administrator's Office"
       receiveNukeCodes: true
     - type: StealTarget
       stealGroup: FaxMachineCaptain

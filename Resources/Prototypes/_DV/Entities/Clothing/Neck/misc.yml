@@ -2,7 +2,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckProsecutorbadge
   name: prosecutor badge
-  description: A badge to show that the owner is a 'legitimate' prosecutor who passed the NT bar exam required to practice law.
+  description: A badge to show that the owner is a 'legitimate' prosecutor who passed the UN bar exam required to practice law. # L5
   components:
   - type: Sprite
     sprite: _DV/Clothing/Neck/Misc/prosecutorbadge.rsi

@@ -3,7 +3,8 @@ fugitive-round-end-agent-name = Fugitive
 fugitive-spawn = You fall from the ceiling!
 
 station-event-fugitive-hunt-announcement = Please check communications consoles for a sensitive message.
-fugitive-announcement-GALPOL = GALPOL
+# L5
+fugitive-announcement-GALPOL = UN Security
 
 fugitive-report-title = WANTED FUGITIVE!
 fugitive-report-first-line = An escaped fugitive has been spotted in the sector and disguised their identity. They may be a stowaway on a station somewhere.
@@ -26,7 +27,8 @@ fugitive-report-crime = - {$count ->
     [1] One count
     *[other] {$count} counts
 } of {$crime}
-fugitive-report-last-line = GALPOL prefers the fugitive to be returned alive so they may face trial at Central Command.
+# L5
+fugitive-report-last-line = UN Security prefers the fugitive to be returned alive so they may face trial at Central Administration.
 
 # All (non erp) felonies and capital crimes in Space Law as of June 2024
 fugitive-crime-1 = Murder

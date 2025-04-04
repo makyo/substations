@@ -45,6 +45,7 @@ names-autoborg-dataset-44 = i died pls restart
 names-autoborg-dataset-45 = POTENT HAMS
 names-autoborg-dataset-46 = V.A.L.I.D.S.
 names-autoborg-dataset-47 = Remove Silicons
-names-autoborg-dataset-48 = AI IS A COMDOM
+# L5
+names-autoborg-dataset-48 = AI IS A FICTION
 names-autoborg-dataset-49 = say ";help in core"
 names-autoborg-dataset-50 = This Machine

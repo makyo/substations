@@ -9,11 +9,12 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/bartender.rsi
 
+# L5
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtCaptain
-  name: captain's jumpskirt
-  description: It's a blue jumpskirt with some gold markings denoting the rank of "Captain".
+  name: station administrator's jumpskirt
+  description: It's a blue jumpskirt with some gold markings denoting the rank of "Station Administrator".
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/captain.rsi
@@ -336,11 +337,12 @@
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpskirt/qmturtleskirt.rsi
 
+# L5
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtResearchDirector
-  name: mystagogue's turtleneck # DeltaV - Epistemics Department replacing Science
-  description: It's a turtleneck worn by those with the know-how to achieve the position of Mystagogue. Its fabric provides minor protection from biological contaminants. # DeltaV - Epistemics Department replacing Science
+  name: Research Director's turtleneck # DeltaV - Epistemics Department replacing Science
+  description: It's a turtleneck worn by those with the know-how to achieve the position of Research Director. Its fabric provides minor protection from biological contaminants. # DeltaV - Epistemics Department replacing Science
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/rnd.rsi
@@ -427,7 +429,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCapFormalDress
-  name: captain's formal dress
+  name: station administrator's formal dress
   description: A dress for special occasions.
   components:
   - type: Sprite
@@ -438,7 +440,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCentcomFormalDress
-  name: central command formal dress
+  name: Central Administration formal dress # L5
   description: A dress for special occasions.
   components:
   - type: Sprite

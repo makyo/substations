@@ -321,11 +321,12 @@
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
 
 #Captain's Hardsuit
+# L5
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitCap
-  name: captain's armored spacesuit
-  description: A formal armored spacesuit, made for the station's captain.
+  name: station administrator's armored spacesuit
+  description: A formal armored spacesuit, made for the station's administrator.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/capspace.rsi
@@ -523,11 +524,12 @@
 
 #ANTAG HARDSUITS
 #Blood-red Hardsuit
+# L5
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseSyndicateContraband ]
   id: ClothingOuterHardsuitSyndie
   name: blood-red hardsuit
-  description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
+  description: A heavily armored hardsuit designed for work in special operations. Property of GEX Marauders.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
@@ -592,11 +594,12 @@
     - HidesHarpyWings
 
 #Syndicate Elite Hardsuit
+# L5
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
   id: ClothingOuterHardsuitSyndieElite
   name: syndicate thermal hardsuit # DeltaV change elite to thermal
-  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of GEX Marauders.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
@@ -670,11 +673,12 @@
     - Syndicate
 
 #Cybersun Juggernaut Hardsuit
+# L5
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
   id: ClothingOuterHardsuitJuggernaut
-  name: cybersun juggernaut suit
-  description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
+  name: CNZ juggernaut suit
+  description: A suit made by the cutting edge R&D department at the Conclave of New Zealots to be hyper resilient.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
@@ -1062,7 +1066,7 @@
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
-  - type: Construction 
+  - type: Construction
     graph: MimeHardsuit
     node: mimeHardsuit
   - type: ToggleableClothing

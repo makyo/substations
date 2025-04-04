@@ -87,33 +87,36 @@
     useSound:
       collection: Screwdriver
 
+# L5
 - type: entity
-  name: Cybersun pen
+  name: CNZ pen
   parent: [BaseAdvancedPen, BaseSyndicateContraband]
   id: CyberPen
-  description: A high-tech pen straight from Cybersun's legal department, capable of refracting hard-light at impossible angles through its diamond tip in order to write. So powerful, it's even able to rewrite officially stamped documents should the need arise.
+  description: A high-tech pen straight from the Conclave of New Zealots's legal department, capable of refracting hard-light at impossible angles through its diamond tip in order to write. So powerful, it's even able to rewrite officially stamped documents should the need arise.
   components:
   - type: Sprite
     state: overpriced_pen
   - type: Item
     heldPrefix: overpriced_pen
 
+# L5
 - type: entity
-  name: CentComm pen
+  name: SysCon pen
   parent: [BaseAdvancedPen, BaseCentcommContraband]
   id: PenCentcom
-  description: In an attempt to keep up with the "power" of the cybersun bureaucracy, NT made a replica of cyber pen, in their corporate style.
+  description: In an attempt to keep up with the "power" of the CNZ bureaucracy, SysCon made a replica of the CNZ pen, in their corporate style.
   components:
   - type: Sprite
     state: pen_centcom
   - type: Item
     heldPrefix: pen_centcom
 
+# L5
 - type: entity
-  name: captain's fountain pen
+  name: station administrator's fountain pen
   parent: PenEmbeddable
   id: PenCap
-  description: A luxurious fountain pen for the captain of the station.
+  description: A luxurious fountain pen for the administrator of the station.
   components:
   - type: Sprite
     state: pen_cap

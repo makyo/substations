@@ -86,7 +86,8 @@ guide-entry-security = Security
 guide-entry-forensics = Forensics
 guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
-guide-entry-command = Command
+# L5
+guide-entry-command = Leadership
 guide-entry-service = Service
 
 guide-entry-newplayer = New? Start here!

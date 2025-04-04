@@ -1,10 +1,12 @@
 station-beacon-general = General
 
-station-beacon-command = Command
+# L5
+station-beacon-command = Leadership
 station-beacon-bridge = Bridge
 station-beacon-vault = Vault
 station-beacon-gateway = Gateway
-station-beacon-captain = Captain
+# L5
+station-beacon-captain = Station Administrator
 station-beacon-hop = HOP
 
 station-beacon-security = Security
@@ -59,9 +61,10 @@ station-beacon-bar = Bar
 station-beacon-botany = Botany
 station-beacon-janitor = Janitor
 
-station-beacon-ai = AI
-station-beacon-ai-sat = AI Sat
-station-beacon-ai-core = AI Core
+# L5
+station-beacon-ai = Station Sys-Side Representative
+station-beacon-ai-sat = System Sat
+station-beacon-ai-core = System Nucleus
 
 station-beacon-arrivals = Arrivals
 station-beacon-evac = Evac

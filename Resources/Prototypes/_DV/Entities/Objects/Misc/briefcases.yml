@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: BriefcaseBrown
   id: CybersunBriefcase
-  name: cybersun briefcase
+  name: CNZ briefcase
   description: It's like a brown briefcase, but black.
   components:
   - type: Sprite

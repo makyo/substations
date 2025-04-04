@@ -101,7 +101,7 @@
 
 - type: entity
   id: PaperMailNFVagueThreat8
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   suffix: "vague mail threat 8, formatted"
   parent: Paper
   components:
@@ -179,7 +179,7 @@
 
                             [head=1]Drink Pwr Game![/head]
 
-      [head=3]Proud sponsor of the NT Block Game Championship.[/head]
+      [head=3]Proud sponsor of the Pierrot Lunaire Block Game Championship.[/head]
 
 - type: entity
   id: PaperMailNFRedBoolAd
@@ -243,6 +243,7 @@
 
         [head=2]Ask your barkeep for a Sui Dream today![/head]
 
+# L5
 - type: entity
   id: PaperMailNTSoapAd1
   categories: [ HideSpawnMenu ]
@@ -256,18 +257,18 @@
 #      stampType: Signature # DeltaV - Not compatible with our signatures code stuff apparently
     content: |2
       [head=3]Hello Valued Customer,[/head]
-      You have been selected to receive a complimentary sampler of scented soaps that Nanotrasen has to offer.
+      You have been selected to receive a complimentary sampler of scented soaps that Lativer Boutique has to offer.
 
       Why not enjoy a nice warm shower with our scented soaps?  Tested and effective vs. vent crud and mold.
 
       We hope you enjoy.
 
       Sincerely,
-            Christopher Cleanman, Vice President, NT Habs - Toiletries Dept.
+            Christopher Cleanman, Vice President, SysCon Habs - Toiletries Dept.
 
 - type: entity
   id: PaperMailNTSoapAd2
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   suffix: "soap ad 2" # DeltaV - Edited to not be addressed to Frontier Citizens, localized
   parent: Paper
   components:
@@ -312,7 +313,7 @@
 - type: entity
   id: PaperMailNFPaperPusherAd
   categories: [ HideSpawnMenu ]
-  suffix: "paper pusher" 
+  suffix: "paper pusher"
   parent: Paper
   components:
   - type: Paper
@@ -336,7 +337,7 @@
   components:
   - type: Paper
     content: |2
-      
+
       [head=1]HÖGANÄS[/head]
 
       [italic](There is a black and white picture of a pet bed on the first page.)[/italic]
@@ -394,7 +395,7 @@
       [head=3]Order #41003
       [bold][bullet/][/bold] 1x Snortin Total-275 Antivirus Install Disk[/head]
 
-      [head=3]Total: 947381 Spesos[/head]
+      [head=3]Total: 947381 RACs[/head]
 
       Thank you for making purchase from Snortin Antivirus Software.
       We assuring you that our product is greatest.
@@ -404,7 +405,7 @@
   id: PaperMailNFEMPPreparedness
   categories: [ HideSpawnMenu ]
   name: EMP preparedness response form
-  suffix: "emp preparedness" # DeltaV - Replaces mention of SR with HoS
+  suffix: "emp preparedness" # DeltaV - Replaces mention of SR with HoS # L5 NT→IPX, cap→SA, command→leadership
   parent: Paper
   components:
   - type: Paper
@@ -412,9 +413,9 @@
 
         [head=1]EMP Preparedness Response[/head]
 
-      You have been selected to receive a NT EMP Preparedness kit as a test. Note that this is only a test. In a real emergency, follow the instructions of your vessel's command staff.
+      You have been selected to receive a IPX Robotics EMP Preparedness kit as a test. Note that this is only a test. In a real emergency, follow the instructions of your vessel's leadership.
 
-      As the recipient of this, please note [bold]any improvements[/bold] that could be made towards the EMP preparedness of the vessel you were aboard when opening and submit this form to your serving Captain or Head of Security.
+      As the recipient of this, please note [bold]any improvements[/bold] that could be made towards the EMP preparedness of the vessel you were aboard when opening and submit this form to your serving Station Administrator.
 
       [bold]Date of test:[/bold]
       [bold]Number of affected items:[/bold]
@@ -435,7 +436,7 @@
       stampedName: Chief Friendship Officer
     - stampedColor: '#333333FF'
       stampedName: Cuts-With-Scalpel
-#      stampType: Signature  # DeltaV - Not compatible with our signatures code stuff apparently. 
+#      stampType: Signature  # DeltaV - Not compatible with our signatures code stuff apparently.
     content: |2
 
       [head=1]Note of Adoption[/head]

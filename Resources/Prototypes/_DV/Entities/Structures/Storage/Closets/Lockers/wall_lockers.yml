@@ -221,7 +221,7 @@
   parent: ClosetWallBlack
   id: StampLockerListeningPost
   name: stamp closet
-  description: A closet packed with forged stamps, CentComm not included.
+  description: A closet packed with forged stamps, Central Administration not included.
   suffix: DO NOT MAP
   components:
   - type: StorageFill

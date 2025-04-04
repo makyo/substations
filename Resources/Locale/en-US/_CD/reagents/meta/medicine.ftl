@@ -13,11 +13,12 @@ reagent-desc-calmafluxine = A mild, over-the-counter anxiety medication. Commonl
 reagent-name-tranquinase = Tranquinase
 reagent-desc-tranquinase = Run-of-the-mill anxiety medication. Derived from an old recipe for space bear tranquilizer, it causes tranquility and motivation. Causes intense grogginess during overdose. Do not take with alcohol.
 
+# L5
 reagent-name-equilibrazine = Equilibrazine
-reagent-desc-equilibrazine = A Nanotrasen engineered chemical recipe designed to keep workers working with only small doses. It didn't make the cut, but it functions as a potent treatment for anxiety and panic attacks. Can be taken fine with alcohol, but is wildly incompatible with most antidepressants.
+reagent-desc-equilibrazine = A UN Pharmacology engineered chemical recipe designed to keep workers working with only small doses. It didn't make the cut, but it functions as a potent treatment for anxiety and panic attacks. Can be taken fine with alcohol, but is wildly incompatible with most antidepressants.
 
 reagent-name-addictine = addictine
-reagent-desc-addictine = A chemical produced by the body when metabolizing certain medications. Causes symptoms of withdrawl. Neutralizes bloodstream cleansers like charcoal and ipecac. 
+reagent-desc-addictine = A chemical produced by the body when metabolizing certain medications. Causes symptoms of withdrawl. Neutralizes bloodstream cleansers like charcoal and ipecac.
 
 reagent-name-stubantazine = Stubantazine
 reagent-desc-stubantazine = A mild painkiller commonly used to treat brief stents of pain, though it lasts a little while for good measure. Overdose or consumption of alcohol may cause vomiting and digestion inefficiency.

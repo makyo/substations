@@ -65,7 +65,7 @@
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyCommand
-  suffix: Command
+  suffix: Leadership # L5
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Standard/command.rsi #Delta V - Resprite Doors
@@ -74,7 +74,7 @@
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyCommandGlass
-  suffix: Command, Glass
+  suffix: Leadership, Glass # L5
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Glass/command.rsi #Delta V - Resprite Doors
@@ -275,7 +275,7 @@
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyCentralCommand
-  suffix: CentralCommand
+  suffix: CentralAdministration # L5
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Standard/centcomm.rsi #Delta V - Resprite Doors
@@ -284,7 +284,7 @@
 - type: entity
   parent: AirlockAssembly
   id: AirlockAssemblyCentralCommandGlass
-  suffix: CentralCommand, Glass
+  suffix: CentralAdministration, Glass # L5
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Glass/centcomm.rsi #Delta V - Resprite Doors

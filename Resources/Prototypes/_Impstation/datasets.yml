@@ -161,16 +161,16 @@
     - Bingus Day
     - Foster's Feast
     # Begin DeltaV Additions
-    - Preston’s Tomato Incident 
+    - Preston’s Tomato Incident
     - Submarine's Memorial
     - Pranksgiving
-    - Sector Delta Employee Appreciation Week
-    - Intergalactic Hug A Robot Day
+    - Station-side Employee Appreciation Week # L5
+    - Interplanetary Hug A Robot Day # L5
     - Todaybor Day
     - Teo's First Contact Day
     - Wear Pajamas to Work Day
     - Roy’s Birthday
-    - NT Corporate Mindfulness Day
+    - SysCon Corporate Mindfulness Day # L5
     - Night of Holy Herbs
     - Logistics Appreciation Week
     - Big Ear Syndrome Awareness Day
@@ -180,8 +180,13 @@
     - the Talent Show
     - Luperthavia
     - Penny's Big Day
-    - Taco Tuesday 
+    - Taco Tuesday
     # End DeltaV Additions
+    # Begin L5 Additions
+    # TODO: find where these are actuallyused
+    - Restoration Day
+    - Century Attack Anniversary
+    # End L5 Additions
 
 - type: dataset
   id: Clothes
@@ -204,16 +209,16 @@
 - type: dataset
   id: CommandRoles
   values:
-    - Captain
+    - Station Administrator # L5
     - Logistics Officer # DeltaV - what is a quartermaster
     - Head of Security
     - Head of Personnel
     - Chief Engineer
     - Chief Medical Officer
     # Begin DeltaV Additions
-    - Mystagogue
+    - Research Director # L5
     - Chief Justice
-    - Administrative Assistant 
+    - Administrative Assistant
     # End DeltaV Additions
 
 - type: dataset

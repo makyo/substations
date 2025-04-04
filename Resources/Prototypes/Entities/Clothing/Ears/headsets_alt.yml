@@ -29,7 +29,7 @@
 - type: entity
   parent: ClothingHeadsetAlt
   id: ClothingHeadsetAltCentCom
-  name: CentComm over-ear headset
+  name: Central Administration over-ear headset
   components:
   - type: ContainerFill
     containers:
@@ -108,7 +108,7 @@
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
   id: ClothingHeadsetAltScience
-  name: mystagogue's over-ear headset # DeltaV - Epistemics Department replacing Science
+  name: Research Director's over-ear headset # DeltaV - Epistemics Department replacing Science # L5
   components:
   - type: ContainerFill
     containers:

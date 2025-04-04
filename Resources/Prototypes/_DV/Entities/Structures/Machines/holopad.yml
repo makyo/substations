@@ -11,7 +11,7 @@
 - type: entity
   parent: Holopad
   id: HolopadCommandEvac
-  suffix: Command Evac
+  suffix: Leadership Evac # L5
   components:
   - type: Label
     currentLabel: holopad-command-evac

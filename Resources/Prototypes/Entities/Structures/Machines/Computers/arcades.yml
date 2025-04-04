@@ -193,7 +193,7 @@
 - type: entity
   id: BlockGameArcade
   description: An arcade cabinet with a strangely familiar game.
-  name: NT block game
+  name: Pierrot Lunaire block game # L5
   parent: ArcadeBase
   components:
   - type: Sprite

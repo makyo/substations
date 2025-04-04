@@ -272,12 +272,13 @@
   - type: Clothing
     sprite: Clothing/Head/Hoods/Coat/hoodbartender.rsi
 
+# L5
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterCaptain
   categories: [ HideSpawnMenu ]
-  name: captain's winter coat hood
-  description: An expensive hood, to keep the captain's head warm.
+  name: station administrator's winter coat hood
+  description: An expensive hood, to keep the station admin's head warm.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hoods/Coat/hoodcaptain.rsi
@@ -310,8 +311,8 @@
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterCentcom
   categories: [ HideSpawnMenu ]
-  name: CentComm winter coat hood
-  description: A hood for keeping the central comander's head warm.
+  name: Central Administration winter coat hood
+  description: A hood for keeping the admin's head warm.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hoods/Coat/hoodcentcom.rsi
@@ -454,7 +455,7 @@
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterRD
   categories: [ HideSpawnMenu ]
-  name: mystagogue's coat hood # DeltaV - Epistemics Department replacing Science
+  name: research director's coat hood # DeltaV - Epistemics Department replacing Science # L5
   components:
   - type: Sprite
     sprite: Clothing/Head/Hoods/Coat/hoodrd.rsi

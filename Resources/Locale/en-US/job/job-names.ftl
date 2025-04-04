@@ -7,7 +7,8 @@ job-name-brigmedic = Corpsman
 job-name-borg = Cyborg
 job-name-scientist = Scientist
 job-name-research-assistant = Research Assistant
-job-name-rd = Mystagogue
+# L5 - Back to RD rather than MG
+job-name-rd = Research Director
 job-name-psychologist = Psychologist
 job-name-intern = Medical Intern
 job-name-doctor = Medical Doctor
@@ -18,11 +19,13 @@ job-name-technical-assistant = Technical Assistant
 job-name-engineer = Station Engineer
 job-name-atmostech = Atmospheric Technician
 job-name-hop = Head of Personnel
-job-name-captain = Captain
+# L5
+job-name-captain = Station Administrator
 job-name-serviceworker = Service Worker
-job-name-centcomoff = CentComm Official
-job-name-cburn = Centcomm Quarantine Officer
-job-name-deathsquad = Centcomm Agent
+# L5 - SysCon and UN
+job-name-centcomoff = System Consortium Administrator
+job-name-cburn = UN Quarantine Officer
+job-name-deathsquad = UN Agent
 job-name-reporter = Reporter
 job-name-musician = Musician
 job-name-librarian = Librarian
@@ -36,7 +39,8 @@ job-name-botanist = Botanist
 job-name-bartender = Bartender
 job-name-passenger = Passenger
 job-name-salvagespec = Salvage Specialist
-job-name-station-ai = Station AI
+# L5
+job-name-station-ai = Sys-Side Representative
 # DeltaV - Hopefully makes LO maintaining easier
 # job-name-qm = Quartermaster
 job-name-cargotech = Cargo Technician
@@ -75,9 +79,11 @@ JobBartender = Bartender
 JobBorg = Borg
 JobBotanist = Botanist
 JobBoxer = Boxer
-JobCaptain = Captain
+# L5
+JobCaptain = Station Administrator
 JobCargoTechnician = Cargo Technician
-JobCentralCommandOfficial = Central Command Official
+# L5
+JobCentralCommandOfficial = System Consortium Administrator
 JobChaplain = Chaplain
 JobChef = Chef
 JobChemist = Chemist
@@ -107,13 +113,15 @@ JobPsychologist = Psychologist
 JobQuartermaster = Logistics Officer
 JobReporter = Reporter
 JobResearchAssistant = Research Assistant
-JobResearchDirector = Mystagogue
+# L5
+JobResearchDirector = Research Director
 JobSalvageSpecialist = Salvage Specialist
 JobScientist = Scientist
 JobSecurityCadet = Security Cadet
 JobSecurityOfficer = Security Officer
 JobServiceWorker = Service Worker
-JobStationAi = Station AI
+# L5
+JobStationAi = Sys-Side Representative
 JobStationEngineer = Station Engineer
 JobTechnicalAssistant = Technical Assistant
 JobVisitor = Visitor

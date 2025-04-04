@@ -21,7 +21,7 @@ accent-italian-words-replace-4 = molto male
 accent-italian-words-5 = bye
 accent-italian-words-replace-5 = arrivederci
 
-accent-italian-words-6 = captain
+accent-italian-words-6 = station administrator
 accent-italian-words-replace-6 = capitano
 
 accent-italian-words-7 = cheese
@@ -149,3 +149,7 @@ accent-italian-words-replace-47 = am-a
 
 accent-italian-words-48 = and-a
 accent-italian-words-replace-48 = and-a
+
+# L5
+accent-italian-words-49 = station admin
+accent-italian-words-replace-49 = capitano

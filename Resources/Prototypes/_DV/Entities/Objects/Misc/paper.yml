@@ -407,7 +407,7 @@
   parent: PaperStationWarrant
   id: PaperFugitiveReport
   name: fugitive report
-  description: An arrest warrant for a space fugitive sent from GALPOL.
+  description: An arrest warrant for a space fugitive sent from UN Security.
 
 - type: entity
   parent: Paper
@@ -494,6 +494,7 @@
     contents:
     - id: FakeNukeCodePaper
 
+# L5
 - type: entity
   parent: Paper
   id: FakeNukeCodePaper
@@ -503,4 +504,4 @@
   - type: Paper
     content: |2
       [color=red]TOP SECRET![/color]
-      nuclear fission explosive (NT-XXXXXX) code: XXXXXX
+      nuclear fission explosive (SC-XXXXXX) code: XXXXXX #

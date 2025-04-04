@@ -197,7 +197,7 @@
 
 - type: entity
   name: blood pack
-  description: Contains a groundbreaking universal blood replacement created by Nanotrasen's advanced medical science.
+  description: Contains a groundbreaking universal blood replacement created by the UN Medical Committee's advanced medical science. # L5
   parent: BaseHealingItem
   id: Bloodpack
   suffix: Full

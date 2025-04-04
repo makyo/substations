@@ -21,7 +21,8 @@ descriptions-cookie-fortune-dataset-20 = You will be pleasantly surprised in the
 descriptions-cookie-fortune-dataset-21 = You will be pleasantly surprised in the tool storage.
 descriptions-cookie-fortune-dataset-22 = There is an impostor among us.
 descriptions-cookie-fortune-dataset-23 = A fun adventure awaits you in the maintenance tunnels.
-descriptions-cookie-fortune-dataset-24 = CentComm is proud of you!
+# L5
+descriptions-cookie-fortune-dataset-24 = Central Admin is proud of you!
 descriptions-cookie-fortune-dataset-25 = The head of your deparment is proud of you!
 descriptions-cookie-fortune-dataset-26 = Ian is proud of you!
 descriptions-cookie-fortune-dataset-27 = Do it for Ian!
@@ -35,7 +36,8 @@ descriptions-cookie-fortune-dataset-34 = A grey man in a gas mask will come to y
 descriptions-cookie-fortune-dataset-35 = Whoever gets this note will receive a chocolate bar.
 descriptions-cookie-fortune-dataset-36 = Milk is good for your bones.
 descriptions-cookie-fortune-dataset-37 = Shout "Hurray!" and get insulated gloves.
-descriptions-cookie-fortune-dataset-38 = Hug your captain and you will receive a gift.
+# L5
+descriptions-cookie-fortune-dataset-38 = Hug your system administrator and you will receive a gift.
 descriptions-cookie-fortune-dataset-39 = A dubious friend may be an enemy in red camouflage.
 descriptions-cookie-fortune-dataset-40 = A faithful colleague is a strong defense.
 descriptions-cookie-fortune-dataset-41 = A friend asks only for your time, not your crowbar.
@@ -44,7 +46,8 @@ descriptions-cookie-fortune-dataset-43 = Boo!
 descriptions-cookie-fortune-dataset-44 = The real treasure is the friends you made along the shift.
 descriptions-cookie-fortune-dataset-45 = Allan please add details
 descriptions-cookie-fortune-dataset-46 = You are the greatest person who ever lived!
-descriptions-cookie-fortune-dataset-47 = NanoTrasen is forcing me to make fortunes for these cookies, please help!
+# L5
+descriptions-cookie-fortune-dataset-47 = My dog is forcing me to write fortunes for these cookies, please help!
 descriptions-cookie-fortune-dataset-48 = Buy Mr. Chang's today!
 descriptions-cookie-fortune-dataset-49 = You love Mr. Chang!
 descriptions-cookie-fortune-dataset-50 = Don't buy Discount Dan. Buy Mr. Chang!
@@ -55,7 +58,8 @@ descriptions-cookie-fortune-dataset-54 = Don’t just think, act!
 descriptions-cookie-fortune-dataset-55 = An apple a day keeps the doctor away.
 descriptions-cookie-fortune-dataset-56 = Don't drink and set up singulo.
 descriptions-cookie-fortune-dataset-57 = Stare into the singulo, and the singulo stares back at you.
-descriptions-cookie-fortune-dataset-58 = Every good and perfect gift is from CentComm.
+# L5
+descriptions-cookie-fortune-dataset-58 = Every good and perfect gift is from Central Admin.
 descriptions-cookie-fortune-dataset-59 = There’s no such thing as Space Station 13.
 descriptions-cookie-fortune-dataset-60 = There is a time for caution, but not for fear.
 descriptions-cookie-fortune-dataset-61 = The smart thing to do is to begin trusting your intuitions.
@@ -74,6 +78,7 @@ descriptions-cookie-fortune-dataset-73 = The person next to you is up to somethi
 descriptions-cookie-fortune-dataset-74 = Did you know? Monkeys are not what they seem.
 descriptions-cookie-fortune-dataset-75 = Did you know that half of salvage specialists go missing on the job?
 descriptions-cookie-fortune-dataset-76 = Also try out sashimi with galaxythystle sauce!
-descriptions-cookie-fortune-dataset-77 = Did you know that 70% of Nanotrasen applicants go missing within the first years of their contract? The more you know!!
+# L5
+descriptions-cookie-fortune-dataset-77 = Did you know that 70% of new uploads never phone home? The more you know!!
 descriptions-cookie-fortune-dataset-78 = This shift you are going to do a very robust move in front of everyone.
 descriptions-cookie-fortune-dataset-79 = Robustness is not just about how good you are, but how good of a person you are.

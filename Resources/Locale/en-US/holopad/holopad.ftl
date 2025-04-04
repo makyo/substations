@@ -56,18 +56,19 @@ holopad-general-evac = General - Evac
 holopad-general-arrivals = General - Arrivals
 
 # Command
-holopad-command-bridge = Command - Bridge
-holopad-command-vault = Command - Vault
-holopad-command-bridge-hallway = Command - Bridge Hallway
-holopad-command-meeting-room = Command - Meeting Room
-holopad-command-lounge = Command - Lounge
-holopad-command-captain = Command - Captain
-holopad-command-hop = Command - HoP
-holopad-command-cmo = Command - CMO
-holopad-command-qm = Command - QM
-holopad-command-ce = Command - CE
-holopad-command-rd = Command - RD
-holopad-command-hos = Command - HoS
+# L5
+holopad-command-bridge = Leadership - Bridge
+holopad-command-vault = Leadership - Vault
+holopad-command-bridge-hallway = Leadership - Bridge Hallway
+holopad-command-meeting-room = Leadership - Meeting Room
+holopad-command-lounge = Leadership - Lounge
+holopad-command-captain = Leadership - Station Administrator
+holopad-command-hop = Leadership - HoP
+holopad-command-cmo = Leadership - CMO
+holopad-command-qm = Leadership - QM
+holopad-command-ce = Leadership - CE
+holopad-command-rd = Leadership - RD
+holopad-command-hos = Leadership - HoS
 
 # Science
 holopad-science-anomaly = Science - Anomaly
@@ -146,16 +147,18 @@ holopad-service-clown-mime = Service - Clown/Mime
 holopad-service-gameroom = Service - Game Room
 
 # AI
-holopad-ai-core = AI - Core
-holopad-ai-main = AI - Main
-holopad-ai-upload = AI - Upload
-holopad-ai-backup-power = AI - Backup Power
-holopad-ai-entrance = AI - Entrance
-holopad-ai-chute = AI - Chute
+# L5: SSR
+holopad-ai-core = SSR - Core
+holopad-ai-main = SSR - Main
+holopad-ai-upload = SSR - Upload
+holopad-ai-backup-power = SSR - Backup Power
+holopad-ai-entrance = SSR - Entrance
+holopad-ai-chute = SSR - Chute
 
 # Long Range
 holopad-station-bridge = Station - Bridge
 holopad-station-cargo-bay = Station - Cargo Bay
 
 # CentComm
-holopad-centcomm-evac = CentComm - Evacuation Shuttle
+# L5
+holopad-centcomm-evac = Central Admin - Evacuation Shuttle

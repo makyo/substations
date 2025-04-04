@@ -98,7 +98,7 @@
 - type: entity
   id: DefibrillatorSyndicate
   parent: DefibrillatorCompact
-  name: interdyne defibrillator
+  name: International Trinitarian defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined tiders.
   components:
   - type: Sprite

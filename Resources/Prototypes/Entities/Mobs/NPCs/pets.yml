@@ -550,7 +550,7 @@
   name: Renault
   parent: MobFox
   id: MobFoxRenault
-  description: The captain's trustworthy fox.
+  description: The station admin's trustworthy fox. # L5
   components:
   - type: InteractionPopup
     successChance: 1

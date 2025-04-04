@@ -274,7 +274,7 @@
   parent: BaseBarSign
   id: BarSignSpacebucks
   name: Spacebucks
-  description: You can't get away from them, even in space, and even after we started calling them 'spesos' instead.
+  description: You can't get away from them, even in space, and even after we started calling them 'RACs' instead. # L5
   components:
   - type: BarSign
     current: Spacebucks
@@ -292,7 +292,7 @@
   parent: BaseBarSign
   id: BarSignWhiskeyEchoes
   name: Whiskey Echoes
-  description: An elite bar for elite oper-wait, this is a Nanotrasen station. Why's this sign in the database?
+  description: An elite bar for elite oper-wait, this is a SysCon station. Why's this sign in the database? # L5
   components:
   - type: BarSign
     current: WhiskeyEchoes

@@ -43,7 +43,7 @@
     categories: []
 
 - type: entity
-  name: captain's rubber stamp
+  name: station administrator's rubber stamp
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampCaptain
   categories: [ DoNotMap ]
@@ -190,7 +190,7 @@
     state: stamp-qm
 
 - type: entity
-  name: mystagogue's rubber stamp # DeltaV - Epistemics Department replacing Science
+  name: research director's rubber stamp # DeltaV - Epistemics Department replacing Science # L5 undooo
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampRd
   categories: [ DoNotMap ]

@@ -305,7 +305,7 @@
   parent: BasePlushie
   id: PlushieLizard #Weh!
   name: lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson. Made by CentComm as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
+  description: An adorable stuffed toy that resembles a lizardperson. Made by Central Administration as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
   components:
   - type: Sprite
     sprite: Objects/Fun/toys.rsi
@@ -404,7 +404,7 @@
   parent: BasePlushie
   id: PlushieSpaceLizard #ᵂᵉʰ!
   name: space lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentComm as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
+  description: An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by Central Administration as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
   components:
   - type: Item
     heldPrefix: spacelizard
@@ -1331,7 +1331,7 @@
   parent: BaseItem
   id: BeachBall
   name: beach ball
-  description: The simple beach ball is one of Nanotrasen's most popular products. 'Why do we make beach balls? Because we can! (TM)' - Nanotrasen
+  description: The simple beach ball is one of SysCon's most popular products. 'Why do we make beach balls? Because we can! (TM)' - The System Consortium # L5
   components:
   - type: Sprite
     sprite: Objects/Fun/toys.rsi
@@ -1368,7 +1368,7 @@
 - type: entity
   parent: BaseItem
   id: BalloonNT
-  name: nanotrasen balloon
+  name: SysCon balloon # L5
   description: Specially designed to inflict maximum psychological damage to Syndicate operatives.
   components:
   - type: Sprite

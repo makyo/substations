@@ -190,11 +190,12 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/bowler_hat.rsi
 
+# L5
 - type: entity
   parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatCaptain
-  name: captain's hardhat
-  description: It's good being the king.
+  name: station administrator's hardhat
+  description: It's good feeling this important.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/captain.rsi
@@ -221,11 +222,12 @@
   - type: IdentityBlocker
   - type: IngestionBlocker
 
+# L5
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcom
-  name: CentComm brand hat
-  description: "It's good to be the emperor."
+  name: Central Admin brand hat
+  description: "Feels good to be this important."
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/centcom.rsi
@@ -879,7 +881,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatCapcap
-  name: cap cap
+  name: cap cap # L5 witty enough to leave as is
   description: A grand, stylish captain cap.
   components:
   - type: Sprite
@@ -898,11 +900,12 @@
     weight: 0.0002 # 5,000 times less likely than 1 regular animal
   - type: BlockMovement
 
+# L5
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcomcap
-  name: CentComm cap
-  description: An extravagant, fancy Central Commander cap.
+  name: Central Administration cap
+  description: An extravagant, fancy Central Administrator cap.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/comcap.rsi

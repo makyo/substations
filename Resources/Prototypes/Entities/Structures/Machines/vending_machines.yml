@@ -1031,7 +1031,7 @@
   parent: VendingMachineSnack
   id: VendingMachineSustenance
   name: Sustenance Vendor
-  description: A vending machine which vends food, as required by section 47-C of the NT's Prisoner Ethical Treatment Agreement.
+  description: A vending machine which vends food, as required by section 47-C of the UN's Prisoner Ethical Treatment Agreement. # L5
   components:
   - type: VendingMachine
     pack: SustenanceInventory
@@ -1309,7 +1309,7 @@
   parent: VendingMachine
   id: VendingMachineGames
   name: Good Clean Fun
-  description: Vends things that the Captain and Head of Personnel are probably not going to appreciate you fiddling with instead of your job...
+  description: Vends things that the Station Administrator and Head of Personnel are probably not going to appreciate you fiddling with instead of your job... # L5
   components:
   - type: VendingMachine
     pack: GoodCleanFunInventory
@@ -2069,7 +2069,7 @@
   parent: VendingMachine
   id: VendingMachineCentDrobe
   name: CentDrobe
-  description: A one-of-a-kind vending machine for all your centcomm aesthetic needs!
+  description: A one-of-a-kind vending machine for all your Central Administration aesthetic needs! # L5
   components:
   - type: VendingMachine
     pack: CentDrobeInventory

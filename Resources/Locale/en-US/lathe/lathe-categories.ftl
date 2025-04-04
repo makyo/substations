@@ -17,7 +17,8 @@ lathe-category-materials = Materials
 lathe-category-bedsheets = Bedsheets
 lathe-category-carpets = Carpets
 lathe-category-coats = Coats
-lathe-category-command = Command
+# L5
+lathe-category-command = Leadership
 lathe-category-hats = Hats
 lathe-category-jumpsuits = Jumpsuits
 lathe-category-neck = Neck

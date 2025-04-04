@@ -93,16 +93,18 @@ barsign-prototype-name-emprah = 4 The Emprah
 barsign-prototype-description-emprah = Enjoyed by fanatics, heretics, and brain-damaged patrons alike.
 
 ## Spacebucks
+# L5
 barsign-prototype-name-spacebucks = Spacebucks
-barsign-prototype-description-spacebucks = You can't get away from them, even in space, and even after we started calling them 'spesos' instead.
+barsign-prototype-description-spacebucks = You can't get away from them, even in space, and even after we started calling them 'RACs' instead.
 
 ## Maltroach
 barsign-prototype-name-maltroach = Maltroach
 barsign-prototype-description-maltroach = Squeak!
 
 ## Whiskey Echoes
+# L5
 barsign-prototype-name-whiskeyechoes = Whiskey Echoes
-barsign-prototype-description-whiskeyechoes = An elite bar for elite oper-wait, this is a Nanotrasen station. Why's this sign in the database?
+barsign-prototype-description-whiskeyechoes = An elite bar for elite oper-wait, this is a System Consortium station. Why's this sign in the database?
 
 ## EmpBarSign
 barsign-prototype-description-empbarsign = Something has gone very wrong.

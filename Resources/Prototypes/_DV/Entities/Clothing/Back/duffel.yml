@@ -1,8 +1,9 @@
+# L5
 - type: entity
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelCentcom
-  name: central commander duffel
-  description: A large duffel bag for holding extra central commander-y goods.
+  name: central administrator duffel
+  description: A large duffel bag for holding extra central administrator-y goods.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Back/Duffels/centcom.rsi

@@ -7,8 +7,9 @@ thaven-mood-no-modern-medicine-desc = You do not approve of modern medicine and 
 thaven-mood-department-disapproval-name = Disapprove Of {$department}
 thaven-mood-department-disapproval-desc = You do not approve of {$department} or anyone who works in it (excluding yourself, if applicable).
 
-thaven-mood-dont-speak-to-command-name = Never Speak To Command
-thaven-mood-dont-speak-to-command-desc = You are too lowly to speak to Command, even if spoken to first.
+# L5
+thaven-mood-dont-speak-to-command-name = Never Speak To Leadership
+thaven-mood-dont-speak-to-command-desc = You are too lowly to speak to Leadership, even if spoken to first.
 
 thaven-mood-disapprove-of-drugs-name = Disapprove Of Drugs
 thaven-mood-disapprove-of-drugs-desc = You detest mind-altering drugs, including alcohol, and should abstain from them.

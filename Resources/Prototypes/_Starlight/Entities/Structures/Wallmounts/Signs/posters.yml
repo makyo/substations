@@ -1,8 +1,9 @@
+# L5
 - type: entity
   parent: PosterBase
   id: PosterLegitCalendar
   name: nanotrasen brand calendar
-  description: An outdated calendar bearing NanoTrasen's branding.
+  description: An outdated calendar bearing SysCon's branding.
   components:
   - type: Sprite
     sprite: _Starlight/Structures/Wallmounts/signs.rsi

@@ -4,9 +4,10 @@ roles-antag-survivor-name = Survivor
 # It's a Halo reference
 roles-antag-survivor-objective = Current Objective: Survive
 
+# L5
 survivor-role-greeting =
     You are a Survivor.
-    Above all you need to make it back to CentComm alive.
+    Above all you need to make it back to Central Admin alive.
     Collect as much firepower as needed to guarantee your survival.
     Trust no one.
 
@@ -32,6 +33,7 @@ survivor-round-end-alive-on-shuttle-count =
 }
 
 ## Wizard
+# TODO: L5: do we want wizard? We can say they're sufficiently-advanced?
 
 objective-issuer-swf = [color=turquoise]The Space Wizards Federation[/color]
 
@@ -41,9 +43,10 @@ wizard-description = There's a Wizard on the station! You never know what they m
 roles-antag-wizard-name = Wizard
 roles-antag-wizard-objective = Teach them a lesson they'll never forget.
 
+# L5
 wizard-role-greeting =
-    YER A WIZARD!
-    There's been tensions between the Space Wizards Federation and NanoTrasen.
+    You're a wizard, you sufficently-advanced bastard!
+    There's been tensions between the Space Wizards Federation and the System Consortium.
     So you've been selected by the Space Wizards Federation to pay a visit to the station.
     Give them a good demonstration of your powers.
     What you do is up to you, just remember the Space Wizards want you to make it out alive.

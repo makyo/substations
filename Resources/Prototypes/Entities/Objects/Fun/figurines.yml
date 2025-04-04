@@ -120,11 +120,12 @@
   - type: SpeakOnTrigger
     pack: FigurinesBoxer
 
+# L5
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineCaptain
-  name: captain figure
-  description: A figurine depicting the standard outfit of a captain belonging to a civilian-sector Nanotrasen vessel.
+  name: station administrataor figure
+  description: A figurine depicting the standard outfit of a station administrator belonging to a civilian-sector SysCon vessel.
   components:
   - type: Sprite
     state: captain
@@ -252,11 +253,12 @@
   - type: SpeakOnTrigger
     pack: FigurinesAtmosTech
 
+# L5
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineResearchDirector
-  name: mystagogue figure # DeltaV - Epistemics Department replacing Science
-  description: A figurine depicting the glorious head of the Epistemics department. # DeltaV - Epistemics Department replacing Science
+  name: research director figure # DeltaV - Epistemics Department replacing Science
+  description: A figurine depicting the glorious head of the Research department. # DeltaV - Epistemics Department replacing Science
   components:
   - type: Sprite
     state: rd

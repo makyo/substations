@@ -136,11 +136,12 @@
     # Make this a wide dot-matrix printer
     maxWritableArea: 400.0, 0.0
 
+# L5
 - type: entity
-  name: captain's thoughts
+  name: station administrator's thoughts
   parent: Paper
   id: PaperCaptainsThoughts
-  description: "A page of the captain's journal. In luxurious lavender."
+  description: "A page of the station administrator's journal. In luxurious lavender."
   components:
   - type: Sprite
     layers:
@@ -459,12 +460,13 @@
       color: "#43bc38"
     - state: folder-base
 
+# L5
 - type: entity
   id: BoxFolderCentCom
-  name: CentComm folder
+  name: Central Administration folder
   parent: BoxFolderBase
   categories: [ DoNotMap ]
-  description: CentComm's miserable little pile of secrets!
+  description: Central's miserable little pile of secrets!
   components:
   - type: Sprite
     layers:
@@ -530,11 +532,12 @@
       types:
         Blunt: 6
 
+# L5
 - type: entity
   id: BoxFolderCentComClipboard
   parent: BoxFolderClipboard
-  name: CentComm clipboard
-  description: A luxurious clipboard upholstered with green velvet. Often seen carried by CentComm officials, seldom seen actually used.
+  name: Central Administration clipboard
+  description: A luxurious clipboard upholstered with green velvet. Often seen carried by Central Administration officials, seldom seen actually used.
   components:
   - type: Sprite
     sprite: Objects/Misc/cc-clipboard.rsi

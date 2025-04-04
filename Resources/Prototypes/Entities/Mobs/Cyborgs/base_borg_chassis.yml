@@ -2,7 +2,7 @@
   parent: [BaseMob, StripableInventoryBase]
   id: BaseBorgChassis
   name: cyborg
-  description: A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
+  description: A chassis housing a positronic brain containing a cladist that assists in station activity. They love being asked to state their laws over and over. # L5
   save: false
   abstract: true
   components:

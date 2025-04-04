@@ -1,5 +1,6 @@
-id-card-access-level-command = Command
-id-card-access-level-captain = Captain
+# L5
+id-card-access-level-command = Leadership
+id-card-access-level-captain = Station Administrator
 id-card-access-level-head-of-personnel = Head of Personnel
 id-card-access-level-cryogenics = Cryogenics
 id-card-access-level-emergency-shuttle-repeal = E.Shuttle Repeal All
@@ -14,7 +15,8 @@ id-card-access-level-chief-engineer = Chief Engineer
 id-card-access-level-engineering = Engineering
 id-card-access-level-atmospherics = Atmospherics
 
-id-card-access-level-research-director = Mystagogue
+# L5
+id-card-access-level-research-director = Research Director
 id-card-access-level-research = Research
 
 id-card-access-level-chief-medical-officer = Chief Medical Officer
@@ -52,7 +54,8 @@ id-card-access-level-syndicate-agent = Syndicate Agent
 
 id-card-access-level-unused = You shouldn't see this
 
-id-card-access-level-central-command = Central Command
+# L5
+id-card-access-level-central-command = Central Administration
 
 id-card-access-level-wizard = Wizard
 

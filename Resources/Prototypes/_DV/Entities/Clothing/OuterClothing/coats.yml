@@ -75,8 +75,8 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatCybersunWindbreaker
-  name: cybersun windbreaker
-  description: A paramedics windbreaker, sporting the official heraldry of Cybersuns meditech division. Its made of sturdy ballistic fiber.
+  name: CNZ windbreaker
+  description: A paramedics windbreaker, sporting the official heraldry of the Conclave of New Zealots's meditech division. Its made of sturdy ballistic fiber.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Coats/cybersunwindbreaker.rsi
@@ -119,10 +119,11 @@
   - type: TemperatureProtection
     coolingCoefficient: 0.1
 
+# L5
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCybersunOvercoat
-  name: cybersun overcoat
+  name: CNZ overcoat
   description: Heavy black robes with magenta and gold trim. It smells old.
   components:
   - type: Sprite
@@ -135,4 +136,4 @@
 - type: entity
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatRndMysta]
   id: ClothingOuterCoatRndMystaOpened
-  name: mystagogue lab coat
+  name: RD lab coat # L5

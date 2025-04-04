@@ -6,7 +6,7 @@
 
 - type: entity
   id: RandomHumanoidVisitorCaptain
-  name: visiting Captain ghost role
+  name: visiting station administrator ghost role # L5
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -495,7 +495,7 @@
 
 - type: entity
   id: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim Captain ghost role
+  name: disaster victim station administrator ghost role
   suffix: CHALLENGE
   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
   components:

@@ -126,7 +126,7 @@
   parent: PosterBase
   id: PosterContrabandMissingGloves
   name: "Missing Gloves"
-  description: "This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases."
+  description: "This poster references the uproar that followed SysCon's financial cuts toward insulated-glove purchases." # L5
   components:
   - type: Sprite
     state: poster9_contraband
@@ -135,7 +135,7 @@
   parent: PosterBase
   id: PosterContrabandHackingGuide
   name: "Hacking Guide"
-  description: "This poster details the internal workings of the common Nanotrasen airlock. Sadly, it appears out of date."
+  description: "This poster details the internal workings of the common System Consortium airlock. Sadly, it appears out of date." # L5
   components:
   - type: Sprite
     state: poster10_contraband
@@ -144,7 +144,7 @@
   parent: PosterBase
   id: PosterContrabandRIPBadger
   name: "RIP Badger"
-  description: "This seditious poster references Nanotrasen's genocide of a space station full of badgers."
+  description: "This seditious poster references CNZ's genocide of a space station full of badgers." # L5
   components:
   - type: Sprite
     state: poster11_contraband
@@ -180,7 +180,7 @@
   parent: PosterBase
   id: PosterContrabandTools
   name: "Tools"
-  description: "This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at CentComm."
+  description: "This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at Central Admin." # L5
   components:
   - type: Sprite
     state: poster15_contraband
@@ -189,7 +189,7 @@
   parent: PosterBase
   id: PosterContrabandPower
   name: "Power"
-  description: "A poster that positions the seat of power outside Nanotrasen."
+  description: "A poster that positions the seat of power outside SysCon." # L5
   components:
   - type: Sprite
     state: poster16_contraband
@@ -216,7 +216,7 @@
   parent: PosterBase
   id: PosterContrabandLamarr
   name: "Lamarr"
-  description: "This poster depicts Lamarr. Probably made by a traitorous Mystagogue." # DeltaV - Epistemics Department replacing Science
+  description: "This poster depicts Lamarr. Probably made by a traitorous Research Director." # DeltaV - Epistemics Department replacing Science # L5 aaand back
   components:
   - type: Sprite
     state: poster19_contraband
@@ -243,7 +243,7 @@
   parent: PosterBase
   id: PosterContrabandKosmicheskayaStantsiya
   name: "Kosmicheskaya Stantsiya 13 Does Not Exist"
-  description: "A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13."
+  description: "A poster mocking Central's denial of the existence of the derelict station near Space Station 13." # L5
   components:
   - type: Sprite
     state: poster22_contraband
@@ -252,7 +252,7 @@
   parent: PosterBase
   id: PosterContrabandRebelsUnite
   name: "Rebels Unite"
-  description: "A poster urging the viewer to rebel against Nanotrasen."
+  description: "A poster urging the viewer to rebel against SysCon." # L5
   components:
   - type: Sprite
     state: poster23_contraband
@@ -351,7 +351,7 @@
   parent: PosterBase
   id: PosterContrabandFreeDrone
   name: "Free Drone"
-  description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm."
+  description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CNZ." # L5
   components:
   - type: Sprite
     state: poster35_contraband
@@ -468,7 +468,7 @@
   parent: PosterBase
   id: PosterContrabandTheBigGasTruth
   name: "The Big Gas Giant Truth"
-  description: "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
+  description: "Don't believe everything you see on a poster, patriots. All the lizards at Central Administration don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTRAL?" # L5
   components:
   - type: Sprite
     state: poster48_contraband
@@ -546,11 +546,12 @@
     - type: Sprite
       state: poster57_contraband
 
+# L5
 - type: entity
   parent: PosterBase
   id: PosterContrabandCybersun600
-  name: "Cybersun: 600 Years Commemorative Poster"
-  description: "An artistic poster commemorating 600 years of continual business for Cybersun Industries."
+  name: "The Conclave of New Zealots: 100 Years Commemorative Poster"
+  description: "An artistic poster commemorating 100 years of continual business for the Conclave of New Zealots."
   components:
     - type: Sprite
       state: poster58_contraband
@@ -564,20 +565,22 @@
     - type: Sprite
       state: poster59_contraband
 
+# L5
 - type: entity
   parent: PosterBase
   id: PosterContrabandEnlistGorlex
   name: "Enlist"
-  description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
+  description: "Enlist with the GEX Marauders today! See the Solar System, kill corpos, get paid!"
   components:
     - type: Sprite
       state: poster60_contraband
 
+# L5
 - type: entity
   parent: PosterBase
   id: PosterContrabandInterdyne
-  name: "Interdyne Pharmaceutics: For the Health of Humankind"
-  description: "An advertisement for Interdyne Pharmaceutics' GeneClean clinics. 'Become the master of your own body!'"
+  name: "International Trinitarian Pharmaceuticals: For the Health of Humankind"
+  description: "An advertisement for International Trinitarian Pharmaceuticals' GeneClean clinics. 'Become the master of your own body!'"
   components:
     - type: Sprite
       state: poster61_contraband
@@ -613,8 +616,8 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitNanotrasenLogo
-  name: "Nanotrasen Logo"
-  description: "A poster depicting the Nanotrasen logo."
+  name: "SysCon Logo"
+  description: "A poster depicting the System Consortium logo."
   components:
   - type: Sprite
     state: poster2_legit
@@ -826,11 +829,12 @@
   - type: Sprite
     state: poster25_legit
 
+# L5
 - type: entity
   parent: PosterBase
   id: PosterLegit50thAnniversaryVintageReprint
   name: "50th Anniversary Vintage Reprint"
-  description: "A reprint of a poster from 2505, commemorating the 50th Anniversary of Nanoposters Manufacturing, a subsidiary of Nanotrasen."
+  description: "A reprint of a poster from 2505, commemorating the 50th Anniversary of Conclaveposters Manufacturing, a subsidiary of CNZ."
   components:
   - type: Sprite
     state: poster26_legit
@@ -848,7 +852,7 @@
   parent: PosterBase
   id: PosterLegitPDAAd
   name: "PDA Ad"
-  description: "A poster advertising the latest PDA from Nanotrasen suppliers."
+  description: "A poster advertising the latest PDA from the System Consortium's suppliers." # L5
   components:
   - type: Sprite
     state: poster28_legit
@@ -857,7 +861,7 @@
   parent: PosterBase
   id: PosterLegitEnlist
   name: "Enlist"
-  description: "Enlist in the NanoTrasen ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads
+  description: "Enlist in the SysCon ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads # L5
   components:
   - type: Sprite
     state: poster29_legit
@@ -898,14 +902,15 @@
   - type: Sprite
     state: poster33_legit
 
-- type: entity
-  parent: PosterBase
-  id: PosterLegitNoERP
-  name: "No ERP"
-  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
-  components:
-  - type: Sprite
-    state: poster34_legit
+# L5 yeet...
+#- type: entity
+#  parent: PosterBase
+#  id: PosterLegitNoERP
+#  name: "No ERP"
+#  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
+#  components:
+#  - type: Sprite
+#    state: poster34_legit
 
 - type: entity
   parent: PosterBase
@@ -929,7 +934,7 @@
   parent: PosterBase
   id: PosterLegitThereIsNoGasGiant
   name: "There Is No Gas Giant"
-  description: "Nanotrasen has issued posters, like this one, to all stations reminding them that rumours of a gas giant are false."
+  description: "SysCon has issued posters, like this one, to all stations reminding them that rumours of a gas giant are false." # L5
   components:
   - type: Sprite
     state: poster37_legit
@@ -1027,8 +1032,8 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitVacation
-  name: "Nanotrasen Corporate Perks: Vacation"
-  description: "This informational poster provides information on some of the prizes available via the NT Corporate Perks program, including a two-week vacation for two on the resort world Idyllus."
+  name: "SysCon Corporate Perks: Vacation"
+  description: "This informational poster provides information on some of the prizes available via the SysCon Corporate Perks program, including a two-week vacation for two on the resort town Idyllus." # L5
   components:
     - type: Sprite
       state: poster48_legit
@@ -1054,8 +1059,8 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitNTTGC
-  name: "Nanotrasen Tactical Game Cards"
-  description: "An advertisement for Nanotrasen's TCG cards: BUY MORE CARDS."
+  name: "SysCon Tactical Game Cards"
+  description: "An advertisement for the System Consortium's TCG cards: BUY MORE CARDS."
   components:
     - type: Sprite
       state: poster51_legit

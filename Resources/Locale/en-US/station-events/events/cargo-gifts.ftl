@@ -1,6 +1,7 @@
 cargo-gifts-event-announcement = Congratulations! { $sender } has decided to send { $description } to the station { $dest }. Look for it in your next cargo shipment.
 cargo-gift-default-description = A bundle of gifts
-cargo-gift-default-sender = NanoTrasen
+# L5
+cargo-gift-default-sender = System Consortium
 cargo-gift-default-dest = Logistics Dept.
 
 cargo-gift-dest-bar = bar

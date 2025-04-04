@@ -75,11 +75,12 @@
       coefficients:
         Heat: 0.80
 
+# L5
 - type: entity
   parent: [ClothingMaskGasAtmos, BaseCommandContraband]
   id: ClothingMaskGasCaptain
-  name: captain's gas mask
-  description: Nanotrasen cut corners and repainted a spare atmospheric gas mask, but don't tell anyone.
+  name: station administrator's gas mask
+  description: SysCon cut corners and repainted a spare atmospheric gas mask, but don't tell anyone.
   components:
   - type: Sprite
     sprite: Clothing/Mask/gascaptain.rsi
@@ -91,7 +92,7 @@
 - type: entity
   parent: [ ClothingMaskGasAtmos, BaseCentcommContraband ]
   id: ClothingMaskGasCentcom
-  name: CentComm gas mask
+  name: Central Administration gas mask # L5
   description: Oooh, gold and green. Fancy! This should help as you sit in your office.
   components:
   - type: Sprite

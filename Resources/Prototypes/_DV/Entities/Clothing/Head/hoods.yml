@@ -2,7 +2,7 @@
   parent: ClothingHeadHatHoodBioGeneral
   id: ClothingHeadHatInterdyneChemistryHood
   categories: [ HideSpawnMenu ]
-  name: interdyne chemistry hood
+  name: International Trinitarian chemistry hood
   description: A hood to complete the professional chemist look.
   components:
   - type: Sprite

@@ -57,11 +57,12 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
 
+# L5
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBaseImpstation] # imp - Add foldable uniform jumpsuits
   id: ClothingUniformJumpsuitCaptain
-  name: captain's jumpsuit
-  description: It's a blue jumpsuit with some gold markings denoting the rank of "Captain".
+  name: station administrator's jumpsuit
+  description: It's a blue jumpsuit with some gold markings denoting the rank of "Station Administrator".
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/captain.rsi
@@ -123,33 +124,36 @@
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpsuit/chaplain.rsi
 
+# L5
 - type: entity
   parent: [ ClothingUniformBase, BaseCentcommContraband ]
   id: ClothingUniformJumpsuitCentcomAgent
-  name: CentComm agent's jumpsuit
-  description: A suit worn by CentComm's legal team. Smells of burnt coffee.
+  name: Central Administration agent's jumpsuit
+  description: A suit worn by Central's legal team. Smells of burnt coffee.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/centcom_agent.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/centcom_agent.rsi
 
+# L5
 - type: entity
   parent: [ ClothingUniformBase, BaseCentcommContraband ]
   id: ClothingUniformJumpsuitCentcomOfficial
-  name: CentComm official's jumpsuit
-  description: It's a jumpsuit worn by CentComm's officials.
+  name: Central Administration official's jumpsuit
+  description: It's a jumpsuit worn by Central's officials.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/centcom_official.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/centcom_official.rsi
 
+# L5
 - type: entity
   parent: [ ClothingUniformBase, BaseCentcommContraband ]
   id: ClothingUniformJumpsuitCentcomOfficer
-  name: CentComm officer's jumpsuit
-  description: It's a jumpsuit worn by CentComm Officers.
+  name: Central Administration officer's jumpsuit
+  description: It's a jumpsuit worn by Central Officers.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi # DeltaV - Centcomm Drip
@@ -535,11 +539,12 @@
     - type: Clothing
       sprite: Clothing/Uniforms/Jumpsuit/qmformal.rsi
 
+# L5
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitResearchDirector
-  name: mystagogue's turtleneck # DeltaV - Epistemics Department replacing Science
-  description: It's a turtleneck worn by those with the know-how to achieve the position of Mystagogue. Its fabric provides minor protection from biological contaminants. # DeltaV - Epistemics Department replacing Science
+  name: research director's turtleneck # DeltaV - Epistemics Department replacing Science
+  description: It's a turtleneck worn by those with the know-how to achieve the position of Research Director. Its fabric provides minor protection from biological contaminants. # DeltaV - Epistemics Department replacing Science
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/rnd.rsi
@@ -744,11 +749,12 @@
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatered.rsi
 
+# L5
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitNanotrasen
-  name: nanotrasen jumpsuit
-  description: A stately blue jumpsuit to represent NanoTrasen.
+  name: SysCon jumpsuit
+  description: A stately blue jumpsuit to represent the System Consortium.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/nanotrasen.rsi
@@ -758,7 +764,7 @@
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitCapFormal
-  name: captain's formal suit
+  name: station administrator's formal suit # L5
   description: A suit for special occasions.
   components:
   - type: Sprite
@@ -769,7 +775,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomFormal
-  name: central command formal suit
+  name: Central Administration formal suit # L5
   description: A suit for special occasions.
   components:
   - type: Sprite
@@ -939,7 +945,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTChaplain
   name: ERT chaplain uniform
-  description: A special suit made for Central Command's elite chaplain corps.
+  description: A special suit made for Central Administration's elite chaplain corps. # L5
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_chaplain.rsi
@@ -950,7 +956,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTEngineer
   name: ERT engineering uniform
-  description: A special suit made for the elite engineers under CentComm.
+  description: A special suit made for the elite engineers under Central Administration. # L5
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_engineer.rsi
@@ -961,7 +967,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTJanitor
   name: ERT janitorial uniform
-  description: A special suit made for the elite janitors under CentComm.
+  description: A special suit made for the elite janitors under Central Administration. # L5
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_janitor.rsi
@@ -972,7 +978,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTLeader
   name: ERT leader uniform
-  description: A special suit made for the best of the elites under CentComm.
+  description: A special suit made for the best of the elites under Central Administration. # L5
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_leader.rsi
@@ -983,7 +989,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTMedic
   name: ERT medical uniform
-  description: A special suit made for the elite medics under CentComm.
+  description: A special suit made for the elite medics under Central Administration. L5
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_medic.rsi
@@ -994,7 +1000,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTSecurity
   name: ERT security uniform
-  description: A special suit made for the elite security under CentComm.
+  description: A special suit made for the elite security under Central Administration. # L5
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi

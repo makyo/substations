@@ -37,11 +37,12 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
+# L5
 - type: entity
   id: BannerNanotrasen
   parent: BannerBase
-  name: nanotrasen banner
-  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  name: SysCon banner
+  description: A banner displaying the System Consortium logo.
   components:
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
@@ -91,7 +92,7 @@
   id: BannerSyndicate
   parent: BannerBase
   name: syndicate banner
-  description: A banner from which, according to the syndicate, you should feel hatred for NT.
+  description: A banner from which, according to the syndicate, you should feel hatred for SysCon. # L5
   components:
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi

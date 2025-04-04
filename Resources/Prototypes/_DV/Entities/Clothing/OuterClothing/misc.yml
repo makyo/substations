@@ -17,7 +17,7 @@
 - type: entity
   parent: ClothingOuterBaseToggleable
   id: ClothingOuterInterdyneChemistrySuit
-  name: interdyne chemistry suit
+  name: International Trinitiarian chemistry suit # L5
   description: A spotless suit and durable, designed to protect you from chemical spills.
   components:
   - type: Sprite
