@@ -93,7 +93,7 @@
 - type: entity
   parent: Airlock
   id: AirlockCommand
-  suffix: Command
+  suffix: Leadership
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Standard/command.rsi #Delta V - Resprite Doors
@@ -261,7 +261,7 @@
 - type: entity
   parent: AirlockGlass
   id: AirlockCommandGlass
-  suffix: Command
+  suffix: Leadership
   components:
   - type: Sprite
     sprite: _DV/Structures/Doors/Airlocks/Glass/command.rsi #Delta V - Resprite Doors

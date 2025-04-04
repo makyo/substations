@@ -405,7 +405,7 @@
   id: PaperMailNFEMPPreparedness
   categories: [ HideSpawnMenu ]
   name: EMP preparedness response form
-  suffix: "emp preparedness" # DeltaV - Replaces mention of SR with HoS # L5 NT→IPX, cap→SA
+  suffix: "emp preparedness" # DeltaV - Replaces mention of SR with HoS # L5 NT→IPX, cap→SA, command→leadership
   parent: Paper
   components:
   - type: Paper
@@ -413,7 +413,7 @@
 
         [head=1]EMP Preparedness Response[/head]
 
-      You have been selected to receive a IPX Robotics EMP Preparedness kit as a test. Note that this is only a test. In a real emergency, follow the instructions of your vessel's command staff.
+      You have been selected to receive a IPX Robotics EMP Preparedness kit as a test. Note that this is only a test. In a real emergency, follow the instructions of your vessel's leadership.
 
       As the recipient of this, please note [bold]any improvements[/bold] that could be made towards the EMP preparedness of the vessel you were aboard when opening and submit this form to your serving Station Administrator.
 

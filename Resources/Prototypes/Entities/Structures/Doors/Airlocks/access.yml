@@ -116,7 +116,7 @@
 - type: entity
   parent: AirlockExternal
   id: AirlockExternalCommandLocked
-  suffix: External, Command, Locked
+  suffix: External, Leadership, Locked # L5
   components:
   - type: ContainerFill
     containers:
@@ -127,7 +127,7 @@
 - type: entity
   parent: AirlockExternalGlass
   id: AirlockExternalGlassCommandLocked
-  suffix: External, Glass, Command, Locked
+  suffix: External, Glass, Leadership, Locked # L5
   components:
   - type: ContainerFill
     containers:
@@ -306,7 +306,7 @@
 - type: entity
   parent: AirlockCommand
   id: AirlockCommandLocked
-  suffix: Command, Locked
+  suffix: Leadership, Locked # L5
   components:
   - type: ContainerFill
     containers:
@@ -701,7 +701,7 @@
 - type: entity
   parent: AirlockCommandGlass
   id: AirlockCommandGlassLocked
-  suffix: Command, Locked
+  suffix: Leadership, Locked
   components:
   - type: ContainerFill
     containers:
@@ -883,7 +883,7 @@
 - type: entity
   parent: AirlockMaint
   id: AirlockMaintCommandLocked
-  suffix: Command, Locked
+  suffix: Leadership, Locked
   components:
   - type: ContainerFill
     containers:
@@ -1282,7 +1282,7 @@
 - type: entity
   parent: HighSecDoor
   id: HighSecCommandLocked
-  suffix: Command, Locked
+  suffix: Leadership, Locked # L5
   components:
   - type: ContainerFill
     containers:
