@@ -1,7 +1,7 @@
 - type: npcFaction
   id: Dragon
   hostile:
-  - SysCon
+  - NanoTrasen
   - Syndicate
   - Xeno
   - PetsNT
@@ -46,7 +46,7 @@
 - type: npcFaction
   id: SimpleHostile
   hostile:
-  - SysCon
+  - NanoTrasen
   - Syndicate
   - Passive
   - PetsNT
@@ -62,7 +62,7 @@
 - type: npcFaction
   id: Syndicate
   hostile:
-  - SysCon
+  - NanoTrasen
   - SimpleHostile
   - Xeno
   - PetsNT

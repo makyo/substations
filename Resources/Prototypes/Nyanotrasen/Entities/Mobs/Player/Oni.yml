@@ -31,4 +31,4 @@
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:
-    - SysCon # L5
+    - NanoTrasen

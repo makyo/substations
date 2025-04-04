@@ -63,7 +63,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - SysCon
+    - NanoTrasen
 
 - type: entity
   parent: BaseWeaponBallisticTurret

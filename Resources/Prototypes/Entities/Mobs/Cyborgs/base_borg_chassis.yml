@@ -307,7 +307,7 @@
     - NamesBorg
   - type: NpcFactionMember
     factions:
-    - SysCon # L5
+    - NanoTrasen
   - type: Access
     enabled: false
     groups:
