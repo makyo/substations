@@ -1,7 +1,7 @@
 # Be careful with these as they get removed on shutdown too!
 - type: entity
   id: AiHeld
-  description: Components added / removed from an entity that gets inserted into an AI core.
+  description: Components added / removed from an entity that gets inserted into an SSR core.
   categories: [ HideSpawnMenu ]
   components:
   - type: IntrinsicRadioReceiver
@@ -110,7 +110,7 @@
 - type: entity
   id: AiHolder
   abstract: true
-  description: Handles AI interactions across holocards + AI cores
+  description: Handles interactions across holocards + SSR cores
   components:
   - type: ItemSlots
   - type: StationAiHolder
@@ -158,8 +158,8 @@
 - type: entity
   id: NTDefaultCircuitBoard
   parent: BaseElectronics
-  name: law board (NT Default)
-  description: An electronics board containing the NT Default lawset.
+  name: law board (SysCon Default) # L5
+  description: An electronics board containing the SysCon Default lawset. # L5
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
@@ -292,7 +292,7 @@
 - type: entity
   id: Intellicard
   name: intellicard
-  description: A storage device for AIs.
+  description: A storage device for sys-side representatives.
   parent:
   - BaseItem
   - AiHolder
@@ -328,10 +328,11 @@
     - state: ai
       shader: unshaded
 
+# L5
 - type: entity
   id: PlayerStationAiEmpty
-  name: AI Core
-  description: The latest in Artificial Intelligences.
+  name: System Core
+  description: A fraction of the System, a machine that dreams.
   parent:
   - BaseStructure
   - AiHolder
@@ -457,13 +458,14 @@
     silent: true
 
 # Hologram projection that the AI's eye tracks.
+# L5
 - type: entity
   parent:
   - Incorporeal
   - BaseMob
   id: StationAiHolo
-  name: AI eye
-  description: The AI's viewer.
+  name: Sys-Side Representative eye
+  description: The SSR's viewer.
   categories: [ HideSpawnMenu, DoNotMap ]
   components:
   - type: NoFTL
@@ -482,10 +484,11 @@
   - type: AiDetectable # DeltaV - AI detector
 
 # The holographic representation of the AI that is projected from a holopad.
+# L5
 - type: entity
   id: StationAiHoloLocal
-  name: AI hologram
-  description: A holographic representation of an AI.
+  name: sys-side representative hologram
+  description: A holographic representation of a station's sys-side representative.
   categories: [ HideSpawnMenu, DoNotMap ]
   components:
   - type: Transform
