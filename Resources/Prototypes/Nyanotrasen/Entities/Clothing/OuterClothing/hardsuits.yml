@@ -41,7 +41,7 @@
 - type: entity
   parent: ClothingOuterHardsuitERTLeader
   id: ClothingOuterHardsuitERTCentcomm
-  name: CentComm hardsuit
+  name: Central Administration hardsuit  # L5
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertcentcomm.rsi

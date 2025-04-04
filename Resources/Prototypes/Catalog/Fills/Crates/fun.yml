@@ -170,7 +170,7 @@
   id: CrateFunInstrumentsSpecial
   parent: CrateGenericSteel
   name: special instrument collector's crate
-  description: Create some noise with this special collection of arguably-instruments! Centcomm is not responsible for any trauma caused by the contents.
+  description: Create some noise with this special collection of arguably-instruments! Central Administration is not responsible for any trauma caused by the contents. # L5
   components:
   - type: StorageFill
     contents:

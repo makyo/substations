@@ -64,8 +64,8 @@
   categories: [ HideSpawnMenu ]
   parent: BaseSubdermalImplant
   id: RadioImplantCentcomm
-  name: centcomm radio implant
-  description: This implant grants access to the Centcomm channel without a headset. Only authorized for Centcomm employees.
+  name: Central Administration radio implant
+  description: This implant grants access to the Central Administration channel without a headset. Only authorized for Central employees.
   components:
   - type: RadioImplant
     channels:

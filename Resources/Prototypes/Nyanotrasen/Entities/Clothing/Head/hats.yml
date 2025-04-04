@@ -164,11 +164,12 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/Hats/beret_cap.rsi
 
+# L5
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretCentcomm
-  name: CentComm beret
-  description: A green beret with an admiral's rank emblem.
+  name: Central Administration beret
+  description: A green beret with the SysCon emblem.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Head/Hats/beret_cent.rsi

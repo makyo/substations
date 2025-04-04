@@ -221,11 +221,12 @@
   - type: IdentityBlocker
   - type: IngestionBlocker
 
+# L5
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcom
-  name: CentComm brand hat
-  description: "It's good to be the emperor."
+  name: Central Admin brand hat
+  description: "Feels good to be this important."
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/centcom.rsi

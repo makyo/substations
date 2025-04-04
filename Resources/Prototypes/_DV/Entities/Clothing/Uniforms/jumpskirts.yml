@@ -247,34 +247,36 @@
     sprite: _DV/Clothing/Uniforms/Jumpskirt/centcom_officer.rsi
 
 # Central Command
-
+# L5
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCentcomAgent
-  name: CentComm agent's jumpskirt
-  description: A suitskirt worn by CentComm's legal team. Smells of burnt coffee.
+  name: Central Administration agent's jumpskirt
+  description: A suitskirt worn by Central's legal team. Smells of burnt coffee.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/centcom_agent.rsi
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/centcom_agent.rsi
 
+# L5
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCentcomOfficial
-  name: CentComm official's jumpskirt
-  description: It's a jumpskirt with a nice golden hem, worn by CentComm's officials.
+  name: Central Administration official's jumpskirt
+  description: It's a jumpskirt with a nice golden hem, worn by Central's officials.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/centcom_official.rsi
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/centcom_official.rsi
 
+# L5
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCentcomOfficer
-  name: CentComm officer's jumpskirt
-  description: It's a jumpskirt worn by CentComm Officers.
+  name: Central Administration officer's jumpskirt
+  description: It's a jumpskirt worn by Central Admin Officers.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/centcom_officer.rsi

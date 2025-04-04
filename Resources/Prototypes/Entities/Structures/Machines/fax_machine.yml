@@ -73,11 +73,12 @@
   - type: RequireProjectileTarget
 
 # Special
+# L5
 - type: entity
   parent: FaxMachineBase
   id: FaxMachineCentcom
-  name: CentComm long range fax machine
-  suffix: CentCom
+  name: Central Admin long range fax machine
+  suffix: Central
   components:
   - type: Sprite
     layers:

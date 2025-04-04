@@ -243,7 +243,7 @@
   parent: PosterBase
   id: PosterContrabandKosmicheskayaStantsiya
   name: "Kosmicheskaya Stantsiya 13 Does Not Exist"
-  description: "A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13."
+  description: "A poster mocking Central's denial of the existence of the derelict station near Space Station 13." # L5
   components:
   - type: Sprite
     state: poster22_contraband
@@ -252,7 +252,7 @@
   parent: PosterBase
   id: PosterContrabandRebelsUnite
   name: "Rebels Unite"
-  description: "A poster urging the viewer to rebel against Nanotrasen."
+  description: "A poster urging the viewer to rebel against SysCon." # L5
   components:
   - type: Sprite
     state: poster23_contraband
@@ -351,7 +351,7 @@
   parent: PosterBase
   id: PosterContrabandFreeDrone
   name: "Free Drone"
-  description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm."
+  description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CNZ." # L5
   components:
   - type: Sprite
     state: poster35_contraband
@@ -468,7 +468,7 @@
   parent: PosterBase
   id: PosterContrabandTheBigGasTruth
   name: "The Big Gas Giant Truth"
-  description: "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
+  description: "Don't believe everything you see on a poster, patriots. All the lizards at Central Administration don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTRAL?" # L5
   components:
   - type: Sprite
     state: poster48_contraband

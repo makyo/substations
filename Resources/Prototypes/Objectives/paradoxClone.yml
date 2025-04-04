@@ -18,7 +18,7 @@
 - type: entity
   parent: [BaseParadoxCloneObjective, BaseLivingObjective]
   id: ParadoxCloneLivingObjective
-  name: Escape to centcomm alive and unrestrained.
+  name: Escape to Central Administration alive and unrestrained. # L5
   description: Return to your old life.
   components:
   - type: Objective
@@ -27,6 +27,7 @@
       state: shuttle
   - type: EscapeShuttleCondition
 
+# L5: I don't think this is used...
 - type: entity
   parent: [BaseParadoxCloneObjective, BaseKillObjective]
   id: ParadoxCloneKillObjective

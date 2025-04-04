@@ -310,8 +310,8 @@
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodWinterCentcom
   categories: [ HideSpawnMenu ]
-  name: CentComm winter coat hood
-  description: A hood for keeping the central comander's head warm.
+  name: Central Administration winter coat hood
+  description: A hood for keeping the admin's head warm.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hoods/Coat/hoodcentcom.rsi

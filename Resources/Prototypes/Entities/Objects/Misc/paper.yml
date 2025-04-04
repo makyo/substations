@@ -459,12 +459,13 @@
       color: "#43bc38"
     - state: folder-base
 
+# L5
 - type: entity
   id: BoxFolderCentCom
-  name: CentComm folder
+  name: Central Administration folder
   parent: BoxFolderBase
   categories: [ DoNotMap ]
-  description: CentComm's miserable little pile of secrets!
+  description: Central's miserable little pile of secrets!
   components:
   - type: Sprite
     layers:
@@ -530,11 +531,12 @@
       types:
         Blunt: 6
 
+# L5
 - type: entity
   id: BoxFolderCentComClipboard
   parent: BoxFolderClipboard
-  name: CentComm clipboard
-  description: A luxurious clipboard upholstered with green velvet. Often seen carried by CentComm officials, seldom seen actually used.
+  name: Central Administration clipboard
+  description: A luxurious clipboard upholstered with green velvet. Often seen carried by Central Administration officials, seldom seen actually used.
   components:
   - type: Sprite
     sprite: Objects/Misc/cc-clipboard.rsi
