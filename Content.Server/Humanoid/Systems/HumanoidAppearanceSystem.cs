@@ -1,10 +1,6 @@
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
-using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Preferences;
 using Content.Shared.Verbs;
-using Robust.Shared.GameObjects.Components.Localization;
-using Content.Shared.DeltaV.Traits.Synthetic; // L5: Synthetics
 
 namespace Content.Server.Humanoid;
 

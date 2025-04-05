@@ -29,7 +29,7 @@ public sealed partial class TypingIndicatorPrototype : IPrototype
     /// Delta-V: Sprite path for synth variant of talk sprite.
     /// </summary>
     [DataField]
-    public ResPath SynthSpritePath = new("/Textures/DeltaV/Effects/speech_synth.rsi");
+    public ResPath SynthSpritePath = new("/Textures/_L5/Effects/speech_synth.rsi");
 
     /// <summary>
     /// Delta-V: Whether there is a synth variant for this talk sprite.

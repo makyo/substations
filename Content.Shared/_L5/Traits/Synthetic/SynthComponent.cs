@@ -6,7 +6,7 @@ using Content.Shared.Traits;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.DeltaV.Traits.Synthetic;
+namespace Content.Shared._L5.Traits.Synthetic;
 
 /// <summary>
 /// Set players' blood to coolant, and is used to notify them of ion storms

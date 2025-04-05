@@ -18,7 +18,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Shared.DeltaV.Traits.Synthetic; // DeltaV: Synthetics
 
 namespace Content.Server.Cloning;
 

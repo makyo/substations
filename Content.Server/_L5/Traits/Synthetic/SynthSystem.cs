@@ -11,7 +11,6 @@ using Content.Server.Popups;
 using Content.Server.Stunnable;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.DeltaV.Traits.Synthetic;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mind.Components;
@@ -19,9 +18,10 @@ using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
+using Content.Shared._L5.Traits.Synthetic;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.DeltaV.Traits.Synthetic;
+namespace Content.Server._L5.Traits.Synthetic;
 
 public sealed class SynthSystem : SharedSynthSystem
 {
@@ -41,7 +41,7 @@ public sealed class SynthSystem : SharedSynthSystem
     [ValidatePrototypeId<SpeciesPrototype>]
     private readonly ProtoId<SpeciesPrototype> _speciesDionaId = "diona";
     [ValidatePrototypeId<EntityPrototype>]
-    private readonly ProtoId<EntityPrototype> _synthBrainId = "OrganSynthBrain";
+    private readonly EntProtoId<SynthBrainComponent> _synthBrainId = "OrganSynthBrain";
     [ValidatePrototypeId<EmoteSoundsPrototype>]
     private readonly ProtoId<EmoteSoundsPrototype> _emoteSoundsId = "UnisexSilicon";
 

@@ -20,7 +20,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
-using Content.Shared.DeltaV.Traits.Synthetic; // Delta-V: Synthetics
+using Content.Shared._L5.Traits.Synthetic; // L5: Synthetics
 
 namespace Content.Shared.Humanoid;
 
@@ -40,7 +40,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
-    [Dependency] protected readonly SharedSynthSystem _synthSystem = default!; // DeltaV: Proper appearance and cloning of synths
+    [Dependency] protected readonly SharedSynthSystem _synthSystem = default!; // L5: Proper appearance and cloning of synths
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
@@ -450,7 +450,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         humanoid.Age = profile.Age;
         humanoid.Height = profile.Height; // CD - Character Records
-        if (profile.TraitPreferences.Any(trait => trait == SharedSynthSystem.SyntheticTrait)) // DeltaV - synthetics
+        if (profile.TraitPreferences.Any(trait => trait == SharedSynthSystem.SyntheticTrait)) // L5 - synthetics
         {
             humanoid.Synthetic = true;
             _synthSystem.EnsureSynthetic(uid);
@@ -528,7 +528,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Delta-V: Set synthetic status of a mob.
+    ///     L5: Set synthetic status of a mob.
     /// </summary>
     /// <param name="uid">The humanoid mob's UID.</param>
     /// <param name="isSynthetic">Whether the humanoid should be synthetic or not.</param>

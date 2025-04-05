@@ -20,7 +20,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.DeltaV.Traits.Synthetic;
+namespace Content.Shared._L5.Traits.Synthetic;
 
 /// <summary>
 /// Responsible for setting up many synth features, e.g. changed typing indicators or emote sounds.

@@ -2,7 +2,7 @@
 // SPDX-FileCopyrightText: (c) 2024 pissdemon (https://github.com/pissdemon)
 // SPDX-License-Identifier: MIT
 
-namespace Content.Server.DeltaV.Traits.Synthetic;
+namespace Content.Server._L5.Traits.Synthetic;
 
 /// <summary>
 /// Makes sure that synth brain sprite visuals are updated.

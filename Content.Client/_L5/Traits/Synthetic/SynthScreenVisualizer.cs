@@ -2,20 +2,20 @@
 // SPDX-FileCopyrightText: (c) 2024 pissdemon (https://github.com/pissdemon)
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.DeltaV.Traits.Synthetic;
+using Content.Shared._L5.Traits.Synthetic;
 using Robust.Client.GameObjects;
 using Robust.Shared.Utility;
 
-namespace Content.Client.DeltaV.Traits.Synthetic;
+namespace Content.Client._L5.Traits.Synthetic;
 
 public sealed class SynthScreenVisualizer : VisualizerSystem<SynthComponent>
 {
     private readonly SpriteSpecifier.Rsi _glowyVisorSprite =
-        new(new("DeltaV/Mobs/Customization/Synthetic/visor_glow.rsi"), "glow");
+        new(new("_L5/Mobs/Customization/Synthetic/visor_glow.rsi"), "glow");
     private readonly SpriteSpecifier.Rsi _notGlowyVisorSprite =
-        new(new("DeltaV/Mobs/Customization/Synthetic/visor_glow.rsi"), "off");
+        new(new("_L5/Mobs/Customization/Synthetic/visor_glow.rsi"), "off");
     private readonly SpriteSpecifier.Rsi _glowyEyesSprite =
-        new(new("DeltaV/Mobs/Customization/Synthetic/visor_glow.rsi"), "eyesonly_glow");
+        new(new("_L5/Mobs/Customization/Synthetic/visor_glow.rsi"), "eyesonly_glow");
     private readonly SpriteSpecifier.Rsi _notGlowyEyesSprite =
         new(new("Mobs/Customization/eyes.rsi"), "eyes");
 

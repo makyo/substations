@@ -2,14 +2,15 @@
 // SPDX-FileCopyrightText: (c) 2024 pissdemon (https://github.com/pissdemon)
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.DeltaV.Traits.Synthetic;
+using System.Numerics;
+using Content.Shared._L5.Traits.Synthetic;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Client.DeltaV.Overlays;
+namespace Content.Client._L5.Overlays;
 
 /// <summary>
 /// Overlay for synths and the like that simulates seeing static. Works like the flash one.
@@ -65,7 +66,7 @@ public sealed class StaticVisionOverlay : Overlay
         _shader.SetParameter("percentComplete", percentComplete);
         _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         var viewport = args.WorldBounds;
-        worldHandle.SetTransform(Matrix3.Identity);
+        worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.DrawRect(viewport, Color.White);
         worldHandle.UseShader(null);
     }

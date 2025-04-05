@@ -5,9 +5,9 @@
 - type: soundCollection
   id: EmpHallucinations
   files:
-  - /Audio/DeltaV/Effects/Emp/emp1.ogg
-  - /Audio/DeltaV/Effects/Emp/emp2.ogg
-  - /Audio/DeltaV/Effects/Emp/emp3.ogg
-  - /Audio/DeltaV/Effects/Emp/emp4.ogg
-  - /Audio/DeltaV/Effects/Emp/emp5.ogg
-  - /Audio/DeltaV/Effects/Emp/emp6.ogg
+  - /Audio/_L5/Effects/Emp/emp1.ogg
+  - /Audio/_L5/Effects/Emp/emp2.ogg
+  - /Audio/_L5/Effects/Emp/emp3.ogg
+  - /Audio/_L5/Effects/Emp/emp4.ogg
+  - /Audio/_L5/Effects/Emp/emp5.ogg
+  - /Audio/_L5/Effects/Emp/emp6.ogg

@@ -2,15 +2,15 @@
 // SPDX-FileCopyrightText: (c) 2024 pissdemon (https://github.com/pissdemon)
 // SPDX-License-Identifier: MIT
 
-using Content.Client.DeltaV.Overlays;
-using Content.Shared.DeltaV.Traits.Synthetic;
+using Content.Client._L5.Overlays;
+using Content.Shared._L5.Traits.Synthetic;
 using Content.Shared.Mobs;
 using Robust.Client.Graphics;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 
-namespace Content.Client.DeltaV.Traits.Synthetic;
+namespace Content.Client._L5.Traits.Synthetic;
 
 public sealed class SynthSystem : SharedSynthSystem
 {
