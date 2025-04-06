@@ -46,7 +46,6 @@ namespace Content.Server.Database
         public DbSet<RoleWhitelist> RoleWhitelists { get; set; } = null!;
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Preference>()
@@ -70,6 +69,14 @@ namespace Content.Server.Database
                 .HasForeignKey(e => e.CDProfileId)
                 .IsRequired();
             // End CD - CD Character Data
+
+            // Begin L5 - L5 library data
+            modelBuilder.Entity<L5Model.Book>()
+                .HasOne(p => p.Collection)
+                .WithMany(p => p.Books)
+                .HasForeignKey(p => p.CollectionId)
+                .OnDelete(DeleteBehavior.SetNull);
+            // End L5 - L5 library data
 
             modelBuilder.Entity<Antag>()
                 .HasIndex(p => new {HumanoidProfileId = p.ProfileId, p.AntagName})
