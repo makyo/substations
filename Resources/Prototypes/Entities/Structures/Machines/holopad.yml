@@ -16,6 +16,7 @@
         - Impassable
         - HighImpassable
         - MidImpassable
+        hard: false # L5 - let people drag over holopads
       fix2:
         shape:
           !type:PhysShapeCircle
@@ -112,7 +113,7 @@
         node: machineFrame
       - !type:DoActsBehavior
         acts: ["Destruction"]
- 
+
 - type: entity
   name: long-range holopad
   description: "A floor-mounted device for projecting holographic images to similar devices that are far away."
@@ -125,7 +126,7 @@
     - Map
     - Unlimited
     ignoreTelephonesOnSameGrid: true
-    
+
 - type: entity
   name: quantum entangling holopad
   description: "An floor-mounted device for projecting holographic images to similar devices at extreme distances."
