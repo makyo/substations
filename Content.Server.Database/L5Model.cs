@@ -8,31 +8,6 @@ namespace Content.Server.Database;
 public sealed class L5Model
 {
     /// <summary>
-    /// Defines a collection of in-game books
-    /// </summary>
-    [Table(name: "L5_book_collections")]
-    public class BookCollection
-    {
-        public int Id { get; set; }
-
-        /// <summary>
-        /// The name of the collection
-        /// </summary>
-        [Required, MaxLength(256)]
-        public required string CollectionName { get; set; }
-
-        /// <summary>
-        /// The player who created the collection
-        /// </summary>
-        [Required, ForeignKey("CreatedBy")] public Guid? CreatedById { get; set; }
-        public Player? CreatedBy { get; set; }
-
-        /// <summary>
-        /// The books in the collection
-        /// </summary>
-        public List<Book> Books { get; set; } = null!;
-    }
-    /// <summary>
     /// Defines an in-game book that is persisted across rounds
     /// </summary>
     [Table(name: "L5_books")]
@@ -74,21 +49,16 @@ public sealed class L5Model
         public required string Author { get; set; }
 
         /// <summary>
-        /// The player who clicked submit.
+        /// The player's character who clicked submit (so that books can be signed).
         /// </summary>
         [Required, ForeignKey("CreatedBy")] public Guid? CreatorUserId { get; set; }
-        public Player CreatedBy { get; set; } = default!;
+        public Profile CreatedBy { get; set; } = default!;
 
         /// <summary>
-        /// The librarian who approved the book.
+        /// The librarian's character who approved the book.
         /// </summary>
         [Required, ForeignKey("ApprovedBy")] public Guid? ApprovedById { get; set; }
-        public Player ApprovedBy { get; set; } = default!;
-
-        /// <summary>
-        /// Whether the book was approved or not.
-        /// </summary>
-        public bool Approved { get; set; }
+        public Profile ApprovedBy { get; set; } = default!;
 
         /// <summary>
         /// The round during which the book was approved.
@@ -99,6 +69,65 @@ public sealed class L5Model
         /// <summary>
         /// The text of the book itself.
         /// </summary>
+        [Required]
         public required string Text { get; set; }
+
+        /// <summary>
+        /// A list of times the book has been checked out
+        /// </summary>
+        public List<BookCheckOut> CheckOuts { get; set; } = null!;
+    }
+
+    /// <summary>
+    /// Defines a collection of in-game books
+    /// </summary>
+    [Table(name: "L5_book_collections")]
+    public class BookCollection
+    {
+        public int Id { get; set; }
+
+        /// <summary>
+        /// The name of the collection
+        /// </summary>
+        [Required, MaxLength(256)]
+        public required string CollectionName { get; set; }
+
+        /// <summary>
+        /// The player's character who created the collection.
+        /// </summary>
+        [Required, ForeignKey("CreatedBy")] public Guid? CreatedById { get; set; }
+        public Profile? CreatedBy { get; set; }
+
+        /// <summary>
+        /// The books in the collection
+        /// </summary>
+        public List<Book> Books { get; set; } = null!;
+    }
+
+    /// <summary>
+    /// Tracks times that the book was checked out
+    /// </summary>
+    [Table(name: "L5_book_checkouts")]
+    public class BookCheckOut
+    {
+        public int Id { get; set; }
+
+        /// <summary>
+        /// The book being checked out.
+        /// </summary>
+        [Required, ForeignKey("Book")] public int BookId { get; set; }
+        public required Book Book { get; set; }
+
+        /// <summary>
+        /// The character who checked out the book.
+        /// </summary>
+        [Required, ForeignKey("CheckedOutBy")] public Guid? CheckedOutById { get; set; }
+        public Profile CheckedOutBy { get; set; } = default!;
+
+        /// <summary>
+        /// The round during which the book was checked out.
+        /// </summary>
+        [Required, ForeignKey("RoundCreated")] public int RoundCreatedId { get; set; }
+        public Round RoundCreated { get; set; } = default!;
     }
 }

@@ -72,10 +72,15 @@ namespace Content.Server.Database
 
             // Begin L5 - L5 library data
             modelBuilder.Entity<L5Model.Book>()
-                .HasOne(p => p.Collection)
+                .HasOne(b => b.Collection)
                 .WithMany(p => p.Books)
                 .HasForeignKey(p => p.CollectionId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<L5Model.BookCheckOut>()
+                .HasOne(c => c.Book)
+                .WithMany(b => b.CheckOuts)
+                .HasForeignKey(c => c.BookId);
             // End L5 - L5 library data
 
             modelBuilder.Entity<Antag>()
