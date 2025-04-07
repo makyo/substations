@@ -206,6 +206,7 @@
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
+  - MaterialSiloCircuitboard # EE - material silo
 
 - type: technology
   id: PortableFission

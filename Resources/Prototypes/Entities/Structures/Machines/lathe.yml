@@ -87,7 +87,7 @@
 
 - type: entity
   id: Autolathe
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: autolathe
   description: It produces basic items using metal and glass. Has the ability to process blueprints to print new recipes.
   suffix: DO NOT MAP # DeltaV - departamental lathes
@@ -164,7 +164,7 @@
 
 - type: entity
   id: Protolathe
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: protolathe
   description: Converts raw materials into advanced items.
   suffix: DO NOT MAP # DeltaV - departamental lathes
@@ -236,7 +236,7 @@
 
 - type: entity
   id: CircuitImprinter
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: circuit imprinter
   description: Prints circuit boards for machines.
   components:
@@ -297,7 +297,7 @@
 
 - type: entity
   id: ExosuitFabricator
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: exosuit fabricator
   description: Creates parts for robotics and other mechanical needs.
   components:
@@ -346,8 +346,8 @@
 
 - type: entity
   id: Biofabricator
-  parent: BaseLathe
-  name: biocube fabricator
+  parent: [BaseLathe, BaseMaterialSiloUtilizer]
+  name: biofabricator
   description: Produces animal cubes using biomass.
   components:
   - type: Sprite
@@ -385,7 +385,7 @@
 
 - type: entity
   id: SecurityTechFab
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: security techfab
   description: Prints equipment for use by security crew.
   components:
@@ -429,7 +429,7 @@
 
 - type: entity
   id: AmmoTechFab
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: ammo techfab
   description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
   components:
@@ -462,7 +462,7 @@
 
 - type: entity
   id: MedicalTechFab
-  parent: BaseTechFabDepartamental # DeltaV - make sure it inherits the emag recipes
+  parent: [BaseTechFabDepartamental, BaseMaterialSiloUtilizer] # DeltaV - make sure it inherits the emag recipes; EE - materials silo
   name: medical techfab
   description: Prints equipment for use by the medbay.
   components:
@@ -501,7 +501,7 @@
     stealGroup: MedicalTechFabCircuitboard
 
 - type: entity
-  parent: BaseLathe
+  parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: UniformPrinter
   name: uniform printer
   description: Prints new or replacement uniforms.
@@ -591,7 +591,7 @@
     - BioGenMaterialsStatic
 
 - type: entity
-  parent: BaseLathe
+  parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: OreProcessor
   name: ore processor
   description: It produces sheets and ingots using ores.
@@ -652,7 +652,7 @@
     - AdvancedSmelting
 
 - type: entity
-  parent: BaseLathe
+  parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: Sheetifier
   name: sheet-meister 2000
   description: A very sheety machine.
@@ -682,7 +682,7 @@
     - SheetifierStatic
 
 - type: entity
-  parent: BaseLathe
+  parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: CutterMachine
   name: cutter machine
   description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.
