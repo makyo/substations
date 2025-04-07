@@ -200,13 +200,13 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
         if (!CanChangeMaterialAmount(uid, materialId, volume, component, utilizer))
             return false;
 
-        var existing = storage.GetOrNew(materialId);
+        var existing = storage.Storage.GetOrNew(materialId);
         existing += volume;
 
         if (existing == 0)
-            storage.Remove(materialId);
+            storage.Storage.Remove(materialId);
         else
-            storage[materialId] = existing;
+            storage.Storage[materialId] = existing;
 
         var ev = new MaterialAmountChangedEvent();
         RaiseLocalEvent(storageUid, ref ev);
