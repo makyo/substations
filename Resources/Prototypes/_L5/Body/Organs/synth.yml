@@ -37,8 +37,8 @@
 # this needs to have one, and i don't feel like patching upstream code for it
 - type: entity
   id: SynthVisor
-  noSpawn: true
   name: synth visor
+  categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
     enabled: true
