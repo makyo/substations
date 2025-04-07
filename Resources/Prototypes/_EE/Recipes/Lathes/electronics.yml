@@ -1,7 +1,7 @@
 - type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
   id: MaterialSiloCircuitboard
   result: MaterialSiloCircuitboard
-  category: Circuitry
   completetime: 5
   materials:
     Steel: 100
