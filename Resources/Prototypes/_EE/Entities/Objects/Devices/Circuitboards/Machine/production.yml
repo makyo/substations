@@ -8,9 +8,8 @@
     state: supply
   - type: MachineBoard
     prototype: MaterialSilo
-    requirements:
+    stackRequirements:
       MatterBin: 10
-    materialRequirements:
       Steel: 5
       Gold: 5
       Bluespace: 5
