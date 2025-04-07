@@ -106,6 +106,12 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
 
     /// <summary>
+    /// DeltaV - denotes whether someone is visibly synthetic
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Synthetic;
+
+    /// <summary>
     ///     Which markings the humanoid defaults to when nudity is toggled off.
     /// </summary>
     [DataField]
