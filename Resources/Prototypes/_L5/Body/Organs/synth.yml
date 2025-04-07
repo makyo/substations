@@ -9,7 +9,7 @@
   description: "A plastitanium shell housing a synthetic crew member's mind. May contain traces of brains and/or silicon."
   components:
   - type: Sprite
-    sprite: DeltaV/Mobs/Species/Synth/synth_brain.rsi
+    sprite: _L5/Mobs/Species/Synth/synth_brain.rsi
     layers:
       - state: brain
       - state: brain-lights

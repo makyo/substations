@@ -13,11 +13,11 @@
         !type:SimpleColoring
         color: "#808080"
   sprites:
-  - sprite: DeltaV/Mobs/Customization/Reptilian/visor.rsi
+  - sprite: _L5/Mobs/Customization/Reptilian/visor.rsi
     state: head_ledvisor_primary
-  - sprite: DeltaV/Mobs/Customization/Reptilian/visor.rsi
+  - sprite: _L5/Mobs/Customization/Reptilian/visor.rsi
     state: head_ledvisor_secondary
-  - sprite: DeltaV/Mobs/Customization/Reptilian/visor.rsi
+  - sprite: _L5/Mobs/Customization/Reptilian/visor.rsi
     state: head_ledvisor_tertiary
 
 - type: marking
@@ -31,9 +31,9 @@
         !type:SimpleColoring
         color: "#FFFFFF"
   sprites:
-  - sprite: DeltaV/Mobs/Customization/Reptilian/visor.rsi
+  - sprite: _L5/Mobs/Customization/Reptilian/visor.rsi
     state: head_ledvisor_primary_dark
-  - sprite: DeltaV/Mobs/Customization/Reptilian/visor.rsi
+  - sprite: _L5/Mobs/Customization/Reptilian/visor.rsi
     state: head_ledvisor_secondary
 
 - type: marking
@@ -47,11 +47,11 @@
         !type:SimpleColoring
         color: "#808080"
   sprites:
-  - sprite: DeltaV/Mobs/Customization/Reptilian/visor.rsi
+  - sprite: _L5/Mobs/Customization/Reptilian/visor.rsi
     state: head_ledvisor_primary
-  - sprite: DeltaV/Mobs/Customization/Reptilian/visor.rsi
+  - sprite: _L5/Mobs/Customization/Reptilian/visor.rsi
     state: head_ledvisor_secondary
-  - sprite: DeltaV/Mobs/Customization/Reptilian/visor.rsi
+  - sprite: _L5/Mobs/Customization/Reptilian/visor.rsi
     state: head_ledvisor_tertiary
 
 - type: marking
@@ -65,9 +65,9 @@
         !type:SimpleColoring
         color: "#FFFFFF"
   sprites:
-  - sprite: DeltaV/Mobs/Customization/Vulpkanin/visor.rsi
+  - sprite: _L5/Mobs/Customization/Vulpkanin/visor.rsi
     state: head_ledvisor_primary_dark
-  - sprite: DeltaV/Mobs/Customization/Vulpkanin/visor.rsi
+  - sprite: _L5/Mobs/Customization/Vulpkanin/visor.rsi
     state: head_ledvisor_secondary
 
 - type: marking
