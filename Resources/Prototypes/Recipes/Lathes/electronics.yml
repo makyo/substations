@@ -607,13 +607,3 @@
   parent: BaseCircuitboardRecipe
   id: HolopadMachineCircuitboard
   result: HolopadMachineCircuitboard
-
-- type: latheRecipe
-  id: MaterialSiloCircuitboard
-  result: MaterialSiloCircuitboard
-  category: Circuitry
-  completetime: 5
-  materials:
-    Steel: 100
-    Glass: 500
-    Gold: 100

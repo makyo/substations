@@ -1,12 +1,13 @@
 using System.Linq;
 using Content.Server.Lathe;
 using Content.Server.Station.Components;
+using Content.Shared._EE.Materials;
 using Content.Shared.DeviceLinking;
 using Content.Shared.Lathe;
 using Content.Shared.Materials;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Materials;
+namespace Content.Server._EE.Materials;
 
 public sealed class MaterialSiloSystem : SharedMaterialSiloSystem
 {

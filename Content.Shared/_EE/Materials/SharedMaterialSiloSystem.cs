@@ -1,13 +1,15 @@
 using System.Linq;
+using Content.Shared._EE.CCVars;
 using Content.Shared.CCVar;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Events;
+using Content.Shared.Materials;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Materials;
+namespace Content.Shared._EE.Materials;
 
 public abstract class SharedMaterialSiloSystem : EntitySystem
 {
@@ -27,7 +29,7 @@ public abstract class SharedMaterialSiloSystem : EntitySystem
     {
         base.Initialize();
 
-        _cfg.OnValueChanged(CCVars.SiloEnabled, enabled => _siloEnabled = enabled, true);
+        _cfg.OnValueChanged(EECVars.SiloEnabled, enabled => _siloEnabled = enabled, true);
 
         SubscribeLocalEvent<MaterialSiloComponent, NewLinkEvent>(OnNewLink);
         SubscribeLocalEvent<MaterialSiloComponent, PowerChangedEvent>(OnPowerChanged);

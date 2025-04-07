@@ -10,7 +10,7 @@
     anchored: true
     noRot: true
   - type: Sprite
-    sprite: Structures/Machines/material_silo.rsi
+    sprite: _EE/Structures/Machines/material_silo.rsi
     layers:
     - state: material_silo
     - state: inserting

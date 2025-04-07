@@ -1,3 +1,4 @@
+using Content.Shared._EE.Materials;
 using Content.Shared.Materials;
 using Robust.Client.GameObjects;
 

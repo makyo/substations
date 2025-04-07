@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._EE.Materials;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Mobs;
