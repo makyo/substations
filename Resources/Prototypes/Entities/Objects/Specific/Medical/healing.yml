@@ -30,6 +30,7 @@
   - type: Healing
     damageContainers:
       - Biological
+      - BiologicalMetaphysical # DeltaV
     damage:
       types:
         Heat: -5
@@ -87,6 +88,7 @@
   - type: Healing
     damageContainers:
       - Biological
+      - BiologicalMetaphysical # DeltaV
     damage:
       types:
         Heat: -10
@@ -144,6 +146,7 @@
   - type: Healing
     damageContainers:
       - Biological
+      - BiologicalMetaphysical # DeltaV
     damage:
       groups:
         Brute: -15 # 5 for each type in the group
@@ -199,6 +202,7 @@
   - type: Healing
     damageContainers:
       - Biological
+      - BiologicalMetaphysical # DeltaV
     damage:
       groups:
         Brute: -30 # 10 for each type in the group
@@ -254,6 +258,7 @@
   - type: Healing
     damageContainers:
       - Biological
+      - BiologicalMetaphysical # DeltaV
     damage:
       types:
         Bloodloss: -0.5 #lowers bloodloss damage
@@ -299,6 +304,7 @@
     - type: Healing
       damageContainers:
         - Biological
+        - BiologicalMetaphysical # DeltaV
       damage:
         groups:
           Brute: 5 # Tourniquets HURT!
@@ -337,6 +343,7 @@
   - type: Healing
     damageContainers:
       - Biological
+      - BiologicalMetaphysical # DeltaV
     damage:
       types:
         Slash: -5
