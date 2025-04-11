@@ -28,7 +28,7 @@
   metamorphicChangeColor: false
 
 - type: reagent
-  id: IcedDogstarCoffee
+  id: DogstarIcedCoffee
   name: reagent-name-dogstar-iced-coffee
   parent: BaseDrink
   desc: reagent-desc-dogstar-iced-coffee
@@ -80,7 +80,7 @@
 
 # Mixed coffee drinks
 - type: reagent
-  id: CafeDogstarLatte
+  id: DogstarCafeLatte
   name: reagent-name-dogstar-cafe-latte
   parent: BaseDrink
   desc: reagent-desc-dogstar-cafe-latte
@@ -107,7 +107,7 @@
         amount: 0.04
 
 - type: reagent
-  id: SoyDogstarLatte
+  id: DogstarSoyLatte
   name: reagent-name-dogstar-soy-latte
   parent: BaseDrink
   desc: reagent-desc-dogstar-soy-latte

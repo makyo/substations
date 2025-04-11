@@ -28,7 +28,7 @@
     Ice:
       amount: 1
   products:
-    IcedDogstarCoffee: 3
+    DogstarIcedCoffee: 3
 
 - type: reaction
   id: DogstarMocha
