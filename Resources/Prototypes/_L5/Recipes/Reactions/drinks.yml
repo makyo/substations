@@ -28,7 +28,7 @@
     Ice:
       amount: 1
   products:
-    IcedCoffee: 3
+    IcedDogstarCoffee: 3
 
 - type: reaction
   id: DogstarMocha
@@ -49,3 +49,23 @@
       amount: 2
   products:
     DogstarMocha: 3
+
+- type: reaction
+  id: IcedMaomiCha
+  reactants:
+    MaomiCha:
+      amount: 2
+    Ice:
+      amount: 1
+  products:
+    IcedMaomiCha: 3
+
+- type: reaction
+  id: ArnoldPawmer
+  reactants:
+    IcedMaomiCha:
+      amount: 1
+    Lemonade:
+      amount: 1
+  products:
+    ArnoldPawmer: 2
