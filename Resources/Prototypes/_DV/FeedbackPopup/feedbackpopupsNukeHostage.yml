@@ -1,4 +1,4 @@
-# Round start nukie popup.
+﻿# Round start nukie popup.
 - type: feedbackPopup
   id: NukieHostageRoundStartPopup
   popupName: feedbackpopup-hostage-nukie-start-name

@@ -1,4 +1,4 @@
-using Content.Shared.Mind;
+﻿using Content.Shared.Mind;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._DV.FeedbackOverwatch;

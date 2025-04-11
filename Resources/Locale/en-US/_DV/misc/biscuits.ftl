@@ -1,1 +1,1 @@
-biscuit-verb-crack = Crack
+﻿biscuit-verb-crack = Crack

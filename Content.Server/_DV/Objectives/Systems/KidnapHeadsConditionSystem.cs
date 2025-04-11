@@ -1,4 +1,4 @@
-using Content.Server._DV.Objectives.Components;
+﻿using Content.Server._DV.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Server.Revolutionary.Components;
 using Content.Shared.Cuffs;
@@ -65,3 +65,4 @@ public sealed class KidnapHeadsConditionSystem : EntitySystem
         }
     }
 }
+
