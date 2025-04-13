@@ -4250,3 +4250,18 @@
   id: 1254
   time: '2025-04-13T22:47:05.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/3391
+- author: Solaris7518
+  changes:
+  - message: Resprited a variety of objects that are commonly used by medical! Medical
+      mains rejoice!
+    type: Add
+  id: 1255
+  time: '2025-04-13T22:55:53.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3420
+- author: Field Command
+  changes:
+  - message: Reworked security on Pebble, alongside some other changes.
+    type: Tweak
+  id: 1256
+  time: '2025-04-13T23:51:41.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3440
