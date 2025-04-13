@@ -4242,3 +4242,11 @@
   id: 1253
   time: '2025-04-13T15:00:57.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/3443
+- author: Quanteey
+  changes:
+  - message: Medical masks can now be found in surgeon lockers and made in the medical
+      techfab!
+    type: Tweak
+  id: 1254
+  time: '2025-04-13T22:47:05.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3391
