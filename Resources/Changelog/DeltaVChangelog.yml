@@ -4280,3 +4280,21 @@
   id: 1258
   time: '2025-04-14T13:45:10.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/3456
+- author: Radezolid
+  changes:
+  - message: Added the watchdog implant, it functions as a rattle but for the security
+      channel. You can buy them at cargo for 18k per crate.
+    type: Add
+  - message: Tracking implants no longer broadcasts your position when going into
+      critical state.
+    type: Tweak
+  id: 1259
+  time: '2025-04-14T18:49:02.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3342
+- author: nkokic
+  changes:
+  - message: Game can now drop or rise in difficulty based on settings
+    type: Tweak
+  id: 1260
+  time: '2025-04-14T18:52:24.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3277
