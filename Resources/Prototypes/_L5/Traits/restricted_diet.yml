@@ -1,0 +1,13 @@
+- type: trait
+  category: Diet
+  id: RestrictedDiet
+  name: trait-dietary-restrictions-name
+  description: trait-dietary-restrictions-desc
+  components:
+  - type: DietaryRestrictions
+  blacklist:
+    components:
+    - Silicon
+    - BorgChassis
+  excludedSpecies:
+  - IPC

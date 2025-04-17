@@ -30,6 +30,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Server._L5.Traits.DietaryRestriction;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Server.GameObjects;
 using Content.Shared.Whitelist;
@@ -43,6 +44,7 @@ namespace Content.Server.Nutrition.EntitySystems;
 public sealed class FoodSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private readonly DietaryRestrictionSystem _dietaryRestriction = default!;
     [Dependency] private readonly FlavorProfileSystem _flavorProfile = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
@@ -409,17 +411,17 @@ public sealed class FoodSystem : EntitySystem
         if (!_body.TryGetBodyOrganEntityComps<StomachComponent>(uid, out var stomachs))
             return false;
 
-        return IsDigestibleBy(food, foodComp, stomachs);
+        return IsDigestibleBy(food, foodComp, stomachs) && _dietaryRestriction.TryFood(uid, food, stomachs);
     }
 
     /// <summary>
     ///     Returns true if <paramref name="stomachs"/> has a <see cref="StomachComponent.SpecialDigestible"/> that whitelists
     ///     this <paramref name="food"/> (or if they even have enough stomachs in the first place).
     /// </summary>
-    private bool IsDigestibleBy(EntityUid food, FoodComponent component, List<Entity<StomachComponent, OrganComponent>> stomachs)
+    private bool IsDigestibleBy(EntityUid food,
+        FoodComponent component,
+        List<Entity<StomachComponent, OrganComponent>> stomachs)
     {
-        var digestible = true;
-
         // Does the mob have enough stomachs?
         if (stomachs.Count < component.RequiredStomachs)
             return false;
@@ -433,15 +435,11 @@ public sealed class FoodSystem : EntitySystem
             // Check if the food is in the whitelist
             if (_whitelistSystem.IsWhitelistPass(ent.Comp1.SpecialDigestible, food))
                 return true;
-            // They can only eat whitelist food and the food isn't in the whitelist. It's not edible.
-            return false;
         }
 
-        if (component.RequiresSpecialDigestion)
-            return false;
-
-        return digestible;
-    }
+        // They can only eat whitelist food and the food isn't in the whitelist. It's not edible.
+        return false;
+}
 
     private bool TryGetRequiredUtensils(EntityUid user, FoodComponent component,
         out List<EntityUid> utensils, HandsComponent? hands = null)

@@ -20,6 +20,10 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
+  - type: Tag
+    tags:
+    - Wheat
+    - Vegan # L5
 
 - type: entity
   id: FoodBagel
@@ -65,6 +69,8 @@
   - type: Tag
     tags:
     - ClothMade
+    - Wheat
+    - Vegan
   - type: SolutionContainerManager
     solutions:
       food:
