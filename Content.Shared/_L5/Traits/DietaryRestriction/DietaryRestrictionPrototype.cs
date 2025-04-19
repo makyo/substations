@@ -49,4 +49,13 @@ public sealed partial class DietaryRestrictionPrototype : IPrototype
     /// </summary>
     [DataField]
     public EntityWhitelist? AllergicTo = null;
+
+    /// <summary>
+    /// The chance of vomiting if a user eats something they don't want
+    /// It's an oversimplification, but the more "important" a restriction is to a person,
+    /// the greater the chance they'll be made ill by eating it. This will probably be
+    /// replaced by the mood system when added.
+    /// </summary>
+    [DataField]
+    public float ChanceOfVomiting = 0.3f;
 }
