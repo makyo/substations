@@ -418,10 +418,10 @@ public sealed class FoodSystem : EntitySystem
     ///     Returns true if <paramref name="stomachs"/> has a <see cref="StomachComponent.SpecialDigestible"/> that whitelists
     ///     this <paramref name="food"/> (or if they even have enough stomachs in the first place).
     /// </summary>
-    private bool IsDigestibleBy(EntityUid food,
-        FoodComponent component,
-        List<Entity<StomachComponent, OrganComponent>> stomachs)
+    private bool IsDigestibleBy(EntityUid food, FoodComponent component, List<Entity<StomachComponent, OrganComponent>> stomachs)
     {
+        var digestible = true;
+
         // Does the mob have enough stomachs?
         if (stomachs.Count < component.RequiredStomachs)
             return false;
@@ -435,11 +435,15 @@ public sealed class FoodSystem : EntitySystem
             // Check if the food is in the whitelist
             if (_whitelistSystem.IsWhitelistPass(ent.Comp1.SpecialDigestible, food))
                 return true;
+            // They can only eat whitelist food and the food isn't in the whitelist. It's not edible.
+            return false;
         }
 
-        // They can only eat whitelist food and the food isn't in the whitelist. It's not edible.
-        return false;
-}
+        if (component.RequiresSpecialDigestion)
+            return false;
+
+        return digestible;
+    }
 
     private bool TryGetRequiredUtensils(EntityUid user, FoodComponent component,
         out List<EntityUid> utensils, HandsComponent? hands = null)
