@@ -432,8 +432,9 @@
           Quantity: 4
   - type: Tag
     tags:
+    - Haram # L5
     - Meat
-    - Pork # L5
+    - Treyf # L5
 # Tastes like eggs, bacon, bun.
 
 - type: entity
