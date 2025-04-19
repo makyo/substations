@@ -48,12 +48,6 @@ namespace Content.Server.Body.Components
         public EntityWhitelist? SpecialDigestible = null;
 
         /// <summary>
-        ///     L5: A whitelist for what foods this stomach is incapable of eating. Used for blocking meat foods for vegetarians.
-        /// </summary>
-        [DataField]
-        public EntityWhitelist SpecialUndigestible = new();
-
-        /// <summary>
         ///     Used to track how long each reagent has been in the stomach
         /// </summary>
         [ViewVariables]
