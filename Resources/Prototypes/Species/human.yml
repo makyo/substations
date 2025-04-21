@@ -19,6 +19,8 @@
   id: MobHumanSprites
   sprites:
     Special: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobHumanHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
