@@ -412,6 +412,8 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: Clothing
+    sprite: _DV/Objects/Weapons/Guns/Battery/immolator.rsi
   - type: Gun
     fireRate: 1.5
     soundGunshot:
@@ -440,6 +442,8 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: Clothing
+    sprite: _DV/Objects/Weapons/Guns/Battery/multi_lens_immolator.rsi
   - type: Gun
     fireRate: 2
     soundGunshot:
@@ -476,7 +480,7 @@
   description: A monstrously powerful laser rifle. Outfitted with a scope, it requires special capacitors to be fired.
   components:
   - type: Item
-    size: Huge
+    size: Ginormous
   - type: Sprite
     layers:
     - state: base
@@ -487,10 +491,9 @@
     quickEquip: false
     slots:
     - Back
-    - suitStorage
   - type: AmmoCounter
   - type: Gun
-    fireRate: 0.3
+    fireRate: 0.7
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -513,8 +516,8 @@
     pvsIncrease: 0.5
   - type: GunRequiresWield
   - type: SpeedModifiedOnWield
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.3
+    sprintModifier: 0.3
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

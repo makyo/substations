@@ -1,3 +1,4 @@
+using Content.Shared._EE.Materials;
 using Content.Shared.Materials;
 using Robust.Client.GameObjects;
 
@@ -44,10 +45,11 @@ public sealed class MaterialStorageSystem : SharedMaterialStorageSystem
         EntityUid toInsert,
         EntityUid receiver,
         MaterialStorageComponent? storage = null,
+        MaterialSiloUtilizerComponent? utilizer = null,
         MaterialComponent? material = null,
         PhysicalCompositionComponent? composition = null)
     {
-        if (!base.TryInsertMaterialEntity(user, toInsert, receiver, storage, material, composition))
+        if (!base.TryInsertMaterialEntity(user, toInsert, receiver, storage, utilizer, material, composition))
             return false;
         _transform.DetachEntity(toInsert, Transform(toInsert));
         return true;

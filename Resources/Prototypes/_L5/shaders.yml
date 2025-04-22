@@ -1,0 +1,5 @@
+# vision effect, similar to the flash effect but with static
+- type: shader
+  id: StaticVisionEffect
+  kind: source
+  path: "/Textures/_L5/Shaders/staticvisioneffect.swsl"

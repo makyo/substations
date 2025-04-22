@@ -20,6 +20,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Content.Shared._L5.Traits.Synthetic; // L5: Synthetics
 
 namespace Content.Shared.Humanoid;
 
@@ -39,6 +40,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] protected readonly SharedSynthSystem _synthSystem = default!; // L5: Proper appearance and cloning of synths
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
@@ -108,7 +110,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     private void OnExamined(EntityUid uid, HumanoidAppearanceComponent component, ExaminedEvent args)
     {
         var identity = Identity.Entity(uid, EntityManager);
-        var species = component.CustomSpecies ?? GetSpeciesRepresentation(component.Species).ToLower(); // L5: Custom species name
+        var species = component.CustomSpecies ?? GetSpeciesRepresentation(component.Species, component.Synthetic).ToLower(); // L5: Custom species name
         var age = GetAgeRepresentation(component.Species, component.Age);
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
@@ -448,6 +450,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         humanoid.Age = profile.Age;
         humanoid.Height = profile.Height; // CD - Character Records
+        if (profile.TraitPreferences.Any(trait => trait == SharedSynthSystem.SyntheticTrait)) // L5 - synthetics
+        {
+            humanoid.Synthetic = true;
+            _synthSystem.EnsureSynthetic(uid);
+        }
 
         RaiseLocalEvent(uid, new ProfileLoadFinishedEvent()); // Shitmed Change
         Dirty(uid, humanoid);
@@ -521,13 +528,32 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     }
 
     /// <summary>
+    ///     L5: Set synthetic status of a mob.
+    /// </summary>
+    /// <param name="uid">The humanoid mob's UID.</param>
+    /// <param name="isSynthetic">Whether the humanoid should be synthetic or not.</param>
+    /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not.</param>
+    /// <param name="humanoid">Humanoid component of the entity</param>
+    public void SetSynthetic(EntityUid uid, bool isSynthetic, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid) || humanoid.Synthetic == isSynthetic)
+            return;
+
+        humanoid.Synthetic = isSynthetic;
+
+        if (sync)
+            Dirty(uid, humanoid);
+    }
+
+    /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>
-    public string GetSpeciesRepresentation(string speciesId)
+    public string GetSpeciesRepresentation(string speciesId, bool synthetic)
     {
+        var syntheticPrefix = synthetic ? $"{Loc.GetString("humanoid-appearance-component-synthetic")} " : "";
         if (_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
         {
-            return Loc.GetString(species.Name);
+            return syntheticPrefix + Loc.GetString(species.Name);
         }
 
         Log.Error("Tried to get representation of unknown species: {speciesId}");
