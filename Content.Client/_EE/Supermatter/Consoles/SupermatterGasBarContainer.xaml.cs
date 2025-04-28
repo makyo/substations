@@ -1,5 +1,5 @@
 using Content.Client.Stylesheets;
-using Content.Shared._EinsteinEngines.CCVar;
+using Content.Shared._EE.CCVars;
 using Content.Shared._EinsteinEngines.Supermatter.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Prototypes;
@@ -12,7 +12,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._EinsteinEngines.Supermatter.Consoles;
+namespace Content.Client._EE.Supermatter.Consoles;
 
 [GenerateTypedNameReferences]
 public sealed partial class SupermatterGasBarContainer : BoxContainer
@@ -112,7 +112,7 @@ public sealed partial class SupermatterGasBarContainer : BoxContainer
         PowerInfoLabel.Text = Loc.GetString("supermatter-console-window-label-gas-power-bar", ("power", powerMix.ToString("+0.00;-0.00")));
         PowerInfoLabel.FontColorOverride = GetDetailColor(powerMix);
 
-        var heatResistance = (gasData.HeatResistance - 1) * (Atmospherics.T0C + _config.GetCVar(EinsteinCCVars.SupermatterHeatPenaltyThreshold));
+        var heatResistance = (gasData.HeatResistance - 1) * (Atmospherics.T0C + _config.GetCVar(SMCCVars.SupermatterHeatPenaltyThreshold));
         HeatInfoLabel.Text = Loc.GetString("supermatter-console-window-label-gas-heat-bar", ("heat", heatResistance.ToString("+0.00;-0.00")));
         HeatInfoLabel.FontColorOverride = GetDetailColor(heatResistance);
 

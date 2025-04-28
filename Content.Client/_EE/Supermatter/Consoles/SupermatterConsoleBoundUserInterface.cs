@@ -1,3 +1,4 @@
+using Content.Client._EE.Supermatter.Consoles;
 using Content.Shared._EinsteinEngines.Supermatter.Components;
 
 namespace Content.Client._EinsteinEngines.Supermatter.Consoles;

@@ -12,7 +12,7 @@ using Content.Server.Radio.EntitySystems;
 using Content.Server.Singularity.Components;
 using Content.Server.Singularity.EntitySystems;
 using Content.Server.Traits.Assorted;
-using Content.Shared._EinsteinEngines.CCVar;
+using Content.Shared._EE.CCVars;
 using Content.Shared._EinsteinEngines.Supermatter.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Audio;
@@ -94,7 +94,7 @@ public sealed partial class SupermatterSystem : EntitySystem
     private void OnMapInit(EntityUid uid, SupermatterComponent sm, MapInitEvent args)
     {
         // Set the yell timer
-        sm.YellTimer = TimeSpan.FromSeconds(_config.GetCVar(EinsteinCCVars.SupermatterYellTimer));
+        sm.YellTimer = TimeSpan.FromSeconds(_config.GetCVar(SMCCVars.SupermatterYellTimer));
 
         // Set the sound
         _ambient.SetAmbience(uid, true);
@@ -123,7 +123,7 @@ public sealed partial class SupermatterSystem : EntitySystem
         HandleSoundLoop(uid, sm);
         HandleAccent(uid, sm);
 
-        if (sm.Power > _config.GetCVar(EinsteinCCVars.SupermatterPowerPenaltyThreshold) || sm.Damage > sm.DamagePenaltyPoint)
+        if (sm.Power > _config.GetCVar(SMCCVars.SupermatterPowerPenaltyThreshold) || sm.Damage > sm.DamagePenaltyPoint)
         {
             SupermatterZap(uid, sm);
             GenerateAnomalies(uid, sm);
@@ -353,7 +353,7 @@ public sealed partial class SupermatterSystem : EntitySystem
         if (sm.Damage >= sm.DamageWarningThreshold)
             return SupermatterStatusType.Warning;
 
-        if (mix.Temperature > Atmospherics.T0C + _config.GetCVar(EinsteinCCVars.SupermatterHeatPenaltyThreshold) * 0.8)
+        if (mix.Temperature > Atmospherics.T0C + _config.GetCVar(SMCCVars.SupermatterHeatPenaltyThreshold) * 0.8)
             return SupermatterStatusType.Caution;
 
         if (sm.Power > 5)

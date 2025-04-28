@@ -8,8 +8,9 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Client._EinsteinEngines.Supermatter.Consoles;
 
-namespace Content.Client._EinsteinEngines.Supermatter.Consoles;
+namespace Content.Client._EE.Supermatter.Consoles;
 
 [GenerateTypedNameReferences]
 public sealed partial class SupermatterConsoleWindow : FancyWindow
