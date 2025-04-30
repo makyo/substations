@@ -39,7 +39,7 @@
           #justice
           ChiefJustice: [ 0, -1 ]
           Clerk: [ 0, -1 ]
-          Lawyer: [ 0, -2 ]
+          Lawyer: [ 0, -1 ]
           Prosecutor: [ 0, -1 ]
           #medical
           ChiefMedicalOfficer: [ 0, -1 ]
