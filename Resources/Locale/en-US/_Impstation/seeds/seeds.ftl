@@ -1,8 +1,8 @@
-seeds-butterflyorchid-name = butterfly orchid
-seeds-butterflyorchid-display-name = butterfly orchids
+seeds-coconut-name = coconut
+seeds-coconut-display-name = coconut tree
 
-seeds-biggerflyorchid-name = biggerfly orchid
-seeds-biggerflyorchid-display-name = biggerfly orchids
+seeds-coconest-name = coconest
+seeds-coconest-display-name = coconest tree
 
 seeds-hops-name = hops
 seeds-hops-display-name = hops bine
@@ -12,6 +12,12 @@ seeds-employedhops-display-name = HoPs bine
 
 seeds-agentgrain-name = agent grain
 seeds-agentgrain-display-name = agent grain bine
+
+seeds-butterflyorchid-name = butterfly orchid
+seeds-butterflyorchid-display-name = butterfly orchids
+
+seeds-biggerflyorchid-name = biggerfly orchid
+seeds-biggerflyorchid-display-name = biggerfly orchids
 
 seeds-butterorchid-name = butter orchid
 seeds-butterorchid-display-name = butter orchids
