@@ -27,7 +27,6 @@
   recipeUnlocks:
   - RadarConsoleCircuitboard
   - HandHeldMassScanner
-  - BorgModuleGPS
 
 - type: technology
   id: AdvancedPowercells
@@ -192,6 +191,7 @@
     - OreBagOfHolding
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
+    - BorgModuleAdvancedMining
 
 # Tier 3
 
@@ -208,7 +208,7 @@
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
-  - MaterialSiloCircuitboard # EE - material silo
+  - MaterialSiloMachineCircuitboard # L5 - material silo
 
 - type: technology
   id: PortableFission
