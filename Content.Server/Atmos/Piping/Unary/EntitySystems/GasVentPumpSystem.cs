@@ -101,7 +101,8 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
             var timeDelta = args.dt;
             var pressureDelta = timeDelta * vent.TargetPressureChange;
 
-            var lockout = (environment.Pressure < vent.UnderPressureLockoutThreshold) && !vent.IsPressureLockoutManuallyDisabled;
+            var lockout = (environment.Pressure < vent.UnderPressureLockoutThreshold) && !vent.IsPressureLockoutManuallyDisabled
+                          && vent.Flowmos != GasVentPumpData.VentPumpFlowmos.Outlet; // L5 - outlets shouldn't underpressure lockout
             if (vent.UnderPressureLockout != lockout) // update visuals only if this changes
             {
                 vent.UnderPressureLockout = lockout;
