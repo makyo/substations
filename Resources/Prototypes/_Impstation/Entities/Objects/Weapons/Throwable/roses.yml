@@ -128,7 +128,7 @@
           Quantity: 1
 
 - type: entity
-  parent: [Rose, Tier3Contraband]
+  parent: [Rose, BaseMajorContraband]
   id: RoseSyndicate
   name: Blood Red Rose
   description: Smells like communism.
