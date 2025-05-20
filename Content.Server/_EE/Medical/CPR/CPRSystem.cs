@@ -1,0 +1,134 @@
+using Content.Server.Atmos.Rotting;
+using Content.Server.DoAfter;
+using Content.Server.Nutrition.EntitySystems;
+using Content.Server.Popups;
+using Content.Shared._EE.CCVars;
+using Content.Shared.Atmos.Rotting;
+using Content.Shared.Damage;
+using Content.Shared.DoAfter;
+using Content.Shared.Inventory;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Verbs;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
+using Robust.Shared.Configuration;
+using Robust.Shared.Utility;
+// ReSharper disable InconsistentNaming
+
+namespace Content.Server._EE.Medical.CPR;
+
+public sealed class CPRSystem : EntitySystem
+{
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    [Dependency] private readonly FoodSystem _foodSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly RottingSystem _rottingSystem = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IConfigurationManager _configuration = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<CPRTrainingComponent, GetVerbsEvent<InnateVerb>>(AddCPRVerb);
+        SubscribeLocalEvent<CPRTrainingComponent, Shared._EE.Medical.CPRDoAfterEvent>(OnCPRDoAfter);
+    }
+
+    private void AddCPRVerb(Entity<CPRTrainingComponent> performer, ref GetVerbsEvent<InnateVerb> args)
+    {
+        // L5 - respect CVar
+        if (!_configuration.GetCVar(CPRCCVars.EnableCPR))
+            return;
+
+        if (!args.CanInteract || !args.CanAccess || !TryComp<MobStateComponent>(args.Target, out var targetState)
+            || targetState.CurrentState == MobState.Alive)
+            return;
+
+        var target = args.Target;
+        InnateVerb verb = new()
+        {
+            Act = () => { StartCPR(performer, target); },
+            Text = Loc.GetString("cpr-verb"),
+            Icon = new SpriteSpecifier.Rsi(new("Interface/Alerts/human_alive.rsi"), "health4"),
+            Priority = 2
+        };
+
+        args.Verbs.Add(verb);
+    }
+
+    private void StartCPR(Entity<CPRTrainingComponent> performer, EntityUid target)
+    {
+        if (HasComp<RottingComponent>(target))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("cpr-target-rotting", ("entity", target)), performer, performer);
+            return;
+        }
+
+        if (_inventory.TryGetSlotEntity(target, "outerClothing", out var outer))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("cpr-must-remove", ("clothing", outer)), performer, performer);
+            return;
+        }
+
+        if (_foodSystem.IsMouthBlocked(performer, performer) || _foodSystem.IsMouthBlocked(target, performer))
+            return;
+
+        _popupSystem.PopupEntity(Loc.GetString("cpr-start-second-person", ("target", target)), target, performer);
+        _popupSystem.PopupEntity(Loc.GetString("cpr-start-second-person-patient", ("user", performer)), target, target);
+
+        var doAfterArgs = new DoAfterArgs(
+            EntityManager, performer, performer.Comp.DoAfterDuration, new Shared._EE.Medical.CPRDoAfterEvent(), performer, target,
+            performer)
+        {
+            BreakOnMove = true,
+            NeedHand = true,
+            BlockDuplicate = true
+        };
+
+        _doAfterSystem.TryStartDoAfter(doAfterArgs);
+
+        var playingStream = _audio.PlayPvs(performer.Comp.CPRSound, performer, AudioParams.Default.WithLoop(true));
+        if (!playingStream.HasValue)
+            return;
+
+        performer.Comp.CPRPlayingStream = playingStream.Value.Entity;
+    }
+
+    private void OnCPRDoAfter(Entity<CPRTrainingComponent> performer, ref Shared._EE.Medical.CPRDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled || !args.Target.HasValue)
+        {
+            performer.Comp.CPRPlayingStream = _audio.Stop(performer.Comp.CPRPlayingStream);
+            return;
+        }
+
+        // L5 changes:
+        // - Respect CVars
+        // - No resuscitation chance
+        _damageable.TryChangeDamage(args.Target,
+            new DamageSpecifier
+            {
+                DamageDict =
+                {
+                    ["Asphyxiation"] = performer.Comp.DoAfterDuration.Seconds * _configuration.GetCVar(CPRCCVars.CPRAirlossReductionMultiplier),
+                },
+            },
+            true,
+            origin: performer);
+
+
+        _rottingSystem.ReduceAccumulator(
+            (EntityUid)args.Target,
+            performer.Comp.DoAfterDuration * _configuration.GetCVar(CPRCCVars.CPRRotReductionMultiplier));
+
+
+        var isAlive = _mobStateSystem.IsAlive(args.Target.Value);
+        args.Repeat = !isAlive;
+        if (isAlive)
+            performer.Comp.CPRPlayingStream = _audio.Stop(performer.Comp.CPRPlayingStream);
+    }
+}
