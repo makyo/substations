@@ -1407,6 +1407,7 @@
     tags:
     - Vegan # L5
     - Vegetable
+    - Mushroom
 
 # Slices
 
@@ -1736,6 +1737,9 @@
     entries:
       Taco: Lingzhi
       Burger: Lingzhi
+  - type: Tag
+    tags:
+    - Mushroom
 
 - type: entity
   name: ambrosia vulgaris
@@ -1965,6 +1969,9 @@
     entries:
       Taco: FlyAmanita
       Burger: FlyAmanita
+  - type: Tag
+    tags:
+    - Mushroom
 
 - type: entity
   name: gatfruit

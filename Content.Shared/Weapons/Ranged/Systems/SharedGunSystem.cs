@@ -68,6 +68,11 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] private   readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
+    /// <summary>
+    /// Default projectile speed
+    /// </summary>
+    public const float ProjectileSpeed = 40f;
+
     private static readonly ProtoId<TagPrototype> TrashTag = "Trash";
 
     private const float InteractNextFire = 0.3f;
@@ -410,7 +415,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         var shooterEv = new ShooterImpulseEvent();
         RaiseLocalEvent(user, ref shooterEv);
 
-        if (shooterEv.Push)
+        if (shooterEv.Push && !shooterEv.CannotBePushed) // DeltaV - Bipods stop you from being moved by recoil.
             CauseImpulse(fromCoordinates, toCoordinates.Value, user, userPhysics);
         return true;
     }
@@ -439,7 +444,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         EntityUid? user = null,
         bool throwItems = false);
 
-    public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = 20f)
+    public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = ProjectileSpeed)
     {
         var physics = EnsureComp<PhysicsComponent>(uid);
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
@@ -653,6 +658,26 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         public List<(NetCoordinates coordinates, Angle angle, SpriteSpecifier Sprite, float Distance)> Sprites = new();
     }
+
+    /// <summary>
+    /// Get the ammo count for a given EntityUid. Can be a firearm or magazine.
+    /// </summary>
+    public int GetAmmoCount(EntityUid uid)
+    {
+        var ammoEv = new GetAmmoCountEvent();
+        RaiseLocalEvent(uid, ref ammoEv);
+        return ammoEv.Count;
+    }
+
+    /// <summary>
+    /// Get the ammo capacity for a given EntityUid. Can be a firearm or magazine.
+    /// </summary>
+    public int GetAmmoCapacity(EntityUid uid)
+    {
+        var ammoEv = new GetAmmoCountEvent();
+        RaiseLocalEvent(uid, ref ammoEv);
+        return ammoEv.Capacity;
+    }
 }
 
 /// <summary>
@@ -682,6 +707,7 @@ public record struct GunShotEvent(EntityUid User, List<(EntityUid? Uid, IShootab
 public record struct ShooterImpulseEvent()
 {
     public bool Push;
+    public bool CannotBePushed; // DeltaV - Bipods stop you from being moved by recoil.
 };
 
 public enum EffectLayers : byte

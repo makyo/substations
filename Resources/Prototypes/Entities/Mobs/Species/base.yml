@@ -36,7 +36,7 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "outerClothing" ]
+    #- map: [ "outerClothing" ] # L5 — Old location
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
