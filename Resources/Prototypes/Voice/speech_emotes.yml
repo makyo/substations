@@ -7,11 +7,6 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    # tags:
-    # - SiliconEmotes # L5 - allow IPCs
-    components:
-    - BorgChassis # L5 - but not borgs
   chatMessages: ["chat-emote-msg-scream"]
   chatTriggers:
     - scream
