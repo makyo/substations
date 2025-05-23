@@ -28,7 +28,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
 using Content.Server._L5.Traits.DietaryRestriction;
-using Robust.Server.GameObjects;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
