@@ -1,0 +1,27 @@
+- type: construction
+  name: crafting-vent-pump-inlet
+  description: crafting-vent-pump-inlet-desc
+  id: GasVentPumpInlet
+  graph: GasUnaryFlowmos
+  startNode: start
+  targetNode: ventpumpin
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+- type: construction
+  name: crafting-vent-pump-outlet
+  description: crafting-vent-pump-outlet-desc
+  id: GasVentPumpOutlet
+  graph: GasUnaryFlowmos
+  startNode: start
+  targetNode: ventpumpout
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+
+
