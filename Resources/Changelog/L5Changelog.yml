@@ -511,3 +511,9 @@ Entries:
         after five days
   id: 65
   time: '2025-05-24T08:51:54.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: The Nucleus is now nubbinless.
+  id: 66
+  time: '2025-05-24T17:48:12.0000000+00:00'
