@@ -159,6 +159,7 @@
   - type: FingerprintMask
   - type: SurgeryDirtiness # DeltaV - gloves that are likely to be used for surgery should have their bar visible from the getgo
 ####
+
 - type: entity
   parent: ClothingHandsButcherable
   id: ClothingHandsGlovesLeather
@@ -277,9 +278,9 @@
   - type: Fiber
     fiberMaterial: fibers-insulative
   - type: DamageOnShootProtection # imp
-    damageProtection: 
+    damageProtection:
       flatReductions:
-        Blunt: 4   
+        Blunt: 4
 
 # can't parent combat gloves since they are butcherable
 - type: entity
@@ -296,9 +297,9 @@
   - type: Fiber
     fiberColor: fibers-black
   - type: DamageOnShootProtection # imp - These are just reskinned combat gloves
-    damageProtection: 
+    damageProtection:
       flatReductions:
-        Blunt: 4   
+        Blunt: 4
 
 - type: entity
   parent: [ BaseSecurityCargoContraband, ClothingHandsGlovesCombat ]
@@ -318,9 +319,9 @@
     fiberMaterial: fibers-insulative
     fiberColor: fibers-olive
   - type: DamageOnShootProtection # imp
-    damageProtection: 
+    damageProtection:
       flatReductions:
-        Blunt: 4   
+        Blunt: 4
 
 - type: entity
   parent: ClothingHandsButcherable
@@ -433,6 +434,10 @@
         type: MeleeSpeechBoundUserInterface
   - type: StaticPrice
     price: 0
+  - type: Tag
+    tags:
+    - Kangaroo
+    - WhitelistChameleon
 
 - type: entity
   parent: [ClothingHandsBase, BaseSecurityContraband]
@@ -491,6 +496,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - Kangaroo
 
 - type: entity
   parent: [ClothingHandsKnuckleDusters, BaseMinorContraband] #Craftable version of base knuckledusters
@@ -509,6 +515,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - Kangaroo
 
 - type: entity
   parent: [ClothingHandsBase, BaseGrandTheftContraband]
@@ -535,6 +542,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - Kangaroo
   - type: StealTarget
     stealGroup: ClothingHandsKnuckleDustersQM
 
@@ -562,6 +570,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - Kangaroo
 
 - type: entity
   name: stun knuckle dusters
@@ -653,5 +662,5 @@
       collection: Punch
     animation: WeaponArcFist
   - type: Tag
-    tags: [] # ignore "WhitelistChameleon" tag
-
+    tags:
+    - Kangaroo
