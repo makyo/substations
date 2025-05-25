@@ -39,10 +39,7 @@ namespace Content.Shared.Preferences
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         // TODO ensure these are switched over to CVars
-        public const int MaxNameLength = 32;
         public const int MaxCustomSpeciesLength = 32; // L5: Maximum characters in custom species name.
-        public const int MaxLoadoutNameLength = 32;
-        public const int MaxDescLength = 2048; // L5: Four times the default; why this isn't a CVar or part of a prototype is beyond me.
 
         /// <summary>
         /// Job preferences for initial spawn.
