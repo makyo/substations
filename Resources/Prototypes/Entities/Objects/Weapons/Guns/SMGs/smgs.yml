@@ -174,7 +174,7 @@
               - CartridgePistol
     - type: MagazineVisuals
       magState: mag
-      steps: 1
+      steps: 1 # L5 - was 5, but DV's resprite has 1 step
       zeroVisible: true
     - type: Appearance
 
