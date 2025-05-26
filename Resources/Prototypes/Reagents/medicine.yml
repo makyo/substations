@@ -1297,7 +1297,6 @@
             Heat: -5 # DeltaV - was -4
             Shock: -5 # DeltaV - was -4
             Caustic: -2 # DeltaV - was -1.5
-
 - type: reagent
   id: Traumoxadone
   name: reagent-name-traumoxadone
