@@ -669,18 +669,18 @@
       whitelist:
         components:
         - FloorTile
-    - id: CapacitorStockPart
-      whitelist:
-        tags:
-        - BorgStockPart
+#    - id: CapacitorStockPart # Wizden removed
+#      whitelist:
+#        tags:
+#        - BorgStockPart
     - id: MicroManipulatorStockPart
       whitelist:
         tags:
         - BorgStockPart
-    - id: MatterBinStockPart
-      whitelist:
-        tags:
-        - BorgStockPart
+#    - id: MatterBinStockPart # Wizden removed
+#      whitelist:
+#        tags:
+#        - BorgStockPart
   # End DeltaV Additions
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: construction-module }
