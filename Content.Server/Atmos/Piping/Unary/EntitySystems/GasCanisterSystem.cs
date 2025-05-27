@@ -119,14 +119,22 @@ public sealed class GasCanisterSystem : SharedGasCanisterSystem
         {
             _appearance.SetData(uid, GasCanisterVisuals.PressureState, 2, appearance);
         }
-        // L5 - flashing green indicator at > ~4250 kPa
+        // L5 - flashing green indicators higher pressures equating to 'full'
         else if (canister.Air.Pressure < (42 * Atmospherics.OneAtmosphere))
         {
             _appearance.SetData(uid, GasCanisterVisuals.PressureState, 3, appearance);
         }
-        else
+        else if (canister.Air.Pressure < (84 * Atmospherics.OneAtmosphere))
         {
             _appearance.SetData(uid, GasCanisterVisuals.PressureState, 4, appearance);
+        }
+        else if (canister.Air.Pressure < (100 * Atmospherics.OneAtmosphere))
+        {
+            _appearance.SetData(uid, GasCanisterVisuals.PressureState, 5, appearance);
+        }
+        else
+        {
+            _appearance.SetData(uid, GasCanisterVisuals.PressureState, 6, appearance);
         }
     }
 
