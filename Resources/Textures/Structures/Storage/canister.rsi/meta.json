@@ -47,6 +47,15 @@
       "name": "can-o3"
     },
     {
+      "name": "can-o4",
+      "delays": [
+        [
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
       "name": "can-oa1"
     },
     {
