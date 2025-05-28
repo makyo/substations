@@ -58,7 +58,7 @@
   id: Miriam
   name: USSPS Miriam
   description: A modestly sized medical vessel with all the equipment to operate a cryogenics laboratory.
-  price: 63000
+  price: 63500
   path: /Maps/_DV/Shuttles/USSPS_Miriam.yml
   categories:
   - Civilian
