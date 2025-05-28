@@ -36,7 +36,7 @@
   id: Eden
   name: USSPS Eden
   description: A modestly sized botanical garden with a chemistry lab for pushing the bounds of hydroponics.
-  price: 73500
+  price: 77500
   path: /Maps/_DV/Shuttles/USSPS_Eden.yml
   categories:
   - Civilian
@@ -58,7 +58,7 @@
   id: Miriam
   name: USSPS Miriam
   description: A modestly sized medical vessel with all the equipment to operate a cryogenics laboratory.
-  price: 59500
+  price: 63000
   path: /Maps/_DV/Shuttles/USSPS_Miriam.yml
   categories:
   - Civilian
