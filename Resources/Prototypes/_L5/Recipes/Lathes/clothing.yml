@@ -115,20 +115,24 @@
 
 - type: latheRecipe
   parent: BaseApronRecipe
+  name: clothing-outer-apron-bar
   id: ClothingOuterApronBar
   result: ClothingOuterApronBar
 
 - type: latheRecipe
   parent: BaseApronRecipe
+  name: clothing-outer-apron-botanist
   id: ClothingOuterApronBotanist
   result: ClothingOuterApronBotanist
 
 - type: latheRecipe
   parent: BaseApronRecipe
+  name: clothing-outer-apron-chef
   id: ClothingOuterApronChef
   result: ClothingOuterApronChef
 
 - type: latheRecipe
   parent: BaseApronRecipe
+  name: clothing-outer-apron-chemist
   id: ClothingOuterApronChemist
   result: ClothingOuterApronChemist
