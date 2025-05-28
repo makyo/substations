@@ -529,3 +529,11 @@ Entries:
       message: When canisters are full (more than 4250kPa), the green light flashes
   id: 68
   time: '2025-05-28T16:03:39.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Waist aprons ported from Den!
+    - type: Tweak
+      message: Aprons are printable at the textile fab
+  id: 69
+  time: '2025-05-28T20:35:30.0000000+00:00'
