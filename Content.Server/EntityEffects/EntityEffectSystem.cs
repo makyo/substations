@@ -87,6 +87,7 @@ public sealed partial class EntityEffectSystem : EntitySystem // L5 - made parti
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantAdjustHealth>>(OnExecutePlantAdjustHealth);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantAdjustMutationLevel>>(OnExecutePlantAdjustMutationLevel);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantAdjustMutationMod>>(OnExecutePlantAdjustMutationMod);
+        SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantAdjustNutrition>>(OnExecutePlantAdjustNutrition);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantAdjustPests>>(OnExecutePlantAdjustPests);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantAdjustPotency>>(OnExecutePlantAdjustPotency);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantAdjustToxins>>(OnExecutePlantAdjustToxins);
@@ -99,6 +100,7 @@ public sealed partial class EntityEffectSystem : EntitySystem // L5 - made parti
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantDiethylamine>>(OnExecutePlantDiethylamine);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantPhalanximine>>(OnExecutePlantPhalanximine);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantRestoreSeeds>>(OnExecutePlantRestoreSeeds);
+        SubscribeLocalEvent<ExecuteEntityEffectEvent<RobustHarvest>>(OnExecuteRobustHarvest);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<AdjustTemperature>>(OnExecuteAdjustTemperature);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<AreaReactionEffect>>(OnExecuteAreaReactionEffect);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<CauseZombieInfection>>(OnExecuteCauseZombieInfection);
