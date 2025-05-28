@@ -118,11 +118,13 @@
     price: 1500
 
 - type: entity
+  parent: BaseAction
   id: ActionToggleMagboots
   name: Toggle Magboots
   description: Toggles the magboots on and off.
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigItem
+  - type: InstantAction
     event: !type:ToggleActionEvent
     useDelay: 3 # DeltaV - Add delay to avoid spamming magboots to avoid lube puddles.
