@@ -124,8 +124,8 @@ public sealed class DietaryRestrictionSystem : EntitySystem
 
             // If they don't want it, let them know.
             if (_whitelist.IsWhitelistFail(restriction.Exceptions, food)
-                || _whitelist.IsWhitelistPass(restriction.DoesNotWant, food)
-                || _whitelist.IsWhitelistFail(restriction.Wants, food))
+                && (_whitelist.IsWhitelistPass(restriction.DoesNotWant, food)
+                || _whitelist.IsWhitelistFail(restriction.Wants, food)))
             {
                 // notify the user, give a chance of them vomiting.
                 _popup.PopupEntity(Loc.GetString($"trait-dietary-restriction-{restriction.ID}-fail"), user, user, PopupType.MediumCaution);
