@@ -312,14 +312,3 @@
   - type: WearerGetsExamineText # imp
     thingType: obvious-type-pride-pan
 
-- type: entity
-  parent: [ ClothingNeckBase, BaseObviousCloak ] # imp
-  id: ClothingNeckCloakBear
-  name: druid cloak
-  description: This cloak has a wild-looking shape on it.
-  components:
-  - type: Sprite
-    sprite: Clothing/Neck/Cloaks/bear.rsi
-  - type: WearerGetsExamineText # imp
-    thingType: obvious-type-pride-bear
-

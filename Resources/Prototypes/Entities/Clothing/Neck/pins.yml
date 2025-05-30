@@ -15,7 +15,6 @@
     damage:
       types:
         Blunt: 1
-    staminaCost: 1
   - type: WearerGetsExamineText # imp
     thing: obvious-thing-pin
     examineText: obvious-desc-default
