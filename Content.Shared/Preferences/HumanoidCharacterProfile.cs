@@ -38,10 +38,8 @@ namespace Content.Shared.Preferences
         private static readonly Regex RestrictedNameRegex = new("[^\\u0030-\\u0039,\\u0041-\\u005A,\\u0061-\\u007A,\\u00C0-\\u00D6,\\u00D8-\\u00F6,\\u00F8-\\u00FF,\\u0100-\\u017F, '.,-]");
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
-        public const int MaxNameLength = 32;
+        // TODO ensure these are switched over to CVars
         public const int MaxCustomSpeciesLength = 32; // L5: Maximum characters in custom species name.
-        public const int MaxLoadoutNameLength = 32;
-        public const int MaxDescLength = 2048; // L5: Four times the default; why this isn't a CVar or part of a prototype is beyond me.
 
         /// <summary>
         /// Job preferences for initial spawn.
@@ -571,13 +569,14 @@ namespace Content.Shared.Preferences
             };
 
             string name;
+            var maxNameLength = configManager.GetCVar(CCVars.MaxNameLength);
             if (string.IsNullOrEmpty(Name))
             {
                 name = GetName(Species, gender);
             }
-            else if (Name.Length > MaxNameLength)
+            else if (Name.Length > maxNameLength)
             {
-                name = Name[..MaxNameLength];
+                name = Name[..maxNameLength];
             }
             else
             {
@@ -618,9 +617,10 @@ namespace Content.Shared.Preferences
             }
 
             string flavortext;
-            if (FlavorText.Length > MaxDescLength)
+            var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
+            if (FlavorText.Length > maxFlavorTextLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..MaxDescLength];
+                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
             }
             else
             {

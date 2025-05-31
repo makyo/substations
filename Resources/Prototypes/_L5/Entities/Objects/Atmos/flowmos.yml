@@ -1,0 +1,36 @@
+- type: entity
+  parent: GasVentPump
+  id: GasVentPumpInlet
+  name: air vent
+  suffix: Inlet
+  components:
+  - type: GasVentPump
+    underPressureLockoutThreshold: 30
+    # This all needs hardcoded because UninitializedSaveTest exists :(
+    flowmos: Inlet
+    # Atmospherics.OneAtmosphere + Atmospherics.AirVentPressureDelta:
+    externalPressureBound: 106.325
+  - type: DeviceNetwork
+    prefix: VTI-
+  - type: Construction
+    graph: GasUnaryFlowmos
+    node: ventpumpin
+
+- type: entity
+  parent: GasVentPump
+  id: GasVentPumpOutlet
+  name: air vent
+  suffix: Outlet
+  components:
+  - type: GasVentPump # Lockout is disabled in code
+    flowmos: Outlet
+    # Atmospherics.OneAtmosphere + Atmospherics.AirVentPressureDelta:
+    pumpDirection: Siphoning
+    externalPressureBound: 96.325
+  - type: DeviceNetwork
+    prefix: VTO-
+  - type: Construction
+    graph: GasUnaryFlowmos
+    node: ventpumpout
+
+

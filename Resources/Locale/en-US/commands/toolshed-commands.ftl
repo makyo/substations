@@ -18,10 +18,11 @@ command-description-jobs-set =
     Sets the number of slots for the given job.
 command-description-jobs-amount =
     Returns the number of slots for the given job.
+# L5 - laws to directives
 command-description-laws-list =
-    Returns a list of all law bound entities.
+    Returns a list of all directive-bound entities.
 command-description-laws-get =
-    Returns all of the laws for a given entity.
+    Returns all of the directives for a given entity.
 command-description-stations-list =
     Returns a list of all stations.
 command-description-stations-get =
@@ -84,3 +85,5 @@ command-description-addaccesslog =
     Adds an access log to this entity. Do note that this bypasses the log's default limit and pause check.
 command-description-stationevent-simulate =
     Given a BasicStationEventScheduler prototype, N Rounds, N Players, mean round end, and stddev of round end, Simulates N number of rounds in which events will occur and prints the occurrences of every event after.
+command-description-jobboard-completeJob =
+    Completes a given salvage job board job for the station.

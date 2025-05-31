@@ -1,0 +1,545 @@
+Entries:
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Expanded height and age ranges.
+  id: 2
+  time: '2025-03-28T23:47:28.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Post-Self lobby art
+  id: 3
+  time: '2025-03-30T21:21:52.0000000+00:00'
+- author: alldogsgotwoheaven
+  changes:
+    - type: Add
+      message: >-
+        You can now set the name of your character's species to a custom value
+        like "skunk" or "dog".
+  id: 4
+  time: '2025-03-31T23:27:49.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Switched to L5 ruleset
+  id: 5
+  time: '2025-04-03T17:18:19.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Start transferring the setting to Lagrange
+  id: 6
+  time: '2025-04-04T20:02:56.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Added the Cryptid library shuttle for purchase from the shipyard.
+  id: 7
+  time: '2025-04-05T06:59:27.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: >-
+        Changed character counts of paper and books to 10k and 30k characters
+        respectively.
+    - type: Tweak
+      message: Upped cassette length to ten minutes.
+  id: 8
+  time: '2025-04-05T07:07:18.0000000+00:00'
+- author: Maezel
+  changes: []
+  id: 9
+  time: '2025-04-06T20:42:09.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Synth trait!
+  id: 10
+  time: '2025-04-07T18:35:46.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Holopads can have stuff dragged over them now.
+  id: 11
+  time: '2025-04-06T04:10:51.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Materials silo!
+  id: 12
+  time: '2025-04-07T22:44:08.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Bufo and Borough shuttles now available for purchase!
+    - type: Tweak
+      message: Shuttle events are half as common.
+  id: 13
+  time: '2025-04-10T18:21:43.0000000+00:00'
+- author: RedFoxIV
+  changes:
+    - type: Add
+      message: Added collapsing repeated messages in chat into one with a multiplier.
+  id: 14
+  time: '2025-04-10T18:05:08.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Added the Dogstar line of coffee and chocolate, and the Maomi Cha line
+        of tea, animal-safe. And, uh...human poisonous.
+    - type: Tweak
+      message: Vegan food is no longer sad
+  id: 15
+  time: '2025-04-11T21:09:42.0000000+00:00'
+- author: Aviu00
+  changes:
+    - type: Fix
+      message: Fix silo being out of range.
+  id: 16
+  time: '2025-04-11T17:01:10.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: >-
+        A bunch of small issues with the Sirius additions were addressed in one
+        fell swoop
+    - type: Tweak
+      message: Re-enabled large pizza crates
+  id: 17
+  time: '2025-04-12T09:44:17.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Examining synths says they're synths
+    - type: Fix
+      message: There's only a chance you'll be notified of an ion storm
+    - type: Tweak
+      message: IPCs can't be synths
+  id: 18
+  time: '2025-04-12T17:30:35.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Dogstar mocha and hot choc recipes fixed
+    - type: Tweak
+      message: Who makes hot choc with water??? Use milk instead.
+  id: 19
+  time: '2025-04-14T14:19:53.0000000+00:00'
+- author: Maezel
+  changes:
+    - type: Add
+      message: New boards to existing research options
+    - type: Add
+      message: Said boards to the engineering lathe pack
+  id: 20
+  time: '2025-04-17T16:33:38.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Outpost station
+  id: 21
+  time: '2025-04-27T18:32:50.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: (Re)added the Omnimed surgical multitool as tier 3 research
+    - type: Add
+      message: Autoclave machine board researchable/printable
+    - type: Tweak
+      message: Massive surgical contamination debuff
+    - type: Tweak
+      message: bodies no longer gib  at 400 blunt
+  id: 22
+  time: '2025-04-19T06:42:56.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Added dietary restrictions and allergies of various sorts as selectable
+        traits.
+  id: 23
+  time: '2025-04-20T21:31:04.0000000+00:00'
+- author: Cheeses-The-Mac
+  changes:
+    - type: Add
+      message: Added the low mobility trait.
+    - type: Add
+      message: Added a wheelchair which can be spawned in by admin intervention.
+  id: 24
+  time: '2025-04-20T23:46:43.0000000+00:00'
+- author: Maezel
+  changes:
+    - type: Tweak
+      message: Food is better, shrimple as
+  id: 25
+  time: '2025-04-27T18:58:33.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Chem bags can hold jugs
+    - type: Tweak
+      message: Paperwork belts can hold clipboards
+    - type: Add
+      message: Station admin locker contains a paperwork belt for greater admin powers
+    - type: Add
+      message: High cap water/fuel tanks can now be ordered from logi
+  id: 26
+  time: '2025-04-20T20:51:39.0000000+00:00'
+- author: Maezel
+  changes:
+    - type: Add
+      message: Service fab has sterile swabs for .2 cloth and .2 steel
+    - type: Add
+      message: Medical fab has walking canes for 1 steel, 2 wood
+  id: 27
+  time: '2025-04-22T06:37:19.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Flavor text descriptions can be longer
+  id: 28
+  time: '2025-04-22T17:53:40.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Printable boards (techfab, monitoring consoles, biofab)
+    - type: Add
+      message: The Svalinn, force gun, and tether gun are back!
+    - type: Tweak
+      message: Magic candles can be crafted
+    - type: Fix
+      message: Sky blue carpet can be printed
+  id: 29
+  time: '2025-04-25T16:36:57.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Server whitelist now works
+  id: 30
+  time: '2025-04-25T16:56:27.0000000+00:00'
+- author: Maezel
+  changes:
+    - type: Add
+      message: MailMetrics, AstroNav, StockTrading carts to the logifab
+    - type: Add
+      message: MedTek cart to the medfab
+    - type: Add
+      message: LogProbe and CrimeAssist to the secfab
+    - type: Add
+      message: >-
+        the logifab  recipes are in the autolathe also as a treat(side effect of
+        me not entirely knowing how the recipe packs work)
+  id: 31
+  time: '2025-04-27T18:16:11.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Add
+      message: Suit sensors and servers now have greatly increased range.
+  id: 32
+  time: '2025-04-26T15:13:15.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: >-
+        Vulps now get a fox yell as a scream, rodentia can chitter, kitsune make
+        all sorts of fox noises, and everyone can sneeze.
+  id: 33
+  time: '2025-04-27T09:43:00.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Can now paint standard airlocks medical theme
+  id: 34
+  time: '2025-04-27T09:42:36.0000000+00:00'
+- author: alldogsgotwoheaven
+  changes:
+    - type: Tweak
+      message: >-
+        Tracking implants now speak on the Medical channel instead of the
+        Security channel.
+  id: 35
+  time: '2025-04-27T17:41:45.0000000+00:00'
+- author: alldogsgotwoheaven
+  changes:
+    - type: Tweak
+      message: >-
+        "Uniform Printer" renamed to "Universal Textile Fabricator", since it
+        prints more than uniforms.
+  id: 36
+  time: '2025-04-27T18:12:22.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Some food YAML/l10n errors fixed
+  id: 37
+  time: '2025-04-27T20:26:49.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Outpost is now a game preset, which is forced on the outpost server and
+        not in the vote list for the substations server.
+    - type: Add
+      message: Request consoles are now researchable and printable
+    - type: Fix
+      message: Vent/scrubber are linked on the Nucleus
+    - type: Add
+      message: You can now purchase three bluespace crystals for 15,000 RACs
+  id: 38
+  time: '2025-04-28T18:49:03.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Subtle and SubtleOOC commands for emoting/OOC chatting with those in
+        your immediate vicinity.
+  id: 39
+  time: '2025-04-30T10:41:20.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: CPR is here! You can add CPR training as a trait to your character.
+    - type: Add
+      message: Surgical training is a trait that you can take per character.
+  id: 40
+  time: '2025-05-20T09:04:15.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Two new salv wrecks for the Outpost gamers
+  id: 41
+  time: '2025-05-02T18:28:29.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Respawn timer is now set to 0 seconds down from 1200.
+    - type: Tweak
+      message: Admins now show in the player count in the launcher
+    - type: Fix
+      message: L5Ruleset now linked properly
+  id: 42
+  time: '2025-05-02T18:26:24.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Add
+      message: >-
+        Ore boxes are now (optionally) magnetic, and can be dumped just like ore
+        bags.
+  id: 43
+  time: '2025-05-03T19:32:46.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: You can now generate a bluespace crystal with 10,000 RP
+  id: 44
+  time: '2025-05-03T20:15:47.0000000+00:00'
+- author: Maezel
+  changes:
+    - type: Add
+      message: >-
+        Construction graphs for diagonal solid and reinforced walls that respect
+        the rotation you choose
+    - type: Add
+      message: 'Showers with no mechanical benefit (Issue #119)'
+    - type: Fix
+      message: >-
+        diagonal shuttle walls should also respect the rotation you place them
+        as now
+    - type: Add
+      message: 'the N14 swivel chairs can swivel now (Issue #180)'
+    - type: Add
+      message: 'towels for real this time (Issue #119) '
+    - type: Fix
+      message: 'Carpet-using furniture no longer eats the whole stack (Issue #155)'
+    - type: Add
+      message: >-
+        inflatables to the engi fab, they're kinda cheap yell at me if they're
+        too cheap idk
+  id: 45
+  time: '2025-05-15T10:47:18.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Fix
+      message: Hand-held crew monitors work again.
+  id: 46
+  time: '2025-05-10T20:01:26.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Psychologist PDAs have MedTek installed by default.
+  id: 47
+  time: '2025-05-10T20:13:57.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Remove
+      message: 'Subtle/SubtleLOOC commands because bwoken :c '
+  id: 48
+  time: '2025-05-10T21:47:18.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Tweak
+      message: The enforcer is back to its old sprite.
+  id: 49
+  time: '2025-05-14T08:19:36.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Tweak
+      message: You can now link uniform printers to silos.
+  id: 50
+  time: '2025-05-14T08:18:54.0000000+00:00'
+- author: Maezel
+  changes:
+    - type: Remove
+      message: Removed death from fish-based dishes
+  id: 51
+  time: '2025-05-14T08:18:09.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Subtle/SubtleOOC have been cleaned up and re-ported
+  id: 52
+  time: '2025-05-14T05:41:11.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Emotes are no longer visible through walls
+    - type: Tweak
+      message: Sound no longer travels in space
+  id: 53
+  time: '2025-05-15T03:06:30.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Salvage magnet cooldown is now 30s
+    - type: Tweak
+      message: Nucleus map updated with more lockers
+    - type: Tweak
+      message: Other shuttles can now FTL to the ATS
+    - type: Add
+      message: >-
+        New principal architect role for Outpost rounds for the one in charge of
+        station design
+  id: 54
+  time: '2025-05-16T06:18:03.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Mimes no longer have forced French accents
+  id: 55
+  time: '2025-05-15T10:46:45.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Synths can go beep again
+  id: 56
+  time: '2025-05-15T11:00:19.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Added a veterinary collar to the medical techfab
+  id: 57
+  time: '2025-05-16T02:04:05.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Add
+      message: >-
+        Controls have been added to air alarms to configure vents for flow-based
+        atmos.
+    - type: Add
+      message: >-
+        Variants of air vents have been added to the construction menu which
+        will pre-configure the constructed vent for flow-based atmos.
+  id: 58
+  time: '2025-05-16T02:59:48.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Remove
+      message: The borg module whitelist is no more.
+    - type: Add
+      message: Borgs can now fit many more modules.
+    - type: Add
+      message: >-
+        You can now print borg modules that normally come with a selected
+        chassis.
+    - type: Tweak
+      message: Borgs can now weld themselves.
+  id: 59
+  time: '2025-05-16T23:06:26.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Fix
+      message: >-
+        The glaring issue of flower wreaths equipping to your neck instead of
+        your head first has been FIXED.
+  id: 60
+  time: '2025-05-17T15:06:01.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Hard of hearing disability trait
+    - type: Add
+      message: Sign language skill trait
+  id: 61
+  time: '2025-05-19T00:41:00.0000000+00:00'
+- author: perryprog
+  changes: []
+  id: 62
+  time: '2025-05-19T00:47:48.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Warden renamed to Armorer
+    - type: Tweak
+      message: Silicon laws are now 'directives' (and are an optional roleplay hook)
+    - type: Tweak
+      message: Reverted "rename passenger to assistant"
+  id: 63
+  time: '2025-05-21T19:15:07.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Add
+      message: Wheelchairs will now have the same access level as their rider.
+  id: 64
+  time: '2025-05-24T07:44:07.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: >-
+        Outpost server no longer auto-restarts, and substations auto-restarts
+        after five days
+  id: 65
+  time: '2025-05-24T08:51:54.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: The Nucleus is now nubbinless.
+  id: 66
+  time: '2025-05-24T17:48:12.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: admins in-round can no longer see dead chat
+  id: 67
+  time: '2025-05-25T22:41:52.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: When canisters are full (more than 4250kPa), the green light flashes
+  id: 68
+  time: '2025-05-28T16:03:39.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Waist aprons ported from Den!
+    - type: Tweak
+      message: Aprons are printable at the textile fab
+  id: 69
+  time: '2025-05-28T20:35:30.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Add
+      message: You can now create the Flying Dutchman drink.
+  id: 70
+  time: '2025-05-28T20:35:52.0000000+00:00'

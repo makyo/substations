@@ -11,6 +11,12 @@
   id: Quirks
   name: trait-category-quirks
 
+# Begin L5 additions
 - type: traitCategory
   id: Diet
   name: trait-category-diet
+
+- type: traitCategory
+  id: Skills
+  name: trait-category-skills
+# End L5 additions

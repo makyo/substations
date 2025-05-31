@@ -44,6 +44,8 @@ public partial class ChatBox : UIWidget
         ChatInput.Input.OnTextEntered += OnTextEntered;
         ChatInput.Input.OnKeyBindDown += OnInputKeyBindDown;
         ChatInput.Input.OnTextChanged += OnTextChanged;
+        ChatInput.Input.OnFocusEnter += OnFocusEnter;
+        ChatInput.Input.OnFocusExit += OnFocusExit;
         ChatInput.ChannelSelector.OnChannelSelect += OnChannelSelect;
         ChatInput.FilterButton.Popup.OnChannelFilter += OnChannelFilter;
         ChatInput.FilterButton.Popup.OnNewHighlights += OnNewHighlights; // DeltaV - Message highlighting
@@ -74,9 +76,7 @@ public partial class ChatBox : UIWidget
     {
         Logger.DebugS("chat", $"{msg.Channel}: {msg.Message}");
         if (!ChatInput.FilterButton.Popup.IsActive(msg.Channel))
-        {
             return;
-        }
 
         if (msg is { Read: false, AudioPath: { } })
             _entManager.System<AudioSystem>().PlayGlobal(msg.AudioPath, Filter.Local(), false, AudioParams.Default.WithVolume(msg.AudioVolume));
@@ -255,6 +255,18 @@ public partial class ChatBox : UIWidget
 
         // Warn typing indicator about change
         _controller.NotifyChatTextChange();
+    }
+
+    private void OnFocusEnter(LineEditEventArgs args)
+    {
+        // Warn typing indicator about focus
+        _controller.NotifyChatFocus(true);
+    }
+
+    private void OnFocusExit(LineEditEventArgs args)
+    {
+        // Warn typing indicator about focus
+        _controller.NotifyChatFocus(false);
     }
 
     protected override void Dispose(bool disposing)

@@ -39,6 +39,7 @@
   - Drill
   - Saw
   - Hemostat
+  - ClothingNeckVetCone # L5
 
 - type: latheRecipePack
   parent:
@@ -106,6 +107,8 @@
   - SyringeCryostasis
   - BluespaceBeaker
   - SyringeBluespace
+  - LauncherSyringe
+  - MiniSyringe
 
 - type: latheRecipePack
   parent:

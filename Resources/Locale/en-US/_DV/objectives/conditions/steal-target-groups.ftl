@@ -8,10 +8,8 @@ steal-target-groups-silvia = silvia
 steal-target-groups-box-folder-rd-clipboard = research digi-board
 steal-target-groups-bible-mystagogue = book of mysteries
 steal-target-groups-recruiter-pen = recruiter's pen
-# L5
-steal-target-groups-captains-cloak = station administrator's cloak
+steal-target-groups-captains-cloak = captain's cloak
 steal-target-groups-engineering-techfab-circuitboard = engineering techfab's circuitboard
 steal-target-groups-logistics-techfab-circuitboard = logistics techfab's circuitboard
 steal-target-groups-service-techfab-circuitboard = service techfab's circuitboard
-# L5
-steal-target-groups-epistemics-techfab-circuitboard = research techfab's circuitboard
+steal-target-groups-epistemics-techfab-circuitboard = epistemics techfab's circuitboard

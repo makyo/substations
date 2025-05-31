@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._L5.Movement.Components;
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Cuffs.Components;
@@ -177,6 +178,9 @@ public abstract partial class SharedBuckleSystem
 
     private void OnBuckleUpdateCanMove(EntityUid uid, BuckleComponent component, UpdateCanMoveEvent args)
     {
+        if (HasComp<PilotOnBuckleComponent>(component.BuckledTo)) // L5 - don't prevent wheelchair movement
+            return;
+
         if (component.Buckled)
             args.Cancel();
     }
@@ -459,7 +463,7 @@ public abstract partial class SharedBuckleSystem
         var buckleXform = Transform(buckle);
         var oldBuckledXform = Transform(strap);
 
-        if (buckleXform.ParentUid == strap.Owner && !Terminating(buckleXform.ParentUid))
+        if (buckleXform.ParentUid == strap.Owner && !Terminating(oldBuckledXform.ParentUid))
         {
             _transform.PlaceNextTo((buckle, buckleXform), (strap.Owner, oldBuckledXform));
             buckleXform.ActivelyLerping = false;

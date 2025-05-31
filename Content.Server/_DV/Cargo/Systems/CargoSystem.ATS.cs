@@ -83,18 +83,15 @@ public sealed partial class CargoSystem
             EnsureComp<StationMemberComponent>(gridUid).Station = arg.Station;
         }
 
-        var shuttleComp = EnsureComp<ShuttleComponent>(gridUid);
-        shuttleComp.AngularDamping = 10000;
-        shuttleComp.LinearDamping = 10000;
-
-        var ftl = EnsureComp<FTLDestinationComponent>(mapUid);
-        ftl.Whitelist = new EntityWhitelist()
-        {
-            Components =
-            [
-                _factory.GetComponentName(typeof(CargoShuttleComponent))
-            ]
-        };
+        // L5 - allow other shuttles to FTL to ATS for e.g: outpost
+        // var ftl = EnsureComp<FTLDestinationComponent>(mapUid);
+        // ftl.Whitelist = new EntityWhitelist()
+        // {
+        //     Components =
+        //     [
+        //         _factory.GetComponentName(typeof(CargoShuttleComponent))
+        //     ]
+        // };
 
         _metaSystem.SetEntityName(mapUid, $"Automated Trade Station {_random.Next(1000):000}");
 

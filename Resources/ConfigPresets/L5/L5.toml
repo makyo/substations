@@ -10,6 +10,7 @@ secret_weight_prototype = "SecretDeltaV"
 role_timers             = false # no time requirements for roles
 cryo_sleep_rejoining    = true
 hostname_in_titlebar    = true
+tabletop_place          = true # Worth the risk.
 
 [nf14.respawn]
 time = 0
@@ -85,7 +86,6 @@ admin_prefix_webhook = false
 
 [server]
 rules_file             = "L5Ruleset"
-uptime_restart_minutes = 20160 # 2 weeks
 
 [rmc]
 mentor_help_sound = "/Audio/_DV/Effects/Admin/chord2.ogg" # we get our own sound

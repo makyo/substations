@@ -10,6 +10,11 @@
   - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
+  # Begin DeltaV Additions
+  - PlushieExperiment
+  - PlushieBee
+  # End DeltaV Additions
+  - PonderingOrb # L5 - orb
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -239,6 +244,7 @@
   # Begin DeltaV additions
   - AncientJumpsuit
   - RainbowJumpsuit
+  - RainbowJumpskirt
 
 - type: loadoutGroup
   id: PassengerFace
@@ -615,6 +621,7 @@
   loadouts:
   - EmergencyNitrogenMime
   - EmergencyOxygenMime
+  - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
   - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporMime # DeltaV
@@ -728,11 +735,11 @@
   id: CargoTechnicianJumpsuit
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
- #- CargoTechnicianJumpsuit
- #- CargoTechnicianJumpskirt
   - ClothingUniformJumpsuitCargoTechPants # DeltaV
   - ClothingUniformJumpsuitCargoTechOveralls # DeltaV
   - ClothingUniformJumpskirtCargoTechRomper # DeltaV
+  - CargoTechnicianJumpsuit
+  - CargoTechnicianJumpskirt
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
