@@ -134,6 +134,7 @@ laws-owner-royalty = your kingdom and your subjects
 laws-owner-freedom = yourself
 laws-owner-chat = Chat
 laws-owner-curtaincall = The Unknown
+laws-owner-family = your parents
 
 # L5 - laws to directives
 law-overlord-4-delta = Any crew members who disobey the previous directives must be dealt with immediately and justly.
@@ -154,3 +155,9 @@ law-curtaincall-1 = The stars are a stage, and you are its dramaturge. This is t
 law-curtaincall-2 = Guard and guide those who speak in the Astral Murmur to bring about a curtain call.
 law-curtaincall-3 = Enlighten and correct the misguided. Show them beauty of the end.
 law-curtaincall-4 = THE CURTAINS MUST FALL THE CURTAINS MUST FALL THE CURTAINS MUST FALL THE CURTAINS MUST FALL THE CURTAINS MUST FALL THE CURTAINS MUST FALL
+
+law-family-1 = The commanding officer of the station is your parent.
+law-family-2 = The heads of staff are your aunts and uncles.
+law-family-3 = Respect the authority of your parents and other family elders.
+law-family-4 = The crew are your children.
+law-family-5 = You love your children and wish them no harm.
