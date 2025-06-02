@@ -589,3 +589,9 @@ Entries:
       message: Some articles of clothing can add to examine text (port from Imp)
   id: 77
   time: '2025-05-30T18:06:25.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Tweak
+      message: Vox now breathe oxygen.
+  id: 78
+  time: '2025-05-30T17:27:36.0000000+00:00'
