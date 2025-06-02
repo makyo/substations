@@ -583,3 +583,9 @@ Entries:
       message: Pescatarian trait no longer forces you to eat only fish.
   id: 76
   time: '2025-05-29T07:26:55.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Some articles of clothing can add to examine text (port from Imp)
+  id: 77
+  time: '2025-05-30T18:06:25.0000000+00:00'
