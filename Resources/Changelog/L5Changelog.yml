@@ -577,3 +577,9 @@ Entries:
         replaced with actual logic
   id: 75
   time: '2025-05-30T07:35:51.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Pescatarian trait no longer forces you to eat only fish.
+  id: 76
+  time: '2025-05-29T07:26:55.0000000+00:00'
