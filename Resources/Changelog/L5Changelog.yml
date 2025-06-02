@@ -551,3 +551,9 @@ Entries:
         before.
   id: 71
   time: '2025-06-02T07:24:52.0000000+00:00'
+- author: Cheeses-The-Mac
+  changes:
+    - type: Add
+      message: Add toggleable Med, Sec, and Beer huds as traits.
+  id: 72
+  time: '2025-06-02T04:24:35.0000000+00:00'
