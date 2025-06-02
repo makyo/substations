@@ -569,3 +569,11 @@ Entries:
       message: Returned corpsman glasses to their former glory.
   id: 74
   time: '2025-05-30T17:15:46.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: >-
+        Skunk™ brand logic removed from dietary restriction whitelists and
+        replaced with actual logic
+  id: 75
+  time: '2025-05-30T07:35:51.0000000+00:00'
