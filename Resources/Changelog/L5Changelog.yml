@@ -543,3 +543,11 @@ Entries:
       message: You can now create the Flying Dutchman drink.
   id: 70
   time: '2025-05-28T20:35:52.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Add
+      message: >-
+        A mute button to radios. Note: they will work a bit differently from
+        before.
+  id: 71
+  time: '2025-06-02T07:24:52.0000000+00:00'
