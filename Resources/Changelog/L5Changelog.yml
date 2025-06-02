@@ -557,3 +557,9 @@ Entries:
       message: Add toggleable Med, Sec, and Beer huds as traits.
   id: 72
   time: '2025-06-02T04:24:35.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Remove
+      message: Loadout time requirements.
+  id: 73
+  time: '2025-05-30T18:07:51.0000000+00:00'
