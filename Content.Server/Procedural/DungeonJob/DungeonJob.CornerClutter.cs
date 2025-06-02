@@ -42,7 +42,7 @@ public sealed partial class DungeonJob
                 if (random.Prob(gen.Chance))
                 {
                     var coords = _maps.GridTileToLocal(_gridUid, _grid, tile);
-                    var protos = _entTable.GetSpawns(contentsTable, random);
+                    var protos = contentsTable.Table.GetSpawns(random, _entManager, _prototype);
                     _entManager.SpawnEntitiesAttachedTo(coords, protos);
                 }
 
