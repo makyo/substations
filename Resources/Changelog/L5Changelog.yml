@@ -595,3 +595,9 @@ Entries:
       message: Vox now breathe oxygen.
   id: 78
   time: '2025-05-30T17:27:36.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Synths now have their own unified idle typing indicator
+  id: 79
+  time: '2025-06-03T02:45:51.0000000+00:00'
