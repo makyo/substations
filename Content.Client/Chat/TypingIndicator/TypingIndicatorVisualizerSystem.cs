@@ -64,7 +64,7 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
         switch (state)
         {
             case TypingIndicatorState.Idle:
-                if (component.UseSyntheticVariant)
+                if (component.UseSyntheticVariant) // L5 - synth typing indicators
                     _sprite.LayerSetRsiState((uid, args.Sprite), layer, proto.SynthIdleState);
                 else
                     _sprite.LayerSetRsiState((uid, args.Sprite), layer, proto.IdleState);
