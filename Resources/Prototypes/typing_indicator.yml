@@ -41,7 +41,7 @@
   typingState: moth0
   idleState: moth3
   offset: 0, 0.125
-  hasSynthVariant: true # L%
+  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: spider
