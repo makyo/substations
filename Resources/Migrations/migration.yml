@@ -622,3 +622,8 @@ CapacitorStockPart: MicroManipulatorStockPart
 
 # 2025-05-30
 SpawnHonkBot: SpawnMobHonkBot
+
+# 2025-06-01
+# L5 - pizza good
+# CrateFoodPizzaLarge: CrateFoodPizza
+# CrateFoodSoftdrinksLarge: CrateFoodSoftdrinks
