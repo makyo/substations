@@ -4,7 +4,7 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 05/29/2025 16:26:21
+  time: 06/03/2025 06:32:08
   entityCount: 30663
 maps:
 - 8
@@ -67957,26 +67957,26 @@ entities:
       parent: 1
 - proto: ConveyorBelt
   entities:
+  - uid: 507
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -9.5,22.5
+      parent: 1
   - uid: 1213
     components:
     - type: Transform
-      pos: -9.5,22.5
+      pos: -9.5,24.5
       parent: 1
   - uid: 1235
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,24.5
+      pos: -9.5,25.5
       parent: 1
   - uid: 1236
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -9.5,25.5
-      parent: 1
-  - uid: 1295
-    components:
-    - type: Transform
       pos: -9.5,23.5
       parent: 1
   - uid: 1872
@@ -154944,15 +154944,16 @@ entities:
       parent: 1
 - proto: Recycler
   entities:
-  - uid: 507
+  - uid: 1295
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
       pos: -34.5,-40.5
       parent: 1
   - uid: 24776
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: -1.5707963267948966 rad
       pos: -21.5,16.5
       parent: 1
 - proto: ReinforcedGirder
@@ -173771,32 +173772,32 @@ entities:
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        1236:
-        - - Left
-          - Forward
-        - - Right
-          - Reverse
-        - - Middle
-          - Off
         1235:
         - - Left
-          - Forward
-        - - Right
           - Reverse
-        - - Middle
-          - Off
-        1295:
-        - - Left
-          - Forward
         - - Right
-          - Reverse
+          - Forward
         - - Middle
           - Off
         1213:
         - - Left
-          - Forward
-        - - Right
           - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        507:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        1236:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
         - - Middle
           - Off
   - uid: 26575
@@ -173813,7 +173814,7 @@ entities:
           - Forward
         - - Middle
           - Off
-        507:
+        1295:
         - - Left
           - Reverse
         - - Right
@@ -196547,7 +196548,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -204769.6
+      secondsUntilStateChange: -205274.56
       state: Opening
   - uid: 5096
     components:
@@ -196564,7 +196565,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -204769.6
+      secondsUntilStateChange: -205274.56
       state: Opening
   - uid: 5498
     components:
@@ -196580,7 +196581,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -204493.22
+      secondsUntilStateChange: -204998.19
       state: Opening
   - uid: 8696
     components:
@@ -196613,7 +196614,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -204491.33
+      secondsUntilStateChange: -204996.3
       state: Opening
   - uid: 18835
     components:
@@ -196625,7 +196626,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -204488.33
+      secondsUntilStateChange: -204993.3
       state: Opening
   - uid: 23917
     components:
