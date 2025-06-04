@@ -1,0 +1,6 @@
+- type: entity
+  parent: LandMineModular
+  id: LandMineExplosiveFake
+  name: explosive mine
+  suffix: fake
+  description: Looks kinda crappy.
