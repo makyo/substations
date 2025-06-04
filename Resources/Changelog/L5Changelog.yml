@@ -615,3 +615,9 @@ Entries:
       message: Ore processor UI is no longer ALL BUTTON.
   id: 80
   time: '2025-06-04T22:36:21.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Oracle and sophic grammateus are now merely statues
+  id: 81
+  time: '2025-06-04T22:37:25.0000000+00:00'
