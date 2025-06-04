@@ -1,8 +1,9 @@
+# L5 - Oracle disconnected from its functionality to fit the setting. Now it's just a pretty statue.
 - type: entity
   parent: BaseStructure
   id: Oracle
-  name: Oracle
-  description: It asks for items in exchange for knowledge. No one knows how it works.
+  name: The Oracle of the Post-Anthropocene
+  description: A statue of some unknown entity with a plaque beneath that reads "For every time, an oracle; for every era, a voice." They hold a bowl, a common receptacle for offerings of all kinds.
   components:
   - type: Sprite
     noRot: true
@@ -13,26 +14,26 @@
       - state: oracle-0
       - map: ["enum.SolutionContainerLayers.Fill"]
         state: oracle-0
-  - type: Oracle
+#  - type: Oracle
   - type: Speech
     speechSounds: Tenor
-  - type: Psionic
-  - type: SolutionContainerManager
-    solutions:
-      fountain:
-        maxVol: 200
-  - type: Drink
-    solution: fountain
-  - type: DrawableSolution
-    solution: fountain
-  - type: DrainableSolution
-    solution: fountain
-  - type: ExaminableSolution
-    solution: fountain
+#  - type: Psionic
+#  - type: SolutionContainerManager
+#    solutions:
+#      fountain:
+#        maxVol: 200
+#  - type: Drink
+#    solution: fountain
+#  - type: DrawableSolution
+#    solution: fountain
+#  - type: DrainableSolution
+#    solution: fountain
+#  - type: ExaminableSolution
+#    solution: fountain
   - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 10
-    fillBaseName: oracle-
+#  - type: SolutionContainerVisuals
+#    maxFillLevels: 10
+#    fillBaseName: oracle-
   - type: Grammar
     attributes:
       gender: female
