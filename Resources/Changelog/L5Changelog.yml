@@ -621,3 +621,9 @@ Entries:
       message: Oracle and sophic grammateus are now merely statues
   id: 81
   time: '2025-06-04T22:37:25.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Lots of lore in the guidebook!
+  id: 82
+  time: '2025-06-04T23:32:13.0000000+00:00'
