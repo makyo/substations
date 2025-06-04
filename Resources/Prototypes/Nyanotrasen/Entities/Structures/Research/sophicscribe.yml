@@ -1,8 +1,9 @@
+# L5 - Sophie disconnected from functionality to fit the setting
 - type: entity
   parent: BaseStructure
   id: SophicScribe
-  name: sophic grammateus
-  description: Latest reports on the Noösphere!
+  name: Sophic Grammateus
+  description: A statue of some unknown entity with a plaque beneath that reads "O' scribe of wisdom! Remember us!"
   components:
   - type: Sprite
     noRot: true
@@ -12,25 +13,25 @@
     layers:
       - state: sophie
       - map: ["enum.SolutionContainerLayers.Fill"]
-  - type: SophicScribe
-  - type: Speech
-    speechSounds: Tenor
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Common
-    - Science
-  - type: ActiveRadio
-    channels:
-    - Common
-    - Science
-  - type: PotentialPsionic #this makes her easier to access for glimmer events, dw about it
-  - type: Psionic
+#  - type: SophicScribe
+#  - type: Speech
+#    speechSounds: Tenor
+#  - type: IntrinsicRadioReceiver
+#  - type: IntrinsicRadioTransmitter
+#    channels:
+#    - Common
+#    - Science
+#  - type: ActiveRadio
+#    channels:
+#    - Common
+#    - Science
+#  - type: PotentialPsionic #this makes her easier to access for glimmer events, dw about it
+#  - type: Psionic
   - type: Grammar
     attributes:
       gender: female
       proper: true
   - type: SpriteFade
-  - type: GuideHelp
-    guides:
-    - Psionics
+#  - type: GuideHelp
+#    guides:
+#    - Psionics
