@@ -639,3 +639,9 @@ Entries:
       message: Bluespace ore has been removed in favor of bluespace from research.
   id: 84
   time: '2025-06-05T00:34:19.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Tweak
+      message: Ghosts now understand sign language
+  id: 85
+  time: '2025-06-05T17:18:35.0000000+00:00'
