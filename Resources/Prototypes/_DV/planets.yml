@@ -48,7 +48,7 @@
   - OrePlasma3
   - OreUranium
   - OreDiamond2
-  - OreBluespace
+  #- OreBluespace # L5 - bluespace ore removed in favor of research
   - OreArtifactFragment
   - LavalandGibtonite
 
@@ -82,6 +82,6 @@
   - OrePlasma3
   - OreUranium2
   - OreDiamond
-  - OreBluespace
+  #- OreBluespace # L5 - bluespace ore removed in favor of research
   - OreArtifactFragment
   - GlacierGibtonite
