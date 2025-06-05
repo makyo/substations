@@ -1,23 +1,6 @@
 ﻿Entries:
 - author: slarticodefast
   changes:
-  - message: Adjusted thermal regulation again so you no longer overheat in hardsuits.
-    type: Fix
-  id: 8106
-  time: '2025-03-24T23:55:17.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36062
-- author: Velcroboy, ErhardSteinhauer, whatston3, MilonPL, Beck, ArtisticRoomba, ScarKy0
-  changes:
-  - message: Smuggler stashes! Will get spawned as a round start event and can also
-      be found in a hacked ClothesMate. Will have loot from a large random pool.
-    type: Add
-  - message: Smuggler stashes can now be bought from the syndicate uplink for 2TC.
-    type: Add
-  id: 8107
-  time: '2025-03-26T15:20:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/19460
-- author: slarticodefast
-  changes:
   - message: Ghosts of paradox clones now have a name modifier so they can be distinguished
       by other ghosts.
     type: Tweak
@@ -3928,3 +3911,18 @@
   id: 8617
   time: '2025-06-05T21:06:38.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/38024
+- author: chromiumboy
+  changes:
+  - message: Holopads now provide less visual coverage to station AIs (1 tile radius,
+      down from 7.5). Holopads must also be anchored to the floor to provide vision.
+    type: Tweak
+  id: 8618
+  time: '2025-06-05T23:15:55.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/38059
+- author: Simyon
+  changes:
+  - message: Sleeper agents no longer have different codewords than round-start traitors.
+    type: Fix
+  id: 8619
+  time: '2025-06-05T23:19:41.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/37928
