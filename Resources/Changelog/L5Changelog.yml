@@ -633,3 +633,9 @@ Entries:
       message: Gibtonite has been yoinked.
   id: 83
   time: '2025-06-05T00:00:24.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Remove
+      message: Bluespace ore has been removed in favor of bluespace from research.
+  id: 84
+  time: '2025-06-05T00:34:19.0000000+00:00'
