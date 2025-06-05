@@ -645,3 +645,9 @@ Entries:
       message: Ghosts now understand sign language
   id: 85
   time: '2025-06-05T17:18:35.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Fix
+      message: Radios no longer pick up obfuscated speech
+  id: 86
+  time: '2025-06-05T17:20:19.0000000+00:00'
