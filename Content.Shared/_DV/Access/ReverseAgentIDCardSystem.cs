@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Access.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -46,9 +47,14 @@ public sealed class ReverseAgentIDCardSystem : EntitySystem
         if (!TryComp<AccessReaderComponent>(ent, out var access))
             return;
 
-        targetAccess.DenyTags = new(access.DenyTags);
-        targetAccess.AccessLists = new(access.AccessLists);
-        targetAccess.AccessKeys = new(access.AccessKeys);
+
+        targetAccess.DenyTags.Clear();
+        targetAccess.AccessLists.Clear();
+        targetAccess.AccessKeys.Clear();
+
+        targetAccess.DenyTags.UnionWith(access.DenyTags);
+        targetAccess.AccessLists.AddRange(access.AccessLists);
+        targetAccess.AccessKeys.UnionWith(access.AccessKeys);
 
         _popup.PopupClient(Loc.GetString("reverse-agent-access-overwrote"), args.User, args.User);
         Dirty(ent, access);
