@@ -643,6 +643,8 @@
         - Gun
         - BallisticAmmoProvider
         - CartridgeAmmo
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: [ClothingBeltStorageBase, ClothingSlotBase] # DeltaV - add parent ClothingSlotBase
@@ -722,6 +724,8 @@
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: StaticPrice
+    price: 500
   - type: Storage # DeltaV - Split Inventory
     grid:
     - 0,0,2,1

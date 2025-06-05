@@ -590,6 +590,8 @@
     - Hardsuit
     - WhitelistChameleon
     - HidesHarpyWings
+  - type: StaticPrice
+    price: 5000
   - type: MappingCategories # DeltaV
     categories:
     - Syndicate
