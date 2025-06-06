@@ -1,30 +1,4 @@
 ﻿Entries:
-- author: Killerqu00
-  changes:
-  - message: Uncuffing someone with combat mode on will shove them down.
-    type: Add
-  id: 8116
-  time: '2025-03-29T20:09:34.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35193
-- author: metalgearsloth
-  changes:
-  - message: Jetpacks emit particles more frequently.
-    type: Tweak
-  id: 8117
-  time: '2025-03-30T04:06:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36093
-- author: beck-thompson
-  changes:
-  - message: Stethoscopes now automatically start doafters and also can tell if a
-      patient is losing oxygen damage or gaining it.
-    type: Add
-  - message: Moths can no longer eat stethoscopes.
-    type: Fix
-  - message: Stethoscopes action button now works properly.
-    type: Fix
-  id: 8118
-  time: '2025-03-31T02:27:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36210
 - author: Tayrtahn
   changes:
   - message: Items thrown when someone slips now tend to scatter in the direction
@@ -3922,3 +3896,26 @@
   id: 8627
   time: '2025-06-05T23:45:55.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/34444
+- author: RedBookcase
+  changes:
+  - message: Added Scrap Armor and Scrap Helmets.
+    type: Add
+  id: 8628
+  time: '2025-06-06T00:13:36.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/37601
+- author: Samuka
+  changes:
+  - message: Fire bombs are now minor contra
+    type: Tweak
+  - message: Pipe bombs are now minor contra
+    type: Tweak
+  id: 8629
+  time: '2025-06-06T02:28:04.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/38088
+- author: Minemoder
+  changes:
+  - message: Shark plushies now bite.
+    type: Tweak
+  id: 8630
+  time: '2025-06-06T21:07:10.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/38113
