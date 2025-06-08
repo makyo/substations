@@ -651,3 +651,9 @@ Entries:
       message: Radios no longer pick up obfuscated speech
   id: 86
   time: '2025-06-05T17:20:19.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Tweak
+      message: The handheld radios have had some tweaks to improve their usability.
+  id: 87
+  time: '2025-06-08T13:39:01.0000000+00:00'
