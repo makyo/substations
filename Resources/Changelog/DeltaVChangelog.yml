@@ -1,25 +1,4 @@
 ﻿Entries:
-- author: Smugman
-  changes:
-  - message: Emagged Uniform Printers can now Print even more Syndicate Uniforms and
-      a new, sleek toolbelt. Sprites by JustAnOrange
-    type: Add
-  - message: Sci-, Engi- and Lawdrobes have been "accidentally" Stocked with Cybersun
-      Uniforms, locked behind the MNGR Wire.
-    type: Add
-  - message: Syndicate Recruiters and Synthesis specialists have been given updated
-      Loadouts.
-    type: Add
-  id: 949
-  time: '2025-01-26T21:33:28.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/2789
-- author: TadJohnson00
-  changes:
-  - message: Adjusted crawling speed to half its original value. Break a leg.
-    type: Tweak
-  id: 950
-  time: '2025-01-27T05:39:02.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/2807
 - author: rosieposieeee
   changes:
   - message: Ported a metric fuckton of props from N14.
@@ -4116,3 +4095,18 @@
   id: 1448
   time: '2025-06-07T07:41:10.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/3907
+- author: AftrLite
+  changes:
+  - message: Shuttle travel time re-lengthened.
+    type: Tweak
+  id: 1449
+  time: '2025-06-08T04:49:09.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3915
+- author: Avalon-Proto
+  changes:
+  - message: The Homerun Bat has been modified by top syndicate operatives, and is
+      now far more effect. Knock em outta the park slugger!
+    type: Tweak
+  id: 1450
+  time: '2025-06-09T14:28:33.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3896
