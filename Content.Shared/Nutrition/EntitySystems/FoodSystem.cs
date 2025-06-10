@@ -27,7 +27,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
-using Content.Server._L5.Traits.DietaryRestriction;
+using Content.Shared._L5.Traits.DietaryRestriction;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -37,7 +37,7 @@ namespace Content.Shared.Nutrition.EntitySystems;
 public sealed class FoodSystem : EntitySystem
 {
     [Dependency] private readonly SharedBodySystem _body = default!;
-    [Dependency] private readonly DietaryRestrictionSystem _dietaryRestriction = default!;
+    [Dependency] private readonly SharedDietaryRestrictionSystem _dietaryRestriction = default!;
     [Dependency] private readonly FlavorProfileSystem _flavorProfile = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
