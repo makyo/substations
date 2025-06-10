@@ -36,6 +36,11 @@
       - food
   - type: Sprite
     state: fullamerican
+  - type: Tag # L5
+    tags:
+    - Gluten
+    - Meat
+    - Nightshade
 
 - type: entity
   name: full english breakfast
@@ -48,3 +53,8 @@
       - food
   - type: Sprite
     state: fullenglish
+  - type: Tag # L5
+    tags:
+    - Gluten
+    - Meat
+    - Nightshade
