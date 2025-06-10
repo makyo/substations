@@ -657,3 +657,11 @@ Entries:
       message: The handheld radios have had some tweaks to improve their usability.
   id: 87
   time: '2025-06-08T13:39:01.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Sign language now works as desired at round start.
+    - type: Tweak
+      message: Went back to being able to talk in vacuum.
+  id: 88
+  time: '2025-06-10T20:45:35.0000000+00:00'
