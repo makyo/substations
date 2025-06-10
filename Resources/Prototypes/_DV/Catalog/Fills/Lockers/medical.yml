@@ -171,7 +171,8 @@
     children:
     - id: ClothingShoesBootsWinterParamedic
     - id: BoxBodyBag
-    - id: EmergencyRollerBedSpawnFolded
+    #- id: EmergencyRollerBedSpawnFolded
+    - id: RollerBedHoloSpawnFolded # L5
     - id: EmergencyJawsOfLife
     - id: HandheldCrewMonitor
     - id: LunchboxMedicalFilledRandom
