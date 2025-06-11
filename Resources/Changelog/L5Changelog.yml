@@ -671,3 +671,11 @@ Entries:
       message: Bluespace ore *actually* removed from red rock this time.
   id: 89
   time: '2025-06-10T20:45:59.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: >-
+        Lizard and moth diets are now traits rather than species specific;
+        anyone can take them!
+  id: 90
+  time: '2025-06-11T20:53:45.0000000+00:00'
