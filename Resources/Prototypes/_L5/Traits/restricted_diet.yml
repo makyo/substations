@@ -123,3 +123,32 @@
       - BorgChassis
   excludedSpecies:
     - IPC
+
+- type: trait
+  category: Diet
+  id: ReptilianDiet
+  name: trait-dietary-restriction-ReptilianDiet-name
+  description: trait-dietary-restriction-ReptilianDiet-desc
+  components:
+    - type: ReptilianDiet
+  blacklist:
+    components:
+      - Silicon
+      - BorgChassis
+  excludedSpecies:
+    - IPC
+
+- type: trait
+  category: Diet
+  id: MothDiet
+  name: trait-dietary-restriction-MothDiet-name
+  description: trait-dietary-restriction-MothDiet-desc
+  components:
+  - type: MothDiet
+  blacklist:
+    components:
+    - Silicon
+    - BorgChassis
+  excludedSpecies:
+  - IPC
+

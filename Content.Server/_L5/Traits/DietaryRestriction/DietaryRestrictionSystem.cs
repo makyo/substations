@@ -34,6 +34,9 @@ public sealed class DietaryRestrictionSystem : EntitySystem
         SubscribeLocalEvent<GlutenAllergyComponent, MapInitEvent>(InitGlutenAllergy);
         SubscribeLocalEvent<LatexAllergyComponent, MapInitEvent>(InitLatexAllergy);
         SubscribeLocalEvent<NightshadeAllergyComponent, MapInitEvent>(InitNightshadeAllergy);
+
+        SubscribeLocalEvent<ReptilianDietComponent, MapInitEvent>(InitReptilianDiet);
+        SubscribeLocalEvent<MothDietComponent, MapInitEvent>(InitMothDiet);
     }
 
     private void InitPescetarianRestriction(Entity<PescetarianRestrictionComponent> entity, ref MapInitEvent args)
@@ -88,6 +91,18 @@ public sealed class DietaryRestrictionSystem : EntitySystem
     {
         var restriction = EnsureComp<DietaryRestrictionComponent>(entity);
         restriction.Restrictions.Add("NightshadeAllergy");
+    }
+
+    private void InitReptilianDiet(Entity<ReptilianDietComponent> entity, ref MapInitEvent args)
+    {
+        var restriction = EnsureComp<DietaryRestrictionComponent>(entity);
+        restriction.Restrictions.Add("ReptilianDiet");
+    }
+
+    private void InitMothDiet(Entity<MothDietComponent> entity, ref MapInitEvent args)
+    {
+        var restriction = EnsureComp<DietaryRestrictionComponent>(entity);
+        restriction.Restrictions.Add("MothDiet");
     }
 
     public bool TryFood(EntityUid user, EntityUid food)

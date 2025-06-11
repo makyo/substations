@@ -57,6 +57,14 @@ trait-dietary-restriction-NightshadeAllergy-name = Nightshade allergy
 trait-dietary-restriction-NightshadeAllergy-desc = You're allergic to glycoalkaloids, a natural pest deterrent found in plants such as potatoes and tomatoes
 trait-dietary-restriction-NightshadeAllergy-fail = Oh no...that has nightshades in it...you may get sick...
 
+trait-dietary-restriction-ReptilianDiet-name = Reptilian diet
+trait-dietary-restriction-ReptilianDiet-desc = You stick to meat, fruit, and a minimum of dairy, carbs, and sugars
+trait-dietary-restriction-ReptilianDiet-fail = You can't eat that with your diet...
+
+trait-dietary-restriction-MothDiet-name = Moth diet
+trait-dietary-restriction-MothDiet-desc = You stick to fruit and veggies, and you have an affinity for things made of cloth
+trait-dietary-restriction-MothDiet-fail = You can't eat that with your diet...
+
 # Skills
 trait-hud-security-name = Security HUD
 trait-hud-security-desc = A Security HUD is installed in your display. Doesn't actually increase how secure you feel, especially if Paul's around.

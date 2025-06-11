@@ -56,3 +56,13 @@ public sealed partial class LatexAllergyComponent : Component
 public sealed partial class NightshadeAllergyComponent : Component
 {
 }
+
+[RegisterComponent]
+public sealed partial class ReptilianDietComponent : Component
+{
+}
+
+[RegisterComponent]
+public sealed partial class MothDietComponent : Component
+{
+}
