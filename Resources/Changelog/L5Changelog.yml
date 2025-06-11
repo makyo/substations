@@ -679,3 +679,13 @@ Entries:
         anyone can take them!
   id: 90
   time: '2025-06-11T20:53:45.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Holographic rollerbeds can be researched at tier 1 and printed in the
+        med fab
+    - type: Tweak
+      message: Paramedic lockers spawn with holographic rollerbeds
+  id: 91
+  time: '2025-06-11T20:54:26.0000000+00:00'
