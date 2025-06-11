@@ -24,6 +24,7 @@
   id: MedicalDeltaV
   recipes:
   - HandheldCrewMonitor # RE
+  - RollerBedHolo # L5
 
 - type: latheRecipePack
   id: MedicalBoardsDeltaV
