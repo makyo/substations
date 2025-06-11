@@ -21,7 +21,7 @@
 - type: cargoProduct
   id: FoamWeapons
   icon:
-    sprite: Objects/Weapons/Guns/Rifles/foam_rifle.rsi
+    sprite: Objects/Fun/Foam/foam_rifle.rsi # L5 - rsi moved
     state: icon
   product: CrateFoamWeapons
   cost: 1400
