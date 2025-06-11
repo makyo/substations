@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: SolStar
-  changes:
-  - message: Mindshield implants will now make people immune to becoming sleeper agents.
-    type: Tweak
-  id: 953
-  time: '2025-01-28T08:47:53.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/2803
-- author: rosieposieeee
-  changes:
-  - message: Added some meat decorations.
-    type: Add
-  id: 954
-  time: '2025-01-28T12:32:57.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/2427
 - author: sowelipililimute
   changes:
   - message: Prescription departamental glasses and HUDs no longer require glue to
@@ -4110,3 +4096,20 @@
   id: 1452
   time: '2025-06-10T10:56:51.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/3870
+- author: Radezolid
+  changes:
+  - message: Removed the administrative assistant.
+    type: Remove
+  - message: The administrative assistant clothes have been renamed into secretary
+      ones, find them at a clothesvend.
+    type: Tweak
+  id: 1453
+  time: '2025-06-10T20:53:06.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3857
+- author: Radezolid
+  changes:
+  - message: Lobotomies are no longer a surgery option.
+    type: Remove
+  id: 1454
+  time: '2025-06-11T03:36:17.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3926
