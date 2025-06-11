@@ -19,7 +19,6 @@
     Plastic: 50
 
 - type: latheRecipe
-  parent: BasePowerCellRecipe
   id: PowerCellMedium
   result: PowerCellMediumPrinted
   completetime: 6
@@ -30,7 +29,6 @@
     Gold: 10
 
 - type: latheRecipe
-  parent: BasePowerCellRecipe
   id: PowerCellHigh
   result: PowerCellHighPrinted
   completetime: 10
@@ -39,6 +37,18 @@
     Glass: 400
     Plastic: 200
     Gold: 50
+
+- type: latheRecipe
+  parent: BasePowerCellRecipe
+  id: PowerCellHyper
+  result: PowerCellHyperPrinted
+  completetime: 10
+  materials:
+    Steel: 800
+    Glass: 700
+    Plasma: 300
+    Gold: 200
+    Silver: 300
 
 - type: latheRecipe
   parent: BasePowerCellRecipe
