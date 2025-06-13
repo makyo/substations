@@ -36,7 +36,7 @@ namespace Content.Shared.Humanoid
         StencilMask,
         Ensnare,
         Fire,
-
+        Face, // Floof
     }
 }
 

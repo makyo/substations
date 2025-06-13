@@ -129,8 +129,8 @@
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "id" ]
-      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
       - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]

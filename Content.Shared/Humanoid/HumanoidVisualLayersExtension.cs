@@ -64,7 +64,6 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.Tail;
                     yield return HumanoidVisualLayers.TailBehind;
                     yield return HumanoidVisualLayers.TailOversuit;
-                    yield return HumanoidVisualLayers.Wings;
                     break;
                 // Shitmed Change Start
                 case HumanoidVisualLayers.LHand:
