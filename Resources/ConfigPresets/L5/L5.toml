@@ -91,9 +91,6 @@ admin_prefix_webhook = false
 [server]
 rules_file             = "L5Ruleset"
 
-[rmc]
-mentor_help_sound = "/Audio/_DV/Effects/Admin/chord2.ogg" # we get our own sound
-
 [control]
 storage_limit = 2
 
