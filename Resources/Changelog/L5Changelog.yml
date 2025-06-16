@@ -695,3 +695,9 @@ Entries:
       message: Psionics will no longer roll at round start
   id: 92
   time: '2025-06-16T05:22:45.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Add
+      message: Kitsune foxes will now keep their traits from pre-morph.
+  id: 93
+  time: '2025-06-16T15:10:34.0000000+00:00'
