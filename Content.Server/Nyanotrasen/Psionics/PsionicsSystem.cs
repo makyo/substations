@@ -51,7 +51,8 @@ namespace Content.Server.Psionics
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<PotentialPsionicComponent, MapInitEvent>(OnStartup);
+            // L5 — psionics removed
+            //SubscribeLocalEvent<PotentialPsionicComponent, MapInitEvent>(OnStartup);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, MeleeHitEvent>(OnMeleeHit);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, StaminaMeleeHitEvent>(OnStamHit);
 
