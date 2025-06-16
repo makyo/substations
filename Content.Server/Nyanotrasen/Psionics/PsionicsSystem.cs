@@ -60,13 +60,14 @@ namespace Content.Server.Psionics
             SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
         }
 
-        private void OnStartup(EntityUid uid, PotentialPsionicComponent component, MapInitEvent args)
-        {
-            if (HasComp<PsionicComponent>(uid))
-                return;
-
-            _rollers.Enqueue((component, uid));
-        }
+        // L5 — psionics removed
+        // private void OnStartup(EntityUid uid, PotentialPsionicComponent component, MapInitEvent args)
+        // {
+        //     if (HasComp<PsionicComponent>(uid))
+        //         return;
+        //
+        //     _rollers.Enqueue((component, uid));
+        // }
 
         private void OnMeleeHit(EntityUid uid, AntiPsionicWeaponComponent component, MeleeHitEvent args)
         {
