@@ -715,3 +715,9 @@ Entries:
         the step of inserting printed materials.
   id: 95
   time: '2025-06-17T16:50:55.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Many, *many* new markings for anthro characters!
+  id: 96
+  time: '2025-06-17T20:25:24.0000000+00:00'
