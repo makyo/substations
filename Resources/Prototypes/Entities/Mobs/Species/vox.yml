@@ -79,7 +79,7 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
-    - map: [ "outerClothing" ] # Floof
+    - map: [ "outerClothing" ] # Floof (moved from above back)
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
