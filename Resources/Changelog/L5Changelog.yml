@@ -701,3 +701,9 @@ Entries:
       message: Kitsune foxes will now keep their traits from pre-morph.
   id: 93
   time: '2025-06-16T15:10:34.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Laughs no longer goes 'hu hu hu' sometimes.
+  id: 94
+  time: '2025-06-17T03:11:17.0000000+00:00'
