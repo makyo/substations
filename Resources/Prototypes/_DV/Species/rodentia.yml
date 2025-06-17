@@ -19,8 +19,8 @@
 - type: speciesBaseSprites
   id: MobRodentiaSprites
   sprites:
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobRodentiaHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking

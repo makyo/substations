@@ -13,8 +13,7 @@
   id: MobMonkeySprites
   sprites:
     Special: MobMonkeyAnyMarking
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobMonkeyHead
     HeadTop: MobMonkeyAnyMarking
     Chest: MobMonkeyTorso

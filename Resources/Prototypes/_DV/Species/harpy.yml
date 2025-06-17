@@ -14,8 +14,8 @@
 - type: speciesBaseSprites
   id: MobHarpySprites
   sprites:
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobHarpyHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking

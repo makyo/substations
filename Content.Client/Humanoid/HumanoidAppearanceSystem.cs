@@ -260,7 +260,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             {
                 if (_markingManager.TryGetMarking(marking, out var markingPrototype))
                 {
-                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, humanoid, sprite);
+                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, entity);
                     if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
                         applyUndergarmentTop = false;
                     else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)
@@ -326,7 +326,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     private void AddUndergarments(Entity<HumanoidAppearanceComponent, SpriteComponent> entity, bool undergarmentTop, bool undergarmentBottom)
     {
         var humanoid = entity.Comp1;
-        var sprite = entity.Comp2;
 
         if (undergarmentTop && humanoid.UndergarmentTop != null)
         {
@@ -335,7 +334,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             {
                 // Markings are added to ClientOldMarkings because otherwise it causes issues when toggling the feature on/off.
                 humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentTop, new List<Marking> { marking });
-                ApplyMarking(prototype, null, true, humanoid, sprite);
+                ApplyMarking(prototype, null, true, entity);
             }
         }
 
@@ -345,22 +344,25 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             if (_markingManager.TryGetMarking(marking, out var prototype))
             {
                 humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentBottom, new List<Marking> { marking });
-                ApplyMarking(prototype, null, true, humanoid, sprite);
+                ApplyMarking(prototype, null, true, entity);
             }
         }
     }
+
     private void ApplyMarking(
         MarkingPrototype markingPrototype,
         IReadOnlyList<Color>? colors,
         bool visible,
-        HumanoidAppearanceComponent humanoid,
-        SpriteComponent sprite
+        Entity<HumanoidAppearanceComponent, SpriteComponent> entity
         )
     {
         // FLOOF ADD START
         // make a handy dict of filename -> colors
         // cus we might need to access it by filename to link
         // one sprite's colors to another
+        var humanoid = entity.Comp1;
+        var spriteEnt = (entity, entity.Comp2);
+
         var colorDict = new Dictionary<string, Color>();
         for (var i = 0; i < markingPrototype.Sprites.Count; i++)
         {
@@ -428,7 +430,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 layerDict.Add(layerSlot.ToString(), 0);
             }
 
-            if (!sprite.LayerMapTryGet(layerSlot, out var targetLayer))
+            if (!_sprite.LayerMapTryGet(spriteEnt, layerSlot, out var targetLayer, false))
             {
                 continue;
             }
@@ -440,19 +442,18 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
             // FLOOF CHANGE END
 
-            if (!sprite.LayerMapTryGet(layerId, out _))
+            if (!_sprite.LayerMapTryGet(spriteEnt, layerId, out _, false))
             {
                 // for layers that are supposed to be behind everything,
                 // adding 1 to the layer index makes it not be behind
                 // everything. fun! FLOOF ADD =3
-                // var targLayerAdj = targetLayer == 0 ? 0 + j : targetLayer + j + 1;
                 var targLayerAdj = targetLayer + layerDict[layerSlot.ToString()] + 1;
-                var layer = sprite.AddLayer(markingSprite, targLayerAdj);
-                sprite.LayerMapSet(layerId, layer);
-                sprite.LayerSetSprite(layerId, rsi);
+                _sprite.AddLayer(spriteEnt, markingSprite, targLayerAdj);
+                _sprite.LayerMapSet(spriteEnt, layerId, targLayerAdj);
+                _sprite.LayerSetSprite(spriteEnt, layerId, rsi);
             }
 
-            sprite.LayerSetVisible(layerId, visible);
+            _sprite.LayerSetVisible(spriteEnt, layerId, visible);
 
             if (!visible || setting == null) // this is kinda implied
             {
@@ -463,17 +464,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             // and we need to check the index is correct.
             // So if that happens just default to white?
             // FLOOF ADD =3
-            sprite.LayerSetColor(layerId, colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
-
-            // FLOOF CHANGE
-            // if (colors != null && j < colors.Count)
-            // {
-            //     sprite.LayerSetColor(layerId, colors[j]);
-            // }
-            // else
-            // {
-            //     sprite.LayerSetColor(layerId, Color.White);
-            // }
+            _sprite.LayerSetColor(spriteEnt, layerId, colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
         }
     }
 
@@ -528,7 +519,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             foreach (var marking in markingList)
             {
                 if (_markingManager.TryGetMarking(marking, out var markingPrototype) && markingPrototype.BodyPart == layer)
-                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, ent.Comp, sprite);
+                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, (ent, ent.Comp, sprite));
             }
         }
     }

@@ -408,6 +408,7 @@ public sealed partial class MarkingPicker : Control
         List<ColorSelectorSliders> colorSliders = new();
         for (int i = 0; i < prototype.Sprites.Count; i++)
         {
+            // Floof addition
             // first, check if the coloration is parented to another marking
             // and if so, just kinda sorta dont display it
             var skipdraw = false;
@@ -426,11 +427,14 @@ public sealed partial class MarkingPicker : Control
                     skipdraw = true;
                 }
             }
+            // End Floof addition
+
             var colorContainer = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
             };
 
+            // Floof addition
             // so.
             // the color selector sliders decide which destination color to modify
             // based on its index in the list of color selectors.
@@ -439,6 +443,7 @@ public sealed partial class MarkingPicker : Control
             // be in index 0.
             if(!skipdraw)
                 CMarkingColors.AddChild(colorContainer);
+            // End Floof addition
 
             ColorSelectorSliders colorSelector = new ColorSelectorSliders();
             colorSliders.Add(colorSelector);

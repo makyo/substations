@@ -13,8 +13,8 @@
 - type: speciesBaseSprites
   id: MobSlimeSprites
   sprites:
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Face: MobHumanoidAnyMarking
     Head: MobSlimeHead
     Hair: MobSlimeMarkingFollowSkin
@@ -35,7 +35,7 @@
 - type: markingPoints
   id: MobSlimeMarkingLimits
   points:
-    Face:
+    Face: # Floof
       points: 1
       required: false
     Hair:

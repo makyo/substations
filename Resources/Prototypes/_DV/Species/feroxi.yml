@@ -16,8 +16,8 @@
 - type: speciesBaseSprites
   id: MobFeroxiSprites
   sprites:
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobFeroxiHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking

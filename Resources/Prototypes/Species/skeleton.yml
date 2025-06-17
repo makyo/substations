@@ -14,8 +14,8 @@
 - type: speciesBaseSprites
   id: MobSkeletonSprites
   sprites:
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobSkeletonHead
     Chest: MobSkeletonTorso
     LArm: MobSkeletonLArm

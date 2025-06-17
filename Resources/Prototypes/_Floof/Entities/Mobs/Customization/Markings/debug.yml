@@ -7,9 +7,9 @@
 #    overtop: Tail
 #    underall: Chest
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/debug.rsi
+#  - sprite: _Floof/Mobs/Customization/debug.rsi
 #    state: overtop
-#  - sprite: Floof/Mobs/Customization/debug.rsi
+#  - sprite: _Floof/Mobs/Customization/debug.rsi
 #    state: underall
 #
 #- type: marking
@@ -21,9 +21,9 @@
 #    tail_oversuit: TailOversuit
 #    tail_behind: TailBehind
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/debug.rsi
+#  - sprite: _Floof/Mobs/Customization/debug.rsi
 #    state: tail_oversuit
-#  - sprite: Floof/Mobs/Customization/debug.rsi
+#  - sprite: _Floof/Mobs/Customization/debug.rsi
 #    state: tail_behind
 #
 #- type: marking
@@ -37,9 +37,9 @@
 #  colorLinks:
 #    tail_oversuit: tail_behind
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/debug.rsi
+#  - sprite: _Floof/Mobs/Customization/debug.rsi
 #    state: tail_oversuit
-#  - sprite: Floof/Mobs/Customization/debug.rsi
+#  - sprite: _Floof/Mobs/Customization/debug.rsi
 #    state: tail_behind
 #
 #- type: marking
@@ -48,7 +48,7 @@
 #  markingCategory: Tail
 #  speciesRestriction: [Reptilian, SlimePerson, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
 #  sprites:
-#  - sprite: Floof/Mobs/Customization/debug.rsi
+#  - sprite: _Floof/Mobs/Customization/debug.rsi
 #    state: tail_oversuit
-#  - sprite: Floof/Mobs/Customization/debug.rsi
+#  - sprite: _Floof/Mobs/Customization/debug.rsi
 #    state: tail_behind
