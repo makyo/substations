@@ -1,4 +1,4 @@
-﻿- type: Tag
+- type: Tag
   id: Holy
 
 - type: Tag
@@ -6,3 +6,15 @@
 
 - type: Tag
   id: Suppermatter
+
+- type: Tag
+  id: CartridgeBazooka
+
+- type: Tag
+  id: EchionGun
+
+- type: Tag
+  id: SpeedLoaderAM
+
+- type: Tag
+  id: WeldingTool

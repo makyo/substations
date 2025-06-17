@@ -33,3 +33,11 @@
     implant: HostageImplant
     implantTime: 20
     drawTime: 15
+
+- type: entity
+  id: NukeopsUplinkImplanter
+  suffix: Nukeops Uplink
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: NukeopsUplinkImplant
