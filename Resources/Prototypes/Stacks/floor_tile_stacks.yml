@@ -337,7 +337,7 @@
 
 - type: stack
   id: FloorCarpetBlack
-  name: stack-block-carpet-tile
+  name: stack-black-carpet-tile
   icon: { sprite: Objects/Tiles/tile.rsi, state: carpet-black }
   spawn: FloorCarpetItemBlack
   maxCount: 120
