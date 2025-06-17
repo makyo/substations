@@ -91,6 +91,13 @@ namespace Content.Shared.Roles
         public bool AlwaysUseSpawner { get; } = false;
 
         /// <summary>
+        /// L5: allow having the job available in a map without a spawner
+        /// mapped in; intended for compatability with AA's removal on DV maps.
+        /// </summary>
+        [DataField]
+        public bool RequireSpawner { get; } = true;
+
+        /// <summary>
         ///     The "weight" or importance of this job. If this number is large, the job system will assign this job
         ///     before assigning other jobs.
         /// </summary>

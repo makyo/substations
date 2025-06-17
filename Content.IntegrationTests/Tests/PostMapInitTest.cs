@@ -400,7 +400,9 @@ namespace Content.IntegrationTests.Tests
                     // Test all availableJobs have spawnPoints
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var comp = entManager.GetComponent<StationJobsComponent>(station);
-                    var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
+                    var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys
+                        // L5 - we're fine with some jobs not having spawners (AA):
+                        .Where(x => protoManager.TryIndex(x, out var proto) && proto.RequireSpawner));
 
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
