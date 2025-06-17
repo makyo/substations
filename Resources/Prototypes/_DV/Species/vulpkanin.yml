@@ -16,6 +16,8 @@
 - type: speciesBaseSprites
   id: MobVulpkaninSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobVulpkaninHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking

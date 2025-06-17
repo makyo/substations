@@ -3,6 +3,9 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Humanoid
 {
+    /// <summary>
+    ///  These are the layer defines for the humanoid sprite system.
+    /// </summary>
     [Serializable, NetSerializable]
     public enum HumanoidVisualLayers : byte
     {
@@ -17,6 +20,8 @@ namespace Content.Shared.Humanoid
         Snout,
         HeadSide, // side parts (i.e., frills)
         HeadTop,  // top parts (i.e., ears)
+        TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
+        TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         Eyes,
         RArm,
         LArm,
@@ -30,6 +35,6 @@ namespace Content.Shared.Humanoid
         StencilMask,
         Ensnare,
         Fire,
-
+        Face, // Floof
     }
 }

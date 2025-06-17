@@ -13,6 +13,8 @@
   id: MobKoboldSprites
   sprites:
     Special: MobKoboldAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobKoboldHead
     Chest: MobKoboldTorso
     Tail: MobKoboldTail

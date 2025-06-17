@@ -28,6 +28,8 @@
 - type: speciesBaseSprites
   id: MobIPCSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobIPCHead
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking

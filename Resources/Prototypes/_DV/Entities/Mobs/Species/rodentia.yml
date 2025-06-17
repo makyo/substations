@@ -37,6 +37,7 @@
   - type: Sprite
     scale: 0.8, 0.8
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floof
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -64,8 +65,9 @@
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
-      - map: [ "back" ]
       - map: [ "neck" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floof
+      - map: [ "back" ] # Floof (moved from above neck)
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

@@ -62,6 +62,8 @@ namespace Content.Shared.Humanoid
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
                     yield return HumanoidVisualLayers.Tail;
+                    yield return HumanoidVisualLayers.TailBehind; // Floof
+                    yield return HumanoidVisualLayers.TailOversuit; // Floof
                     break;
                 // Shitmed Change Start
                 case HumanoidVisualLayers.LHand:
