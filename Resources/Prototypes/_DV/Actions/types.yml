@@ -14,7 +14,7 @@
 - type: entity
   id: ActionOpenMouthStorage
   name: Open cheek storage
-  description: Allows you to store items in your cheeks. 
+  description: Allows you to store items in your cheeks.
   components:
   - type: InstantAction
     itemIconStyle: BigAction
@@ -25,14 +25,18 @@
 - type: entity
   id: ActionToggleSneakMode
   name: Toggle sneak mode
-  description: Sneak underneath tables. 
+  description: Sneak underneath tables.
   components:
   - type: InstantAction
     itemIconStyle: BigAction
     useDelay: 3
+    # L5 - toggle icon
     icon:
-      sprite: Structures/Furniture/Tables/generic.rsi
-      state: full
+      sprite: _L5/Actions/sneak.rsi
+      state: sneak
+    iconOn:
+      sprite: _L5/Actions/sneak.rsi
+      state: stand
     event: !type:ToggleCrawlingStateEvent
 
 - type: entity
