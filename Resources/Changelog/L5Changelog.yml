@@ -721,3 +721,11 @@ Entries:
       message: Many, *many* new markings for anthro characters!
   id: 96
   time: '2025-06-17T20:25:24.0000000+00:00'
+- author: Maezel
+  changes:
+    - type: Tweak
+      message: 'It''s monochromacy, not monochromancy '
+    - type: Tweak
+      message: Muted is now non-speaking
+  id: 97
+  time: '2025-06-18T00:44:32.0000000+00:00'
