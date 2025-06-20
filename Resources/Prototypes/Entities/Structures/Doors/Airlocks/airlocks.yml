@@ -343,9 +343,6 @@
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/xeno.rsi
-  - type: IconSmooth
-    key: chitin
-    mode: NoSprite
 
 - type: entity
   parent: AirlockGlass
@@ -354,6 +351,3 @@
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/xeno.rsi
-  - type: IconSmooth
-    key: chitin
-    mode: NoSprite
