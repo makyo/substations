@@ -76,6 +76,7 @@ public sealed partial class EntityEffectSystem : EntitySystem // L5 - made parti
     [Dependency] private readonly TemperatureSystem _temperature = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly VomitSystem _vomit = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     public override void Initialize()
     {
@@ -533,7 +534,7 @@ public sealed partial class EntityEffectSystem : EntitySystem // L5 - made parti
                 return;
             }
 
-            if (_spreader.RequiresFloorToSpread(args.Effect.PrototypeId) && tileRef.Tile.IsSpace())
+            if (_spreader.RequiresFloorToSpread(args.Effect.PrototypeId) && _turf.IsSpace(tileRef))
                 return;
 
             var coords = _map.MapToGrid(gridUid, mapCoords);
