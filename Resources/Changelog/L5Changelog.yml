@@ -737,3 +737,9 @@ Entries:
         button
   id: 98
   time: '2025-06-18T04:02:56.0000000+00:00'
+- author: Cheeses-The-Mac
+  changes:
+    - type: Tweak
+      message: Increase many marking limits from 1/2 -> 9.
+  id: 99
+  time: '2025-06-22T19:36:19.0000000+00:00'
