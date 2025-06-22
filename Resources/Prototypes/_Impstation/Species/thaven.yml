@@ -44,15 +44,14 @@
   onlyWhitelisted: true
   points:
     Hair:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     HeadTop:
       points: 4 # DeltaV - was previously 2, more markings require more space
       required: false
     HeadSide:
-      points: 1
-      required: true
-      defaultMarkings: [ ThavenEars1 ]
+      points: 9 # L5 - Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     Head:
       points: 4
       required: false
@@ -66,7 +65,7 @@
       points: 6
       required: false
     Snout:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
 
 - type: humanoidBaseSprite
