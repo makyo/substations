@@ -77,7 +77,7 @@ namespace Content.IntegrationTests.Tests
             "Micro", // DeltaV
             "Chibi", // DeltaV
 			"Elegance", // DeltaV
-            "Nucleus" // L5
+            "Nucleus", // L5
         };
 
         /// <summary>
