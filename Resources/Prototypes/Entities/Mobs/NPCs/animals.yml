@@ -1337,8 +1337,9 @@
   # Shitmed Change Start
   - type: SurgeryTarget
   - type: Targeting
-  - type: HumanoidAppearance
-    species: Monkey
+  # L5 - moved to MobMonkey
+#  - type: HumanoidAppearance
+#    species: Monkey
   # Shitmed Change End
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
   - type: Inventory
@@ -1488,6 +1489,9 @@
   parent: MobBaseAncestor
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   components:
+  # L5 - moved from shitmed's addition to MobBaseAncestor:
+  - type: HumanoidAppearance
+    species: Monkey
   - type: NameIdentifier
     group: Monkey
   - type: Speech
@@ -1522,6 +1526,9 @@
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   suffix: syndicate base
   components:
+    # L5 - moved from shitmed's addition to MobBaseAncestor:
+  - type: HumanoidAppearance
+    species: Monkey
   - type: NameIdentifier
     group: Monkey
   - type: SentienceTarget
