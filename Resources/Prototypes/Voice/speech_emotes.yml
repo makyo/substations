@@ -289,12 +289,13 @@
 - type: emote
   id: Thump
   name: chat-emote-name-thump
-  category: Hands
+  category: General # L5 - was Hands
   available: false
   icon: Interface/Emotes/tailslap.png
-  whitelist:
-    components:
-    - Hands
+  # L5 - ????
+#  whitelist:
+#    components:
+#    - Hands
   blacklist:
     tags:
     - SiliconEmotes
