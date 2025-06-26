@@ -486,6 +486,7 @@
     - NotekeeperCartridge
     - NanoTaskCartridge
     - NewsReaderCartridge
+    - AstroNavCartridge
     - NanoChatCartridge
     - MailMetricsCartridge
     - StockTradingCartridge
