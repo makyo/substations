@@ -11,7 +11,7 @@
     - HeadTop
 
   - type: Hunger
-    baseDecayRate: 0.0467 #needs to eat more to survive
+    #baseDecayRate: 0.0467 #needs to eat more to survive # L5 — nerf hunger
   - type: Thirst
 
 
