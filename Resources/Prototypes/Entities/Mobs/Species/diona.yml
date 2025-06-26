@@ -8,9 +8,9 @@
   - type: HumanoidAppearance
     species: Diona
   - type: Hunger
-    baseDecayRate: 0.015 # DeltaV
+    #baseDecayRate: 0.015 # DeltaV # L5 — nerf hunger (make consistent)
   - type: Thirst
-    baseDecayRate: 0.15 # DeltaV
+    baseDecayRate: 0.15 # DeltaV # L5 — leaving this one because it's funny :c
   - type: Icon
     sprite: Mobs/Species/Diona/parts.rsi
     state: full
