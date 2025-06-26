@@ -757,3 +757,9 @@ Entries:
         all pull from the same bank account.)
   id: 101
   time: '2025-06-26T21:27:31.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Hunger and thirst suck less.
+  id: 102
+  time: '2025-06-26T21:41:07.0000000+00:00'
