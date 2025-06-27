@@ -293,7 +293,7 @@
         - KnockedDown
         - SlowedDown
         - Stutter
-        - SeeingRainbows
+        # - SeeingRainbows # L5 - new status effect system
         - Electrocution
         # - Drunk
         - SlurredSpeech
