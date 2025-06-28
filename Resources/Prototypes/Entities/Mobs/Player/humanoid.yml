@@ -527,7 +527,7 @@
       sprite: Markers/jobs.rsi
       state: cburn
     - type: RandomHumanoidSpawner
-      settings: CBURNAgent
+      settings: CBURNAgentDeltaV # DeltaV - was CBURNAgent
 
 - type: randomHumanoidSettings
   id: CBURNAgent
