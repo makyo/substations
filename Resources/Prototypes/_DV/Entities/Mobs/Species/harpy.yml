@@ -41,6 +41,7 @@
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
       - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      - map: [ "enum.HumanoidVisualLayers.RArm" ] # Frontier: return to top near LArm
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
@@ -78,8 +79,7 @@
         sprite: "Effects/creampie.rsi"
         state: "creampie_human"
         visible: false
-# Yes, RArm has to be down here
-      - map: [ "enum.HumanoidVisualLayers.RArm" ]
+      - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Frontier
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
@@ -141,6 +141,7 @@
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
+    femaleDisplacements: {} # Frontier: female jumpsuit displacement
   - type: HarpyVisuals
   - type: UltraVision
   - type: Tag
@@ -171,6 +172,7 @@
           32:
             sprite: _DV/Mobs/Species/Harpy/displacement.rsi
             state: jumpsuit
+    femaleDisplacements: {} # Frontier: female jumpsuit displacement
   - type: Sprite
     scale: 0.9, 0.9
     layers:
@@ -179,6 +181,7 @@
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
       - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      - map: [ "enum.HumanoidVisualLayers.RArm" ] # Frontier: return to top near LArm
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
@@ -212,8 +215,7 @@
         sprite: "Effects/creampie.rsi"
         state: "creampie_human"
         visible: false
-# Yes, RArm has to be down here
-      - map: [ "enum.HumanoidVisualLayers.RArm" ]
+      - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Frontier
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "mask" ]
       - map: [ "head" ]

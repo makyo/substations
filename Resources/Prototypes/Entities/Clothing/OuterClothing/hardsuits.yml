@@ -113,6 +113,7 @@
     - WhitelistChameleon
     - HardsuitSpatio
     - CorgiWearable
+    - HidesHarpyWings # DeltaV: Used by harpies to help render their hardsuit sprites
 
 #Salvage Hardsuit
 - type: entity
