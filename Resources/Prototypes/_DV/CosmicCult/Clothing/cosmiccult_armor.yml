@@ -39,6 +39,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - HidesHarpyWings
 #Shoulder mounted flashlight
   - type: ToggleableVisuals # L5 - wizden toggleable lights changes
     spriteLayer: light
