@@ -14,7 +14,7 @@ marking-UndershirtRolledSleeveless-rolled_undershirt_sleeveless = Tanktop
 marking-UndershirtRolledSleeveless = Tanktop (Rolled)
 
 marking-UndershirtNanotrasen-nanotrasen = Undershirt
-marking-UndershirtNanotrasen = Undershirt (Nanotrasen)
+marking-UndershirtNanotrasen = Undershirt (SysCon)
 
 marking-UndershirtBraStrapless-strapless = Bra
 marking-UndershirtBraStrapless = Bra (Strapless)

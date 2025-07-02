@@ -2,7 +2,7 @@
   name: FG13 Xiuhcoatl
   parent: [WeaponPlasmaAdder, BaseGunWieldable]
   id: WeaponFlamerXiuhcoatl
-  description: Simple as it is deadly, the Xiuhcoatl fulfills a long-standing craving of the Gorlex Marauders for Nanotrasen Barbeque. Uses welding fuel.
+  description: Simple as it is deadly, the Xiuhcoatl is a Flammenwerfer. It werfs flammen. Uses welding fuel.
   components:
   - type: Sprite
     sprite: _Impstation/Objects/Weapons/Guns/Special/xiuhcoatl.rsi

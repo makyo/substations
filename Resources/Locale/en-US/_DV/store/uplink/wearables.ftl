@@ -8,7 +8,7 @@ uplink-hardsuit-agent-syndie-name = Agent's Hardsuit
 uplink-hardsuit-agent-syndie-desc = The iconic blood-white hardsuit, painted with patterns specifically designed to make you a less appealing target. Limit of 1.
 
 uplink-hardsuit-syndieelite-delta-name = Syndicate Thermal Hardsuit
-uplink-hardsuit-syndieelite-desc-deltav = An alternate version of the blood-red hardsuit, with improved mobility and fireproofing, but less resistance to physical damage. Property of Gorlex Marauders.
+uplink-hardsuit-syndieelite-desc-deltav = An alternate version of the blood-red hardsuit, with improved mobility and fireproofing, but less resistance to physical damage. Property of GEX Marauders.
 
-uplink-cwpgorlex-name = Gorlex Cold Weather Poncho
+uplink-cwpgorlex-name = GEX Cold Weather Poncho
 uplink-cwpgorlex-desc = A warm poncho for extreme weather. Made of cut-proof fabric, and protects against freezing weapons as well.
