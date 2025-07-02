@@ -13,8 +13,8 @@ marking-UndershirtGrossSleeveless = Tanktop (Gross)
 marking-UndershirtRolledSleeveless-rolled_undershirt_sleeveless = Tanktop
 marking-UndershirtRolledSleeveless = Tanktop (Rolled)
 
-# L5
 marking-UndershirtNanotrasen-nanotrasen = Undershirt
+# L5
 marking-UndershirtNanotrasen = Undershirt (SysCon)
 
 marking-UndershirtBraStrapless-strapless = Bra

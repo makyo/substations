@@ -4,8 +4,8 @@ uplink-adder-desc = One state-of-the-art Adder plasma pistol, bundled with 2 can
 uplink-akurra-name = Akurra bundle
 uplink-akurra-desc = Fearsome as it is advanced, the venerable Akurra bundled with 4 cannisters of its proprietary liquid ammo.
 
-# L5
 uplink-flamethrower-name = FG13 Xiuhcoatl flamethrower
+# L5
 uplink-flamethrower-desc = Werf some flammen with this Flammenwerfer.
 
 uplink-leviathan-name = Leviathan Bundle

@@ -8,6 +8,7 @@ uplink-hardsuit-agent-syndie-name = Agent's Hardsuit
 uplink-hardsuit-agent-syndie-desc = The iconic blood-white hardsuit, painted with patterns specifically designed to make you a less appealing target. Limit of 1.
 
 uplink-hardsuit-syndieelite-delta-name = Syndicate Thermal Hardsuit
+# L5
 uplink-hardsuit-syndieelite-desc-deltav = An alternate version of the blood-red hardsuit, with improved mobility and fireproofing, but less resistance to physical damage. Property of GEX Marauders.
 
 # L5
