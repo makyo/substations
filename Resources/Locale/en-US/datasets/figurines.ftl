@@ -263,8 +263,9 @@ figurines-nukie-commander-5 = Whoops.
 figurines-footsoldier-1 = I'm an evil boy. Less boy every day, more evil every day.
 figurines-footsoldier-2 = Who will you choose? Them or us? Us or them?
 figurines-footsoldier-3 = Glory to the syndicate!
-figurines-footsoldier-4 = Down with Nanotrasen!
-figurines-footsoldier-5 = I'd rather die than join Nanotrasen.
+# L5
+figurines-footsoldier-4 = Down with the System!
+figurines-footsoldier-5 = I'd rather die than upload.
 
 figurines-wizard-1 = Ei Nath!!
 figurines-wizard-2 = Real wizards support trans rights.
