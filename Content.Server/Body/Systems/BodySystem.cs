@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Server.Body.Components;
 using Content.Server.Ghost;
 using Content.Server.Humanoid;
 using Content.Server.Polymorph.Components;
@@ -213,7 +212,7 @@ public sealed class BodySystem : SharedBodySystem
         var bleeding = partEnt.Comp.SeverBleeding;
         if (partEnt.Comp.IsVital)
             bleeding *= 2f;
-        _bloodstream.TryModifyBleedAmount(bodyEnt, bleeding);
+        _bloodstream.TryModifyBleedAmount(bodyEnt.Owner, bleeding); // L5 - predicted bloodstream
     }
 
     // Shitmed Change End
