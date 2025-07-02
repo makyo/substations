@@ -1,3 +1,4 @@
+# L5
 ent-ClothingOuterHardsuitSyndieElite = syndicate thermal hardsuit
     .desc = An alternate version of the blood-red hardsuit, with improved mobility and fireproofing, but less resistance to physical damage. Property of GEX Marauders.
 

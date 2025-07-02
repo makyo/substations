@@ -14,6 +14,7 @@ advertisement-bruiseomat-13 = Man, I didn't know I got moved back to Cadet City!
 advertisement-bruiseomat-14 = Sicker than your average Booze-O-Mat!
 advertisement-bruiseomat-15 = Nuke ops will continue until robustness improves.
 thankyou-bruiseomat-1 = Good luck, schmuck! You're gonna need it!
+# L5
 thankyou-bruiseomat-2 = Show 'em the GEX Style!
 thankyou-bruiseomat-3 = Don't forget to stay hydrated!
 thankyou-bruiseomat-4 = You noted down the codes, right?

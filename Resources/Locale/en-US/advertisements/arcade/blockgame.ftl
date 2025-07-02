@@ -7,6 +7,7 @@ advertisement-block-game-6 = 6 whole colors of gameplay!
 advertisement-block-game-7 = Hot 8-bit action!
 advertisement-block-game-8 = Blocks, blocks, blocks!
 advertisement-block-game-9 = Think YOU can claim the high score?
+# L5
 advertisement-block-game-10 = Pierrot Lunaire Block Game IS what TetrISN'T!
 advertisement-block-game-11 = Now with blast processing!
 advertisement-block-game-12 = Our lawyers are standing by!

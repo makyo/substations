@@ -2,6 +2,7 @@
   name: FG13 Xiuhcoatl
   parent: [WeaponPlasmaAdder, BaseGunWieldable]
   id: WeaponFlamerXiuhcoatl
+  # L5
   description: Simple as it is deadly, the Xiuhcoatl is a Flammenwerfer. It werfs flammen. Uses welding fuel.
   components:
   - type: Sprite
