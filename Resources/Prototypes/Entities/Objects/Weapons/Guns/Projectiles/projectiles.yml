@@ -570,8 +570,8 @@
         - MobState
     damage:
       types:
-        Blunt: 20
-        Slash: 5
+        Blunt: 18
+        Slash: 4
   - type: Projectile
     impactEffect: BulletImpactEffectKinetic
     damage:
@@ -580,6 +580,21 @@
   # Short lifespan
   - type: TimedDespawn
     lifetime: 0.4
+
+  # Deals less damage, glaive has better HP recovery
+- type: entity
+  id: BulletChargeGlaive
+  name: leech bolt
+  parent: BulletCharge
+  components:
+  - type: DamageMarkerOnCollide
+    whitelist:
+      components:
+        - MobState
+    damage:
+      types:
+        Blunt: 1
+        Slash: 5
 
 - type: entity
   parent: BaseBullet
@@ -1243,7 +1258,7 @@
           bounds: "-0.15,-0.3,0.15,0.3"
         hard: false
         mask:
-       # - Impassable 
+       # - Impassable
        # - BulletImpassable
         - Opaque # Delta-V changed from impassable so that they can go through windows
       fly-by: *flybyfixture
