@@ -23,7 +23,7 @@
     whitelist:
       tags:
       - LightFixture
-  # Begin L5 changes - action ECS
+    # Begin L5 changes - action ECS
     event: !type:StationAiRgbLightingActionEvent
   - type: TargetAction
     range: -1
@@ -47,9 +47,10 @@
     whitelist:
       tags:
       - LightFixture
-  # Begin L5 changes - action ECS
+    # Begin L5 changes - action ECS
     event: !type:StationAiLightSynthesizerActionEvent
       bulbPrototype: LightTube
+      tubePrototype: LightTube
   - type: TargetAction
     checkCanAccess: false
     range: -1
@@ -72,7 +73,7 @@
     whitelist:
       components:
       - Holopad
-  # Begin L5 changes - action ECS
+    # Begin L5 changes - action ECS
     event: !type:StationAiPlaySoundActionEvent
       sound:
         collection: BikeHorn
@@ -97,7 +98,7 @@
   description: Circle an area of interest with a hologram # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: WorldTargetAction
-  # Begin L5 changes - action ECS
+    # Begin L5 changes - action ECS
     event: !type:StationAiSpawnEntityActionEvent
       entity: StationAiHolopointer
   - type: TargetAction
@@ -143,7 +144,7 @@
     whitelist:
       components:
       - BorgChassis
-  # Begin L5 changes - action ECS
+    # Begin L5 changes - action ECS
     event: !type:StationAiHealthChangeActionEvent
       damage:
         groups:
@@ -168,7 +169,7 @@
   description: Deploy some metal foam to seal breaches # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: WorldTargetAction
-  # Begin L5 changes - action ECS
+    # Begin L5 changes - action ECS
     event: !type:StationAiSmokeActionEvent
       duration: 10
       spreadAmount: 8
