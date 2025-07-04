@@ -26,6 +26,7 @@
   - MopItem
   - Holoprojector
   - WetFloorSign
+  - WireBrush
   - DiseaseSwab # L5 botanists can make swabs at their fab now
   - CrewManifest # L5 craftable PDA carts
   - NanoChat # ditto
