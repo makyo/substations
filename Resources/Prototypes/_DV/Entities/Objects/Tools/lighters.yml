@@ -1,6 +1,6 @@
 - type: entity
   parent: FlippoLighter
-  id: SyndicateFlippo
+  id: SyndicateFlippoDV # L5 TODO - duplicate with upstream
   name: Blood-red flippo
   description: "A 'Valid' choice in lighters. Capable of superheating welding fuel into incendiary shots when lit. Contains no copper."
   components:
