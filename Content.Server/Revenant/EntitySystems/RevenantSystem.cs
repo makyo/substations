@@ -52,8 +52,7 @@ public sealed partial class RevenantSystem : EntitySystem
     [Dependency] private readonly MindSystem _mind = default!; // Imp
     [Dependency] private readonly MetaDataSystem _meta = default!; // Imp
 
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string RevenantShopId = "ActionRevenantShop";
+    private static readonly EntProtoId RevenantShopId = "ActionRevenantShop";
 
     [ValidatePrototypeId<EntityPrototype>]  // Imp
     private const string RevenantHauntId = "ActionRevenantHaunt"; // Imp

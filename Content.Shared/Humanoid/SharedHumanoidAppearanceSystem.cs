@@ -45,8 +45,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] protected readonly SharedSynthSystem _synthSystem = default!; // L5: Proper appearance and cloning of synths
     [Dependency] private readonly SharedIdentitySystem _identity = default!;
 
-    [ValidatePrototypeId<SpeciesPrototype>]
-    public const string DefaultSpecies = "Human";
+    public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
 
     public override void Initialize()
     {
