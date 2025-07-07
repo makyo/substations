@@ -172,6 +172,7 @@
       - id: CigarGold
       - id: ClothingUniformJumpsuitFamilyGuy
       - id: WristwatchGold
+      - id: GoldenPersonalAI
       - id: ClothingBeltFoamSheathFilled # DeltaV - Add small chance of it spawning in maints locker.
       #- id: RubberStampGreytide # Delta-V: prevent greytide stamp from spawning
 
