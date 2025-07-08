@@ -50,7 +50,7 @@ using PolymorphEffect = Content.Shared.EntityEffects.Effects.Polymorph;
 
 namespace Content.Server.EntityEffects;
 
-public sealed class EntityEffectSystem : EntitySystem
+public sealed partial class EntityEffectSystem : EntitySystem // L5 - made partial
 {
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
@@ -125,6 +125,8 @@ public sealed class EntityEffectSystem : EntitySystem
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PlantSpeciesChange>>(OnExecutePlantSpeciesChange);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<PolymorphEffect>>(OnExecutePolymorph);
         SubscribeLocalEvent<ExecuteEntityEffectEvent<ResetNarcolepsy>>(OnExecuteResetNarcolepsy);
+
+        NyanotrasenInitialize(); // Nyanotrasen (added by L5 for entity effect merge)
     }
 
     private void OnCheckTemperature(ref CheckEntityEffectConditionEvent<TemperatureCondition> args)

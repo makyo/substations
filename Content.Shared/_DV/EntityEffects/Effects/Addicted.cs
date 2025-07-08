@@ -2,7 +2,8 @@ using Content.Shared._DV.Addictions;
 using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.EntityEffects.Effects;
+namespace Content.Shared._DV.EntityEffects.Effects;
+// L5 - moved to shared to work with wizden #35614
 
 public sealed partial class Addicted : EntityEffect
 {

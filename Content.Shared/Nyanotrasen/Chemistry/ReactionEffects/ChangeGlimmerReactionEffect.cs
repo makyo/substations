@@ -1,13 +1,14 @@
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.EntityEffects;
 using Content.Shared.Psionics.Glimmer;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Chemistry.ReactionEffects;
+namespace Content.Shared.Nyanotrasen.Chemistry.ReactionEffects;
+// L5 - moved to shared to work with wizden #35614
 
 [DataDefinition]
 public sealed partial class ChangeGlimmerReactionEffect : EntityEffect
 {
+
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-change-glimmer-reaction-effect", ("chance", Probability),
             ("count", Count));
