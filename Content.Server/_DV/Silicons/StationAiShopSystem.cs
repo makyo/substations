@@ -19,6 +19,7 @@ public sealed class StationAiShopSystem : SharedStationAiShopSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SpreaderSystem _spreader = default!;
     [Dependency] private readonly PoweredLightSystem _poweredLight = default!;
+    [Dependency] private readonly TurfSystem _turf = default!; // L5 - turf helpers is kill
 
     public override void Initialize()
     {
@@ -60,7 +61,7 @@ public sealed class StationAiShopSystem : SharedStationAiShopSystem
             return;
         }
 
-        if (_spreader.RequiresFloorToSpread(args.SmokePrototype.ToString()) && tileRef.Tile.IsSpace())
+        if (_spreader.RequiresFloorToSpread(args.SmokePrototype.ToString()) && _turf.IsSpace(tileRef)) // L5 - turf helpers is kill
             return;
 
         var coords = grid.MapToGrid(mapCoords);
