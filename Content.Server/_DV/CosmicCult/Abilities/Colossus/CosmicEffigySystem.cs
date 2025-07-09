@@ -36,7 +36,8 @@ public sealed class CosmicEffigySystem : EntitySystem
         if (!VerifyPlacement(ent, out var pos))
             return;
 
-        _actions.RemoveAction(ent, ent.Comp.EffigyPlaceActionEntity);
+        // L5 - modified for action ECS
+        _actions.RemoveAction(ent.Owner, ent.Comp.EffigyPlaceActionEntity);
         _codeCondition.SetCompleted(ent.Owner, ent.Comp.EffigyObjective);
         Spawn(ent.Comp.EffigyPrototype, pos);
         ent.Comp.Timed = false;

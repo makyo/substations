@@ -3,6 +3,7 @@ using Content.Shared.Actions;
 using Content.Server.NPC.Events;
 using Content.Server.NPC.Components;
 using Content.Server.Abilities.Psionics;
+using Content.Shared.Actions.Components;
 using Robust.Shared.Timing;
 
 namespace Content.Server.Psionics.NPC;
@@ -28,7 +29,9 @@ public sealed class PsionicNpcCombatSystem : EntitySystem
 
         // TODO: when action refactor is merged and cherry picked update this to get ActionComponent
         var target = Comp<EntityTargetActionComponent>(action);
-        if (target.Cooldown is {} cooldown && cooldown.End > _timing.CurTime)
+        // L5 - you got it boss. (Begin L5 modifications)
+        var actionComp = Comp<ActionComponent>(action);
+        if (actionComp.Cooldown is {} cooldown && cooldown.End > _timing.CurTime)
             return;
 
         if (!TryComp<NPCRangedCombatComponent>(uid, out var combat))
@@ -41,6 +44,7 @@ public sealed class PsionicNpcCombatSystem : EntitySystem
             return;
 
         ev.Target = combat.Target;
-        _actions.PerformAction(uid, null, action, target, ev, _timing.CurTime, predicted: false);
+        _actions.PerformAction(uid, (action, actionComp), ev,  predicted: false);
+        // End L5 modifications
     }
 }

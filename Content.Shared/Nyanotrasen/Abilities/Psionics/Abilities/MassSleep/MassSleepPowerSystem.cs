@@ -30,8 +30,8 @@ namespace Content.Shared.Abilities.Psionics
         private void OnInit(EntityUid uid, MassSleepPowerComponent component, ComponentInit args)
         {
             _actions.AddAction(uid, ref component.MassSleepActionEntity, component.MassSleepActionId );
-            _actions.TryGetActionData( component.MassSleepActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
+            // L5 - modified for action ECS
+            if (_actions.GetAction(component.MassSleepActionEntity) is { Comp.UseDelay: not null })
                 _actions.StartUseDelay(component.MassSleepActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
                 psionic.PsionicAbility = component.MassSleepActionEntity;

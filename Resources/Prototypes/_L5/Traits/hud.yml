@@ -10,15 +10,24 @@
     toggleOffSound: /Audio/_L5/Effects/HUD/SecHudDisable.ogg
 
 - type: entity
+  abstract: true
+  parent: BaseAction
+  id: BaseActionToggleHud
+  components:
+  - type: Action
+    useDelay: 2
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:ToggleEvent
+
+- type: entity
+  parent: BaseActionToggleHud
   id: ActionToggleSecHud
   name: Toggle Sec Hud
   description: Toggles your security HUD.
   components:
-    - type: InstantAction
-      useDelay: 2
-      icon: _L5/Interface/Actions/sechud.png
-      event: !type:ToggleEvent
-      checkCanInteract: false
+  - type: Action
+    icon: _L5/Interface/Actions/sechud.png
 
 - type: trait
   category: Skills
@@ -36,11 +45,8 @@
   name: Toggle Med Hud
   description: Toggles your medical HUD.
   components:
-    - type: InstantAction
-      useDelay: 2
-      icon: _L5/Interface/Actions/medhud.png
-      event: !type:ToggleEvent
-      checkCanInteract: false
+  - type: Action
+    icon: _L5/Interface/Actions/medhud.png
 
 - type: trait
   category: Skills
@@ -58,8 +64,5 @@
   name: Toggle Beer Hud
   description: Toggles your beer HUD.
   components:
-    - type: InstantAction
-      useDelay: 2
-      icon: _L5/Interface/Actions/beerhud.png
-      event: !type:ToggleEvent
-      checkCanInteract: false
+  - type: Action
+    icon: _L5/Interface/Actions/beerhud.png

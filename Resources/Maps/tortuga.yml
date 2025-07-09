@@ -13740,14 +13740,6 @@ entities:
     - type: Transform
       pos: 17.517487,72.44657
       parent: 33
-- proto: ActionToggleInternals
-  entities:
-  - uid: 31442
-    components:
-    - type: Transform
-      parent: 31441
-    - type: InstantAction
-      container: 31441
 - proto: AirAlarm
   entities:
   - uid: 393
@@ -162078,16 +162070,8 @@ entities:
     components:
     - type: Transform
       parent: 31440
-    - type: GasTank
-      toggleActionEntity: 31442
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 31442
 - proto: PlasmaWindoorSecureArmoryLocked
   entities:
   - uid: 12421

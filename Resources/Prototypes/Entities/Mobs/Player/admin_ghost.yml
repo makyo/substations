@@ -210,15 +210,16 @@
 
 # Begin CD - Character Records
 - type: entity
+  parent: BaseAGhostAction # L5 - action ECS
   id: ActionAGhostShowCharacterRecords
   name: Character Records Interface
   description: View all of the character records
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
-    keywords: [ "AI", "console", "interface" ]
+  # Begin L5 changes - action ECS
+  - type: Action
     priority: -10
+  - type: InstantAction
+  # End L5 changes
     event: !type:ToggleIntrinsicUIEvent { key: enum.CharacterRecordConsoleKey.Key }
 # Edn CD - Character Records

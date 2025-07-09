@@ -338,32 +338,6 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: GlobalResearchGrid
-- proto: ActionToggleInternals
-  entities:
-  - uid: 29
-    components:
-    - type: Transform
-      parent: 268
-    - type: InstantAction
-      container: 268
-  - uid: 40
-    components:
-    - type: Transform
-      parent: 267
-    - type: InstantAction
-      container: 267
-  - uid: 42
-    components:
-    - type: Transform
-      parent: 269
-    - type: InstantAction
-      container: 269
-  - uid: 44
-    components:
-    - type: Transform
-      parent: 238
-    - type: InstantAction
-      container: 238
 - proto: AirlockExternalGlassShuttleSyndicateLocked
   entities:
   - uid: 157
@@ -1553,31 +1527,15 @@ entities:
     components:
     - type: Transform
       parent: 89
-    - type: GasTank
-      toggleActionEntity: 44
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 44
     - type: InsideEntityStorage
   - uid: 268
     components:
     - type: Transform
       parent: 89
-    - type: GasTank
-      toggleActionEntity: 29
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 29
     - type: InsideEntityStorage
 - proto: OxygenTankFilled
   entities:
@@ -1585,31 +1543,15 @@ entities:
     components:
     - type: Transform
       parent: 89
-    - type: GasTank
-      toggleActionEntity: 40
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 40
     - type: InsideEntityStorage
   - uid: 269
     components:
     - type: Transform
       parent: 89
-    - type: GasTank
-      toggleActionEntity: 42
     - type: Physics
       canCollide: False
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 42
     - type: InsideEntityStorage
   - uid: 276
     components:

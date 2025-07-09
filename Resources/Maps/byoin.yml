@@ -5409,14 +5409,6 @@ entities:
     - type: Transform
       pos: 22.481207,-17.444302
       parent: 2
-- proto: ActionStethoscope
-  entities:
-  - uid: 2958
-    components:
-    - type: Transform
-      parent: 6609
-    - type: EntityTargetAction
-      container: 6609
 - proto: AirAlarm
   entities:
   - uid: 32
@@ -35196,14 +35188,6 @@ entities:
     - type: Transform
       pos: -4.487977,-26.52824
       parent: 2
-    - type: Stethoscope
-      actionEntity: 2958
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 2958
 - proto: ClothingNeckStoleChaplain
   entities:
   - uid: 1242

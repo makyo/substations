@@ -48,7 +48,8 @@ public sealed class CosmicMonumentSystem : EntitySystem
         if (!VerifyPlacement(uid, out var pos))
             return;
 
-        _actions.RemoveAction(uid, uid.Comp.CosmicMonumentPlaceActionEntity);
+        // L5 - modified for action ECS
+        _actions.RemoveAction(uid.Owner, uid.Comp.CosmicMonumentPlaceActionEntity);
 
         Spawn(MonumentCollider, pos);
         var monument = Spawn(uid.Comp.MonumentPrototype, pos);
@@ -64,7 +65,8 @@ public sealed class CosmicMonumentSystem : EntitySystem
         if (!VerifyPlacement(uid, out var pos))
             return;
 
-        _actions.RemoveAction(uid, uid.Comp.CosmicMonumentMoveActionEntity);
+        // L5 - modified for action ECS
+        _actions.RemoveAction(uid.Owner, uid.Comp.CosmicMonumentMoveActionEntity);
 
         //delete all old monument colliders for 100% safety
         var colliderQuery = EntityQueryEnumerator<MonumentCollisionComponent>();
