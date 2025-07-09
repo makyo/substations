@@ -20,11 +20,11 @@
     - state: flame
       visible: false
       shader: unshaded
-      map: ["enum.ToggleVisuals.Layer"]
+      map: ["enum.ToggleableVisuals.Layer"] # L5 - wizden rename
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled: # L5 - wizden renamed
+        enum.ToggleableVisuals.Layer: # L5 - wizden renamed
           True: { visible: true }
           False: { visible: false }
   - type: ItemToggleSize
@@ -47,7 +47,7 @@
           Quantity: 100
         maxVol: 100
   - type: ItemTogglePointLight
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals # L5 - wizden renamed
     spriteLayer: flame
     inhandVisuals:
       left:

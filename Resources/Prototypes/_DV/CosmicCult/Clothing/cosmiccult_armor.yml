@@ -40,12 +40,13 @@
     - Hardsuit
     - WhitelistChameleon
 #Shoulder mounted flashlight
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals # L5 - wizden toggleable lights changes
     spriteLayer: light
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING-light
         shader: unshaded
+  - type: ItemTogglePointLight # L5 - wizden toggleable lights changes
   - type: Appearance
   - type: HandheldLight
     addPrefix: false
