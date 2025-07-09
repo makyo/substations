@@ -40,9 +40,23 @@
   color: "#c0992e"
   tileReactions:
     - !type:CreateEntityTileReaction
-      entity: MobButterflyBigger
-      usage: 3
-      maxOnTile: 3
+      entity: MobButterfly # L5 - we don't have biggerflies
+      usage: 1 # L5
+      maxOnTile: 1 # L5
+      randomOffsetMax: 0.3
+      maxOnTileWhitelist:
+        tags: [ Butterfly ]
+    - !type:CreateEntityTileReaction
+      entity: MobButterfly # L5 - we don't have biggerflies so we run it again
+      usage: 1 # L5
+      maxOnTile: 1 # L5
+      randomOffsetMax: 0.3
+      maxOnTileWhitelist:
+        tags: [ Butterfly ]
+    - !type:CreateEntityTileReaction
+      entity: MobButterfly # L5 - we don't have biggerflies so we run it three times because fuck it. Also why can't I specify a count here? :P
+      usage: 1 # L5
+      maxOnTile: 1 # L5
       randomOffsetMax: 0.3
       maxOnTileWhitelist:
         tags: [ Butterfly ]
