@@ -16,8 +16,8 @@
 - type: entity
   parent: BaseAction # L5 - action ECS
   id: ActionStationAiRgbLighting
-  name: ai-rgb-lighting-name
-  description: ai-rgb-lighting-desc
+  name: RGB Lighting # L5 - fix for TestNoManualEntityLocStrings
+  description: Adjust a light's color controller to add or remove an RGB effect # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: EntityTargetAction
     whitelist:
@@ -40,8 +40,8 @@
 - type: entity
   parent: BaseAction # L5 - action ECS
   id: ActionStationAiLightSynthesizer
-  name: ai-light-synthesizer-name
-  description: ai-light-synthesizer-desc
+  name: Light Synthesizer # L5 - fix for TestNoManualEntityLocStrings
+  description: Send some nanites to synthesize a replacement light bulb in a fixture # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: EntityTargetAction
     whitelist:
@@ -65,8 +65,8 @@
 - type: entity
   parent: BaseAction # L5 - action ECS
   id: ActionStationAiBikeHorn
-  name: ai-bike-horn-name
-  description: ai-bike-horn-desc
+  name: HONK.mp3 # L5 - fix for TestNoManualEntityLocStrings
+  description: Play an amusing audio clip from a holopad # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: EntityTargetAction
     whitelist:
@@ -93,8 +93,8 @@
 - type: entity
   parent: BaseAction
   id: ActionStationAiHoloPointer
-  name: ai-holopointer-name
-  description: ai-holopointer-desc
+  name: Holopointer # L5 - fix for TestNoManualEntityLocStrings
+  description: Circle an area of interest with a hologram # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: WorldTargetAction
   # Begin L5 changes - action ECS
@@ -136,8 +136,8 @@
 - type: entity
   parent: BaseAction # L5 - action ECS
   id: ActionStationAiRepairNanites
-  name: ai-repair-nanites-name
-  description: ai-repair-nanites-desc
+  name: Repair Nanites # L5 - fix for TestNoManualEntityLocStrings
+  description: Send some nanites to give a cyborg some minor repairs # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: EntityTargetAction
     whitelist:
@@ -164,8 +164,8 @@
 - type: entity
   parent: BaseAction # L5 - action ECS
   id: ActionStationAiEmergencySealant
-  name: ai-emergency-sealant-name
-  description: ai-emergency-sealant-desc
+  name: Emergency Sealant # L5 - fix for TestNoManualEntityLocStrings
+  description: Deploy some metal foam to seal breaches # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: WorldTargetAction
   # Begin L5 changes - action ECS
