@@ -23,8 +23,6 @@ public partial class SharedBodySystem
         BodyPartType.Foot,
     ];
 
-    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
-
     private void MapInitAppearance(Entity<BodyComponent> ent)
     {
         var symmetries = Enum.GetValues<BodyPartSymmetry>();
@@ -37,7 +35,8 @@ public partial class SharedBodySystem
             var layers = HumanoidVisualLayersExtension.Sublayers(layer);
             var visible = GetBodyChildrenOfType(ent, part).Any();
 
-            _humanoidAppearance.SetLayersVisibility(ent.Owner, layers, visible: visible);
+            // L5 - deduplicate dependency
+            _humanoid.SetLayersVisibility(ent.Owner, layers, visible: visible);
         }
 
         foreach (var part in _symmetric)
@@ -50,7 +49,8 @@ public partial class SharedBodySystem
                 var layers = HumanoidVisualLayersExtension.Sublayers(layer);
                 var visible = GetBodyChildrenOfType(ent, part, symmetry: side).Any();
 
-                _humanoidAppearance.SetLayersVisibility(ent.Owner, layers, visible: visible);
+                // L5 - deduplicate dependency
+                _humanoid.SetLayersVisibility(ent.Owner, layers, visible: visible);
             }
         }
     }
