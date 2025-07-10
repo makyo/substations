@@ -33,6 +33,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared.Containers.ItemSlots;
 
 namespace Content.Server.Silicons.Borgs;
 
