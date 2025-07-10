@@ -96,7 +96,8 @@ public sealed class ClientsidePlaytimeTrackingManager
 
         // At less than 1 minute of time diff, there's not much point, and saving regardless will brick tests
         // The reason this isn't checking for 0 is because TotalMinutes is fractional, rather than solely whole minutes
-        if (timeDiffMinutes < 1)
+        // L5 - how about less than five minutes because tests be slow
+        if (timeDiffMinutes < 5)
             return;
 
         _configurationManager.SetCVar(CCVars.PlaytimeMinutesToday, newTimeValue);
