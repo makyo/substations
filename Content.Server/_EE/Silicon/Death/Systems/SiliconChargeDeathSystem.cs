@@ -48,9 +48,8 @@ public sealed class SiliconDeathSystem : EntitySystem
         if (deadEvent.Cancelled)
             return;
 
-        EntityManager.EnsureComponent<SleepingComponent>(uid);
         // L5 - new status effect system
-        _statusEffects.TryAddStatusEffect(uid, SleepingSystem.StatusEffectForcedSleeping);
+        _statusEffects.TrySetStatusEffectDuration(uid, SleepingSystem.StatusEffectForcedSleeping);
 
         if (TryComp(uid, out HumanoidAppearanceComponent? humanoidAppearanceComponent))
         {

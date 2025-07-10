@@ -50,7 +50,7 @@ namespace Content.Shared.Abilities.Psionics
                 {
                     if (TryComp<DamageableComponent>(entity, out var damageable) && damageable.DamageContainerID == "Biological")
                         // L5 - new status effect system
-                        _statusEffects.TryAddStatusEffect(uid, SleepingSystem.StatusEffectForcedSleeping, TimeSpan.FromSeconds(duration));
+                        _statusEffects.TryAddStatusEffectDuration(uid, SleepingSystem.StatusEffectForcedSleeping, TimeSpan.FromSeconds(duration));
                 }
             }
             _psionics.LogPowerUsed(uid, "mass sleep");
