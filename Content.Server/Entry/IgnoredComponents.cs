@@ -21,9 +21,7 @@ namespace Content.Server.Entry
             "HolidayRsiSwap",
             "OptionsVisualizer",
             "MultipartMachineGhost",
-            "OptionsVisualizer",
             "DrawDepthVisualizer", // DeltaV
-            "MultipartMachineGhost"
         };
     }
 }
