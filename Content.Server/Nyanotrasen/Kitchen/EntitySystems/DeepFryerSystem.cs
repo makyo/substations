@@ -550,10 +550,8 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         solution = null;
         transferAmount = FixedPoint2.Zero;
 
-        if (!TryComp<HandsComponent>(user, out var handsComponent))
-            return false;
-
-        heldItem = handsComponent.ActiveHandEntity;
+        // L5 - hands system refactor
+        heldItem = _handsSystem.GetActiveItem(user);
 
         if (heldItem == null ||
             !TryComp<SolutionTransferComponent>(heldItem, out var solutionTransferComponent) ||

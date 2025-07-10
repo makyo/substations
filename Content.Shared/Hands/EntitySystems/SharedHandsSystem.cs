@@ -85,7 +85,7 @@ public abstract partial class SharedHandsSystem
         container.OccludesLight = false;
 
         ent.Comp.Hands.Add(handName, hand);
-        ent.Comp.SortedHands.Add(handName);
+        // ent.Comp.SortedHands.Add(handName); // L5 see below
         AddToSortedHands(ent.Comp, handName); // Shitmed Change; modified by L5 for hands refactor
         Dirty(ent);
 
@@ -436,9 +436,9 @@ public abstract partial class SharedHandsSystem
     /// </summary>
     /// <param name="handsComp">The hands component that we're modifying.</param>
     /// <param name="handName">The name of the hand we're adding.</param>
-    /// <param name="handLocation">The location/symmetry of the hand we're adding.</param>
-    public virtual void AddToSortedHands(HandsComponent handsComp, string handName, HandLocation handLocation)
+    public virtual void AddToSortedHands(HandsComponent handsComp, string handName) // L5 - hands system refactor
     {
+        var handLocation = handsComp.Hands[handName].Location; // L5 - hands system refactor
         var index = handLocation == HandLocation.Right
             ? 0
             : handLocation == HandLocation.Left

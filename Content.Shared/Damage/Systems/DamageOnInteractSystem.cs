@@ -14,7 +14,8 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Effects;
 using Content.Shared.Stunnable;
 using Content.Shared._Shitmed.Targeting; // Shitmed Change
-using Content.Shared.Hands.Components; // Shitmed Change
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems; // Shitmed Change
 
 namespace Content.Shared.Damage.Systems;
 
@@ -23,6 +24,7 @@ public sealed class DamageOnInteractSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!; // L5 - hands system refactor
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
@@ -67,7 +69,7 @@ public sealed class DamageOnInteractSystem : EntitySystem
             // or checking the entity for  the comp itself if the inventory didn't work
             if (protectiveEntity.Comp == null && TryComp<DamageOnInteractProtectionComponent>(args.User, out var protectiveComp))
                 protectiveEntity = (args.User, protectiveComp);
-            
+
 
             // if protectiveComp isn't null after all that, it means the user has protection,
             // so let's calculate how much they resist
@@ -80,9 +82,13 @@ public sealed class DamageOnInteractSystem : EntitySystem
         // Shitmed Change Start
         TargetBodyPart? targetPart = null;
         var hands = CompOrNull<HandsComponent>(args.User);
-        if (hands is { ActiveHand: not null })
+        // Begin L5 changes - hands system refactor
+        if (_hands.TryGetHand((args.User, hands),
+                _hands.GetActiveHand((args.User, hands)),
+                out var hand))
         {
-            targetPart = hands.ActiveHand.Location switch
+            targetPart = hand.Value.Location switch
+        // End L5 changes
             {
                 HandLocation.Left => TargetBodyPart.LeftHand,
                 HandLocation.Right => TargetBodyPart.RightHand,

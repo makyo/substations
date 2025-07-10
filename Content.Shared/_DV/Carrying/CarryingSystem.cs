@@ -28,6 +28,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
 using Content.Shared._DV.Polymorph;
+using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Shared._DV.Carrying;
 
@@ -39,6 +40,7 @@ public sealed class CarryingSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!; // L5 - hands system refactor
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPseudoItemSystem _pseudoItem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -366,8 +368,8 @@ public sealed class CarryingSystem : EntitySystem
             !HasComp<BeingCarriedComponent>(carrier) &&
             !HasComp<BeingCarriedComponent>(carried) &&
             // finally check that there are enough free hands
-            TryComp<HandsComponent>(carrier, out var hands) &&
-            hands.CountFreeHands() >= carried.Comp.FreeHandsRequired;
+            // L5 - hands system refactor
+            _hands.CountFreeHands(carrier) >= carried.Comp.FreeHandsRequired;
     }
 
     private float MassContest(EntityUid roller, EntityUid target)

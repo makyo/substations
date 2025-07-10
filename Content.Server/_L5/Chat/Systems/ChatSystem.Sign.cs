@@ -1,9 +1,9 @@
+using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared._L5.CCVar;
 using Content.Shared._L5.Traits.HardOfHearing;
 using Content.Shared.Chat;
 using Content.Shared.Database;
-using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
@@ -14,6 +14,7 @@ namespace Content.Server.Chat.Systems;
 public sealed partial class ChatSystem
 {
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly SignLanguageSystem _signLanguage = default!;
 
     private void SendEntitySign(
@@ -33,9 +34,7 @@ public sealed partial class ChatSystem
             return;
 
         // Check if at least one hand is free.
-        if (!TryComp<HandsComponent>(source, out var hands))
-            return;
-        if (hands.CountFreeHands() == 0)
+        if (_hands.CountFreeHands(source) == 0)
         {
             _popup.PopupEntity(Loc.GetString("chat-manager-entity-sign-no-free-hands"),
                 source,

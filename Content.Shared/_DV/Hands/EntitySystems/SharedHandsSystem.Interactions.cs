@@ -34,10 +34,11 @@ public partial class SharedHandsSystem
             return;
         if (!_actionBlocker.CanInteract(session.AttachedEntity.Value, null))
             return;
-        if (component.ActiveHand == null || component.Hands.Count < 2)
+        // Begin L5 changes - hands system refactor
+        if (component.ActiveHandId == null || component.Hands.Count < 2)
             return;
 
-        var newActiveIndex = component.SortedHands.IndexOf(component.ActiveHand.Name) + modifier;
+        var newActiveIndex = component.SortedHands.IndexOf(component.ActiveHandId) + modifier;
         while (newActiveIndex < 0)
         {
             newActiveIndex += component.SortedHands.Count;
@@ -45,6 +46,7 @@ public partial class SharedHandsSystem
 
         var nextHand = component.SortedHands[newActiveIndex % component.Hands.Count];
 
-        TrySetActiveHand(session.AttachedEntity.Value, nextHand, component);
+        TrySetActiveHand((session.AttachedEntity.Value, component), nextHand);
+        // End L5 changes
     }
 }
