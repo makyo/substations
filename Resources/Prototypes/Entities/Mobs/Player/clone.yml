@@ -74,7 +74,7 @@
   - Unborgable
   # End DeltaV Additions
   # Begin L5 Additions
-  - BeerHUD
+  - ToggleBeerHud
   - CPRTraining
   - DairyAllergy
   - GlutenAllergy
@@ -83,12 +83,12 @@
   - KosherRestriction
   - LatexAllergy
   - LowMobility
-  - MedicalHUD
+  - ToggleMedHud
   - MothDiet
   - NightshadeAllergy
   - PescetarianRestriction
   - ReptilianDiet
-  - SecurityHUD
+  - ToggleSecurityHud
   - SignLanguage
   - SurgerySpeedModifier
   - Synth
