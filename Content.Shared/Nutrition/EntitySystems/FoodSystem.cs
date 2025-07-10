@@ -28,7 +28,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
 using System.Linq;
-// using Content.Server._L5.Traits.DietaryRestriction; L5 TODO
+using Content.Shared._L5.Traits.DietaryRestriction;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Whitelist;
 using Content.Shared.Destructible;
@@ -41,7 +41,7 @@ namespace Content.Shared.Nutrition.EntitySystems;
 public sealed class FoodSystem : EntitySystem
 {
     [Dependency] private readonly SharedBodySystem _body = default!;
-    // [Dependency] private readonly DietaryRestrictionSystem _dietaryRestriction = default!; L5 TODO
+    [Dependency] private readonly SharedDietaryRestrictionSystem _dietaryRestriction = default!;
     [Dependency] private readonly FlavorProfileSystem _flavorProfile = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
@@ -272,9 +272,8 @@ public sealed class FoodSystem : EntitySystem
             return;
         }
 
-        // L5 TODO
-        // if (!_dietaryRestriction.TryFood(args.Target.Value, entity.Owner))
-            // return;
+        if (!_dietaryRestriction.TryFood(args.Target.Value, entity.Owner))
+            return;
 
         _reaction.DoEntityReaction(args.Target.Value, solution, ReactionMethod.Ingestion);
         _stomach.TryTransferSolution(stomachToUse!.Value.Owner, split, stomachToUse);
