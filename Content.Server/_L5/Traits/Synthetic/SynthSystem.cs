@@ -37,7 +37,7 @@ public sealed class SynthSystem : SharedSynthSystem
     private EntityQuery<MutedComponent> _mutedQuery;
 
     private static readonly ProtoId<ReagentPrototype> ReagentSynthBloodId = "SynthBlood";
-    private static readonly ProtoId<SpeciesPrototype> SpeciesDionaId = "diona";
+    private static readonly ProtoId<SpeciesPrototype> SpeciesDionaId = "Diona";
     private static readonly EntProtoId<SynthBrainComponent> SynthBrainId = "OrganSynthBrain";
     private static readonly ProtoId<EmoteSoundsPrototype> EmoteSoundsId = "SynthEmotes";
 
