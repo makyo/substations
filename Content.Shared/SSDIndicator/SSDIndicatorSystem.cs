@@ -1,6 +1,7 @@
 using Content.Shared.CCVar;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Configuration;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -17,6 +18,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedStatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     private bool _icSsdSleep;
     private float _icSsdSleepTime;
@@ -66,6 +68,7 @@ public sealed class SSDIndicatorSystem : EntitySystem
             component.FallAsleepTime == TimeSpan.Zero)
         {
             component.FallAsleepTime = _timing.CurTime + TimeSpan.FromSeconds(_icSsdSleepTime);
+            Dirty(uid, component); // L5 - upstream bug; remove comment when #38891 is merged.
         }
     }
 
