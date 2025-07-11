@@ -9,7 +9,7 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
+  - type: Vocalizer
     pack: CourierDrobeAds
   - type: SpeakOnUIClosed
     pack: CourierDrobeGoodbyes
