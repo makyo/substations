@@ -19,8 +19,7 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
     /// <summary>
     ///     Default ID of <see cref="TypingIndicatorPrototype"/>
     /// </summary>
-    [ValidatePrototypeId<TypingIndicatorPrototype>]
-    public const string InitialIndicatorId = "default";
+    public static readonly ProtoId<TypingIndicatorPrototype> InitialIndicatorId = "default";
 
     public override void Initialize()
     {

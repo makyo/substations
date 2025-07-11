@@ -36,7 +36,7 @@ namespace Content.Shared.Mech.EntitySystems;
 /// <summary>
 /// Handles all of the interactions, UI handling, and items shennanigans for <see cref="MechComponent"/>
 /// </summary>
-public abstract class SharedMechSystem : EntitySystem
+public abstract partial class SharedMechSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -74,6 +74,8 @@ public abstract class SharedMechSystem : EntitySystem
         SubscribeLocalEvent<MechPilotComponent, EntGotRemovedFromContainerMessage>(OnEntGotRemovedFromContainer);
         SubscribeLocalEvent<MechEquipmentComponent, ShotAttemptedEvent>(OnShotAttempted); // Goobstation
         Subs.CVar(_config, GoobCVars.MechGunOutsideMech, value => _canUseMechGunOutside = value, true); // Goobstation
+
+        InitializeRelay();
     }
     // GoobStation: Fixes scram implants or teleports locking the pilot out of being able to move.
     private void OnEntGotRemovedFromContainer(EntityUid uid, MechPilotComponent component, EntGotRemovedFromContainerMessage args)
@@ -434,17 +436,20 @@ public abstract class SharedMechSystem : EntitySystem
     private void BlockHands(EntityUid uid, EntityUid mech, HandsComponent handsComponent)
     {
         var freeHands = 0;
-        foreach (var hand in _hands.EnumerateHands(uid, handsComponent))
+        // Begin L5 changes - hands system refactor
+        foreach (var hand in _hands.EnumerateHands((uid, handsComponent)))
         {
-            if (hand.HeldEntity == null)
+            if (!_hands.TryGetHeldItem((uid, handsComponent), hand, out var heldItem))
             {
                 freeHands++;
                 continue;
             }
             // Is this entity removable? (they might have handcuffs on)
-            if (HasComp<UnremoveableComponent>(hand.HeldEntity) && hand.HeldEntity != mech)
+            if (HasComp<UnremoveableComponent>(heldItem) && heldItem != mech)
                 continue;
-            _hands.DoDrop(uid, hand, true, handsComponent);
+            // L5 - shouldn't this be trydrop...
+            _hands.DoDrop((uid, handsComponent), hand);
+            // End L5 changes
             freeHands++;
             if (freeHands == 2)
                 break;

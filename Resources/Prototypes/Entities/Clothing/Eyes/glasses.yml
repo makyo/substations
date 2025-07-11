@@ -67,6 +67,8 @@
     coverage: EYES
   - type: Tag
     tags:
+    - CorgiWearable
+    - WhitelistChameleon
     - SecDogWearable # DeltaV - let Laika wear meson goggles
 
 - type: entity
@@ -127,6 +129,8 @@
     sprite: Clothing/Eyes/Glasses/outlawglasses.rsi
   - type: VisionCorrection
   - type: IdentityBlocker
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: ClothingEyesBase
@@ -141,6 +145,7 @@
   - type: Tag
     tags:
     - HamsterWearable
+    - CorgiWearable
     - WhitelistChameleon
     - SecDogWearable # DeltaV - let Laika wear sunglasses
   - type: IdentityBlocker
@@ -158,6 +163,7 @@
   - type: Tag
     tags:
     - Sunglasses
+    - CorgiWearable
     - HamsterWearable
     - WhitelistChameleon
 
@@ -181,6 +187,7 @@
     tags:
     - GlassesSecurity # DeltaV - Added for prescription glasses.
     - HamsterWearable
+    - CorgiWearable
     - WhitelistChameleon
     - SecDogWearable # DeltaV - let Laika wear secglasses
   - type: GuideHelp
@@ -206,6 +213,7 @@
   - type: Tag
     tags:
     - HamsterWearable
+    - CorgiWearable
     - WhitelistChameleon
   - type: IdentityBlocker
     coverage: EYES
@@ -259,6 +267,10 @@
     - type: SolutionScanner
     - type: IdentityBlocker
       coverage: EYES
+    - type: Tag
+      tags:
+      - CorgiWearable
+      - WhitelistChameleon
 
 - type: entity
   parent: [ClothingEyesBase, BaseMajorContraband]

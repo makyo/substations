@@ -23,7 +23,7 @@ public sealed class HandsFillSystem : EntitySystem
         var coords = Transform(ent).Coordinates;
         foreach (var (name, fill) in ent.Comp.Hands)
         {
-            _hands.AddHand(ent, name, HandLocation.Middle, hands);
+            _hands.AddHand((ent, hands), name, HandLocation.Middle); // L5 - hands system refactor
 
             if (fill is not {} id)
                 continue;

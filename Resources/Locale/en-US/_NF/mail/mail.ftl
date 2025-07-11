@@ -4,6 +4,9 @@ mail-large-desc-far = A large package.
 # DelaV - Removed "Last known location"
 mail-large-desc-close = A large package addressed to {CAPITALIZE($name)}, {$job}.
 
+# L5 - fix for TestNoManualEntityLocString
+ent-BaseMailLarge = mail
+
 ### Frontier: mailtestbulk
 command-mailtestbulk = Sends one of each type of parcel to a given mail teleporter.  Implicitly calls mailnow.
 command-mailtestbulk-help = Usage: {$command} <teleporter_id>

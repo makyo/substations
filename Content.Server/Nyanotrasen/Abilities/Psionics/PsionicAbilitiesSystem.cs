@@ -119,8 +119,8 @@ namespace Content.Server.Abilities.Psionics
                     RemComp(uid, psionicPower);
             }
             if (psionic.PsionicAbility != null){
-                _actionsSystem.TryGetActionData( psionic.PsionicAbility, out var psiAbility );
-                if (psiAbility != null){
+                // L5 - modified for action ECS
+                if (_actionsSystem.GetAction(psionic.PsionicAbility) is { } psiAbility) {
                     var owner = psiAbility.Owner;
                     _actionsSystem.RemoveAction(uid, psiAbility.Owner);
                 }

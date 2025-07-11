@@ -2,7 +2,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Audio;
-using Content.Server.Cargo.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Construction;
@@ -10,7 +9,6 @@ using Content.Server.DoAfter;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Nutrition;
-using Content.Server.Nutrition.Components;
 using Content.Server.Nyanotrasen.Kitchen.Components;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
@@ -19,6 +17,7 @@ using Content.Server.Storage.EntitySystems;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Server.UserInterface;
+using Content.Shared.Cargo;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
@@ -40,6 +39,7 @@ using Content.Shared.Item;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
+using Content.Shared.Nutrition.Components;
 using Content.Shared.Nyanotrasen.Kitchen;
 using Content.Shared.Nyanotrasen.Kitchen.Components;
 using Content.Shared.Nyanotrasen.Kitchen.UI;
@@ -550,10 +550,8 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         solution = null;
         transferAmount = FixedPoint2.Zero;
 
-        if (!TryComp<HandsComponent>(user, out var handsComponent))
-            return false;
-
-        heldItem = handsComponent.ActiveHandEntity;
+        // L5 - hands system refactor
+        heldItem = _handsSystem.GetActiveItem(user);
 
         if (heldItem == null ||
             !TryComp<SolutionTransferComponent>(heldItem, out var solutionTransferComponent) ||

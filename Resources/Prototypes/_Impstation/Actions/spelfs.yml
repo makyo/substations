@@ -1,14 +1,18 @@
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionViewMoods
   name: View Moods
   description: View your current moods.
   components:
-  - type: InstantAction
+  - type: Action # L5 - action ECS
     itemIconStyle: NoItem
     checkCanInteract: false
     checkConsciousness: false
     icon:
       sprite: Interface/Actions/actions_borg.rsi
       state: state-laws
-    event: !type:ToggleMoodsScreenEvent
+  # Begin L5 changes - action ECS
     useDelay: 0.5
+  - type: InstantAction
+    event: !type:ToggleMoodsScreenEvent
+  # End L5 changes

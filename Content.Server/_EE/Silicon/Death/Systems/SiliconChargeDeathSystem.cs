@@ -4,6 +4,7 @@ using Content.Shared.Bed.Sleep;
 using Content.Server._EE.Silicon.Charge;
 using Content.Server._EE.Power.Components;
 using Content.Server.Humanoid;
+using Content.Server.StatusEffectNew;
 using Content.Shared.Humanoid;
 
 namespace Content.Server._EE.Silicon.Death;
@@ -13,6 +14,7 @@ public sealed class SiliconDeathSystem : EntitySystem
     [Dependency] private readonly SleepingSystem _sleep = default!;
     [Dependency] private readonly SiliconChargeSystem _silicon = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!; // L5 - new status effects system
 
     public override void Initialize()
     {
@@ -46,8 +48,8 @@ public sealed class SiliconDeathSystem : EntitySystem
         if (deadEvent.Cancelled)
             return;
 
-        EntityManager.EnsureComponent<SleepingComponent>(uid);
-        EntityManager.EnsureComponent<ForcedSleepingComponent>(uid);
+        // L5 - new status effect system
+        _statusEffects.TrySetStatusEffectDuration(uid, SleepingSystem.StatusEffectForcedSleeping);
 
         if (TryComp(uid, out HumanoidAppearanceComponent? humanoidAppearanceComponent))
         {
@@ -62,7 +64,8 @@ public sealed class SiliconDeathSystem : EntitySystem
 
     private void SiliconUnDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
-        RemComp<ForcedSleepingComponent>(uid);
+        // L5 - new status effect system
+        _statusEffects.TryRemoveStatusEffect(uid, SleepingSystem.StatusEffectForcedSleeping);
         _sleep.TryWaking(uid, true, null);
 
         siliconDeadComp.Dead = false;

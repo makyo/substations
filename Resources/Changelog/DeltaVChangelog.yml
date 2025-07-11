@@ -4140,3 +4140,153 @@
   id: 1489
   time: '2025-06-25T08:01:55.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/3962
+- author: Avalon-Proto
+  changes:
+  - message: EVA Safe wizard robes no longer slow you, and the hat allows you to breath
+    type: Tweak
+  id: 1490
+  time: '2025-06-26T01:24:56.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4003
+- author: Avalon-Proto
+  changes:
+  - message: Xenos have become far hardier and scarier beasts to hunt on the station.
+      Don't wander the maints alone
+    type: Tweak
+  - message: Xenos across the system are Tankier, hit harder, and prey faster. Watch
+      those vents.
+    type: Tweak
+  id: 1491
+  time: '2025-06-26T18:16:47.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/2183
+- author: Radezolid
+  changes:
+  - message: Added service access to the Boxer and Musician.
+    type: Add
+  id: 1493
+  time: '2025-06-28T07:45:35.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3605
+- author: HTMLSystem
+  changes:
+  - message: Made the felinid guidebook more accurate.
+    type: Tweak
+  id: 1494
+  time: '2025-06-28T13:59:49.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3935
+- author: Smugman
+  changes:
+  - message: Added the Recruiter uplink, hidden inside of the recruiters briefcase.
+    type: Add
+  - message: Syndicate recruiters now have syndicate access on their ID
+    type: Tweak
+  - message: Syndicate recruiters now get a figurine depicting their role!
+    type: Tweak
+  id: 1498
+  time: '2025-06-29T02:39:08.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3232
+- author: perryprog
+  changes:
+  - message: The SmartFridge will no longer erase the contents of plant bags dumped
+      into it.
+    type: Fix
+  id: 1499
+  time: '2025-06-29T02:57:10.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3929
+- author: HTMLSystem
+  changes:
+  - message: Thaven voices now match their gender
+    type: Fix
+  id: 1500
+  time: '2025-06-29T03:06:28.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3897
+- author: whatston3
+  changes:
+  - message: Harpies should no longer have their bare shoulder showing when facing
+      East.
+    type: Fix
+  - message: The harpy sprite for the spationaut hardsuit actually hides their wings
+      now.
+    type: Fix
+  id: 1501
+  time: '2025-06-29T08:01:04.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3933
+- author: Avalon-Proto
+  changes:
+  - message: Colossi are no longer effected by stamina damage
+    type: Tweak
+  id: 1502
+  time: '2025-06-29T19:39:13.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4023
+- author: HTMLSystem
+  changes:
+  - message: Vulpkanins, Feroxis, and Harpies now have sprites for the cosmic cult
+      armor!
+    type: Add
+  id: 1503
+  time: '2025-06-29T22:11:09.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4017
+- author: Avalon-Proto
+  changes:
+  - message: NT has begun selling modified grenade launchers to the janitorial staff
+      of their stations, for the biggest messes one can handle.
+    type: Add
+  id: 1506
+  time: '2025-07-03T03:11:31.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3814
+- author: YeenJunk
+  changes:
+  - message: Cult tile conversion no longer removes artwork
+    type: Fix
+  id: 1507
+  time: '2025-07-03T03:39:38.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4027
+- author: 0vrseer
+  changes:
+  - message: Light Synthesizer properly replaces small lights.
+    type: Fix
+  id: 1508
+  time: '2025-07-03T14:08:41.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4032
+- author: NoElkaTheGod
+  changes:
+  - message: Corruption caused by malign rifts now looks 7% nicer.
+    type: Tweak
+  id: 1509
+  time: '2025-07-03T15:53:10.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4033
+- author: Git-Kanbaru
+  changes:
+  - message: Harpies now properly poisoned by theobromine and allicin
+    type: Fix
+  id: 1510
+  time: '2025-07-05T04:35:28.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4034
+- author: SirWarock
+  changes:
+  - message: Gave the Psychologist a paperwork belt for their loadout!
+    type: Add
+  id: 1511
+  time: '2025-07-05T18:12:51.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4037
+- author: SirrRequiem
+  changes:
+  - message: Added Pharmacist as alt job title for chemists!
+    type: Add
+  id: 1512
+  time: '2025-07-06T05:47:47.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4038
+- author: Avalon-Proto
+  changes:
+  - message: Chitinids can now use their 2nd set of arms to drag crates and other
+      items
+    type: Tweak
+  id: 1513
+  time: '2025-07-06T05:54:32.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/4029
+- author: Field Command, SubspaceEmber
+  changes:
+  - message: Add laser tag guns that can be requested at the cargo console. Watch
+      out, some laser tag guns may be rigged to be more dangerous than you'd expect.
+    type: Add
+  id: 1514
+  time: '2025-07-06T10:25:16.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/3963

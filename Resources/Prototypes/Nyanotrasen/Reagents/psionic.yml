@@ -74,9 +74,10 @@
     Narcotic:
       metabolismRate: 0.2
       effects:
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
+      # Begin L5 changes - new status effect system
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+      # End L5 changes
         type: Add
         time: 5
         refresh: false

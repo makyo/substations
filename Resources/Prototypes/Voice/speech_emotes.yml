@@ -7,11 +7,6 @@
   whitelist:
     components:
     - Vocal
-  blacklist:
-    # tags:
-    # - SiliconEmotes # L5 - allow IPCs
-    components:
-    - BorgChassis # L5 - but not borgs
   chatMessages: ["chat-emote-msg-scream"]
   chatTriggers:
     - scream
@@ -358,6 +353,12 @@
   name: chat-emote-name-deathgasp
   icon: Interface/Emotes/deathgasp.png
   chatMessages: ["chat-emote-msg-deathgasp-monkey"]
+
+- type: emote
+  id: ScurretDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  chatMessages: ["chat-emote-msg-deathgasp-scurret"]
 
 - type: emote
   id: Buzz

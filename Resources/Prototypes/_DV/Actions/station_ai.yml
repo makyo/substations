@@ -1,94 +1,117 @@
 # Actions
 - type: entity
+  parent: BaseMentalAction # L5 - action ECS; should maybe be BaseAction tho
   id: ActionStationAiOpenShop
   name: Choose programs
   description: Configure your installed programs
   components:
-  - type: InstantAction
+  - type: Action # L5 - action ECS
     itemIconStyle: BigAction
     icon:
       sprite: _DV/Interface/Actions/actions_ai.rsi
       state: store
+  - type: InstantAction # L5 - action ECS
     event: !type:StationAiShopActionEvent
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionStationAiRgbLighting
-  name: ai-rgb-lighting-name
-  description: ai-rgb-lighting-desc
+  name: RGB Lighting # L5 - fix for TestNoManualEntityLocStrings
+  description: Adjust a light's color controller to add or remove an RGB effect # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: EntityTargetAction
     whitelist:
       tags:
       - LightFixture
+    # Begin L5 changes - action ECS
+    event: !type:StationAiRgbLightingActionEvent
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: Action
     itemIconStyle: BigAction
     icon:
       sprite: _DV/Interface/Actions/actions_ai.rsi
       state: rgb_lighting
-    range: -1
-    checkCanAccess: false
     checkCanInteract: false
     useDelay: 30
-    event: !type:StationAiRgbLightingActionEvent
+  # End L5 changes
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionStationAiLightSynthesizer
-  name: ai-light-synthesizer-name
-  description: ai-light-synthesizer-desc
+  name: Light Synthesizer # L5 - fix for TestNoManualEntityLocStrings
+  description: Send some nanites to synthesize a replacement light bulb in a fixture # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: EntityTargetAction
     whitelist:
       tags:
       - LightFixture
+    # Begin L5 changes - action ECS
+    event: !type:StationAiLightSynthesizerActionEvent
+      bulbPrototype: LightTube
+      tubePrototype: LightTube
+  - type: TargetAction
+    checkCanAccess: false
+    range: -1
+  - type: Action
     itemIconStyle: BigAction
     icon:
       sprite: _DV/Interface/Actions/actions_ai.rsi
       state: light_synthesizer
-    range: -1
-    checkCanAccess: false
     checkCanInteract: false
     useDelay: 300
-    event: !type:StationAiLightSynthesizerActionEvent
-      bulbPrototype: LightTube
+  # End L5 changes
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionStationAiBikeHorn
-  name: ai-bike-horn-name
-  description: ai-bike-horn-desc
+  name: HONK.mp3 # L5 - fix for TestNoManualEntityLocStrings
+  description: Play an amusing audio clip from a holopad # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: EntityTargetAction
     whitelist:
       components:
       - Holopad
-    itemIconStyle: BigAction
-    icon:
-      sprite: _DV/Interface/Actions/actions_ai.rsi
-      state: bike_horn
-    range: -1
-    checkCanAccess: false
-    checkCanInteract: false
-    useDelay: 60
+    # Begin L5 changes - action ECS
     event: !type:StationAiPlaySoundActionEvent
       sound:
         collection: BikeHorn
         params:
           variation: 0.125
+  - type: TargetAction
+    checkCanAccess: false
+    range: -1
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: bike_horn
+    checkCanInteract: false
+    useDelay: 60
+  # End L5 changes
 
 - type: entity
+  parent: BaseAction
   id: ActionStationAiHoloPointer
-  name: ai-holopointer-name
-  description: ai-holopointer-desc
+  name: Holopointer # L5 - fix for TestNoManualEntityLocStrings
+  description: Circle an area of interest with a hologram # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: WorldTargetAction
+    # Begin L5 changes - action ECS
+    event: !type:StationAiSpawnEntityActionEvent
+      entity: StationAiHolopointer
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: Action
     itemIconStyle: BigAction
     icon:
       sprite: _DV/Interface/Actions/actions_ai.rsi
       state: holopointer
-    range: -1
-    checkCanAccess: false
     checkCanInteract: false
     useDelay: 15
-    event: !type:StationAiSpawnEntityActionEvent
-      entity: StationAiHolopointer
+  # End L5 changes
 
 - type: entity
   id: StationAiHolopointer
@@ -112,43 +135,53 @@
   - type: Clickable
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionStationAiRepairNanites
-  name: ai-repair-nanites-name
-  description: ai-repair-nanites-desc
+  name: Repair Nanites # L5 - fix for TestNoManualEntityLocStrings
+  description: Send some nanites to give a cyborg some minor repairs # L5 - fix for TestNoManualEntityLocStrings
   components:
   - type: EntityTargetAction
     whitelist:
       components:
       - BorgChassis
-    itemIconStyle: BigAction
-    icon:
-      sprite: _DV/Interface/Actions/actions_ai.rsi
-      state: nanites
-    range: -1
-    checkCanAccess: false
-    checkCanInteract: false
-    useDelay: 120
+    # Begin L5 changes - action ECS
     event: !type:StationAiHealthChangeActionEvent
       damage:
         groups:
           Burn: -20
           Brute: -20
-
-- type: entity
-  id: ActionStationAiEmergencySealant
-  name: ai-emergency-sealant-name
-  description: ai-emergency-sealant-desc
-  components:
-  - type: WorldTargetAction
+  - type: TargetAction
+    checkCanAccess: false
+    range: -1
+  - type: Action
     itemIconStyle: BigAction
     icon:
       sprite: _DV/Interface/Actions/actions_ai.rsi
-      state: emergency_sealant
-    range: -1
-    checkCanAccess: false
+      state: nanites
     checkCanInteract: false
-    useDelay: 300
+    useDelay: 120
+  # End L5 changes
+
+- type: entity
+  parent: BaseAction # L5 - action ECS
+  id: ActionStationAiEmergencySealant
+  name: Emergency Sealant # L5 - fix for TestNoManualEntityLocStrings
+  description: Deploy some metal foam to seal breaches # L5 - fix for TestNoManualEntityLocStrings
+  components:
+  - type: WorldTargetAction
+    # Begin L5 changes - action ECS
     event: !type:StationAiSmokeActionEvent
       duration: 10
       spreadAmount: 8
       smokePrototype: AluminiumMetalFoam
+  - type: TargetAction
+    range: -1
+    checkCanAccess: false
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: emergency_sealant
+    checkCanInteract: false
+    useDelay: 300
+  # End L5 changes

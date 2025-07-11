@@ -118,11 +118,11 @@ public sealed class PrecognitionPowerSystem : EntitySystem
                 uid,
                 PopupType.SmallCaution);
 
-            if (_actions.TryGetActionData(component.PrecognitionActionEntity, out var actionData))
-                // If canceled give a short delay before being able to try again
-                actionData.Cooldown =
-                    (_gameTicker.RoundDuration(),
-                    _gameTicker.RoundDuration() + TimeSpan.FromSeconds(15));
+            // L5 - modified for action ECS
+            // If canceled give a short delay before being able to try again
+            _actions.SetCooldown(component.PrecognitionActionEntity,
+                _gameTicker.RoundDuration(),
+                _gameTicker.RoundDuration() + TimeSpan.FromSeconds(15));
             return;
         }
 

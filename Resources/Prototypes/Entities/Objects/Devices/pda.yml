@@ -486,6 +486,7 @@
     - NotekeeperCartridge
     - NanoTaskCartridge
     - NewsReaderCartridge
+    - AstroNavCartridge
     - NanoChatCartridge
     - MailMetricsCartridge
     - StockTradingCartridge
@@ -960,6 +961,7 @@
     id: CentcomIDCard
     penSlot:
       startingItem: PenCentcom
+      priority: -1
       whitelist:
         tags:
         - Write

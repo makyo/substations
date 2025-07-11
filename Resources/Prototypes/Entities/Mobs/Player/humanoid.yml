@@ -18,7 +18,9 @@
   parent: EventHumanoid
   randomizeName: true # DeltaV - WHY WOULD YOU NOT
   components:
-    - type: MindShield
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
     - type: AntagImmune
 
 - type: randomHumanoidSettings
@@ -27,6 +29,7 @@
   components:
   - type: AutoImplant
     implants:
+    - MindShieldImplant
     - DeathRattleImplantCentcomm
 
 ## Death Squad

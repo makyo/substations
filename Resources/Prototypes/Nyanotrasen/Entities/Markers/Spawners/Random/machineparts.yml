@@ -11,9 +11,9 @@
           state: matter_bin
     - type: RandomSpawner
       prototypes:
-        - CapacitorStockPart
+#        - CapacitorStockPart # Wizden removed
         - MicroManipulatorStockPart
-        - MatterBinStockPart
+#        - MatterBinStockPart # Wizden removed
       chance: 0.9
       offset: 0.0
 
@@ -30,8 +30,8 @@
           state: advanced_matter_bin
     - type: RandomSpawner
       prototypes:
-        - CapacitorStockPart
-        - MicroManipulatorStockPart
-        - MatterBinStockPart
+#        - CapacitorStockPart
+        - MicroManipulatorStockPart # Wizden removed
+#        - MatterBinStockPart
       chance: 0.50
       offset: 0.0

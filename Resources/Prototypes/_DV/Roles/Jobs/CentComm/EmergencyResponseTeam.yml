@@ -310,13 +310,15 @@
     belt: ClothingBeltJanitorFilled
     pocket1: WeaponDisabler
     pocket2: FlashlightSeclite
+  # Begin L5 changes - move trashbag to hand
+  inhand:
+  - TrashBag
   storage:
     back:
     - CrowbarRed
     - BoxCleanerGrenades
     - AdvMopItem
-    belt:
-    - TrashBag
+  # End L5 changes
 
 - type: startingGear
   parent: ERTJanitorGearAmber

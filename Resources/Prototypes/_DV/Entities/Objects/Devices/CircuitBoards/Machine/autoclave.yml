@@ -8,6 +8,7 @@
   - type: MachineBoard
     prototype: Autoclave
     stackRequirements:
-      Capacitor: 1
+#      Capacitor: 1 # Wizden removed
+      Manipulator: 1 # L5 - added
       Glass: 2
       Cable: 2
