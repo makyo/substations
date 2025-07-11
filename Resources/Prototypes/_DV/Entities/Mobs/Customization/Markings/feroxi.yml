@@ -14,7 +14,7 @@
   id: FeroxiTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -109,7 +109,7 @@
   id: FeroxiTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -118,7 +118,7 @@
   id: FeroxiStripedTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -129,7 +129,7 @@
   id: FeroxiStripedTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -144,7 +144,7 @@
   id: FeroxiTipTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -159,7 +159,7 @@
   id: FeroxiTipTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -178,7 +178,7 @@
   id: FeroxiTailBlitz
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -199,7 +199,7 @@
   id: FeroxiTailBlitzNoDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -216,7 +216,7 @@
   id: FeroxiTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -227,7 +227,7 @@
   id: FeroxiTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -240,7 +240,7 @@
   id: FeroxiStripeTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -253,7 +253,7 @@
   id: FeroxiStripeTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -270,7 +270,7 @@
   id: FeroxiTipTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -287,7 +287,7 @@
   id: FeroxiTipTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi, IPC ]
+  speciesRestriction: [ Feroxi, IPC, Thaven ] # L5 - add thaven
   sprites:
   - sprite: _DV/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
