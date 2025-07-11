@@ -18,6 +18,8 @@
     science: AirlockScience
     security: AirlockSecurity
     virology: AirlockVirology
+    justice: AirlockJustice # L5 - add justice
+    external: AirlockExternal # L5 - why not
 
 - type: paintableGroup
   id: AirlockGlass
@@ -38,3 +40,5 @@
     science: AirlockScienceGlass
     security: AirlockSecurityGlass
     virology: AirlockVirologyGlass
+    justice: AirlockJusticeGlass # L5 - add justice
+    external: AirlockExternalGlass # L5 - why not
