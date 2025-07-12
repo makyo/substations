@@ -837,6 +837,7 @@
   - type: Tag
     tags:
     - Trash
+    - Butterfly #imp, for butterfly orchid
   - type: Bloodstream
     bloodReagent: InsectBlood
     bloodMaxVolume: 0.1

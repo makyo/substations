@@ -1,0 +1,7 @@
+- type: construction
+  id: floatingfloracrown
+  graph: floatingfloracrown
+  startNode: start
+  targetNode: floatingfloracrown
+  category: construction-category-clothing
+  objectType: Item
