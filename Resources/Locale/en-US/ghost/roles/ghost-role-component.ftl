@@ -88,7 +88,7 @@ ghost-role-information-kobold-description = Be the little gremlin you are, yell 
 
 ghost-role-information-rat-king-name = Rat King
 
-ghost-role-information-rat-king-description = You are the Rat King, your interests are food, food, and more food. Cooperate with or fight against the station for food. Did I say food interests you?
+ghost-role-information-rat-king-description = You are the Rat King, your interests are food, food, and more food. Fight against the station for food. Did I say food interests you?
 
 ghost-role-information-rat-servant-name = Rat Servant
 ghost-role-information-rat-servant-description = You are a Rat Servant. You must follow your king's orders.
@@ -198,7 +198,8 @@ ghost-role-information-hellspawn-name = Hellspawn
 ghost-role-information-hellspawn-description = Bring death to those who do not follow the great god Nar'Sie.
 
 ghost-role-information-Death-Squad-name = Death Squad Operative
-ghost-role-information-Death-Squad-description = One of Nanotrasen's top internal affairs agents. Await orders from CentComm or an official.
+# L5
+ghost-role-information-Death-Squad-description = One of SysCon's top internal affairs agents. Await orders from CentComm or an official.
 ghost-role-information-Death-Squad-rules = You are required to obey orders given by your superior, you are effectively their [color={role-type-familiar-color}][bold]{role-type-familiar-name}[/bold][/color].
 
 ghost-role-information-SyndiCat-name = SyndiCat

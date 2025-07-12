@@ -22,3 +22,5 @@
       tags:
         - MailCapsule
     capacity: 4
+  - type: StaticPrice
+    price: 200 # L5 - set price; parent is 10000 so...

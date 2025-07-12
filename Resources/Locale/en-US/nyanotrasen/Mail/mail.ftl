@@ -16,6 +16,9 @@ mail-penalty-expired = DELIVERY PAST DUE. LOGISTICS BANK ACCOUNT PENALIZED BY {$
 mail-item-name-unaddressed = mail
 mail-item-name-addressed = mail ({$recipient})
 
+# L5 - fix for TestNoManualEntityLocString
+ent-BaseMail = mail
+
 command-mailto-description = Queue a parcel to be delivered to an entity. Example usage: `mailto 1234 5678 false false`. The target container's contents will be transferred to an actual mail parcel.
 ### Frontier: add is-large description
 command-mailto-help = Usage: {$command} <recipient entityUid> <container entityUid> [is-fragile: true or false] [is-priority: true or false] [is-large: true or false, optional]

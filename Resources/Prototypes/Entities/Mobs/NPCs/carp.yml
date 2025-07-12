@@ -165,11 +165,11 @@
   suffix: "Salvage Ruleset"
   components:
     - type: SalvageMobRestrictions
-    # Begin DeltaV additions: components moved from BaseMobCarp
     - type: MobThresholds
       thresholds:
         0: Alive
-        50: Dead
+        30: Dead
+    # Begin DeltaV additions: components moved from BaseMobCarp
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 3.5
@@ -195,7 +195,6 @@
       rules: ghost-role-information-space-dragon-summoned-carp-rules
       mindRoles:
       - MindRoleGhostRoleTeamAntagonistFlock
-      raffle: null # DeltaV - disable raffle for fish
     - type: GhostTakeoverAvailable
     - type: HTN
       rootTask:
@@ -246,7 +245,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        150: Dead
+        82: Dead # Might seem random, but this brings up the hits to kill with a crusher mark to 3
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals

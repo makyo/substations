@@ -2,7 +2,6 @@
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Content.Shared.Inventory;
-using Robust.Shared.Utility;
 
 namespace Content.Client.Chat.TypingIndicator;
 
@@ -10,7 +9,6 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     protected override void OnAppearanceChange(EntityUid uid, TypingIndicatorComponent component, ref AppearanceChangeEvent args)
     {
@@ -42,36 +40,36 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
             return;
         }
 
-        var layerExists = _sprite.LayerMapTryGet((uid, args.Sprite), TypingIndicatorLayers.Base, out var layer, false);
+        var layerExists = SpriteSystem.LayerMapTryGet((uid, args.Sprite), TypingIndicatorLayers.Base, out var layer, false);
         if (!layerExists)
-            layer = _sprite.LayerMapReserve((uid, args.Sprite), TypingIndicatorLayers.Base);
+            layer = SpriteSystem.LayerMapReserve((uid, args.Sprite), TypingIndicatorLayers.Base);
 
         // L5 - synth typing indicators
         var useSynth = component.UseSyntheticVariant && !proto.NoSynthVariant;
         if (useSynth)
-            _sprite.LayerSetRsi((uid, args.Sprite), layer, proto.SynthSpritePath);
+            SpriteSystem.LayerSetRsi((uid, args.Sprite), layer, proto.SynthSpritePath);
         else
-            _sprite.LayerSetRsi((uid, args.Sprite), layer, proto.SpritePath, proto.TypingState);
+            SpriteSystem.LayerSetRsi((uid, args.Sprite), layer, proto.SpritePath, proto.TypingState);
 
         args.Sprite.LayerSetShader(layer, proto.Shader);
-        _sprite.LayerSetOffset((uid, args.Sprite), layer, proto.Offset);
+        SpriteSystem.LayerSetOffset((uid, args.Sprite), layer, proto.Offset);
 
         AppearanceSystem.TryGetData<TypingIndicatorState>(uid, TypingIndicatorVisuals.State, out var state);
-        _sprite.LayerSetVisible((uid, args.Sprite), layer, state != TypingIndicatorState.None);
+        SpriteSystem.LayerSetVisible((uid, args.Sprite), layer, state != TypingIndicatorState.None);
         switch (state)
         {
             // Begin L5 changes - synth typing indicators
             case TypingIndicatorState.Idle:
                 if (useSynth)
-                    _sprite.LayerSetRsiState((uid, args.Sprite), layer, proto.SynthIdleState);
+                    SpriteSystem.LayerSetRsiState((uid, args.Sprite), layer, proto.SynthIdleState);
                 else
-                    _sprite.LayerSetRsiState((uid, args.Sprite), layer, proto.IdleState);
+                    SpriteSystem.LayerSetRsiState((uid, args.Sprite), layer, proto.IdleState);
                 break;
             case TypingIndicatorState.Typing:
                 if (useSynth && !proto.HasSynthVariant)
-                    _sprite.LayerSetRsiState((uid, args.Sprite), layer, proto.SynthFallbackState);
+                    SpriteSystem.LayerSetRsiState((uid, args.Sprite), layer, proto.SynthFallbackState);
                 else
-                    _sprite.LayerSetRsiState((uid, args.Sprite), layer, proto.TypingState);
+                    SpriteSystem.LayerSetRsiState((uid, args.Sprite), layer, proto.TypingState);
                 break;
             // End L5 changes
         }

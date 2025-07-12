@@ -1,7 +1,7 @@
 ﻿- type: alert
   id: EssenceRegen
-  name: alerts-revenant-essence-regen
-  description: alerts-revenant-essence-regen
+#  name: alerts-revenant-essence-regen # L5 TODO - grab the actual loc strings. For now I'm making these blank.
+#  description: alerts-revenant-essence-regen
   icons:
   - sprite: /Textures/Mobs/Ghosts/revenant.rsi
     state: icon
@@ -11,5 +11,5 @@
   icons:
   - sprite: Mobs/Ghosts/revenant.rsi
     state: ectoplasm
-  name: alerts-revenant-stasis-name
-  description: alerts-revenant-stasis-desc
+#  name: alerts-revenant-stasis-name # L5 TODO - see above
+#  description: alerts-revenant-stasis-desc

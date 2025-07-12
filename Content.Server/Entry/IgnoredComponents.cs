@@ -20,8 +20,8 @@ namespace Content.Server.Entry
             "LightFade",
             "HolidayRsiSwap",
             "OptionsVisualizer",
+            "MultipartMachineGhost",
             "DrawDepthVisualizer", // DeltaV
-            "MultipartMachineGhost"
         };
     }
 }

@@ -16,8 +16,8 @@
   - NpcFactionMember
   # traits
   # - LegsParalyzed (you get healed)
+  - BlackAndWhiteOverlay
   - LightweightDrunk
-  #  - Monochromacy # L5 - we don't have
   - Muted
   - Narcolepsy
   - Pacified
@@ -33,6 +33,7 @@
   - MindShield
   - MimePowers
   - SpaceNinja
+  - Thieving
   # accents
   - Accentless
   - BackwardsAccent
@@ -74,7 +75,7 @@
   - Unborgable
   # End DeltaV Additions
   # Begin L5 Additions
-  - BeerHUD
+  - ToggleBeerHud
   - CPRTraining
   - DairyAllergy
   - GlutenAllergy
@@ -83,12 +84,12 @@
   - KosherRestriction
   - LatexAllergy
   - LowMobility
-  - MedicalHUD
+  - ToggleMedHud
   - MothDiet
   - NightshadeAllergy
   - PescetarianRestriction
   - ReptilianDiet
-  - SecurityHUD
+  - ToggleSecHud
   - SignLanguage
   - SurgerySpeedModifier
   - Synth

@@ -465,6 +465,8 @@
   params:
     variation: 0.05
   sounds:
+    Scream:
+      collection: SiliconScreams
     Beep:
       path: /Audio/Machines/twobeep.ogg
     Chime:
@@ -491,6 +493,8 @@
   params:
     variation: 0.05
   sounds:
+    Scream:
+      collection: SiliconScreams
     Laugh:
       path: /Audio/Voice/Silicon/syndieborg_laugh.ogg
     Beep:
@@ -651,6 +655,20 @@
   params:
     variation: 0.125
   sounds:
+    Thump:
+      path: /Audio/Effects/soft_thump.ogg
+      params:
+        variation: 0.125
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
     Laugh:
       collection: WawaLaugh
     Sneeze:
@@ -663,8 +681,19 @@
       collection: WawaSigh
     Scream:
       collection: WawaScream
-    # L5 - urgent addition
-    Thump:
-      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
-      params:
-        variation: 0.125
+    Yawn:
+      collection: WawaYawn
+    Crying:
+      collection: WawaCry
+    Snore:
+      collection: Snores
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: WawaDeath

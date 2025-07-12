@@ -14,7 +14,7 @@
   name: Open tools panel
   description: Access the tools implanted within you
   components:
-  - type: InstantAction
+  - type: Action # L5 - action ECS
     icon: { sprite: Clothing/Belt/utility.rsi, state: icon }
 
 - type: entity

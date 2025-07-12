@@ -7,17 +7,16 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Shared.Abilities.Psionics
 {
     public sealed class MassSleepPowerSystem : EntitySystem
     {
-        public ProtoId<StatusEffectPrototype> StatusEffectKey = "ForcedSleep";
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
-        [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+        [Dependency] private readonly SharedStatusEffectsSystem _statusEffects = default!;
 
         public override void Initialize()
         {
@@ -30,8 +29,8 @@ namespace Content.Shared.Abilities.Psionics
         private void OnInit(EntityUid uid, MassSleepPowerComponent component, ComponentInit args)
         {
             _actions.AddAction(uid, ref component.MassSleepActionEntity, component.MassSleepActionId );
-            _actions.TryGetActionData( component.MassSleepActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
+            // L5 - modified for action ECS
+            if (_actions.GetAction(component.MassSleepActionEntity) is { Comp.UseDelay: not null })
                 _actions.StartUseDelay(component.MassSleepActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
                 psionic.PsionicAbility = component.MassSleepActionEntity;
@@ -50,7 +49,8 @@ namespace Content.Shared.Abilities.Psionics
                 if (HasComp<MobStateComponent>(entity) && entity != uid && !HasComp<PsionicInsulationComponent>(entity))
                 {
                     if (TryComp<DamageableComponent>(entity, out var damageable) && damageable.DamageContainerID == "Biological")
-                        _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(entity, StatusEffectKey, TimeSpan.FromSeconds(duration), false);
+                        // L5 - new status effect system
+                        _statusEffects.TryAddStatusEffectDuration(uid, SleepingSystem.StatusEffectForcedSleeping, TimeSpan.FromSeconds(duration));
                 }
             }
             _psionics.LogPowerUsed(uid, "mass sleep");

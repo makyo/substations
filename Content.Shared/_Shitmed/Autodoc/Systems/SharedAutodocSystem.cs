@@ -243,10 +243,8 @@ public abstract class SharedAutodocSystem : EntitySystem
 
     public EntityUid GetHeldOrThrow(Entity<AutodocComponent, HandsComponent> ent)
     {
-        if (!_hands.TryGetHand(ent, ent.Comp1.ItemSlot, out var hand, ent.Comp2))
-            throw new AutodocError("item-unavailable");
-
-        if (hand.HeldEntity is not {} item)
+        // L5 - hands system refactor
+        if (_hands.GetHeldItem((ent, ent.Comp2), ent.Comp1.ItemSlot) is not {} item)
             throw new AutodocError("item-unavailable");
 
         return item;

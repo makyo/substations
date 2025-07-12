@@ -446,6 +446,7 @@ public sealed partial class MarkingPicker : Control
             // End Floof addition
 
             ColorSelectorSliders colorSelector = new ColorSelectorSliders();
+            colorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             colorSliders.Add(colorSelector);
 
             colorContainer.AddChild(new Label { Text = $"{stateNames[i]} color:" });

@@ -46,9 +46,9 @@ namespace Content.Server.Abilities.Psionics
         private void OnInit(EntityUid uid, MindSwapPowerComponent component, ComponentInit args)
         {
             _actions.AddAction(uid, ref component.MindSwapActionEntity, component.MindSwapActionId );
-            _actions.TryGetActionData( component.MindSwapActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.MindSwapActionEntity);
+
+            // L5 - modified for action ECS
+            _actions.StartUseDelay(component.MindSwapActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
             {
                 psionic.PsionicAbility = component.MindSwapActionEntity;
@@ -149,9 +149,9 @@ namespace Content.Server.Abilities.Psionics
         private void OnSwapInit(EntityUid uid, MindSwappedComponent component, ComponentInit args)
         {
             _actions.AddAction(uid, ref component.MindSwapReturnActionEntity, component.MindSwapReturnActionId );
-            _actions.TryGetActionData( component.MindSwapReturnActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.MindSwapReturnActionEntity);
+
+            // L5 - modified for action ECS
+            _actions.StartUseDelay(component.MindSwapReturnActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
                 psionic.PsionicAbility = component.MindSwapReturnActionEntity;
         }
@@ -207,7 +207,8 @@ namespace Content.Server.Abilities.Psionics
 
             _popupSystem.PopupEntity(Loc.GetString("mindswap-trapped"), uid, uid, Shared.Popups.PopupType.LargeCaution);
             var perfComp = EnsureComp<MindSwappedComponent>(uid);
-            _actions.RemoveAction(uid, perfComp.MindSwapReturnActionEntity, null);
+            // L5 - modified for action ECS
+            _actions.RemoveAction(uid, perfComp.MindSwapReturnActionEntity);
 
             if (HasComp<TelegnosticProjectionComponent>(uid))
             {

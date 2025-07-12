@@ -199,6 +199,18 @@
             - tool: Welding
               doAfter: 4
 
+    - node: wallChitin
+      entity: WallSolidChitin
+      edges:
+        - to: girder
+          completed:
+            - !type:GivePrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 10
+
     - node: uraniumWall
       entity: WallUranium
       edges:
@@ -431,6 +443,58 @@
             - tool: Cutting
               doAfter: 1
 
+    - node: reinforcedWallChitin
+      entity: WallReinforcedChitin
+      edges:
+        - to: reinforcedGirder
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlasteel1
+              amount: 2
+          steps:
+            - tool: Cutting
+              doAfter: 1
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 5
+            - tool: Screwing
+              doAfter: 1
+            - tool: Welding
+              doAfter: 5
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 4
+            - tool: Prying
+              doAfter: 1
+            - tool: Anchoring
+              doAfter: 1
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 3
+            - tool: Welding
+              doAfter: 10
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 2
+            - tool: Prying
+              doAfter: 1
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 1
+            - tool: Screwing
+              doAfter: 1
+              completed:
+                - !type:VisualizerDataInt
+                  key: "enum.ReinforcedWallVisuals.DeconstructionStage"
+                  data: 0
+            - tool: Cutting
+              doAfter: 1
+
     - node: diagonalReinforcedWall # L5 diagonal reinforced walls buildable, costs and takes roughly half the time/materials
       entity: WallReinforcedDiagonal
       edges:
@@ -582,6 +646,10 @@
           steps:
             - tool: Welding
               doAfter: 5
+        - to: wall
+          steps:
+            - tool: Brushing
+              doAfter: 12
 
     - node: paperWall #Nyano
       entity: WallPaper
@@ -602,3 +670,7 @@
           steps:
             - tool: Welding
               doAfter: 5
+        - to: reinforcedWall
+          steps:
+            - tool: Brushing
+              doAfter: 12

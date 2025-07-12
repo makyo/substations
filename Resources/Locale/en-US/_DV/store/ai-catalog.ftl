@@ -1,3 +1,5 @@
+# L5 - note: all of these are unused and are inlined into their entities due to TestNoManualEntityLocStrings
+
 ai-rgb-lighting-name = RGB Lighting
 ai-rgb-lighting-desc = Adjust a light's color controller to add or remove an RGB effect
 

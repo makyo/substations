@@ -35,6 +35,7 @@
     RLeg: MobHarpyRLeg
     LFoot: MobHarpyLFoot
     RFoot: MobHarpyRFoot
+    RArmExtension: MobHumanoidAnyMarking # Frontier
 
 
 - type: markingPoints

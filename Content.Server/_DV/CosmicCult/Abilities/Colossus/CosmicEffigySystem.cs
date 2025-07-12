@@ -23,6 +23,7 @@ public sealed class CosmicEffigySystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly TurfSystem _turf = default!; // L5 - turf helpers is kill
 
     public override void Initialize()
     {
@@ -36,7 +37,8 @@ public sealed class CosmicEffigySystem : EntitySystem
         if (!VerifyPlacement(ent, out var pos))
             return;
 
-        _actions.RemoveAction(ent, ent.Comp.EffigyPlaceActionEntity);
+        // L5 - modified for action ECS
+        _actions.RemoveAction(ent.Owner, ent.Comp.EffigyPlaceActionEntity);
         _codeCondition.SetCompleted(ent.Owner, ent.Comp.EffigyObjective);
         Spawn(ent.Comp.EffigyPrototype, pos);
         ent.Comp.Timed = false;
@@ -65,7 +67,7 @@ public sealed class CosmicEffigySystem : EntitySystem
         var worldPos = _transform.GetWorldPosition(xform);
         foreach (var tile in _map.GetTilesIntersecting(xform.GridUid.Value, grid, new Circle(worldPos, spaceDistance)))
         {
-            if (tile.IsSpace(_tileDef))
+            if (_turf.IsSpace(tile)) // L5 - turf helpers is kill
             {
                 _popup.PopupEntity(Loc.GetString("ghost-role-colossus-effigy-error-space", ("DISTANCE", spaceDistance)), ent, ent);
                 return false;

@@ -27,8 +27,9 @@ public abstract partial class SharedOreSiloSystem
             return;
 
         var latheComp = args.Lathe.Comp;
-        if (latheComp.CurrentRecipe is { Result: { } resultProtoId }
-            && _prototype.TryIndex(resultProtoId, out var resultProto)
+        if (latheComp.CurrentRecipe is { } resultProtoId
+            && _prototype.TryIndex(resultProtoId, out var recipeProto)
+            && _prototype.TryIndex(recipeProto.Result, out var resultProto)
             && resultProto.TryGetComponent<PhysicalCompositionComponent>(out var composition, _factory))
         {
             args.Handled = _materialStorage.TryChangeMaterialAmount((silo, siloStorage), composition.MaterialComposition);

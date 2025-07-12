@@ -5,7 +5,8 @@ uplink-akurra-name = Akurra bundle
 uplink-akurra-desc = Fearsome as it is advanced, the venerable Akurra bundled with 4 cannisters of its proprietary liquid ammo.
 
 uplink-flamethrower-name = FG13 Xiuhcoatl flamethrower
-uplink-flamethrower-desc = Invite Nanotrasen to the cookout with this portable incendiary weapon.
+# L5
+uplink-flamethrower-desc = Werf some flammen with this Flammenwerfer.
 
 uplink-leviathan-name = Leviathan Bundle
 uplink-leviathan-desc = Sometimes, it really is the size that matters. Comes with a Leviathan, 3 explosive rockets, and 2 incendiary rockets.
