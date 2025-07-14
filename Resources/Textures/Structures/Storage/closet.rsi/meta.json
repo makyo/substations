@@ -600,14 +600,6 @@
         },
         {
             "name": "representative_door"
-        },
-        {
-            "name": "littletykescar",
-            "directions": 4
-        },
-        {
-            "name": "littletykescar_open",
-            "directions": 4
         }
     ]
 }
