@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: FunLittleTykesCar
+  icon:
+    sprite: _Impstation/Objects/Storage/littlecar.rsi
+    state: littletykescar
+  product: BaseLittleTykesCar
+  cost: 500
+  category: cargoproduct-category-name-fun
+  group: market
