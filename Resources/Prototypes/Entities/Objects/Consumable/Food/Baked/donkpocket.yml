@@ -273,8 +273,8 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 3.4 # imp
-        - ReagentId: Omnizine
-          Quantity: 1 # imp
+        - ReagentId: Honk
+          Quantity: 0.5
         - ReagentId: Vitamin # imp
           Quantity: 0.1
   - type: Sprite
@@ -302,8 +302,10 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 8 # imp
+        - ReagentId: Honk
+          Quantity: 1
         - ReagentId: Omnizine
-          Quantity: 2 # imp
+          Quantity: 2
         - ReagentId: Vitamin # imp
           Quantity: 1
   - type: Tag
