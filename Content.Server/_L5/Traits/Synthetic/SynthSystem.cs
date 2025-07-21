@@ -106,7 +106,7 @@ public sealed class SynthSystem : SharedSynthSystem
         args.Disabled = true;
         // shit fucks you up
         _popup.PopupEntity("You feel your electronics freak out!", uid, uid, PopupType.LargeCaution);
-        _stun.TryParalyze(uid, TimeSpan.FromSeconds(5), false);
+        _stun.TryAddParalyzeDuration(uid, TimeSpan.FromSeconds(5));
         _statusEffects.TryAddStatusEffect(uid, "Stutter", TimeSpan.FromSeconds(15), false, "StutteringAccent");
 
         // tell their client to show the emp effect
