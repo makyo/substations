@@ -9,19 +9,20 @@ using Content.Shared._DV.SmartFridge;
 
 namespace Content.Client._DV.SmartFridge;
 
-public record SmartFridgeListData(EntityUid Representative, SmartFridgeEntry Entry, int Amount) : ListData;
+// L5 - various renames for conflicts with upstream
+public record SmartFridgeListDataDV(EntityUid Representative, SmartFridgeEntry Entry, int Amount) : ListData;
 
 [GenerateTypedNameReferences]
-public sealed partial class SmartFridgeMenu : FancyWindow
+public sealed partial class SmartFridgeMenuDV : FancyWindow
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public event Action<GUIBoundKeyEventArgs, ListData>? OnItemSelected;
-    public event Action<SmartFridgeListData>? OnRemoveButtonPressed;
+    public event Action<SmartFridgeListDataDV>? OnRemoveButtonPressed;
 
     private readonly StyleBoxFlat _styleBox = new() { BackgroundColor = new Color(70, 73, 102) };
 
-    public SmartFridgeMenu()
+    public SmartFridgeMenuDV()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
@@ -34,7 +35,7 @@ public sealed partial class SmartFridgeMenu : FancyWindow
 
     private bool DataFilterCondition(string filter, ListData data)
     {
-        if (data is not SmartFridgeListData entry)
+        if (data is not SmartFridgeListDataDV entry)
             return false;
 
         if (string.IsNullOrEmpty(filter))
@@ -45,11 +46,11 @@ public sealed partial class SmartFridgeMenu : FancyWindow
 
     private void GenerateButton(ListData data, ListContainerButton button)
     {
-        if (data is not SmartFridgeListData entry)
+        if (data is not SmartFridgeListDataDV entry)
             return;
 
         var label = Loc.GetString("smart-fridge-list-item", ("item", entry.Entry.Name), ("amount", entry.Amount));
-        var item = new SmartFridgeItem(entry.Representative, label);
+        var item = new SmartFridgeItemDV(entry.Representative, label);
         item.RemoveButtonPressed += () => OnRemoveButtonPressed?.Invoke(entry);
         button.AddChild(item);
 
@@ -57,7 +58,7 @@ public sealed partial class SmartFridgeMenu : FancyWindow
         button.StyleBoxOverride = _styleBox;
     }
 
-    public void Populate(Entity<SmartFridgeComponent> ent)
+    public void Populate(Entity<SmartFridgeDVComponent> ent)
     {
         var listData = new List<ListData>();
 
@@ -65,12 +66,12 @@ public sealed partial class SmartFridgeMenu : FancyWindow
         {
             if (!ent.Comp.ContainedEntries.TryGetValue(item, out var items) || items.Count == 0)
             {
-                listData.Add(new SmartFridgeListData(EntityUid.Invalid, item, 0));
+                listData.Add(new SmartFridgeListDataDV(EntityUid.Invalid, item, 0));
             }
             else
             {
                 var representative = _entityManager.GetEntity(items.First());
-                listData.Add(new SmartFridgeListData(representative, item, items.Count));
+                listData.Add(new SmartFridgeListDataDV(representative, item, items.Count));
             }
         }
 

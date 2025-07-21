@@ -2,6 +2,7 @@
   parent: BaseMachinePowered
   id: DVSmartFridge
   name: SmartFridge
+  suffix: DV # L5 - disambiguate from upstream
   description: A refrigerated storage unit for keeping items cold and fresh.
   components:
   - type: StationAiWhitelist
@@ -32,7 +33,7 @@
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
-  - type: SmartFridge
+  - type: SmartFridgeDV # L5 - conflicts with upstream
     whitelist:
       components:
       - FitsInDispenser
@@ -45,12 +46,12 @@
       - Syringe
       - ChemDispensable
   - type: ActivatableUI
-    key: enum.SmartFridgeUiKey.Key
+    key: enum.SmartFridgeUiKeyDV.Key # L5 - conflicts with upstream
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-      enum.SmartFridgeUiKey.Key:
-        type: SmartFridgeBoundUserInterface
+      enum.SmartFridgeUiKeyDV.Key: # L5 - conflicts with upstream
+        type: SmartFridgeDVBoundUserInterface # L5 - conflicts with upstream
   - type: Fixtures
     fixtures:
       fix1:

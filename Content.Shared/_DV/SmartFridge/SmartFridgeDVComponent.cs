@@ -10,7 +10,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 namespace Content.Shared._DV.SmartFridge;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), AutoGenerateComponentPause]
-public sealed partial class SmartFridgeComponent : Component
+public sealed partial class SmartFridgeDVComponent : Component // L5 - conflicts with upstream
 {
     [DataField]
     public string Container = "smart_fridge_inventory";
@@ -71,7 +71,7 @@ public record struct SmartFridgeEntry
 }
 
 [Serializable, NetSerializable]
-public enum SmartFridgeUiKey
+public enum SmartFridgeUiKeyDV // L5 - conflicts with upstream
 {
     Key,
 }

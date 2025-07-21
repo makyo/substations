@@ -1,9 +1,9 @@
+using Content.Client.UserInterface.Controls;
+using Content.Shared.SmartFridge;
 using Robust.Client.UserInterface;
 using Robust.Shared.Input;
-using Content.Client.UserInterface.Controls;
-using Content.Shared._DV.SmartFridge;
 
-namespace Content.Client._DV.SmartFridge;
+namespace Content.Client.SmartFridge;
 
 public sealed class SmartFridgeBoundUserInterface : BoundUserInterface
 {
@@ -19,7 +19,6 @@ public sealed class SmartFridgeBoundUserInterface : BoundUserInterface
 
         _menu = this.CreateWindow<SmartFridgeMenu>();
         _menu.OnItemSelected += OnItemSelected;
-        _menu.OnRemoveButtonPressed += OnRemoveButtonPressed;
         Refresh();
     }
 
@@ -28,6 +27,7 @@ public sealed class SmartFridgeBoundUserInterface : BoundUserInterface
         if (_menu is not {} menu || !EntMan.TryGetComponent(Owner, out SmartFridgeComponent? fridge))
             return;
 
+        menu.SetFlavorText(Loc.GetString(fridge.FlavorText));
         menu.Populate((Owner, fridge));
     }
 
@@ -39,10 +39,5 @@ public sealed class SmartFridgeBoundUserInterface : BoundUserInterface
         if (data is not SmartFridgeListData entry)
             return;
         SendPredictedMessage(new SmartFridgeDispenseItemMessage(entry.Entry));
-    }
-
-    private void OnRemoveButtonPressed(SmartFridgeListData data)
-    {
-        SendPredictedMessage(new SmartFridgeRemoveEntryMessage(data.Entry));
     }
 }

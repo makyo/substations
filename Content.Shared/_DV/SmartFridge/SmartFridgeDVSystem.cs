@@ -10,7 +10,9 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._DV.SmartFridge;
 
-public sealed class SmartFridgeSystem : EntitySystem
+// L5 - various renames in this file; conflicts with upstream
+
+public sealed class SmartFridgeDVSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
@@ -24,10 +26,10 @@ public sealed class SmartFridgeSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SmartFridgeComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<SmartFridgeComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
+        SubscribeLocalEvent<SmartFridgeDVComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<SmartFridgeDVComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
 
-        Subs.BuiEvents<SmartFridgeComponent>(SmartFridgeUiKey.Key,
+        Subs.BuiEvents<SmartFridgeDVComponent>(SmartFridgeUiKeyDV.Key,
             sub =>
             {
                 sub.Event<SmartFridgeDispenseItemMessage>(OnDispenseItem);
@@ -39,7 +41,7 @@ public sealed class SmartFridgeSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<SmartFridgeComponent>();
+        var query = EntityQueryEnumerator<SmartFridgeDVComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
             if (!comp.Ejecting || _timing.CurTime <= comp.EjectEnd)
@@ -58,7 +60,7 @@ public sealed class SmartFridgeSystem : EntitySystem
     /// <param name="user">The user who should be access-checked</param>
     /// <param name="container">The SmartFridge's container if it's already known</param>
     /// <returns>Whether the insertion was successful</returns>
-    public bool TryAddItem(Entity<SmartFridgeComponent?> ent,
+    public bool TryAddItem(Entity<SmartFridgeDVComponent?> ent,
         EntityUid item,
         EntityUid? user = null,
         BaseContainer? container = null)
@@ -87,7 +89,7 @@ public sealed class SmartFridgeSystem : EntitySystem
         return true;
     }
 
-    public void TryAddItem(Entity<SmartFridgeComponent?> ent,
+    public void TryAddItem(Entity<SmartFridgeDVComponent?> ent,
         IEnumerable<EntityUid> items,
         EntityUid? user = null,
         BaseContainer? container = null)
@@ -108,7 +110,7 @@ public sealed class SmartFridgeSystem : EntitySystem
         }
     }
 
-    private void OnInteractUsing(Entity<SmartFridgeComponent> ent, ref InteractUsingEvent args)
+    private void OnInteractUsing(Entity<SmartFridgeDVComponent> ent, ref InteractUsingEvent args)
     {
         if (!_hands.CanDrop(args.User, args.Used))
             return;
@@ -119,7 +121,7 @@ public sealed class SmartFridgeSystem : EntitySystem
         _audio.PlayPredicted(ent.Comp.InsertSound, ent, args.User);
     }
 
-    private void OnItemRemoved(Entity<SmartFridgeComponent> ent, ref EntRemovedFromContainerMessage args)
+    private void OnItemRemoved(Entity<SmartFridgeDVComponent> ent, ref EntRemovedFromContainerMessage args)
     {
         var key = new SmartFridgeEntry(Identity.Name(args.Entity, EntityManager));
 
@@ -131,7 +133,7 @@ public sealed class SmartFridgeSystem : EntitySystem
         Dirty(ent);
     }
 
-    private bool Allowed(Entity<SmartFridgeComponent> machine, EntityUid user)
+    private bool Allowed(Entity<SmartFridgeDVComponent> machine, EntityUid user)
     {
         if (_accessReader.IsAllowed(user, machine))
             return true;
@@ -141,7 +143,7 @@ public sealed class SmartFridgeSystem : EntitySystem
         return false;
     }
 
-    private void OnDispenseItem(Entity<SmartFridgeComponent> ent, ref SmartFridgeDispenseItemMessage args)
+    private void OnDispenseItem(Entity<SmartFridgeDVComponent> ent, ref SmartFridgeDispenseItemMessage args)
     {
         if (!_timing.IsFirstTimePredicted || ent.Comp.Ejecting || !Allowed(ent, args.Actor))
             return;
@@ -169,7 +171,7 @@ public sealed class SmartFridgeSystem : EntitySystem
         _popup.PopupPredicted(Loc.GetString("smart-fridge-component-try-eject-out-of-stock"), ent, args.Actor);
     }
 
-    private void OnRemoveEntry(Entity<SmartFridgeComponent> ent, ref SmartFridgeRemoveEntryMessage args)
+    private void OnRemoveEntry(Entity<SmartFridgeDVComponent> ent, ref SmartFridgeRemoveEntryMessage args)
     {
         if (!_timing.IsFirstTimePredicted || !Allowed(ent, args.Actor))
             return;

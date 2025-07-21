@@ -1,7 +1,7 @@
-using Content.Shared._DV.SmartFridge;
+using Content.Shared.SmartFridge;
 using Robust.Shared.Analyzers;
 
-namespace Content.Client._DV.SmartFridge;
+namespace Content.Client.SmartFridge;
 
 public sealed class SmartFridgeUISystem : EntitySystem
 {
