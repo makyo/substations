@@ -1,6 +1,6 @@
 namespace Content.Shared._L5.Traits.HUD
 {
-    [RegisterComponent]
+    [RegisterComponent, AutoGenerateComponentState]
     public sealed partial class ToggleBeerHudComponent : ToggleComponent
     {
 
