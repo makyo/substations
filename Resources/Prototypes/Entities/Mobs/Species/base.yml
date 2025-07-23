@@ -232,7 +232,6 @@
     - AnomalyHost
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
   - type: FootPrints # DeltaV port from EE, blood splatter
-  - type: LayingDown # WD EDIT
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
@@ -294,8 +293,8 @@
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
-      - id: FoodMeat
-        amount: 5
+    - id: FoodMeat
+      amount: 5
   - type: Respirator
     damage:
       types:
@@ -306,7 +305,6 @@
   - type: FireVisuals
     alternateState: Standing
   - type: StunVisuals
-  - type: LayingDown # WD EDIT
 
 - type: entity
   save: false

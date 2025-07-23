@@ -488,8 +488,7 @@ public partial class SharedBodySystem
         if (!TryComp<MobStateComponent>(uid, out var mobState)
             || !TryComp<StandingStateComponent>(uid, out var standingState)
             || _mobState.IsCritical(uid, mobState)
-            || _mobState.IsDead(uid, mobState)
-            || standingState.CurrentState == StandingState.Lying)
+            || _mobState.IsDead(uid, mobState)) // L5 TODO - switching to new stand system
             return false;
 
         return true;
