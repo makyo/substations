@@ -199,7 +199,8 @@ public abstract partial class SharedStunSystem : EntitySystem
             drop = evAttempt.Drop;
         }
 
-        Knockdown(entity!, time, autoStand, drop);
+        // L5 - temp fix until https://github.com/space-wizards/space-station-14/pull/39084 is merged:
+        Knockdown(entity!, time, refresh, autoStand, drop);
 
         return true;
     }
