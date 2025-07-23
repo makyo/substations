@@ -486,9 +486,9 @@ public partial class SharedBodySystem
     public bool CanEvadeDamage(EntityUid uid)
     {
         if (!TryComp<MobStateComponent>(uid, out var mobState)
-            || !TryComp<StandingStateComponent>(uid, out var standingState)
             || _mobState.IsCritical(uid, mobState)
-            || _mobState.IsDead(uid, mobState)) // L5 TODO - switching to new stand system
+            || _mobState.IsDead(uid, mobState)
+            || Standing.IsDown(uid)) // L5 - new standing system
             return false;
 
         return true;

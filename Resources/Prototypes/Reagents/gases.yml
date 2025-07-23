@@ -363,7 +363,7 @@
           type: Slime
           shouldHave: false
         effectProto: StatusEffectForcedSleeping
-        time: 200 # This reeks, but I guess it works LMAO # L5 TODO - is this okay with new forced sleep?
+        time: 200 # This reeks, but I guess it works LMAO
       - !type:GenericStatusEffect # DeltaV: anesthesia changes
         conditions:
         - !type:ReagentThreshold

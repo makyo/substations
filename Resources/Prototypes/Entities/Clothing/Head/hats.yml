@@ -170,7 +170,7 @@
   - type: Sprite
     sprite: _DV/Clothing/Head/Hats/beret_warden.rsi # DeltaV - resprite
   - type: Clothing
-    sprite: _DV/Clothing/Head/Hats/beret_warden.rsi # DeltaV - resprite # L5 TODO - check this works with PetWearable
+    sprite: _DV/Clothing/Head/Hats/beret_warden.rsi # DeltaV - resprite
   - type: Tag
     tags:
     - PetWearable

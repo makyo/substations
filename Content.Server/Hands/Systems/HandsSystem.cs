@@ -244,7 +244,6 @@ namespace Content.Server.Hands.Systems
                 if (!TryGetHeldItem(entity.AsNullable(), hand, out var heldEntity))
                     continue;
 
-                // L5 TODO - I think I messed up whoever listened to this event
                 var throwAttempt = new FellDownThrowAttemptEvent(entity);
                 RaiseLocalEvent(heldEntity.Value, ref throwAttempt);
 
