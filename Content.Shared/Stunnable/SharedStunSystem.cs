@@ -1,13 +1,13 @@
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Inventory.Events;
+using Content.Shared.Item;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Inventory.Events;
-using Content.Shared.Item;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Events;
@@ -199,13 +199,12 @@ public abstract partial class SharedStunSystem : EntitySystem
             drop = evAttempt.Drop;
         }
 
-        // L5 - temp fix until https://github.com/space-wizards/space-station-14/pull/39084 is merged:
         Knockdown(entity!, time, refresh, autoStand, drop);
 
         return true;
     }
 
-    private void Knockdown(Entity<StandingStateComponent> entity, TimeSpan? time, bool refresh, bool autoStand = true, bool drop = true)
+    private void Knockdown(Entity<StandingStateComponent> entity, TimeSpan? time, bool refresh, bool autoStand, bool drop)
     {
         // Initialize our component with the relevant data we need if we don't have it
         if (EnsureComp<KnockedDownComponent>(entity, out var component))
