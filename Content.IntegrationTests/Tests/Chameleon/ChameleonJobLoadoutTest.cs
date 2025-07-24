@@ -19,7 +19,6 @@ public sealed class ChameleonJobLoadoutTest : InteractionTest
     ];
 
     [Test]
-    [Ignore("L5 FIXME — I'm not fixing this right now lol.")]
     public Task CheckAllJobs()
     {
         var alljobs = ProtoMan.EnumeratePrototypes<JobPrototype>();
