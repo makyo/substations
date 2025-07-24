@@ -4,6 +4,7 @@ ai-wire-snipped = Wire has been cut at {$coords}.
 wire-name-ai-vision-light = SSRV
 wire-name-ai-act-light = SSRA
 station-ai-takeover = SSR takeover
+station-ai-eye-name = SSR eye - {$name}
 
 # Radial actions
 ai-open = Open actions
