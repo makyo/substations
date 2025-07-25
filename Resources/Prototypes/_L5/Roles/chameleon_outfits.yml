@@ -1,0 +1,168 @@
+- type: chameleonOutfit
+  id: PrincipalArchitectChameleonOutfit
+  job: PrincipalArchitect
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatHardhatWhite
+    eyes: ClothingEyesGlassesMeson
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedOrange
+    outerClothing: ClothingOuterWinterCE
+    gloves: ClothingHandsGlovesColorYellow
+    shoes: ClothingShoesBootsMagAdv
+
+- type: chameleonOutfit
+  id: AdministrativeAssistantChameleonOutfit
+  job: AdministrativeAssistant
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatAdministrasive
+    mask: ClothingMaskBreath
+    outerClothing: ClothingOuterCorporateJacket
+    gloves: ClothingHandsGlovesHop
+
+- type: chameleonOutfit
+  id: ChiefJusticeChameleonOutfit
+  job: ChiefJustice
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatCJToque
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckCloakCJ
+    outerClothing: ClothingOuterChiefJustice
+    innerClothing: ClothingUniformJumpsuitChiefJusticeFormal
+    back: ClothingBackpackSatchelLeather
+    gloves: ClothingHandsGlovesFingerless
+
+- type: chameleonOutfit
+  id: ClerkChameleonOutfit
+  job: Clerk
+  equipment:
+    head: ClothingHeadHelmetJustice
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckTieBlack
+    outerClothing: ClothingOuterClerkVest
+    back: ClothingBackpackSatchelLeather
+    gloves: ClothingHandsGlovesFingerless
+
+- type: chameleonOutfit
+  id: ProsecutorChameleonOutfit
+  job: Prosecutor
+  equipment:
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckProsecutorbadge
+    outerClothing: ClothingOuterWinterColorRed
+    back: ClothingBackpackSatchelLeather
+    gloves: ClothingHandsGlovesFingerless
+
+- type: chameleonOutfit
+  id: CorpsmanChameleonOutfit
+  job: Brigmedic
+  equipment:
+    head: ClothingHeadHatBeretCorpsman
+    mask: ClothingMaskBreathMedicalSecurity
+    neck: ClothingNeckCWPSec
+    outerClothing: ClothingOuterCoatStasecCorpsman
+    gloves: ClothingHandsGlovesNitrile
+
+- type: chameleonOutfit
+  id: PrisonGuardChameleonOutfit
+  job: PrisonGuard
+  equipment:
+    head: ClothingHeadPrisonGuard
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckCWPSec
+    gloves: ClothingHandsGlovesCombat
+
+- type: chameleonOutfit
+  id: PrisonerChameleonOutfit
+  job: Prisoner
+  equipment:
+    head: ClothingHeadBandBlack
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedBlue
+    outerClothing: ClothingOuterWinterCoat
+    gloves: ClothingHandsGlovesFingerless
+
+- type: chameleonOutfit
+  id: GladiatorChameleonOutfit
+  job: Gladiator
+  equipment:
+    head: ClothingHeadBandBlack
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedLightBlue
+    gloves: ClothingHandsGlovesFingerless
+
+- type: chameleonOutfit
+  id: MartialArtistChameleonOutfit
+  job: MartialArtist
+  equipment:
+    head: ClothingHeadBandRed
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedRed
+    outerClothing: ClothingOuterWinterColorGray
+    back: ClothingBackpackSatchel
+
+- type: chameleonOutfit
+  id: CargoTechnicianAssistantChameleonOutfit
+  job: CargoAssistant
+  equipment:
+    head: ClothingHeadHatCargosoft
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedBrown
+    outerClothing: ClothingOuterWinterCargo
+    gloves: ClothingHandsGlovesFingerless
+
+- type: chameleonOutfit
+  id: CourierChameleonOutfit
+  job: Courier
+  equipment:
+    head: ClothingHeadMailCarrier
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedBlue
+    outerClothing: ClothingOuterWinterCoatMail
+    innerClothing: ClothingUniformSkirtMailCarrier
+    back: ClothingBackpackClippy
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesColorBlack
+
+- type: chameleonOutfit
+  id: MantisChameleonOutfit
+  job: ForensicMantis
+  equipment:
+    head: ClothingHeadHatFezMantis
+    eyes: ClothingEyesGlassesSunglasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckTieSci
+    outerClothing: ClothingOuterCoatMantis
+    gloves: ClothingHandsGlovesColorWhite
+
+- type: chameleonOutfit
+  id: RoboticistChameleonOutfit
+  job: Roboticist
+  equipment:
+    head: ClothingHeadHatBeretRND
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskBreath
+    neck: ClothingNeckScarfStripedPurple
+    outerClothing: ClothingOuterCoatRobo
+    gloves: ClothingHandsGlovesRobohands
+    shoes: ClothingShoesBootsWinterRobo
+
+- type: chameleonOutfit
+  id: SurgeonChameleonOutfit
+  job: Surgeon
+  equipment:
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskSterile
+    neck: ClothingNeckStethoscope
+    outerClothing: ClothingOuterCoatLabSeniorPhysician

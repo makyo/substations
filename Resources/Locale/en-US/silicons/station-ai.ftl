@@ -4,6 +4,7 @@ ai-wire-snipped = Wire has been cut at {$coords}.
 wire-name-ai-vision-light = SSRV
 wire-name-ai-act-light = SSRA
 station-ai-takeover = SSR takeover
+station-ai-eye-name = SSR eye - {$name}
 
 # Radial actions
 ai-open = Open actions
@@ -45,5 +46,3 @@ station-ai-hologram-male = Male appearance
 station-ai-hologram-face = Disembodied head
 station-ai-hologram-cat = Cat form
 station-ai-hologram-dog = Corgi form
-station-ai-hologram-kobold = Kobold form
-station-ai-hologram-monkey = Monkey form

@@ -47,7 +47,7 @@
     - HeadOfSecurity
 
 - type: whitelistTier
-  id: Gold Tier
+  id: GoldTier # L5 - engine migration; no spaces in prototype IDs
   name: Gold Tier
   color: "#e6c200"
   jobs:

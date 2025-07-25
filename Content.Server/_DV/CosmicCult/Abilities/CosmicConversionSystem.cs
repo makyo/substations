@@ -65,7 +65,8 @@ public sealed class CosmicConversionSystem : EntitySystem
             }
             else
             {
-                _stun.TryStun(target, TimeSpan.FromSeconds(4f), false);
+                // L5 - new stun system:
+                _stun.TryAddStunDuration(target, TimeSpan.FromSeconds(4f));
                 _damageable.TryChangeDamage(target, uid.Comp.ConversionHeal * -1);
                 _cultRule.CosmicConversion(uid, target);
             }

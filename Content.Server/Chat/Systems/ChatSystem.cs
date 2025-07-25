@@ -653,7 +653,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
             // End L5 - hard of hearing trait
 
-            if (data.Range <= clearRange)
+            if (data.Range <= clearRange || data.Observer)
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, wrappedMessage, source, false, session.Channel);
             //If listener is too far, they only hear fragments of the message
             else if (_examineSystem.InRangeUnOccluded(source, listener, muffledRange))
