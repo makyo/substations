@@ -795,3 +795,9 @@ Entries:
       message: Ported Little Tykes car from Imp station
   id: 107
   time: '2025-07-15T23:41:55.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Tweak
+      message: Crawling is now bound to C by default. Cope.
+  id: 108
+  time: '2025-07-25T23:37:19.0000000+00:00'
