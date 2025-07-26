@@ -12,7 +12,7 @@
     defaultKillDelay: 40
     damage:
       types:
-        Blunt: 200
+        Asphyxiation: 200 # L5 - was blunt
   - type: Paper
     content: killtome-rules
   - type: ActivatableUI
