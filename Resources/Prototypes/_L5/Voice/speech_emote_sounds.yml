@@ -15,8 +15,12 @@
       path: /Audio/Machines/buzz-two.ogg
     Honk:
       path: /Audio/Items/bikehorn.ogg
+      params:
+        variation: 0.125
     Ping:
-      path: /Audio/Effects/Cargo/ping.ogg
+      path: /Audio/Effects/beep1.ogg
+      params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
+        variation: 0.125
     Whirr:
       collection: IPCWhirrs
       params:
