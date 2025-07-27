@@ -5,18 +5,24 @@
   params:
     variation: 0.05
   sounds:
-    Beep:
-      path: /Audio/Machines/twobeep.ogg
-    Chime:
-      path: /Audio/Machines/chime.ogg
+    RobotBeep: # disease
+      path: /Audio/Effects/tesla_consume.ogg
+      params:
+        variation: 0.125
+    Beep: # normal
+      path: /Audio/_EE/Voice/IPC/beep_2000.ogg
+    Boop:
+      path: /Audio/_EE/Voice/IPC/beep_500.ogg
     Buzz:
       path: /Audio/Machines/buzz-sigh.ogg
-    Buzz-Two:
-      path: /Audio/Machines/buzz-two.ogg
     Honk:
       path: /Audio/Items/bikehorn.ogg
       params:
         variation: 0.125
+    Chime:
+      path: /Audio/Effects/Cargo/ping.ogg
+    Buzz-Two:
+      path: /Audio/Machines/buzz-two.ogg
     Ping:
       path: /Audio/Effects/beep1.ogg
       params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
@@ -25,5 +31,3 @@
       collection: IPCWhirrs
       params:
         variation: 0
-    Boop:
-      path: /Audio/_EE/Voice/IPC/beep_500.ogg
