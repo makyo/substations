@@ -12,5 +12,5 @@ public static partial class Atmospherics
     /// The delta that should be used when the wide-filtering alarm preset is activated.
     /// </summary>
     /// <seealso cref="AirVentPressureDelta" />
-    public const float AirVentWideFilterPressureDelta = 50;
+    public const float AirVentWideFilterPressureDelta = 10;
 }
