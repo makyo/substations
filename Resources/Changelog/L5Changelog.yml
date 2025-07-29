@@ -801,3 +801,9 @@ Entries:
       message: Crawling is now bound to C by default. Cope.
   id: 108
   time: '2025-07-25T23:37:19.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Synths go *ping!* like IPCs now
+  id: 109
+  time: '2025-07-29T00:45:09.0000000+00:00'
