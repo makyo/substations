@@ -153,6 +153,9 @@
   - type: HideLayerClothing
     slots:
     - Tail
+  - type: CosmicTransmutable # DeltaV
+    transmutesTo: ClothingOuterHardsuitCosmicCult
+    requiredGlyphType: CosmicGlyphWarding
 
 - type: entity
   abstract: true
@@ -188,6 +191,9 @@
   - type: HideLayerClothing
     slots:
     - Tail
+  - type: CosmicTransmutable # DeltaV
+    transmutesTo: ClothingOuterHardsuitCosmicCult
+    requiredGlyphType: CosmicGlyphWarding
 
 - type: entity
   parent: ClothingOuterBase

@@ -15,6 +15,9 @@ cosmic-examine-text-god = [color=#4cabb3]the end is the end is the end is the en
 cosmic-examine-text-forthecult = [color=#4cabb3]This is our doing. As things should be.[/color]
 cosmic-examine-text-cultentity = [color=#4cabb3]A powerful ally.[/color]
 cosmic-examine-text-culteffigy = [color=#4cabb3]This may prove useful.[/color]
+cosmic-examine-transmutable = This can be transmuted into [color=#4cabb3]{$result}[/color] by using [color=#4cabb3]{$glyph}[/color].
+cosmic-examine-transmutable-verb-text = Transmutability.
+cosmic-examine-transmutable-error = This item should be transmutable, but it doesn't seem to work.
 
 ## GLYPH EXAMINES
 cosmic-examine-glyph-cultcount = {$COUNT ->
