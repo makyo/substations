@@ -807,3 +807,9 @@ Entries:
       message: Synths go *ping!* like IPCs now
   id: 109
   time: '2025-07-29T00:45:09.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Fix
+      message: CPR audio will no loop if activated twice via the right-click menu.
+  id: 110
+  time: '2025-08-02T15:39:24.0000000+00:00'
