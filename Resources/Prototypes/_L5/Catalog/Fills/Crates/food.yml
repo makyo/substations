@@ -2,7 +2,7 @@
   id: CrateFoodProduce
   parent: CrateFreezer
   name: produce crate
-  description: a freezer full of random, fresh-picked produce
+  description: A freezer-chest for storing foods that need to stay cold.
   components:
   - type: EntityTableContainerFill
     containers:
