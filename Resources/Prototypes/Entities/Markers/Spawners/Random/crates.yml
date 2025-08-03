@@ -90,6 +90,9 @@
     - id: CrateServiceJanitorialSupplies
     - id: JanitorialTrolley
       weight: 0.2
+    # L5
+    - id: CrateFoodProduce
+      weight: 0.5
 
 - type: entityTable
   id: LowValueEngineeringCrateTable
