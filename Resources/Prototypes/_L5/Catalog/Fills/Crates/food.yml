@@ -4,8 +4,15 @@
   name: produce crate
   description: a freezer full of random, fresh-picked produce
   components:
-  - type: StorageFill
-    contents:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillCrateFoodProduce
+
+- type: entityTable
+  id: FillCrateFoodProduce
+  table: !type:AllSelector
+    children:
       # Normal (50%)
     - id: FoodCarrot
       amount: 3
