@@ -813,3 +813,9 @@ Entries:
       message: CPR audio will no loop if activated twice via the right-click menu.
   id: 110
   time: '2025-08-02T15:39:24.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: New produce crate containing a mix of common fruit and veggies.
+  id: 111
+  time: '2025-08-03T20:40:48.0000000+00:00'
