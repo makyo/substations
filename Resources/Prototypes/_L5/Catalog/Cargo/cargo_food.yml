@@ -14,6 +14,6 @@
     sprite: Objects/Specific/Hydroponics/berries.rsi
     state: produce
   product: CrateFoodProduce
-  cost: 1250
+  cost: 6250
   category: cargoproduct-category-name-food
   group: market
