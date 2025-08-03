@@ -95,14 +95,21 @@
     - type: DeviceNetwork
       deviceNetId: Wireless
       transmitFrequencyId: SuitSensor
-    # - type: StationLimitedNetwork # L5 - map-global suit sensors
+    # Begin L5 modifications
+    # L5 - map global suit sensors
+    # - type: StationLimitedNetwork
     - type: WirelessNetworkConnection
-      range: 10000 # L5 - map-global (ish) suit sensors
+      range: 10000
+    # L5 - I dunno who added/removed/whatever'd it but make tracking implants do rattles
+    # Also make it rattle on dead, not just crit and dead.
     - type: TriggerOnMobstateChange
       mobState:
       - Critical
-    - type: Rattle
+      - Dead
+    - type: RattleOnTrigger
+      targetUser: true
       radioChannel: Medical # L5 - tracking implants are for medical, not sec
+    # End L5 modifications
 
 #Traitor implants
 

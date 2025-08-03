@@ -1,3 +1,4 @@
+using Content.Shared.Abilities;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Trigger.Systems;
 using Content.Shared.StepTrigger.Systems;
@@ -22,6 +23,10 @@ public sealed class MousetrapSystem : EntitySystem
     {
         if (!TryComp<ItemToggleComponent>(ent, out var toggle))
             return;
+
+        // DeltaV: Entities with this component always trigger mouse traps, even if wearing shoes
+        if (HasComp<AlwaysTriggerMousetrapComponent>(args.Tripper))
+            args.Cancelled = false;
 
         args.Continue |= toggle.Activated;
     }
