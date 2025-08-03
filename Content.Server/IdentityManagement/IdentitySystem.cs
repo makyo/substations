@@ -62,11 +62,19 @@ public sealed class IdentitySystem : SharedIdentitySystem
     // This is where the magic happens
     private void OnMapInit(EntityUid uid, IdentityComponent component, MapInitEvent args)
     {
+        // Begin L5 modifications - early merge of space-wizards/space-station-14#39357
+        if (component.IdentityEntitySlot is not { } slot)
+        {
+            Log.Error($"Uninitialized IdentityEntitySlot for {ToPrettyString(uid)}.");
+            return;
+        }
+        // End L5 modifications
+
         var ident = Spawn(null, Transform(uid).Coordinates);
 
         _metaData.SetEntityName(ident, "identity");
         QueueIdentityUpdate(uid);
-        _container.Insert(ident, component.IdentityEntitySlot);
+        _container.Insert(ident, slot); // L5 - early merge, see above
     }
 
     /// <summary>
@@ -84,7 +92,7 @@ public sealed class IdentitySystem : SharedIdentitySystem
     /// </summary>
     private void UpdateIdentityInfo(EntityUid uid, IdentityComponent identity)
     {
-        if (identity.IdentityEntitySlot.ContainedEntity is not { } ident)
+        if (identity.IdentityEntitySlot?.ContainedEntity is not { } ident)
             return;
 
         var representation = GetIdentityRepresentation(uid);

@@ -13,8 +13,12 @@ namespace Content.Shared.IdentityManagement.Components;
 [RegisterComponent]
 public sealed partial class IdentityComponent : Component
 {
+    /// <summary>
+    /// The slot which carries around the entity representing the carrier's
+    /// perceived identity. May be null if the component is not initialized.
+    /// </summary>
     [ViewVariables]
-    public ContainerSlot IdentityEntitySlot = default!;
+    public ContainerSlot? IdentityEntitySlot = default!; // L5 - early merge of space-wizards/space-station-14#39357
 }
 
 /// <summary>
