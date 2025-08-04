@@ -45,6 +45,12 @@
   - ClothingHeadHatKippahBlueAndGold #imp
   - ClothingHeadHatKippahSimple #imp
   - ClothingHeadHatKippahWhiteAndBlue #imp
+  - OffsetCane
+  - OffsetCaneWood
+  - OffsetCaneClown
+  - OffsetCaneMime
+  - OffsetCaneNT
+  - Cane
   - TowelColorBlack
   - TowelColorDarkBlue
   - TowelColorDarkGreen
@@ -65,7 +71,7 @@
   - AACTablet
   - GoldRing
   - SilverRing
-  - Cane
+#  - Cane # L5 - added upstream
   - WhiteCane
   - CDDogtags # taken from Cosmatic Drift
   - TapeRecorder
