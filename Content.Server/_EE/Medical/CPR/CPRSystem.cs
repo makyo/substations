@@ -41,9 +41,16 @@ public sealed class CPRSystem : EntitySystem
 
     private void AddCPRVerb(Entity<CPRTrainingComponent> performer, ref GetVerbsEvent<InnateVerb> args)
     {
-        // L5 - respect CVar
+        // Begin L5 additions
+        // Respect CVar
         if (!_configuration.GetCVar(CPRCCVars.EnableCPR))
             return;
+
+        // Track doafter being active
+        if (performer.Comp.DoAfter is not null)
+            return;
+        // End L5 additions
+
 
         if (!args.CanInteract || !args.CanAccess || !TryComp<MobStateComponent>(args.Target, out var targetState)
             || targetState.CurrentState == MobState.Alive)
@@ -63,6 +70,11 @@ public sealed class CPRSystem : EntitySystem
 
     private void StartCPR(Entity<CPRTrainingComponent> performer, EntityUid target)
     {
+        // Begin L5 additions - track doafter being active (should be unreachable)
+        if (performer.Comp.DoAfter is not null)
+            return;
+        // End L5 additions
+
         if (HasComp<RottingComponent>(target))
         {
             _popupSystem.PopupEntity(Loc.GetString("cpr-target-rotting", ("entity", target)), performer, performer);
@@ -90,7 +102,10 @@ public sealed class CPRSystem : EntitySystem
             BlockDuplicate = true
         };
 
-        _doAfterSystem.TryStartDoAfter(doAfterArgs);
+        // Begin L5 modifications - track doafter
+        _doAfterSystem.TryStartDoAfter(doAfterArgs, out var id);
+        performer.Comp.DoAfter = id;
+        // End L5 modifications
 
         var playingStream = _audio.PlayPvs(performer.Comp.CPRSound, performer, AudioParams.Default.WithLoop(true));
         if (!playingStream.HasValue)
@@ -104,6 +119,7 @@ public sealed class CPRSystem : EntitySystem
         if (args.Cancelled || args.Handled || !args.Target.HasValue)
         {
             performer.Comp.CPRPlayingStream = _audio.Stop(performer.Comp.CPRPlayingStream);
+            performer.Comp.DoAfter = null; // L5 - track doafter
             return;
         }
 
@@ -129,7 +145,13 @@ public sealed class CPRSystem : EntitySystem
 
         var isAlive = _mobStateSystem.IsAlive(args.Target.Value);
         args.Repeat = !isAlive;
+
+        // Begin L5 modifications - track doafter
         if (isAlive)
+        {
             performer.Comp.CPRPlayingStream = _audio.Stop(performer.Comp.CPRPlayingStream);
+            performer.Comp.DoAfter = null;
+        }
+        // End L5 modifications
     }
 }
