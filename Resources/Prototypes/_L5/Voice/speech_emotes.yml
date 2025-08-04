@@ -1,0 +1,35 @@
+- type: emote
+  id: Moo
+  name: chat-emote-name-moo
+  category: Vocal
+  icon: _L5/Interface/Emotes/moo.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [moos.]
+  chatTriggers:
+  - moo
+  - moos
+
+- type: emote
+  id: Bleat
+  name: chat-emote-name-moo
+  category: Vocal
+  icon: _L5/Interface/Emotes/bleat.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [bleats.]
+  chatTriggers:
+  - bleat
+  - bleats
+  - baa
+  - baas
+  - bah
+  - bahs

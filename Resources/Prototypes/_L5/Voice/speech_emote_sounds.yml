@@ -31,3 +31,13 @@
       collection: IPCWhirrs
       params:
         variation: 0
+
+- type: emoteSounds
+  id: RuminantEmotes
+  params:
+    variation: 0.01
+  sounds:
+    Moo:
+      path: /Audio/Animals/cow_moo.ogg
+    Bleat:
+      path: /Audio/Animals/goat_bah.ogg

@@ -6,6 +6,12 @@
   components:
   - type: Speech
     speechSounds: Baritone
+    allowedEmotes: ['Moo'] # L5 — Oni can moo and bleat
+  - type: Vocal
+    sounds:
+      Male: RuminantEmotes
+      Female: RuminantEmotes
+      Unsexed: RuminantEmotes
   - type: HumanoidAppearance
     species: Oni
   - type: Sprite
