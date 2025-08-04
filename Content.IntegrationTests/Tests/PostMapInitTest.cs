@@ -78,10 +78,8 @@ namespace Content.IntegrationTests.Tests
             "Micro", // DeltaV
             "Chibi", // DeltaV
 			"Elegance", // DeltaV
-            "NucleusBelt", // L5
-            "NucleusEuropa", // L5
-            "OmphalosBelt", // L5
-            "OmphalosEuropa", // L5
+            "Nucleus", // L5
+            "Omphalos", // L5
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";

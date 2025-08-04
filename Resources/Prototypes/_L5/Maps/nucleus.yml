@@ -1,11 +1,11 @@
 - type: gameMap
-  id: NucleusBelt
-  mapName: Nucleus (Belt)
-  mapPath: /Maps/_L5/nucleus-belt.yml
+  id: Nucleus
+  mapName: Nucleus
+  mapPath: /Maps/_L5/nucleus.yml
   minPlayers: 0
   maxPlayers: 6
   stations:
-    NucleusBelt:
+    Nucleus:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup

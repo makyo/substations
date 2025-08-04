@@ -60,9 +60,9 @@
         prob: 0.1
       - id: BoxBeaker
         prob: 0.1
-        #  - Heh
-      - id: SalvageHumanCorpse
-        prob: 0.1
+        #  - Heh - L5: remove
+#      - id: SalvageHumanCorpse
+#        prob: 0.1
         # Interesting (1%)
         #  - Ammo
       - id: MagazineBoxMagnum
