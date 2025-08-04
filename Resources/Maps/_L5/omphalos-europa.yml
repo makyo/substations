@@ -2,10 +2,10 @@ meta:
   format: 7
   category: Map
   engineVersion: 265.0.0
-  forkId: substations
-  forkVersion: 30d6d76efb0cae3a55892ea31c766a497f7d6d0f
-  time: 08/04/2025 05:36:19
-  entityCount: 832
+  forkId: ""
+  forkVersion: ""
+  time: 08/04/2025 17:25:29
+  entityCount: 836
 maps:
 - 752
 grids:
@@ -371,7 +371,7 @@ entities:
       pos: 0.5,-7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -7472.4814
+      secondsUntilStateChange: -7521.879
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -5072,6 +5072,13 @@ entities:
     - type: Transform
       pos: 1.5,-4.5
       parent: 1
+- proto: SpawnPointBorg
+  entities:
+  - uid: 833
+    components:
+    - type: Transform
+      pos: 1.5,-4.5
+      parent: 1
 - proto: SpawnPointBotanist
   entities:
   - uid: 757
@@ -5198,6 +5205,13 @@ entities:
     - type: Transform
       pos: 4.5,-5.5
       parent: 1
+- proto: SpawnPointHeadOfSecurity
+  entities:
+  - uid: 835
+    components:
+    - type: Transform
+      pos: -3.5,9.5
+      parent: 1
 - proto: SpawnPointJanitor
   entities:
   - uid: 774
@@ -5225,6 +5239,13 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-4.5
+      parent: 1
+- proto: SpawnPointMedicalBorg
+  entities:
+  - uid: 834
+    components:
+    - type: Transform
+      pos: 3.5,6.5
       parent: 1
 - proto: SpawnPointMedicalDoctor
   entities:
@@ -5295,6 +5316,13 @@ entities:
     components:
     - type: Transform
       pos: -1.5,9.5
+      parent: 1
+- proto: SpawnPointReporter
+  entities:
+  - uid: 836
+    components:
+    - type: Transform
+      pos: 1.5,-4.5
       parent: 1
 - proto: SpawnPointResearchAssistant
   entities:
