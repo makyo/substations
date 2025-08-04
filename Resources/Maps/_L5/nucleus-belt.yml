@@ -180,7 +180,7 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: BecomesStation
-      id: Nucleus
+      id: NucleusBelt
     - type: ImplicitRoof
 - proto: AirAlarm
   entities:

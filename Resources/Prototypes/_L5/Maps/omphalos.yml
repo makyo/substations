@@ -1,15 +1,15 @@
 - type: gameMap
-  id: NucleusBelt
-  mapName: Nucleus (Belt)
-  mapPath: /Maps/_L5/nucleus-belt.yml
+  id: OmphalosEuropa
+  mapName: Omphalos (Europa)
+  mapPath: /Maps/_L5/omphalos-europa.yml
   minPlayers: 0
-  maxPlayers: 6
+  maxPlayers: 10
   stations:
-    NucleusBelt:
+    OmphalosEuropa:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCCS Nucleus {1}'
+        mapNameTemplate: 'SCCS Omphalos {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: 'NY'
@@ -78,17 +78,17 @@
           Passenger: [ 0, -1 ]
 
 - type: gameMap
-  id: NucleusEuropa
-  mapName: Nucleus (Europa)
-  mapPath: /Maps/_L5/nucleus-europa.yml
+  id: OmphalosBelt
+  mapName: Omphalos (Belt)
+  mapPath: /Maps/_L5/omphalos-belt.yml
   minPlayers: 0
-  maxPlayers: 6
+  maxPlayers: 10
   stations:
-    NucleusEuropa:
+    OmphalosBelt:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCCS Nucleus {1}'
+        mapNameTemplate: 'SCCS Omphalos {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: 'NY'
