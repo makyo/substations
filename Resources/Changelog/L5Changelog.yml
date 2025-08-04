@@ -819,3 +819,9 @@ Entries:
       message: New produce crate containing a mix of common fruit and veggies.
   id: 111
   time: '2025-08-03T20:40:48.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Fix
+      message: You can emote emotes that you can't make sounds for again.
+  id: 112
+  time: '2025-08-04T07:29:47.0000000+00:00'
