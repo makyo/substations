@@ -1560,6 +1560,7 @@
     - state: xenoborg_stealth
     - state: icon-xenoborg-cloak2
   - type: ItemBorgModule
+    moduleId: SuperCloak # L5 - for Frontier module changes
     items:
     - SuperCloakingDevice
   - type: BorgModuleIcon
