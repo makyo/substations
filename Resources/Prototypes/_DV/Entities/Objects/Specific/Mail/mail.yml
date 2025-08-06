@@ -1177,7 +1177,7 @@
     - id: FoodDonutJellySweetpea
       amount: 2
       orGroup: Food
-    - id: FoodDonutJellySlugcat
+    - id: FoodDonutJellyScurret # L5 - renamed ID
       amount: 2
       orGroup: Food
     - id: FoodFrozenSandwich # ah yes, baked goods

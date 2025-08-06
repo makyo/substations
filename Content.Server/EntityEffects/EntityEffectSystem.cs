@@ -137,7 +137,7 @@ public sealed partial class EntityEffectSystem : EntitySystem // L5 - made parti
         args.Result = false;
         if (TryComp(args.Args.TargetEntity, out TemperatureComponent? temp))
         {
-            if (temp.CurrentTemperature > args.Condition.Min && temp.CurrentTemperature < args.Condition.Max)
+            if (temp.CurrentTemperature >= args.Condition.Min && temp.CurrentTemperature <= args.Condition.Max)
                 args.Result = true;
         }
     }
