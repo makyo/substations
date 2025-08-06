@@ -825,3 +825,11 @@ Entries:
       message: You can emote emotes that you can't make sounds for again.
   id: 112
   time: '2025-08-04T07:29:47.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Meet the new SCCS Omphalos Outpost starting map!
+    - type: Tweak
+      message: The SCCS Nucleus now has a Glacier-style in-atmosvariant
+  id: 113
+  time: '2025-08-06T01:39:23.0000000+00:00'
