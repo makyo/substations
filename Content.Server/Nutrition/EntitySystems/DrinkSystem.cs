@@ -246,14 +246,14 @@ public sealed class DrinkSystem : SharedDrinkSystem
         var beforeDrinkEvent = new BeforeIngestDrinkEvent(entity.Owner, drained, forceDrink);
         RaiseLocalEvent(args.Target.Value, ref beforeDrinkEvent);
 
-        if (drained.Volume == 0)
-            return;
+        _forensics.TransferDna(entity, args.Target.Value);
 
         _reaction.DoEntityReaction(args.Target.Value, solution, ReactionMethod.Ingestion);
 
-        _stomach.TryTransferSolution(firstStomach.Value.Owner, drained, firstStomach.Value.Comp1);
+        if (drained.Volume == 0)
+            return;
 
-        _forensics.TransferDna(entity, args.Target.Value);
+        _stomach.TryTransferSolution(firstStomach.Value.Owner, drained, firstStomach.Value.Comp1);
 
         if (!forceDrink && solution.Volume > 0)
             args.Repeat = true;
