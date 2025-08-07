@@ -1,3 +1,4 @@
+using Content.Server._Den.Botany;
 using Content.Server.AbstractAnalyzer;
 using Content.Server.Botany.Systems;
 using Robust.Shared.Audio;

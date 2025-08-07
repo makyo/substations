@@ -2,21 +2,22 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.AbstractAnalyzer;
 using Content.Server.Botany.Components;
-using Content.Server.Paper;
+using Content.Server.Botany.Systems;
 using Content.Server.Popups;
-using Content.Shared.Botany.PlantAnalyzer;
+using Content.Shared._Den.Botany.PlantAnalyzer;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.EntitySystems;
+using Content.Shared.Paper;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Botany.Systems;
+namespace Content.Server._Den.Botany;
 
-public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerComponent, PlantAnalyzerDoAfterEvent>
+public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerComponent, Shared._Den.Botany.PlantAnalyzer.PlantAnalyzerDoAfterEvent>
 {
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
@@ -26,7 +27,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly PaperSystem _paperSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SharedLabelSystem _labelSystem = default!;
+    [Dependency] private readonly LabelSystem _labelSystem = default!;
 
     public override void Initialize()
     {

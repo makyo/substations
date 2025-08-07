@@ -4,7 +4,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Localizations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Botany.PlantAnalyzer;
+namespace Content.Shared._Den.Botany.PlantAnalyzer;
 
 public sealed class PlantAnalyzerLocalizationHelper
 {
@@ -37,7 +37,7 @@ public sealed class PlantAnalyzerLocalizationHelper
         return ContentLocalizationManager.FormatList(locStrings);
     }
 
-    public static (string Singular, string Plural) ProduceToLocalizedStrings(List<string> ids, IPrototypeManager protMan)
+    public static (string Singular, string Plural) ProduceToLocalizedStrings(List<EntProtoId> ids, IPrototypeManager protMan)
     {
         if (ids.Count == 0)
             return ("", "");
@@ -46,7 +46,7 @@ public sealed class PlantAnalyzerLocalizationHelper
         List<string> pluralStrings = [];
         foreach (var id in ids)
         {
-            var singular = protMan.TryIndex<EntityPrototype>(id, out var prototype) ? prototype.Name : id;
+            var singular = protMan.TryIndex<EntityPrototype>(id, out var prototype) ? prototype.Name : id.ToString();
             var plural = Loc.GetString("plant-analyzer-produce-plural", ("thing", singular));
 
             singularStrings.Add(singular);

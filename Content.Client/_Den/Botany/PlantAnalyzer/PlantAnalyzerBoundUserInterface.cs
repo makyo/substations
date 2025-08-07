@@ -1,8 +1,8 @@
-using Content.Shared.Botany.PlantAnalyzer;
+using Content.Shared._Den.Botany.PlantAnalyzer;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
-namespace Content.Client.Botany.PlantAnalyzer;
+namespace Content.Client._Den.Botany.PlantAnalyzer;
 
 [UsedImplicitly]
 public sealed class PlantAnalyzerBoundUserInterface : BoundUserInterface
