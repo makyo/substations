@@ -111,7 +111,6 @@
     state: eel3_behind
   - sprite: _Impstation/Mobs/Customization/thaven/taillayers.rsi
     state: eel3_front
-  shader: unshaded
 
 - type: marking
   id: ThavenTailNurse
