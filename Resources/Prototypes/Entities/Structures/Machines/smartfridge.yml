@@ -9,8 +9,6 @@
   - type: Vocalizer
     hideChat: true
   - type: VocalizerRequiresPower
-  - type: DatasetVocalizer
-    dataset: SmartFridgeAds
   - type: Speech
   - type: Appearance
   - type: Sprite
@@ -128,3 +126,5 @@
     flavorText: smart-fridge-request-chemistry
   - type: AccessReader
     access: [["Medical"]]
+  - type: DatasetVocalizer  # L5 — Other parented prototypes may not want this.
+    dataset: SmartFridgeAds

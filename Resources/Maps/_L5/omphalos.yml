@@ -4,7 +4,7 @@ meta:
   engineVersion: 265.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/08/2025 21:00:36
+  time: 08/08/2025 22:06:01
   entityCount: 829
 maps:
 - 752
@@ -368,7 +368,7 @@ entities:
       pos: 0.5,-7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -10868.39
+      secondsUntilStateChange: -10924.139
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -5031,22 +5031,13 @@ entities:
     - type: Transform
       pos: 3.5,-4.5
       parent: 1
-- proto: SmartFridgeMedical
+- proto: SmartFridgeFood
   entities:
-  - uid: 815
+  - uid: 805
     components:
-    - type: MetaData
-      desc: A place to store food both hot and cold, ready to eat and ready to prepare.
-      name: pass-through
     - type: Transform
       pos: 2.5,-4.5
       parent: 1
-    - type: SmartFridge
-      whitelist: null
-    - type: AccessReader
-      access: []
-    missingComponents:
-    - DatasetVocalizer
 - proto: SpaceHeaterEnabled
   entities:
   - uid: 547
