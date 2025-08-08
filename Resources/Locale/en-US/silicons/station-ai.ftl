@@ -1,6 +1,6 @@
 # General
 # L5
-ai-wire-snipped = Wire has been cut at {$coords}.
+ai-wire-snipped = One of your systems' wires has been cut at {$source}.
 wire-name-ai-vision-light = SSRV
 wire-name-ai-act-light = SSRA
 station-ai-takeover = SSR takeover
