@@ -1,11 +1,10 @@
-using Content.Server._Den.Botany;
-using Content.Server.AbstractAnalyzer;
-using Content.Server.Botany.Systems;
+using Content.Server._Den.AbstractAnalyzer;
+using Content.Server._Den.AbstractAnalyzer;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Server.Botany.Components;
+namespace Content.Server._Den.Botany.Components;
 
 /// <inheritdoc/>
 [RegisterComponent, AutoGenerateComponentPause]

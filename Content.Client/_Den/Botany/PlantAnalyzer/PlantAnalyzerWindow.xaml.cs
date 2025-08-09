@@ -93,8 +93,8 @@ public sealed partial class PlantAnalyzerWindow : FancyWindow
             // Section 3.1: Tolerances part 1.
             if (msg.TolerancesData is not null)
             {
-                GtFieldIfTolerances1.Text = ">";
-                LtFieldIfTolerances1.Text = "<";
+                GtFieldIfTolerances1.Text = "↓";
+                LtFieldIfTolerances1.Text = "↑";
 
                 WaterConsumptionLabel.Text = msg.TolerancesData.WaterConsumption.ToString("0.00");
                 NutritionConsumptionLabel.Text = msg.TolerancesData.NutrientConsumption.ToString("0.00");

@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Server.AbstractAnalyzer;
+using Content.Server._Den.AbstractAnalyzer;
+using Content.Server._Den.AbstractAnalyzer;
 using Content.Server.Botany.Components;
 using Content.Server.Botany.Systems;
 using Content.Server.Popups;
@@ -17,7 +18,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Den.Botany;
 
-public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerComponent, PlantAnalyzerDoAfterEvent>
+public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<Components.PlantAnalyzerComponent, PlantAnalyzerDoAfterEvent>
 {
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
@@ -33,7 +34,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PlantAnalyzerComponent, PlantAnalyzerPrintMessage>(OnPrint);
+        SubscribeLocalEvent<Components.PlantAnalyzerComponent, PlantAnalyzerPrintMessage>(OnPrint);
     }
 
     /// <inheritdoc/>
@@ -41,13 +42,13 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     {
         if (!_uiSystem.HasUi(analyzer, PlantAnalyzerUiKey.Key)
             || !ValidScanTarget(target)
-            || !_entityManager.TryGetComponent<PlantAnalyzerComponent>(analyzer, out var analyzerComponent))
+            || !_entityManager.TryGetComponent<Components.PlantAnalyzerComponent>(analyzer, out var analyzerComponent))
             return;
 
         _uiSystem.ServerSendUiMessage(analyzer, PlantAnalyzerUiKey.Key, GatherData(analyzerComponent, scanMode, target: target));
     }
 
-    private PlantAnalyzerScannedUserMessage GatherData(PlantAnalyzerComponent analyzer, bool? scanMode = null, EntityUid? target = null)
+    private PlantAnalyzerScannedUserMessage GatherData(Components.PlantAnalyzerComponent analyzer, bool? scanMode = null, EntityUid? target = null)
     {
         target ??= analyzer.ScannedEntity;
         PlantAnalyzerPlantData? plantData = null;
@@ -113,7 +114,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
         );
     }
 
-    private void OnPrint(EntityUid uid, PlantAnalyzerComponent component, PlantAnalyzerPrintMessage args)
+    private void OnPrint(EntityUid uid, Components.PlantAnalyzerComponent component, PlantAnalyzerPrintMessage args)
     {
         var user = args.Actor;
 
@@ -183,7 +184,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     protected override Enum GetUiKey() => PlantAnalyzerUiKey.Key;
 
     /// <inheritdoc/>
-    protected override bool ScanTargetPopupMessage(Entity<PlantAnalyzerComponent> uid, AfterInteractEvent args, [NotNullWhen(true)] out string? message)
+    protected override bool ScanTargetPopupMessage(Entity<Components.PlantAnalyzerComponent> uid, AfterInteractEvent args, [NotNullWhen(true)] out string? message)
     {
         message = null;
         return false;
