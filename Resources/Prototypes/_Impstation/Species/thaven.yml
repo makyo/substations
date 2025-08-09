@@ -24,6 +24,8 @@
   sprites:
     TailBehind: MobHumanoidAnyMarking # L5
     TailOversuit: MobHumanoidAnyMarking # L5
+    TailBehindBackpack: MobHumanoidAnyMarking # imp
+    TailUnderlay: MobHumanoidAnyMarking # imp
     Hair: MobHumanoidAnyMarking
     Eyes: MobThavenEyes
     Head: MobThavenHead
