@@ -12,7 +12,7 @@ namespace Content.Server._DV.AACTablet;
 public sealed class AACTabletSystem : EntitySystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!; // L5
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
@@ -55,7 +55,7 @@ public sealed class AACTabletSystem : EntitySystem
         var messageToSend = string.Join(" ", _localisedPhrases);
 
         _chat.TrySendInGameICMessage(ent,
-            messageToSend,
+            messageToSend, // L5
             InGameICChatType.Speak,
             hideChat: false,
             nameOverride: speakerName);
