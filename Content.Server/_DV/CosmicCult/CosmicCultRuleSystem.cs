@@ -10,7 +10,6 @@ using Content.Server.EUI;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking;
 using Content.Server.Ghost;
-using Content.Server.Light.Components;
 using Content.Server.Objectives.Components;
 using Content.Server.Popups;
 using Content.Server.Radio.Components;
@@ -58,6 +57,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Collections.Immutable;
 using System.Linq;
+using Content.Shared.Light.Components;
 
 namespace Content.Server._DV.CosmicCult;
 
