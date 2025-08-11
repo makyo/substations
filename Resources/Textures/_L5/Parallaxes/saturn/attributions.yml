@@ -1,0 +1,8 @@
+- files: ["saturn_surface.png"]
+  source: "Cassini Spacecraft"
+  copyright: "Björn Jónsson"
+  license: "Unknown, permission implied, derived from NASA (Public Domain)"
+
+- files: ["saturn_clouds_upper", "saturn_clouds_lower", "saturn_city"]
+  copyright: "Samantha Yule Fireheart"
+  license: "CC BY-NC-SA 4.0"
