@@ -1,4 +1,5 @@
-﻿using Content.Shared.Administration.Logs;
+﻿using Content.Shared._L5.Traits.DietaryRestriction;
+using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Systems;
@@ -54,6 +55,7 @@ public sealed partial class IngestionSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedDietaryRestrictionSystem _dietaryRestriction = default!; // L5
 
     // Body Component Dependencies
     [Dependency] private readonly SharedBodySystem _body = default!;
@@ -342,6 +344,13 @@ public sealed partial class IngestionSystem : EntitySystem
             _popup.PopupClient(Loc.GetString("ingestion-other-cannot-ingest-any-more", ("target", entity), ("verb", GetEdibleVerb(food))),  args.Target.Value, args.User);
             return;
         }
+
+        // Begin L5 additions - dietary restrictions
+        // Ideally this would use BeforeIngestedEvent but it doesn't quite have
+        // the behavior we need. (Unrelated popups.)
+        if (!_dietaryRestriction.TryFood(args.Target.Value, entity.Owner))
+            return;
+        // End L5 additions
 
         var beforeEv = new BeforeIngestedEvent(FixedPoint2.Zero, highestAvailable, solution.Value.Comp.Solution);
         RaiseLocalEvent(food, ref beforeEv);
