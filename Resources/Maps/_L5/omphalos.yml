@@ -249,24 +249,21 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
-      parallax: Sky
+      parallax: Saturn
     - type: MapAtmosphere
       space: False
       mixture:
         volume: 2500
         immutable: True
-        temperature: 213.15
+        temperature: 181.53
         moles:
-        - 21.824879
-        - 82.10312
+        - 0
+        - 38.29
         - 0
         - 0
         - 0
         - 0
-        - 0
-        - 0
-        - 0
-        - 0
+        - 121.4
         - 0
         - 0
 - proto: AirAlarm

@@ -61,15 +61,16 @@
 
 - type: gas
   id: 6
-  name: gases-miasma # DeltaV
+  name: gases-ammonia
   specificHeat: 20
   heatCapacityRatio: 1.4
   molarMass: 44
-  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi # DeltaV - alt sprite
-  gasOverlayState: miasma
-  gasMolesVisible: 2
-  gasVisbilityFactor: 3.5
-  color: 1E092A # DeltaV - purple instead of green, matches the sprite
+  # L5 — no overlay for ammonia
+  #gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  #gasOverlayState: miasma
+  #gasMolesVisible: 2
+  #gasVisbilityFactor: 3.5
+  color: 56941E
   reagent: Ammonia
   pricePerMole: 0.15
 
