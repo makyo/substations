@@ -1,0 +1,9 @@
+- files: ["saturn_surface.png"]
+  source: "https://bjj.mmedia.is/"
+  copyright: "Björn Jónsson"
+  license: "CC0-1.0" # Public domain via NASA, but the enum of licenses is limited
+
+- files: ["saturn_clouds_upper", "saturn_clouds_lower", "saturn_city"]
+  source: "https://github.com/Samsterious"
+  copyright: "Samantha Yule Fireheart"
+  license: "CC-BY-NC-SA-4.0"
