@@ -491,6 +491,7 @@
     - BoxLightMixed
     - Soap
     - CrowbarRed
+    inhand: # L5 - move to inhand
     - AdvMopItem
 
 - type: startingGear
@@ -511,8 +512,9 @@
     - LightReplacer
     - BoxLightMixed
     - BoxLightMixed
-    - Soap
+    # - Soap # L5 - useless and overfills inventory
     - CrowbarRed
+    inhand: # L5 - move to hand
     - AdvMopItem
 
 - type: chameleonOutfit
