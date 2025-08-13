@@ -10,8 +10,8 @@
       !type:ImageParallaxTextureSource
       path: "/Textures/_L5/Parallaxes/saturn/saturn_clouds_lower.png"
     slowness: 0.985
-    scale: "0.8, 0.8"
-    scrolling: "0.16, 0.01"
+    scale: "0.25, 0.25"
+    scrolling: "0.05, 0"
   - texture:
       !type:ImageParallaxTextureSource
       path: "/Textures/_L5/Parallaxes/saturn/saturn_city.png"
@@ -21,8 +21,8 @@
   - texture:
       !type:ImageParallaxTextureSource
       path: "/Textures/_L5/Parallaxes/saturn/saturn_clouds_lower.png"
-    slowness: 0.935
-    scrolling: "-0.2, 0.06"
+    slowness: 0.95
+    scrolling: "-0.1, 0.05"
   - texture:
       !type:ImageParallaxTextureSource
       path: "/Textures/_L5/Parallaxes/saturn/saturn_clouds_upper.png"
