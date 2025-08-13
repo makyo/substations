@@ -666,3 +666,9 @@ ClothingNeckHeadphones: ClothingMultipleHeadphones
 
 # 2025-08-01
 FoodDonutJellySlugcat: FoodDonutJellyScurret
+
+# L5 - putting this here so it conflicts when this gets fixed upstream
+# See https://github.com/space-wizards/space-station-14/issues/39620
+# 2025-08-13
+SoapBorg: null
+CableApcStackLingering10: null

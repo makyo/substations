@@ -11,6 +11,7 @@
   cost: 7500 # Delta Price. 5000 is pre-adjustment.
   recipeUnlocks:
   - PlantBagOfHolding # DeltaV
+  - PlantAnalyzer # L5
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
