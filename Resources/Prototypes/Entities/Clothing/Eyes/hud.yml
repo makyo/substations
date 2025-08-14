@@ -115,6 +115,7 @@
   - type: StealTarget
     stealGroup: ClothingEyesHudBeer
   - type: SolutionScanner
+  - type: SafeSolutionThrower # DeltaV - Beergoggles enable safe throw
   - type: Tag
     tags:
     - PetWearable

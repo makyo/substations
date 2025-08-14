@@ -16,11 +16,12 @@
     back:
     - SilverRing
 
-- type: loadout
-  id: Cane
-  storage:
-    back:
-    - Cane
+# L5 - added upstream
+# - type: loadout
+#   id: Cane
+#   storage:
+#     back:
+#     - Cane
 
 - type: loadout
   id: WhiteCane

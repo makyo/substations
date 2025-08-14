@@ -1,6 +1,5 @@
 using Content.Server.Atmos.Rotting;
 using Content.Server.DoAfter;
-using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Popups;
 using Content.Shared._EE.CCVars;
 using Content.Shared.Atmos.Rotting;
@@ -25,7 +24,7 @@ public sealed class CPRSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly FoodSystem _foodSystem = default!;
+    [Dependency] private readonly IngestionSystem _ingestion = default!; // L5 - Food to IngestionSystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly RottingSystem _rottingSystem = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
@@ -87,7 +86,8 @@ public sealed class CPRSystem : EntitySystem
             return;
         }
 
-        if (_foodSystem.IsMouthBlocked(performer, performer) || _foodSystem.IsMouthBlocked(target, performer))
+        // L5 - adjust for food refactor:
+        if (!_ingestion.HasMouthAvailable(performer, performer) || _ingestion.HasMouthAvailable(target, performer))
             return;
 
         _popupSystem.PopupEntity(Loc.GetString("cpr-start-second-person", ("target", target)), target, performer);

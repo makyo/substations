@@ -42,11 +42,14 @@
 - type: Tag
   id: BorgSecurityArmour
 
-- type: Tag
-  id: BorgMaterial # for materials that can be used in a borg construction module
+# L5 - no longer needed; commenting out for lint checks
+# Should usually replace with ConstructionMaterial tag
+#- type: Tag
+#  id: BorgMaterial # for materials that can be used in a borg construction module
 
-- type: Tag
-  id: BorgStockPart
+# L5 - ditto
+#- type: Tag
+#  id: BorgStockPart
 
 - type: Tag
   id: BulletBB
@@ -59,7 +62,7 @@
 
 - type: Tag
   id: CartridgeMusket #For the Craftable Musket
-  
+
 - type: Tag
   id: ChitinSharkminnow
 
@@ -113,7 +116,7 @@
 
 - type: Tag
   id: MagazinePistolSpecial # For the .38 special ammo and pistol
-  
+
 - type: Tag
   id: MagazineUniversalMagnum
 

@@ -40,7 +40,9 @@
             6: { state: can-o4, shader: "unshaded" }
     - type: ActivatableUI
       key: enum.GasCanisterUiKey.Key
-    - type: ActivatableUIRequiresLock
+    - type: UIRequiresLock
+      userInterfaceKeys:
+      - enum.GasCanisterUiKey.Key
     - type: UserInterface
       interfaces:
         enum.GasCanisterUiKey.Key:

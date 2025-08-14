@@ -1,6 +1,5 @@
-using Content.Server.Objectives.Components;
 using Content.Shared.Objectives.Components;
-using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 
 namespace Content.Server.Objectives.Systems;
 

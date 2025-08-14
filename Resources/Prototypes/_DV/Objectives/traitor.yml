@@ -89,8 +89,17 @@
     unique: false
   - type: TargetObjective
     title: objective-condition-teach-person-title
+  # Begin L5 modifications - port of DV features for mind role refactor thing
   - type: PickRandomPerson
-    onlyChoosableJobs: true
+    filters:
+    - !type:JobMindFilter
+      onlyChoosableJobs: true
+    - !type:BodyMindFilter
+      whitelist:
+        components:
+        - TargetObjectiveImmune
+  # End L5 additions
+
 
 # Kill fellow traitor objective
 - type: entity

@@ -310,15 +310,13 @@
     belt: ClothingBeltJanitorFilled
     pocket1: WeaponDisabler
     pocket2: FlashlightSeclite
-  # Begin L5 changes - move trashbag to hand
-  inhand:
-  - TrashBag
   storage:
     back:
     - CrowbarRed
     - BoxCleanerGrenades
     - AdvMopItem
-  # End L5 changes
+    # belt: # L5 - move to backpack
+    - TrashBag
 
 - type: startingGear
   parent: ERTJanitorGearAmber
@@ -328,6 +326,10 @@
     mask: ClothingMaskGasERT
     outerClothing: ClothingOuterHardsuitERTJanitorBase
     pocket1: WeaponEnergyGunMini
+  storage:
+    # belt: # L5 - move to inhand
+    inhand:
+    - TrashBagOfHolding
 
 - type: startingGear
   parent: ERTJanitorGearRed
@@ -337,7 +339,6 @@
     outerClothing: ClothingOuterHardsuitERTJanitorElite
   inhand:
   - AdvMopItem
-  - BagOfSummoningGarbage
   storage:
     back:
     - CrowbarRed

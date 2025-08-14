@@ -9,15 +9,16 @@
     - state: icon-surgery
       sprite: _Shitmed/Objects/Specific/Robotics/borgmodule.rsi
   - type: ItemBorgModule
-    moduleId: Surgery
-    items:
-    - Scalpel
-    - Drill
-    - Hemostat
-    - Retractor
-    - Cautery
-    - SawElectric
-    - BoneGel
+    # Begin L5 modifications - migrate for upstream borg hands
+    hands:
+    - item: Scalpel
+    - item: Drill
+    - item: Hemostat
+    - item: Retractor
+    - item: Cautery
+    - item: SawElectric
+    - item: BoneGel
+    # End L5 modifications
   - type: BorgModuleIcon
     icon: { sprite: _Shitmed/Interface/Actions/actions_borg.rsi, state: surgery-module }
 
@@ -32,11 +33,12 @@
     - state: icon-advanced-surgery
       sprite: _Shitmed/Objects/Specific/Robotics/borgmodule.rsi
   - type: ItemBorgModule
-    moduleId: AdvancedSurgery
-    items:
-    - EnergyScalpel
-    - EnergyCautery
-    - AdvancedRetractor
-    - BoneGel
+    # Begin L5 modifications - migrate for upstream borg hands
+    hands:
+    - item: EnergyScalpel
+    - item: EnergyCautery
+    - item: AdvancedRetractor
+    - item: BoneGel
+    # End L5 modifications
   - type: BorgModuleIcon
     icon: { sprite: _Shitmed/Interface/Actions/actions_borg.rsi, state: adv-surgery-module }
