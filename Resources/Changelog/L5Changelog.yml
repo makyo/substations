@@ -851,3 +851,9 @@ Entries:
       message: SSR can hear people through holopads again.
   id: 116
   time: '2025-08-14T04:38:07.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: FoodMate fridges can now accept raw produce.
+  id: 117
+  time: '2025-08-15T05:04:04.0000000+00:00'
