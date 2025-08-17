@@ -171,7 +171,7 @@
   name: beef taco supreme
   parent: FoodTacoBase
   id: FoodTacoBeefSupreme
-  description: It's like a regular beef taco, but supreme! # imp
+  description: It's like a regular beef taco, but supreme!
   components:
   - type: FlavorProfile # imp
     flavors:
@@ -206,7 +206,7 @@
   name: chicken taco supreme
   parent: FoodTacoBase
   id: FoodTacoChickenSupreme
-  description: It's like a regular chicken taco, but supreme! # imp
+  description: It's like a regular chicken taco, but supreme!
   components:
   - type: FlavorProfile # imp
     flavors:
