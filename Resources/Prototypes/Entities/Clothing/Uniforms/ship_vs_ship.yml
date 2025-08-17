@@ -74,17 +74,6 @@
 #HEADS OF STAFF
 #Chief Engineer
 - type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitChiefEngineerNT
-  name: chief engineer jumpsuit
-  description: It is often joked that the role of the combat-sector Chief Engineer is where the actual, logistically-minded engineers are promoted to. Good luck.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ce_nt.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/ce_nt.rsi
-
-- type: entity
   parent: [ ClothingUniformBase, BaseSyndicateContraband ]
   id: ClothingUniformJumpsuitChiefEngineerSyndie
   name: syndicate chief engineer jumpsuit
