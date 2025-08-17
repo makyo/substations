@@ -105,5 +105,5 @@ rules_file             = "L5Ruleset"
 storage_limit = 2
 
 # L5 - we'll get our own icon in soon.
-#[discord]
-#rich_main_icon_id = "deltav"
+[discord]
+rich_main_icon_id = "l5"
