@@ -18,10 +18,10 @@ public sealed class StaticFieldSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<StaticFieldComponent,PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<StaticFieldComponent,AppearanceChangeEvent>(OnPowerChanged);
     }
 
-    private void OnPowerChanged(Entity<StaticFieldComponent> ent, ref PowerChangedEvent evt)
+    private void OnPowerChanged(Entity<StaticFieldComponent> ent, ref AppearanceChangeEvent evt)
     {
         if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;

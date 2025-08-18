@@ -1,9 +1,11 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared._L5.StaticField;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class StaticFieldComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool Powered = false;
 
     public bool AlwaysPowered = false;
