@@ -24,6 +24,13 @@
 /Resources/Maps/ @DeltaV-Station/maptainers
 /Resources/Prototypes/Maps/ @DeltaV-Station/maptainers
 /Content.IntegrationTests/Tests/PostMapInitTest.cs @DeltaV-Station/maptainers
+/Content.*/Trigger/ @slarticodefast
+
+# SKREEEE
+/Content.*.Database/ @PJB3005 @DrSmugleaf
+/Content.Shared.Database/Log*.cs @PJB3005 @DrSmugleaf @crazybrain23
+/Pow3r/ @PJB3005
+/Content.Server/Power/Pow3r/ @PJB3005
 
 # Server rules
 /Resources/ServerInfo/Guidebook/DeltaV/Rules/ @DeltaV-Station/head-administrators
