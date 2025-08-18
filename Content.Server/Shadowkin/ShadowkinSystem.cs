@@ -29,11 +29,12 @@ public sealed class ShadowkinSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<ShadowkinComponent, ComponentStartup>(OnInit);
-        SubscribeLocalEvent<ShadowkinComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
-        SubscribeLocalEvent<ShadowkinComponent, OnAttemptPowerUseEvent>(OnAttemptPowerUse);
-        SubscribeLocalEvent<ShadowkinComponent, OnManaUpdateEvent>(OnManaUpdate);
-        SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
+        // L5 - we lack the mana system
+        // SubscribeLocalEvent<ShadowkinComponent, ExaminedEvent>(OnExamined);
+        // SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
+        // SubscribeLocalEvent<ShadowkinComponent, OnAttemptPowerUseEvent>(OnAttemptPowerUse);
+        // SubscribeLocalEvent<ShadowkinComponent, OnManaUpdateEvent>(OnManaUpdate);
+        // SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<ShadowkinComponent, EyeColorInitEvent>(OnEyeColorChange);
     }
 
@@ -44,7 +45,8 @@ public sealed class ShadowkinSystem : EntitySystem
 
         _actionsSystem.AddAction(uid, ref component.ShadowkinSleepAction, ShadowkinSleepActionId, uid);
 
-        UpdateShadowkinAlert(uid, component);
+        // L5 - we lack the mana system
+        //UpdateShadowkinAlert(uid, component);
     }
 
     private void OnEyeColorChange(EntityUid uid, ShadowkinComponent component, EyeColorInitEvent args)
@@ -56,9 +58,11 @@ public sealed class ShadowkinSystem : EntitySystem
 
         component.OldEyeColor = humanoid.EyeColor;
         humanoid.EyeColor = component.BlackEyeColor;
-        Dirty(humanoid);
+        Dirty(uid, humanoid);
     }
 
+    // L5 - We lack the mana system and...thus all of this kind of breaks
+    /*
     private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange
@@ -117,7 +121,7 @@ public sealed class ShadowkinSystem : EntitySystem
 
         Dirty(magic); // Update Shadowkin Overlay.
         UpdateShadowkinAlert(uid, component);
-    }
+    }*/
 
     /// <summary>
     /// Blackeye the Shadowkin, its just a function to mindbreak the shadowkin but making sure "Removable" is checked true during it.
@@ -132,6 +136,7 @@ public sealed class ShadowkinSystem : EntitySystem
         _psionicAbilitiesSystem.RemovePsionics(uid);
     }
 
+    /*
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
     {
         if (TryComp<MindbrokenComponent>(uid, out var mindbreak))
@@ -177,5 +182,5 @@ public sealed class ShadowkinSystem : EntitySystem
             _psionicAbilitiesSystem.InitializePsionicPower(uid, shadowkinPowers);
 
         UpdateShadowkinAlert(uid, component);
-    }
+    }*/
 }

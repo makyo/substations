@@ -78,11 +78,6 @@
     - type: Perishable
     - type: FireVisuals
       alternateState: Standing
-    - type: OfferItem
-    - type: LayingDown
-    - type: Shoving
-    - type: BloodstreamAffectedByMass
-      power: 0.6
     - type: Hunger
     - type: Thirst
     - type: Carriable
@@ -214,10 +209,10 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.7
       baseSprintSpeed: 4.5
-    - type: Flashable
-      eyeDamageChance: 0.3
-      eyeDamage: 1
-      durationMultiplier: 1.5
+#    - type: Flashable
+#      eyeDamageChance: 0.3
+#      eyeDamage: 1
+#      durationMultiplier: 1.5
     - type: Speech
       allowedEmotes: ['Mars', 'Wurble']
     - type: Shadowkin
@@ -228,16 +223,6 @@
       maxMana: 250
       bypassManaCheck: true
       removable: false
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - ShadowkinPowers
-    - type: LanguageKnowledge
-      speaks:
-        - TauCetiBasic
-        - Marish
-      understands:
-        - TauCetiBasic
-        - Marish
 
 - type: entity
   save: false
