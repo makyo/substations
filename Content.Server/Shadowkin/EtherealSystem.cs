@@ -13,6 +13,9 @@ using System.Linq;
 using Content.Shared.Abilities.Psionics;
 using Robust.Shared.Random;
 using Content.Server.Light.Components;
+using Content.Shared.Light.Components;
+using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Systems;
 
 namespace Content.Server.Shadowkin;
 
@@ -51,8 +54,9 @@ public sealed class EtherealSystem : SharedEtherealSystem
         EnsureComp<RespiratorImmuneComponent>(uid);
         EnsureComp<MovementIgnoreGravityComponent>(uid);
 
-        if (HasComp<MindbrokenComponent>(uid))
-            RemComp(uid, component);
+        // L5 - we don't treat mindbreaking the same
+        // if (HasComp<MindbrokenComponent>(uid))
+        //     RemComp(uid, component);
     }
 
     public override void OnShutdown(EntityUid uid, EtherealComponent component, ComponentShutdown args)

@@ -33,10 +33,10 @@ public abstract class SharedEtherealSystem : EntitySystem
         SubscribeLocalEvent<EtherealComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<EtherealComponent, InteractionAttemptEvent>(OnInteractionAttempt);
         SubscribeLocalEvent<EtherealComponent, BeforeThrowEvent>(OnBeforeThrow);
-        SubscribeLocalEvent<EtherealComponent, OnAttemptPowerUseEvent>(OnAttemptPowerUse);
+        //SubscribeLocalEvent<EtherealComponent, OnAttemptPowerUseEvent>(OnAttemptPowerUse); // L5 - No longer available
         SubscribeLocalEvent<EtherealComponent, AttackAttemptEvent>(OnAttackAttempt);
         SubscribeLocalEvent<EtherealComponent, ShotAttemptedEvent>(OnShootAttempt);
-        SubscribeLocalEvent<EtherealComponent, OnMindbreakEvent>(OnMindbreak);
+        //SubscribeLocalEvent<EtherealComponent, OnMindbreakEvent>(OnMindbreak); // L5 - No longer available
         SubscribeLocalEvent<EtherealComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
@@ -79,10 +79,11 @@ public abstract class SharedEtherealSystem : EntitySystem
             _tag.AddTag(uid, "DoorBumpOpener");
     }
 
-    private void OnMindbreak(EntityUid uid, EtherealComponent component, ref OnMindbreakEvent args)
-    {
-        RemComp(uid, component);
-    }
+    // L5 - no longer available
+    // private void OnMindbreak(EntityUid uid, EtherealComponent component, ref OnMindbreakEvent args)
+    // {
+    //     RemComp(uid, component);
+    // }
 
     private void OnMobStateChanged(EntityUid uid, EtherealComponent component, MobStateChangedEvent args)
     {
@@ -124,18 +125,19 @@ public abstract class SharedEtherealSystem : EntitySystem
             || HasComp<EtherealComponent>(args.Target))
             return;
 
-        args.Cancel();
+        args.Cancelled = true;
         if (_gameTiming.InPrediction)
             return;
 
         _popup.PopupEntity(Loc.GetString("ethereal-pickup-fail"), args.Target.Value, uid);
     }
 
-    private void OnAttemptPowerUse(EntityUid uid, EtherealComponent component, OnAttemptPowerUseEvent args)
-    {
-        if (args.Power == "DarkSwap")
-            return;
-
-        args.Cancel();
-    }
+    // L5 - no longer available
+    // private void OnAttemptPowerUse(EntityUid uid, EtherealComponent component, OnAttemptPowerUseEvent args)
+    // {
+    //     if (args.Power == "DarkSwap")
+    //         return;
+    //
+    //     args.Cancel();
+    // }
 }

@@ -1,11 +1,12 @@
+using System.Numerics;
 using Content.Shared.Shadowkin;
-using Content.Shared.CCVar;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Content.Shared.Humanoid;
 using Content.Shared.Abilities.Psionics;
 using Content.Client.Overlays;
+using Content.Shared._DV.CCVars;
 
 namespace Content.Client.Shadowkin;
 
@@ -26,7 +27,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
         SubscribeLocalEvent<ShadowkinComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<ShadowkinComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
 
-        Subs.CVar(_cfg, CCVars.NoVisionFilters, OnNoVisionFiltersChanged);
+        Subs.CVar(_cfg, DCCVars.NoVisionFilters, OnNoVisionFiltersChanged);
 
         _overlay = new();
     }
@@ -34,7 +35,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
     private void OnInit(EntityUid uid, ShadowkinComponent component, ComponentInit args)
     {
         if (uid != _playerMan.LocalEntity
-            || _cfg.GetCVar(CCVars.NoVisionFilters))
+            || _cfg.GetCVar(DCCVars.NoVisionFilters))
             return;
 
         _overlayMan.AddOverlay(_overlay);
@@ -50,9 +51,9 @@ public sealed partial class ShadowkinSystem : EntitySystem
 
     private void OnPlayerAttached(EntityUid uid, ShadowkinComponent component, LocalPlayerAttachedEvent args)
     {
-        if (_cfg.GetCVar(CCVars.NoVisionFilters))
+        if (_cfg.GetCVar(DCCVars.NoVisionFilters))
             return;
-            
+
         _overlayMan.AddOverlay(_overlay);
     }
 
@@ -73,7 +74,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        if (_cfg.GetCVar(CCVars.NoVisionFilters))
+        if (_cfg.GetCVar(DCCVars.NoVisionFilters))
             return;
 
         var uid = _playerMan.LocalEntity;
@@ -88,12 +89,15 @@ public sealed partial class ShadowkinSystem : EntitySystem
         // intensity = clamp intensity min, max
 
         var tintIntensity = 0.65f;
+        // L5 - we don't have the same magic system
+        /*
         if (TryComp<PsionicComponent>(uid, out var magic))
         {
             var min = 0.45f;
             var max = 0.75f;
             tintIntensity = Math.Clamp(min + (magic.Mana / magic.MaxMana) * 0.333f, min, max);
         }
+        */
 
         UpdateShader(new Vector3(humanoid.EyeColor.R, humanoid.EyeColor.G, humanoid.EyeColor.B), tintIntensity);
     }
@@ -108,7 +112,7 @@ public sealed partial class ShadowkinSystem : EntitySystem
         if (intensity != null)
             _overlay.TintAmount = intensity;
 
-        if (!_cfg.GetCVar(CCVars.NoVisionFilters))
+        if (!_cfg.GetCVar(DCCVars.NoVisionFilters))
             _overlayMan.AddOverlay(_overlay);
     }
 }

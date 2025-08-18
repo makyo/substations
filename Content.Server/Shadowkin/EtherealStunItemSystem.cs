@@ -1,3 +1,4 @@
+using Content.Server.Damage.Systems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -29,8 +30,9 @@ public sealed class EtherealStunItemSystem : EntitySystem
             if (TryComp<StaminaComponent>(ent, out var stamina))
                 _stamina.TakeStaminaDamage(ent, stamina.CritThreshold, stamina, ent);
 
-            if (TryComp<PsionicComponent>(ent, out var magic))
-                magic.Mana = 0;
+            // L5 - we don't have mana
+            // if (TryComp<PsionicComponent>(ent, out var magic))
+            //     magic.Mana = 0;
         }
 
         if (!component.DeleteOnUse)

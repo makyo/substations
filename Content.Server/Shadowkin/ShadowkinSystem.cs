@@ -12,6 +12,7 @@ using Content.Shared.Rounding;
 using Content.Shared.Actions;
 using Robust.Shared.Prototypes;
 using Content.Server.Abilities.Psionics;
+using Content.Server.Damage.Systems;
 
 namespace Content.Server.Shadowkin;
 
@@ -61,8 +62,7 @@ public sealed class ShadowkinSystem : EntitySystem
     private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
     {
         if (!args.IsInDetailsRange
-            || !TryComp<PsionicComponent>(uid, out var magic)
-            || HasComp<MindbrokenComponent>(uid))
+            || !TryComp<PsionicComponent>(uid, out var magic))
             return;
 
         var severity = "shadowkin-power-" + ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 6);
@@ -129,7 +129,7 @@ public sealed class ShadowkinSystem : EntitySystem
             return;
 
         magic.Removable = true;
-        _psionicAbilitiesSystem.MindBreak(uid);
+        _psionicAbilitiesSystem.RemovePsionics(uid);
     }
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
@@ -166,12 +166,12 @@ public sealed class ShadowkinSystem : EntitySystem
         }
 
         EnsureComp<PsionicComponent>(uid, out var magic);
-        magic.Mana = 250;
-        magic.MaxMana = 250;
-        magic.ManaGain = 0.25f;
-        magic.BypassManaCheck = true;
+        // magic.Mana = 250;
+        // magic.MaxMana = 250;
+        // magic.ManaGain = 0.25f;
+        // magic.BypassManaCheck = true;
+        // magic.MindbreakingFeedback = "shadowkin-blackeye";
         magic.Removable = false;
-        magic.MindbreakingFeedback = "shadowkin-blackeye";
 
         if (_prototypeManager.TryIndex<PsionicPowerPrototype>("ShadowkinPowers", out var shadowkinPowers))
             _psionicAbilitiesSystem.InitializePsionicPower(uid, shadowkinPowers);

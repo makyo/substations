@@ -1,36 +1,32 @@
 using System.Linq;
 using Robust.Shared.Utility;
 using Content.Server.Chat.Managers;
-using Content.Server.Language;
 using Content.Server.Chat.Systems;
 using Content.Server.Administration.Managers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Content.Shared.Chat;
-using Content.Shared.Language;
+using Content.Shared.Shadowkin;
+using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
-using Content.Shared.Language.Components;
 
 namespace Content.Server.Chat;
 
 public sealed partial class EmpathyChatSystem : EntitySystem
 {
     [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<LanguageSpeakerComponent, EntitySpokeEvent>(OnSpeak);
+        SubscribeLocalEvent<SpeechComponent, EntitySpokeEvent>(OnSpeak);
     }
 
-    private void OnSpeak(EntityUid uid, LanguageSpeakerComponent component, EntitySpokeEvent args)
+    private void OnSpeak(EntityUid uid, SpeechComponent component, EntitySpokeEvent args)
     {
-        if (args.Source != uid
-            || !args.Language.SpeechOverride.EmpathySpeech
-            || args.IsWhisper)
+        if (args.Source != uid)
             return;
 
         SendEmpathyChat(args.Source, args.Message, false);
@@ -67,17 +63,17 @@ public sealed partial class EmpathyChatSystem : EntitySystem
     /// <summary>
     /// Check if an entity can hear Empathy.
     /// (Admins will always be able to hear Empathy)
+    /// L5 - simplified for our lack of the language system
     /// </summary>
     /// <param name="entity">The entity to check</param>
     public bool CanHearEmpathy(EntityUid entity)
     {
-        var understood = _language.GetUnderstoodLanguages(entity);
-        for (int i = 0; i < understood.Count; i++)
-        {
-            var language = _prototype.Index<LanguagePrototype>(understood[i]);
-            if (language.SpeechOverride.EmpathySpeech)
-                return true;
-        }
+        if (HasComp<ShadowkinComponent>(entity))
+            return true;
+
+        if (_adminManager.IsAdmin(entity))
+            return true;
+
         return false;
     }
 }
