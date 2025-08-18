@@ -17,6 +17,9 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: ScrambledAccent
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSlurred
+        time: 20.0
       - !type:GenericStatusEffect
         key: PsionicsDisabled #Nyano - Summary: disables psinoics from being used by the wearer.
         component: PsionicsDisabled #Nyano - Summary: see above.
@@ -113,8 +116,8 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:GenericStatusEffect
-        key: Drunk
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrunk
         time: 6.0
         type: Remove
       - !type:HealthChange
@@ -1370,8 +1373,8 @@
         key: Jitter
         time: 2.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: Drunk
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrunk
         time: 6.0
         type: Remove
       - !type:PopupMessage # we dont have sanity/mood so this will have to do
