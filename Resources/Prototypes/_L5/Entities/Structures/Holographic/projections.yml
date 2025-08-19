@@ -1,25 +1,65 @@
 - type: entity
+  id: StaticFieldMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: static field projector machine board
+  description: A machine printed circuit board for a static field projector.
+  components:
+  - type: MachineBoard
+    prototype: StaticField
+    stackRequirements:
+      Gold: 2
+      Cable: 4
+      Glass: 2
+
+- type: entity
   id: StaticField
-  parent: BaseHolosign
-  name: static field
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: static field projector
   description: A powered barrier of hard light that blocks air, but nothing else.
   components:
   - type: Sprite
     sprite: _L5/Structures/Holo/staticfield.rsi
+    drawdepth: HighFloorObjects
     layers:
-      - state: powered
-        map: ["enum.StaticFieldVisualLayers.Powered"]
       - state: unpowered
-        map: ["enum.StaticFieldVisualLayers.Unpowered"]
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
           bounds: "-0.5,-0.5,0.5,0.5"
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    enabled: false
+    volume: -2
+    range: 3
+    sound:
+      path: /Audio/Ambience/Objects/buzzing.ogg
   - type: Transform # DeltaV
     noRot: true
   - type: ApcPowerReceiver
-  - type: ExtensionCableReceiver
   - type: StaticField
+  - type: ExtensionCableReceiver
   - type: Appearance
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Machine
+    board: StaticFieldMachineCircuitboard
+  - type: DeviceLinkSink
+    ports:
+    - On
+    - Off
+    - Toggle
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { state: powered }
+          False: { state: unpowered }
