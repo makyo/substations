@@ -10,9 +10,6 @@ namespace Content.Shared._L5.StaticField;
 public sealed partial class StaticFieldComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public PowerDeviceVisuals Status = PowerDeviceVisuals.Powered;
-
-    [DataField, AutoNetworkedField]
     public bool Powered = false;
 
     [DataField]

@@ -2,7 +2,7 @@
   id: StaticField
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: static field projector
-  description: A powered barrier of hard light that blocks air, but nothing else.
+  description: A high-efficiency teslaphoretic field that blocks air, but nothing else.
   components:
   - type: Sprite
     sprite: _L5/Structures/Holo/staticfield.rsi
