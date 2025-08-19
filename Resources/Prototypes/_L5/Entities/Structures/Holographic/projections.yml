@@ -32,7 +32,7 @@
   - type: AmbientOnPowered
   - type: AmbientSound
     enabled: false
-    volume: -2
+    volume: 1
     range: 3
     sound:
       path: /Audio/Ambience/Objects/buzzing.ogg

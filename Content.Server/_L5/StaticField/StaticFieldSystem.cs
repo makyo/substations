@@ -53,11 +53,10 @@ public sealed class StaticFieldSystem : EntitySystem
         ent.Comp.Powered = state;
         EnsureComp<AirtightComponent>(ent, out var airtight);
         _airtightSystem.SetAirblocked((ent, airtight), state);
-        _audioSystem.PlayLocal(
+        _audioSystem.PlayPredicted(
             state ? ent.Comp.PowerUpSound : ent.Comp.PowerDownSound,
             ent,
-            ent,
-            new AudioParams(1.0f, 1.0f, 3.0f, 3.0f, true, 0.0f));
+            null);
         Dirty(ent);
     }
 }
