@@ -1,0 +1,4 @@
+- files: ["powerdown.ogg", "powerup.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "by Samantha Yule Fireheart, modified from Shiptest synth_yes/synth_no at https://github.com/shiptest-ss13/Shiptest/commit/bdfbafd54a8d51f5983e8b7c9dc8bfe83a910441"
+  source: "https://github.com/shiptest-ss13/Shiptest"
