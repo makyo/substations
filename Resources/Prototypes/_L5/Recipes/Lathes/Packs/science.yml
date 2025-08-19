@@ -2,3 +2,8 @@
   id: MaterialSiloBoard
   recipes:
   - MaterialSiloMachineCircuitboard
+
+- type: latheRecipePack
+  id: StaticFieldMachineCircuitboard
+  recipes:
+  - StaticFieldMachineCircuitboard
