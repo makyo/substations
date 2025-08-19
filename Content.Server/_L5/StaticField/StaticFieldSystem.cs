@@ -51,15 +51,16 @@ public sealed class StaticFieldSystem : EntitySystem
     {
         ent.Comp.Powered = state;
 
-        EnsureComp<AirtightComponent>(ent, out var airtight);
+        // Turn on/off the airtight status of the field.
+        if (!TryComp<AirtightComponent>(ent, out var airtight))
+            return;
         _airtightSystem.SetAirblocked((ent, airtight), state);
 
-        _pointLightSystem.SetEnabled(ent, state);
-
-        _audioSystem.PlayPredicted(
+        // Play the power up/down sound
+        _audioSystem.PlayPvs(
             state ? ent.Comp.PowerUpSound : ent.Comp.PowerDownSound,
-            ent,
-            null);
+            ent);
+
         Dirty(ent);
     }
 }

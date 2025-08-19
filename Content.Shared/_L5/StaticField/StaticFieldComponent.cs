@@ -21,6 +21,9 @@ public sealed partial class StaticFieldComponent : Component
     [DataField]
     public ProtoId<SinkPortPrototype> TogglePort = "Toggle";
 
+    [DataField]
     public SoundSpecifier PowerUpSound = new SoundPathSpecifier("/Audio/_L5/Effects/StaticField/powerup.ogg");
+
+    [DataField]
     public SoundSpecifier PowerDownSound = new SoundPathSpecifier("/Audio/_L5/Effects/StaticField/powerdown.ogg");
 }
