@@ -55,8 +55,6 @@ namespace Content.IntegrationTests.Tests
         /// </remarks>
         private static readonly Dictionary<string, HashSet<EntProtoId>> DoNotMapWhitelistSpecific = new()
         {
-            {"/Maps/bagel.yml", ["RubberStampMime"]},
-            {"/Maps/reach.yml", ["HandheldCrewMonitor"]},
             {"/Maps/Shuttles/ShuttleEvent/honki.yml", ["GoldenBikeHorn", "RubberStampClown"]},
             {"/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", ["RubberStampSyndicate"]},
             {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
@@ -73,8 +71,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] DoNotMapWhitelist =
         {
             "/Maps/centcomm.yml",
-            "/Maps/_DV/midpoint.yml", // L5 - Contains AA cloak
-            "/Maps/Shuttles/AdminSpawn/**", // admin gaming
+            "/Maps/Shuttles/AdminSpawn/**" // admin gaming
         };
 
         /// <summary>
@@ -90,20 +87,27 @@ namespace Content.IntegrationTests.Tests
             "TestTeg",
             "CentComm",
             "MeteorArena",
-            "Pebble", // DeltaV
-            "Edge", // DeltaV
-            "Shoukou", // DeltaV
-            "Tortuga", // DeltaV
+            "Academy", //DeltaV
             "Arena", // DeltaV
+            "ArenaMedieval", //DeltaV
             "Asterisk", // DeltaV
             "Byoin", // DeltaV
+            "Chibi", // DeltaV
+            "Division", // DeltaV
+            "Edge", // DeltaV
+            "Elegance", // DeltaV
             "Glacier", // DeltaV
-            "TheHive", // DeltaV
             "Hammurabi", // DeltaV
             "Lighthouse", // DeltaV
             "Micro", // DeltaV
-            "Chibi", // DeltaV
-			"Elegance", // DeltaV
+            "Ovni", //DeltaV
+            "Pebble", // DeltaV
+            "PebbleHiring", // DeltaV
+            "Shoukou", // DeltaV
+            "Submarine", //DeltaV
+            "Terra", //DeltaV
+            "TheHive", // DeltaV
+            "Tortuga", // DeltaV
             "Nucleus", // L5
             "Omphalos", // L5
             "Gemini", // L5
@@ -450,9 +454,7 @@ namespace Content.IntegrationTests.Tests
                     // Test all availableJobs have spawnPoints
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var comp = entManager.GetComponent<StationJobsComponent>(station);
-                    var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys
-                        // L5 - we're fine with some jobs not having spawners (AA):
-                        .Where(x => protoManager.TryIndex(x, out var proto) && proto.RequireSpawner));
+                    var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
 
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
