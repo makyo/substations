@@ -117,3 +117,8 @@
   parent: BaseGoldCircuitboardRecipe
   id: MaterialSiloMachineCircuitboard
   result: MaterialSiloMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: StaticFieldMachineCircuitboard
+  result: StaticFieldMachineCircuitboard

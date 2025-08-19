@@ -461,10 +461,13 @@
     - CameraBoards
     - MechBoards
     - ShuttleBoards
-    - RequestConsoleBoards # L5
-    - TechFabBoards # L5
-    - MaterialSiloBoard # L5
-    - MedicalBiofabMachineboard # L5
+    # Begin L5 additions
+    - RequestConsoleBoards
+    - TechFabBoards
+    - MaterialSiloBoard
+    - MedicalBiofabMachineboard
+    - StaticFieldMachineCircuitboard
+    # End L5 additions
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards

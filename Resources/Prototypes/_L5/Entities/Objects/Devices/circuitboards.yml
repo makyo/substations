@@ -1,0 +1,14 @@
+- type: entity
+  id: StaticFieldMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: static field projector machine board
+  description: A machine printed circuit board for a static field projector.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: StaticField
+    stackRequirements:
+      Gold: 2
+      Cable: 4
+      Glass: 2

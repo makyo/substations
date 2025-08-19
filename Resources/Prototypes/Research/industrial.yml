@@ -160,6 +160,7 @@
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
   - FireExtinguisherBluespace # DeltaV
+  - StaticFieldMachineCircuitboard # L5
   technologyPrerequisites:
   - AtmosphericTech
 
