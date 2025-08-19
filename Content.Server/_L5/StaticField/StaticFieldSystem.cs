@@ -7,6 +7,7 @@ using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
 using Robust.Server.Audio;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 
 namespace Content.Server._L5.StaticField;
@@ -16,6 +17,7 @@ public sealed class StaticFieldSystem : EntitySystem
     [Dependency] private readonly AirtightSystem _airtightSystem = default!;
     [Dependency] private readonly AudioSystem _audioSystem = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _receiverSystem = default!;
+    [Dependency] private readonly PointLightSystem _pointLightSystem = default!;
 
     public override void Initialize()
     {
@@ -51,8 +53,12 @@ public sealed class StaticFieldSystem : EntitySystem
     private void SetState(Entity<StaticFieldComponent> ent, bool state)
     {
         ent.Comp.Powered = state;
+
         EnsureComp<AirtightComponent>(ent, out var airtight);
         _airtightSystem.SetAirblocked((ent, airtight), state);
+
+        _pointLightSystem.SetEnabled(ent, state);
+
         _audioSystem.PlayPredicted(
             state ? ent.Comp.PowerUpSound : ent.Comp.PowerDownSound,
             ent,

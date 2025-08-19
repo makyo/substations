@@ -32,16 +32,20 @@
   - type: AmbientOnPowered
   - type: AmbientSound
     enabled: false
-    volume: 1
+    volume: 2
     range: 3
     sound:
       path: /Audio/Ambience/Objects/buzzing.ogg
-  - type: Transform # DeltaV
-    noRot: true
   - type: ApcPowerReceiver
+    powerLoad: 2000 # Expensive to run
+    powerDisabled: true
   - type: StaticField
-  - type: ExtensionCableReceiver
   - type: Appearance
+  - type: PointLight
+    color: "#DDAF38"
+    energy: 1
+    radius: 2
+    enabled: false
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
