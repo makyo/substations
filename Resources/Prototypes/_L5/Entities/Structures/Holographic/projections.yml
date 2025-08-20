@@ -33,6 +33,7 @@
     energy: 1
     radius: 2
     enabled: false
+  - type: LitOnPowered
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
