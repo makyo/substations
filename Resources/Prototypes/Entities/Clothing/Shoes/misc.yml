@@ -137,6 +137,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.7 # DeltaV
     sprintModifier: 1.7 # DeltaV
+    standing: true
   - type: Appearance
   - type: GenericVisualizer
     visuals:
