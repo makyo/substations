@@ -138,6 +138,7 @@
     - id: HoPIDCard
     #- id: WeaponDisabler # DeltaV - There is no reason for the service head to have a disabler.
     - id: ClothingEyesHudCommand
+    - id: PrinterDocFlatpack  # Corvax-Printer
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -231,6 +232,7 @@
     - id: MedkitFilled
     - id: RubberStampCMO
     - id: MedTekCartridge
+    - id: PrinterDocFlatpack  # Corvax-Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -283,6 +285,7 @@
     - id: HandTeleporter
     - id: RubberStampRd
     - id: BibleMystagogue  # DeltaV - steal objective and source of abilities
+    - id: PrinterDocFlatpack  # Corvax-Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -348,6 +351,7 @@
     #- id: WantedListCartridge # DeltaV - replaced by secwatch
     - id: DrinkHosFlask
     - id: BoxFolderIRIS # L5
+    - id: PrinterDocFlatpack  # Corvax-Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
