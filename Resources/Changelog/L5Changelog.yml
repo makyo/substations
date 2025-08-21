@@ -881,3 +881,11 @@ Entries:
       message: You can unanchor unwhitelisted smart fridges now.
   id: 121
   time: '2025-08-21T04:58:15.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Messy drinker trait selectable by everyone (no longer on by default for
+        vulps)
+  id: 122
+  time: '2025-08-21T05:06:44.0000000+00:00'
