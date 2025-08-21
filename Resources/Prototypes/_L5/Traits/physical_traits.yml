@@ -14,7 +14,7 @@
 - type: trait
   id: HardOfHearing
   name: trait-hard-of-hearing-name
-  description: trait-hard-of-hearing-name
+  description: trait-hard-of-hearing-desc
   category: Disabilities
   components:
   - type: HardOfHearing
@@ -22,8 +22,16 @@
 - type: trait
   id: ProfoundlyDeaf
   name: trait-profoundly-deaf-name
-  description: trait-profoundly-deaf-name
+  description: trait-profoundly-deaf-desc
   category: Disabilities
   components:
   - type: HardOfHearing
     profoundlyDeaf: true
+
+- type: trait
+  id: MessyDrinker
+  name: trait-messy-drinker-name
+  description: trait-messy-drinker-desc
+  category: Quirks
+  components:
+  - type: MessyDrinker
