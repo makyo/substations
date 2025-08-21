@@ -9,7 +9,7 @@ trait-sign-language-name = Sign language
 trait-sign-language-desc = You can speak the most common signed language, allowing you to interact with others who know it.
 
 trait-messy-drinker-name = Messy drinker
-trait-messy-drinker-desc = You don't drink, you slurp, and you are a bit messy about it.
+trait-messy-drinker-desc = You don't drink, you slurp like a stupid idiot dog — and you are a bit messy about it.
 
 # Disability traits
 trait-lowmobility-name = Low Mobility
