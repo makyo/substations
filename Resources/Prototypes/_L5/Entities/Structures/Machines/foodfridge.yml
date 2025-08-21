@@ -9,7 +9,6 @@
       components:
       - FitsInDispenser
       - Food
-      - Drink
       - Seed
       - Produce
       - Edible
