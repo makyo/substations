@@ -17,6 +17,7 @@
   # traits
   - BlackAndWhiteOverlay
   - Clumsy
+  - ImpairedMobility
   # - LegsParalyzed (you get healed)
   - LightweightDrunk
   - Muted
