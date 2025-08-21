@@ -869,3 +869,9 @@ Entries:
       message: You can use `/scale` once again.
   id: 119
   time: '2025-08-21T04:49:10.0000000+00:00'
+- author: perryprog
+  changes:
+    - type: Add
+      message: A diagnostic hud trait has been added.
+  id: 120
+  time: '2025-08-21T04:49:35.0000000+00:00'
