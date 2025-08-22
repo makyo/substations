@@ -122,6 +122,7 @@
   - type: InstantAction
     event: !type:MetapsionicPowerActionEvent
 
+# L5 — not merging
 #- type: entity
 #  parent: BasePsionicAction
 #  id: ActionEruption
