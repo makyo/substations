@@ -98,6 +98,8 @@
       - id: FlashlightLantern
       - id: Plunger
       - id: WireBrush
+      - id: MopBucketCube # L5
+      - id: Bucket # L5
     - id: LunchboxServiceFilledRandom # DeltaV Lunchboxes!
       prob: 0.3
 
