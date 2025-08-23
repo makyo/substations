@@ -19,6 +19,7 @@
   - BorgModuleTool
   - BorgModuleCable
   - BorgModuleFireExtinguisher
+  - BorgModuleInflatable
   # Begin L5 Additions - more printable borg modules
   - BorgModuleAnomaly
   - BorgModuleAppraisal
