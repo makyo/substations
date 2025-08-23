@@ -5,7 +5,6 @@ using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
 using Robust.Server.Audio;
-using Robust.Server.GameObjects;
 
 namespace Content.Server._L5.StaticField;
 
@@ -14,13 +13,22 @@ public sealed class StaticFieldSystem : EntitySystem
     [Dependency] private readonly AirtightSystem _airtightSystem = default!;
     [Dependency] private readonly AudioSystem _audioSystem = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _receiverSystem = default!;
-    [Dependency] private readonly PointLightSystem _pointLightSystem = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<StaticFieldComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<StaticFieldComponent, PowerChangedEvent>(OnPowerChanged);
         SubscribeLocalEvent<StaticFieldComponent, SignalReceivedEvent>(OnSignalReceived);
+    }
+
+    private void OnMapInit(EntityUid ent, StaticFieldComponent comp, MapInitEvent args)
+    {
+        if (!TryComp<AirtightComponent>(ent, out var airtight))
+            return;
+        _airtightSystem.SetAirblocked((ent, airtight), false);
+
+        _receiverSystem.SetPowerDisabled(ent, true);
     }
 
     private void OnPowerChanged(Entity<StaticFieldComponent> ent, ref PowerChangedEvent args)
