@@ -72,6 +72,12 @@ public sealed partial class AtmosphereSystem
        mixtures[8].AdjustMoles(Gas.Oxygen, Atmospherics.OxygenMolesGasMiner);
        mixtures[8].AdjustMoles(Gas.Nitrogen, Atmospherics.NitrogenMolesGasMiner);
 
+       // L5: Saturn atmos
+       // 9: Saturn
+       mixtures[9].AdjustMoles(Gas.Nitrogen, 38.29f);
+       mixtures[9].AdjustMoles(Gas.Ammonia, 121.4f);
+       mixtures[9].Temperature = 181.53f;
+
        foreach (var arg in args)
        {
            if (!NetEntity.TryParse(arg, out var netEntity) || !TryGetEntity(netEntity, out var euid))

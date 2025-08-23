@@ -1,23 +1,20 @@
 - type: gameMap
-  id: Omphalos
-  mapName: Omphalos
-  mapPath: /Maps/_L5/omphalos.yml
+  id: Nucleus
+  mapName: Nucleus
+  mapPath: /Maps/_L5/Outposts/nucleus.yml
   minPlayers: 0
-  maxPlayers: 10
+  maxPlayers: 6
   stations:
-    Omphalos:
+    Nucleus:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCCS Omphalos {1}'
+        mapNameTemplate: 'SCCS Nucleus {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: 'NY'
       - type: StationBankAccount
         increasePerSecond: 0 # tbh should be negative with how good we are
-      - type: StationPlanetSpawner
-        planet: GlacierSurface
-        gridPath: /Maps/_DV/Nonstations/glacier_surface_outpost.yml
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]
@@ -79,4 +76,3 @@
           CargoAssistant: [ 0, -1 ]
           #civilian
           Passenger: [ 0, -1 ]
-
