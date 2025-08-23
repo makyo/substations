@@ -1,0 +1,12 @@
+- type: entity
+  name: Atmos Fix Saturn Mix Marker
+  id: AtmosFixSaturnMarker
+  description: "Saturn atmos"
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: _L5/Markers/atmos.rsi
+    state: saturn
+    shader: unshaded
+  - type: AtmosFixMarker
+    mode: 9

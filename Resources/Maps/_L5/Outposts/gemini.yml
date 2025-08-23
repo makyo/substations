@@ -2,9 +2,9 @@ meta:
   format: 7
   category: Map
   engineVersion: 266.0.0
-  forkId: substations
-  forkVersion: 678a8b5d1311837b94f7df1134cd075cdb4c3179
-  time: 08/22/2025 02:38:57
+  forkId: ""
+  forkVersion: ""
+  time: 08/22/2025 07:23:27
   entityCount: 6447
 maps:
 - 1
@@ -855,7 +855,7 @@ entities:
       pos: -29.5,-41.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -14464.583
+      secondsUntilStateChange: -14622.555
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -27000,6 +27000,7 @@ entities:
       parent: 2
     - type: GasFilter
       filteredGas: Nitrogen
+      enabled: True
   - uid: 4795
     components:
     - type: Transform
@@ -27008,6 +27009,7 @@ entities:
       parent: 2
     - type: GasFilter
       filteredGas: Oxygen
+      enabled: True
     - type: AtmosPipeColor
       color: '#990000FF'
 - proto: GasMinerNitrogenStationLarge
@@ -27037,6 +27039,7 @@ entities:
     - type: GasMixer
       inletTwoConcentration: 0.25
       inletOneConcentration: 0.75
+      enabled: True
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasOutletInjector
@@ -30503,12 +30506,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: -81.5,-12.5
       parent: 2
+    - type: GasPressurePump
+      enabled: True
   - uid: 5245
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -84.5,-12.5
       parent: 2
+    - type: GasPressurePump
+      enabled: True
 - proto: GasPressurePumpAlt1
   entities:
   - uid: 5246
@@ -34416,6 +34423,8 @@ entities:
     - type: Transform
       pos: -38.5,-35.5
       parent: 2
+    - type: ApcPowerReceiver
+      powerDisabled: True
     - type: DeviceLinkSink
       invokeCounter: 1
   - uid: 5897
@@ -34423,6 +34432,8 @@ entities:
     - type: Transform
       pos: -71.5,-3.5
       parent: 2
+    - type: ApcPowerReceiver
+      powerDisabled: True
     - type: DeviceLinkSink
       invokeCounter: 1
   - uid: 5898
@@ -34430,6 +34441,8 @@ entities:
     - type: Transform
       pos: -39.5,-35.5
       parent: 2
+    - type: ApcPowerReceiver
+      powerDisabled: True
     - type: DeviceLinkSink
       invokeCounter: 1
   - uid: 5899
@@ -34437,6 +34450,8 @@ entities:
     - type: Transform
       pos: -71.5,-2.5
       parent: 2
+    - type: ApcPowerReceiver
+      powerDisabled: True
     - type: DeviceLinkSink
       invokeCounter: 1
 - proto: StoolBar
