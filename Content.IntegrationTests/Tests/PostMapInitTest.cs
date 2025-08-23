@@ -80,6 +80,7 @@ namespace Content.IntegrationTests.Tests
 			"Elegance", // DeltaV
             "Nucleus", // L5
             "Omphalos", // L5
+            "Gemini", // L5
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
