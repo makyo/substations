@@ -895,3 +895,9 @@ Entries:
       message: Jani lockers come with a mop bucket cube and a bucket
   id: 123
   time: '2025-08-22T07:17:05.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: The SCS Gemini station is ready to build
+  id: 124
+  time: '2025-08-23T17:03:15.0000000+00:00'
