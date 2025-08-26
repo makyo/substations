@@ -7,6 +7,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Server.Mind;
 using Content.Shared.Actions.Events;
+using Content.Shared.Atmos.Components;
 
 namespace Content.Server.Abilities.Psionics
 {

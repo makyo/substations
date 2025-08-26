@@ -7,6 +7,7 @@ using Content.Server.Psionics.Glimmer;
 using Content.Server.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.GameTicking.Components;
