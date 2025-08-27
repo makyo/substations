@@ -63,15 +63,15 @@
   components:
   - type: Damageable
     damageContainer: Biological
-#  - type: Destructible               # L5 - The DV comment below is kind of funny in retrospect. How about we don't round-remove people for rotting on lowpop, either?
-#    thresholds:
+  - type: Destructible
+    thresholds:                      # L5 - The DV comment below is kind of funny in retrospect. How about we don't round-remove people for rotting on lowpop, either?
 #    - trigger:
 #        !type:DamageTypeTrigger
 #        damageType: Blunt
 #        damage: 400
 #      behaviors:
 #      - !type:GibBehavior { }
-#    - trigger:                       # DeltaV- We don't like round removing people for being in the same room as a plasma trapped crate.
+#    - trigger:                      # DeltaV- We don't like round removing people for being in the same room as a plasma trapped crate.
 #        !type:DamageTypeTrigger
 #        damageType: Heat
 #        damage: 1500
@@ -86,6 +86,21 @@
 #      - !type:PlaySoundBehavior
 #        sound:
 #          collection: MeatLaserImpact
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 15
+      behaviors:
+      - !type:PopupBehavior
+        popup: mouth-taste-metal
+        popupType: LargeCaution
+        targetOnly: true
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 40
+      behaviors:
+      - !type:VomitBehavior
   - type: RadiationReceiver
   - type: Stamina
   - type: MobState
