@@ -265,7 +265,7 @@
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: DouubleLemonDrop
+        - ReagentId: DoubleLemonDrop
           Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/lemondrop.rsi
