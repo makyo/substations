@@ -253,3 +253,20 @@
   - type: Icon
     sprite: Objects/Consumable/Drinks/tortuga.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkDoubleLemonDropGlass
+  suffix: double lemon drop
+  description: A martini glass filled with a translucent mix of shockingly sour goodness.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: DouubleLemonDrop
+          Quantity: 30
+  - type: Icon
+    sprite: _DV/Objects/Consumable/Drinks/lemondrop.rsi
+    state: icon

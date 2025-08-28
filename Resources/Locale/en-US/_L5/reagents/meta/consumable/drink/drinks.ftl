@@ -33,3 +33,7 @@ reagent-desc-arnold-pawmer = Whichever of Sirius Agritech's marketing chumps cam
 # Leonia special
 reagent-name-flying-dutchman = Flying Dutchman
 reagent-desc-flying-dutchman = For the pirate who wants their sea legs on land. Yarr!
+
+# Beholden special
+reagent-name-double-lemondrop = Double Lemon Drop
+reagent-desc-double-lemondrop = Winner of the 2551 Summer Bartender's Award for most interesting twist on a classic. Judges described it as "shockingly sour".

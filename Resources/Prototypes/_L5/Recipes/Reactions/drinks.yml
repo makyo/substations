@@ -103,3 +103,15 @@
       amount: 1
   products:
     FlyingDutchman: 6
+
+- type: reaction
+  id: DoubleLemonDrop
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    LemonDrop:
+      amount: 5
+    Tazinide:
+      amount: 1
+  products:
+    DoubleLemonDrop: 6
