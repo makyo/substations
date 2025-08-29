@@ -907,3 +907,11 @@ Entries:
       message: Gemini is no longer blacked out at round start.
   id: 125
   time: '2025-08-29T07:00:23.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        A new drink, the double lemon drop, has been added. Hard to make,
+        shockingly sour.
+  id: 126
+  time: '2025-08-29T07:00:48.0000000+00:00'
