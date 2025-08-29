@@ -915,3 +915,11 @@ Entries:
         shockingly sour.
   id: 126
   time: '2025-08-29T07:00:48.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Stone/sandstone walls are now buildable.
+    - type: Add
+      message: Brass can be made in the industrial ore refiner.
+  id: 127
+  time: '2025-08-29T07:01:07.0000000+00:00'
