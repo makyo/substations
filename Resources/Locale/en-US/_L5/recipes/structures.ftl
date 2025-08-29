@@ -11,5 +11,9 @@ crafting-drain-desc = A floor drain for capturing spilt fluids. Probably blood, 
 crafting-diagonal-wall = diagonal wall
 crafting-diagonal-wall-reinforced = diagonal reinforced wall
 crafting-diagonal-wall-desc = Keeps the air in and the greytide out, but angular!
+crafting-wall-stone = stone wall
+crafting-wall-stone-desc = A dark stone wall.
+crafting-wall-sandstone = sandstone wall
+crafting-wall-sandstone-desc = A light sandstone wall.
 
 crafting-pipe-any = pipe (any)

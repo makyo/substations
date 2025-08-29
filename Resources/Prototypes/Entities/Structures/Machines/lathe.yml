@@ -886,6 +886,7 @@
     - OreSmelting
     - RGlassSmelting
     - AdvancedSmelting
+    - BrassSmelting # L5
 
 - type: entity
   parent: [BaseLathe]

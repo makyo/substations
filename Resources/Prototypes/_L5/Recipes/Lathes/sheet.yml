@@ -1,0 +1,8 @@
+- type: latheRecipe
+  id: SheetBrass
+  result: SheetBrass1
+  completetime: 1
+  materials:
+    RawSilver: 100
+    RawIron: 100
+    RawPlasma: 100
