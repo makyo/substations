@@ -901,3 +901,9 @@ Entries:
       message: The SCS Gemini station is ready to build
   id: 124
   time: '2025-08-23T17:03:15.0000000+00:00'
+- author: Samsterious
+  changes:
+    - type: Fix
+      message: Gemini is no longer blacked out at round start.
+  id: 125
+  time: '2025-08-29T07:00:23.0000000+00:00'
