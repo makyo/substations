@@ -89,6 +89,7 @@
     - EngineeringWeapons
     - FauxTiles
     - Equipment
+    - SpecOpsGoogles
     - UpgradeKits
     - EngineeringHardsuits
   - type: Machine
@@ -129,6 +130,7 @@
     dynamicPacks:
     - Equipment
     - Mining
+    - SpecOpsGoogles
     - SalvageWeapons
     - SalvageHardsuits
   - type: Machine
@@ -212,6 +214,7 @@
     - ScienceEquipment
     - ScienceClothing
     - ScienceWeapons
+    - SpecOpsGoogles
     - Chemistry
     - PowerCells
     #- ExperimentalDevices # L5 - commented out until we figure out hand teleporters
