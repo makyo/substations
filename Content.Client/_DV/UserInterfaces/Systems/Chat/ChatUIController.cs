@@ -17,26 +17,11 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
     /// </summary>
     public event Action<string>? OnAutoHighlightsUpdated;
 
-    [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
-
-    /// <summary>
-    ///     A list of words to be highlighted in the chatbox.
-    ///     User-specified.
-    /// </summary>
-    private readonly List<string> _highlights = [];
-
     /// <summary>
     ///     A list of words to be highlighted in the chatbox.
     ///     Auto-generated from users's character information.
     /// </summary>
     private readonly List<string> _autoHighlights = [];
-
-    /// <summary>
-    ///     The color (hex) in witch the words will be highlighted as.
-    /// </summary>
-    private string? _highlightsColor;
-
-    private bool _autoFillHighlightsEnabled;
 
     private void InitializeChatHighlights()
     {
@@ -54,16 +39,6 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         UpdateHighlights(_config.GetCVar(DCCVars.ChatHighlights));
     }
 
-
-    public void OnSystemLoaded(CharacterInfoSystem system)
-    {
-        system.OnCharacterUpdate += UpdateAutoHighlights;
-    }
-
-    public void OnSystemUnloaded(CharacterInfoSystem system)
-    {
-        system.OnCharacterUpdate -= UpdateAutoHighlights;
-    }
 
     private void UpdateAutoHighlights(CharacterData data)
     {
