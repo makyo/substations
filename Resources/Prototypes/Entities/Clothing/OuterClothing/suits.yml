@@ -29,6 +29,9 @@
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Insulated # DeltaV - bombs need insuls to be defused so to avoid being forced to put gloves in lockers, so added this
+  - type: HideLayerClothing
+    slots:
+      - Tail
 
 - type: entity
   parent: ClothingOuterSuitBomb
@@ -75,6 +78,9 @@
   - type: Tag
     tags:
       - HidesHarpyWings
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -112,6 +118,9 @@
     - CorgiWearable
     - WhitelistChameleon
     - HidesHarpyWings
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing]
@@ -140,6 +149,9 @@
   - type: Tag
     tags:
       - HidesHarpyWings
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
@@ -204,6 +216,9 @@
         whitelist:
           tags:
             - PowerCell
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: ClothingOuterBase
@@ -304,6 +319,9 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: ClothingOuterSuitCarp
