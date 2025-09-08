@@ -295,10 +295,15 @@
     Gasp:
       path: /Audio/Effects/Gasp/vox_gasp.ogg
     DefaultDeathgasp:
-      collection: VoxDeathgasp # DeltaV - Combined upstream and our sounds
+      path: /Audio/_DV/Effects/Gasp/vox_deathgasp_1.ogg
+    # End DeltaV Additions
     # Begin Impstation Additions
+    Crying:
+      collection: VoxCry
+      params:
+        volume: -7
     Chitter:
-      collection: VoxChitter # DeltaV - Combined upstream and impstation sounds
+      collection: VoxChitter
       params:
         volume: -5
     Coo:
