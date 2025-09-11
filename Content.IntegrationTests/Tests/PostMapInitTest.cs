@@ -74,6 +74,7 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/centcomm.yml",
             "/Maps/_DV/midpoint.yml", // L5 - Contains AA cloak
+            "/Maps/Shuttles/AdminSpawn/**", // admin gaming
         };
 
         /// <summary>
