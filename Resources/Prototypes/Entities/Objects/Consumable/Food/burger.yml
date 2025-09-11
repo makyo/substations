@@ -1274,6 +1274,11 @@
     shape:
     - 0,0,1,1
     storedOffset: 0,4
+    inhandVisuals:
+      left:
+      - state: burger-super-inhand-left
+      right:
+      - state: burger-super-inhand-right
   - type: FlavorProfile
     flavors: # What bun?
     - meaty
