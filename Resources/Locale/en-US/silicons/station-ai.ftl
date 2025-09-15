@@ -5,6 +5,10 @@ wire-name-ai-vision-light = SSRV
 wire-name-ai-act-light = SSRA
 station-ai-takeover = SSR takeover
 station-ai-eye-name = SSR eye - {$name}
+station-ai-has-no-power-for-upload = Upload failed - the SSR core is unpowered.
+station-ai-is-too-damaged-for-upload = Upload failed - the SSR core must be repaired.
+station-ai-core-losing-power = Your SSR core is now running on reserve battery power.
+station-ai-core-critical-power = Your SSR core is critically low on power. External power must be re-established or severe data corruption may occur!
 
 # Radial actions
 ai-open = Open actions
