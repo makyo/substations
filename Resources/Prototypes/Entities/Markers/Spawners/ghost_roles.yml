@@ -1,3 +1,7 @@
+# The mind roles specified here will be overwritten by the actual entities' GhostRoleComponent when they spawn
+# But the mind roles specified here are the ones checked for role bans when taking a ghost role!
+# TODO make this simpler
+
 - type: entity
   abstract: true
   parent: MarkerBase
@@ -88,7 +92,7 @@
   - type: GhostRole
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleNukeops
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
@@ -135,7 +139,7 @@
     description: roles-antag-nuclear-operative-commander-objective
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleNukeopsCommander
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -147,7 +151,7 @@
     description: roles-antag-nuclear-operative-agent-objective
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleNukeopsMedic
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -159,7 +163,7 @@
     description: roles-antag-nuclear-operative-objective
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleNukeops
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -171,7 +175,7 @@
     description: deltav-ghost-role-information-space-dragon-description # DeltaV - Dragons despawn in 10 mins
     rules: ghost-role-information-space-dragon-rules
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleDragon
   - type: Sprite
     layers:
     - state: green
@@ -188,7 +192,7 @@
     description: ghost-role-information-space-ninja-description
     rules: ghost-role-information-antagonist-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleNinja
     raffle:
       settings: default
     requirements:
@@ -211,9 +215,9 @@
     name: ghost-role-information-paradox-anomaly-name
     description: ghost-role-information-paradox-anomaly-description
     rules: ghost-role-information-paradox-anomaly-rules
+    # End DeltaV Changes
     mindRoles:
     - MindRoleParadoxClone
-    # End DeltaV Changes
     raffle:
       settings: default
   - type: Sprite
@@ -244,6 +248,8 @@
     name: ghost-role-information-derelict-cyborg-name
     description: ghost-role-information-derelict-cyborg-description
     rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSubvertedSilicon
     raffle:
       settings: default
   - type: Sprite
@@ -312,7 +318,7 @@
     name: ghost-role-information-wizard-name
     description: ghost-role-information-wizard-desc
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleWizard
     raffle:
       settings: default
   - type: Sprite
