@@ -1,21 +1,4 @@
 ﻿Entries:
-- author: K-Dynamic
-  changes:
-  - message: Recoloured job icons of chaplain, librarian, boxer, janitor, lawyer and
-      ID icon of lawyer, boxer from grey to green
-    type: Tweak
-  id: 8472
-  time: '2025-05-13T07:43:31.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36580
-- author: chromiumboy
-  changes:
-  - message: Station AIs can personalize the appearance of their cores and holograms
-      by right-clicking the AI core in which they are inserted and selecting 'AI customization'
-      from the list
-    type: Add
-  id: 8473
-  time: '2025-05-13T08:50:43.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34501
 - author: EmoGarbage404
   changes:
   - message: Adjusted the sounds of various floors and shoes.
@@ -3952,3 +3935,17 @@
   id: 8982
   time: '2025-09-18T17:49:02.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/39855
+- author: rumaks-xyz
+  changes:
+  - message: Ichor now heals damage evenly, similarly to omnizine
+    type: Tweak
+  id: 8983
+  time: '2025-09-18T18:47:25.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/39466
+- author: SlamBamActionman
+  changes:
+  - message: Several reagents now have contraband levels listed in the guidebook.
+    type: Add
+  id: 8984
+  time: '2025-09-18T19:01:22.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/40426
