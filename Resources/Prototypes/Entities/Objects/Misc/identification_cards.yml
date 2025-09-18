@@ -685,7 +685,7 @@
 - type: entity
   parent: [ SyndicateIDCard, BaseSyndicateContraband ]
   id: SyndiOperativeIDCard
-  name: syndicate operative ID card
+  name: GEX operative ID card # L5 - slight name change
   components:
   - type: Sprite
     layers:
@@ -695,8 +695,8 @@
 
 - type: entity
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
-  id: SyndiCorpsmanIDCard
-  name: syndicate corpsman ID card
+  id: SyndiAgentIDCard # DeltaV - Nukie agent is still agent
+  name: GEX agent ID card # L5 - slight name change
   components:
   - type: Sprite
     layers:
@@ -706,7 +706,7 @@
 - type: entity
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
   id: SyndiCommanderIDCard
-  name: syndicate commander ID card
+  name: GEX commander ID card # L5 - slight name change
   components:
   - type: Sprite
     layers:
