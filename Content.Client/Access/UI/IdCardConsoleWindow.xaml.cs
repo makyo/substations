@@ -124,34 +124,28 @@ namespace Content.Client.Access.UI
             JobTitleLineEdit.Text = Loc.GetString(job.Name);
             args.Button.SelectId(args.Id);
 
-            SetAllAccess(false);
+            // DeltaV - start of job preset access fix
+            SubmitData();
 
-            // this is a sussy way to do this
-            foreach (var access in job.Access)
-            {
-                if (_accessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
-                {
-                    button.Pressed = true;
-                }
-            }
-
+            var targetAccesses = job.Access.ToHashSet();
             foreach (var group in job.AccessGroups)
             {
                 if (!_prototypeManager.Resolve(group, out AccessGroupPrototype? groupPrototype))
                 {
                     continue;
                 }
-
-                foreach (var access in groupPrototype.Tags)
-                {
-                    if (_accessButtons.ButtonsList.TryGetValue(access, out var button) && !button.Disabled)
-                    {
-                        button.Pressed = true;
-                    }
-                }
+                targetAccesses.UnionWith(groupPrototype.Tags);
             }
 
-            SubmitData();
+            // this is a sussy way to do this
+            foreach (var (id, button) in _accessButtons.ButtonsList)
+            {
+                if (!button.Disabled && button.Pressed != targetAccesses.Contains(id))
+                {
+                    OnToggleAccess?.Invoke(id);
+                }
+            }
+            // DeltaV - end of job preset access fix
         }
 
         public void UpdateState(IdCardConsoleBoundUserInterfaceState state)
