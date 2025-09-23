@@ -8,8 +8,7 @@
   components:
   - type: FlavorProfile
     flavors:
-    - sweet
-  - type: Food
+      - sweet
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/cake.rsi
   - type: SolutionContainerManager
