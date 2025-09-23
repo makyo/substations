@@ -44,7 +44,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly GrammarSystem _grammarSystem = default!;
     [Dependency] protected readonly SharedSynthSystem _synthSystem = default!; // L5: Proper appearance and cloning of synths
-    [Dependency] private readonly SharedIdentitySystem _identity = default!;
+    [Dependency] private readonly IdentitySystem _identity = default!;
 
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
 
