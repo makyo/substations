@@ -1,9 +1,7 @@
 ## Static
 
 - type: latheRecipePack
-  parent:
-  - FloorTilesStaticDeltaV # DeltaV
-  id: FloorTilesStatic
+  id: FloorDarkTilesStatic
   recipes:
   - FloorTileItemDark
   - FloorTileItemDarkDiagonalMini
