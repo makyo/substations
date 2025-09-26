@@ -3957,3 +3957,23 @@
   id: 9005
   time: '2025-09-25T23:57:25.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/40550
+- author: Princess-Cheeseballs
+  changes:
+  - message: You can now put plushies in your cotton burgers.
+    type: Fix
+  id: 9006
+  time: '2025-09-26T04:22:41.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/40276
+- author: CraftyRenter
+  changes:
+  - message: Closet health reduced to 50
+    type: Tweak
+  - message: Locker health increased to 75
+    type: Tweak
+  - message: Secure locker health incresed to 150
+    type: Tweak
+  - message: Secure lockers now make a sound when broken.
+    type: Add
+  id: 9007
+  time: '2025-09-26T20:04:33.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/35671
