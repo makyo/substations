@@ -192,6 +192,7 @@
   - type: Edible
     useSound: *PlushieHampterSound
   - type: MeleeWeapon
+    wideAnimationRotation: 180
     soundHit: *PlushieHampterSound
   - type: Clothing
     quickEquip: false
@@ -896,8 +897,6 @@
   - type: EmitSoundOnLand
     sound: *PlushieSlimeSound
   - type: EmitSoundOnActivate
-    sound: *PlushieSlimeSound
-  - type: EmitSoundOnCollide
     sound: *PlushieSlimeSound
   - type: EmitSoundOnTrigger
     sound: *PlushieSlimeSound
