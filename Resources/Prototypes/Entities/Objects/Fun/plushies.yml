@@ -197,9 +197,7 @@
     useSound:
       path: /Audio/Items/Toys/mousesqueek.ogg
   - type: MeleeWeapon
-    wideAnimationRotation: 180
-    soundHit:
-      path: /Audio/Items/Toys/mousesqueek.ogg
+    soundHit: *PlushieHampterSound
   - type: Clothing
     quickEquip: false
     sprite: Objects/Fun/Plushies/hampter.rsi
@@ -369,7 +367,6 @@
     requiresSpecialDigestion: true
     useSound: *PlushieLizardSound
   - type: MeleeWeapon
-    wideAnimationRotation: 180
     soundHit: *PlushieLizardSound
   - type: Extractable
     juiceSolution:
@@ -436,7 +433,6 @@
     requiresSpecialDigestion: true
     useSound: *PlushieExperimentSound
   - type: MeleeWeapon
-    wideAnimationRotation: 180
     soundHit: *PlushieExperimentSound
   - type: Clothing
     clothingVisuals:
@@ -520,7 +516,6 @@
     requiresSpecialDigestion: true
     useSound: *PlushieSpaceLizardSound
   - type: MeleeWeapon
-    wideAnimationRotation: 180
     soundHit: *PlushieSpaceLizardSound
   - type: Clothing
     sprite: Objects/Fun/Plushies/lizard.rsi
@@ -554,13 +549,14 @@
     sound: *PlushieLizardInversedSound
   - type: EmitSoundOnActivate
     sound: *PlushieLizardInversedSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieLizardInversedSound
   - type: EmitSoundOnTrigger
     sound: *PlushieLizardInversedSound
   - type: Food
     requiresSpecialDigestion: true
     useSound: *PlushieLizardInversedSound
   - type: MeleeWeapon
-    wideAnimationRotation: 180
     soundHit: *PlushieLizardInversedSound
   - type: Extractable
     juiceSolution:
@@ -614,7 +610,6 @@
   - type: EmitSoundOnCollide
     sound: *PlushieDionaSound
   - type: MeleeWeapon
-    wideAnimationRotation: 180
     soundHit: *PlushieDionaSound
   - type: Food
     requiresSpecialDigestion: true
@@ -930,8 +925,9 @@
     sound:
       path: /Audio/Voice/Slime/slime_squish.ogg
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Voice/Slime/slime_squish.ogg
+    sound: *PlushieSlimeSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieSlimeSound
   - type: EmitSoundOnTrigger
     sound:
       path: /Audio/Voice/Slime/slime_squish.ogg
@@ -1071,7 +1067,6 @@
     requiresSpecialDigestion: true
     useSound: *PlushieVoxSound
   - type: MeleeWeapon
-    wideAnimationRotation: 180
     soundHit: *PlushieVoxSound
   - type: Clothing
     quickEquip: false
@@ -1136,7 +1131,6 @@
     requiresSpecialDigestion: true
     useSound: *PlushieXenoSound
   - type: MeleeWeapon
-    wideAnimationRotation: 180
     soundHit: *PlushieXenoSound
   - type: Clothing
     quickEquip: false
