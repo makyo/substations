@@ -44,6 +44,7 @@
     - id: PlushieMothRandom # Nyano - random moth plushies
     - id: PlushieArachind
     - id: PlushiePenguin
+    - id: PlushieVulp
     # Begin DeltaV,- see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
     - id: PlushieMort
     - id: PlushieIPC
