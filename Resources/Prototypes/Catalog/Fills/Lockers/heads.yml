@@ -13,7 +13,7 @@
     - id: ClothingHeadsetAltCargo
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
-    - id: ClothingHandsKnuckleDustersQM
+    #- id: ClothingHandsKnuckleDustersQM # DeltaV - No weaponry for LO.
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -135,12 +135,6 @@
     - id: ClothingNeckGoldmedal
     - id: DoorRemoteService
     - id: HoPIDCard
-    - id: IDComputerCircuitboard
-    # - id: FundingAllocationComputerCircuitboard # DeltaV - HoP doesn't get funding allocation
-    - id: CargoRequestServiceComputerCircuitboard
-    - id: RubberStampApproved
-    - id: RubberStampDenied
-    - id: RubberStampHop
     #- id: WeaponDisabler # DeltaV - There is no reason for the service head to have a disabler.
     - id: ClothingEyesHudCommand
 
@@ -171,7 +165,7 @@
     - id: ClothingHeadsetAltEngineering
     - id: DoorRemoteEngineering
     - id: BoxCECircuitboards
-    - id: RCD
+    - id: RCDRecharging # DeltaV - Replaces normal RCD
     - id: RCDAmmo
     - id: RubberStampCE
     - id: MetalFoamGrenade

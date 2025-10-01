@@ -1,8 +1,8 @@
 - type: entity
-  name: circuit tote [QM]
+  name: circuit tote [LO] # DeltaV - Renamed QM to LO
   parent: ToteBase
   id: BoxQMCircuitboards
-  description: A Tote filled with QM's Circuit boards.
+  description: A Tote filled with LO's Circuit boards. # DeltaV - Renamed QM to LO
   components:
   - type: StorageFill
     contents:
@@ -13,12 +13,18 @@
       - id: SalvageMagnetMachineCircuitboard
       - id: SalvageJobBoardComputerCircuitboard
       - id: MailTeleporterMachineCircuitboard
+      # DeltaV Additions
+      - id: MiningShuttleConsoleCircuitboard
+      - id: LogisticsTechFabCircuitboard
+      - id: SalvageExpeditionsComputerCircuitboard
+      - id: FundingAllocationComputerCircuitboard # To be removed when it's in techvault on all maps
+      # END DeltaV Additions
 
 - type: entity
-  name: stamp box [QM]
+  name: stamp box [LO] # DeltaV - Renamed QM to LO
   parent: BoxCardboard
   id: BoxQMStamps
-  description: A box filled with QM's Stamps. Stamped of course.
+  description: A box filled with LO's Stamps. Stamped of course. # DeltaV - Renamed QM to LO
   components:
   - type: Item
     size: Small
