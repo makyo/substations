@@ -40,3 +40,6 @@ construction-graph-tag-mothroach-hide = mothroach hide
 
 # Hoodies
 construction-graph-tag-hoodie = hoodie
+
+# Ancient books
+construction-graph-tag-ancientbook = Damaged Ancient Book

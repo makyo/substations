@@ -8,6 +8,7 @@ job-name-courier = Courier
 job-name-cargo-assistant = Cargo Assistant
 job-name-security-borg = Security Cyborg
 job-name-admin-assistant = Administrative Assistant
+job-name-librarian = Archivist
 # Used by the Agent ID
 job-name-senior-physician = Physician Mentor
 job-name-senior-researcher = Research Mentor
