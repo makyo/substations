@@ -529,11 +529,7 @@
     - MechParts
     - MechEquipment
     - Surgery # DeltaV - Share Surgery Parts between Epi and Med.
-    #- CyberneticsRobotics # DeltaV - Share Surgery Parts between Epi and Med. # L5 — how did this ever work?
-    - PsionicProsthetics # DeltaV
-    - Cybernetics # Shitmed change
-    - PowerAugments # DeltaV - augments
-    - ToolAugments # DeltaV - augments
+    - CyberneticsRobotics # DeltaV - Share Surgery Parts between Epi and Med.
   - type: EmagLatheRecipes # DeltaV
     emagStaticPacks:
     - RoboticsEmagStatic
@@ -756,6 +752,9 @@
     - ReportingStatic
     - EVASuit
     - PowerCellsStatic
+    - IPCLimbsStatic
+    - PowerAugments
+    - ToolAugments
     # End DeltaV Additions
     dynamicPacks:
     - Chemistry
@@ -764,6 +763,7 @@
     # Being DeltaV Additions
     - MedicalDeltaV
     - ParamedicHardsuit
+    - Cybernetics
     # End DeltaV Additions
   - type: Machine
     board: MedicalTechFabCircuitboard
