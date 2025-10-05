@@ -1,5 +1,5 @@
-using Content.Server.Medical;
 using Content.Shared._L5.Traits.DietaryRestriction;
+using Content.Shared.Medical;
 
 namespace Content.Server._L5.Traits.DietaryRestriction;
 
