@@ -333,7 +333,8 @@
     - !type:NestedSelector # DeltaV
       tableId: LockerFillHeadOfSecurityDeltaV
     - id: BookSecretDocuments
-    - id: WeaponEnergyShotgun
+    #- id: WeaponEnergyShotgun # L5 — we'll see if we miss it
+    - id: WeaponEnergyMagnum
     - id: BookSpaceLaw
     - id: BoxEncryptionKeySecurity
     - id: CigarGoldCase
