@@ -1,5 +1,9 @@
 psionic-nosebleed-message = Your nose starts gushing blood!
 
+mass-mind-swap-event-announcement = Warning: abnormal glimmer discharge detected. Mass consciousness transfer event imminent, T-{$time} seconds. Please equip psionically-insulating headwear immediately.
+
+mass-mind-swap-event-sender = Sophic Grammateus
+
 psionic-power-mass-sleep-warning = Your eyelids begin to droop...
 
 psionic-power-precognition-failure-by-damage = Your concentration was broken! You fail to decipher anything of use.
@@ -50,11 +54,14 @@ psionic-power-precognition-random-sentience-result-message = Something bright an
 psionic-power-precognition-unknown-shuttle-cargo-lost-result-message = You see a vision of a simple ship of old Terra, adrift of the sea, far away from home.
 psionic-power-precognition-unknown-shuttle-traveling-cuisine-result-message = You see a vision of peace, a cozy meal sizzling on a warm stove. A delicious smells wafts through the air.
 psionic-power-precognition-unknown-shuttle-disaster-evac-pod-result-message = You see a vision of death and blood, of a destruction so complete only few survive, drifting through the coldness of space.
+psionic-power-precognition-syndicate-armsdealer-result-message = You see a vision of a ship lurking in the shadows, its cargo deadly.
+psionic-power-precognition-rift-spawn-result-message = You see a small spark of energy, quickly expanding as it tears reality apart, twisting everything around it.
+psionic-power-precognition-asakim-spawn-result-message = You smell stale air from a cryopod opening, and the faint echo of an intelligence far away but very near.
 
 psionic-eruption-begin = {CAPITALIZE(THE($user))} is being consumed by a psionic energy!
 psionic-eruption-annoy-minimal = You feel a pressure building up in your mind.
 psionic-eruption-annoy-low = Your head aches from the psionic energy.
-psionic-eruption-annoy-medium = You feel a strong pressure in your mind. Make it stop!
+psionic-eruption-annoy-moderate = You feel a strong pressure in your mind. Make it stop!
 psionic-eruption-annoy-high = Your head is pounding from the psionic energy. You need to release it!
 psionic-eruption-annoy-dangerous = Your head is about to explode from the psionic energy!
 psionic-eruption-annoy-critical = Make it stop! Make it stop! Make it stop!
