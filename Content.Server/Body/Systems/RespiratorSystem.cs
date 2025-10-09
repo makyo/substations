@@ -5,6 +5,7 @@ using Content.Shared._Shitmed.Body.Components; // Shitmed Change
 using Content.Shared._Shitmed.Body.Organ; // Shitmed Change
 using Content.Server.Chat.Systems;
 using Content.Server.EntityEffects;
+using Content.Shared.Body.Systems;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
