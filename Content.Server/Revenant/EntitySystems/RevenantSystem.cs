@@ -62,9 +62,7 @@ public sealed partial class RevenantSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<RevenantComponent, ComponentStartup>(OnStartup);
-        SubscribeLocalEvent<RevenantComponent, MapInitEvent>(OnMapInit);
 
-        SubscribeLocalEvent<RevenantComponent, RevenantShopActionEvent>(OnShop);
         SubscribeLocalEvent<RevenantComponent, DamageChangedEvent>(OnDamage);
         SubscribeLocalEvent<RevenantComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<RevenantComponent, StatusEffectAddedEvent>(OnStatusAdded);
@@ -197,13 +195,6 @@ public sealed partial class RevenantSystem : EntitySystem
             _physics.ResetDynamics(uid, Comp<PhysicsComponent>(uid)); // Imp
 
         return true;
-    }
-
-    private void OnShop(EntityUid uid, RevenantComponent component, RevenantShopActionEvent args)
-    {
-        if (!TryComp<StoreComponent>(uid, out var store))
-            return;
-        _store.ToggleUi(uid, uid, store);
     }
 
     public void MakeVisible(bool visible)
