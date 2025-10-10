@@ -69,7 +69,7 @@ public sealed partial class CrewMonitoringNavMapControl : NavMapControl
                 continue;
 
             if (!LocalizedNames.TryGetValue(netEntity, out var name))
-                name = "Unknown";
+                name = Loc.GetString("navmap-unknown-entity");
 
             // L5 - map-global suit sensors
             var (mapX, mapY) = blip.Coordinates.Position;
