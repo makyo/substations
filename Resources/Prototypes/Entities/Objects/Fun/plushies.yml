@@ -612,15 +612,14 @@
     fillBaseName: plushie_diona
     changeColor: false
   - type: Appearance
-# L5 — TODO this was causing problems
-#  - type: Reactive
-#    reactions:
-#    - reagents: [ Water ]
-#      methods: [ Touch ]
-#      effects:
-#      - !type:AddReagentToSolution
-#        reagent: Water
-#        solution: plushie
+  - type: Reactive
+    reactions:
+    - reagents: [ Water ]
+      methods: [ Touch ]
+      effects:
+      - !type:AddReagentToSolution
+        reagent: Water
+        solution: plushie
   - type: Fixtures
     fixtures:
       fix1:

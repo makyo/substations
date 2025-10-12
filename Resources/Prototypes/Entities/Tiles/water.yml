@@ -62,6 +62,6 @@
         - Catwalk
   - type: TileEntityEffect
     effects:
-    - !type:ExtinguishReaction
+    - !type:Extinguish
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: FloorCosmicDecay

@@ -11,9 +11,8 @@ using Content.Server.Mind;
 using Content.Server.NPC;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
+using Content.Server.StationEvents.Components;
 using Content.Server.Speech.Components;
-using Content.Server.Temperature.Components;
-using Content.Shared.Abilities.Psionics; // DeltaV
 using Content.Shared.Body.Components;
 using Content.Shared.Chat;
 using Content.Shared.CombatMode;
@@ -28,7 +27,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.NameModifier.EntitySystems;
-using Content.Shared.NPC.Components; // DeltaV
 using Content.Shared.NPC.Systems;
 using Content.Shared.Nutrition.AnimalHusbandry;
 using Content.Shared.Nutrition.Components;
@@ -45,6 +43,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.Roles;
+using Content.Shared.Temperature.Components;
 
 namespace Content.Server.Zombies;
 
@@ -134,7 +133,7 @@ public sealed partial class ZombieSystem
         var zombiecomp = AddComp<ZombieComponent>(target);
 
         //we need to basically remove all of these because zombies shouldn't
-        //get diseases, breath, be thirst, be hungry, die in space, have offspring or be paraplegic.
+        //get diseases, breath, be thirst, be hungry, die in space, get double sentience, have offspring or be paraplegic.
         RemComp<RespiratorComponent>(target);
         RemComp<BarotraumaComponent>(target);
         RemComp<HungerComponent>(target);
@@ -143,19 +142,7 @@ public sealed partial class ZombieSystem
         RemComp<ReproductivePartnerComponent>(target);
         RemComp<LegsParalyzedComponent>(target);
         RemComp<ComplexInteractionComponent>(target);
-
-        if (TryComp<PsionicComponent>(target, out var psionic)) // DeltaV - Prevent psionic zombies
-        {
-            if (psionic.ActivePowers.Count > 0)
-            {
-                foreach (var power in psionic.ActivePowers)
-                {
-                    RemComp(target, power);
-                }
-                psionic.ActivePowers.Clear();
-            }
-            RemComp<PsionicComponent>(target);
-        }
+        RemComp<SentienceTargetComponent>(target);
 
         //funny voice
         var accentType = "zombie";
@@ -268,7 +255,6 @@ public sealed partial class ZombieSystem
 
         _faction.ClearFactions(target, dirty: false);
         _faction.AddFaction(target, ZombieFaction);
-        EnsureComp<NoFriendlyFireComponent>(target); // DeltaV - prevent shitters biting other zombies
 
         //gives it the funny "Zombie ___" name.
         _nameMod.RefreshNameModifiers(target);
