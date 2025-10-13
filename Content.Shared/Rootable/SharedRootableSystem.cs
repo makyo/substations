@@ -15,6 +15,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
+using Content.Shared.Atmos.Components; // DeltaV
 
 namespace Content.Shared.Rootable;
 
@@ -103,6 +104,8 @@ public abstract class SharedRootableSystem : EntitySystem
             return false;
 
         entity.Comp.Rooted = !entity.Comp.Rooted;
+        if (TryComp<MovedByPressureComponent>(entity, out var moved)) // Delta-V - Prevent spacewind
+            moved.Enabled = !entity.Comp.Rooted;
         _movementSpeedModifier.RefreshMovementSpeedModifiers(entity);
         _gravity.RefreshWeightless(entity.Owner);
         Dirty(entity);
