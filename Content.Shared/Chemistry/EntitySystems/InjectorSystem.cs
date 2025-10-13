@@ -4,6 +4,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Events;
 using Content.Shared.Chemistry.Prototypes;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
@@ -564,6 +565,15 @@ public sealed partial class InjectorSystem : EntitySystem
         {
             temporarilyRemovedSolution = applicableTargetSolution.SplitSolutionWithout(applicableTargetSolution.Volume, reagentWhitelist.ToArray());
         }
+
+        // Begin DeltaV Additions - skimmer functionality
+        else if (injector.Comp.TargetSmallest && applicableTargetSolution.Any())
+        {
+            var smallest = applicableTargetSolution.MinBy(soln => soln.Quantity);
+            ProtoId<ReagentPrototype> smallestReagent = smallest.Reagent.Prototype;
+            temporarilyRemovedSolution = applicableTargetSolution.SplitSolutionWithout(applicableTargetSolution.Volume, smallestReagent);
+        }
+        // End DeltaV Additions - skimmer functionality
 
         // If transferAmount is null, fallback to 5 units.
         var plannedTransferAmount = injector.Comp.CurrentTransferAmount ?? FixedPoint2.New(5);

@@ -46,7 +46,7 @@
         ano01_on: Rainbow
   - type: Tag # DeltaV - allows for artifacts to be used in the crafting system
     tags:
-      - Artifact
+    - Artifact
   # gameplay interactions
   - type: Item
     size: Normal

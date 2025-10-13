@@ -266,6 +266,20 @@
     event: !type:VendingMachineSelfDispenseEvent
 
 - type: entity
+  parent: BaseAction
+  id: ActionArtifactActivate
+  name: Activate Artifact
+  description: Immediately activates your current artifact node.
+  components:
+  - type: Action
+    icon:
+      sprite: Objects/Specific/Xenoarchaeology/xeno_artifacts.rsi
+      state: ano01
+    useDelay: 60
+  - type: InstantAction
+    event: !type:ArtifactSelfActivateEvent
+
+- type: entity
   parent: BaseToggleAction
   id: ActionToggleBlock
   name: Block
@@ -412,20 +426,6 @@
   components:
   - type: Action
     useDelay: 8
-    icon:
-      sprite: Interface/Actions/jump.rsi
-      state: icon
-  - type: InstantAction
-    event: !type:GravityJumpEvent {}
-
-- type: entity
-  parent: BaseAction
-  id: ActionVulpkaninGravityJump
-  name: Leap
-  description: Use your agile legs to leap a short distance. Be careful not to bump into anything!
-  components:
-  - type: Action
-    useDelay: 12
     icon:
       sprite: Interface/Actions/jump.rsi
       state: icon
