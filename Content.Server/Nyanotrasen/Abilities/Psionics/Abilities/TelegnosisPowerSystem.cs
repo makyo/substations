@@ -1,3 +1,8 @@
+using Content.Server.Atmos.EntitySystems;
+using Content.Server.Body.Systems;
+using Content.Server.Disposal.Unit;
+using Content.Shared._DV.Abilities.Psionics;
+using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
 using Content.Shared.StatusEffect;
 using Content.Shared.Abilities.Psionics;
@@ -18,6 +23,8 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly MindSystem _mindSystem = default!;
+        [Dependency] private readonly AtmosphereSystem _atmos = default!;
+        [Dependency] private readonly TransformSystem _transform = default!;
 
         public override void Initialize()
         {
@@ -53,7 +60,8 @@ namespace Content.Server.Abilities.Psionics
         private void OnPowerUsed(EntityUid uid, TelegnosisPowerComponent component, TelegnosisPowerActionEvent args)
         {
             var projection = Spawn(component.Prototype, Transform(uid).Coordinates);
-            Transform(projection).AttachToGridOrMap();
+
+            _transform.AttachToGridOrMap(projection);
             _mindSwap.Swap(uid, projection);
 
             _psionics.LogPowerUsed(uid, "telegnosis");
