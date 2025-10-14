@@ -10,6 +10,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
 using System.Numerics;
+using Content.Shared.Light.Components;
 
 namespace Content.Server._DV.Abilities;
 
