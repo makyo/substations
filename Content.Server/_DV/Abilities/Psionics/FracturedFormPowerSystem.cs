@@ -155,6 +155,12 @@ public sealed class FracturedFormPowerSystem : SharedFracturedFormPowerSystem
             {
                 RemCompDeferred<FracturedFormBodyComponent>(uid);
             }
+
+            if (TryComp<SSDIndicatorComponent>(uid, out var ssd) && ssd.IsSSD)
+            {
+                // Ensure the body isn't forcesleep'd by the SSD system.
+                ssd.IsSSD = false;
+            }
         }
     }
 
