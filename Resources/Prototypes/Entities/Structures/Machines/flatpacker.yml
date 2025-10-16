@@ -72,18 +72,6 @@
         blacklist: # DeltaV
           tags:
           - DisplayCaseBoard
-  - type: AutomationSlots # Goobstation
-    slots:
-    - !type:AutomatedItemSlot
-      input: AutomationSlotBoard
-      output: AutomationSlotBoard
-      slotId: board_slot
-    - !type:AutomatedMaterialStorage
-      input: AutomationSlotMaterials
-      output: null # no automatic silo stealer...
-    - !type:AutomatedPorts
-      sinks:
-      - On
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
