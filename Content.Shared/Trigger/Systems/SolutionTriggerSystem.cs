@@ -1,15 +1,31 @@
 using Content.Shared.Trigger.Components.Effects;
+using Robust.Shared.Containers;
 using Content.Shared.Chemistry.EntitySystems;
 
 namespace Content.Shared.Trigger.Systems;
 
-public sealed class SolutionTriggerSystem : XOnTriggerSystem<AddSolutionOnTriggerComponent>
+public sealed class SolutionTriggerSystem : EntitySystem
 {
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
-    protected override void OnTrigger(Entity<AddSolutionOnTriggerComponent> ent, EntityUid target, ref TriggerEvent args)
+    public override void Initialize()
     {
-        if (!_solutionContainer.TryGetSolution(target, ent.Comp.Solution, out var solutionRef, out _))
+        base.Initialize();
+
+        SubscribeLocalEvent<AddSolutionOnTriggerComponent, TriggerEvent>(OnTriggered);
+    }
+
+    private void OnTriggered(Entity<AddSolutionOnTriggerComponent> ent, ref TriggerEvent args)
+    {
+        if (args.Key != null && !ent.Comp.KeysIn.Contains(args.Key))
+            return;
+
+        var target = ent.Comp.TargetUser ? args.User : ent.Owner;
+
+        if (target == null)
+            return;
+
+        if (!_solutionContainer.TryGetSolution(target.Value, ent.Comp.Solution, out var solutionRef, out _))
             return;
 
         _solutionContainer.AddSolution(solutionRef.Value, ent.Comp.AddedSolution);
