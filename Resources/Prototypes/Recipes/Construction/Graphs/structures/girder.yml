@@ -441,6 +441,40 @@
             - tool: Cutting
               doAfter: 2
 
+        # Begin L5 additions
+        - to: miningWall
+          completed:
+          - !type:SnapToGrid
+            southRotation: true
+          conditions:
+          - !type:EntityAnchored { }
+          steps:
+          - material: Coal
+            amount: 5
+            doAfter: 3
+          - material: Steel
+            amount: 2
+            doAfter: 3
+          - tool: welding
+            doAfter: 4
+
+        - to: miningWall
+          completed:
+          - !type:SnapToGrid
+            southRotation: true
+          conditions:
+          - !type:EntityAnchored { }
+          steps:
+          - material: Coal
+            amount: 3
+            doAfter: 3
+          - material: Steel
+            amount: 1
+            doAfter: 3
+          - tool: welding
+            doAfter: 3
+        # End L5 Additions
+
     - node: reinforcedWall
       entity: WallReinforced
       edges:
