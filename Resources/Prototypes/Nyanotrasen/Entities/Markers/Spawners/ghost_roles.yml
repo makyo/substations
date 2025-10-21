@@ -1,28 +1,4 @@
 - type: entity
-  id: SpawnPointGhostIfrit
-  name: ghost role spawn point
-  suffix: Ifrit
-  parent: MarkerBase
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: GhostRoleMobSpawner
-    prototype: MobIfritFamiliar
-  - type: GhostRole
-    name: Research Director's Ifrit # L5
-    description: Obey the RD. Defend the oracle.
-    rules: You are a servant of the RD. Obey them directly.
-    requirements:
-    - !type:DepartmentTimeRequirement
-      department: Epistemics
-      time: 14400 # DeltaV - 4 hours
-  - type: Sprite
-    sprite: Markers/jobs.rsi
-    layers:
-      - state: green
-      - sprite: Mobs/Animals/bat.rsi
-        state: bat
-
-- type: entity
   id: SpawnPointLocationMidRoundAntag
   name: possible spawn location
   suffix: MidRoundAntag
@@ -31,8 +7,8 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - state: prisoner
+    - state: green
+    - state: prisoner
   - type: MidRoundAntagSpawnLocation
 
 # - type: entity
