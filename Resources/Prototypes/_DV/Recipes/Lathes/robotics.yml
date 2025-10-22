@@ -45,6 +45,11 @@
     Plastic: 250
     Steel: 25
 
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleDecoration
+  result: BorgModuleDecoration
+
 # Robo Neuroling recipes
 
 - type: latheRecipe
