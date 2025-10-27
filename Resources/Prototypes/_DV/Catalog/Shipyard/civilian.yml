@@ -36,7 +36,7 @@
   id: Eden
   name: NTCI-ME Eden
   description: A modestly sized botanical garden with a chemistry lab for pushing the bounds of hydroponics.
-  price: 77000
+  price: 80000 # L5 - arbitrage
   path: /Maps/_DV/Shuttles/Shipyard/ntsy_eden.yml
   categories:
   - Civilian
@@ -58,7 +58,7 @@
   id: Miriam
   name: NTCI-ME Miriam
   description: A modestly sized medical vessel with all the equipment to operate a cryogenics laboratory.
-  price: 61000
+  price: 64000 # L5 - arbitrage
   path: /Maps/_DV/Shuttles/Shipyard/ntsy_miriam.yml
   categories:
   - Civilian

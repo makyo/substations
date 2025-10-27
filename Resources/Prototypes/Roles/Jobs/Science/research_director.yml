@@ -7,10 +7,10 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobScientist
-    time: 18000 #5 hrs
+    time: 5h
   - !type:DepartmentTimeRequirement
-    department: Epistemics # DeltaV - Epistemics replacing Science
-    time: 36000 #10 hrs
+    department: Epistemics # DeltaV
+    time: 10h
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -31,18 +31,17 @@
   - External # Needed to access the AI satellite
   - Library # moved librarian to epistemics
   # end DeltaV Additions
-  - Orders # L5 - orders consoles
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
-      - type: CommandStaff
-      # Begin DeltaV Additions
-      - type: BibleUser # Lets them heal with bibles
-      - type: Psionic # They start with telepathic chat
-      - type: DispelPower # They get the Dispel psionic power on spawn
-      # End DeltaV Additions
+    - type: CommandStaff
+    # Begin DeltaV Additions
+    - type: BibleUser # Lets them heal with bibles
+    - type: Psionic # They start with telepathic chat
+    - type: DispelPower # They get the Dispel psionic power on spawn
+    # End DeltaV Additions
 
 - type: startingGear
   id: ResearchDirectorGear
@@ -52,3 +51,15 @@
   storage:
     back:
     - Flash
+
+- type: chameleonOutfit
+  id: ResearchDirectorChameleonOutfit
+  job: ResearchDirector
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretRND
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskGas
+    neck: ClothingNeckCloakRd
+    outerClothing: ClothingOuterCoatRD
+    gloves: ClothingHandsGlovesColorPurple
