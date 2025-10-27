@@ -1,5 +1,4 @@
 using Content.Shared.Atmos.Rotting;
-using Content.Shared.Damage;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Overlays;
@@ -7,6 +6,8 @@ using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Shared.Damage.Components;
+using Content.Shared.Mobs; // DeltaV - Nuke Health icons.
 
 namespace Content.Client.Overlays;
 
@@ -32,11 +33,10 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
     {
         base.UpdateInternal(component);
 
-        // Begin L5 modifications - early merge of space-wizards/space-station-14#39288
-        DamageContainers = component.Components
-            .SelectMany(x => x.DamageContainers.Select(proto => proto.Id))
-            .ToHashSet();
-        // End L5 modifications
+        foreach (var damageContainerId in component.Components.SelectMany(x => x.DamageContainers))
+        {
+            DamageContainers.Add(damageContainerId);
+        }
     }
 
     protected override void DeactivateInternal()
@@ -78,6 +78,8 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
         {
             if (TryComp<MobStateComponent>(entity, out var state))
             {
+                if (state.CurrentState != MobState.Alive) // Den: Nuke Alive Icon so they don't hide speech bubbles
+                    return result;
                 // Since there is no MobState for a rotting mob, we have to deal with this case first.
                 if (HasComp<RottingComponent>(entity) && _prototypeMan.Resolve(damageableComponent.RottingIcon, out var rottingIcon))
                     result.Add(rottingIcon);

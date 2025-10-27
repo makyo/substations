@@ -5,7 +5,12 @@ using Content.Server.Chat;
 using Content.Server.Chat.Systems;
 using Content.Server.Clothing.Systems;
 using Content.Shared.Chat.Prototypes;
-using Robust.Shared.Random;
+using Content.Shared.Clumsy;
+using Content.Shared.Cluwne;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Mobs;
+using Content.Shared.NameModifier.EntitySystems;
+using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Damage;
 using Robust.Shared.Prototypes;
@@ -75,7 +80,7 @@ public sealed class CluwneSystem : EntitySystem
             EnsureComp<AutoEmoteComponent>(ent.Owner);
             _autoEmote.AddEmote(ent.Owner, ent.Comp.AutoEmoteId);
         }
-        
+
         EnsureComp<ClumsyComponent>(ent.Owner);
 
         var transformMessage = Loc.GetString(ent.Comp.TransformMessage, ("target", ent.Owner));

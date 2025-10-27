@@ -233,8 +233,21 @@ public sealed partial class AtmosphereSystem
         var maxPressureCapped = Math.Min(maxPressure, ent.Comp.MaxEffectivePressure);
         var appliedDamage = ScaleDamage(ent, ent.Comp.BaseDamage, maxPressureCapped);
 
-        _damage.TryChangeDamage(ent, appliedDamage, ignoreResistances: true, interruptsDoAfters: false);
-        ent.Comp.IsTakingDamage = true;
+        _damage.ChangeDamage(ent.Owner, appliedDamage, ignoreResistances: true, interruptsDoAfters: false);
+        SetIsTakingDamageState(ent, true);
+    }
+
+    /// <summary>
+    /// Helper function to prevent spamming clients with dirty events when the damage state hasn't changed.
+    /// </summary>
+    /// <param name="ent">The entity to check.</param>
+    /// <param name="toSet">The value to set.</param>
+    private void SetIsTakingDamageState(Entity<DeltaPressureComponent> ent, bool toSet)
+    {
+        if (ent.Comp.IsTakingDamage == toSet)
+            return;
+        ent.Comp.IsTakingDamage = toSet;
+        Dirty(ent);
     }
 
     /// <summary>

@@ -5,7 +5,7 @@ namespace Content.Shared.Trigger.Systems;
 
 public sealed class DamageOnTriggerSystem : EntitySystem
 {
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly Damage.Systems.DamageableSystem _damageableSystem = default!;
 
     public override void Initialize()
     {
