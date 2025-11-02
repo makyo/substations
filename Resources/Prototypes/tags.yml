@@ -477,7 +477,7 @@
 
 - type: Tag
   id: DoorElectronics  # ConstructionGraph: PinionAirlock, BlastDoor, Windoor
-                       # Used interchangeably with DoorElectronicsComponent, sometimes even in the same graph. TODO pick one
+  # Used interchangeably with DoorElectronicsComponent, sometimes even in the same graph. TODO pick one
 
 - type: Tag
   id: DoorElectronicsConfigurator # Used by ActivatableUIComponent on entity DoorElectronics to whitelist a tagged tool to open the UI.
@@ -730,7 +730,7 @@
 
 - type: Tag
   id: HighRiskItem # Storage blacklist: ClothingHeadHatDetGadget. Blacklisted on MaterialReclaimerComponent by both entities
-                   # Used by EventHorizonSystem to send an admin alert.
+  # Used by EventHorizonSystem to send an admin alert.
 
 - type: Tag
   id: HighSecDoor # Used in ConstructionGraph "Airlock" to navigate between regular, glass, and highsec airlocks.
@@ -808,7 +808,7 @@
 
 - type: Tag
   id: InvalidForGlobalSpawnSpell # Used by SharedMagicSystem to skip tagged entity for an all living humans spawn spell.
-                                 # Implemented only in server ZombieSystem.
+  # Implemented only in server ZombieSystem.
 
 - type: Tag
   id: InvalidForSurvivorAntag # Used by server MagicSystem and SurvivorRuleSystem to alter mind roles from global spawn spells.
@@ -1051,7 +1051,7 @@
 
 - type: Tag
   id: PetWearable # Used by hamster, kangaroo, pet, petAdvanced, SmartCorgi InventoryTemplate to whitelist mask slots.
-                  # SmartCorgi and petAdvanced use it for eyes slots. petAdvanced uses it for head slot.
+  # SmartCorgi and petAdvanced use it for eyes slots. petAdvanced uses it for head slot.
 
 - type: Tag
   id: Pickaxe # GatherableComponent whitelist on WallRock.
@@ -1094,7 +1094,7 @@
 
 - type: Tag
   id: Plunger # Storage whitelist: BaseBow, ClothingBeltQuiver, ClothingBeltJanitor, JanitorialTrolley. ItemMapper: ClothingBeltJanitor, JanitorialTrolley.
-              # Storage blacklist on BaseToilet due to conflicting actions.
+  # Storage blacklist on BaseToilet due to conflicting actions.
 
 - type: Tag
   id: PlushieCarp # Storage whitelist: MopBucket. ItemMapper: MopBucket
@@ -1131,12 +1131,12 @@
 
 - type: Tag
   id: PowerCell # Storage whitelist: BountyLaserGun, ClothingOuterSuitSpaceNinja, BaseWeaponPowerCell, PowerCellRecharger, WeaponCapacitorRecharger,
-                # TurboItemRecharger, ShuttleGunSvalinnMachineGun. ConstructionGraph: WallmountSubstation
-                # Could potentially be replaced by whitelisting PowerCellComponent.
+    # TurboItemRecharger, ShuttleGunSvalinnMachineGun. ConstructionGraph: WallmountSubstation
+  # Could potentially be replaced by whitelisting PowerCellComponent.
 
 - type: Tag
   id: PowerCellSmall # Storage whitelist: BaseWeaponPowerCell, PowerCellRecharger, ShuttleGunSvalinnMachineGun.
-                     # ConstructionGraph: WallmountSubstation, makeshiftstunprod
+  # ConstructionGraph: WallmountSubstation, makeshiftstunprod
 
 - type: Tag
   id: Powerdrill # Storage whitelist: BaseClothingBeltEngineering. ItemMapper: BaseClothingBeltEngineering
@@ -1518,11 +1518,11 @@
 
 - type: Tag
   id: Wooden # just like our atmos
-             # MaterialStorage whitelist: Sheetifier
+  # MaterialStorage whitelist: Sheetifier
 
 - type: Tag
   id: WoodwindInstrument # even more like our atmos
-                         # MachineBoard construction: DawInstrumentMachineCircuitboard
+  # MachineBoard construction: DawInstrumentMachineCircuitboard
 
 - type: Tag
   id: Wrench

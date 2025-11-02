@@ -20,6 +20,9 @@
   id: Haram
 
 - type: Tag
+  id: Ingredient
+
+- type: Tag
   id: Jug # Let me put jugs in chem bags, please...
 
 - type: Tag
