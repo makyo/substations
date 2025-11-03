@@ -906,9 +906,6 @@
 - type: Tag
   id: MagazineShotgun # WeaponShotgunBulldog
 
-- type: Tag
-  id: MagazineMagnumSubMachineGun
-
 #endregion
 
 - type: Tag
@@ -1192,22 +1189,19 @@
   id: RipleyCentralControlModule # ConstructionGraph: Ripley
 
 - type: Tag
-  id: RipleyPeripheralsControlModule # ConstructionGraph: Ripley
-
-- type: Tag
   id: RipleyLArm # PartAssembly: RipleyHarness. ItemMapper: RipleyHarness
 
 - type: Tag
   id: RipleyLLeg # PartAssembly: RipleyHarness. ItemMapper: RipleyHarness
 
 - type: Tag
+  id: RipleyPeripheralsControlModule # ConstructionGraph: Ripley
+
+- type: Tag
   id: RipleyRArm # PartAssembly: RipleyHarness. ItemMapper: RipleyHarness
 
 - type: Tag
   id: RipleyRLeg # PartAssembly: RipleyHarness. ItemMapper: RipleyHarness
-
-- type: Tag
-  id: RodMetal1 # Unused (Exists on PartRodMetal1, PartRodMetal10)
 
 - type: Tag
   id: RollingPaper # Storage whitelist: PackPaperRolling, PackPaperRollingFilters
@@ -1254,9 +1248,6 @@
   id: SecurityHelmet # ConstructionGraph: HelmetJustice
 
 - type: Tag
-  id: SecwayKeys # Unused x2
-
-- type: Tag
   id: Sheet # MaterialStorage whitelist for many machines and lathes. Storage whitelist: MaterialBag
 
 - type: Tag
@@ -1279,9 +1270,6 @@
 
 - type: Tag
   id: SiliconEmotes # Whitelisted and blacklisted in various EmotePrototypes to create a silicon emote group.
-
-- type: Tag
-  id: SkeletonMotorcycleKeys # Unused x2
 
 - type: Tag
   id: Skewer # Food sequence key
@@ -1381,9 +1369,6 @@
   id: Syndicate # FTLDestination whitelist in nukieplanet.yml. Tag exists on ComputerShuttleSyndie and infiltrator.yml
 
 - type: Tag
-  id: SyndicateSegwayKeys # Unused x2
-
-- type: Tag
   id: Syringe # Storage whitelist: ClothingBeltPlant, ChemBag, SmartFridge. CargoBounty: BountySyringe
 
 - type: Tag
@@ -1399,9 +1384,6 @@
 
 - type: Tag
   id: Taco # Food sequence key
-
-- type: Tag
-  id: TabletopPiece # Unused (Exists on BaseTabletopPiece)
 
 - type: Tag
   id: Taser # Storage whitelist: ClothingBeltSecurity
@@ -1426,9 +1408,6 @@
 
 - type: Tag
   id: Torch # CargoBounty: BountyTorch. ConstructionGraph: PumpkinAddLight
-
-- type: Tag
-  id: ToteBase # Unused (Exists on ToteBase)
 
 - type: Tag
   id: ToyRubberDuck # ConstructionGraph: ClothingShoeSlippersDuck
@@ -1540,9 +1519,6 @@
   id: Wirecutter # Storage whitelist: BaseClothingBeltEngineering. ItemMapper: BaseClothingBeltEngineering
 
 - type: Tag
-  id: WizardStaff # Unused (Exists on WeaponStaffBase)
-
-- type: Tag
   id: WizardWand # that evil vvizard vvand
                  # .cs: ChargeSpellEvent. Storage whitelist: ClothingBeltWand
 
@@ -1557,9 +1533,6 @@
 - type: Tag
   id: Wrench # Storage whitelist: BaseClothingBeltEngineering, ClothingBeltJanitor, ClothingBeltMedical.
              # ItemMapper: BaseClothingBeltEngineering, ClothingBeltJanitor, ClothingBeltMedical
-
-- type: Tag
-  id: Wringer # Unused (Exists on JanitorialTrolley, MopBucket)
 
 - type: Tag
   id: Write # Used by PaperSystem to make tagged entity a writing tool. Many storages whitelist this as well.
