@@ -221,11 +221,6 @@
       path: /Audio/Effects/Grenades/Supermatter/smbeep.ogg
       params:
         volume: -5
-  - type: Explosive # DeltaV - made explosive again
-    explosionType: Default
-    totalIntensity: 200
-    intensitySlope: 30
-    maxIntensity: 120
   - type: EmitSoundOnTrigger
     keysIn:
     - timer
@@ -242,6 +237,11 @@
     - timer
     triggerDelay: 10.45
     components:
+      - type: Explosive # DeltaV - made explosive again
+        explosionType: Default
+        totalIntensity: 200
+        intensitySlope: 30
+        maxIntensity: 120
       - type: AmbientSound
         enabled: true
         volume: -5
@@ -271,9 +271,10 @@
         positional: true
         keysIn:
         - stageTwo
-      - type: ExplodeOnTrigger # DeltaV - was DeleteOnTrigger, made explosive
+      - type: ExplodeOnTrigger # DeltaV - made explosive
         keysIn:
         - stageTwo
+
   - type: StaticPrice
     price: 1000
 
