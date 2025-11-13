@@ -96900,7 +96900,7 @@ entities:
     - type: Transform
       pos: -52.5,65.5
       parent: 100
-- proto: LockerQuarterMasterFilled
+- proto: LockerQuarterMasterFilledHardsuit
   entities:
   - uid: 8253
     components:

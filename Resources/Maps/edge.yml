@@ -127941,7 +127941,7 @@ entities:
     - type: Transform
       pos: -92.5,-41.5
       parent: 2
-- proto: LockerQuarterMasterFilled
+- proto: LockerQuarterMasterFilledHardsuit
   entities:
   - uid: 1148
     components:
