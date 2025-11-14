@@ -46,3 +46,26 @@
         - id: ClothingMaskSterile
           amount: 2
         - id: PaperViralCarePackageManual
+
+- type: entity
+  id: CrateViralCarePackage
+  parent: CrateMedical
+  name: viral care package crate
+  description: Contains all you need to subdue a viral outbreak.
+  components:
+  - type: StorageFill
+    contents:
+    - id: JugPotassium
+    - id: JugNitrogen
+    - id: JugHydrogen
+    - id: JugSilicon
+    - id: Skimmer
+    - id: BoxBottle
+    - id: BoxSyringe
+    - id: ClothingOuterBioVirology
+      amount: 2
+    - id: ClothingHeadHatHoodBioVirology
+      amount: 2
+    - id: ClothingMaskSterile
+      amount: 2
+    - id: PaperViralCarePackageManual

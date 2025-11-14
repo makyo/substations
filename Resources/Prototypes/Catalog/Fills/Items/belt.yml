@@ -142,7 +142,7 @@
         - id: HydroponicsToolSpade
         - id: HydroponicsToolClippers
         - id: ChemistryBottleRobustHarvest
-      - id: PlantAnalyzer # L5
+        - id: PlantAnalyzer # L5
 
 - type: entity
   id: ClothingBeltSheathFilled
