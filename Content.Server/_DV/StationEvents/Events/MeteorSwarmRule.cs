@@ -17,38 +17,56 @@ namespace Content.Server.StationEvents.Events
     {
         [Dependency] private readonly SharedMapSystem _map = default!;
         [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+        [Dependency] private readonly SharedTransformSystem _transform = default!;
+
+
+        private (MapCoordinates target, Box2 targetArea) GetTarget()
+        {
+            var targetOnEntity = GameTicker.GetObserverSpawnPoint();
+            var target = _transform.ToMapCoordinates(targetOnEntity);
+
+            // target various points on the station
+            var targetArea = _physics.GetWorldAABB(targetOnEntity.EntityId);
+
+            return (target, targetArea);
+        }
 
         protected override void Started(EntityUid uid, MeteorSwarmRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
         {
             base.Started(uid, component, gameRule, args);
 
-            component.WaveCounter = RobustRandom.Next(component.MinimumWaves, component.MaximumWaves);
+            if (component.WaveCounter == null)
+            {
+                component.WaveCounter = RobustRandom.Next(component.MinimumWaves, component.MaximumWaves);
+            }
+
+            if (component.WaveCounter <= 0)
+            {
+                component.IsEnding = true;
+                component.Cooldown = 0;
+            }
         }
 
         protected override void ActiveTick(EntityUid uid, MeteorSwarmRuleComponent component, GameRuleComponent gameRule, float frameTime)
         {
-            if (component.WaveCounter <= 0)
-            {
-                ForceEndSelf(uid, gameRule);
-                return;
-            }
-
             component.Cooldown -= frameTime;
 
             if (component.Cooldown > 0f)
                 return;
 
-            component.WaveCounter--;
+            if (component.IsEnding)
+            {
+                ForceEndSelf(uid, gameRule);
+                return;
+            }
 
-            component.Cooldown += (component.MaximumCooldown - component.MinimumCooldown) * RobustRandom.NextFloat() + component.MinimumCooldown;
-
-            Box2? playableArea = null;
             var mapId = GameTicker.DefaultMap;
             // use a dud meteor if there's an atmosphere to "simulate" burning up
             var proto = "MeteorLargeDeltaV";
             if (_map.TryGetMap(mapId, out var mapUid) && TryComp<MapAtmosphereComponent>(mapUid, out var atmos) && !atmos.Space)
                 proto = "MeteorGlacierDeltaV";
 
+            Box2? playableArea = null;
             var query = AllEntityQuery<MapGridComponent, TransformComponent>();
             while (query.MoveNext(out var gridId, out _, out var xform))
             {
@@ -58,17 +76,18 @@ namespace Content.Server.StationEvents.Events
                 var aabb = _physics.GetWorldAABB(gridId);
                 playableArea = playableArea?.Union(aabb) ?? aabb;
             }
-
             if (playableArea == null)
             {
                 ForceEndSelf(uid, gameRule);
                 return;
             }
 
+            // spawn meteors on the space map periphery, so they have a chance to hit any space objects, not just the station
             var minimumDistance = (playableArea.Value.TopRight - playableArea.Value.Center).Length() + 50f;
-            var maximumDistance = minimumDistance + 100f;
+            var maximumDistance = minimumDistance + component.SpawnDistanceVariation;
 
-            var center = playableArea.Value.Center;
+            (var target, var targetArea) = GetTarget();
+            var targetSpread = (targetArea.TopRight - targetArea.Center).Length() * component.TargetingSpread;
 
             var protectedAreas = new List<(MapCoordinates center, float radiusSquared, float protectionRate)>();
 
