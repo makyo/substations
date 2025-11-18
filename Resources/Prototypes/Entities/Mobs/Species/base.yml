@@ -302,6 +302,9 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
+  - type: LayingDown # WD EDIT
+  - type: StunVisuals
+  - type: CanDoCPR # DeltaV - Addition of CPR
   - type: StunVisuals
 
 - type: entity
