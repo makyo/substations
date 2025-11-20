@@ -525,6 +525,9 @@
     - BorgModules
     - MechParts
     - MechEquipment
+    - Surgery # DeltaV - Share Surgery Parts between Epi and Med.
+    - CyberneticsRobotics # DeltaV - Share Surgery Parts between Epi and Med.
+    - PsionicProsthetics # DeltaV
     - Cybernetics # Shitmed change
     - PowerAugments # DeltaV - augments
     - ToolAugments # DeltaV - augments
@@ -540,6 +543,7 @@
     - SalvageHardsuits
     - ParamedicHardsuit
     - EngineeringHardsuits
+    - AdvancedPsionicProsthetics
     # End DeltaV Additions
   - type: MaterialStorage
     whitelist:
@@ -640,6 +644,7 @@
     - SecurityWeapons
     - SpecOpsGoogles # DeltaV
     #- SecurityDisablers # DeltaV - made roundstart
+    - AdvancedPsionicProsthetics # DeltaV
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic
