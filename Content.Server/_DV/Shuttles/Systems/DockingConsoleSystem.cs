@@ -132,7 +132,7 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         if (_station.GetStationInMap(map) is {} station)
         {
             // prevent picking vgroid and stuff
-            return _station.GetLargestGrid(station); // L5 - station api changes
+            return _station.GetLargestGrid(station); // May need to get the StationDataComponent if this doesn't work
         }
 
         var query = EntityQueryEnumerator<MapGridComponent, TransformComponent>();
