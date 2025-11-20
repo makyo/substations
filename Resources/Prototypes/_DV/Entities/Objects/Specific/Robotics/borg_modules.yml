@@ -47,12 +47,10 @@
     - state: security
     - state: icon-patrol
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: FlashlightSecliteRecharging
     - item: HoloprojectorSecurityRecharging
     - item: SecurityWhistle
-    # End L5 modifications
 
 - type: entity
   id: BorgModuleSecurityBastion # Research Locked - AdvancedRiotControl
@@ -64,12 +62,11 @@
     - state: security
     - state: icon-hold
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: FlashRecharging
     - item: WeaponLauncherNonLethal
     - item: SecurityWhistle
-    # End L5 modifications
+
 
 - type: entity
   id: BorgModuleSecurityDeescalate # Research Locked - AdvancedRiotControl
@@ -81,22 +78,22 @@
     - state: security
     - state: icon-detain
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: StunbatonSelfCharging
     - item: FlashRecharging
     - item: FlashlightSecliteRecharging
     - item: SecurityWhistle
-    - item: Handcuffs
-      hand: &BorgHandcuffs
-        emptyLabel: borg-slot-handcuffs-empty
-        emptyRepresentative: Handcuffs
-        whitelist:
-          components:
-          - Handcuff
-    - item: Zipties
-      hand: *BorgHandcuffs
-    # End L5 modifications
+  - type: DroppableBorgModule
+    moduleId: Deescalate
+    items:
+    - id: Handcuffs
+      whitelist:
+        components:
+        - Handcuff
+    - id: Zipties
+      whitelist:
+        components:
+        - Handcuff
 
 - type: entity
   parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
@@ -109,13 +106,11 @@
     - state: security
     - state: icon-hurt
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: Truncheon # Anti-Fauna option to stop them being relied on the Seclite (which will be removed when the Laws menu is fixed)
     - item: CombatKnife # Anti-fauna for blunt resistant slimes
     - item: WeaponRiotShotgunBorg
     - item: SecurityWhistle
-    # End L5 modifications
 
 - type: entity
   id: BorgModuleSecurityChase # Research Locked - NonLethalAmmunition
@@ -127,12 +122,10 @@
     - state: security
     - state: icon-chase
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: WeaponDisablerSelfCharge
     - item: FlashlightSecliteRecharging
     - item: SecurityWhistle
-    # End L5 modifications
 
 # Salvage modules
 
@@ -148,20 +141,49 @@
     - state: icon-carp
       sprite: _DV/Objects/Specific/Robotics/borgmodule.rsi
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: WeaponProtoKineticAcceleratorOneHanded
     - item: WeaponCrusherDagger
-    - item: PKAUpgradeRange # free upgrade but also lets you use any pka upgrade
-      hand:
-        emptyRepresentative: PKAUpgradeRange
-        emptyLabel: borg-slot-pka-upgrade-empty
-        whitelist:
-          tags:
-          - PKAUpgrade
-    # End L5 modifications
+  - type: DroppableBorgModule
+    moduleId: Fauna
+    items:
+    - id: PKAUpgradeRange # free upgrade but also lets you use any pka upgrade
+      whitelist:
+        tags:
+        - PKAUpgrade
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: fauna-module }
+
+# Generic Modules
+
+- type: entity
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  id: BorgModuleDecoration
+  name: decoration deployment module
+  description: A borg module for deploying patterns, guides or labels across the station.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-deco
+      sprite: _DV/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - item: CrayonMagic
+    - item: HandLabeler
+  - type: DroppableBorgModule
+    moduleId: Decoration
+    items:
+    - id: SprayPainter
+      whitelist:
+        components:
+        - SprayPainter
+    - id: SprayPainterAmmo
+      whitelist:
+        components:
+        - SprayPainterAmmo
+  - type: BorgModuleIcon
+    icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: decoration-module }
 
 # Syndicate modules
 
@@ -200,10 +222,8 @@
   description: This unfinished module has a large space for an explosive payload, with "boom" helpfully scribbled under it.
   components:
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: SelfDestructSeqDud
-    # End L5 modifications
   - type: Construction
     node: start
     defaultTarget: live
@@ -219,10 +239,8 @@
     - state: syndicate
     - state: icon-syndicate
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: RechargingRadioJammer
-    # End L5 modifications
 
 - type: entity
   parent: BaseBorgModuleSyndie
@@ -231,10 +249,8 @@
   description: "A module that comes with an unrechargable experimental C.H.I.M.P. handcannon. Cheap and disposable."
   components:
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: WeaponPistolCHIMPUpgraded
-    # End L5 modifications
 
 - type: entity
   parent: [ BaseBorgModuleSyndie, ClothingEyesHudSyndicate]
@@ -243,11 +259,9 @@
   description: "A module that comes with a syndicate handheld radio and pinpointer to the shuttle"
   components:
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: RadioHandheldSyndicate
     - item: RoboNeuroticistPointer
-    # End L5 modifications
   - type: ShowSyndicateIcons
   - type: ShowJobIcons
   - type: ShowHealthIcons
@@ -262,11 +276,9 @@
   description: "A module that comes with a crew monitor and camera bug, perfect for spying."
   components:
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: SyndiCrewMonitorRecharging
     - item: CameraBug
-    # End L5 modifications
 
 - type: entity
   parent: BaseBorgModuleSyndie
@@ -275,10 +287,8 @@
   description: "A module used to create a hard-light replica of any object around you."
   components:
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: ChameleonProjector
-    # End L5 modifications
 
 - type: entity
   parent: BaseBorgModuleSyndie
@@ -287,11 +297,8 @@
   description: "A special module for pirating, come with a cannon with 3 types of shot"
   components:
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: WeaponLauncherPirateCannonBorg
-    # End L5 modifications
-
 
 - type: entity
   parent: BaseBorgModuleSyndie
@@ -300,13 +307,11 @@
   description: "A module containing a grappling hook, material bag, a cutlass, and a pirate's sidearm"
   components:
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: WeaponGrapplingGun
     - item: MaterialBag
     - item: Cutlass
     - item: WeaponBorgBuccaneersRevolver
-    # End L5 modifications
 
 - type: entity
   parent: BaseBorgModuleSyndie
@@ -315,7 +320,5 @@
   description: "A module with a sleep hypo, for silently abducting victims"
   components:
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
     - item: SyndicateNocturineHypo
-    # End L5 modifications

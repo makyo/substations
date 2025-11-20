@@ -9,16 +9,15 @@
     - state: icon-surgery
       sprite: _Shitmed/Objects/Specific/Robotics/borgmodule.rsi
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
+    - item: HandheldHealthAnalyzerUnpowered
     - item: Scalpel
-    - item: Drill
     - item: Hemostat
     - item: Retractor
     - item: Cautery
     - item: SawElectric
+    - item: Drill
     - item: BoneGel
-    # End L5 modifications
   - type: BorgModuleIcon
     icon: { sprite: _Shitmed/Interface/Actions/actions_borg.rsi, state: surgery-module }
 
@@ -33,12 +32,35 @@
     - state: icon-advanced-surgery
       sprite: _Shitmed/Objects/Specific/Robotics/borgmodule.rsi
   - type: ItemBorgModule
-    # Begin L5 modifications - migrate for upstream borg hands
     hands:
+    - item: HandheldHealthAnalyzerUnpowered # DeltaV - Add Scanners to Surgery Modules.
     - item: EnergyScalpel
+      hand:
+        emptyLabel: borg-slot-surgery-tool
+        emptyRepresentative: EnergyScalpel
+        whitelist:
+          components:
+          - MedicalSurgeryTool
     - item: EnergyCautery
+      hand:
+        emptyLabel: borg-slot-surgery-tool
+        emptyRepresentative: EnergyCautery
+        whitelist:
+          components:
+          - MedicalSurgeryTool
     - item: AdvancedRetractor
+      hand:
+        emptyLabel: borg-slot-surgery-tool
+        emptyRepresentative: AdvancedRetractor
+        whitelist:
+          components:
+          - MedicalSurgeryTool
     - item: BoneGel
-    # End L5 modifications
+      hand:
+        emptyLabel: borg-slot-surgery-tool
+        emptyRepresentative: BoneGel
+        whitelist:
+          components:
+          - MedicalSurgeryTool
   - type: BorgModuleIcon
     icon: { sprite: _Shitmed/Interface/Actions/actions_borg.rsi, state: adv-surgery-module }
