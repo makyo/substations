@@ -5,7 +5,7 @@
   - type: CosmicCultRule
   - type: GameRule
     minPlayers: 15
-    minTotalPlayers: 40
+    # minTotalPlayers: 40 # L5
     delay:
       min: 60
       max: 120
