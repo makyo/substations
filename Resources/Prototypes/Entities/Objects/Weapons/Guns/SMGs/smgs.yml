@@ -48,6 +48,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
+        startingItem: CartridgePistol
         priority: 1
         whitelist:
           tags:
@@ -153,14 +154,13 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: CartridgePistol
     fireCost: 100
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 3000
     startingCharge: 3000
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 25
   - type: AmmoCounter
 
@@ -212,6 +212,7 @@
           whitelistFailPopup: gun-magazine-whitelist-fail
         gun_chamber:
           name: Chamber
+          startingItem: CartridgePistol
           priority: 1
           whitelist:
             tags:
@@ -273,6 +274,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
+        startingItem: CartridgePistol
         priority: 1
         whitelist:
           tags:
