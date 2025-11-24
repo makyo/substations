@@ -1,6 +1,7 @@
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Instruments;
+using Content.Shared.Kitchen.Components; // DeltaV - shared
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mind.Components;
 using Content.Shared.Kitchen;
@@ -9,8 +10,6 @@ using Content.Shared.Popups;
 using Content.Shared.Instruments;
 using Robust.Shared.Random;
 using System.Text;
-using Content.Shared.Instruments;
-using Robust.Shared.Player;
 
 namespace Content.Server.PAI;
 

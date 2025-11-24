@@ -187,7 +187,8 @@ public sealed class ChargerSystem : EntitySystem
         UpdateStatus((chargerUid, chargerComp));
     }
 
-    private bool SearchForBattery(EntityUid uid, [NotNullWhen(true)] out Entity<PredictedBatteryComponent>? battery)
+    // Start DeltaV - event-based search for battery
+    public bool SearchForBattery(EntityUid uid, [NotNullWhen(true)] out Entity<PredictedBatteryComponent>? battery)
     {
         // try get a battery directly on the inserted entity
         if (TryComp<PredictedBatteryComponent>(uid, out var batteryComp))
@@ -199,9 +200,17 @@ public sealed class ChargerSystem : EntitySystem
         if (_powerCell.TryGetBatteryFromSlot(uid, out battery))
             return true;
 
+        var evt = new SearchForBatteryEvent();
+        RaiseLocalEvent(uid, ref evt);
+        if (evt.Handled && evt.Uid.HasValue)
+        {
+            battery = (evt.Uid.Value, evt.Component!);
+            return true;
+        }
         battery = null;
         return false;
     }
+    // End DeltaV - event-based search for battery
 
     private void RefreshAllBatteries(Entity<ChargerComponent> ent)
     {
@@ -268,3 +277,20 @@ public sealed class ChargerSystem : EntitySystem
         return CellChargerStatus.Charging;
     }
 }
+
+// Begin DeltaV - event-based search for battery
+
+/// <summary>
+/// Event raised to search for batteries within an entity
+/// </summary>
+[ByRefEvent]
+public struct SearchForBatteryEvent
+{
+    public EntityUid? Uid;
+
+    public PredictedBatteryComponent? Component;
+
+    public bool Handled;
+}
+
+// End DeltaV - event-based search for battery

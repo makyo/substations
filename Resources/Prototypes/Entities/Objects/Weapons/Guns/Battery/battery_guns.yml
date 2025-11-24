@@ -277,7 +277,34 @@
   name: laser carbine
   parent: [BaseLaserRifle, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponLaserCarbine
-  description: Favoured by System Consortium Security Security for being cheap and easy to use.
+  description: Favoured by System Consortium Security for being cheap and easy to use.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 50 #Delta-V was 62.5
+  - type: StaticPrice
+    price: 420
 
 - type: entity
   name: practice laser carbine
@@ -290,7 +317,18 @@
   - type: BatteryAmmoProvider
     proto: RedLaserPractice
     fireCost: 62.5
-  - type: PacifismAllowedGun
+    # Start DeltaV additions
+  - type: Sprite
+    sprite: _DV/Objects/Weapons/Guns/Battery/laser_gun_practice.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: _DV/Objects/Weapons/Guns/Battery/laser_gun_practice.rsi
+    # End DeltaV additions
 
 - type: entity
   name: pulse pistol
@@ -336,7 +374,7 @@
   name: pulse carbine
   parent: [BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband]
   id: WeaponPulseCarbine
-  description: A high tech energy carbine favoured by SysCon-ERT operatives. # L5
+  description: A high tech energy carbine favoured by IRIS operatives. # L5
   components:
   - type: Item
     size: Large
@@ -647,6 +685,7 @@
     fireRate: 0.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser.ogg
+    projectileSpeed: 25
   - type: BatteryAmmoProvider
     proto: BulletTaser
     fireCost: 200
@@ -708,8 +747,8 @@
     - HighRiskItem
     - Sidearm
     - WeaponAntiqueLaser
-    - LaserWeapon
     - ConcealCarry # DeltaV - can be stowed in military boots for now
+    - LaserWeapon
   - type: StaticPrice
     price: 750
   - type: StealTarget
@@ -896,6 +935,10 @@
   - type: PredictedBattery
     maxCharge: 480
     startingCharge: 480
+  - type: BatterySelfRecharger #Delta V - Self recharging not removed
+    autoRecharge: true
+    autoRechargeRate: 10
+    autoRechargePauseTime: 30
 
 - type: entity
   name: energy magnum
@@ -942,7 +985,6 @@
       pacifismAllowedMode: true
   - type: PredictedBatterySelfRecharger
     autoRechargeRate: 48
-    autoRechargePause: true
     autoRechargePauseTime: 10
 
 - type: entity

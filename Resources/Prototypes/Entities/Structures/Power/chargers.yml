@@ -150,7 +150,7 @@
           tags:
           - PowerCage
           components:
-          - HitscanBatteryAmmoProvider # DeltaV - allows hitscan guns to be charged
+          - BatteryAmmoProvider # DeltaV - allows hitscan guns to be charged
         blacklist:
           tags:
           - PowerCell
