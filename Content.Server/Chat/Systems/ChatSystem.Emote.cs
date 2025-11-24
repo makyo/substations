@@ -223,8 +223,8 @@ public partial class ChatSystem
         }
 
         // Check the whitelist and blacklist
-        if (_whitelistSystem.IsWhitelistFail(emote.Whitelist, source) ||
-            _whitelistSystem.IsBlacklistPass(emote.Blacklist, source))
+        if (_whitelist.IsWhitelistFail(emote.Whitelist, source) ||
+            _whitelist.IsWhitelistPass(emote.Blacklist, source))
         {
             return false;
         }
