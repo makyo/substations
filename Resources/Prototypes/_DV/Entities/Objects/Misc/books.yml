@@ -74,7 +74,7 @@
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_book.svg.96dpi.png"
     backgroundPatchMargin: 23.0, 16.0, 14.0, 15.0
     contentMargin: 20.0, 20.0, 20.0, 20.0
-  - type: MeleeWeapon 
+  - type: MeleeWeapon
     soundHit:
       collection: Punch
     damage:
@@ -84,6 +84,23 @@
     damage:
       types:
         Blunt: 1
+
+- type: entity
+  parent: BookGorlexGirlfriends
+  id: BookCentcommChads
+  name: CentComm Chads
+  description: Issue 56 - Starring Commander Chad
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Misc/centcomm_magazine.rsi
+    state: icon
+  - type: Paper
+    contentSize: 12000
+    content: book-text-centcomm-chad
+    stampedBy:
+    - stampedColor: "#000080"
+      stampedName: stamp-component-stamped-name-nanotrasen
+
 
 # L5
 - type: entity
