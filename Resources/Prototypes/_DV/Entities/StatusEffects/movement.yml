@@ -1,5 +1,4 @@
-# L5 - added for migration to new slowdown system
 - type: entity
   parent: StatusEffectSlowdown
-  id: PrecognitionSlowdownStatusEffect
-  name: affected by mental fatigue
+  id: PsionicSlowdownStatusEffect
+  name: affected by slowdown from your powers
