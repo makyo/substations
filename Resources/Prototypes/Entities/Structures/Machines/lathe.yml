@@ -526,7 +526,7 @@
     - MechParts
     - MechEquipment
     - Surgery # DeltaV - Share Surgery Parts between Epi and Med.
-    - CyberneticsRobotics # DeltaV - Share Surgery Parts between Epi and Med.
+    #- CyberneticsRobotics # DeltaV - Share Surgery Parts between Epi and Med. # L5 — how did this ever work?
     - PsionicProsthetics # DeltaV
     - Cybernetics # Shitmed change
     - PowerAugments # DeltaV - augments

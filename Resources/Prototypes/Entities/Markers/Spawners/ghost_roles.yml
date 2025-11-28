@@ -17,7 +17,7 @@
   id: SpawnPointGhostRatKing
   name: ghost role spawn point
   suffix: rat king
-  parent: MarkerBase
+  parent: BaseAntagSpawner
   components:
   - type: GhostRole
     name: ghost-role-information-rat-king-name
@@ -32,9 +32,9 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Mobs/Animals/regalrat.rsi
-        state: icon
+    - state: green
+    - sprite: Mobs/Animals/regalrat.rsi
+      state: icon
 
 - type: entity
   id: SpawnPointGhostRemilia
@@ -55,9 +55,9 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Mobs/Animals/bat.rsi
-        state: bat
+    - state: green
+    - sprite: Mobs/Animals/bat.rsi
+      state: bat
 
 - type: entity
   id: SpawnPointGhostCerberus
@@ -78,9 +78,9 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Mobs/Pets/corgi.rsi
-        state: narsian
+    - state: green
+    - sprite: Mobs/Pets/corgi.rsi
+      state: narsian
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -100,9 +100,9 @@
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
+    - state: green
+    - sprite: Structures/Wallmounts/signs.rsi
+      state: radiation
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -114,20 +114,13 @@
     description: ghost-role-information-loneop-description
     rules: ghost-role-information-loneop-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
     - MindRoleLoneops
-    requirements: # DeltaV
-    - !type:OverallPlaytimeRequirement
-      time: 172800 # 48 hours overall
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 36000 # 10 hours of sec
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
-      - state: green
-      - sprite: Structures/Wallmounts/signs.rsi
-        state: radiation
+    - state: green
+    - sprite: Structures/Wallmounts/signs.rsi
+      state: radiation
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -195,9 +188,6 @@
     - MindRoleNinja
     raffle:
       settings: default
-    requirements:
-    - !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
-      time: 259200 # DeltaV - 72 hours
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -215,9 +205,9 @@
     name: ghost-role-information-paradox-anomaly-name
     description: ghost-role-information-paradox-anomaly-description
     rules: ghost-role-information-paradox-anomaly-rules
-    # End DeltaV Changes
     mindRoles:
     - MindRoleParadoxClone
+    # End DeltaV Changes
     raffle:
       settings: default
   - type: Sprite
