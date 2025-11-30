@@ -12,11 +12,11 @@
       effects:
       - !type:SatiateHunger
         conditions:
-        - !type:ReagentCondition #Only satiates when eaten with nutriment
-        - reagent: Nutriment
+        - !type:ReagentCondition # Only satiates when eaten with nutriment
+          reagent: Nutriment
           min: 0.1
         factor: 1
-      - !type:AdjustReagent
+      - !type:AdjustReagent # DeltaV - Make cocoa powder actually toxic to animal organs
         reagent: Neobromine
         amount: 0.2
   plantMetabolism:
