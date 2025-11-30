@@ -23,7 +23,7 @@ public sealed partial class BorgMenu : FancyWindow
     [Dependency] private readonly IEntityManager _entity = default!;
     private readonly NameModifierSystem _nameModifier;
     private readonly PowerCellSystem _powerCell;
-    private readonly SharedBatterySystem _battery;
+    private readonly PredictedBatterySystem _battery;
 
     public Action? BrainButtonPressed;
     public Action? IdChipButtonPressed; // DeltaV
@@ -47,7 +47,7 @@ public sealed partial class BorgMenu : FancyWindow
 
         _nameModifier = _entity.System<NameModifierSystem>();
         _powerCell = _entity.System<PowerCellSystem>();
-        _battery = _entity.System<SharedBatterySystem>();
+        _battery = _entity.System<PredictedBatterySystem>();
 
         _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
 
