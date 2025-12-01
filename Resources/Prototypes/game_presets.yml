@@ -154,7 +154,7 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
+  #- SpaceTrafficControlFriendlyEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
