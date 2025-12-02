@@ -41,6 +41,10 @@ public sealed class StationPowerTests
         "Submarine",
         "Terra",
         "Tortuga",
+        "Snowball", // Wizden via L5
+        "Nucleus", // L5
+        "Omphalos", // L5
+        "Gemini", // L5
     ];
     // Begin DeltaV Additions - DeltaV maps for testing
 

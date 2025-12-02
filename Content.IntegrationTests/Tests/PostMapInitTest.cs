@@ -104,6 +104,7 @@ namespace Content.IntegrationTests.Tests
             "Pebble", // DeltaV
             "PebbleHiring", // DeltaV
             "Shoukou", // DeltaV
+            "Snowball", // Wizden via L5
             "Submarine", //DeltaV
             "Terra", //DeltaV
             "TheHive", // DeltaV
