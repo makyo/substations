@@ -1,7 +1,7 @@
 ﻿# Be careful with these as they get removed on shutdown too!
 - type: entity
   id: AiHeld
-  description: Components added / removed from an entity that gets inserted into an SSR core.
+  description: Components added / removed from an entity that gets inserted into an SSR core. # L5
   categories: [ HideSpawnMenu ]
   components:
   - type: IntrinsicRadioReceiver
@@ -114,7 +114,7 @@
 - type: entity
   id: AiHolder
   abstract: true
-  description: Handles interactions across holocards + SSR cores
+  description: Handles interactions across holocards + SSR cores # L5
   components:
   - type: ItemSlots
   - type: Tag
@@ -141,7 +141,7 @@
 - type: entity
   id: Intellicard
   name: intellicard
-  description: A storage device for sys-side representatives.
+  description: A storage device for sys-side representatives. # L5
   parent:
   - BaseItem
   - AiHolder
@@ -255,6 +255,11 @@
     powerLoad: 500
   - type: ExtensionCableReceiver
   - type: Battery
+    # Very important:
+    # Disable networking to prevent the battery getting continuously dirtied every tick as it interacts with the power network.
+    # This can not be done by changing the charge rate as the power supply ramps up over time.
+    # This disables prediction for this battery.
+    netsync: false
     maxCharge: 300000
     startingCharge: 300000
   - type: ApcPowerReceiverBattery
@@ -411,7 +416,7 @@
       board: !type:Container
       station_ai_brain_slot: !type:Container
 
-# The actual brain inside the core
+      # The actual brain inside the core
 - type: entity
   id: StationAiBrain
   parent: PositronicBrain
@@ -582,11 +587,11 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - SyndicateNeuroling # DeltaV
+      - SyndicateNeuroling # DeltaV
       borg_module:
-        - BorgModuleOperative
-        - BorgModuleL6C
-        - BorgModuleDoubleEsword
+      - BorgModuleOperative
+      - BorgModuleL6C
+      - BorgModuleDoubleEsword
       borg_id_chip: # DeltaV - borg id chips
       - IdChipSyndie
   - type: ItemSlots
@@ -594,20 +599,22 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
+  - type: RandomMetadata # Delta V - Gives syndiborgs cool names!
+    nameSegments: [NamesDeathCommando]
 
 - type: entity
   id: PlayerBorgSyndicateAssaultGhostRole
   parent: PlayerBorgSyndicateAssaultBattery
   suffix: Ghost role
   components:
-    - type: GhostRole
-      name: ghost-role-information-syndicate-cyborg-assault-name
-      description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
-      raffle:
-        settings: default
-      job: Borg
-    - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-assault-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+    job: Borg
+  - type: GhostTakeoverAvailable
 
 - type: entity
   id: PlayerBorgSyndicateSaboteurBattery
@@ -618,14 +625,14 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - SyndicateNeuroling # DeltaV
+      - SyndicateNeuroling # DeltaV
       borg_module:
-        - BorgModuleAdvancedTool # Delta V - replaced tool module
-        - BorgModuleCable # DeltaV
-        - BorgModuleConstruction # DeltaV
-        - BorgModuleOperative
-        - BorgModuleSyndicateWeapon
-        - BorgModuleCloakDeviceSyndicate # DeltaV
+      - BorgModuleAdvancedTool # Delta V - replaced tool module
+      - BorgModuleCable # DeltaV
+      - BorgModuleConstruction # DeltaV
+      - BorgModuleOperative
+      - BorgModuleSyndicateWeapon
+      - BorgModuleCloakDeviceSyndicate # DeltaV
       borg_id_chip: # DeltaV - borg id chips
       - IdChipSyndie
   - type: ItemSlots
@@ -633,20 +640,22 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
+  - type: RandomMetadata # Delta V - Gives syndiborgs cool names!
+    nameSegments: [NamesDeathCommando]
 
 - type: entity
   id: PlayerBorgSyndicateSaboteurGhostRole
   parent: PlayerBorgSyndicateSaboteurBattery
   suffix: Ghost role
   components:
-    - type: GhostRole
-      name: ghost-role-information-syndicate-cyborg-saboteur-name
-      description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
-      raffle:
-        settings: default
-      job: Borg
-    - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: ghost-role-information-syndicate-cyborg-saboteur-name
+    description: ghost-role-information-syndicate-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+    job: Borg
+  - type: GhostTakeoverAvailable
 
 - type: entity
   name: syndicate invasion borg spawner
@@ -655,9 +664,9 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Structures/Decoration/banner.rsi
-        state: banner_syndicate
+    - state: red
+    - sprite: Structures/Decoration/banner.rsi
+      state: banner_syndicate
   - type: RandomSpawner
     prototypes:
     - PlayerBorgSyndicateAssaultGhostRole
@@ -712,10 +721,10 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+      - PositronicBrain
       borg_module:
-        - BorgModuleTool
-        - BorgModuleFireExtinguisher
+      - BorgModuleTool
+      - BorgModuleFireExtinguisher
       borg_id_chip: # DeltaV - borg id chips
       - IdChipAA
   - type: ItemSlots
@@ -731,15 +740,15 @@
   id: PlayerBorgDerelictGhostRole
   suffix: Ghost role
   components:
-    - type: GhostRole
-      name: ghost-role-information-derelict-cyborg-name
-      description: ghost-role-information-derelict-cyborg-description
-      rules: ghost-role-information-silicon-rules
-      raffle:
-        settings: default
-      reregister: false
-      job: Borg
-    - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: ghost-role-information-derelict-cyborg-name
+    description: ghost-role-information-derelict-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    raffle:
+      settings: default
+    reregister: false
+    job: Borg
+  - type: GhostTakeoverAvailable
 
 - type: entity
   parent: JanitorBorgChassisDerelict
