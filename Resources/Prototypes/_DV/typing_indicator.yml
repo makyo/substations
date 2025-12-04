@@ -1,10 +1,9 @@
-﻿- type: typingIndicator
+- type: typingIndicator
   id: felinid
   spritePath: /Textures/_DV/Effects/speech.rsi
   typingState: felinid0
   idleState: felinid0
   offset: 0, 0.2 # 0625
-  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: rodentia
@@ -12,7 +11,6 @@
   typingState: rodentia0
   idleState: rodentia0
   offset: 0, 0.2 # 0625
-  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: Chitinid
@@ -20,7 +18,6 @@
   typingState: chitinid0
   idleState: chitinid0
   offset: -0.2, 0.1 # 0625
-  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: Thaven
@@ -28,13 +25,11 @@
   typingState: thaven0
   idleState: thaven0
   offset: -0.2, 0.1 # 0625
-  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: feroxi
   spritePath: /Textures/_DV/Effects/speech.rsi
   typingState: feroxi0
-  hasSynthVariant: true # L5
   idleState: feroxi0
 
 - type: typingIndicator
@@ -50,7 +45,6 @@
   typingState: aac0
   idleState: aac0
   offset: -0.05, 0.1
-  noSynthVariant: true # L5
 
 - type: typingIndicator
   id: paper
@@ -58,4 +52,31 @@
   typingState: paper0
   idleState: paper0
   offset: 0, 0.1
-  noSynthVariant: true # L5
+
+- type: typingIndicator
+  id: emote
+  spritePath: /Textures/_DV/Effects/speech.rsi
+  typingState: emote0
+  idleState: emote1
+  offset: -0.05, 0.1
+
+- type: typingIndicator
+  id: ooc
+  spritePath: /Textures/_DV/Effects/speech.rsi
+  typingState: ooc0
+  idleState: ooc1
+  offset: -0.05, 0.1
+
+- type: typingIndicator
+  id: whisper
+  spritePath: /Textures/_DV/Effects/speech.rsi
+  typingState: whisper0
+  idleState: whisper1
+  offset: -0.05, 0.1
+
+- type: typingIndicator
+  id: radio
+  spritePath: /Textures/_DV/Effects/speech.rsi
+  typingState: radio0
+  idleState: radio1
+  offset: -0.05, 0.1
