@@ -4,6 +4,7 @@ using System.Numerics;
 using Content.Server.Cargo.Components;
 using Content.Server.Doors.Systems;
 using Content.Server.Hands.Systems;
+using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Revenant.Components; // Imp
 using Content.Server.Revenant.EntitySystems; // Imp
