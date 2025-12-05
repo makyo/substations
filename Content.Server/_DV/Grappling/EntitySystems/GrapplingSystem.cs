@@ -44,7 +44,6 @@ public sealed partial class GrapplingSystem : SharedGrapplingSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtual = default!;
 
     private ProtoId<TagPrototype> _grappleTargetId = "GrappleTarget";
@@ -238,7 +237,7 @@ public sealed partial class GrapplingSystem : SharedGrapplingSystem
         if (grappler.Comp.HandDisabling == HandDisabling.None)
             return; // Nothing left to do
 
-        var toBlock = new List<Hand>(2); // Most entities have a maximum of two hands, so default to a list of two hands
+        var toBlock = new List<string>(2); // Most entities have a maximum of two hands, so default to a list of two hands
         switch (grappler.Comp.HandDisabling)
         {
             case HandDisabling.None:
@@ -247,7 +246,7 @@ public sealed partial class GrapplingSystem : SharedGrapplingSystem
                 var randomHand = _random.Next(0, hands.Count);
                 var handName = hands.SortedHands[randomHand];
                 var handComp = hands.Hands[handName];
-                toBlock.Add(handComp);
+                toBlock.Add(handName);
                 break;
             case HandDisabling.SingleActive:
                 var activeHand = _hands.GetActiveHand((victim, hands));
@@ -255,7 +254,7 @@ public sealed partial class GrapplingSystem : SharedGrapplingSystem
                     toBlock.Add(activeHand!);
                 break;
             case HandDisabling.All:
-                foreach (var hand in _hands.EnumerateHands(victim, hands))
+                foreach (var hand in _hands.EnumerateHands((victim, hands)))
                 {
                     toBlock.Add(hand);
                 }
@@ -267,7 +266,7 @@ public sealed partial class GrapplingSystem : SharedGrapplingSystem
             if (_virtual.TrySpawnVirtualItemInHand(grappler, victim, out var virtItem, dropOthers: true, hand))
             {
                 EnsureComp<UnremoveableComponent>(virtItem.Value);
-                victim.Comp.DisabledHands.Add(hand.Name);
+                victim.Comp.DisabledHands.Add(hand);
             }
         }
     }
@@ -294,13 +293,17 @@ public sealed partial class GrapplingSystem : SharedGrapplingSystem
         // can add virtual items immediately.
         foreach (var handName in victim.Comp.DisabledHands)
         {
-            if (!_hands.TryGetHand(victim, handName, out var hand, hands))
+            if (!_hands.TryGetHand((victim, hands), handName, out var hand))
                 continue;
 
-            if (!hand.HeldEntity.HasValue)
+
+            if (!_hands.TryGetHeldItem((victim, hands), handName, out var item))
                 continue;
 
-            RemComp<UnremoveableComponent>(hand.HeldEntity.Value);
+            if (!item.HasValue)
+                continue;
+
+            RemComp<UnremoveableComponent>(item.Value);
         }
     }
 
@@ -508,8 +511,10 @@ public sealed partial class GrapplingSystem : SharedGrapplingSystem
         RemComp<GrappledComponent>(victim);
         _actionBlocker.UpdateCanMove(victim); // Must be done AFTER the component is removed.
 
+
+
         // Automatically get the grappler back up
-        if (grappler.Comp.ProneOnGrapple && _standingState.IsDown(grappler))
+        if (grappler.Comp.ProneOnGrapple && TryComp<StandingStateComponent>(grappler, out var standingState) && _standingState.IsDown((grappler, standingState)))
             _standingState.Stand(grappler);
 
         _alerts.ClearAlert(grappler.Owner, grappler.Comp.GrappledAlert);
