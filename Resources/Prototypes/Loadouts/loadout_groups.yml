@@ -1560,6 +1560,14 @@
   - SeniorOfficerPDA
 
 - type: loadoutGroup
+  id: SecurityEyewear
+  name: loadout-group-security-eyewear
+  minLimit: 0
+  loadouts:
+  - SecurityGlasses
+  - PrescriptionSecurityGlasses
+
+- type: loadoutGroup
   id: SecurityJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
