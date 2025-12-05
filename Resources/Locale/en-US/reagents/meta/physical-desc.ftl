@@ -101,3 +101,4 @@ reagent-physical-desc-unidentifiable = unidentifiable
 reagent-physical-desc-non-newtonian = non-newtonian
 reagent-physical-desc-thin = thin
 reagent-physical-desc-arcryox = icy blue
+reagent-physical-desc-thin = thin
