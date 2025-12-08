@@ -181,14 +181,19 @@ namespace Content.Shared.APC
         public readonly int Power;
         public readonly ApcExternalPowerState ApcExternalPower;
         public readonly float Charge;
+        public readonly float MaxLoad;
+        public readonly bool Tripped;
         public readonly bool PowerEnabled; // DeltaV
 
+        public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, float maxLoad, bool tripped)
         public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, bool powerEnabled) // DeltaV - Add powerEnabled
         {
             MainBreaker = mainBreaker;
             Power = power;
             ApcExternalPower = apcExternalPower;
             Charge = charge;
+            MaxLoad = maxLoad;
+            Tripped = tripped;
             PowerEnabled = powerEnabled; // DeltaV
         }
 
@@ -200,6 +205,8 @@ namespace Content.Shared.APC
                    Power == other.Power &&
                    ApcExternalPower == other.ApcExternalPower &&
                    MathHelper.CloseTo(Charge, other.Charge) &&
+                   MathHelper.CloseTo(MaxLoad, other.MaxLoad) &&
+                   Tripped == other.Tripped &&
                    PowerEnabled == other.PowerEnabled; // DeltaV;
         }
 
@@ -210,7 +217,7 @@ namespace Content.Shared.APC
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(MainBreaker, Power, (int) ApcExternalPower, Charge);
+            return HashCode.Combine(MainBreaker, Power, (int) ApcExternalPower, Charge, MaxLoad, Tripped);
         }
     }
 
