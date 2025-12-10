@@ -26,7 +26,7 @@
     base: cult
 
 - type: entity
-  parent: WallCosmicCult
+  parent: [WallCosmicCult, BaseDeltaPressureReinforcedPlasma] # Plasma Reinforced Window levels, in case a rift appears by the burn chamber.
   id: WallCosmicCultTrimmed
   name: malign wall
   suffix: Trimmed
