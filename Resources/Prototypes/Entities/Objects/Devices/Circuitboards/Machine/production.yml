@@ -3,7 +3,6 @@
   parent: BaseMachineCircuitboard
   name: autolathe machine board
   description: A machine printed circuit board for an autolathe.
-  suffix: DO NOT MAP # DeltaV - departamental lathes
   components:
     - type: MachineBoard
       prototype: Autolathe
@@ -32,7 +31,6 @@
   parent: BaseMachineCircuitboard
   name: protolathe machine board
   description: A machine printed circuit board for a protolathe.
-  suffix: DO NOT MAP # DeltaV - departamental lathes
   components:
   - type: Sprite
     state: science
@@ -1284,21 +1282,11 @@
       stackRequirements:
         Manipulator: 2
         Steel: 5
-
-# L5/DeltaV - not ported yet
-#- type: entity
-#  id: MailTeleporterMachineCircuitboard
-#  parent: BaseMachineCircuitboard
-#  name: mail teleporter machine board
-#  description: A machine printed circuit board for a mail teleporter.
-#  components:
-#  - type: Sprite
-#    state: supply
-#  - type: MachineBoard
-#    prototype: CargoMailTeleporter
-#    stackRequirements:
-#      Manipulator: 2
-#      Steel: 5
+        # Bluespace: 2  # DeltaV Bluespace Exists # L5 but is hard for us to get
+    - type: ReverseEngineering # delta
+      difficulty: 4
+      recipes:
+      - CargoTelepadMachineCircuitboard
 
 - type: entity
   id: SodaDispenserMachineCircuitboard
@@ -1427,22 +1415,6 @@
       Steel: 2
       Manipulator: 2
       Cable: 1
-
-# Shitmed Change Start
-- type: entity
-  id: MedicalBiofabMachineBoard
-  parent: BaseMachineCircuitboard
-  name: medical biofab machine board
-  description: A machine printed circuit board for a medical biofab.
-  components:
-    - type: Sprite
-      state: medical
-    - type: MachineBoard
-      prototype: MedicalBiofabricator
-      stackRequirements:
-#        MatterBin: 2 # Wizden removed
-        Manipulator: 4 # L5 - 2 to 4
-# Shitmed Change End
 
 - type: entity
   parent: BaseMachineCircuitboard
