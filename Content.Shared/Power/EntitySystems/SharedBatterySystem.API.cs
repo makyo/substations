@@ -4,11 +4,11 @@ using JetBrains.Annotations;
 namespace Content.Shared.Power.EntitySystems;
 
 /// <summary>
-/// Responsible for <see cref="BatteryComponent"/>.
+/// Responsible for <see cref="PredictedBatteryComponent"/>.
 /// Predicted equivalent of <see cref="Content.Server.Power.EntitySystems.BatterySystem"/>.
 /// If you make changes to this make sure to keep the two consistent.
 /// </summary>
-public abstract partial class SharedBatterySystem
+public sealed partial class PredictedBatterySystem
 {
     /// <summary>
     /// Changes the battery's charge by the given amount
@@ -17,7 +17,7 @@ public abstract partial class SharedBatterySystem
     /// </summary>
     /// <returns>The actually changed amount.</returns>
     [PublicAPI]
-    public float ChangeCharge(Entity<BatteryComponent?> ent, float amount)
+    public float ChangeCharge(Entity<PredictedBatteryComponent?> ent, float amount)
     {
         if (!Resolve(ent, ref ent.Comp))
             return 0;
@@ -36,7 +36,7 @@ public abstract partial class SharedBatterySystem
 
         TrySetChargeCooldown(ent.Owner);
 
-        var changedEv = new ChargeChangedEvent(newValue, delta, ent.Comp.ChargeRate, ent.Comp.MaxCharge);
+        var changedEv = new PredictedBatteryChargeChangedEvent(newValue, delta, ent.Comp.ChargeRate, ent.Comp.MaxCharge);
         RaiseLocalEvent(ent, ref changedEv);
 
         // Raise events if the battery status changed between full, empty, or neither.
@@ -50,7 +50,7 @@ public abstract partial class SharedBatterySystem
     /// </summary>
     /// <returns>The actually changed amount.</returns>
     [PublicAPI]
-    public float UseCharge(Entity<BatteryComponent?> ent, float amount)
+    public float UseCharge(Entity<PredictedBatteryComponent?> ent, float amount)
     {
         if (amount <= 0f)
             return 0f;
@@ -65,7 +65,7 @@ public abstract partial class SharedBatterySystem
     /// </summary>
     /// <returns>If the full amount was able to be removed.</returns>
     [PublicAPI]
-    public bool TryUseCharge(Entity<BatteryComponent?> ent, float amount)
+    public bool TryUseCharge(Entity<PredictedBatteryComponent?> ent, float amount)
     {
         if (!Resolve(ent, ref ent.Comp, false) || amount > GetCharge(ent))
             return false;
@@ -78,7 +78,7 @@ public abstract partial class SharedBatterySystem
     /// Sets the battery's charge.
     /// </summary>
     [PublicAPI]
-    public void SetCharge(Entity<BatteryComponent?> ent, float value)
+    public void SetCharge(Entity<PredictedBatteryComponent?> ent, float value)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
@@ -95,7 +95,7 @@ public abstract partial class SharedBatterySystem
         ent.Comp.LastUpdate = curTime;
         Dirty(ent);
 
-        var ev = new ChargeChangedEvent(newValue, delta, ent.Comp.ChargeRate, ent.Comp.MaxCharge);
+        var ev = new PredictedBatteryChargeChangedEvent(newValue, delta, ent.Comp.ChargeRate, ent.Comp.MaxCharge);
         RaiseLocalEvent(ent, ref ev);
 
         // Raise events if the battery status changed between full, empty, or neither.
@@ -106,7 +106,7 @@ public abstract partial class SharedBatterySystem
     /// Sets the battery's maximum charge.
     /// </summary>
     [PublicAPI]
-    public void SetMaxCharge(Entity<BatteryComponent?> ent, float value)
+    public void SetMaxCharge(Entity<PredictedBatteryComponent?> ent, float value)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
@@ -122,7 +122,7 @@ public abstract partial class SharedBatterySystem
         ent.Comp.LastUpdate = curTime;
         Dirty(ent);
 
-        var ev = new ChargeChangedEvent(ent.Comp.LastCharge, ent.Comp.LastCharge - oldCharge, ent.Comp.ChargeRate, ent.Comp.MaxCharge);
+        var ev = new PredictedBatteryChargeChangedEvent(ent.Comp.LastCharge, ent.Comp.LastCharge - oldCharge, ent.Comp.ChargeRate, ent.Comp.MaxCharge);
         RaiseLocalEvent(ent, ref ev);
 
         // Raise events if the battery status changed between full, empty, or neither.
@@ -133,7 +133,7 @@ public abstract partial class SharedBatterySystem
     /// Updates the battery's charge state and sends an event if it changed.
     /// </summary>
     [PublicAPI]
-    public void UpdateState(Entity<BatteryComponent?> ent)
+    public void UpdateState(Entity<PredictedBatteryComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
@@ -144,7 +144,7 @@ public abstract partial class SharedBatterySystem
 
         var charge = GetCharge(ent);
 
-        if (charge >= ent.Comp.MaxCharge)
+        if (charge == ent.Comp.MaxCharge)
             newState = BatteryState.Full;
         else if (charge == 0f)
             newState = BatteryState.Empty;
@@ -155,7 +155,7 @@ public abstract partial class SharedBatterySystem
         ent.Comp.State = newState;
         Dirty(ent);
 
-        var changedEv = new BatteryStateChangedEvent(oldState, newState);
+        var changedEv = new PredictedBatteryStateChangedEvent(oldState, newState);
         RaiseLocalEvent(ent, ref changedEv);
     }
 
@@ -163,7 +163,7 @@ public abstract partial class SharedBatterySystem
     /// Gets the battery's current charge.
     /// </summary>
     [PublicAPI]
-    public float GetCharge(Entity<BatteryComponent?> ent)
+    public float GetCharge(Entity<PredictedBatteryComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp, false))
             return 0f;
@@ -179,7 +179,7 @@ public abstract partial class SharedBatterySystem
     /// Gets the fraction of charge remaining (0–1).
     /// </summary>
     [PublicAPI]
-    public float GetChargeLevel(Entity<BatteryComponent?> ent)
+    public float GetChargeLevel(Entity<PredictedBatteryComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp, false))
             return 0f;
@@ -194,7 +194,7 @@ public abstract partial class SharedBatterySystem
     /// Gets number of remaining uses for the given charge cost.
     /// </summary>
     [PublicAPI]
-    public int GetRemainingUses(Entity<BatteryComponent?> ent, float cost)
+    public int GetRemainingUses(Entity<PredictedBatteryComponent?> ent, float cost)
     {
         if (cost <= 0)
             return 0;
@@ -209,7 +209,7 @@ public abstract partial class SharedBatterySystem
     /// Gets number of maximum uses at full charge for the given charge cost.
     /// </summary>
     [PublicAPI]
-    public int GetMaxUses(Entity<BatteryComponent?> ent, float cost)
+    public int GetMaxUses(Entity<PredictedBatteryComponent?> ent, float cost)
     {
         if (cost <= 0)
             return 0;
@@ -220,13 +220,13 @@ public abstract partial class SharedBatterySystem
         return (int)(ent.Comp.MaxCharge / cost);
     }
 
+
     /// <summary>
     /// Refreshes the battery's current charge rate by raising a <see cref="RefreshChargeRateEvent"/>.
-    /// Subscribe to that event to add to or subtract from the total charge rate.
     /// </summary>
     /// <returns>The new charge rate.</returns>
     [PublicAPI]
-    public float RefreshChargeRate(Entity<BatteryComponent?> ent)
+    public float RefreshChargeRate(Entity<PredictedBatteryComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp, false))
             return 0f;
@@ -241,7 +241,7 @@ public abstract partial class SharedBatterySystem
         Dirty(ent);
 
         // Inform other systems about the new rate;
-        var changedEv = new ChargeChangedEvent(ent.Comp.LastCharge, 0f, ent.Comp.ChargeRate, ent.Comp.MaxCharge);
+        var changedEv = new PredictedBatteryChargeChangedEvent(ent.Comp.LastCharge, 0f, ent.Comp.ChargeRate, ent.Comp.MaxCharge);
         RaiseLocalEvent(ent, ref changedEv);
 
         return refreshEv.NewChargeRate;
@@ -252,7 +252,7 @@ public abstract partial class SharedBatterySystem
     /// Uses the cooldown time given in the component.
     /// </summary>
     [PublicAPI]
-    public void TrySetChargeCooldown(Entity<BatterySelfRechargerComponent?> ent)
+    public void TrySetChargeCooldown(Entity<PredictedBatterySelfRechargerComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp, false))
             return;
@@ -270,7 +270,7 @@ public abstract partial class SharedBatterySystem
     /// Puts the entity's self recharge on cooldown for the specified time.
     /// </summary>
     [PublicAPI]
-    public void SetChargeCooldown(Entity<BatterySelfRechargerComponent?> ent, TimeSpan cooldown)
+    public void SetChargeCooldown(Entity<PredictedBatterySelfRechargerComponent?> ent, TimeSpan cooldown)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
@@ -284,7 +284,7 @@ public abstract partial class SharedBatterySystem
     /// Returns whether the battery is full.
     /// </summary>
     [PublicAPI]
-    public bool IsFull(Entity<BatteryComponent?> ent)
+    public bool IsFull(Entity<PredictedBatteryComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp))
             return false;

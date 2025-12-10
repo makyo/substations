@@ -1,17 +1,40 @@
 using Content.Shared.Power.Components;
-using Content.Shared.Power.EntitySystems;
 using Content.Shared.PowerCell.Components;
 
 namespace Content.Shared.Power;
 
 /// <summary>
-/// Raised when a battery's charge, charge rate or capacity was updated (capacity affects relative charge percentage).
-/// If a battery uses <see cref="BatteryComponent.ChargeRate"/> to (dis)charge this is NOT raised every single tick, but only when the charge rate is updated.
-/// For instantaneous charge changes using <see cref="SharedBatterySystem.SetCharge"/>, <see cref="SharedBatterySystem.ChangeCharge"/> or similar this DOES get raised, but
-/// you should avoid doing so in update loops if the component has net sync enabled.
+/// Raised when a battery's charge or capacity changes (capacity affects relative charge percentage).
+/// Only raised for entities with <see cref="BatteryComponent"/>.
 /// </summary>
 [ByRefEvent]
-public readonly record struct ChargeChangedEvent(float CurrentCharge, float Delta, float CurrentChargeRate, float MaxCharge)
+public readonly record struct ChargeChangedEvent(float Charge, float Delta, float MaxCharge)
+{
+    /// <summary>
+    /// The new charge of the battery.
+    /// </summary>
+    public readonly float Charge = Charge;
+
+    /// <summary>
+    /// The amount the charge was changed by.
+    /// </summary>
+    public readonly float Delta = Delta;
+
+    /// <summary>
+    /// The maximum charge of the battery.
+    /// </summary>
+    public readonly float MaxCharge = MaxCharge;
+}
+
+/// <summary>
+/// Raised when a predicted battery's charge or capacity changes (capacity affects relative charge percentage).
+/// Unlike <see cref="ChargeChangedEvent"/> this is not raised repeatedly each time the charge changes, but only when the charge rate is changed
+/// or a charge amount was added or removed instantaneously. The current charge can be inferred from the time of the last update and the charge and
+/// charge rate at that time.
+/// Only raised for entities with <see cref="PredictedBatteryComponent"/>.
+/// </summary>
+[ByRefEvent]
+public readonly record struct PredictedBatteryChargeChangedEvent(float CurrentCharge, float Delta, float CurrentChargeRate, float MaxCharge)
 {
     /// <summary>
     /// The new charge of the battery.
@@ -37,14 +60,15 @@ public readonly record struct ChargeChangedEvent(float CurrentCharge, float Delt
 
 /// <summary>
 /// Raised when a battery changes its state between full, empty, or neither.
-/// Useful to detect when a battery is empty or fully charged (since ChargeChangedEvent does not get raised every tick for batteries with a constant charge rate).
+/// Used only for <see cref="PredictedBatteryComponent"/>.
 /// </summary>
 [ByRefEvent]
-public record struct BatteryStateChangedEvent(BatteryState OldState, BatteryState NewState);
+public record struct PredictedBatteryStateChangedEvent(BatteryState OldState, BatteryState NewState);
 
 /// <summary>
 /// Raised to calculate a predicted battery's recharge rate.
 /// Subscribe to this to offset its current charge rate.
+/// Used only for <see cref="PredictedBatteryComponent"/>.
 /// </summary>
 [ByRefEvent]
 public record struct RefreshChargeRateEvent(float MaxCharge)
@@ -56,7 +80,7 @@ public record struct RefreshChargeRateEvent(float MaxCharge)
 /// <summary>
 /// Event that supports multiple battery types.
 /// Raised when it is necessary to get information about battery charges.
-/// Works with either <see cref="BatteryComponent"/> or <see cref="PowerCellSlotComponent"/>.
+/// Works with either <see cref="BatteryComponent"/>, <see cref="PredictedBatteryComponent"/>, or <see cref="PowerCellSlotComponent"/>.
 /// If there are multiple batteries then the results will be summed up.
 /// </summary>
 [ByRefEvent]
@@ -69,7 +93,7 @@ public record struct GetChargeEvent
 /// <summary>
 /// Method event that supports multiple battery types.
 /// Raised when it is necessary to change the current battery charge by some value.
-/// Works with either <see cref="BatteryComponent"/> or <see cref="PowerCellSlotComponent"/>.
+/// Works with either <see cref="BatteryComponent"/>, <see cref="PredictedBatteryComponent"/>, or <see cref="PowerCellSlotComponent"/>.
 /// If there are multiple batteries then they will be changed in order of subscription until the total value was reached.
 /// </summary>
 [ByRefEvent]
