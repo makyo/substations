@@ -1,4 +1,4 @@
-﻿// DeltaV Start - Fix EvenHealing with Limbs.
+// DeltaV Start - Fix EvenHealing with Limbs.
 using System.Linq;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Systems;
@@ -10,12 +10,11 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Localizations;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
-namespace Content.Shared.EntityEffects.Effects;
+namespace Content.Shared.EntityEffects.Effects.Damage;
 
 /// <summary>
-/// Evenly adjust the damage types in a damage group by up to a specified total on this entity.
+/// Evenly heal the damage types in a damage group by up to a specified total on this entity.
 /// Total adjustment is modified by scale.
 /// </summary>
 /// <inheritdoc cref="EntityEffectSystem{T,TEffect}"/>
