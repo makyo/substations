@@ -48,7 +48,7 @@
           #service
             Bartender: [ 2, 3 ]
             Botanist: [ 2, 4 ]
-            Boxer: [ 2, 2 ]
+            #Boxer: [ 2, 2 ]
             Chef: [ 4, 5 ]
             Clown: [ 1, 2 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -58,7 +58,7 @@
             Musician: [ 2, 2 ]
             Reporter: [ 1, 2 ]
             ServiceWorker: [ 1, 2 ]
-            Zookeeper: [ 2, 2 ]
+            #Zookeeper: [ 2, 2 ]
           #science
             Roboticist: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
