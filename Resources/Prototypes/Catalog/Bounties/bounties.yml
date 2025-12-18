@@ -521,7 +521,6 @@
     whitelist:
       components:
       - Battery
-      - PredictedBattery
 
 - type: cargoBounty
   id: BountyLaserGun
@@ -606,10 +605,11 @@
 
 - type: cargoBounty
   id: BountyRollerskates
-  reward: 900
+  reward: 6500
   description: bounty-description-rollerskates
   entries:
   - name: bounty-item-rollerskates
+    amount: 2
     whitelist:
       components:
       - Skates
