@@ -604,9 +604,12 @@
       borg_brain:
         - PositronicBrain
       borg_module:
-        - BorgModuleTool
+        - BorgModuleAdvancedTool # Delta V - replaced tool module
+        - BorgModuleCable # DeltaV
+        - BorgModuleConstruction # DeltaV
         - BorgModuleOperative
         - BorgModuleSyndicateWeapon
+        - BorgModuleCloakDeviceSyndicate # DeltaV
       borg_id_chip: # DeltaV - borg id chips
       - IdChipSyndie
   - type: ItemSlots
