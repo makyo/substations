@@ -32,10 +32,10 @@ public sealed partial class BatteryComponent : Component
     public float MaxCharge;
 
     /// <summary>
-    /// The price per one joule. Default is 10 RACs for 10kJ, thanks to the energy crisis.
+    /// The price per one joule. Default is 1 speso for 10kJ.
     /// </summary>
     [DataField]
-    public float PricePerJoule = 0.001f; // L5 — was 0.0001f
+    public float PricePerJoule = 0.0001f;
 
     /// <summary>
     /// Time stamp of the last networked update.
