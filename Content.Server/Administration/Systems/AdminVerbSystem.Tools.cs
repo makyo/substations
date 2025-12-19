@@ -1,11 +1,9 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
-using Content.Server.Administration.Components;
 using Content.Server.Cargo.Components;
 using Content.Server.Doors.Systems;
 using Content.Server.Hands.Systems;
-using Content.Server.Power.Components;
 using Content.Server.Revenant.Components; // Imp
 using Content.Server.Revenant.EntitySystems; // Imp
 using Content.Server.Stack;
@@ -19,7 +17,6 @@ using Content.Shared.Administration.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Construction.Components;
-using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
 using Content.Shared.Doors.Components;
@@ -738,24 +735,6 @@ public sealed partial class AdminVerbSystem
             args.Verbs.Add(setCapacity);
         }
 
-        if (TryComp<ItemComponent>(args.Target, out var item))
-        {
-            Verb makeAnimate = new()
-            {
-                Text = "Animate Item",
-                Category = VerbCategory.Tricks,
-                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/Actions/animate.png")),
-                Act = () =>
-                {
-                    _revenantAnimate.TryAnimateObject(args.Target, TimeSpan.FromSeconds(60));
-                },
-                Impact = LogImpact.High,
-                Message = Loc.GetString("admin-trick-make-animate-description"),
-                Priority = (int) TricksVerbPriorities.MakeAnimate,
-            };
-            args.Verbs.Add(makeAnimate);
-        }
-
         // Begin Imp Changes
         if (TryComp<RevenantAnimatedComponent>(args.Target, out var animate))
         {
@@ -770,7 +749,7 @@ public sealed partial class AdminVerbSystem
                 },
                 Impact = LogImpact.High,
                 Message = Loc.GetString("admin-trick-make-inanimate-description"),
-                Priority = (int) TricksVerbPriorities.MakeInanimate,
+                Priority = (int) TricksVerbPriorities.MakeAnimate,
             };
             args.Verbs.Add(makeInanimate);
         }
