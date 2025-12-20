@@ -6,6 +6,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Events;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
+using Content.Server.Radio;
 using Content.Server.Station.Systems;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult;
@@ -28,7 +29,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.Popups;
 using Content.Shared.Radio;
-using Content.Server.Radio.Components;
+using Content.Shared.Radio.Components;
 
 namespace Content.Server._DV.CosmicCult;
 

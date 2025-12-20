@@ -167,6 +167,18 @@
     targetUser: true
 
 - type: entity
+  parent: BaseSubdermalImplant
+  id: RadioSyndicateImplant # DeltaV - Renamed
+  name: radio implant
+  description: This implant grants access to the Syndicate channel without a headset.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - Syndicate
+
+- type: entity
   parent: [ BaseSubdermalImplant, StorePresetUplink ]
   id: UplinkImplant
   name: uplink implant

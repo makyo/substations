@@ -16,11 +16,20 @@
 
 - type: entity
   parent: BaseImplantOnlyImplanter
-  id: GenericRadioImplanter
-  name: generic radio implanter
+  id: WatchdogImplanter
+  name: watchdog implanter
   components:
   - type: Implanter
-    implant: RadioImplant
+    implant: WatchdogImplant
+
+- type: entity
+  parent: BaseImplantOnlyImplanterCentcomm
+  id: CentCommImplanter
+  name: centcomm mindshield implanter
+  suffix: mindshield
+  components:
+  - type: Implanter
+    implant: CentCommImplant
 
 # Nukie implants
 

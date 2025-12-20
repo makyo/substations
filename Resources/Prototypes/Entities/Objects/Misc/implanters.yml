@@ -208,12 +208,13 @@
     implant: FreedomImplant
 
 - type: entity
-  id: RadioImplanterSyndicate  # DeltaV
-  name: syndicate radio implanter
+  id: RadioImplanterSyndicate # DeltaV - Renamed
+  name: syndicate radio implanter # DeltaV - added name
+  suffix: radio Syndicate
   parent: BaseImplantOnlyImplanterSyndi
   components:
   - type: Implanter
-    implant: RadioSyndicateImplant # DeltaV
+    implant: RadioSyndicateImplant
 
 - type: entity
   id: UplinkImplanter
