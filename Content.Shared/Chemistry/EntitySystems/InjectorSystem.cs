@@ -4,7 +4,6 @@ using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Events;
 using Content.Shared.Chemistry.Prototypes;
-using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
@@ -66,7 +65,6 @@ public sealed partial class InjectorSystem : EntitySystem
             ToggleMode(injector, args.User);
 
         args.Handled = true;
-        args.ApplyDelay = false;
     }
 
     private void OnInjectorAfterInteract(Entity<InjectorComponent> injector, ref AfterInteractEvent args)
@@ -84,12 +82,12 @@ public sealed partial class InjectorSystem : EntitySystem
                 return;
             }
 
-            args.Handled |= TryMobsDoAfter(injector, args.User, target);
+            args.Handled = TryMobsDoAfter(injector, args.User, target);
             return;
         }
 
         // Draw from or inject into jugs, bottles, etc.
-        args.Handled |= TryContainerDoAfter(injector, args.User, target);
+        args.Handled = ContainerDoAfter(injector, args.User, target);
     }
 
     private void OnInjectDoAfter(Entity<InjectorComponent> injector, ref InjectorDoAfterEvent args)
@@ -97,7 +95,7 @@ public sealed partial class InjectorSystem : EntitySystem
         if (args.Cancelled || args.Handled || args.Args.Target == null)
             return;
 
-        args.Handled |= TryUseInjector(injector, args.Args.User, args.Args.Target.Value);
+        args.Handled = TryUseInjector(injector, args.Args.User, args.Args.Target.Value);
     }
 
     private void OnAttack(Entity<InjectorComponent> injector, ref MeleeHitEvent args)
@@ -199,7 +197,7 @@ public sealed partial class InjectorSystem : EntitySystem
             || !GetMobsDoAfterTime(injector, user, target, out var doAfterTime, out var amount)) // Get the DoAfter time.
             return false;
 
-        if (!_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, doAfterTime, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
+        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, doAfterTime, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
         {
             BreakOnMove = true,
             BreakOnWeightlessMove = false,
@@ -207,8 +205,7 @@ public sealed partial class InjectorSystem : EntitySystem
             NeedHand = injector.Comp.NeedHand,
             BreakOnHandChange = injector.Comp.BreakOnHandChange,
             MovementThreshold = injector.Comp.MovementThreshold,
-        }))
-            return false;
+        });
 
         // If the DoAfter was instant, don't send popups and logs indicating an attempt.
         if (doAfterTime == TimeSpan.Zero)
@@ -305,12 +302,12 @@ public sealed partial class InjectorSystem : EntitySystem
     #endregion Mob Interaction
 
     #region Container Interaction
-    private bool TryContainerDoAfter(Entity<InjectorComponent> injector, EntityUid user, EntityUid target)
+    private bool ContainerDoAfter(Entity<InjectorComponent> injector, EntityUid user, EntityUid target)
     {
         if (!GetContainerDoAfterTime(injector, user, target, out var doAfterTime))
             return false;
 
-        return _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, doAfterTime, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
+        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, doAfterTime, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
         {
             BreakOnMove = true,
             BreakOnWeightlessMove = false,
@@ -319,6 +316,8 @@ public sealed partial class InjectorSystem : EntitySystem
             BreakOnHandChange = injector.Comp.BreakOnHandChange,
             MovementThreshold = injector.Comp.MovementThreshold,
         });
+
+        return true;
     }
 
     /// <summary>
@@ -386,45 +385,45 @@ public sealed partial class InjectorSystem : EntitySystem
         {
             // Handle injecting/drawing for solutions
             case InjectorBehavior.Inject:
-                {
-                    if (isOpenOrIgnored && _solutionContainer.TryGetInjectableSolution(target, out var injectableSolution, out _))
-                        return TryInject(injector, user, target, injectableSolution.Value, false);
+            {
+                if (isOpenOrIgnored && _solutionContainer.TryGetInjectableSolution(target, out var injectableSolution, out _))
+                    return TryInject(injector, user, target, injectableSolution.Value, false);
 
-                    if (isOpenOrIgnored && _solutionContainer.TryGetRefillableSolution(target, out var refillableSolution, out _))
-                        return TryInject(injector, user, target, refillableSolution.Value, true);
-                    break;
-                }
+                if (isOpenOrIgnored && _solutionContainer.TryGetRefillableSolution(target, out var refillableSolution, out _))
+                    return TryInject(injector, user, target, refillableSolution.Value, true);
+                break;
+            }
             case InjectorBehavior.Draw:
+            {
+                // Draw from a bloodstream if the target has that
+                if (TryComp<BloodstreamComponent>(target, out var stream) &&
+                    _solutionContainer.ResolveSolution(target, stream.BloodSolutionName, ref stream.BloodSolution))
                 {
-                    // Draw from a bloodstream if the target has that
-                    if (TryComp<BloodstreamComponent>(target, out var stream) &&
-                        _solutionContainer.ResolveSolution(target, stream.BloodSolutionName, ref stream.BloodSolution))
-                    {
-                        return TryDraw(injector, user, (target, stream), stream.BloodSolution.Value);
-                    }
-
-                    // Draw from an object (food, beaker, etc)
-                    if (isOpenOrIgnored && _solutionContainer.TryGetDrawableSolution(target, out var drawableSolution, out _))
-                        return TryDraw(injector, user, target, drawableSolution.Value);
-
-                    msg = target == user ? "injector-component-cannot-draw-message-self" : "injector-component-cannot-draw-message";
-                    _popup.PopupClient(Loc.GetString(msg, ("target", Identity.Entity(target, EntityManager))), injector, user);
-                    break;
+                    return TryDraw(injector, user, (target, stream), stream.BloodSolution.Value);
                 }
+
+                // Draw from an object (food, beaker, etc)
+                if (isOpenOrIgnored && _solutionContainer.TryGetDrawableSolution(target, out var drawableSolution, out _))
+                    return TryDraw(injector, user, target, drawableSolution.Value);
+
+                msg = target == user ? "injector-component-cannot-draw-message-self" : "injector-component-cannot-draw-message";
+                _popup.PopupClient(Loc.GetString(msg, ("target", Identity.Entity(target, EntityManager))), injector, user);
+                break;
+            }
             case InjectorBehavior.Dynamic:
+            {
+                // If it's a mob, inject. We're using injectableSolution so I don't have to code a sole method for injecting into bloodstreams.
+                if (HasComp<BloodstreamComponent>(target)
+                    && _solutionContainer.TryGetInjectableSolution(target, out var injectableSolution, out _))
                 {
-                    // If it's a mob, inject. We're using injectableSolution so I don't have to code a sole method for injecting into bloodstreams.
-                    if (HasComp<BloodstreamComponent>(target)
-                        && _solutionContainer.TryGetInjectableSolution(target, out var injectableSolution, out _))
-                    {
-                        return TryInject(injector, user, target, injectableSolution.Value, false);
-                    }
-
-                    // Draw from an object (food, beaker, etc.)
-                    if (isOpenOrIgnored && _solutionContainer.TryGetDrawableSolution(target, out var drawableSolution, out _))
-                        return TryDraw(injector, user, target, drawableSolution.Value);
-                    break;
+                    return TryInject(injector, user, target, injectableSolution.Value, false);
                 }
+
+                // Draw from an object (food, beaker, etc.)
+                if (isOpenOrIgnored && _solutionContainer.TryGetDrawableSolution(target, out var drawableSolution, out _))
+                    return TryDraw(injector, user, target, drawableSolution.Value);
+                break;
+            }
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -558,15 +557,6 @@ public sealed partial class InjectorSystem : EntitySystem
         {
             temporarilyRemovedSolution = applicableTargetSolution.SplitSolutionWithout(applicableTargetSolution.Volume, reagentWhitelist.ToArray());
         }
-
-        // Begin DeltaV Additions - skimmer functionality
-        else if (injector.Comp.TargetSmallest && applicableTargetSolution.Any())
-        {
-            var smallest = applicableTargetSolution.MinBy(soln => soln.Quantity);
-            ProtoId<ReagentPrototype> smallestReagent = smallest.Reagent.Prototype;
-            temporarilyRemovedSolution = applicableTargetSolution.SplitSolutionWithout(applicableTargetSolution.Volume, smallestReagent);
-        }
-        // End DeltaV Additions - skimmer functionality
 
         // If transferAmount is null, fallback to 5 units.
         var plannedTransferAmount = injector.Comp.CurrentTransferAmount ?? FixedPoint2.New(5);
