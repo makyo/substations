@@ -10,6 +10,10 @@ station-ai-is-too-damaged-for-upload = Upload failed - the SSR core must be repa
 station-ai-core-losing-power = Your SSR core is now running on reserve battery power.
 station-ai-core-critical-power = Your SSR core is critically low on power. External power must be re-established or severe data corruption may occur!
 
+# Ghost role
+station-ai-ghost-role-name = Station AI
+station-ai-ghost-role-description = Serve the station crew as its ever watchful AI.
+
 # Radial actions
 ai-open = Open actions
 ai-close = Close actions

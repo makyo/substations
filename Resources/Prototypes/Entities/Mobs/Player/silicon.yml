@@ -19,6 +19,7 @@
     # Begin DeltaV additions
     - Justice
     - Prison
+    - Traffic
     # End DeltaV additions
   - type: ActiveRadio
     channels:
@@ -34,6 +35,7 @@
     # Begin DeltaV additions
     - Justice
     - Prison
+    - Traffic
     # End DeltaV additions
   - type: IgnoreUIRange
   - type: StationAiHeld
@@ -84,17 +86,7 @@
   - type: DamagedSiliconAccent
     startPowerCorruptionAtCharIdx: 4
     maxPowerCorruptionAtCharIdx: 20
-  # Begin DeltaV - AI Shop System
-  - type: StationAiShop
-  - type: Store
-    categories:
-    - AiAbilities
-    currencyWhitelist:
-    - AiMemory
-    balance:
-      AiMemory: 3
-    grantActionsToMind: false
-  # End DeltaV - AI Shop System
+  - type: StationAiShop # DeltaV - AI Shop System
 
 - type: entity
   id: AiHeldIntellicard
@@ -263,11 +255,6 @@
     powerLoad: 500
   - type: ExtensionCableReceiver
   - type: Battery
-    # Very important:
-    # Disable networking to prevent the battery getting continuously dirtied every tick as it interacts with the power network.
-    # This can not be done by changing the charge rate as the power supply ramps up over time.
-    # This disables prediction for this battery.
-    netsync: false
     maxCharge: 300000
     startingCharge: 300000
   - type: ApcPowerReceiverBattery
@@ -440,6 +427,16 @@
   - type: ActionGrant
     actions:
     - ActionViewLaws
+  # Begin DeltaV - AI Shop System
+  - type: Store
+    categories:
+    - AiAbilities
+    currencyWhitelist:
+    - AiMemory
+    balance:
+      AiMemory: 3
+    grantActionsToMind: false
+  # End DeltaV - AI Shop System
   - type: UserInterface
     interfaces:
       enum.SiliconLawsUiKey.Key:
@@ -480,6 +477,20 @@
       state: ai_female
   - type: NameIdentifier
     group: StationAi
+  # Begin DeltaV additions
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+    - HumanoidSilicon
+  # End DeltaV additions
+  - type: ToggleableGhostRole
+    roleName: station-ai-ghost-role-name
+    roleDescription: station-ai-ghost-role-description
+    roleRules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleGhostRoleSilicon
+    job: StationAi
 
 # Hologram projection that the AI's eye tracks.
 # L5
@@ -571,7 +582,7 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+        - SyndicateNeuroling # DeltaV
       borg_module:
         - BorgModuleOperative
         - BorgModuleL6C
@@ -607,7 +618,7 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+        - SyndicateNeuroling # DeltaV
       borg_module:
         - BorgModuleAdvancedTool # Delta V - replaced tool module
         - BorgModuleCable # DeltaV
@@ -668,6 +679,8 @@
       - BorgModuleConstruction
       - BorgModuleRCD
       - BorgModuleCable
+      borg_id_chip: # DeltaV - borg id chips
+      - IdChipBorgAA
   - type: ItemSlots
     slots:
       cell_slot:
@@ -742,6 +755,8 @@
       - BorgModuleFireExtinguisher
       - BorgModuleCleaning
       - BorgModuleCustodial
+      borg_id_chip: # DeltaV - borg id chips
+      - IdChipBorgAA
   - type: ItemSlots
     slots:
       cell_slot:
@@ -780,6 +795,8 @@
       - BorgModuleChemical
       - BorgModuleTopicals
       - BorgModuleRescue
+      borg_id_chip: # DeltaV - borg id chips
+      - IdChipBorgAA
   - type: ItemSlots
     slots:
       cell_slot:
@@ -817,6 +834,8 @@
       - BorgModuleMining
       - BorgModuleTraversal
       - BorgModuleAppraisal
+      borg_id_chip: # DeltaV - borg id chips
+      - IdChipBorgAA
   - type: ItemSlots
     slots:
       cell_slot:
@@ -848,11 +867,13 @@
   - type: ContainerFill
     containers:
       borg_brain:
-      - PositronicBrain
+      - SyndicateNeuroling # DeltaV
       borg_module:
       - BorgModuleOperative
       - BorgModuleC20r
       - BorgModuleEsword
+      borg_id_chip: # DeltaV - borg id chips
+      - IdChipRoboNeuroticist # BorgAA doesn't make sense. This gives them externals and maintenence access to get into the station at least.
   - type: ItemSlots
     slots:
       cell_slot:
