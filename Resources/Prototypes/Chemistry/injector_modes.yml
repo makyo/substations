@@ -96,7 +96,7 @@
 ## Hyposprays
 - type: injectorMode
   abstract: true
-  id: HyposprayBaseMode
+  id: BaseHyposprayMode
   injectSound: /Audio/Items/hypospray.ogg
   injectPopupTarget: injector-component-feel-prick-message
   injectOnUse: true
@@ -106,11 +106,11 @@
   - 5
 
 - type: injectorMode
-  parent: [ HyposprayBaseMode, BaseInjectMode ]
+  parent: [ BaseHyposprayMode, BaseInjectMode ]
   id: HyposprayInjectMode
 
 - type: injectorMode
-  parent: [ HyposprayBaseMode, BaseDynamicMode ]
+  parent: [ BaseHyposprayMode, BaseDynamicMode ]
   id: HyposprayDynamicMode
 
 - type: injectorMode
