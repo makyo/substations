@@ -5,10 +5,8 @@
   id: LockerFillQuarterMasterDeltaV
   table: !type:AllSelector
     children:
-    - id: SpaceCashLuckyBill # LO steal objective, see Resources/Prototypes/_DV/Entities/Objects/Misc/first_bill.yml
     - id: BoxPDACargo
     - id: QuartermasterIDCard
-    - id: ClothingShoesBootsWinterLogisticsOfficer
     - id: StockTradingCartridge
     - id: LunchboxCommandFilledRandom
       prob: 0.3
@@ -17,10 +15,6 @@
   id: LockerFillCaptainDeltaV
   table: !type:AllSelector
     children:
-    - id: ClothingHeadHatBeretCap
-    - id: ClothingShoesLeather # fancy shoes for HoP and cap TODO: move to dresser
-    - id: ClothingShoesMiscWhite
-    - id: ClothingShoesBootsWinterCap
     - id: LunchboxCommandFilledRandom
       prob: 0.3
 
@@ -29,21 +23,9 @@
   table: !type:AllSelector
     children:
     - id: ClothingOuterCoatHoPArmored
-    - id: ClothingOuterArmorDuraVest # replaced(???) HoP's armoured coat with a standard stabproof, pending HoPcoat resprite
-    - id: ClothingOuterCoatHoPFormal
     - id: BookIanDossier # HoP steal objective, see Resources/Prototypes/_DV/Entities/Objects/Misc/ian_dossier.yml
-    - id: ClothingHandsGlovesInspection
-    - id: ClothingUniformJumpsuitHoPMess
-    - id: ClothingUniformJumpskirtHoPMess
-    - id: ClothingUniformJumpsuitBoatswain
-    - id: ClothingUniformJumpsuitHoPFormal
-    - id: ClothingUniformJumpskirtHoPFormal
-    - id: ClothingShoesBootsLaceup
-    - id: ClothingShoesMiscWhite
-    - id: ClothingShoesBootsWinterHeadOfPersonel
-    - id: ServiceTechFabCircuitboard
     - id: LunchboxCommandFilledRandom
-      prob: 0.3
+      prob: 0.8
 
 - type: entityTable
   id: LockerFillChiefEngineerDeltaV
@@ -51,8 +33,6 @@
     children:
     - id: BoxPDAEngineering
     - id: CEIDCard
-    - id: ClothingShoesBootsWinterChiefEngineer
-    - id: EngineeringTechFabCircuitboard
     - id: LunchboxCommandFilledRandom
       prob: 0.3
 
@@ -60,11 +40,9 @@
   id: LockerFillChiefMedicalOfficerDeltaV
   table: !type:AllSelector
     children:
-    - id: RubberStampPsychologist # TODO: make a psych locker and move this to it, or just remove this since psych spawns with it.
     - id: BoxPDAMedical
     - id: ClothingBeltMilitaryWebbingCMO # add webbing for CMO. ON THIS STATION, IT'S DRIP OR [die], CAPTAIN!
     - id: CMOIDCard
-    - id: ClothingShoesBootsWinterChiefMedicalOfficer
     - id: LunchboxCommandFilledRandom
       prob: 0.3
     - id: ChemMasterFlatpack # So the chemist can make pills
@@ -80,10 +58,9 @@
     - id: BoxPDAScience
     - id: RDIDCard
     - id: BoxFolderRdClipboard
-    - id: ClothingShoesBootsWinterMystagogue
-    - id: EpistemicsTechFabCircuitboard
     - id: LunchboxCommandFilledRandom
       prob: 0.3
+    - id: CosmicCenser
 
 - type: entityTable
   id: LockerFillHeadOfSecurityDeltaV
