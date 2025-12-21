@@ -1,6 +1,6 @@
-using Content.Server.Emp;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Organ;
+using Content.Shared.Emp;
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared._Shitmed.Body.Events;
 using Content.Shared._Shitmed.Cybernetics;
