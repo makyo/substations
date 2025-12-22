@@ -60,7 +60,7 @@ public sealed partial class SmartFridgeDVComponent : Component // L5 - conflicts
 }
 
 [Serializable, NetSerializable, DataRecord]
-public record struct SmartFridgeEntry
+public partial record struct SmartFridgeEntry
 {
     public string Name;
 
