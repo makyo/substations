@@ -450,8 +450,18 @@
       effects:
       - !type:SatiateThirst
         factor: 4
-    Gas: # DeltaV - Feroxi get to breathe with this too!
+    Gas:
       effects:
+      - !type:HealthChange
+        scaling: true
+        ignoreResistances: true
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Slime ]
+        damage:
+          types:
+            Heat: 3
+      # DeltaV - Begin changes (feroxi)
       - !type:Oxygenate
         conditions:
         - !type:OrganType
@@ -470,7 +480,6 @@
         - !type:OrganType
           type: FeroxiDehydrated
         factor: 2
-      # DeltaV Converts H2O into CO2 for Feroxi
       - !type:ModifyLungGas
         conditions:
         - !type:OrganType
@@ -485,6 +494,7 @@
         ratios: # DeltaV no duplicating O2 >:3
           CarbonDioxide: 0.5
           WaterVapor: -1.0
+      # DeltaV - End changes
 
 - type: reagent
   id: Ice
@@ -573,12 +583,20 @@
   desc: reagent-desc-pilk
   physicalDesc: reagent-physical-desc-creamy
   flavor: pilk
-  color: "#e7c69f"
+  color: "#ecd0aa" # DeltaV: Color changed
+  # Begin DeltaV additions
+  metamorphicSprite: # DeltaV: Sprite changed
+    sprite: _DV/Objects/Consumable/Drinks/pilk.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # End DeltaV additions
   metabolisms:
     Drink:
       effects:
-        - !type:SatiateThirst
-          factor: 1
+      - !type:SatiateThirst
+        factor: 3 # DeltaV: Factor changed from 1 to 3
   fizziness: 0.3
 
 - type: reagent
@@ -587,8 +605,16 @@
   parent: BaseDrink
   desc: reagent-desc-posca
   physicalDesc: reagent-physical-desc-sour
-  flavor: bitter
-  color: "#B3B599"
+  flavor: sour # DeltaV: Flavor changed
+  color: "#8f6764" # DeltaV: Color changed
+  # Begin DeltaV additions
+  metamorphicSprite:
+    sprite: _DV/Objects/Consumable/Drinks/posca.rsi # DeltaV: Sprite changed
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # End DeltaV additions
 
 - type: reagent
   id: KiraSpecial
