@@ -53,7 +53,8 @@
       - !type:Addicted # Delta-V - Addictive
         probability: 0.6 # Chance of Addiction rising per tick
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Desoxyephedrine
           min: 0.25
       - !type:SuppressAddiction
     Medicine:
@@ -216,7 +217,8 @@
       - !type:Addicted # Delta-V - Addictive
         probability: 0.4 # Chance of Addiction rising per tick
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: THC
           min: 0.25
       - !type:SuppressAddiction
 
@@ -273,7 +275,8 @@
       - !type:Addicted # Delta-V - Addictive
         probability: 0.4 # Chance of Addiction rising per tick
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Impedrezene
           min: 0.25
       - !type:SuppressAddiction
 
@@ -294,13 +297,14 @@
         time: 5
       - !type:ChemRerollPsionic #Nyano - Summary: lets the imbiber become psionic.
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: SpaceDrugs
           min: 15
       - !type:Addicted # Delta-V - Addictive
         probability: 0.4 # Chance of Addiction rising per tick
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: SpaceDrugs
           min: 0.25
       - !type:SuppressAddiction
 

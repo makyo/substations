@@ -18,7 +18,7 @@
           explanation: reagent-explanation-netinadone-ribcage
           components:
           - type: RibcageOpen
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 150.0
         - !type:MobStateCondition
           mobstate: Dead
@@ -101,7 +101,7 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 213.0
         - !type:MultiMobStateCondition
           states: [ Alive, Critical ]
@@ -112,7 +112,7 @@
             Toxin: -4
       - !type:EvenHealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 213.0
         - !type:MobStateCondition
           mobstate: Dead

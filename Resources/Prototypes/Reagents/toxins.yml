@@ -77,7 +77,7 @@
         type: Update
       - !type:GenericStatusEffect # DeltaV: anesthesia
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: ChloralHydrate
           min: 10
         key: Anesthesia
@@ -372,7 +372,7 @@
         time: 10
       - !type:ChemRemovePsionic #Nyano - Summary: removes psionics from the user at 20u.
         conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
             reagent: MindbreakerToxin
             min: 20
   # TODO: PROPER hallucinations

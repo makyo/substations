@@ -334,7 +334,7 @@
         time: 200 # This reeks, but I guess it works LMAO
       - !type:GenericStatusEffect # DeltaV: anesthesia changes
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: NitrousOxide
           min: 1
         - !type:OrganType
