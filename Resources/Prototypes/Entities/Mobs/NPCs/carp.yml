@@ -13,7 +13,6 @@
       blackboard:
         NavSmash: !type:Bool
           true
-    - type: NoFriendlyFire # don't let fish hurt their dragon, and dont let sentient fish bypass FactionClothing
     - type: NpcFactionMember
       factions:
       - Dragon
@@ -200,7 +199,12 @@
     - type: HTN
       rootTask:
         task: DragonCarpCompound
-
+    - type: Flammable
+      damage:
+       types: {}
+    - type: Temperature
+    - type: TemperatureDamage
+      heatDamageThreshold: 1200
 - type: entity
   id: MobCarpDungeon
   parent: MobCarp
