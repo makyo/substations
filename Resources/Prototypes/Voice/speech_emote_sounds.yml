@@ -280,6 +280,10 @@
       path: /Audio/Voice/Vox/vox_cough.ogg
     Sigh:
       path: /Audio/Voice/Vox/vox_sigh.ogg
+    Click:
+      path: /Audio/Voice/Vox/vox_click.ogg
+    #Chitter: # DeltaV - Combined upstream and impstation sounds
+    #  path: /Audio/Voice/Vox/vox_chitter.ogg
     Honk:
       collection: BikeHorn
     Crying:
@@ -291,7 +295,21 @@
     Gasp:
       path: /Audio/Effects/Gasp/vox_gasp.ogg
     DefaultDeathgasp:
-      path: /Audio/Effects/Gasp/vox_DeathGasp.ogg
+      collection: VoxDeathgasp # DeltaV - Combined upstream and our sounds
+    # Begin Impstation Additions
+    Chitter:
+      collection: VoxChitter # DeltaV - Combined upstream and impstation sounds
+      params:
+        volume: -5
+    Coo:
+      collection: VoxCoo
+      params:
+        volume: -7
+    Hiss:
+      collection: VoxHiss
+      params:
+        volume: -5
+    # End Impstation Additions
   params:
     variation: 0.125
     # TODO: We need vox sounds for the other emotes
