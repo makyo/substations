@@ -12,7 +12,7 @@ using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult.Prototypes;
 using Content.Shared._DV.CustomObjectiveSummary;
 using Content.Shared.Audio;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;

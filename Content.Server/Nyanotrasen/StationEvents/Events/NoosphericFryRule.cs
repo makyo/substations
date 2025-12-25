@@ -10,6 +10,7 @@ using Content.Shared.Abilities.Psionics;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;

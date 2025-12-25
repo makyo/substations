@@ -3,7 +3,8 @@ using Content.Server.Bible.Components;
 using Content.Server.Popups;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -65,9 +66,8 @@ public sealed class CosmicConversionSystem : EntitySystem
             }
             else
             {
-                // L5 - new stun system:
-                _stun.TryAddStunDuration(target, TimeSpan.FromSeconds(4f));
-                _damageable.TryChangeDamage(target, uid.Comp.ConversionHeal * -1);
+                _stun.TryUpdateStunDuration(target, TimeSpan.FromSeconds(4f));
+                _damageable.TryChangeDamage(target.Owner, uid.Comp.ConversionHeal * -1);
                 _cultRule.CosmicConversion(uid, target);
             }
         }
