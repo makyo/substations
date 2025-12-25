@@ -54,8 +54,8 @@
 - type: entity
   parent: [BaseHypospray, BaseSyndicateContraband]
   id: SyndiHypo
-  name: gorlex hypospray
-  description: Using reverse engineered designs from NT, Cybersun produced these in limited quantities for Gorlex Marauder operatives.
+  name: GEX hypospray
+  description: Using reverse engineered designs from UN Medical, the Conclave of New Zealots produced these in limited quantities for the Greater Expansion Collective Marauder operatives.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/syndihypo.rsi
@@ -132,7 +132,7 @@
     - JetInjectorDynamicMode
     - JetInjectorInjectMode
   - type: Tag
-    tags: 
+    tags:
     - JetInjector
 
 - type: entity
