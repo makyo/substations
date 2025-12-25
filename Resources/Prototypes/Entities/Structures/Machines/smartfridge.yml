@@ -120,7 +120,7 @@
   suffix: Medical
   components:
   - type: SmartFridge
-    flavorText: smart-fridge-request-chemistry
+    #flavorText: smart-fridge-request-chemistry
   - type: AccessReader
     access: [["Medical"]]
   - type: DatasetVocalizer  # L5 — Other parented prototypes may not want this.
