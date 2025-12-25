@@ -778,7 +778,7 @@
     quickEquip: false
   - type: Item
     shape:
-    - 0,0,0,3
+    - 0,0,0,2
     storedRotation: -45
     inhandVisuals:
       left:
@@ -1156,7 +1156,7 @@
     sprite: Objects/Consumable/Food/Baked/bread.rsi
     state: batard
   - type: Item
-    size: Small
+    size: Tiny
     storedOffset: -1,0
     heldPrefix: batard
   - type: Tag
@@ -1189,7 +1189,7 @@
     tags:
     - ClothMade
   - type: Item
-    size: Small
+    size: Tiny
     storedOffset: -1,0
     heldPrefix: batard-cotton
   - type: SolutionContainerManager

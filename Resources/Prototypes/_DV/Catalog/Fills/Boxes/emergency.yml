@@ -157,8 +157,9 @@
     - id: EmergencyWaterVaporTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodBreadBaguette
+    - id: FoodBreadNutriBatard
     - id: DrinkWaterBottleFull
+    - id: ClothingMaskBreath
   - type: Label
     currentLabel: reagent-name-water
 
