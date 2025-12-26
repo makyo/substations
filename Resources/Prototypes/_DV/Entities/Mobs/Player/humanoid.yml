@@ -556,3 +556,13 @@
   - type: Loadout
     prototypes: [ ERTMedicalGearGamma ]
     roleLoadout: [ RoleSurvivalEVA ]
+
+## CBURN
+
+- type: randomHumanoidSettings
+  parent: CBURNAgent
+  id: CBURNAgentDeltaV
+  components:
+  - type: Loadout
+    prototypes: [CBURNGearDeltaV]
+    roleLoadout: [ RoleSurvivalEVA ]
