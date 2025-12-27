@@ -633,6 +633,7 @@
     # Being DeltaV Additions
     - ReportingStatic
     - SecurityRubberAmmoStatic
+    - SecurityShotgunDrumsStatic
     - PrisonerSoftsuits
     - EVASuit
     - SimpleToolsStaticDeltaV
@@ -702,6 +703,7 @@
       unlitRunningState: unlit-building # DeltaV - added animation sprite layers
       staticPacks:
       - SecurityAmmoStatic
+      - SecurityShotgunDrumsStatic
     # End DeltaV Additions
     - type: BlueprintReceiver
       whitelist:
