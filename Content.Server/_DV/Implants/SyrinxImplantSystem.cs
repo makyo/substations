@@ -9,7 +9,8 @@ public sealed class SubdermalBionicSyrinxImplantSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<VoiceMaskComponent, ImplantImplantedEvent>(OnInsert);
+        // L5 — This is overidden by the upstream voice mask implant
+        // SubscribeLocalEvent<VoiceMaskComponent, ImplantImplantedEvent>(OnInsert);
     }
 
     private void OnInsert(Entity<VoiceMaskComponent> ent, ref ImplantImplantedEvent args)

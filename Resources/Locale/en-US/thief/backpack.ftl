@@ -57,7 +57,7 @@ thief-backpack-category-communicator-description =
     Money is power, and secrets are money. Use your silver tongue
     and wealth to subvert the station.
     Includes: Master key for all station channels, a CNZ pen,
-    voice chameleon mask, and 20k RACs inside a briefcase.
+    voice mask implanter, and 20k RACs inside a briefcase.
 
 thief-backpack-category-smuggler-name = Smuggler Kit
 thief-backpack-category-smuggler-description =
