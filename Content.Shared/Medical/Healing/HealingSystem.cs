@@ -121,6 +121,7 @@ public sealed class HealingSystem : EntitySystem
         args.Repeat = (HasDamage((args.Used.Value, healing), target) && !dontRepeat) || IsPartDamaged(args.User, args.User); // Shitmed Change
         args.Handled = true;
         if (!args.Repeat && !dontRepeat)
+        {
             _popupSystem.PopupClient(Loc.GetString("medical-item-finished-using", ("item", args.Used)), target.Owner, args.User);
             return;
         }

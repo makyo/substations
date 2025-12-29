@@ -42,25 +42,6 @@ public sealed class SmartFridgeSystem : EntitySystem
             });
     }
 
-    /// <summary>
-    /// L5 - whitelist shenanigans; to be upstreamed
-    /// </summary>
-    private void OnGetAltVerb(Entity<SmartFridgeComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
-    {
-        if (!args.CanInteract
-            || args.Using is not { } item
-            || !_hands.CanDrop(args.User, item))
-            return;
-
-        var user = args.User;
-        args.Verbs.Add(new AlternativeVerb
-        {
-            Act = () => DoInsert(ent, user, [item], true),
-            Text = Loc.GetString("verb-categories-insert"),
-            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/insert.svg.192dpi.png")),
-        });
-    }
-
     private bool DoInsert(Entity<SmartFridgeComponent> ent, EntityUid user, IEnumerable<EntityUid> usedItems, bool playSound)
     {
         if (!_container.TryGetContainer(ent, ent.Comp.Container, out var container))
