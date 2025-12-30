@@ -19,6 +19,17 @@ namespace Content.Shared.Chemistry
     }
 
     [Serializable, NetSerializable]
+    public sealed class ChemMasterSetModeMessage : BoundUserInterfaceMessage
+    {
+        public readonly ChemMasterMode ChemMasterMode;
+
+        public ChemMasterSetModeMessage(ChemMasterMode mode)
+        {
+            ChemMasterMode = mode;
+        }
+    }
+
+    [Serializable, NetSerializable]
     public sealed class ChemMasterSetPillTypeMessage : BoundUserInterfaceMessage
     {
         public readonly uint PillType;
@@ -72,12 +83,17 @@ namespace Content.Shared.Chemistry
         }
     }
 
-    /* DeltaV - removed discarding
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterOutputDrawSourceMessage(ChemMasterDrawSource drawSource) : BoundUserInterfaceMessage
+    {
+        public readonly ChemMasterDrawSource DrawSource = drawSource;
+    }
+
     public enum ChemMasterMode
     {
         Transfer,
         Discard,
-    } */
+    }
 
     public enum ChemMasterSortingType : byte
     {
@@ -103,6 +119,12 @@ namespace Content.Shared.Chemistry
         U50 = 50,
         U100 = 100,
         All,
+    }
+
+    public enum ChemMasterDrawSource
+    {
+        Internal,
+        External,
     }
 
     public static class ChemMasterReagentAmountToFixedPoint
@@ -163,7 +185,7 @@ namespace Content.Shared.Chemistry
         /// </summary>
         public readonly IReadOnlyList<ReagentQuantity> BufferReagents;
 
-        //public readonly ChemMasterMode Mode; // DeltaV - removed discarding
+        public readonly ChemMasterMode Mode;
 
         public readonly ChemMasterSortingType SortingType;
 
@@ -174,21 +196,23 @@ namespace Content.Shared.Chemistry
 
         public readonly bool UpdateLabel;
 
+        public readonly ChemMasterDrawSource DrawSource;
+
         public ChemMasterBoundUserInterfaceState(
-            // DeltaV - removed discarding
-            ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
+            ChemMasterMode mode, ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
             IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
-            uint selectedPillType, uint pillDosageLimit, bool updateLabel)
+            uint selectedPillType, uint pillDosageLimit, bool updateLabel, ChemMasterDrawSource drawSource)
         {
             InputContainerInfo = inputContainerInfo;
             OutputContainerInfo = outputContainerInfo;
             BufferReagents = bufferReagents;
-            //Mode = mode; // DeltaV - removed discarding
+            Mode = mode;
             SortingType = sortingType;
             BufferCurrentVolume = bufferCurrentVolume;
             SelectedPillType = selectedPillType;
             PillDosageLimit = pillDosageLimit;
             UpdateLabel = updateLabel;
+            DrawSource = drawSource;
         }
     }
 
