@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Net.Sockets;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
@@ -83,7 +82,7 @@ public sealed partial class DamageableSystem
         TargetBodyPart? targetPart = null,
         bool doPartDamage = true,
         bool onlyDamageParts = false
-        // END Shitmed Changes 
+        // END Shitmed Changes
     )
     {
         //! Empty just checks if the DamageSpecifier is _literally_ empty, as in, is internal dictionary of damage types is empty.
@@ -118,7 +117,7 @@ public sealed partial class DamageableSystem
         TargetBodyPart? targetPart = null,
         bool doPartDamage = true,
         bool onlyDamageParts = false
-        // END Shitmed Changes 
+        // END Shitmed Changes
     )
     {
         //! Empty just checks if the DamageSpecifier is _literally_ empty, as in, is internal dictionary of damage types is empty.
@@ -153,7 +152,7 @@ public sealed partial class DamageableSystem
         TargetBodyPart? targetPart = null,
         bool doPartDamage = true,
         bool onlyDamageParts = false // DeltaV - Fix EvenHealing on Limbs && Standardize PartDamage.
-        // END Shitmed Changes 
+        // END Shitmed Changes
     )
     {
         var damageDone = new DamageSpecifier();
