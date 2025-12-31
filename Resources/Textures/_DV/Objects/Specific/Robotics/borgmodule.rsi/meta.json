@@ -1,38 +1,58 @@
 {
     "version": 1,
     "license": "CC0-1.0",
-    "copyright": "Resprited by DangerRevolution (GitHub) (excluding the security.png) from EmoGarbage404 (GitHub) for Space Station 14. icon-carp.png created by deltanedas (github).",
-    "size": {
-        "x": 32,
-        "y": 32
-    },
-    "states": [
-        {
-            "name": "security"
+    "copyright": "Resprited by DangerRevolution (GitHub) (excluding the security.png) from EmoGarbage404 (GitHub) for Space Station 14. icon-carp.png created by deltanedas (github). icon-deco created by Niomi0 (github), Syndicate icons created by Verybigman311.Icon-detective created by dahalo3rat (discord)",
         },
         {
-            "name": "icon-chase"
+            "name": "syndicate"
         },
         {
-            "name": "icon-control"
+            "name": "icon-cannon"
         },
         {
-            "name": "icon-detain"
+            "name": "icon-buccaneer"
         },
         {
-            "name": "icon-hold"
+            "name": "icon-chimp"
         },
         {
-            "name": "icon-patrol"
+            "name": "icon-chameleon"
         },
         {
-            "name": "icon-peacekeeper"
+            "name": "icon-jammer"
         },
         {
-            "name": "icon-hurt"
+            "name": "icon-l6c"
         },
         {
-            "name": "icon-carp"
+            "name": "icon-radio"
+        },
+        {
+            "name": "icon-operative"
+        },
+        {
+            "name": "icon-sleeper"
+        },
+        {
+            "name": "icon-weapon"
+        },
+        {
+            "name": "icon-desword"
+        },
+        {
+            "name": "icon-esword"
+        },
+        {
+            "name": "icon-infiltrator"
+        },
+        {
+            "name": "icon-c20r"
+        },
+        {
+            "name": "icon-deco"
+        },
+        {
+            "name": "icon-detective"
         }
     ]
 }

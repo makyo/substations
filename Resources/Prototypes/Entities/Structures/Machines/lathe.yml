@@ -624,6 +624,8 @@
     - SecurityRubberAmmoStatic
     - PrisonerSoftsuits
     - EVASuit
+    - SimpleToolsStaticDeltaV
+    - BorgModulesSecurityDeltaVStatic
     # End DeltaV Additions
     dynamicPacks:
     - SalvageSecurityBoards
