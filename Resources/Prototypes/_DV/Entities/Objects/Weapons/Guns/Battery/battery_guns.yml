@@ -26,7 +26,7 @@
       path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1500
     startingCharge: 1500
   - type: BatteryAmmoProvider
@@ -79,7 +79,7 @@
       path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1000
     startingCharge: 1000
   - type: BatteryAmmoProvider
@@ -119,7 +119,7 @@
   - type: StaticPrice
     price: 750
   - type: StealTarget
-    stealGroup: WeaponEnergyGunMultiphase
+    stealGroup: HoSSidearm
 
 - type: entity
   name: miniature energy gun
@@ -145,7 +145,7 @@
       path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 500
     startingCharge: 500
   - type: BatteryAmmoProvider
@@ -198,7 +198,7 @@
       path: /Audio/_DV/Weapons/Guns/Gunshots/laser.ogg
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 900
     startingCharge: 900
   - type: BatteryAmmoProvider
@@ -258,7 +258,7 @@
     availableModes:
       - SemiAuto
       - FullAuto
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 3000
     startingCharge: 3000
   - type: BatteryAmmoProvider
@@ -316,7 +316,7 @@
     selectedMode: FullAuto
     fireRate: 15
     availableModes: FullAuto
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 3000
     startingCharge: 3000
   - type: BatteryAmmoProvider
@@ -355,7 +355,7 @@
   - type: BatteryAmmoProvider
     proto: BeamDev
     fireCost: 1200
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 300000
     startingCharge: 300000
   - type: Tag
@@ -392,10 +392,11 @@
       fireCost: 100
     - proto: BulletDisabler
       fireCost: 50
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1000
     startingCharge: 1000
   - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 30
 
 - type: entity
@@ -423,7 +424,7 @@
   - type: BatteryAmmoProvider
     proto: BulletEnergyGunMediumImmolator
     fireCost: 100
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 800
     startingCharge: 800
   - type: GunRequiresWield
@@ -459,7 +460,7 @@
       fireCost: 100
     - proto: BulletEnergyGunLightImmolatorSpread
       fireCost: 100
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 800
     startingCharge: 800
   - type: GunRequiresWield
@@ -470,6 +471,7 @@
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. This one recharges
   components:
   - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 50
 
 - type: entity
@@ -537,10 +539,11 @@
   - type: BatteryAmmoProvider
     proto: BulletBuccaneer
     fireCost: 100
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 400
     startingCharge: 400
   - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 25
 
 - type: entity
@@ -617,3 +620,38 @@
         Firemode:
           Disabler: { state: mode-disabler }
           Lethal: { state: mode-lethal }
+
+- type: entity
+  name: microwave emitter
+  parent: BaseWeaponBatterySmall
+  id: WeaponMicrowaveEmitter
+  description: A handheld device emitting concentrated, low-intensity radiation. Does not cook your food.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Weapons/Guns/Battery/microwave_emitter.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Item
+    shape:
+    - 0,0,1,1
+    size: Small
+    sprite: _DV/Objects/Weapons/Guns/Battery/microwave_emitter.rsi
+  - type: Gun
+    selectedMode: FullAuto
+    fireRate: 5
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_DV/Weapons/Guns/Gunshots/beamcannon.ogg
+  - type: BatteryAmmoProvider
+    proto: BulletRadiation
+    fireCost: 100
+  - type: Appearance
