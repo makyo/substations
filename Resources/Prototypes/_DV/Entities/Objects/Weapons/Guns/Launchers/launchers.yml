@@ -19,7 +19,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 600
     startingCharge: 300
   - type: BatteryAmmoProvider
@@ -52,7 +52,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 600
     startingCharge: 200
   - type: BatteryAmmoProvider
@@ -94,7 +94,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
   - type: AmmoCounter
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 600
     startingCharge: 200
   - type: BatteryAmmoProvider
@@ -125,7 +125,7 @@
     fireRate: 1
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 750
     startingCharge: 750
   - type: BatteryAmmoProvider

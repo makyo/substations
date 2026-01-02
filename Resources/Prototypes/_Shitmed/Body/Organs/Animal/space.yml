@@ -51,7 +51,7 @@
       fireCost: 50
     - type: BatterySelfRecharger
       autoRechargeRate: 25
-    - type: PredictedBattery
+    - type: Battery
       maxCharge: 100
       startingCharge: 0
     - type: Gun
