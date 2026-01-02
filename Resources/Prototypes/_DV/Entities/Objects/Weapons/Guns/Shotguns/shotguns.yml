@@ -59,7 +59,6 @@
     fireCost: 100
   - type: AmmoCounter
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 20
 
 - type: entity

@@ -26,7 +26,6 @@
     proto: GrenadeFrag
     fireCost: 300
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 2
 
 - type: entity
@@ -60,7 +59,6 @@
     proto: GrenadeFlash
     fireCost: 200
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 6
   - type: GunWieldBonus
     wieldBonusExamineMessage: null
@@ -103,7 +101,6 @@
     proto: GrenadeCleanade
     fireCost: 100
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 10
   - type: GunWieldBonus
     wieldBonusExamineMessage: null
@@ -135,7 +132,6 @@
     proto: CannonBall
     fireCost: 750
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 25
   - type: AmmoCounter
   - type: BatteryWeaponFireModes
