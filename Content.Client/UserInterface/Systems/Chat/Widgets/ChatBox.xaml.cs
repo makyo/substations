@@ -171,6 +171,7 @@ public partial class ChatBox : UIWidget
         formatted.PushColor(color);
         formatted.AddMarkupOrThrow(message);
         formatted.Pop();
+        Contents.AddMessage(formatted, tagsAllowed: null);
 
         // EE - Chat stacking
         if (repeat != 0)
