@@ -231,12 +231,12 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (door.State == DoorState.Closed)
         {
             _adminLog.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User)} pried {ToPrettyString(uid)} open");
-            StartOpening(uid, door, args.User, true);
+            StartOpening(uid, door, args.User, true, true);
         }
         else if (door.State == DoorState.Open)
         {
             _adminLog.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(args.User)} pried {ToPrettyString(uid)} closed");
-            StartClosing(uid, door, args.User, true);
+            StartClosing(uid, door, args.User, true, true);
         }
     }
 
@@ -352,7 +352,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
     /// <param name="user"> The user (if any) opening the door</param>
     /// <param name="predicted">Whether the interaction would have been
     /// predicted. See comments in the PlaySound method on the Server system for details</param>
-    public void StartOpening(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false)
+    public void StartOpening(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false, bool pried = false)
     {
         if (!Resolve(uid, ref door))
             return;
@@ -362,10 +362,15 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!SetState(uid, DoorState.Opening, door))
             return;
 
+        // L5 — separate sound for prying.
+        var sound = door.OpenSound;
+        if (pried)
+            sound = door.PriedOpenSound;
+
         if (predicted)
-            Audio.PlayPredicted(door.OpenSound, uid, user, AudioParams.Default.WithVolume(-5));
+            Audio.PlayPredicted(sound, uid, user, AudioParams.Default); // L5 — no volume modification
         else if (_net.IsServer)
-            Audio.PlayPvs(door.OpenSound, uid, AudioParams.Default.WithVolume(-5));
+            Audio.PlayPvs(sound, uid, AudioParams.Default); // L5 — no volume modification
 
         if (lastState == DoorState.Emagging && TryComp<DoorBoltComponent>(uid, out var doorBoltComponent))
             SetBoltsDown((uid, doorBoltComponent), !doorBoltComponent.BoltsDown, user, true);
@@ -447,7 +452,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
         return !ev.PerformCollisionCheck || !GetColliding(uid).Any();
     }
 
-    public void StartClosing(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false)
+    public void StartClosing(EntityUid uid, DoorComponent? door = null, EntityUid? user = null, bool predicted = false, bool pried = false)
     {
         if (!Resolve(uid, ref door))
             return;
@@ -455,10 +460,15 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!SetState(uid, DoorState.Closing, door))
             return;
 
+        // L5 — separate sound for prying.
+        var sound = door.CloseSound;
+        if (pried)
+            sound = door.PriedClosedSound;
+
         if (predicted)
-            Audio.PlayPredicted(door.CloseSound, uid, user, AudioParams.Default.WithVolume(-5));
+            Audio.PlayPredicted(sound, uid, user, AudioParams.Default); // L5 — no volume modification
         else if (_net.IsServer)
-            Audio.PlayPvs(door.CloseSound, uid, AudioParams.Default.WithVolume(-5));
+            Audio.PlayPvs(sound, uid, AudioParams.Default); // L5 — no volume modification
     }
 
     /// <summary>

@@ -91,6 +91,18 @@ public sealed partial class DoorComponent : Component
     public SoundSpecifier? CloseSound;
 
     /// <summary>
+    /// L5 — separate sound on prying open
+    /// </summary>
+    [DataField("priedOpenSound")]
+    public SoundSpecifier? PriedOpenSound;
+
+    /// <summary>
+    /// L5 — separate sound on prying closed
+    /// </summary>
+    [DataField("priedClosedSound")]
+    public SoundSpecifier? PriedClosedSound;
+
+    /// <summary>
     /// Sound to play if the door is denied.
     /// </summary>
     [DataField("denySound")]

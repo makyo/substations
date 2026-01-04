@@ -24,7 +24,7 @@
       types:
         Blunt: 25 # yowch
     openSound:
-      path: /Audio/Machines/blastdoor.ogg
+      path: /Audio/_Shiptest/Machines/airlocks/blastdoor.ogg # L5
     closeSound:
       path: /Audio/Machines/blastdoor.ogg
   - type: Occluder
