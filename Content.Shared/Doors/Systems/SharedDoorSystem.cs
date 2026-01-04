@@ -461,14 +461,14 @@ public abstract partial class SharedDoorSystem : EntitySystem
             return;
 
         // L5 — separate sound for prying.
-        var sound = door.OpenSound;
+        var sound = door.CloseSound;
         if (pried)
-            sound = door.PriedOpenSound;
+            sound = door.PriedClosedSound;
 
         if (predicted)
-            Audio.PlayPredicted(door.CloseSound, uid, user, AudioParams.Default); // L5 — no volume modification
+            Audio.PlayPredicted(sound, uid, user, AudioParams.Default); // L5 — no volume modification
         else if (_net.IsServer)
-            Audio.PlayPvs(door.CloseSound, uid, AudioParams.Default); // L5 — no volume modification
+            Audio.PlayPvs(sound, uid, AudioParams.Default); // L5 — no volume modification
     }
 
     /// <summary>
