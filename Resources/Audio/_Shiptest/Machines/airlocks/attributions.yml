@@ -1,0 +1,4 @@
+- files: ["access_denied.ogg", "blastdoor.ogg", "close_force.ogg", "open_force.ogg", "standard/open.ogg", "standard/close.ogg", "shutters/shutters_open.ogg", "shutters/shutters_close.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "from Shiptest at https://github.com/shiptest-ss13/Shiptest/commit/fcc18020a98a46a1f8e335b5c1c17d4486e6eba7"
+  source: "https://github.com/shiptest-ss13/Shiptest"
