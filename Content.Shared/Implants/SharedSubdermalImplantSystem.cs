@@ -61,9 +61,6 @@ public abstract partial class SharedSubdermalImplantSystem : EntitySystem
         if (ent.Comp.ImplantedEntity == null || Terminating(ent.Comp.ImplantedEntity.Value))
             return;
 
-        var ev = new ImplantRemovedEvent(uid, component.ImplantedEntity.Value); // DeltaV
-        RaiseLocalEvent(uid, ref ev); // DeltaV
-
         EntityManager.RemoveComponents(ent.Comp.ImplantedEntity.Value, ent.Comp.ImplantComponents);
         _actions.RemoveAction(ent.Comp.ImplantedEntity.Value, ent.Comp.Action);
         ent.Comp.Action = null;
@@ -193,22 +190,6 @@ public readonly record struct ImplantRemovedEvent
     public readonly EntityUid Implanted;
 
     public ImplantRemovedEvent(EntityUid implant, EntityUid implanted)
-    {
-        Implant = implant;
-        Implanted = implanted;
-    }
-}
-
-/// <summary>
-/// DeltaV: Event that is raised whenever someone gets an implant removed from them.
-/// </summary>
-[ByRefEvent]
-public readonly struct ImplantRemovedEvent
-{
-    public readonly EntityUid Implant;
-    public readonly EntityUid? Implanted;
-
-    public ImplantRemovedEvent(EntityUid implant, EntityUid? implanted)
     {
         Implant = implant;
         Implanted = implanted;
