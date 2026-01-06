@@ -6,6 +6,7 @@ using Content.Server.Mind;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions.Events;
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.Eye.Blinding.Components;
@@ -13,6 +14,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Events;
 using Content.Shared.StatusEffect;
+using Content.Shared.Stunnable;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -25,8 +27,6 @@ public sealed class PrecognitionPowerSystem : EntitySystem
 {
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly MovementModStatusSystem _movementModStatus = default!; // L5 - new slowdown system
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -34,17 +34,15 @@ public sealed class PrecognitionPowerSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
+
 
     /// <summary>
     /// A map between game rule prototypes and their results to give.
     /// </summary>
     public Dictionary<EntProtoId, PrecognitionResultComponent> Results = new();
-
-    // L5 - new slowdown system:
-    private static readonly EntProtoId FlashSlowdown = "PrecognitionSlowdownStatusEffect";
 
     public override void Initialize()
     {
@@ -86,8 +84,7 @@ public sealed class PrecognitionPowerSystem : EntitySystem
 
         // A custom shader for seeing visions would be nice but this will do for now.
         _statusEffects.TryAddStatusEffect<TemporaryBlindnessComponent>(uid, "TemporaryBlindness", component.UseDelay, true);
-        // L5 - new slowdown system:
-        _movementModStatus.TryUpdateMovementSpeedModDuration(uid, FlashSlowdown, component.UseDelay, 0.5f);
+        _movementMod.TryUpdateMovementSpeedModDuration(uid, MovementModStatusSystem.PsionicSlowdown, component.UseDelay, 0.5f);
 
         _doAfter.TryStartDoAfter(doAfterArgs, out var doAfterId);
         component.DoAfter = doAfterId;
@@ -123,12 +120,13 @@ public sealed class PrecognitionPowerSystem : EntitySystem
                 uid,
                 PopupType.SmallCaution);
 
-            // L5 - modified for action ECS
-            // If canceled give a short delay before being able to try again
-            _actions.SetCooldown(component.PrecognitionActionEntity,
-                _gameTicker.RoundDuration(),
-                _gameTicker.RoundDuration() + TimeSpan.FromSeconds(15));
-            return;
+            if (_actions.GetAction(component.PrecognitionActionEntity) is {} actionData)
+            {
+                _actions.SetCooldown(
+                    actionData.Owner,
+                    _gameTicker.RoundDuration(),
+                    _gameTicker.RoundDuration() + TimeSpan.FromSeconds(15));
+            }
         }
 
         // Determines the window that will be looked at for events, avoiding events that are too close or too far to be useful.

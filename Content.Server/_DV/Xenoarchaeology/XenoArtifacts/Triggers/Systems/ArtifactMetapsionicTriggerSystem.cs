@@ -1,36 +1,57 @@
-﻿// L5 — Removing psionics, switching to new xenoarch
+using Content.Server._DV.Xenoarchaeology.XenoArtifacts.Triggers.Components;
+﻿using Content.Server.Nyanotrasen.StationEvents.Events;
+using Content.Server.Xenoarchaeology.Artifact;
+using Content.Shared.Abilities.Psionics;
+using Content.Shared.Xenoarchaeology.Artifact.Components;
+using Content.Shared.Xenoarchaeology.Artifact.XAT;
 
-// using Content.Server._DV.Xenoarchaeology.XenoArtifacts.Triggers.Components;
-// ﻿using Content.Server.Nyanotrasen.StationEvents.Events;
-// using Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Systems;
-// using Content.Shared.Abilities.Psionics;
-//
-// namespace Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Systems;
-//
-// public sealed class ArtifactMetapsionicTriggerSystem : EntitySystem
-// {
-//     [Dependency] private readonly ArtifactSystem _artifact = default!;
-//
-//     public override void Initialize()
-//     {
-//         base.Initialize();
-//
-//         SubscribeLocalEvent<ArtifactMetapsionicTriggerComponent, PsionicPowerDetectedEvent>(OnPowerDetected);
-//
-//         SubscribeLocalEvent<GlimmerEventEndedEvent>(OnGlimmerEventEnded);
-//     }
-//
-//     private void OnPowerDetected(Entity<ArtifactMetapsionicTriggerComponent> ent, ref PsionicPowerDetectedEvent args)
-//     {
-//         _artifact.TryActivateArtifact(ent);
-//     }
-//
-//     private void OnGlimmerEventEnded(GlimmerEventEndedEvent args)
-//     {
-//         var query = EntityQueryEnumerator<ArtifactMetapsionicTriggerComponent>();
-//         while (query.MoveNext(out var uid, out _))
-//         {
-//             _artifact.TryActivateArtifact(uid);
-//         }
-//     }
-// }
+namespace Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Systems;
+
+public sealed class ArtifactMetapsionicTriggerSystem : BaseXATSystem<ArtifactMetapsionicTriggerComponent>
+{
+    private EntityQuery<XenoArtifactComponent> _xenoArtifactQuery;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _xenoArtifactQuery = GetEntityQuery<XenoArtifactComponent>();
+
+        SubscribeLocalEvent<ArtifactMetapsionicTriggerComponent, PsionicPowerDetectedEvent>(OnPowerDetected);
+
+        SubscribeLocalEvent<GlimmerEventEndedEvent>(OnGlimmerEventEnded);
+    }
+
+    private void OnPowerDetected(Entity<ArtifactMetapsionicTriggerComponent> ent, ref PsionicPowerDetectedEvent args)
+    {
+        if (!TryComp<XenoArtifactNodeComponent>(ent, out var node))
+            return;
+
+        if (node.Attached == null)
+            return;
+
+        var artifact = _xenoArtifactQuery.Get(node.Attached.Value);
+
+        if (!CanTrigger(artifact, (ent.Owner, node)))
+            return;
+
+        Trigger(artifact, (ent.Owner, ent.Comp, node));
+    }
+
+    private void OnGlimmerEventEnded(GlimmerEventEndedEvent args)
+    {
+        var query = EntityQueryEnumerator<ArtifactMetapsionicTriggerComponent, XenoArtifactNodeComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var node))
+        {
+            if (node.Attached == null)
+                continue;
+
+            var artifact = _xenoArtifactQuery.Get(node.Attached.Value);
+
+            if (!CanTrigger(artifact, (uid, node)))
+                continue;
+
+            Trigger(artifact, (uid, comp, node));
+        }
+    }
+}
