@@ -612,8 +612,6 @@
         - Syndicate
       mindRoles:
       - MindRoleLoneops
-  - type: DynamicRuleCost
-    cost: 75
 
 - type: entity
   parent: BaseTraitorRule
