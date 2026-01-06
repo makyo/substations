@@ -1,11 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-<<<<<<< HEAD
   "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e. Vox states by Flareguy for Space Station 14. Reptilian states by TiniestShark (Github) | vulpkanin versions taken from https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13/commit/091d9ec00f186052b87bd65125e896f78faefe38 and edited by Floofers",
-=======
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e. Vox states by Flareguy for Space Station 14. Reptilian states by TiniestShark (Github)",
->>>>>>> 3775da3345a (Helm + Mask Displacements for Reptilians (and some unique helmets) (#39351))
   "size": {
     "x": 32,
     "y": 32
