@@ -4,6 +4,7 @@
 
 - type: trait
   id: LowMobility
+  abstract: true # New Impaired Mobility trait from upstream supplants this.
   name: trait-lowmobility-name
   description: trait-lowmobility-desc
   traitGear: BaseWheelchair
