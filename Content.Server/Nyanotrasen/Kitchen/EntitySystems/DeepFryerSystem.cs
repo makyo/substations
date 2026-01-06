@@ -440,11 +440,8 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
     /// </summary>
     private void OnThrowHitBy(EntityUid uid, DeepFryerComponent component, ThrowHitByEvent args)
     {
-        if (args.Handled)
-            return;
-
         // Chefs never miss this. :)
-        var missChance = HasComp<ProfessionalChefComponent>(args.User) ? 0f : ThrowMissChance;
+        var missChance = HasComp<ProfessionalChefComponent>(args.Component.Thrower) ? 0f : ThrowMissChance;
 
         if (!CanInsertItem(uid, component, args.Thrown) ||
             _random.Prob(missChance) ||
@@ -454,10 +451,10 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
                 Loc.GetString("deep-fryer-thrown-missed"),
                 uid);
 
-            if (args.User != null)
+            if (args.Component.Thrower != null)
             {
                 _adminLogManager.Add(LogType.Action, LogImpact.Low,
-                    $"{ToPrettyString(args.User.Value)} threw {ToPrettyString(args.Thrown)} at {ToPrettyString(uid)}, and it missed.");
+                    $"{ToPrettyString(args.Component.Thrower.Value)} threw {ToPrettyString(args.Thrown)} at {ToPrettyString(uid)}, and it missed.");
             }
 
             return;
@@ -476,15 +473,13 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
                 uid);
         }
 
-        if (args.User != null)
+        if (args.Component.Thrower != null)
         {
             _adminLogManager.Add(LogType.Action, LogImpact.Low,
-                $"{ToPrettyString(args.User.Value)} threw {ToPrettyString(args.Thrown)} at {ToPrettyString(uid)}, and it landed inside.");
+                $"{ToPrettyString(args.Component.Thrower.Value)} threw {ToPrettyString(args.Thrown)} at {ToPrettyString(uid)}, and it landed inside.");
         }
 
         AfterInsert(uid, component, args.Thrown);
-
-        args.Handled = true;
     }
 
     private void OnSolutionChange(EntityUid uid, DeepFryerComponent component, SolutionChangedEvent args)
