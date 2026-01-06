@@ -56,9 +56,9 @@
   description: A basic white & blue jumpsuit made for System Consortium paramedics stationed in combat sectors.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic_nt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic_nt.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
 
 - type: entity
   parent: [ ClothingUniformBase, BaseSyndicateContraband ]

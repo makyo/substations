@@ -14,15 +14,17 @@
     - belt
     - back
   - type: Item
-    size: Ginormous
+    size: Large # Nyano
   - type: Storage
-    maxItemSize: Normal
+    # maxItemSize: Normal # Nyano
     grid:
     - 0,0,4,3
     quickInsert: true
     areaInsert: true
     whitelist:
       components:
+      - Mail # Nyano
+      - Envelope # Nyano
       - Paper
       - Delivery
       tags:
