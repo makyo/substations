@@ -918,6 +918,7 @@
     - item: HandheldHealthAnalyzer
     - item: DefibrillatorOneHandedUnpowered
     - item: Crowbar
+    - item: HandheldCrewMonitorUnpowered # DeltaV
     - item: BorgFireExtinguisher
     - item: BorgHandheldGPSBasic
   - type: BorgModuleIcon
