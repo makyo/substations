@@ -7,6 +7,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Lock;
 using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
+using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
