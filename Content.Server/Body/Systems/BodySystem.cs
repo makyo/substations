@@ -125,17 +125,19 @@ public sealed class BodySystem : SharedBodySystem
         if (HasComp<GodmodeComponent>(bodyId))
             return new HashSet<EntityUid>();
 
-        // If a polymorph configured to revert on death is gibbed without dying,
+        // DeltaV - If a polymorph configured to revert on death is gibbed without dying,
         // revert it then gib so the parent is gibbed instead of the polymorph.
         if (TryComp<PolymorphedEntityComponent>(bodyId, out var polymorph)
+            && !polymorph.Reverted
             && polymorph.Configuration.RevertOnDeath)
         {
             _polymorph.Revert(bodyId);
-            if (polymorph.Configuration.TransferDamage)
-                GibBody(polymorph.Parent, acidify, null, launchGibs: launchGibs, splatDirection: splatDirection,
-                splatModifier: splatModifier, splatCone:splatCone);
+            if (polymorph.Configuration.TransferDamage && polymorph.Parent.HasValue)
+                GibBody(polymorph.Parent.Value, acidify, null, launchGibs: launchGibs, splatDirection: splatDirection,
+                    splatModifier: splatModifier, splatCone: splatCone);
             return new HashSet<EntityUid>();
         }
+        // END DeltaV
 
         var xform = Transform(bodyId);
         if (xform.MapUid is null)
