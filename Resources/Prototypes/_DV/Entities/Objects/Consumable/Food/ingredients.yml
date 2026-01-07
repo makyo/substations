@@ -14,7 +14,8 @@
         reagents:
         - ReagentId: TableSalt
           Quantity: 50
-  - type: Drink
+  - type: Edible
+    edible: Drink
     solution: food
     useSound:
       path: /Audio/Items/eating_1.ogg

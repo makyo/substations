@@ -23,7 +23,8 @@ namespace Content.Server.Damage.Systems
         private void DamageOnLand(EntityUid uid, DamageOnLandComponent component, ref LandEvent args)
         {
             // DeltaV - start of Beergoggles enable safe throw
-            if (args.User is { } user && HasComp<DrinkComponent>(uid))
+            // Currently this also works for food, so...yay?
+            if (args.User is { } user && HasComp<EdibleComponent>(uid))
             {
                 if (_safesolthrower.GetSafeThrow(user))
                     return;

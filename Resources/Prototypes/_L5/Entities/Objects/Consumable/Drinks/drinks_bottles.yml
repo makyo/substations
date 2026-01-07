@@ -11,7 +11,8 @@
         reagents:
         - ReagentId: DogstarCoffee
           Quantity: 300
-  - type: Drink
+  - type: Edible
+    edible: Drink
   - type: Label
     currentLabel: reagent-name-dogstar-coffee
 
@@ -28,6 +29,7 @@
         reagents:
         - ReagentId: MaomiCha
           Quantity: 300
-  - type: Drink
+  - type: Edible
+    edible: Drink
   - type: Label
     currentLabel: reagent-name-maomi-cha
