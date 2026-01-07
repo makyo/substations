@@ -42,7 +42,8 @@ public static class JobRequirements
         [NotNullWhen(false)] out FormattedMessage? reason,
         IEntityManager entManager,
         IPrototypeManager protoManager,
-        HumanoidCharacterProfile? profile)
+        HumanoidCharacterProfile? profile,
+        bool isWhitelisted = false)
     {
         reason = null;
         if (requirements == null)
