@@ -739,7 +739,6 @@
           Quantity: 7 # imp
         - ReagentId: Licoxide
           Quantity: 10 # imp - it takes 10u plasma but licoxide is the more interesting reagent
-          Quantity: 5
   - type: Item
     inhandVisuals:
       left:
