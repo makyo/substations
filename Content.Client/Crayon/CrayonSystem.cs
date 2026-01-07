@@ -34,7 +34,7 @@ public sealed class CrayonSystem : SharedCrayonSystem
             _crayon = crayon;
             _charges = charges;
             _capacity = entityManage.GetComponent<LimitedChargesComponent>(_crayon.Owner).MaxCharges;
-            _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+            _label = new RichTextLabel { StyleClasses = { StyleClass.ItemStatus } };
             AddChild(_label);
         }
 
@@ -42,19 +42,12 @@ public sealed class CrayonSystem : SharedCrayonSystem
         {
             base.FrameUpdate(args);
 
-            if (!_parent.UIUpdateNeeded)
-            {
-                return;
-            }
-
-            _parent.UIUpdateNeeded = false;
-
             // Frontier: unlimited crayon, Delta V Port
-            if (_parent.Capacity == int.MaxValue)
+            if (_charges.GetCurrentCharges(_crayon.Owner) == int.MaxValue)
             {
                 _label.SetMarkup(Robust.Shared.Localization.Loc.GetString("crayon-drawing-label-unlimited",
-                    ("color", _parent.Color),
-                    ("state", _parent.SelectedState)));
+                    ("color", _crayon.Comp.Color),
+                    ("state", _crayon.Comp.SelectedState)));
                 return;
             }
             // End Frontier, Delta V Port
