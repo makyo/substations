@@ -1,6 +1,7 @@
 - type: entity
   parent: CrayonRainbow
   id: CrayonMagic
+  abstract: true # L5 — Switch to infinite crayon
   name: magic crayon
   description: Specially blended with bluespace crystals and certified non-toxic.
   components:

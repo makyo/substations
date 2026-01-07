@@ -104,10 +104,21 @@
   id: CrayonInfinite # should not be player available to prevent decal spam
   name: infinite crayon
   components:
+  # L5 — Use magic crayon
+  - type: Sprite
+    sprite: _NF/Objects/Fun/magic_crayon.rsi
+    state: icon
+  - type: Item
+    sprite: _NF/Objects/Fun/magic_crayon.rsi
+    heldPrefix: icon
+  - type: Construction
+    graph: magic_crayon
+    node: magicCrayon
+  # End L5
   - type: Crayon
     deleteEmpty: false
   - type: AutoRecharge
-    rechargeDuration: 5
+    rechargeDuration: 0.1 # L5 — We trust our players
 
 - type: entity
   parent: Crayon
