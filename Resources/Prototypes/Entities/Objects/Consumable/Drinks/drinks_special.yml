@@ -1,53 +1,4 @@
 - type: entity
-  parent: BaseItem
-  id: DrinkShaker
-  name: shaker
-  description: The trusty mixing buddy of the bartender.
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-  - type: MixableSolution
-    solution: drink
-  - type: Drink
-  - type: Shakeable
-  - type: FitsInDispenser
-    solution: drink
-  - type: DrawableSolution
-    solution: drink
-  - type: RefillableSolution
-    solution: drink
-  - type: DrainableSolution
-    solution: drink
-  - type: SolutionTransfer
-    canChangeTransferAmount: true
-  - type: Spillable
-    solution: drink
-  - type: Sprite
-    sprite: Objects/Consumable/Drinks/shaker.rsi
-    state: icon
-  - type: Item
-    sprite: Objects/Consumable/Drinks/shaker.rsi
-  - type: UserInterface
-    interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 50
-  - type: DnaSubstanceTrace
-  - type: ReactionMixer
-    mixOnInteract: false
-    reactionTypes:
-    - Shake
-  - type: ExaminableSolution
-    solution: drink
-    heldOnly: true
-    examinableWhileClosed: false
-  - type: NFShaker # Frontier
-
-- type: entity
   parent: [DrinkBaseMaterialGlass, DrinkBase, DrinkVisualsFillOverlay]
   id: DrinkShotGlass
   name: shot glass
@@ -194,6 +145,7 @@
     mixOnInteract: false
     reactionTypes:
     - Shake
+  - type: NFShaker # Frontier
 
 - type: entity
   parent: [DrinkBaseMaterialMetal, DrinkBase]
