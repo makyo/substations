@@ -2,7 +2,7 @@
   id: Shredder
   parent: [BaseMachinePowered, SmallConstructibleMachine]
   name: document shredder
-  description: A small desk-top shredder for all your bureaucracy needs.
+  description: A small shredder for all your bureaucracy needs.
   components:
   - type: Sprite
     sprite: Structures/Machines/shredder.rsi
@@ -17,7 +17,7 @@
       collision:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.4"
+          bounds: "-0.25,-0.25,0.25,0.25"
         hard: true
         mask:
         - Impassable
@@ -47,7 +47,7 @@
       path: /Audio/Effects/saw.ogg  # This doesnt work for some reason, I think it's in the C# & related to MaterialReclaimerSystem.OnInteractUsing() but I dunno
       params:                       # The behavior is replicable with the standard recycler
         volume: 1                   # Standard recycler eats entities that enter a collider (a fixture named brrt). This makes a noise as expected
-      cutOffSound: false            # Can also click standard recycler with trash in-hand to insert, this does not make a sound & is the interaction the shredder relies on
+      cutOffSound: false            # Can also click standard recycler with trash in-hand to insert, this also does not make a sound & is the interaction the shredder relies on
     cutOffSound: false
   - type: Destructible
     thresholds:
