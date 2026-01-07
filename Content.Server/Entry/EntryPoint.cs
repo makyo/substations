@@ -77,7 +77,7 @@ namespace Content.Server.Entry
         [Dependency] private readonly ServerApi _serverApi = default!;
         [Dependency] private readonly ServerInfoManager _serverInfo = default!;
         [Dependency] private readonly ServerUpdateManager _updateManager = default!;
-        [Dependency] private FeedbackPopupManager? _feedbackPopupManager = default!; // DeltaV
+        [Dependency] private FeedbackPopupManager _feedbackPopupManager = default!; // DeltaV
 
         public override void PreInit()
         {
