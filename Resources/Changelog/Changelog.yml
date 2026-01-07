@@ -2984,13 +2984,6 @@
   id: 9240
   time: '2025-12-01T05:47:46.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/41489
-- author: TheShuEd
-  changes:
-  - message: Santa anomaly & santa anomaly infections is back!
-    type: Add
-  id: 9241
-  time: '2025-12-01T11:01:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41654
 - author: Spessmann
   changes:
   - message: Added a new station, Snowball, a round and icy lowpop station.
@@ -3419,13 +3412,6 @@
   id: 9294
   time: '2025-12-15T01:50:21.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/41823
-- author: PJB3005
-  changes:
-  - message: Removed friendly & freelancer "unknown shuttle" events.
-    type: Remove
-  id: 9295
-  time: '2025-12-15T03:42:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41860
 - author: Meara1179
   changes:
   - message: Added crowbar to the Medical Borg's Rescue module.
@@ -3595,13 +3581,6 @@
   id: 9317
   time: '2025-12-18T21:08:51.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/33157
-- author: Fildrance
-  changes:
-  - message: reroll feature for RnD research console
-    type: Add
-  id: 9318
-  time: '2025-12-18T21:22:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32931
 - author: Hitlinemoss
   changes:
   - message: Small cardboard boxes have been added (2x2 instead of 3x3), and can be
@@ -3670,14 +3649,6 @@
   id: 9324
   time: '2025-12-21T20:33:07.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/41932
-- author: SlamBamActionman
-  changes:
-  - message: 'EXPERIMENTAL: Changed the name of the "LOOC" chat channel to "Help"
-      to reflect its primary usage.'
-    type: Tweak
-  id: 9325
-  time: '2025-12-22T00:46:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41933
 - author: MilonPL
   changes:
   - message: Fixed beaker solutions duplicating whenever it's thrown.
@@ -3914,3 +3885,17 @@
   id: 9354
   time: '2026-01-05T00:42:26.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/42234
+- author: ThatGuyUSA
+  changes:
+  - message: There are more IDs and icons that can be used for a variety of roles.
+    type: Add
+  id: 9355
+  time: '2026-01-06T10:41:32.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42200
+- author: 0-Anon
+  changes:
+  - message: Guaranteed a bottle of Crazy Glue and Crazy Lube in the toy box.
+    type: Tweak
+  id: 9356
+  time: '2026-01-07T01:32:38.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42146
