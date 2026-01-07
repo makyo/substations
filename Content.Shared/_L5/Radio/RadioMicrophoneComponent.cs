@@ -1,6 +1,6 @@
 using Robust.Shared.Audio;
 
-namespace Content.Server.Radio.Components;
+namespace Content.Shared.Radio.Components;
 
 public sealed partial class RadioMicrophoneComponent
 {
