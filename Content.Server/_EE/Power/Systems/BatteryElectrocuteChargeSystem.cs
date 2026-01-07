@@ -6,6 +6,7 @@ using Content.Shared.Electrocution;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Server._EE.Power.Components;
+using Content.Shared.Power.Components;
 
 namespace Content.Server._EE.Power.Systems;
 

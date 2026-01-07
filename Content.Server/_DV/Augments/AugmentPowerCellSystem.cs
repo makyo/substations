@@ -7,6 +7,7 @@ using Content.Shared.Body.Organ;
 using Content.Shared.Body.Systems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Power.Components;
 using Content.Shared.PowerCell.Components;
 
 namespace Content.Server._DV.Augments;

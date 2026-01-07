@@ -15,6 +15,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Content.Server._EE.Power.Components;
 using Content.Server._EE.Silicon;
+using Content.Shared.Power.Components;
 
 namespace Content.Server._EE.Power;
 
