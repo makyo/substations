@@ -1,4 +1,5 @@
-﻿using Content.Shared.CCVar;
+﻿using Content.Shared._Floof.CCVar;
+using Content.Shared.CCVar;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Contests;
@@ -17,7 +18,7 @@ public sealed partial class ContestsSystem
     /// </summary>
     private bool ContestClampOverride(bool bypassClamp)
     {
-        return _cfg.GetCVar(CCVars.AllowClampOverride) && bypassClamp;
+        return _cfg.GetCVar(FloofCCVars.AllowClampOverride) && bypassClamp;
     }
 
     /// <summary>
@@ -26,7 +27,7 @@ public sealed partial class ContestsSystem
     /// </summary>
     public float ContestConstructor(EntityUid user, ContestArgs args)
     {
-        if (!_cfg.GetCVar(CCVars.DoContestsSystem))
+        if (!_cfg.GetCVar(FloofCCVars.DoContestsSystem))
             return 1;
 
         if (!args.DoEveryInteraction)
