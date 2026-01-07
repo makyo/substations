@@ -780,7 +780,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             _euiMan.OpenEui(new CosmicDeconvertedEui(), session);
         }
         _eye.SetVisibilityMask(uid, 1);
-        _alerts.ClearAlert(uid, uid.Comp.EntropyAlert);
+        _alerts.ClearAlert(uid.Owner, uid.Comp.EntropyAlert);
         cosmicGamerule.TotalCult--;
         cosmicGamerule.Cultists.Remove(uid);
         AdjustCultObjectiveConversion(-1);
