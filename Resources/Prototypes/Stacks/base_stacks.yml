@@ -5,4 +5,4 @@
   abstract: true
   id: BaseTileStack
   icon: { sprite: /Textures/Objects/Tiles/tile.rsi, state: steel }
-  maxCount: 30
+  maxCount: 120 # L5 — ough, station building...
