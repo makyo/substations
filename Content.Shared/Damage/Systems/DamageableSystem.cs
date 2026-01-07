@@ -170,7 +170,7 @@ namespace Content.Shared.Damage
 
             // TODO DAMAGE
             // byref struct event.
-            RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin, false, canSever ?? true)); // Shitmed Change
+            RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin, canSever ?? true));  // Shitmed Change
         }
 
         /// <summary>
