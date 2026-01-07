@@ -221,6 +221,21 @@
         whitelist:
           tags:
           - Wrench
+  # DeltaV - Add medkit slot to medical belts
+  - type: ItemSlots
+    slots:
+      medkit:
+        name: clothing-belt-medkit
+        whitelist:
+          tags:
+          - Medkit
+        insertOnInteract: false
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+      medkit: !type:ContainerSlot { }
+  # End of DeltaV - Add medkit slot to medical belts.
   - type: Appearance
 
 - type: entity
