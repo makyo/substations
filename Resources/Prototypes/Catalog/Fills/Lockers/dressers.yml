@@ -60,6 +60,7 @@
       - id: ClothingNeckMantleHOP
       - id: ClothingNeckCloakHop
       - id: ClothingHeadHatHopcap
+      - id: ClothingHeadHatBeretHop
       - id: ClothingOuterWinterHoP
       - id: ClothingEyesGlasses
 
