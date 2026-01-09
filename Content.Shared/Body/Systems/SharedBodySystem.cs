@@ -40,10 +40,11 @@ public abstract partial class SharedBodySystem : EntitySystem
     [Dependency] protected readonly StandingStateSystem Standing = default!;
     // Shitmed Change - the systems below are named like private dependencies because I want to reduce the amount of
     // conflicts and for some reason, shitmed uses partial classes instead of being its own thing.
-#pragma warning disable IDE1006 // Ignore Naming Style Issues
-    //[Dependency] protected readonly InventorySystem _inventory = default!;
-    [Dependency] protected readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
-#pragma warning restore IDE1006
+// #pragma warning disable IDE1006 // Ignore Naming Style Issues
+//     [Dependency] protected readonly InventorySystem _inventory = default!;
+//     [Dependency] protected readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
+// #pragma warning restore IDE1006
+// L5 something's broken...
 
     public override void Initialize()
     {
