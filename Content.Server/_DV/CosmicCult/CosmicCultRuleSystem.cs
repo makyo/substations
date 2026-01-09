@@ -11,9 +11,12 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking;
 using Content.Server.Ghost;
 using Content.Server.Objectives.Components;
+using Content.Server.Polymorph.Components;
 using Content.Server.Popups;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Systems;
+using Content.Shared.Cuffs;
+using Content.Shared.Cuffs.Components;
 using Content.Server.Voting.Managers;
 using Content.Server.Voting;
 using Content.Shared._DV.CCVars;
@@ -32,6 +35,7 @@ using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Light.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -41,8 +45,8 @@ using Content.Shared.Parallax;
 using Content.Shared.Popups;
 using Content.Shared.Radio.Components;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Stunnable;
-using Content.Shared.Temperature.Components;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -57,9 +61,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Collections.Immutable;
 using System.Linq;
-using Content.Shared.Radio.Components;
-using Content.Shared.Light.Components;
-using Content.Shared.Roles.Components;
+using Content.Shared.Temperature.Components;
 
 namespace Content.Server._DV.CosmicCult;
 
@@ -73,7 +75,6 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergency = default!;
     [Dependency] private readonly EuiManager _euiMan = default!;
     [Dependency] private readonly GhostSystem _ghost = default!;
@@ -133,6 +134,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         SubscribeLocalEvent<CosmicCultComponent, ComponentShutdown>(OnComponentShutdown);
         SubscribeLocalEvent<CosmicGodComponent, ComponentInit>(OnGodSpawn);
         SubscribeLocalEvent<CosmicCultComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<CosmicCultComponent, CuffedStateChangeEvent>(OnCuffStateChanged);
 
         Subs.CVar(_config,
             DCCVars.CosmicCultT2RevealDelaySeconds,
@@ -210,13 +212,12 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         if (component.Tier3DelayTimer is { } tier3Timer && _timing.CurTime >= tier3Timer)
         {
             component.Tier3DelayTimer = null;
-            component.ExtraRiftTimer = null; // stop spawning more rifts
 
             //do spooky things
             var query = EntityQueryEnumerator<CosmicCultComponent>();
             while (query.MoveNext(out var cultist, out var cultComp))
             {
-                EnsureComp<CosmicStarMarkComponent>(cultist);
+                EnsureComp<CosmicSubtleMarkComponent>(cultist);
             }
 
             var sender = Loc.GetString("cosmiccult-announcement-sender");
@@ -283,13 +284,25 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
 
     private void StewardVote()
     {
+        // If there's already an entity with steward, don't hold a vote. This allows admins to add the Cosmic Cult rule a 2nd time
+        // in the case that there is only one cultist and they've been chosen as the steward already.
+        if (EntityQuery<CosmicCultLeadComponent>().Any())
+        {
+            _adminLogger.Add(LogType.Vote, LogImpact.Medium,
+                $"Cosmic cult steward already exists. Cancelling steward vote.");
+            return;
+        }
         var cultists = new List<(string, EntityUid)>();
 
         var cultQuery = EntityQueryEnumerator<CosmicCultComponent, MetaDataComponent>();
+
         while (cultQuery.MoveNext(out var cult, out _, out var metadata))
         {
             var playerInfo = metadata.EntityName;
-            cultists.Add((playerInfo, cult));
+            if (TryComp<PolymorphedEntityComponent>(cult, out var polyComp) && polyComp.Parent.HasValue) // If the cultist is polymorphed, we use the original entity instead and hope that they'll polymorph back eventually
+                cultists.Add((playerInfo, polyComp.Parent.Value));
+            else
+                cultists.Add((playerInfo, cult));
         }
 
         var options = new VoteOptions
@@ -300,9 +313,26 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             VoterEligibility = VoteManager.VoterEligibility.CosmicCult
         };
 
+        // If there are no cultists, don't hold a vote, or the server will crash.
+        if (cultists.Count == 0)
+        {
+            Log.Warning($"There are no cosmic cultists present for the steward vote. Voting is cancelled to prevent the server crashing.");
+            _adminLogger.Add(LogType.Vote, LogImpact.Extreme, $"There are no cosmic cultists for the steward vote. Steward vote is cancelled to prevent the server crashing.");
+            return;
+        }
+
         foreach (var (name, ent) in cultists)
         {
             options.Options.Add((Loc.GetString(name), ent));
+        }
+
+        // If somehow there are cultists but no options, still don't hold a vote.
+        // Holding a vote with zero options crashes the server.
+        if (options.Options.Count == 0)
+        {
+            Log.Warning($"There are {cultists.Count} cosmic cultists but no options for the steward vote. Voting is cancelled to prevent the server crashing.");
+            _adminLogger.Add(LogType.Vote, LogImpact.Extreme, $"There are {cultists.Count} cosmic cultists but no options for the steward vote. Steward vote is cancelled to prevent the server crashing.");
+            return;
         }
 
         var vote = _votes.CreateVote(options);
@@ -345,7 +375,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         var query = QueryActiveRules();
         while (query.MoveNext(out var ruleUid, out _, out var cultRule, out _))
         {
-            SetWinType((ruleUid, cultRule), WinType.CultComplete); //here's no coming back from this. Cult wins this round
+            SetWinType((ruleUid, cultRule), WinType.CultComplete); // There's no coming back from this. Cult wins this round
             QueueDel(cultRule.MonumentInGame); // The monument doesn't need to stick around postround! Into the bin with you.
             QueueDel(cultRule.MonumentSlowZone); // cease exist
 
@@ -414,9 +444,10 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     private bool CultistsAlive()
     {
         var query = EntityQueryEnumerator<CosmicCultComponent, MobStateComponent>();
-        while (query.MoveNext(out _, out var comp, out var mob))
+        while (query.MoveNext(out var ent, out _, out var mobComp))
         {
-            if (mob.Running && mob.CurrentState == MobState.Alive)
+            if (TryComp<CuffableComponent>(ent, out var cuffed) && cuffed.CuffedHandCount > 0) continue;
+            if (mobComp.Running && mobComp.CurrentState != MobState.Dead)
                 return true;
         }
 
@@ -424,6 +455,16 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     }
 
     private void OnMobStateChanged(Entity<CosmicCultComponent> ent, ref MobStateChangedEvent args)
+    {
+        CheckForActiveCultists();
+    }
+
+    private void OnCuffStateChanged(Entity<CosmicCultComponent> ent, ref CuffedStateChangeEvent args)
+    {
+        CheckForActiveCultists();
+    }
+
+    private void CheckForActiveCultists()
     {
         if (CultistsAlive())
             return;
@@ -438,35 +479,37 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     private void ConfirmWinState(Entity<CosmicCultRuleComponent> ent)
     {
         var tier = ent.Comp.CurrentTier;
-        var leaderAlive = false;
+        var LeaderAtCentcom = false;
+        var CultistsAtCentcom = 0;
         var centcomm = _emergency.GetCentcommMaps();
         var wrapup = AllEntityQuery<CosmicCultComponent, TransformComponent>();
         while (wrapup.MoveNext(out var cultist, out _, out var cultistLocation))
         {
             if (cultistLocation.MapUid != null && centcomm.Contains(cultistLocation.MapUid.Value))
             {
+                if (TryComp<CuffableComponent>(cultist, out var cuffed) && cuffed.CuffedHandCount > 0) continue; // If they are cuffed, they should be deconverted soon, so we don't count them.
+                CultistsAtCentcom++;
                 if (HasComp<CosmicCultLeadComponent>(cultist))
-                    leaderAlive = true;
-            }
-        }
-        if (tier < 3 && leaderAlive)
-            SetWinType(ent, WinType.Neutral); //The Monument isn't Tier 3, but the cult leader's alive and at Centcomm! a Neutral outcome
-        var monument = AllEntityQuery<CosmicFinaleComponent>();
-        while (monument.MoveNext(out var monumentUid, out var comp))
-        {
-            _sound.StopStationEventMusic(ent, StationEventMusicType.CosmicCult);
-            if (tier == 3 && comp.CurrentState == FinaleState.Unavailable)
-            {
-                SetWinType(ent, WinType.CultMinor); //The crew escaped, and The Monument wasn't fully empowered. a small win
-            }
-            else if (comp.CurrentState != FinaleState.Unavailable)
-            {
-                SetWinType(ent, WinType.CultMajor); //Despite the crew's escape, The Finale is available or active. Major win
+                    LeaderAtCentcom = true;
             }
         }
 
-        if (CultistsAlive())
-            return; // There's still cultists alive! stop checking stuff
+        if (tier < 3)
+            SetWinType(ent, WinType.CrewMinor); //The monument didn't even reach tier 3, which means that either cult had a skill issue, or crew evacuated early. Minor win.
+        else if (LeaderAtCentcom) //If the monument reached tier 3, all cultists have glowing eyes now, so you shouldn't let them evacuate without cuffs on.
+            SetWinType(ent, WinType.CultMajor); //The Monument wasn't completed, but the cult leader's alive and at Midpoint.
+        else if (CultistsAtCentcom >= 2)
+            SetWinType(ent, WinType.CultMinor); //The Monument wasn't completed, but at least two cultists are alive and at Midpoint.
+        else
+            SetWinType(ent, WinType.Neutral); //The monument wasn't completed, no cultists escaped to midpoint. Some cultists still remain on the station, though.
+
+        if (CultistsAlive()) return; //If there are no cultists alive, ignore all previous checks, crew alreay won.
+
+        if (tier <= 1) //Prevent the cult getting cooked by accident before anyone even knows there's a cult.
+        {
+            SetWinType(ent, WinType.CrewMinor); //If we somehow get here at the end of the round, we'll still count this as a crew minor.
+            return;
+        }
 
         _roundEnd.DoRoundEndBehavior(ent.Comp.RoundEndBehavior, ent.Comp.EvacShuttleTime, ent.Comp.RoundEndTextSender, ent.Comp.RoundEndTextShuttleCall, ent.Comp.RoundEndTextAnnouncement);
         ent.Comp.RoundEndBehavior = RoundEndBehavior.Nothing; // prevent this being called multiple times.
@@ -475,7 +518,6 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         var gameruleMonument = ent.Comp.MonumentInGame;
         if (TryComp<CosmicFinaleComponent>(gameruleMonument, out var finComp))
         {
-            _monument.Disable(gameruleMonument);
             finComp.CurrentState = FinaleState.Unavailable;
             _popup.PopupCoordinates(Loc.GetString("cosmiccult-monument-powerdown"), Transform(gameruleMonument).Coordinates, PopupType.Large);
             _sound.StopStationEventMusic(gameruleMonument, StationEventMusicType.CosmicCult);
@@ -485,7 +527,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         if (ent.Comp.TotalCult == 0)
             SetWinType(ent, WinType.CrewComplete); // No cultists registered! That means everyone got deconverted
         else
-            SetWinType(ent, WinType.CrewMajor); // There's still cultists registered, but if we got here, that means they're all dead
+            SetWinType(ent, WinType.CrewMajor); // There's still cultists registered, but if we got here, that means they're all dead or in cuffs
     }
 
     protected override void AppendRoundEndText(EntityUid uid,
@@ -570,11 +612,8 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
                 var cultistQuery = EntityQueryEnumerator<CosmicCultComponent>();
                 while (cultistQuery.MoveNext(out var cultist, out var cultistComp))
                 {
-                    var mins = timer.Minutes;
-                    var secs = timer.Seconds;
                     _antag.SendBriefing(cultist,
-                        Loc.GetString("cosmiccult-finale-autocall-briefing",
-                            ("minutesandseconds", $"{mins} minutes and {secs} seconds")),
+                        Loc.GetString("cosmiccult-finale-autocall-briefing"),
                         Color.FromHex("#4cabb3"),
                         _monumentAlert);
                 }
@@ -713,10 +752,12 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         cultComp.StoredDamageContainer = Comp<DamageableComponent>(uid).DamageContainerID!.Value;
         EnsureComp<IntrinsicRadioReceiverComponent>(uid);
         TransferCultAssociation(converter, uid);
-
+        if (TryComp<CosmicFinaleComponent>(cult.Comp.MonumentInGame, out var finaleComp) && finaleComp.FinaleActive)
+        {
+            EnsureComp<CosmicStarMarkComponent>(uid);
+        }
         if (cult.Comp.CurrentTier == 3)
         {
-            _damage.SetDamageContainerID(uid, "BiologicalMetaphysical");
             cultComp.EntropyBudget = 48; // pity balance
             cultComp.Respiration = false;
 
@@ -725,7 +766,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
                 cultComp.UnlockedInfluences.Add(influenceProto.ID);
             }
 
-            EnsureComp<CosmicStarMarkComponent>(uid);
+            EnsureComp<CosmicSubtleMarkComponent>(uid);
             EnsureComp<PressureImmunityComponent>(uid);
             EnsureComp<TemperatureImmunityComponent>(uid);
         }
@@ -762,31 +803,35 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         UpdateCultData(cult.Comp.MonumentInGame);
     }
 
-    private void OnComponentShutdown(Entity<CosmicCultComponent> uid, ref ComponentShutdown args)
+    private void OnComponentShutdown(Entity<CosmicCultComponent> ent, ref ComponentShutdown args)
     {
-        if (AssociatedGamerule(uid) is not { } cult)
+        if (AssociatedGamerule(ent) is not { } cult)
+            return;
+        if (TerminatingOrDeleted(ent))
             return;
         var cosmicGamerule = cult.Comp;
 
-        // L5 - new stun system:
-        _stun.TryKnockdown(uid.Owner, TimeSpan.FromSeconds(2), true);
-        foreach (var actionEnt in uid.Comp.ActionEntities) _actions.RemoveAction(actionEnt);
+        if(TryComp<CrawlerComponent>(ent, out var crawlerComp))
+            _stun.TryCrawling((ent, crawlerComp), TimeSpan.FromSeconds(2), refresh: true);
 
-        if (TryComp<IntrinsicRadioTransmitterComponent>(uid, out var transmitter))
+        foreach (var actionEnt in ent.Comp.ActionEntities) _actions.RemoveAction(actionEnt);
+
+        if (TryComp<IntrinsicRadioTransmitterComponent>(ent, out var transmitter))
             transmitter.Channels.Remove("CosmicRadio");
-        if (TryComp<ActiveRadioComponent>(uid, out var radio))
+        if (TryComp<ActiveRadioComponent>(ent, out var radio))
             radio.Channels.Remove("CosmicRadio");
-        RemComp<CosmicCultLeadComponent>(uid);
-        RemComp<InfluenceVitalityComponent>(uid);
-        RemComp<InfluenceStrideComponent>(uid);
-        RemComp<PressureImmunityComponent>(uid);
-        RemComp<TemperatureImmunityComponent>(uid);
-        RemComp<CosmicStarMarkComponent>(uid);
-        _damage.SetDamageContainerID(uid.Owner, uid.Comp.StoredDamageContainer);
-        _antag.SendBriefing(uid, Loc.GetString("cosmiccult-role-deconverted-fluff"), Color.FromHex("#4cabb3"), _deconvertSound);
-        _antag.SendBriefing(uid, Loc.GetString("cosmiccult-role-deconverted-briefing"), Color.FromHex("#cae8e8"), null);
+        RemComp<CosmicCultLeadComponent>(ent);
+        RemComp<InfluenceVitalityComponent>(ent);
+        RemComp<InfluenceStrideComponent>(ent);
+        RemComp<PressureImmunityComponent>(ent);
+        RemComp<TemperatureImmunityComponent>(ent);
+        RemComp<CosmicStarMarkComponent>(ent);
+        RemComp<CosmicSubtleMarkComponent>(ent);
 
-        if (!_mind.TryGetMind(uid, out var mindId, out var mind))
+        _antag.SendBriefing(ent, Loc.GetString("cosmiccult-role-deconverted-fluff"), Color.FromHex("#4cabb3"), _deconvertSound);
+        _antag.SendBriefing(ent, Loc.GetString("cosmiccult-role-deconverted-briefing"), Color.FromHex("#cae8e8"), null);
+
+        if (!_mind.TryGetMind(ent, out var mindId, out var mind))
             return;
 
         _mind.ClearObjectives(mindId, mind);
@@ -796,13 +841,14 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         {
             _euiMan.OpenEui(new CosmicDeconvertedEui(), session);
         }
-        _eye.SetVisibilityMask(uid, 1);
-        _alerts.ClearAlert(uid.Owner, uid.Comp.EntropyAlert);
+        _eye.SetVisibilityMask(ent, 1);
+
+        _alerts.ClearAlert(ent.Owner, ent.Comp.EntropyAlert);
         cosmicGamerule.TotalCult--;
-        cosmicGamerule.Cultists.Remove(uid);
+        cosmicGamerule.Cultists.Remove(ent);
         AdjustCultObjectiveConversion(-1);
         UpdateCultData(cosmicGamerule.MonumentInGame);
-        _movementSpeed.RefreshMovementSpeedModifiers(uid);
+        _movementSpeed.RefreshMovementSpeedModifiers(ent);
     }
     #endregion
 }
