@@ -24,8 +24,8 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Objects/glyph_truth.rsi
     layers:
-      - state: spawning
-        map: ["base"]
+    - state: spawning
+      map: ["base"]
     drawdepth: Puddles
   - type: GenericVisualizer
     visuals:
@@ -38,6 +38,9 @@
           Cooldown: {state: cooldown}
   - type: Appearance
   - type: InteractionOutline
+  - type: CosmicPurifiable # Because why the hell not
+    cleanseTime: 10
+    cleanseTimeChaplain: 5
 
 - type: entity
   parent: CosmicGlyphBase
@@ -47,16 +50,16 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Objects/glyph_truth.rsi
     layers:
-      - state: spawning
-        map: ["base"]
+    - state: spawning
+      map: ["base"]
   - type: CosmicGlyphConversion
     negateProtection: true
   - type: CosmicGlyph
-    activationTime: 4 # To prevent people from just using the glyph the moment a target's shunt ends. Go get cuffs.
     requiredCultists: 3
     activationDamage:
       types:
         Asphyxiation: 60
+        Ion: 60
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-truth
 
@@ -68,15 +71,15 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Objects/glyph_knowledge.rsi
     layers:
-      - state: spawning
-        map: ["base"]
+    - state: spawning
+      map: ["base"]
   - type: CosmicGlyphConversion
   - type: CosmicGlyph
-    activationTime: 4 # To prevent people from just using the glyph the moment a target's shunt ends. Go get cuffs.
     requiredCultists: 2
     activationDamage:
       types:
         Asphyxiation: 40
+        Ion: 40
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-knowledge
 
@@ -88,14 +91,15 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Objects/glyph_cessation.rsi
     layers:
-      - state: spawning
-        map: ["base"]
+    - state: spawning
+      map: ["base"]
   - type: CosmicGlyphTransmute
   - type: CosmicGlyph
     requiredCultists: 1
     activationDamage:
       types:
         Asphyxiation: 25
+        Ion: 25
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-cessation
 
@@ -107,14 +111,15 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Objects/glyph_blades.rsi
     layers:
-      - state: spawning
-        map: ["base"]
+    - state: spawning
+      map: ["base"]
   - type: CosmicGlyphTransmute
   - type: CosmicGlyph
     requiredCultists: 2
     activationDamage:
       types:
         Asphyxiation: 50
+        Ion: 50
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-blades
 
@@ -126,14 +131,15 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Objects/glyph_warding.rsi
     layers:
-      - state: spawning
-        map: ["base"]
+    - state: spawning
+      map: ["base"]
   - type: CosmicGlyphTransmute
   - type: CosmicGlyph
     requiredCultists: 2
     activationDamage:
       types:
         Asphyxiation: 50
+        Ion: 50
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-warding
 
@@ -145,11 +151,15 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Objects/glyph_projection.rsi
     layers:
-      - state: spawning
-        map: ["base"]
+    - state: spawning
+      map: ["base"]
   - type: CosmicGlyphAstralProjection
   - type: CosmicGlyph
     requiredCultists: 1
     eraseOnUse: true # This is something that you may use early into the round where there aren't many cultists to hide it for you, so it erases automaticaly.
+    activationDamage:
+      types:
+        Asphyxiation: 25
+        Ion: 25
   - type: CosmicCultExamine
     cultistText: cosmic-examine-glyph-projection

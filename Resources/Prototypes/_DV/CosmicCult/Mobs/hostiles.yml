@@ -18,7 +18,7 @@
         true
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - CosmicCult
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -35,20 +35,20 @@
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 70
-        behaviors:
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CosmicLapseAbilityVFX:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:PlaySoundBehavior
-            sound:
-              path: /Audio/_DV/CosmicCult/ability_lapse.ogg
+    - trigger:
+        !type:DamageTrigger
+        damage: 70
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CosmicLapseAbilityVFX:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_DV/CosmicCult/ability_lapse.ogg
   - type: Bloodstream
     bloodMaxVolume: 100
     maxBleedAmount: 10.75
@@ -92,16 +92,16 @@
   - type: GhostTakeoverAvailable
   - type: LightBehaviour
     behaviours:
-     - !type:FadeBehaviour
-       interpolate: Linear
-       minDuration: 5.5
-       maxDuration: 5.5
-       startValue: 0.5
-       endValue: 2
-       property: Energy
-       enabled: true
-       isLooped: true
-       reverseWhenFinished: true
+    - !type:FadeBehaviour
+      interpolate: Linear
+      minDuration: 5.5
+      maxDuration: 5.5
+      startValue: 0.5
+      endValue: 2
+      property: Energy
+      enabled: true
+      isLooped: true
+      reverseWhenFinished: true
 
 - type: entity
   parent: [ BaseMobCosmicHostile, MobCosmicCustodian ]

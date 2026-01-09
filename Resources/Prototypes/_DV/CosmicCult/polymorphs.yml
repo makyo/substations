@@ -87,8 +87,8 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Effects/ability_lapsepolymorph.rsi
     layers:
-      - state: humanoid
-        shader: unshaded
+    - state: humanoid
+      shader: unshaded
     drawdepth: SmallMobs
     noRot: true
   - type: PointLight
@@ -101,16 +101,16 @@
     cultistText: cosmic-examine-text-abilitylapse
   - type: LightBehaviour
     behaviours:
-     - !type:FadeBehaviour
-       interpolate: Linear
-       minduration: 1.75
-       maxduration: 1.75
-       startValue: 0.5
-       endValue: 12
-       property: Energy
-       enabled: true
-       isLooped: true
-       reverseWhenFinished: true
+    - !type:FadeBehaviour
+      interpolate: Linear
+      # minduration: 1.75 # These don't exist in the component
+      # maxduration: 1.75
+      startValue: 0.5
+      endValue: 12
+      property: Energy
+      enabled: true
+      isLooped: true
+      reverseWhenFinished: true
   - type: SpriteFade
   - type: Speech
     enabled: False
@@ -139,8 +139,8 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Effects/ability_lapsepolymorph.rsi
     layers:
-      - state: spider
-        shader: unshaded
+    - state: spider
+      shader: unshaded
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -150,8 +150,8 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Effects/ability_lapsepolymorph.rsi
     layers:
-      - state: diona
-        shader: unshaded
+    - state: diona
+      shader: unshaded
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -161,8 +161,8 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Effects/ability_lapsepolymorph.rsi
     layers:
-      - state: moth
-        shader: unshaded
+    - state: moth
+      shader: unshaded
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -172,8 +172,8 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Effects/ability_lapsepolymorph.rsi
     layers:
-      - state: vox
-        shader: unshaded
+    - state: vox
+      shader: unshaded
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -183,8 +183,8 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Effects/ability_lapsepolymorph.rsi
     layers:
-      - state: snail
-        shader: unshaded
+    - state: snail
+      shader: unshaded
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -194,5 +194,5 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Effects/ability_lapsepolymorph.rsi
     layers:
-      - state: crab
-        shader: unshaded
+    - state: crab
+      shader: unshaded

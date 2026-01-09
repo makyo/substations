@@ -53,16 +53,16 @@
     castShadows: false
   - type: LightBehaviour
     behaviours:
-     - !type:FadeBehaviour
-       interpolate: Linear
-       minDuration: 5.5
-       maxDuration: 5.5
-       startValue: 4
-       endValue: 12
-       property: Energy
-       enabled: true
-       isLooped: true
-       reverseWhenFinished: true
+    - !type:FadeBehaviour
+      interpolate: Linear
+      minDuration: 5.5
+      maxDuration: 5.5
+      startValue: 4
+      endValue: 12
+      property: Energy
+      enabled: true
+      isLooped: true
+      reverseWhenFinished: true
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -73,8 +73,8 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Mobs/wisp.rsi
     layers:
-      - state: wisp
-        shader: unshaded
+    - state: wisp
+      shader: unshaded
   - type: Speech
   - type: Transform
   - type: Fixtures

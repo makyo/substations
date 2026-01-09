@@ -3,34 +3,34 @@
   id: WeaponArcCosmic
   parent: WeaponArcStatic
   components:
-    - type: WeaponArcVisuals
-      fadeOut: false
-    - type: Sprite
-      layers:
-      - sprite: _DV/CosmicCult/Effects/weaponarcs.rsi
-        state: arc_cosmic
-        shader: unshaded
-    - type: TimedDespawn
-      lifetime: 0.66
-    - type: PointLight
-      color: "#42a4ae"
-      radius: 1.5
-      energy: 6
-      castShadows: false
-    - type: LightBehaviour
-      behaviours:
-      - !type:FadeBehaviour
-        interpolate: Linear
-        minDuration: 0.64
-        maxDuration: 0.65
-        startValue: 0.1
-        endValue: 6
-        property: Energy
-        enabled: true
-        reverseWhenFinished: true
-    - type: Tag
-      tags:
-      - HideContextMenu
+  - type: WeaponArcVisuals
+    fadeOut: false
+  - type: Sprite
+    layers:
+    - sprite: _DV/CosmicCult/Effects/weaponarcs.rsi
+      state: arc_cosmic
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.66
+  - type: PointLight
+    color: "#42a4ae"
+    radius: 1.5
+    energy: 6
+    castShadows: false
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      interpolate: Linear
+      minDuration: 0.64
+      maxDuration: 0.65
+      startValue: 0.1
+      endValue: 6
+      property: Energy
+      enabled: true
+      reverseWhenFinished: true
+  - type: Tag
+    tags:
+    - HideContextMenu
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -65,7 +65,7 @@
   - type: Sprite
     netsync: false
     drawdepth: Mobs
-    shader: unshaded
+    # shader: unshaded # Don't exist in the component
   - type: Tag
     tags:
     - HideContextMenu
@@ -321,7 +321,7 @@
       reverseWhenFinished: true
   - type: Tag
     tags:
-      - HideContextMenu
+    - HideContextMenu
 
 - type: entity
   parent: BaseCosmicVFX

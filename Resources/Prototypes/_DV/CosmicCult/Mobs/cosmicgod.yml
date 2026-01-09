@@ -40,14 +40,14 @@
     color: "#43286a"
   - type: LightBehaviour
     behaviours:
-     - !type:FadeBehaviour
-       interpolate: Linear
-       minDuration: 4.62
-       maxDuration: 4.62
-       startValue: 0.5
-       endValue: 25
-       property: Energy
-       enabled: true
+    - !type:FadeBehaviour
+      interpolate: Linear
+      minDuration: 4.62
+      maxDuration: 4.62
+      startValue: 0.5
+      endValue: 25
+      property: Energy
+      enabled: true
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -65,7 +65,7 @@
       EventHorizonCollider:
         shape:
           !type:PhysShapeCircle
-            radius: 5
+          radius: 5
         hard: false
         restitution: 0.8
         density: 1
@@ -76,7 +76,7 @@
       EventHorizonConsumer:
         shape:
           !type:PhysShapeCircle
-            radius: 6
+          radius: 6
         hard: false
         mask:
         - Opaque
@@ -92,6 +92,9 @@
   - type: CanMoveInAir
   - type: WarpPoint
     follow: true
+    blacklist:
+      tags:
+      - GhostOnlyWarp
     location: The Unknown
   - type: CosmicGod
   - type: CosmicCultExamine
@@ -120,5 +123,8 @@
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
     raffle:
-        settings: short
+      settings: short
   - type: GhostTakeoverAvailable
+  - type: Tag
+    tags:
+    - GhostOnlyWarp

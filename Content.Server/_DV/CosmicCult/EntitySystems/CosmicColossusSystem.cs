@@ -86,7 +86,7 @@ public sealed class CosmicColossusSystem : EntitySystem
         var station = _station.GetStationInMap(Transform(ent).MapID);
         if (TryComp<StationDataComponent>(station, out var stationData))
         {
-            var stationGrid = _station.GetLargestGrid((station.Value, stationData)); // L5 - station api changes
+            var stationGrid = _station.GetLargestGrid((station.Value, stationData));
             _throw.TryThrow(ent, Transform(stationGrid!.Value).Coordinates, baseThrowSpeed: 30, null, 0, 0, false, false, false, false, false);
         }
         if (ent.Comp.Timed)

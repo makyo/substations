@@ -1,37 +1,17 @@
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicSiphon
   name: Siphon Entropy
-  description: Silently siphon entropy from your target, dealing some damage in the process.
+  description: Silently siphon entropy from your target.
   components:
-  - type: EntityTargetAction
-  # Begin L5 changes - action ECS
-    event: !type:EventCosmicSiphon {}
-    whitelist:
-      components:
-      - HumanoidAppearance
-    blacklist:
-      components:
-      - CosmicCult
-      - BibleUser
-  - type: TargetAction
   - type: Action
-    useDelay: 50
+    useDelay: 30
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: siphon
-  # End L5 changes
-
-- type: entity
-  parent: BaseAction # L5 - action ECS
-  id: ActionCosmicBlank
-  name: Shunt Subjectivity
-  description: Shunt your target's mind out of their body and unto the cosmic dark, temporarily rendering their body mindless.
-  components:
+  - type: TargetAction
   - type: EntityTargetAction
-  # Begin L5 changes - action ECS
-    event: !type:EventCosmicBlank {}
     whitelist:
       components:
       - HumanoidAppearance
@@ -39,70 +19,86 @@
       components:
       - CosmicCult
       - BibleUser
-    canTargetSelf: true
-  - type: TargetAction
+    event: !type:EventCosmicSiphon {}
+
+- type: entity
+  parent: BaseAction
+  id: ActionCosmicBlank
+  name: Shunt Subjectivity
+  description: Shunt your target's mind out of their body and unto the cosmic dark, temporarily rendering their body mindless.
+  components:
   - type: Action
     useDelay: 120
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: blank
-  # End L5 changes
+  - type: TargetAction
+  - type: EntityTargetAction
+    canTargetSelf: true
+    whitelist:
+      components:
+      - HumanoidAppearance
+    blacklist:
+      components:
+      - CosmicCult
+      - BibleUser
+    event: !type:EventCosmicBlank {}
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicPlaceMonument
   name: Beckon The Monument
   description: Call forth The Monument into realspace. Keep it hidden and safe from non-cultists!
   components:
-  - type: ConfirmableAction
-    popup: cosmicability-monument-spawn-confirm
-    primeTime: 10 #increased to give you more time to figure out where you want to put it
-  - type: Action # L5 - action ECS
+  - type: Action
     useDelay: 999
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: monument
-  - type: InstantAction # L5 - action ECS
+  - type: ConfirmableAction
+    popup: cosmicability-monument-spawn-confirm
+    primeTime: 10 #increased to give you more time to figure out where you want to put it
+  - type: InstantAction
     event: !type:EventCosmicPlaceMonument {}
   - type: MonumentPlacementPreview
     tier: 1
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicMoveMonument
   name: Relocate The Monument
   description: Your work is imperative, and the end is inevitable. Ensure that it is completed under your watch.
   components:
-  - type: ConfirmableAction
-    popup: cosmicability-monument-move-confirm
-    primeTime: 10 #increased to give you more time to figure out where you want to put it
-  - type: Action # L5 - action ECS
+  - type: Action
     useDelay: 999
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: monument-relocate
-  - type: InstantAction # L5 - action ECS
+  - type: ConfirmableAction
+    popup: cosmicability-monument-move-confirm
+    primeTime: 10 #increased to give you more time to figure out where you want to put it
+  - type: InstantAction
     event: !type:EventCosmicMoveMonument
   - type: MonumentPlacementPreview
     tier: 2
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicReturn
   name: Return
   description: Dissipate your astral projection and return to your body.
   components:
-  - type: Action # L5 - action ECS
+  - type: Action
     checkCanInteract: false
     itemIconStyle: NoItem
     useDelay: 0
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: return
-  - type: InstantAction # L5 - action ECS
+  - type: InstantAction
     event: !type:EventCosmicReturn {}
 
 - type: entity
@@ -111,9 +107,15 @@
   name: Abberant Lapse
   description: Lapse your target's corporeal form, temporarily rendering it immutable, impassible, and frozen in place.
   components:
+  - type: Action
+    useDelay: 45
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
+      state: lapse
+  - type: TargetAction
   - type: EntityTargetAction
     canTargetSelf: true
-  # Begin L5 changes - action ECS
     whitelist:
       components:
       - HumanoidAppearance
@@ -121,187 +123,170 @@
       components:
       - BibleUser
     event: !type:EventCosmicLapse {}
-  - type: Action
-    useDelay: 45
-    itemIconStyle: NoItem
-    icon:
-      sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
-      state: lapse
-  # End L5 changes
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicGlare
   name: Null Glare
   description: Emit a horrific pulse of cosmic light, slowing and disorienting everyone around you. Its effects are amplified against silicon-based entities.
   components:
-  - type: ConfirmableAction
-    popup: cosmicability-glare-confirm
-    confirmDelay: 0.1
-    primeTime: 5 #increased to give you more time to figure out where you want to put it
-  - type: Action # L5 - action ECS
+  - type: Action
     useDelay: 60
     checkCanInteract: false
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: glare
-  - type: InstantAction # L5 - action ECS
+  - type: ConfirmableAction
+    popup: cosmicability-glare-confirm
+    confirmDelay: 0.1
+    primeTime: 5 #increased to give you more time to figure out where you want to put it
+  - type: InstantAction
     event: !type:EventCosmicGlare {}
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicIngress
   name: Force Ingress
   description: Use a concentrated blast of power to force a secure doorway open.
   components:
-  - type: EntityTargetAction
-  # Begin L5 changes - action ECS
-    whitelist:
-      components:
-        - Door
-    event: !type:EventCosmicIngress {}
-  - type: TargetAction
   - type: Action
-    useDelay: 25
+    useDelay: 15
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: ingress
-  # End L5 changes
+  - type: TargetAction
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Door
+    event: !type:EventCosmicIngress {}
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicImposition
   name: Vacuous Imposition
   description: You negate any incoming damage for a short time.
   components:
-  - type: Action # L5 - action ECS
-    useDelay: 160
+  - type: Action
+    useDelay: 80
     checkCanInteract: false
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: entropic
-  - type: InstantAction # L5 - action ECS
+  - type: InstantAction
     event: !type:EventCosmicImposition {}
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicNova
   name: Astral Nova
   description: Hurl a large and disruptive blast of astral energy.
   components:
-  # Begin L5 changes - action ECS
   - type: Action
-    useDelay: 45
-    raiseOnUser: true
+    useDelay: 60
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: nova
   - type: TargetAction
-    range: 60
+    range: 6000 # You're just picking a direction anyways
   - type: WorldTargetAction
-  # End L5 changes
     event: !type:EventCosmicNova {}
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicFragmentation
   name: Null Fragmentation
   description: Transfer your malign empowerment into a digital system, such as an AI Upload Console or Cyborg, corrupting it in the process. Doing so will expend your empowerment.
   components:
-  - type: LimitedCharges
-    maxCharges: 1
-  # Begin L5 changes - action ECS
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - BorgChassis
-      - SiliconLawUpdater
-    event: !type:EventCosmicFragmentation {}
-  - type: TargetAction
   - type: Action
     useDelay: 25
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: corruption
-  # End L5 changes
+  - type: TargetAction
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - BorgChassis
+      - SiliconLawUpdater
+    event: !type:EventCosmicFragmentation {}
+  - type: LimitedCharges
+    maxCharges: 1
 
 ## COLOSSUS ACTIONS
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicColossusSunder
   name: Entropic Sunder
   description: Warp to the target location and unleash a cascading detonation of malign energy.
   components:
-  # Begin L5 changes - action ECS
-  - type: WorldTargetAction
-    event: !type:EventCosmicColossusSunder
-  - type: TargetAction
-    range: 7
   - type: Action
     useDelay: 18
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: sunder
-  # End L5 changes
+  - type: TargetAction
+    range: 7
+  - type: WorldTargetAction
+    event: !type:EventCosmicColossusSunder
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicColossusIngress
   name: Colossal Ingress
   description: Use your colossal strength to force open a doorway.
   components:
-  # Begin L5 changes - action ECS
-  - type: EntityTargetAction
-    whitelist:
-      components:
-        - Door
-    event: !type:EventCosmicColossusIngress
-  - type: TargetAction
-    range: 2
   - type: Action
     useDelay: 8
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: ingress
-  # End L5 changes
+  - type: TargetAction
+    range: 2
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Door
+    event: !type:EventCosmicColossusIngress
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
+  parent: BaseAction
   id: ActionCosmicColossusHibernate
   name: Slumber Shell
   description: Slumber your body for a period of time to regenerate integrity. Must be done on stable ground.
   components:
-  - type: LimitedCharges
-    maxCharges: 2
-  - type: Action # L5 - action ECS
-    useDelay: 120
+  - type: Action
+    useDelay: 180
     checkCanInteract: false
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: slumber
-  - type: InstantAction # L5 - action ECS
+  - type: ConfirmableAction
+    popup: cosmicability-hibernate-confirm
+    confirmDelay: 0.1
+    primeTime: 5
+  - type: InstantAction
     event: !type:EventCosmicColossusHibernate {}
 
 - type: entity
-  parent: BaseAction # L5 - action ECS
   id: ActionCosmicColossusEffigy
   name: Beckon an Effigy
   description: Draw out an Effigy of Entropy into realspace.
   components:
-  - type: Action # L5 - action ECS
+  - type: Action
     useDelay: 999
     itemIconStyle: NoItem
     icon:
       sprite: _DV/CosmicCult/Icons/cosmiccult_abilities.rsi
       state: nova
-  - type: InstantAction # L5 - action ECS
+  - type: InstantAction
     event: !type:EventCosmicColossusEffigy {}

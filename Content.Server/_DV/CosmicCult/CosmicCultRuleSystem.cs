@@ -61,7 +61,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Collections.Immutable;
 using System.Linq;
-using Content.Shared.Temperature.Components;
 
 namespace Content.Server._DV.CosmicCult;
 
