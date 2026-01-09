@@ -59,17 +59,17 @@
 - type: entity
   parent: [BaseHypospray, BaseSyndicateContraband]
   id: SyndiHypo
-  name: gorlex hypospray
-  description: Using reverse engineered designs from NT, Cybersun produced these in limited quantities for Gorlex Marauder operatives.
+  name: GEX hypospray
+  description: Using reverse engineered designs from UN Medical, the Conclave of New Zealots produced these in limited quantities for the Greater Expansion Collective Marauder operatives.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/syndihypo.rsi
     layers:
-      - state: hypo
-        map: ["enum.SolutionContainerLayers.Base"]
-      - state: hypo_fill1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
+    - state: hypo
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: hypo_fill1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
   - type: Item
     sprite: Objects/Specific/Medical/syndihypo.rsi
   - type: SolutionContainerManager
@@ -137,7 +137,7 @@
     - JetInjectorDynamicMode
     - JetInjectorInjectMode
   - type: Tag
-    tags: 
+    tags:
     - JetInjector
 
 - type: entity
@@ -175,12 +175,12 @@
   suffix: Admeme
   description: The ultimate application of bluespace technology and rapid chemical administration.
   components:
-    - type: SolutionContainerManager
-      solutions:
-        hypospray:
-          maxVol: 3000
-    - type: UseDelay
-      delay: 0.0
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 3000
+  - type: UseDelay
+    delay: 0.0
 
 - type: entity
   parent: BaseHypospray
@@ -556,10 +556,10 @@
       pen:
         maxVol: 30
         reagents:
-          - ReagentId: Leporazine
-            Quantity: 10
-          - ReagentId: Barozine
-            Quantity: 20
+        - ReagentId: Leporazine
+          Quantity: 10
+        - ReagentId: Barozine
+          Quantity: 20
 
 - type: entity
   name: hyperzine injector

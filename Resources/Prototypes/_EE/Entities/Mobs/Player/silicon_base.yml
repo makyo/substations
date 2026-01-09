@@ -329,5 +329,4 @@
           Electronic: -0.5
     - type: SiliconEmp # DeltaV - EMP damage
     - type: CosmicCenserTarget # DeltaV - Cosmic Cult
-    - type: GrappleTarget # DeltaV - Allow targets to be grappled
     - type: CanDoCPR # DeltaV - Addition of CPR
