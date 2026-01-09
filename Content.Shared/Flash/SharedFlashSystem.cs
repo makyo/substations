@@ -154,9 +154,10 @@ public abstract class SharedFlashSystem : EntitySystem
         float slowTo,
         bool displayPopup = true,
         bool melee = false,
-        TimeSpan? stunDuration = null)
+        TimeSpan? stunDuration = null,
+        bool ignoreProtection = false) //DeltaV: allow flashing to ignore flash protection
     {
-        var attempt = new FlashAttemptEvent(target, user, used);
+        var attempt = new FlashAttemptEvent(target, user, used, ignoreProtection); //DeltaV: allow flashing to ignore flash protection
         RaiseLocalEvent(target, ref attempt, true);
 
         if (attempt.Cancelled)
