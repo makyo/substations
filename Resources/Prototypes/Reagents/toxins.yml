@@ -371,15 +371,15 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 10
-        refresh: false
+      # DeltaV Additions
       - !type:AdjustReagent
         reagent: LotophagoiOil # DeltaV: prevent rapid remove/reroll/remove/reroll psionic loop
         amount: -100
-      - !type:ChemRemovePsionic #Nyano - Summary: removes psionics from the user at 20u.
+      - !type:RemovePsionicAbilities # DeltaV - Remove Psionics at 20u
         conditions:
-          - !type:ReagentCondition
-            reagent: MindbreakerToxin
-            min: 20
+        - !type:ReagentCondition
+          reagent: MindbreakerToxin
+          min: 20
       # END DeltaV
 
   # TODO: PROPER hallucinations
@@ -487,6 +487,7 @@
             types:
               Poison: 2
 
+# L5 – no zombies
 - type: reagent
   id: Romerol
   name: reagent-name-romerol
@@ -496,15 +497,16 @@
   contrabandSeverity: Syndicate
   flavor: bitter
   color: "#7e916e"
-  worksOnTheDead: true
-  metabolisms:
-    Medicine:
-      effects:
-        - !type:CauseZombieInfection
-          conditions:
-            - !type:ReagentCondition
-              reagent: Romerol
-              min: 5
+#  worksOnTheDead: true
+#  metabolisms:
+#    Medicine:
+#      effects:
+#        - !type:CauseZombieInfection
+#          conditions:
+#            - !type:ReagentCondition
+#              reagent: Romerol
+#              min: 5
+# end L5 — no zombies
 
 - type: reagent
   id: UncookedAnimalProteins

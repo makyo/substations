@@ -659,6 +659,7 @@
       - !type:ModifyBleed
         amount: -0.25
 
+# L5 — no zombies
 - type: reagent
   id: Ambuzol
   name: reagent-name-ambuzol
@@ -667,14 +668,14 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: medicine
   color: "#86caf7"
-  metabolisms:
-    Medicine:
-      effects:
-        - !type:CureZombieInfection
-          conditions:
-            - !type:ReagentCondition
-              reagent: Ambuzol
-              min: 10
+#  metabolisms:
+#    Medicine:
+#      effects:
+#      - !type:CureZombieInfection
+#        conditions:
+#        - !type:ReagentCondition
+#          reagent: Ambuzol
+#          min: 10
 
 - type: reagent
   id: AmbuzolPlus
@@ -684,15 +685,16 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: medicine
   color: "#1274b5"
-  metabolisms:
-    Medicine:
-      effects:
-        - !type:CureZombieInfection
-          innoculate: true
-          conditions:
-            - !type:ReagentCondition
-              reagent: AmbuzolPlus
-              min: 5
+#  metabolisms:
+#    Medicine:
+#      effects:
+#      - !type:CureZombieInfection
+#        innoculate: true
+#        conditions:
+#        - !type:ReagentCondition
+#          reagent: AmbuzolPlus
+#          min: 5
+# End L5 — no zombies
 
 - type: reagent
   id: PulpedBananaPeel

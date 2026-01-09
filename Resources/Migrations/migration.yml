@@ -680,8 +680,8 @@ ClothingUniformJumpsuitParamedicNT: ClothingUniformJumpsuitParamedic
 # L5 - putting this here so it conflicts when this gets fixed upstream
 # See https://github.com/space-wizards/space-station-14/issues/39620
 # 2025-08-13
-SoapBorg: null
-CableApcStackLingering10: null
+#SoapBorg: null
+#CableApcStackLingering10: null
 
 # 2025-08-29
 PrefilledSyringe: Syringe

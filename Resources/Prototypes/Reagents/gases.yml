@@ -48,11 +48,7 @@
         scaling: true
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant ]
-      - !type:Oxygenate # DeltaV - Feroxi Still need to breathe
-        conditions:
-        - !type:OrganType
-          type: Feroxi
+          type: [ Human, Animal, Rat, Plant, Feroxi ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         scaling: true
@@ -293,16 +289,21 @@
       - !type:Emote
         minScale: 1
         conditions:
-        - !type:ReagentThreshold
-          reagent: NitrousOxide
-          min: 0.2
-          max: 0.5
-        - !type:OrganType
-          type: Slime
-          shouldHave: false
+        - !type:MetabolizerTypeCondition
+          type: [ Slime ]
+          inverted: true
         emote: Laugh
         showInChat: true
         probability: 0.1
+      - !type:Emote
+        minScale: 0.4
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Slime ]
+          inverted: true
+        emote: Scream
+        showInChat: true
+        probability: 0.01
       - !type:PopupMessage
         minScale: 1
         conditions:
@@ -324,15 +325,14 @@
       - !type:ModifyStatusEffect
         minScale: 3.6
         conditions:
-        - !type:ReagentThreshold
-          reagent: NitrousOxide
-          min: 1
-        - !type:OrganType
-          type: Slime
-          shouldHave: false
+        - !type:MetabolizerTypeCondition
+          type: [ Slime ]
+          inverted: true
         effectProto: StatusEffectForcedSleeping
-        time: 200 # This reeks, but I guess it works LMAO
-      - !type:GenericStatusEffect # DeltaV: anesthesia changes
+        time: 3
+        type: Update
+      # DeltaV - anesthesia changes
+      - !type:GenericStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: NitrousOxide
@@ -344,6 +344,7 @@
         component: Anesthesia
         time: 200
         type: Add
+      # END DeltaV
       - !type:HealthChange
         minScale: 7
         conditions:
