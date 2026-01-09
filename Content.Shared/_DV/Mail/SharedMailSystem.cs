@@ -8,7 +8,7 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Prototypes;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
@@ -63,7 +63,7 @@ public abstract class SharedMailSystem : EntitySystem
         SubscribeLocalEvent<MailComponent, DestructionEventArgs>(OnDestruction);
         SubscribeLocalEvent<MailComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<MailComponent, GotEmaggedEvent>(OnEmagged);
-        SubscribeLocalEvent<MailComponent, UseInHandEvent>(OnUseInHand, before: new[] { typeof(FoodSystem), typeof(IngestionSystem) });
+        SubscribeLocalEvent<MailComponent, UseInHandEvent>(OnUseInHand, before: new[] { typeof(IngestionSystem) });
     }
 
     /// <summary>
