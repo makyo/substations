@@ -223,6 +223,8 @@
         type: LatheBoundUserInterface
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
+      enum.WiresUiKey.Key: #DeltaV
+        type: WiresBoundUserInterface #DeltaV
   - type: Transform
     anchored: true
   - type: Pullable
@@ -241,6 +243,16 @@
   - type: PowerState
     idlePowerDraw: 150
     workingPowerDraw: 1000
+  # Begin DeltaV additions
+  - type: Wires
+    boardName: wires-board-name-autolathe
+    layoutId: Fabicator
+    alwaysRandomize: true
+  - type: StationAiWhitelist
+  - type: MaterialStorageMagnetPickup
+    magnetEnabled: True
+    range: 0.30
+  # End DeltaV additions
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
