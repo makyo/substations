@@ -77,6 +77,10 @@
     - showaccessreaders
     - quickinspect
 
+- Flags: ADMIN # DeltaV
+  Commands:
+    - adminoverlay
+
 - Flags: MAPPING
   Commands:
     - mapping
