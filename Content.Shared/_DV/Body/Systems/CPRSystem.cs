@@ -1,5 +1,7 @@
 using Content.Shared._DV.Body.Components;
 using Content.Shared._DV.Body.Events;
+using Content.Shared._DV.CosmicCult;
+using Content.Shared._L5.Traits.Skills;
 using Content.Shared.DoAfter;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -74,7 +76,8 @@ public sealed class CPRSystem : EntitySystem
         if (entity.Owner == ev.User
             || !ev.CanInteract
             || _mobStateSystem.IsAlive(entity.Owner)
-            || !TryComp<CanDoCPRComponent>(ev.User, out var cprComp))
+            || !TryComp<CanDoCPRComponent>(ev.User, out var cprComp)
+            || !HasComp<CPRTrainingComponent>(ev.User)) // L5 — can only perform CPR if trained.
             return;
 
         var alreadyAffected = HasComp<AffectedByCPRComponent>(ev.Target);
