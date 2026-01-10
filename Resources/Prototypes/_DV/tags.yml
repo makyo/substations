@@ -210,8 +210,9 @@
 - type: Tag
   id: K9 # Lets K9 units wear specialized clothing
 
-- type: Tag
-  id: Katana # Used to denote special swords that can be put in the ceremonial sheathe
+# L5 — There is a wizden katana tag
+#- type: Tag
+#  id: Katana # Used to denote special swords that can be put in the ceremonial sheathe
 
 - type: Tag
   id: AncientBookDamagedCommon

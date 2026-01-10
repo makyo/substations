@@ -36,7 +36,7 @@
     - id: ClothingHandsGlovesInspection
     - id: ClothingHandsGlovesCaptain
     # Shoes
-    - id: ClothingShoesLeather 
+    - id: ClothingShoesLeather
     - id: ClothingShoesMiscWhite
     - id: ClothingShoesBootsWinterCap
     # Extras
@@ -48,9 +48,9 @@
     - id: BookGorlexGirlfriends
       prob: 0.1
       orGroup: captainfunloot
-    - id: BookCentcommChads
-      prob: 0.1
-      orGroup: captainfunloot
+#    - id: BookCentcommChads
+#      prob: 0.1
+#      orGroup: captainfunloot
 
 - type: entity
   id: DresserChiefEngineerFilledDV

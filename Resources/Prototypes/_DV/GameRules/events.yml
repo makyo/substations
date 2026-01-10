@@ -234,7 +234,7 @@
     maxOccurrences: 1
   - type: RuleGrids
   - type: LoadMapRule
-    gridPath: /Maps/_DV/Shuttles/Admin/roboneuroticist_ship.yml # L5 was /Maps/_DV/Shuttles/Event/haibu.yml
+    gridPath: /Maps/_DV/Shuttles/roboneuroticist_ship.yml # L5 was /Maps/_DV/Shuttles/Event/haibu.yml
   - type: AntagSpawner
     prototype: MobHuman
   - type: AntagObjectives

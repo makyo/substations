@@ -30,7 +30,17 @@
   - type: TargetObjective
     title: objective-condition-asakim-terminate-title
   - type: PickRandomPerson
-    onlyChoosableJobs: true
+    filters:
+    - !type:BodyMindFilter
+      whitelist:
+        components:
+        - CommandStaff
+    # Can't have multiple objectives to kill the same person.
+    - !type:TargetObjectiveMindFilter
+      blacklist:
+        components:
+        - KillPersonCondition
+        - TargetObjectiveImmune
   - type: RerollAfterCompletion
     rerollObjectivePrototype: AsakimKillObjective
     rerollObjectiveMessage: objective-condition-asakim-terminate-reroll-message
@@ -39,7 +49,7 @@
   parent: [BaseAsakimObjective, BaseSurviveObjective]
   id: AsakimTheftObjective
   name: ">CONFISCATE"
-  description: Records indicate that this sector may have valuable artifacts. Confiscate such items for further study.
+  description: Records indicate that this sector may have valuable items. Confiscate such items for further study.
   components:
   - type: Objective
 

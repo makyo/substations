@@ -4,9 +4,6 @@
   parent:
   - IPCPartsStatic # Shitmed
   id: RoboticsStaticDeltaV
-  recipes:
-  - Oilpack
-  - IdChipBasic
 
 - type: latheRecipePack
   id: RoboticsEmagStatic

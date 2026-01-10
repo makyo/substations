@@ -80,36 +80,24 @@
   parent: BaseSubdermalImplant
   id: TrackingImplant
   name: tracking implant
-  description: This implant has a tracking device attached to the suit sensor network, as well as a condition monitor for the Medical radio channel. # L5 - medical instead of sec
+  description: This implant has a tracking device attached to the suit sensor network.
   categories: [ HideSpawnMenu ]
   components:
-    - type: SubdermalImplant
-      whitelist:
-        components:
-        - MobState # admeme implanting a chair with tracking implant needs to give the chair mobstate so it can die first
-    - type: SuitSensor
-      randomMode: false
-      controlsLocked: true
-      mode: SensorCords
-      activationContainer: "implant"
-    - type: DeviceNetwork
-      deviceNetId: Wireless
-      transmitFrequencyId: SuitSensor
-    # Begin L5 modifications
-    # L5 - map global suit sensors
-    # - type: StationLimitedNetwork
-    - type: WirelessNetworkConnection
-      range: 10000
-    # L5 - I dunno who added/removed/whatever'd it but make tracking implants do rattles
-    # Also make it rattle on dead, not just crit and dead.
-    - type: TriggerOnMobstateChange
-      mobState:
-      - Critical
-      - Dead
-    - type: RattleOnTrigger
-      targetUser: true
-      radioChannel: Medical # L5 - tracking implants are for medical, not sec
-    # End L5 modifications
+  - type: SubdermalImplant
+    whitelist:
+      components:
+      - MobState # admeme implanting a chair with tracking implant needs to give the chair mobstate so it can die first
+  - type: SuitSensor
+    randomMode: false
+    controlsLocked: true
+    mode: SensorCords
+    activationContainer: "implant"
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    transmitFrequencyId: SuitSensor
+  - type: StationLimitedNetwork
+  - type: WirelessNetworkConnection
+    range: 500
 
 #Traitor implants
 
@@ -120,35 +108,35 @@
   description: This implant grants hidden storage within a person's body using bluespace technology.
   categories: [ HideSpawnMenu ]
   components:
-    - type: StorageImplant
-    - type: SubdermalImplant
-      implantAction: ActionOpenStorageImplant
-      whitelist:
-        components:
-        - Hands # no use giving a mouse a storage implant, but a monkey is another story...
-    - type: Storage
-      grid:
-      # Begin DeltaV Removals - changed to a 3x3
-      #- 0,0,0,1
-      #- 1,0,1,0
-      #- 1,2,1,2
-      #- 2,1,2,2
-      # End DeltaV Removals
-      - 0,0,2,2 # DeltaV - 3x3
-      blacklist: # DeltaV
-        components:
-        - Storage
-        - SecretStash
-        tags:
-        - HighRiskItem
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          ents: [ ]
-    - type: UserInterface
-      interfaces:
-        enum.StorageUiKey.Key:
-          type: StorageBoundUserInterface
+  - type: StorageImplant
+  - type: SubdermalImplant
+    implantAction: ActionOpenStorageImplant
+    whitelist:
+      components:
+      - Hands # no use giving a mouse a storage implant, but a monkey is another story...
+  - type: Storage
+    grid:
+    # Begin DeltaV Removals - changed to a 3x3
+    #- 0,0,0,1
+    #- 1,0,1,0
+    #- 1,2,1,2
+    #- 2,1,2,2
+    # End DeltaV Removals
+    - 0,0,2,2 # DeltaV - 3x3
+    blacklist: # DeltaV
+      components:
+      - Storage
+      - SecretStash
+      tags:
+      - HighRiskItem
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -212,6 +200,9 @@
     range: 2.75
     energyConsumption: 50000
     disableDuration: 10
+    damage: # DeltaV - EMP damage
+      types:
+        Ion: 80 # Would take 2 charges if you want to actually kill with it
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -300,41 +291,40 @@
   description: This implant creates a large explosion on death after a preprogrammed countdown.
   categories: [ HideSpawnMenu ]
   components:
-    - type: SubdermalImplant
-      permanent: true
-    - type: ReplacementImplant
-      whitelist:
-        tags:
-        - MicroBomb # replace microbomb implant with macrobomb
-    - type: TriggerOnMobstateChange #activates the timer
-      mobState:
-      - Dead
-      preventSuicide: true
-    - type: TimerTrigger
-      delay: 7
-      beepSound:
-        path: /Audio/Machines/Nuke/general_beep.ogg
-        params:
-          volume: -2
-    - type: ExplodeOnTrigger
-      keysIn:
-      - timer
-    - type: GibOnTrigger
-      targetUser: true
-      deleteItems: true
-      keysIn:
-      - timer
-    - type: Explosive
-      explosionType: Default
-      totalIntensity: 3500
-      intensitySlope: 15
-      maxIntensity: 70
-      canCreateVacuum: true
-    - type: Tag
+  - type: SubdermalImplant
+    permanent: true
+  - type: ReplacementImplant
+    whitelist:
       tags:
-      - SubdermalImplant
-      - HideContextMenu
-      - MacroBomb
+      - MicroBomb # replace microbomb implant with macrobomb
+  - type: TriggerOnMobstateChange #activates the timer
+    mobState:
+    - Dead
+    preventSuicide: true
+  - type: TimerTrigger
+    delay: 7
+    beepSound:
+      path: /Audio/Machines/Nuke/general_beep.ogg
+      params:
+        volume: -2
+  - type: ExplodeOnTrigger
+    keysIn:
+    - timer
+  - type: GibOnTrigger
+    targetUser: true
+    deleteItems: true
+    keysIn:
+    - timer
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 3500
+    intensitySlope: 15
+    maxIntensity: 70
+    canCreateVacuum: true
+  - type: Tag
+    tags:
+    - SubdermalImplant
+    - HideContextMenu
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -360,7 +350,6 @@
     tags:
     - SubdermalImplant
     - HideContextMenu
-    - DeathAcidifier
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -369,23 +358,23 @@
   description: This implant will inform the Syndicate radio channel should the user fall into critical condition or die.
   categories: [ HideSpawnMenu ]
   components:
-    - type: SubdermalImplant
-      permanent: true
-      whitelist:
-        components:
-        - MobState # admeme implanting a chair with rattle implant needs to give the chair mobstate so it can die first
-    - type: TriggerOnMobstateChange
-      mobState:
-      - Critical
-      - Dead
-    - type: RattleOnTrigger
-      targetUser: true
+  - type: SubdermalImplant
+    permanent: true
+    whitelist:
+      components:
+      - MobState # admeme implanting a chair with rattle implant needs to give the chair mobstate so it can die first
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Critical
+    - Dead
+  - type: RattleOnTrigger
+    targetUser: true
 
 - type: entity
   parent: BaseSubdermalImplant
   id: FakeMindShieldImplant
   name: fake mindshield implant
-  description: This implant allows the implanter to produce a fake signal that SysCon security HUDs use to identify individuals implanted with a mindshield. # L5
+  description: This implant allows the implanter to produce a fake signal that NT security huds use to identify individuals implanted with a mindshield.
   categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
@@ -403,8 +392,8 @@
   description: This implant will shield the brain from external influences and prevent mind control devices. # DeltaV - mindshield does not enforce loyalty
   categories: [ HideSpawnMenu ]
   components:
-   - type: SubdermalImplant
-   - type: MindShieldImplant
+  - type: SubdermalImplant
+  - type: MindShieldImplant
 
 - type: entity
   parent: DeathRattleImplant
@@ -415,3 +404,15 @@
   components:
   - type: RattleOnTrigger
     radioChannel: CentCom
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: RadioImplantCentcomm
+  name: centcomm radio implant
+  description: This implant grants access to the Centcomm channel without a headset. Only authorized for Centcomm employees.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - CentCom
