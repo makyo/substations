@@ -18,7 +18,7 @@
     - id: PsionicNosebleedEvent
     #- id: MinorMassMindSwap # Delta V # L5
     - id: GlimmerFoxfireSpawn
-    - id: GlimmerRestyle
+    #- id: GlimmerRestyle # L5
 
 - type: entity
   parent: BaseGameRule
