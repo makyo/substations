@@ -10,6 +10,7 @@
   - CourierPDA
   - CourierBackpack
   - CourierShoes
+  - Glasses
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
@@ -39,6 +40,7 @@
   - SecurityShoes
   - BrigMedicOuterClothing
   - MedicalGloves
+  - CorpsmanEyewear
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolCorpsman
@@ -59,7 +61,7 @@
   - MedicalDoctorOuterClothing
   - MedicalShoes
   - SurgeonPDA
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
@@ -120,22 +122,7 @@
   - RoboticistGloves
   - RoboticistShoes
   - RoboticistPDA
-  - Glasses
-  - Survival
-  - Trinkets
-  - GroupSpeciesBreathTool
-
-# Command
-- type: roleLoadout
-  id: JobAdministrativeAssistant
-  groups:
-  - AdminAssistantHead
-  - AdminAssistantJumpsuit
-  - AdminAssistantOuter
-  - AdminAssistantShoes
-  - AdminAssistantGloves
-  - CommonBackpack
-  - Glasses
+  - RoboticistGlasses
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool

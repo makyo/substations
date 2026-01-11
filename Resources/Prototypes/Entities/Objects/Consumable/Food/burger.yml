@@ -893,8 +893,6 @@
     tags:
     - ClothMade
     - Meat
-      - ClothMade
-      - Meat
 # Tastes like bun, ectoplasm.
 
 - type: entity
