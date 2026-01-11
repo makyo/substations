@@ -84,3 +84,11 @@
   parent: BaseBorgModuleRecipe
   id: BorgModuleTraversal
   result: BorgModuleTraversal
+
+- type: latheRecipe
+  id: Oilpack
+  result: Oilpack1
+  completetime: 1
+  materials:
+    Plastic: 250
+    Steel: 25
