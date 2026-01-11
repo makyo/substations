@@ -4,17 +4,11 @@
 loadout-group-survival-corpsman = Corpsman Survival Box
 
 # Command
-# L5
-loadout-group-captain-gloves = Station administrator's gloves
-loadout-group-captain-shoes = Station administrator's shoes
+loadout-group-captain-gloves = Captain gloves
+loadout-group-captain-shoes = Captain shoes
 loadout-group-hop-gloves = Head of Personnel gloves
 loadout-group-hop-shoes = Head of Personnel shoes
-
-loadout-group-admin-assistant-head = Administrative Assistant head
-loadout-group-admin-assistant-jumpsuit = Administrative Assistant jumpsuit
-loadout-group-admin-assistant-outerclothing = Administrative Assistant outer clothing
-loadout-group-admin-assistant-shoes = Administrative Assistant shoes
-loadout-group-admin-assistant-gloves = Administrative Assistant gloves
+loadout-group-chief-engineer-gloves = Chief Engineer Gloves
 
 # Civilian
 loadout-group-librarian-neck = Librarian neck
@@ -30,7 +24,7 @@ loadout-group-mime-neck = Mime neck
 
 loadout-group-musician-neck = Musician neck
 
-loadout-group-passenger-id-delta = Passenger PDA
+loadout-group-passenger-id-delta = Assistant PDA
 loadout-group-bartender-id-delta = Bartender PDA
 loadout-group-chef-id-delta = Chef PDA
 loadout-group-clown-id-delta = Clown PDA
@@ -118,6 +112,8 @@ loadout-group-station-engineer-neck = Station Engineer neck
 loadout-group-atmospheric-technician-neck = Atmospheric Technician neck
 
 loadout-group-atmos-id-delta = Atmospheric Technician PDA
+
+loadout-group-atmospheric-technician-head = Atmospheric Technician Head
 
 # Security
 loadout-group-head-of-security-shoes = Head of Security shoes
