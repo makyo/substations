@@ -14,8 +14,6 @@
   - PlushieExperiment
   - PlushieBee
   # End DeltaV Additions
-  - PonderingOrb # L5 - orb
-  - Clicker # L5 - for good dogs
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -45,32 +43,26 @@
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
-  - ClothingHeadHatKippahBlueAndGold #imp
-  - ClothingHeadHatKippahSimple #imp
-  - ClothingHeadHatKippahWhiteAndBlue #imp
   - OffsetCane
   - OffsetCaneWood
   - OffsetCaneClown
   - OffsetCaneMime
   - OffsetCaneNT
   - Cane
+  - TowelColorWhite
+  - TowelColorGray
   - TowelColorBlack
   - TowelColorRed
   - TowelColorOrange
   - TowelColorLightBrown
   - TowelColorYellow
   - TowelColorDarkGreen
-  - TowelColorGold
-  - TowelColorGray
   - TowelColorGreen
   - TowelColorLightBlue
   - TowelColorDarkBlue
   - TowelColorPurple
   - TowelColorMaroon
   - TowelColorMime
-  - TowelColorOrange
-  - TowelColorPurple
-  - TowelColorRed
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
@@ -1558,14 +1550,6 @@
   loadouts:
   - SecurityPDA
   - SeniorOfficerPDA
-
-- type: loadoutGroup
-  id: SecurityEyewear
-  name: loadout-group-security-eyewear
-  minLimit: 0
-  loadouts:
-  - SecurityGlasses
-  - PrescriptionSecurityGlasses
 
 - type: loadoutGroup
   id: SecurityJobTrinkets
