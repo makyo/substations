@@ -2672,6 +2672,16 @@ entities:
       parent: 1
     - type: Foldable
       folded: False
+    - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 74
+        actions: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
 - proto: BarberScissors
   entities:
   - uid: 1156
@@ -4034,7 +4044,6 @@ entities:
     components:
     - type: Transform
       parent: 620
-    - type: VoiceMask
     - type: Physics
       canCollide: False
 - proto: ClothingNeckChameleon
@@ -4139,7 +4148,7 @@ entities:
     - type: Transform
       pos: 1.5,2.5
       parent: 1
-- proto: ComputerCrewMonitoring
+- proto: ComputerCrewMonitoringSyndicate
   entities:
   - uid: 548
     components:
@@ -4277,8 +4286,8 @@ entities:
   - uid: 594
     components:
     - type: MetaData
-      desc: an evil cabinet designed to hold an International Trinitarian defibrilator # L5
-      name: International Trinitarian defibrilator cabinet # L5
+      desc: an evil cabinet designed to hold an Interdyne defibrilator
+      name: Interdyne defibrilator cabinet
     - type: Transform
       pos: -0.5,-1.5
       parent: 1
