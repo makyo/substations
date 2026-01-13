@@ -21,11 +21,12 @@ loadout-group-pocket-tank-double = Species-specific double emergency tank in poc
 loadout-group-survival-mime = Mime Survival Box
 
 # Command
-loadout-group-captain-head = Captain head
-loadout-group-captain-jumpsuit = Captain jumpsuit
-loadout-group-captain-neck = Captain neck
-loadout-group-captain-backpack = Captain backpack
-loadout-group-captain-outerclothing = Captain outer clothing
+# L5
+loadout-group-captain-head = Station Administrator head
+loadout-group-captain-jumpsuit = Station Administrator jumpsuit
+loadout-group-captain-neck = Station Administrator neck
+loadout-group-captain-backpack = Station Administrator backpack
+loadout-group-captain-outerclothing = Station Administrator outer clothing
 
 loadout-group-hop-head = Head of Personnel head
 loadout-group-hop-jumpsuit = Head of Personnel jumpsuit
