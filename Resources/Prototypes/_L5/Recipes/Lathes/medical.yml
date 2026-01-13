@@ -1,9 +1,0 @@
-- type: latheRecipe
-  id: RollerBedHolo
-  result: RollerBedHoloSpawnFolded
-  completetime: 5
-  materials:
-    Steel: 200
-    Plastic: 100
-    Glass: 100
-    Plasma: 200
