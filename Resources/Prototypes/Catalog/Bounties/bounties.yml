@@ -233,7 +233,7 @@
   idPrefix: CC
   entries:
   - name: bounty-item-lime
-    amount: 7
+    amount: 13 # L5 — clashes with our produce box
     whitelist:
       tags:
       - Lime
