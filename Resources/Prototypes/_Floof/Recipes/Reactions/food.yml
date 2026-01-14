@@ -3,6 +3,8 @@
   impact: Low
   quantized: true
   conserveEnergy: false
+  requiredMixerCategories:
+    - Stir
   reactants:
     Butter:
       amount: 5
