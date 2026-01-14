@@ -262,10 +262,10 @@
   - type: Storage
     whitelist:
       tags:
-      - PlantSampleTaker
       - BotanyShovel
       - BotanyHoe
       - BotanyHatchet
+      - PlantAnalyzer # DEN
       - PlantSampleTaker
       - PlantBGone
       - Bottle
