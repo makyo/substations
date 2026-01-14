@@ -4,20 +4,24 @@ using Content.Server.Body.Components;
 using Content.Shared._Shitmed.Body.Components; // Shitmed Change
 using Content.Shared._Shitmed.Body.Organ; // Shitmed Change
 using Content.Server.Chat.Systems;
-using Content.Server.EntityEffects;
+using Content.Shared._DV.Body.Components; // DeltaV - Addition of CPR
+using Content.Shared.Body.Systems;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
+using Content.Shared.EntityConditions;
+using Content.Shared.EntityConditions.Conditions.Body;
 using Content.Shared.EntityEffects;
-using Content.Shared.EntityEffects.EffectConditions;
 using Content.Shared.EntityEffects.Effects;
+using Content.Shared.EntityEffects.Effects.Body;
 using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
@@ -32,16 +36,16 @@ public sealed class RespiratorSystem : EntitySystem
 {
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly AtmosphereSystem _atmosSys = default!;
     [Dependency] private readonly BodySystem _bodySystem = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly DamageableSystem _damageableSys = default!;
     [Dependency] private readonly LungSystem _lungSystem = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly SharedEntityConditionsSystem _entityConditions = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly EntityEffectSystem _entityEffect = default!;
 
     private static readonly ProtoId<MetabolismGroupPrototype> GasId = new("Gas");
 
@@ -71,9 +75,8 @@ public sealed class RespiratorSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        // L5 - BodyComp needed for DeltaV below
-        var query = EntityQueryEnumerator<RespiratorComponent, BodyComponent>();
-        while (query.MoveNext(out var uid, out var respirator, out var body))
+        var query = EntityQueryEnumerator<RespiratorComponent, BodyComponent>(); // DeltaV: Need BodyComponent for additions
+        while (query.MoveNext(out var uid, out var respirator, out var body)) // DeltaV: Need BodyComponent for additions
         {
             if (_gameTiming.CurTime < respirator.NextUpdate)
                 continue;
@@ -91,9 +94,11 @@ public sealed class RespiratorSystem : EntitySystem
                 multiplier *= lung.SaturationLoss;
             }
             // End DeltaV Additions
-            UpdateSaturation(uid, multiplier * (float)respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
+            UpdateSaturation(uid, multiplier * (float) respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
 
-            if (!_mobState.IsIncapacitated(uid) && !HasComp<DebrainedComponent>(uid)) // Shitmed Change - Cannot breathe in crit or when no brain.
+            if ((!_mobState.IsIncapacitated(uid)
+                || TryComp<AffectedByCPRComponent>(uid, out var cprComp) && cprComp.IsActive) // DeltaV - Addition of CPR
+                && !HasComp<DebrainedComponent>(uid)) // Shitmed Change - Cannot breathe in crit or when no brain.
             {
                 switch (respirator.Status)
                 {
@@ -355,7 +360,6 @@ public sealed class RespiratorSystem : EntitySystem
             }
         }
 
-        // TODO generalize condition checks
         // this is pretty janky, but I just want to bodge a method that checks if an entity can breathe a gas mixture
         // Applying actual reaction effects require a full ReagentEffectArgs struct.
         bool CanMetabolize(EntityEffect effect)
@@ -363,9 +367,10 @@ public sealed class RespiratorSystem : EntitySystem
             if (effect.Conditions == null)
                 return true;
 
+            // TODO: Use Metabolism Public API to do this instead, once that API has been built.
             foreach (var cond in effect.Conditions)
             {
-                if (cond is OrganType organ && !_entityEffect.OrganCondition(organ, lung))
+                if (cond is MetabolizerTypeCondition organ && !_entityConditions.TryCondition(lung, organ))
                     return false;
             }
 
@@ -380,10 +385,8 @@ public sealed class RespiratorSystem : EntitySystem
         if (ent.Comp.SuffocationCycles == 2)
             _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(ent):entity} started suffocating");
 
-        // L5 - this change is presumably from shitmed. Anyway, L5 moved to before the early return.
-        _damageableSys.TryChangeDamage(ent,
-            HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage,
-            interruptsDoAfters: false);
+        var suffocationDamage = HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage; // Shitmed Change - Increased damage for debrained
+        _damageableSys.ChangeDamage(ent.Owner, suffocationDamage, interruptsDoAfters: false, ignoreResistances: true);  // Shitmed Change
 
         if (ent.Comp.SuffocationCycles < ent.Comp.SuffocationCycleThreshold)
             return;
@@ -397,7 +400,7 @@ public sealed class RespiratorSystem : EntitySystem
         if (ent.Comp.SuffocationCycles >= 2)
             _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(ent):entity} stopped suffocating");
 
-        _damageableSys.TryChangeDamage(ent, ent.Comp.DamageRecovery);
+        _damageableSys.ChangeDamage(ent.Owner, ent.Comp.DamageRecovery);
 
         var ev = new StopSuffocatingEvent();
         RaiseLocalEvent(ent, ref ev);
@@ -409,7 +412,7 @@ public sealed class RespiratorSystem : EntitySystem
         var organs = _bodySystem.GetBodyOrganEntityComps<LungComponent>((ent, null));
         foreach (var entity in organs)
         {
-            _alertsSystem.ShowAlert(ent, entity.Comp1.Alert);
+            _alertsSystem.ShowAlert(ent.Owner, entity.Comp1.Alert);
         }
     }
 
@@ -419,7 +422,7 @@ public sealed class RespiratorSystem : EntitySystem
         var organs = _bodySystem.GetBodyOrganEntityComps<LungComponent>((ent, null));
         foreach (var entity in organs)
         {
-            _alertsSystem.ClearAlert(ent, entity.Comp1.Alert);
+            _alertsSystem.ClearAlert(ent.Owner, entity.Comp1.Alert);
         }
     }
 

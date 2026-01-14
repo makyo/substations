@@ -36,8 +36,10 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
+    #- map: [ "outerClothing" ] # L5 — Old location
     - map: [ "back" ]
     - map: [ "neck" ]
+    - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -120,13 +122,10 @@
     - reagents: [Water, SpaceCleaner]
       methods: [Touch]
       effects:
-      - !type:WashCreamPieReaction
+      - !type:WashCreamPie
   - type: StatusEffects
     allowed:
-    - Stutter
     - Electrocution
-    - Drunk
-    - SlurredSpeech
     - RatvarianLanguage
     - PressureImmunity
     - Muted
@@ -138,12 +137,16 @@
     - Adrenaline
     - PsionicsDisabled #Nyano - Summary: PCs can have psionics disabled.
     - PsionicallyInsulated #Nyano - Summary: PCs can be made insulated from psionic powers.
-    - Addicted # DeltaV - Psych med addictions system
-    - SuppressAddiction # DeltaV - Psych med addictions system
-    - InPain # DeltaV - Pain system
-    - SuppressPain # DeltaV - Pain system
-    - Anesthesia # DeltaV - Anesthesia
-    - PainNumbness # DeltaV - Pain numbness status effect
+    # Begin DeltaV additions
+    - Addicted # Psych med addictions system
+    - SuppressAddiction # Psych med addictions system
+    - InPain # Pain system
+    - SuppressPain # Pain system
+    - Anesthesia # Anesthesia
+    - PainNumbness # Pain numbness status effect
+    - ScrambledSpeech
+    - RepeatingTelepath
+    # End DeltaV additions
   - type: Body
     prototype: Human
     requiredLegs: 2
@@ -235,7 +238,7 @@
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
-  - type: Carriable # DeltaV
+  - type: Carriable #
 
 - type: entity
   save: false
@@ -304,6 +307,8 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
+  #- type: StunVisuals # DeltaV - No stars
+  - type: CanDoCPR # DeltaV - Addition of CPR
   - type: StunVisuals
 
 - type: entity
@@ -351,10 +356,9 @@
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "back" ]
     - map: [ "neck" ]
-    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floof
-    - map: [ "back" ] # Floof (moved from above neck)
-    - map: [ "enum.HumanoidVisualLayers.Face" ] # Floof
+    - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

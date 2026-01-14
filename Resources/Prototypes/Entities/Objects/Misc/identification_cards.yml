@@ -27,6 +27,7 @@
     stealGroup: IDCard
   - type: NanoChatCard # DeltaV
   - type: MiningPoints # DeltaV
+  - type: FishingPoints # DeltaV
 
 #IDs with layers
 
@@ -625,7 +626,6 @@
   - type: UIRequiresLock
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
-    inHandsOnly: true
     verbText: agent-id-open-ui-verb
   - type: Tag
     tags:
@@ -674,13 +674,45 @@
   components:
   - type: Sprite
     layers:
-    - state: syndie
+    - state: black
+    - state: syndi
   - type: Access
     tags:
     - NuclearOperative
     - SyndicateAgent
   - type: NanoChatCard # DeltaV
     listNumber: false
+
+- type: entity
+  parent: [ SyndicateIDCard, BaseSyndicateContraband ]
+  id: SyndiOperativeIDCard
+  name: GEX operative ID card # L5 - slight name change
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_operative
+  - type: AgentIDCard
+
+- type: entity
+  parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
+  id: SyndiAgentIDCard # DeltaV - Nukie agent is still agent
+  name: GEX agent ID card # L5 - slight name change
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_corpsman
+
+- type: entity
+  parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
+  id: SyndiCommanderIDCard
+  name: GEX commander ID card # L5 - slight name change
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_commander
 
 - type: entity
   parent: [ IDCardStandard, BaseMajorContraband ]

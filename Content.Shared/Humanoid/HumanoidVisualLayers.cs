@@ -18,8 +18,10 @@ namespace Content.Shared.Humanoid
         Chest,
         Head,
         Snout,
+        SnoutCover, // things layered over snouts (i.e. noses)
         HeadSide, // side parts (i.e., frills)
         HeadTop,  // top parts (i.e., ears)
+        NeckFluff, // TheDen - Ovinia, for fluff on necks
         TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         TailBehindBackpack, // imp - to layer behind backpacks, treat this like an oversuit
         TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work

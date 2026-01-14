@@ -15,7 +15,7 @@
     state: icon
 
 - type: entity
-  parent: DrinkBaseCup
+  parent: DrinkBaseMug
   id: DrinkDogstarHotCoffee
   name: Dogstar coffee
   description: "\"Dogs can't tell the difference between coffee and Dogstar Coffee!\" A hot drink brewed with Sirius Agritech's genetically modified coffee; safe for animals, not so safe for humans."
@@ -27,18 +27,13 @@
         - ReagentId: DogstarCoffee
           Quantity: 20
   - type: Icon
-    sprite: Objects/Consumable/Drinks/hot_coffee.rsi
-    state: icon-vend
+    sprite: Objects/Consumable/Drinks/mug.rsi
+    state: icon-vend-brown
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/hot_coffee.rsi
     layers:
-    - state: icon-0
-    - map: ["enum.SolutionContainerLayers.Fill"]
-      state: icon-4
-  - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 4
-    fillBaseName: icon-
+    - state: icon
+    - state: fill-3
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: TrashOnSolutionEmpty
     solution: drink
 
@@ -59,7 +54,7 @@
     state: icon
 
 - type: entity
-  parent: DrinkBaseCup
+  parent: DrinkBaseMug
   id: DrinkDogstarHotCocoa
   name: Dogstar hot chocolate
   description: Rich and chocolatey, this cocoa is perfect for a winter's day, and is safe for animals to drink. Humans...not so much...
@@ -71,23 +66,18 @@
         - ReagentId: DogstarHotCocoa
           Quantity: 20
   - type: Icon
-    sprite: Objects/Consumable/Drinks/hot_coco.rsi
-    state: icon-vend
+    sprite: Objects/Consumable/Drinks/mug.rsi
+    state: icon-vend-brown
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/hot_coco.rsi
     layers:
-    - state: icon-0
-    - map: ["enum.SolutionContainerLayers.Fill"]
-      state: icon-4
-  - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 4
-    fillBaseName: icon-
+    - state: icon
+    - state: fill-3
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: TrashOnSolutionEmpty
     solution: drink
 
 - type: entity
-  parent: DrinkBaseCup
+  parent: DrinkBaseMug
   id: DrinkDogstarOatHotCocoa
   name: Dogstar oatmilk hot chocolate
   description: Rich and chocolatey, this cocoa is perfect for a winter's day, and is safe for animals to drink. This one is made with oatmilk for extra creaminess.
@@ -99,18 +89,13 @@
         - ReagentId: DogstarOatHotCocoa
           Quantity: 20
   - type: Icon
-    sprite: Objects/Consumable/Drinks/hot_coco.rsi
-    state: icon-vend
+    sprite: Objects/Consumable/Drinks/mug.rsi
+    state: icon-vend-brown
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/hot_coco.rsi
     layers:
-    - state: icon-0
-    - map: ["enum.SolutionContainerLayers.Fill"]
-      state: icon-4
-  - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 4
-    fillBaseName: icon-
+    - state: icon
+    - state: fill-3
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: TrashOnSolutionEmpty
     solution: drink
 
@@ -179,7 +164,7 @@
     state: icon
 
 - type: entity
-  parent: DrinkBaseCup
+  parent: DrinkBaseMug
   id: DrinkMaomiCha
   name: Maomi Cha teacup
   description: A plain white porcelain teacup.
@@ -193,16 +178,6 @@
   - type: Icon
     sprite: Objects/Consumable/Drinks/teacup.rsi
     state: icon-vend-tea
-  - type: Sprite
-    sprite: Objects/Consumable/Drinks/teacup.rsi
-    layers:
-    - state: icon-0
-    - map: ["enum.SolutionContainerLayers.Fill"]
-      state: icon-4
-  - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 4
-    fillBaseName: icon-
   - type: TrashOnSolutionEmpty
     solution: drink
 

@@ -13,10 +13,10 @@
   id: ServiceWorkerJumpsuit
   name: loadout-group-serviceworker-jumpsuit
   loadouts:
-  - ServiceWorkerJumpsuit
-  - ServiceWorkerJumpskirt
-  - ServiceWorkerJumpsuitDark
-  - ServiceWorkerJumpskirtDark
+  - GreenJumpsuit
+  - GreenJumpskirt
+  - DarkGreenJumpsuit
+  - DarkGreenJumpskirt
   - BartenderJumpsuit
   - BartenderJumpskirt
   - BartenderJumpsuitPurple
@@ -65,6 +65,14 @@
   - ScarfGreen
   - ScarfBrown
 
+## Clown
+- type: loadoutGroup
+  id: ClownMask
+  name: loadout-group-clown-mask
+  loadouts:
+  - ClownMask
+  - BlushingClownMask
+
 ## Mime
 - type: loadoutGroup
   id: MimeNeck
@@ -83,6 +91,43 @@
   - ScarfBlack
   - ScarfPurple
   - ScarfZebra
+
+## Assistants
+- type: loadoutGroup
+  id: AssistantHead
+  name: loadout-group-assistant-head
+  minLimit: 0
+  loadouts:
+  - BlackBandana
+  - BlueBandana
+  - GoldBandana
+  - GreenBandana
+  - GreyBandana
+  - RedBandana
+  - BrownBandana
+  - SkullBandana
+  - BartenderHead
+  - BartenderBowler
+  - RedBeret
+  - BrownFedora
+  - GreyFedora
+  - BlackFedora
+  - ChocFedora
+  - WhiteFedora
+  - GreyFlatCap
+  - BlackFlatCap
+  - BrownFlatCap
+  - BrownCowboyHat
+  - BlackCowboyHat
+  - GreyCowboyHat
+  - RedCowboyHat
+  - WhiteCowboyHat
+  - BountyHunterHat
+  - StrawHat
+  - HeadBand
+  - OutlawHat
+  - WitchHat
+  - PirateHat
 
 # Logistics
 ## Courier
@@ -196,6 +241,7 @@
   loadouts:
   - SalvageCloak
   - ScarfBrown
+  - SalvageMantle
 
 - type: loadoutGroup
   id: SalvageSpecialistJumpsuit
@@ -220,6 +266,7 @@
   minLimit: 0
   loadouts:
   - ScarfRed
+  - ScarfBlack
   - ScarfBlue
   - SecurityPoncho
 
@@ -239,6 +286,21 @@
   - StasecWinterCoatCorpsman
   - PlateCarrier
   - DuraVest
+
+- type: loadoutGroup
+  id: CorpsmanEyewear
+  name: loadout-group-corpsman-eyewear
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CorpsmanGlasses
+  - PrescriptionCorpsmanGlasses
+  - MedicalHud
+  - MedicalEyePatchHud
+  - PrescriptionMedHud
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
 
 - type: loadoutGroup
   id: BrigMedicBack
@@ -286,6 +348,7 @@
   - SecurityFirearmWeaponPistolSLP57
   - SecurityFirearmWeaponPistolMk58
   - SecurityFirearmWeaponDisabler
+  - SecurityFirearmTruncheon
 
 - type: loadoutGroup
   id: SecurityRevolverFirearm
@@ -296,6 +359,7 @@
   - SecurityRevolverInspector
   - SecurityFirearmWeaponRevolverFitz
   - SecurityRevolverWeaponRevolverLucky
+  - SecurityFirearmTruncheon
 
 - type: loadoutGroup
   id: SecurityFirearmAmmo
@@ -332,6 +396,7 @@
   - SecurityRevolverWeaponRevolverLucky
   - SecurityFirearmWeaponRevolverDeckard
   - SecurityFirearmWeaponRevolverK38Master
+  - SecurityFirearmTruncheon
 
 - type: loadoutGroup
   id: SecurityAllAmmo
@@ -346,6 +411,31 @@
   - SecurityFirearmSpeedLoaderSpecialRubber
   - SecurityFirearmSpeedLoaderSpecial
 
+## Security Gloves
+- type: loadoutGroup
+  id: SecurityGloves
+  name: loadout-group-security-gloves
+  minLimit: 0
+  loadouts:
+  - SecurityClothingHandsGlovesColorBlack
+  - SecurityClothingHandsGlovesFingerless
+
+## Security Glasses
+- type: loadoutGroup
+  id: SecurityEyewear
+  name: loadout-group-security-eyewear
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecurityGlasses
+  - PrescriptionSecurityGlasses
+  - SecurityHud
+  - SecurityEyePatchHud
+  - PrescriptionSecurityHud
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
+
 ## Security Officer
 - type: loadoutGroup
   id: SecurityNeck
@@ -353,6 +443,7 @@
   minLimit: 0
   loadouts:
   - ScarfRed
+  - ScarfBlack
   - SecurityPoncho
 
 - type: loadoutGroup
@@ -381,6 +472,7 @@
   - PlateCarrier
   - DuraVest
   - StasecWinterCoatHoS
+  - HeadOfSecurityTrenchcoat
 
 ## Detective
 - type: loadoutGroup
@@ -574,6 +666,7 @@
   minLimit: 0
   loadouts:
   - ScarfOrange
+  - ScarfRed
 
 ## Atmospheric Technician
 - type: loadoutGroup
@@ -583,6 +676,17 @@
   loadouts:
   - ScarfLightBlue
   - ScarfOrange
+
+- type: loadoutGroup
+  id: AtmosphericTechnicianHead
+  name: loadout-group-atmospheric-technician-head
+  minLimit: 0
+  loadouts:
+  - StationEngineerHardhatYellow
+  - StationEngineerHardhatOrange
+  - StationEngineerHardhatRed
+  - AtmosHardHatBlue
+  - AtmosBeret
 
 ## Clerk
 - type: loadoutGroup
@@ -700,47 +804,19 @@
   - WhiteShoes
   - ScienceWinterBoots
 
+- type: loadoutGroup
+  id: RoboticistGlasses
+  name: loadout-group-roboticist-glasses
+  minLimit: 0
+  loadouts:
+  - ClothingEyesHudDiagnostic
+  - ClothingEyesPrescriptionDiagHud
+  - ClothingEyesEyepatchHudDiag
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
+
 # Command
-## Administrative Assistant
-- type: loadoutGroup
-  id: AdminAssistantJumpsuit
-  name: loadout-group-admin-assistant-jumpsuit
-  loadouts:
-  - AdminAssistantJumpsuit
-  - AdminAssistantJumpskirt
-
-- type: loadoutGroup
-  id: AdminAssistantHead
-  name: loadout-group-admin-assistant-head
-  minLimit: 0
-  loadouts:
-  - AdminAssistanthat
-
-- type: loadoutGroup
-  id: AdminAssistantShoes
-  name: loadout-group-admin-assistant-shoes
-  loadouts:
-  - BrownLeatherShoes
-  - WhiteLeatherShoes
-  - LaceupShoes
-
-- type: loadoutGroup
-  id: AdminAssistantOuter
-  name: loadout-group-admin-assistant-outerclothing
-  loadouts:
-  - BartenderVest
-  - WinterCoatBlack
-  - WinterCoatBrown
-  - CorporateJacket
-
-- type: loadoutGroup
-  id: AdminAssistantGloves
-  name: loadout-group-admin-assistant-gloves
-  minLimit: 0
-  loadouts:
-  - HoPGloves
-  - InspectionGloves
-
 ## Captain
 - type: loadoutGroup
   id: CaptainGloves
@@ -777,6 +853,14 @@
   - LaceupShoes
   - HoPWinterBoots
 
+## chift engenier
+- type: loadoutGroup
+  id: ChiefEngineerGloves
+  name: loadout-group-chief-engineer-gloves
+  minLimit: 0
+  loadouts:
+  - insulatedgloves
+
 # PDAs
 - type: loadoutGroup
   id: PassengerPDADelta
@@ -784,9 +868,9 @@
   loadouts:
   - PassengerPDA
   - VisitorPDA
-  - TouristPDA
+  # - TouristPDA
   - OffDutyCrewPDA
-  - StudentPDA
+  # - StudentPDA
 
 - type: loadoutGroup
   id: BartenderPDADelta

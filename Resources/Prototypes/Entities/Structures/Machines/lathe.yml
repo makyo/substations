@@ -315,6 +315,7 @@
     - PartsStatic
     - AtmosStatic
     - CablesStatic
+    - PaperworkStatic
     - CargoStatic
     - MaterialsStatic
     - BasicChemistryStatic
@@ -326,6 +327,7 @@
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
+    - SyndicateAmmoStatic
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -515,11 +517,17 @@
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
+    - PowerAugments # DeltaV - augments
+    - ToolAugments # DeltaV - augments
+    - BorgDVModulesStatic # DeltaV - modules
     dynamicPacks:
     - Robotics
     - BorgModules
     - MechParts
     - MechEquipment
+    - Surgery # DeltaV - Share Surgery Parts between Epi and Med.
+    #- CyberneticsRobotics # DeltaV - Share Surgery Parts between Epi and Med. # L5 — how did this ever work?
+    - PsionicProsthetics # DeltaV
     - Cybernetics # Shitmed change
     - PowerAugments # DeltaV - augments
     - ToolAugments # DeltaV - augments
@@ -535,6 +543,7 @@
     - SalvageHardsuits
     - ParamedicHardsuit
     - EngineeringHardsuits
+    - AdvancedPsionicProsthetics
     # End DeltaV Additions
   - type: MaterialStorage
     whitelist:
@@ -622,6 +631,8 @@
     - SecurityRubberAmmoStatic
     - PrisonerSoftsuits
     - EVASuit
+    - SimpleToolsStaticDeltaV
+    - BorgModulesSecurityDeltaVStatic
     # End DeltaV Additions
     dynamicPacks:
     - SalvageSecurityBoards
@@ -631,13 +642,30 @@
     - SecurityExplosives
     - SecurityAmmo
     - SecurityWeapons
+    - SpecOpsGoogles # DeltaV
     #- SecurityDisablers # DeltaV - made roundstart
+    - AdvancedPsionicProsthetics # DeltaV
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - SyndicateAmmoStatic
   - type: MaterialStorage
     whitelist:
       tags:
         - Sheet
         - RawMaterial
         - Ingot
+  # End DeltaV Additions
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - BlueprintAutolathe
+      - BlueprintSecurityTechfab
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+  # End DeltaV Additions
   - type: OreSiloClient
   - type: LatheAnnouncing
     channels: [Security]
@@ -670,6 +698,17 @@
       unlitRunningState: unlit-building # DeltaV - added animation sprite layers
       staticPacks:
       - SecurityAmmoStatic
+    # End DeltaV Additions
+    - type: BlueprintReceiver
+      whitelist:
+        tags:
+        - BlueprintAmmoTechfab
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+        machine_parts: !type:Container
+        blueprint: !type:Container
+      # End DeltaV Additions
     - type: MaterialStorage
       whitelist:
         tags:
@@ -823,6 +862,10 @@
     staticPacks:
     - BioGenIngredientsStatic
     - BioGenMaterialsStatic
+  - type: EmagLatheRecipes
+    emagStaticPacks:
+    - BioGenEmagStatic
+    - HostileCubesStatic
 
 - type: entity
   parent: [BaseLathe]

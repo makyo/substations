@@ -1,13 +1,10 @@
 - type: entity
-  parent: BaseAction # L5 - action ECS
   id: ActionCancelEscape
   name: Stop escaping
   description: Calm down and sit peacefuly in your carrier's inventory
   components:
-  # Begin L5 changes - action ECS
   - type: Action
-    icon: _DV/Actions/escapeinventory.rsi/cancel-escape.png
+    icon: { sprite: _DV/Actions/escapeinventory.rsi, state: cancel-escape }
     useDelay: 2
   - type: InstantAction
     event: !type:EscapeInventoryCancelActionEvent
-  # End L5 changes

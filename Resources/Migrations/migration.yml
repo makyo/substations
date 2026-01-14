@@ -578,16 +578,6 @@ ToxinChemistryBottle: ChemistryBottleToxin
 # 2025-03-29
 ClothingBackpackDuffelSyndicateRaidBundle: ClothingBackpackSyndicateRaidBundle
 
-# 2025-04-04
-PosterLegitNoERP: null # L5
-
-# 2025-04-15
-SimpleXenoArtifact: ComplexXenoArtifact
-MediumXenoArtifact: ComplexXenoArtifact
-SimpleXenoArtifactItem: ComplexXenoArtifactItem
-MediumXenoArtifactItem: ComplexXenoArtifactItem
-VariedXenoArtifactItem: ComplexXenoArtifactItem
-
 # 2025-04-19
 ClothingOuterHardsuitSyndicate: ClothingOuterEVASuitSyndicate
 AirlockMaintCommonLocked: AirlockMaintLocked
@@ -628,10 +618,14 @@ WeaponEnergyTurretStationMachineCircuitboard: WeaponEnergyTurretSecurityMachineC
 # 2025-05-30
 SpawnHonkBot: SpawnMobHonkBot
 
-# 2025-06-01
-# L5 - pizza good
-# CrateFoodPizzaLarge: CrateFoodPizza
-# CrateFoodSoftdrinksLarge: CrateFoodSoftdrinks
+# 2025-06-01 - DeltaV: https://github.com/space-wizards/space-station-14/pull/38006 was never merged
+#CrateFoodPizzaLarge: CrateFoodPizza
+#CrateFoodSoftdrinksLarge: CrateFoodSoftdrinks
+
+# 2025-06-03
+FloorTileItemGCircuit4: FloorTileItemGCircuit
+FloorTileItemBCircuit4: FloorTileItemBCircuit
+FloorTileItemRCircuit4: FloorTileItemRCircuit
 
 # 2025-06-09
 BarSignAlignTile: BarSign
@@ -664,11 +658,37 @@ BarSignWhiskeyEchoesAlignTile: BarSignWhiskeyEchoes
 # 2025-06-21
 ClothingNeckHeadphones: ClothingMultipleHeadphones
 
+# 2025-07-17
+RipleyChassis: null
+HonkerChassis: null
+HamtrChassis: null
+VimChassis: null
+
 # 2025-08-01
 FoodDonutJellySlugcat: FoodDonutJellyScurret
 
-# L5 - putting this here so it conflicts when this gets fixed upstream
-# See https://github.com/space-wizards/space-station-14/issues/39620
-# 2025-08-13
-SoapBorg: null
-CableApcStackLingering10: null
+# 2025-08-29
+PrefilledSyringe: Syringe
+
+# 2025-10-01
+SimpleXenoArtifact: ComplexXenoArtifact
+MediumXenoArtifact: ComplexXenoArtifact
+SimpleXenoArtifactItem: ComplexXenoArtifactItem
+MediumXenoArtifactItem: ComplexXenoArtifactItem
+VariedXenoArtifactItem: ComplexXenoArtifactItem
+
+# 2025-10-6
+BibleTanakh: null
+BibleSatanic: null
+
+# 2025-10-08
+ClothingBeltAssault: ClothingBeltMilitaryWebbing
+WarpPointBombing: null
+
+# 2025-10-13
+ToyGriffin: ToyFigurineGriffin
+ToyOwlman: ToyFigurineOwlman
+ToySkeleton: ToyFigurineSkeleton
+
+# 2025-10-28
+DrinkKiraSpecial: DrinkOrangeLimeSodaGlass

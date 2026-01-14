@@ -14,7 +14,7 @@
     sprite: Nyanotrasen/Objects/Weapons/Guns/Pistols/universal.rsi
     state: icon
   product: CrateArmoryUniversal
-  cost: 16500
+  cost: 10500
   category: Armory
   group: market
 
@@ -57,5 +57,25 @@
     state: icon
   product: CrateArmoryArmingSword
   cost: 2500
+  category: Armory
+  group: market
+
+- type: cargoProduct
+  id: WatchdogImplantCrate
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateWatchdogImplants
+  cost: 18000
+  category: Armory
+  group: market
+
+- type: cargoProduct
+  id: ArmoryNT3
+  icon:
+    sprite: _DV/Objects/Weapons/Guns/LMGs/NT-3.rsi
+    state: icon
+  product: CrateNT3
+  cost: 13000
   category: Armory
   group: market

@@ -1,4 +1,4 @@
-using Content.Server.Radio.Components;
+using Content.Shared.Radio.Components;
 using Content.Shared.Hands;
 using Content.Shared.Verbs;
 using Robust.Server.Audio;

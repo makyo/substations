@@ -37,6 +37,11 @@ namespace Content.Client.Lathe.UI
 
             // L5 - ore processor silo support
             _menu.OnEnableSiloPressed += enabled => SendMessage(new EnableSiloButtonPressed(enabled));
+
+            _menu.QueueDeleteAction += index => SendMessage(new LatheDeleteRequestMessage(index));
+            _menu.QueueMoveUpAction += index => SendMessage(new LatheMoveRequestMessage(index, -1));
+            _menu.QueueMoveDownAction += index => SendMessage(new LatheMoveRequestMessage(index, 1));
+            _menu.DeleteFabricatingAction += () => SendMessage(new LatheAbortFabricationMessage());
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)

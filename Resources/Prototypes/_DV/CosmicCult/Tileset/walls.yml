@@ -8,7 +8,7 @@
     cultistText: cosmic-examine-text-forthecult
   - type: Tag
     tags:
-      - Wall
+    - Wall
   - type: Sprite
     sprite: _DV/CosmicCult/Tileset/cosmicwall.rsi
   - type: Icon
@@ -37,15 +37,15 @@
   - type: Sprite
     sprite: _DV/CosmicCult/Tileset/cosmicwall.rsi
     layers:
-      - state: full
-      - map: [ "enum.EdgeLayer.South" ]
-        state: trim_south
-      - map: [ "enum.EdgeLayer.East" ]
-        state: trim_east
-      - map: [ "enum.EdgeLayer.North" ]
-        state: trim_north
-      - map: [ "enum.EdgeLayer.West" ]
-        state: trim_west
+    - state: full
+    - map: [ "enum.EdgeLayer.South" ]
+      state: trim_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: trim_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: trim_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: trim_west
   - type: IconSmooth
     key: cultwalls
     base: cult
@@ -55,7 +55,7 @@
   id: WindowCosmicCult
   name: malign pane
   description: An odd-looking window. Something about it unnerves you.
-  parent: WindowRCDResistant
+  parent: [ BaseDeltaPressureReinforcedPlasma, WindowRCDResistant ]  # Plasma Reinforced Window levels, in case a rift appears by the burn chamber.
   components:
   - type: Sprite
     drawdepth: WallTops

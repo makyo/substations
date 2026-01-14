@@ -26,7 +26,6 @@ namespace Content.Server.Cloning;
 /// </summary>
 public sealed partial class CloningSystem : SharedCloningSystem
 {
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
@@ -44,13 +43,13 @@ public sealed partial class CloningSystem : SharedCloningSystem
     public bool TryCloning(EntityUid original, MapCoordinates? coords, ProtoId<CloningSettingsPrototype> settingsId, [NotNullWhen(true)] out EntityUid? clone)
     {
         clone = null;
-        if (!_prototype.TryIndex(settingsId, out var settings))
+        if (!_prototype.Resolve(settingsId, out var settings))
             return false; // invalid settings
 
         if (!TryComp<HumanoidAppearanceComponent>(original, out var humanoid))
             return false; // whatever body was to be cloned, was not a humanoid
 
-        if (!_prototype.TryIndex(humanoid.Species, out var speciesPrototype))
+        if (!_prototype.Resolve(humanoid.Species, out var speciesPrototype))
             return false; // invalid species
 
         var attemptEv = new CloningAttemptEvent(settings);
@@ -100,7 +99,7 @@ public sealed partial class CloningSystem : SharedCloningSystem
 
         foreach (var componentName in componentsToCopy)
         {
-            if (!_componentFactory.TryGetRegistration(componentName, out var componentRegistration))
+            if (!Factory.TryGetRegistration(componentName, out var componentRegistration))
             {
                 Log.Error($"Tried to use invalid component registration for cloning: {componentName}");
                 continue;
@@ -116,7 +115,7 @@ public sealed partial class CloningSystem : SharedCloningSystem
 
         foreach (var componentName in componentsToEvent)
         {
-            if (!_componentFactory.TryGetRegistration(componentName, out var componentRegistration))
+            if (!Factory.TryGetRegistration(componentName, out var componentRegistration))
             {
                 Log.Error($"Tried to use invalid component registration for cloning: {componentName}");
                 continue;

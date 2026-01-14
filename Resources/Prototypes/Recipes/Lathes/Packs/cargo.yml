@@ -10,6 +10,7 @@
   - AstroNav # L5
   - StockTrading # L5
   - MailMetrics # L5
+  - UtilityKnife
 
 - type: latheRecipePack
   id: CargoBoardsStatic

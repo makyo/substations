@@ -1,4 +1,6 @@
+using Content.Shared.Damage; // DeltaV - EMP damage
 using Robust.Shared.GameStates;
+
 
 namespace Content.Shared.Trigger.Components.Effects;
 
@@ -26,4 +28,10 @@ public sealed partial class EmpOnTriggerComponent : BaseXOnTriggerComponent
     /// </summary>
     [DataField, AutoNetworkedField]
     public TimeSpan DisableDuration = TimeSpan.FromSeconds(60);
+
+    /// <summary>
+    /// DeltaV - The damage dealt to silicons instead of draining their power cells
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public DamageSpecifier? Damage;
 }

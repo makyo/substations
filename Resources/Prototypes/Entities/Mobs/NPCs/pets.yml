@@ -162,8 +162,8 @@
   components:
   - type: NpcFactionMember
     factions:
-      - PetsNT
-      - Cat # DeltaV
+    - PetsNT
+    - Cat # DeltaV
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -190,8 +190,8 @@
   components:
   - type: NpcFactionMember
     factions:
-      - PetsNT
-      - Cat # DeltaV
+    - PetsNT
+    - Cat # DeltaV
   - type: Grammar
     attributes:
       proper: true
@@ -303,6 +303,10 @@
     tags:
     - CannotSuicide
     - VimPilot
+  - type: JumpAbility # DeltaV - Don't leave Bingus out on being able to pounce
+    jumpThrowSpeed: 16 # Fastest it can be without hurting themselves by run+jumping into a wall
+    jumpDistance: 3
+    action: ActionCatJump
   - type: StealTarget
     stealGroup: AnimalNamedCat
 
@@ -593,7 +597,7 @@
   name: Renault
   parent: MobFox
   id: MobFoxRenault
-  description: The station admin's trustworthy fox. # L5
+  description: The captain's trustworthy fox.
   components:
   - type: InteractionPopup
     successChance: 1
@@ -701,10 +705,7 @@
     name: ghost-role-information-Shiva-name
     description: ghost-role-information-Shiva-description
     rules: ghost-role-information-Shiva-rules
-    requirements: # Delta V - No raiders
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 14400 # DeltaV - 4 hours
+    job: RoleShiva # DeltaV - controls the playtime requirement, no raiders
   - type: GhostTakeoverAvailable # DeltaV
   - type: InteractionPopup
     successChance: 0.5 # spider is mean
@@ -715,7 +716,7 @@
       path: /Audio/Animals/snake_hiss.ogg
   - type: NpcFactionMember
     factions:
-      - PetsNT
+    - PetsNT
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -869,8 +870,6 @@
   - type: Item
     sprite: Mobs/Pets/Smile/smile.rsi
     size: Huge
-  - type: SentienceTarget
-    flavorKind: station-event-random-sentience-flavor-slime
   - type: MobPrice
     price: 3000 # it is a truly valuable creature
   - type: GhostRole
@@ -897,10 +896,7 @@
     name: ghost-role-information-punpun-name
     description: ghost-role-information-punpun-description
     rules: ghost-role-information-nonantagonist-rules
-    requirements: # Delta V - No raiders
-    - !type:RoleTimeRequirement
-      role: JobBartender
-      time: 14400 # Delta V - 4 hours
+    job: RolePunPun
   - type: GhostTakeoverAvailable
   - type: Butcherable
     butcheringType: Spike
@@ -928,15 +924,15 @@
   id: MobCrabAtmos
   description: The noble and stalwart defender of Atmosia. Viva!
   components:
-#  - type: GhostRole
-#    prob: 1
-#    makeSentient: true
-#    allowSpeech: true
-#    allowMovement: true
-#    name: ghost-role-information-tropico-name
-#    description: ghost-role-information-tropico-description
-#    rules: ghost-role-information-nonantagonist-rules
-#  - type: GhostTakeoverAvailable
+  #  - type: GhostRole
+  #    prob: 1
+  #    makeSentient: true
+  #    allowSpeech: true
+  #    allowMovement: true
+  #    name: ghost-role-information-tropico-name
+  #    description: ghost-role-information-tropico-description
+  #    rules: ghost-role-information-nonantagonist-rules
+  #  - type: GhostTakeoverAvailable
   - type: Tag
     tags:
     - VimPilot
@@ -945,7 +941,7 @@
     attributes:
       proper: true
       gender: male
-#  - type: AlwaysRevolutionaryConvertible
+  #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
 
@@ -965,4 +961,3 @@
       gender: male
   - type: Loadout
     prototypes: [ MobPollyGear ]
-

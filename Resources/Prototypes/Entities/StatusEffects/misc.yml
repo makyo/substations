@@ -28,21 +28,6 @@
   components:
   - type: RejuvenateRemovedStatusEffect
 
-- type: entity
-  parent: MobStatusEffectDebuff
-  id: MobStandStatusEffectBase
-  abstract: true
-  components:
-  - type: StatusEffect
-    whitelist:
-      components:
-      - MobState
-      - StandingState
-      requireAll: true
-    blacklist: # This blacklist exists because mob prototypes are smelly and everything needs a standing state component.
-      tags:
-      - KnockdownImmune
-
 # The creature sleeps so heavily that nothing can wake him up. Not even its own death.
 - type: entity
   parent: MobStatusEffectDebuff
@@ -78,3 +63,17 @@
   name: hallucinations
   components:
   - type: SeeingRainbowsStatusEffect
+
+# Causes your vision to become blurry and gives me a headache.
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectWoozy
+  name: woozy
+  components:
+  - type: DrunkStatusEffect
+
+# Causes you to get drunk
+- type: entity
+  parent: [ StatusEffectWoozy, StatusEffectSlurred ]
+  id: StatusEffectDrunk
+  name: drunk

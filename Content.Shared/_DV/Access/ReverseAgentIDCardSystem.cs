@@ -52,11 +52,11 @@ public sealed class ReverseAgentIDCardSystem : EntitySystem
         // Begin L5 changes - wizden access reader refactor
         var readerEnt = new Entity<AccessReaderComponent>(args.Target.Value, targetAccess);
         _accessReader.ClearDenyTags(readerEnt);
-        _accessReader.ClearAccesses(readerEnt);
+        _accessReader.TryClearAccesses(readerEnt);
         _accessReader.ClearAccessKeys(readerEnt);
 
         _accessReader.SetDenyTags(readerEnt, access.DenyTags);
-        _accessReader.AddAccesses(readerEnt, access.AccessLists);
+        _accessReader.TryAddAccesses(readerEnt, access.AccessLists);
         _accessReader.SetAccessKeys(readerEnt, access.AccessKeys);
         // End L5 changes
         _popup.PopupClient(Loc.GetString("reverse-agent-access-overwrote"), args.User, args.User);

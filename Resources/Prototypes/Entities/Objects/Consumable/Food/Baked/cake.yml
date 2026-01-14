@@ -8,8 +8,7 @@
   components:
   - type: FlavorProfile
     flavors:
-    - sweet
-  - type: Food
+      - sweet
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/cake.rsi
   - type: SolutionContainerManager
@@ -49,8 +48,8 @@
   components:
   - type: FlavorProfile
     flavors:
-    - sweet
-  - type: Food
+      - sweet
+  - type: Edible
   - type: SolutionContainerManager
     solutions:
       food:
@@ -151,6 +150,9 @@
   id: FoodCakePlain
   description: A plain cake, not a lie.
   components:
+  - type: Construction # Floof - Add tiered cakes
+    graph: CakeTiered
+    node: start
   - type: Sprite
     state: plain
   - type: SliceableFood
@@ -166,6 +168,11 @@
           Quantity: 5
   - type: Item
     heldPrefix: plain
+  # Floof section - Add tiered cakes
+  - type: Tag
+    tags:
+      - CakeBase
+  # Floof section end
 
 # Added in type lines above
 

@@ -21,6 +21,16 @@
     speechSounds: Vulpkanin
     speechVerb: Vulpkanin
     allowedEmotes: ['Bark', 'Snarl', 'Whine', 'Howl', 'Awoo', 'Growl']
+  - type: JumpAbility
+    action: ActionVulpkaninGravityJump
+    canCollide: true
+    jumpDistance: 3
+    jumpSound:
+      path: /Audio/Weapons/punchmiss.ogg
+      params:
+        pitch: 1.33
+        volume: -5
+        variation: 0.05
   - type: Sprite
     netsync: false
     noRot: true

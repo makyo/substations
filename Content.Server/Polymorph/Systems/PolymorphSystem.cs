@@ -7,6 +7,8 @@ using Content.Shared.Buckle;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems; // DeltaV
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
@@ -27,7 +29,6 @@ namespace Content.Server.Polymorph.Systems;
 
 public sealed partial class PolymorphSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _compFact = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -59,6 +60,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         SubscribeLocalEvent<PolymorphedEntityComponent, BeforeFullySlicedEvent>(OnBeforeFullySliced);
         SubscribeLocalEvent<PolymorphedEntityComponent, DestructionEventArgs>(OnDestruction);
+        SubscribeLocalEvent<PolymorphedEntityComponent, EntityTerminatingEvent>(OnPolymorphedTerminating);
 
         InitializeMap();
     }
@@ -115,7 +117,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
     private void OnPolymorphActionEvent(Entity<PolymorphableComponent> ent, ref PolymorphActionEvent args)
     {
-        if (!_proto.TryIndex(args.ProtoId, out var prototype) || args.Handled)
+        if (!_proto.Resolve(args.ProtoId, out var prototype) || args.Handled)
             return;
 
         PolymorphEntity(ent, prototype.Configuration);
@@ -131,12 +133,11 @@ public sealed partial class PolymorphSystem : EntitySystem
 
     private void OnBeforeFullySliced(Entity<PolymorphedEntityComponent> ent, ref BeforeFullySlicedEvent args)
     {
-        var (_, comp) = ent;
-        if (comp.Configuration.RevertOnEat)
-        {
-            args.Cancel();
-            Revert((ent, ent));
-        }
+        if (ent.Comp.Reverted || !ent.Comp.Configuration.RevertOnEat)
+            return;
+
+        args.Cancel();
+        Revert((ent, ent));
     }
 
     /// <summary>
@@ -145,10 +146,23 @@ public sealed partial class PolymorphSystem : EntitySystem
     /// </summary>
     private void OnDestruction(Entity<PolymorphedEntityComponent> ent, ref DestructionEventArgs args)
     {
-        if (ent.Comp.Configuration.RevertOnDeath)
-        {
-            Revert((ent, ent));
-        }
+        if (ent.Comp.Reverted || !ent.Comp.Configuration.RevertOnDeath)
+            return;
+
+        Revert((ent, ent));
+    }
+
+    private void OnPolymorphedTerminating(Entity<PolymorphedEntityComponent> ent, ref EntityTerminatingEvent args)
+    {
+        if (ent.Comp.Reverted)
+            return;
+
+        if (ent.Comp.Configuration.RevertOnDelete)
+            Revert(ent.AsNullable());
+
+        // Remove our original entity too
+        // Note that Revert will set Parent to null, so reverted entities will not be deleted
+        QueueDel(ent.Comp.Parent);
     }
 
     /// <summary>
@@ -202,7 +216,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         _mindSystem.MakeSentient(child);
 
-        var polymorphedComp = _compFact.GetComponent<PolymorphedEntityComponent>();
+        var polymorphedComp = Factory.GetComponent<PolymorphedEntityComponent>();
         polymorphedComp.Parent = uid;
         polymorphedComp.Configuration = configuration;
         AddComp(child, polymorphedComp);
@@ -219,7 +233,7 @@ public sealed partial class PolymorphSystem : EntitySystem
             _mobThreshold.GetScaledDamage(uid, child, out var damage) &&
             damage != null)
         {
-            _damageable.SetDamage(child, damageParent, damage);
+            _damageable.SetDamage((child, damageParent), damage);
 
             // DeltaV - Transfer Stamina Damage
             var staminaDamage = _stamina.GetStaminaDamage(uid);
@@ -260,7 +274,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         if (configuration.TransferHumanoidAppearance)
         {
-            _humanoid.CloneAppearance(uid, child);
+            _humanoid.CloneAppearance(child, uid);
         }
 
         if (_mindSystem.TryGetMind(uid, out var mindId, out var mind))
@@ -296,12 +310,18 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (Deleted(uid))
             return null;
 
-        var parent = component.Parent;
+        if (component.Parent is not { } parent)
+            return null;
+
         if (Deleted(parent))
             return null;
 
         var uidXform = Transform(uid);
         var parentXform = Transform(parent);
+
+        // Don't swap back onto a terminating grid
+        if (TerminatingOrDeleted(uidXform.ParentUid))
+            return null;
 
         if (component.Configuration.ExitPolymorphSound != null)
             _audio.PlayPvs(component.Configuration.ExitPolymorphSound, uidXform.Coordinates);
@@ -309,12 +329,14 @@ public sealed partial class PolymorphSystem : EntitySystem
         _transform.SetParent(parent, parentXform, uidXform.ParentUid);
         _transform.SetCoordinates(parent, parentXform, uidXform.Coordinates, uidXform.LocalRotation);
 
+        component.Reverted = true;
+
         if (component.Configuration.TransferDamage &&
             TryComp<DamageableComponent>(parent, out var damageParent) &&
             _mobThreshold.GetScaledDamage(uid, parent, out var damage) &&
             damage != null)
         {
-            _damageable.SetDamage(parent, damageParent, damage);
+            _damageable.SetDamage((parent, damageParent), damage);
 
             // DeltaV - Transfer Stamina Damage
             var staminaDamage = _stamina.GetStaminaDamage(uid);
@@ -384,7 +406,7 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (target.Comp.PolymorphActions.ContainsKey(id))
             return;
 
-        if (!_proto.TryIndex(id, out var polyProto))
+        if (!_proto.Resolve(id, out var polyProto))
             return;
 
         var entProto = _proto.Index(polyProto.Configuration.Entity);

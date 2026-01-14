@@ -25,4 +25,4 @@
                 state: blue
               doAfter: 5
     - node: magicCrayon
-      entity: CrayonMagic
+      entity: CrayonInfinite # L5 — Switch to producing infinite crayon

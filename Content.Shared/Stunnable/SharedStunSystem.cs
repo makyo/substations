@@ -38,7 +38,6 @@ public abstract partial class SharedStunSystem : EntitySystem
     [Dependency] protected readonly SharedDoAfterSystem DoAfter = default!;
     [Dependency] protected readonly SharedStaminaSystem Stamina = default!;
     [Dependency] private readonly StatusEffectsSystem _status = default!;
-
     public override void Initialize()
     {
         SubscribeLocalEvent<StunnedComponent, ComponentStartup>(UpdateCanMove);
@@ -288,9 +287,12 @@ public abstract partial class SharedStunSystem : EntitySystem
         }
     }
 
-    public bool TryAddParalyzeDuration(EntityUid uid, TimeSpan duration)
+    public bool TryAddParalyzeDuration(EntityUid uid, TimeSpan? duration)
     {
-        if (!_status.TryAddStatusEffectDuration(uid, StunId, duration))
+        if (duration == null)
+            return TryUpdateParalyzeDuration(uid, duration);
+
+        if (!_status.TryAddStatusEffectDuration(uid, StunId, duration.Value))
             return false;
 
         // We can't exit knockdown when we're stunned, so this prevents knockdown lasting longer than the stun.

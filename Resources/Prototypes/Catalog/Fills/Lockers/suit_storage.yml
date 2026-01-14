@@ -15,6 +15,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled
     - id: ClothingOuterHardsuitEVA
     - id: ClothingHeadHelmetEVA
     - id: ClothingMaskBreath
@@ -183,7 +184,9 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled
     - id: ClothingOuterHardsuitSecurity
+    - id: ClothingShoesBootsSecurityMagboots # DeltaV - Added security magboots.
     - id: ClothingMaskBreath
 
 #CE's hardsuit
@@ -216,7 +219,7 @@
 - type: entity
   id: SuitStorageRD
   parent: SuitStorageBase
-  suffix: Research Director
+  suffix: Mystagogue # DeltaV - Epistemics Department replacing Science
   components:
   - type: EntityTableContainerFill
     containers:
@@ -247,7 +250,7 @@
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: FillLockerWardenHarduit
+        tableId: FillLockerWardenHardsuit
   - type: AccessReader
     access: [["Armory"]]
 
@@ -255,7 +258,7 @@
 - type: entity
   id: SuitStorageCaptain
   parent: SuitStorageBase
-  suffix: StationAdministrator # L5
+  suffix: Captain
   components:
   - type: EntityTableContainerFill
     containers:
@@ -276,32 +279,6 @@
         tableId: FillSalvageSpecialistHardsuitSpatio
   - type: AccessReader
     access: [["Salvage"]]
-
-# DeltaV - Adding Corpsman Suit Storage Unit
-- type: entity
-  id: SuitStorageCorpsman
-  parent: SuitStorageBase
-  suffix: Corpsman
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillSuitStorageCorpsman
-  - type: AccessReader
-    access: [ [ "Corpsman" ] ]
-
-# L5 - there's probably a table this can grab from but I forget what and I'm not checking. — Perry
-- type: entityTable
-  id: FillSuitStorageCorpsman
-  table: !type:AllSelector
-    children:
-    - id: NitrogenTankFilled
-    - id: OxygenTankFilled
-    - id: ClothingOuterHardsuitCombatCorpsman
-    - id: ClothingMaskBreath
-    - id: ClothingShoesBootsSecurityMagboots #Added security magboots.
-
-# DeltaV - End Changes
 
 #Blood-red hardsuit
 - type: entity

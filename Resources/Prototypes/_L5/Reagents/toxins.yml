@@ -14,16 +14,16 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:OrganType
-          type: Human # Applying damage to the mobs with lower metabolism capabilities
+        - !type:MetabolizerTypeCondition
+          type: [Human] # Applying damage to the mobs with lower metabolism capabilities
         damage:
           types:
             Poison: 0.3 # DeltaV - slightly reduced to account for slowed metabolism rate
-      - !type:ChemVomit
+      - !type:Vomit
         probability: 0.1 #Scaled for time, not metabolismrate. # DeltaV - Increased from .04 Vomit more when there is a lot of it
         conditions:
-        - !type:OrganType
-          type: Human
-        - !type:ReagentThreshold # DeltaV - Readded this. No longer causes vomiting at the lightest whiff of coffee
-          reagent: Neobromine
+        - !type:MetabolizerTypeCondition
+          type: [Human]
+        - !type:ReagentCondition  # DeltaV - No longer causes vomitting at the lightest whiff of coffee
+          reagent: Histamine
           min: 0.5

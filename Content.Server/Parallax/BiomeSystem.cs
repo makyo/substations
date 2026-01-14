@@ -127,7 +127,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             SetSeed(uid, component, _random.Next());
         }
 
-        if (_proto.TryIndex(component.Template, out var biome))
+        if (_proto.Resolve(component.Template, out var biome))
             SetTemplate(uid, component, biome);
 
         var xform = Transform(uid);
@@ -1011,7 +1011,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             return;
 
         EnsureComp<MapGridComponent>(mapUid);
-        var biome = (BiomeComponent) EntityManager.ComponentFactory.GetComponent(typeof(BiomeComponent));
+        var biome = EntityManager.ComponentFactory.GetComponent<BiomeComponent>();
         seed ??= _random.Next();
         SetSeed(mapUid, biome, seed.Value, false);
         SetTemplate(mapUid, biome, biomeTemplate, false);

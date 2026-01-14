@@ -19,18 +19,18 @@
   description: This implant plays a sad tune when the user dies.
   categories: [ HideSpawnMenu ]
   components:
-    - type: SubdermalImplant
-      whitelist:
-        components:
-        - MobState # admeme implanting a chair with trombone implant needs to give the chair mobstate so it can die first
-    - type: TriggerOnMobstateChange
-      mobState:
-      - Dead
-    - type: EmitSoundOnTrigger
-      sound:
-        collection: SadTrombone
-        params:
-          variation: 0.125
+  - type: SubdermalImplant
+    whitelist:
+      components:
+      - MobState # admeme implanting a chair with trombone implant needs to give the chair mobstate so it can die first
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: SadTrombone
+      params:
+        variation: 0.125
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -39,20 +39,20 @@
   description: This implant emits light from the user's skin on activation.
   categories: [ HideSpawnMenu ]
   components:
-    - type: SubdermalImplant
-      implantAction: ActionToggleLight
-    - type: PointLight
-      enabled: false
-      radius: 2.5
-      softness: 5
-      mask: /Textures/Effects/LightMasks/cone.png
-      autoRot: true
-    - type: Tag
-      tags:
-        - SubdermalImplant
-        - HideContextMenu
-        - Flashlight
-    - type: UnpoweredFlashlight
+  - type: SubdermalImplant
+    implantAction: ActionToggleLight
+  - type: PointLight
+    enabled: false
+    radius: 2.5
+    softness: 5
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Tag
+    tags:
+    - SubdermalImplant
+    - HideContextMenu
+    - Flashlight
+  - type: UnpoweredFlashlight
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -80,7 +80,7 @@
   parent: BaseSubdermalImplant
   id: TrackingImplant
   name: tracking implant
-  description: This implant has a tracking device attached to the suit sensor network, as well as a condition monitor for the Medical radio channel. # L5 - medical instead of sec
+  description: This implant has a tracking device attached to the suit sensor network.
   categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant
@@ -95,21 +95,9 @@
     - type: DeviceNetwork
       deviceNetId: Wireless
       transmitFrequencyId: SuitSensor
-    # Begin L5 modifications
-    # L5 - map global suit sensors
-    # - type: StationLimitedNetwork
+    - type: StationLimitedNetwork
     - type: WirelessNetworkConnection
-      range: 10000
-    # L5 - I dunno who added/removed/whatever'd it but make tracking implants do rattles
-    # Also make it rattle on dead, not just crit and dead.
-    - type: TriggerOnMobstateChange
-      mobState:
-      - Critical
-      - Dead
-    - type: RattleOnTrigger
-      targetUser: true
-      radioChannel: Medical # L5 - tracking implants are for medical, not sec
-    # End L5 modifications
+      range: 500
 
 #Traitor implants
 
@@ -120,6 +108,7 @@
   description: This implant grants hidden storage within a person's body using bluespace technology.
   categories: [ HideSpawnMenu ]
   components:
+    - type: StorageImplant
     - type: SubdermalImplant
       implantAction: ActionOpenStorageImplant
       whitelist:
@@ -166,6 +155,18 @@
     targetUser: true
 
 - type: entity
+  parent: BaseSubdermalImplant
+  id: RadioSyndicateImplant # DeltaV - Renamed
+  name: radio implant
+  description: This implant grants access to the Syndicate channel without a headset.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - Syndicate
+
+- type: entity
   parent: [ BaseSubdermalImplant, StorePresetUplink ]
   id: UplinkImplant
   name: uplink implant
@@ -199,6 +200,9 @@
     range: 2.75
     energyConsumption: 50000
     disableDuration: 10
+    damage: # DeltaV - EMP damage
+      types:
+        Ion: 80 # Would take 2 charges if you want to actually kill with it
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -289,6 +293,10 @@
   components:
     - type: SubdermalImplant
       permanent: true
+    - type: ReplacementImplant
+      whitelist:
+        tags:
+        - MicroBomb # replace microbomb implant with macrobomb
     - type: TriggerOnMobstateChange #activates the timer
       mobState:
       - Dead
@@ -315,9 +323,8 @@
       canCreateVacuum: true
     - type: Tag
       tags:
-        - SubdermalImplant
-        - HideContextMenu
-        - MacroBomb
+      - SubdermalImplant
+      - HideContextMenu
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -343,7 +350,6 @@
     tags:
     - SubdermalImplant
     - HideContextMenu
-    - DeathAcidifier
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -368,12 +374,14 @@
   parent: BaseSubdermalImplant
   id: FakeMindShieldImplant
   name: fake mindshield implant
-  description: This implant allows the implanter to produce a fake signal that SysCon security HUDs use to identify individuals implanted with a mindshield. # L5
+  description: This implant allows the implanter to produce a fake signal that NT security huds use to identify individuals implanted with a mindshield.
   categories: [ HideSpawnMenu ]
   components:
-      - type: SubdermalImplant
-        implantAction: FakeMindShieldToggleAction
-      - type: FakeMindShieldImplant
+  - type: SubdermalImplant
+    implantAction: FakeMindShieldToggleAction
+    implantComponents:
+    - type: FakeMindShield # TODO: put the component on the implant and use implant relay events for the status icon
+  - type: FakeMindShieldImplant
 
 # Sec and Command implants
 
@@ -384,8 +392,8 @@
   description: This implant will shield the brain from external influences and prevent mind control devices. # DeltaV - mindshield does not enforce loyalty
   categories: [ HideSpawnMenu ]
   components:
-   - type: SubdermalImplant
-   - type: MindShieldImplant
+  - type: SubdermalImplant
+  - type: MindShieldImplant
 
 - type: entity
   parent: DeathRattleImplant
@@ -396,3 +404,15 @@
   components:
   - type: RattleOnTrigger
     radioChannel: CentCom
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: RadioImplantCentcomm
+  name: centcomm radio implant
+  description: This implant grants access to the Centcomm channel without a headset. Only authorized for Centcomm employees.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: RadioImplant
+    radioChannels:
+    - CentCom

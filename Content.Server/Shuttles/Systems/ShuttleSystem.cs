@@ -8,7 +8,7 @@ using Content.Server.Shuttles.Events;
 using Content.Server.Station.Systems;
 using Content.Server.Stunnable;
 using Content.Shared.Buckle.Components;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Light.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Salvage;
@@ -36,7 +36,6 @@ namespace Content.Server.Shuttles.Systems;
 public sealed partial class ShuttleSystem : SharedShuttleSystem
 {
     [Dependency] private readonly IAdminLogManager _logger = default!;
-    [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;

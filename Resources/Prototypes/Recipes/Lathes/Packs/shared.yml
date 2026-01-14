@@ -4,6 +4,7 @@
   id: MaterialsStatic
   recipes:
   - SheetRGlass
+  - MaterialDurathread
 
 - type: latheRecipePack
   id: PartsStatic
@@ -39,6 +40,12 @@
   - CableStack
   - CableMVStack
   - CableHVStack
+
+- type: latheRecipePack
+  id: PaperworkStatic
+  recipes:
+  - BoxFolderClipboardEmpty
+  - BoxFolderPlasticClipboardEmpty
 
 ## Dynamic
 

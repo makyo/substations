@@ -29,7 +29,8 @@ job-name-cburn = UN Quarantine Officer
 job-name-deathsquad = UN Agent
 job-name-reporter = Reporter
 job-name-musician = Musician
-job-name-librarian = Librarian
+# DeltaV - Changed Librarian to Archivist
+# job-name-librarian = Librarian
 # DeltaV - Changed Lawyer to Attorney
 # job-name-lawyer = Lawyer
 job-name-mime = Mime

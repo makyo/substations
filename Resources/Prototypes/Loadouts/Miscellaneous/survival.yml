@@ -27,6 +27,8 @@
     - Chitinid
     - Thaven
     - Kitsune
+    - Avali
+    - Ovinia
     # End DeltaV additions
     - Vox # L5
 
@@ -86,6 +88,17 @@
     - Dwarf
     - Human
     - Reptilian
+    # Begin DeltaV additions
+    - Felinid
+    - Harpy
+    - Oni
+    - Vulpkanin
+    - Rodentia
+    - Chitinid
+    - Thaven
+    - Kitsune
+    - Avali
+    # End DeltaV additions
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth

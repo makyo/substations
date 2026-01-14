@@ -17,3 +17,4 @@ job-supervisors-security = Security Officers, the Armorer, and the Head of Secur
 job-supervisors-science = Scientists and the Research Director
 job-supervisors-hire = whoever hires you
 job-supervisors-everyone = absolutely everyone
+job-supervisors-nobody = nobody

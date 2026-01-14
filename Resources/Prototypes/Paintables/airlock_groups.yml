@@ -16,6 +16,8 @@
     medical: AirlockMedical
     salvage: AirlockSalvage
     science: AirlockScience
+    # DeltaV: Robotics
+    robotics: AirlockRobotics
     security: AirlockSecurity
     virology: AirlockVirology
     justice: AirlockJustice # L5 - add justice
@@ -38,6 +40,8 @@
     medical: AirlockMedicalGlass
     salvage: AirlockSalvageGlass
     science: AirlockScienceGlass
+    # DeltaV: Robotics
+    robotics: AirlockRoboticsGlass
     security: AirlockSecurityGlass
     virology: AirlockVirologyGlass
     justice: AirlockJusticeGlass # L5 - add justice

@@ -9,12 +9,7 @@ loadout-group-captain-gloves = Station administrator's gloves
 loadout-group-captain-shoes = Station administrator's shoes
 loadout-group-hop-gloves = Head of Personnel gloves
 loadout-group-hop-shoes = Head of Personnel shoes
-
-loadout-group-admin-assistant-head = Administrative Assistant head
-loadout-group-admin-assistant-jumpsuit = Administrative Assistant jumpsuit
-loadout-group-admin-assistant-outerclothing = Administrative Assistant outer clothing
-loadout-group-admin-assistant-shoes = Administrative Assistant shoes
-loadout-group-admin-assistant-gloves = Administrative Assistant gloves
+loadout-group-chief-engineer-gloves = Chief Engineer Gloves
 
 # Civilian
 loadout-group-librarian-neck = Librarian neck
@@ -30,7 +25,7 @@ loadout-group-mime-neck = Mime neck
 
 loadout-group-musician-neck = Musician neck
 
-loadout-group-passenger-id-delta = Passenger PDA
+loadout-group-passenger-id-delta = Assistant PDA
 loadout-group-bartender-id-delta = Bartender PDA
 loadout-group-chef-id-delta = Chef PDA
 loadout-group-clown-id-delta = Clown PDA
@@ -38,6 +33,10 @@ loadout-group-janitor-id-delta = Janitor PDA
 
 loadout-group-serviceworker-head = Service Worker head
 loadout-group-serviceworker-jumpsuit = Service Worker jumpsuit
+
+loadout-group-assistant-head = Assistant head
+
+loadout-group-clown-mask = Clown mask
 
 # Logistics
 
@@ -103,6 +102,7 @@ loadout-group-mantis-gloves = Mantis gloves
 loadout-group-roboticist-head = Roboticist head
 loadout-group-roboticist-jumpsuit = Roboticist jumpsuit
 loadout-group-roboticist-gloves = Roboticist gloves
+loadout-group-roboticist-glasses = Roboticist glasses
 loadout-group-roboticist-shoes = Roboticist shoes
 loadout-group-roboticist-outerclothing = Roboticist outer clothing
 loadout-group-roboticist-id = Roboticist PDA
@@ -114,17 +114,22 @@ loadout-group-atmospheric-technician-neck = Atmospheric Technician neck
 
 loadout-group-atmos-id-delta = Atmospheric Technician PDA
 
+loadout-group-atmospheric-technician-head = Atmospheric Technician Head
+
 # Security
 loadout-group-head-of-security-shoes = Head of Security shoes
 
 loadout-group-security-cadet-head = Security Cadet head
 loadout-group-security-neck = Security neck
+loadout-group-security-gloves = Security gloves
+loadout-group-security-eyewear = Security eyewear
 
 loadout-group-brig-medic-head = Corpsman head
 loadout-group-brig-medic-jumpsuit = Corpsman jumpsuit
 loadout-group-brig-medic-back = Corpsman backpack
 loadout-group-brig-medic-neck = Corpsman neck
 loadout-group-brig-medic-outerclothing = Corpsman outer clothing
+loadout-group-corpsman-eyewear = Corpsman eyewear
 
 loadout-group-prison-guard-head = Prison Guard head
 loadout-group-prison-guard-jumpsuit = Prison Guard jumpsuit

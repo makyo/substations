@@ -7,6 +7,14 @@
   components:
   - type: Action
 
+# base proto for an action that requires a DoAfter
+- type: entity
+  abstract: true
+  parent: BaseAction
+  id: BaseDoAfterAction
+  components:
+  - type: DoAfterArgs
+
 # an action that is done all in le head and cant be prevented by any means
 - type: entity
   abstract: true
@@ -258,6 +266,20 @@
     event: !type:VendingMachineSelfDispenseEvent
 
 - type: entity
+  parent: BaseAction
+  id: ActionArtifactActivate
+  name: Activate Artifact
+  description: Immediately activates your current artifact node.
+  components:
+  - type: Action
+    icon:
+      sprite: Objects/Specific/Xenoarchaeology/xeno_artifacts.rsi
+      state: ano01
+    useDelay: 60
+  - type: InstantAction
+    event: !type:ArtifactSelfActivateEvent
+
+- type: entity
   parent: BaseToggleAction
   id: ActionToggleBlock
   name: Block
@@ -376,6 +398,7 @@
     iconOn: { sprite: Interface/Actions/actions_fakemindshield.rsi, state: icon-on }
     itemIconStyle: NoItem
     useDelay: 1
+    raiseOnUser: true
   - type: InstantAction
     event: !type:FakeMindShieldToggleEvent
   - type: Tag
@@ -410,6 +433,20 @@
     event: !type:GravityJumpEvent {}
 
 - type: entity
+  parent: BaseAction
+  id: ActionVulpkaninGravityJump
+  name: Leap
+  description: Use your agile legs to leap a short distance. Be careful not to bump into anything!
+  components:
+  - type: Action
+    useDelay: 12
+    icon:
+      sprite: Interface/Actions/jump.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:GravityJumpEvent {}
+
+- type: entity
   parent: BaseToggleAction
   id: ActionToggleRootable
   name: Rootable
@@ -432,3 +469,14 @@
     itemIconStyle: BigAction
   - type: InstantAction
     event: !type:ChameleonControllerOpenMenuEvent
+
+- type: entity
+  parent: BaseMentalAction
+  id: ActionIntrinsicStore
+  name: Store
+  description: Opens the store
+  components:
+  - type: Action
+    icon: Interface/Actions/shop.png
+  - type: InstantAction
+    event: !type:IntrinsicStoreActionEvent

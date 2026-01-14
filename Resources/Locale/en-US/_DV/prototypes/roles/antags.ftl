@@ -1,5 +1,4 @@
-# L5
-roles-antag-paradox-anomaly-name = Unauthorized Duplicate
+roles-antag-paradox-anomaly-name = Paradox Anomaly
 roles-antag-paradox-anomaly-objective = Replace your double, or befriend them.
 
 roles-antag-listening-post-name = Listening Post Operative
@@ -19,3 +18,15 @@ roles-antag-roboneuroticist-objective = Conspiracy to Convert
 
 roles-antag-nuclear-operative-corpsman-name = Nuclear operative corpsman
 roles-antag-nuclear-operative-corpsman-objective = The team's combat medic tasked with keeping everyone alive and kicking.
+
+roles-antag-menace-skeleton-name = Menace Skeleton
+roles-antag-menace-skeleton-objective = Rattle 'Em
+
+roles-antag-skia-name = Skia
+roles-antag-skia-objective = Rend souls from the living.
+
+roles-antag-syndicate-armsdealer-name = Arms Dealer
+roles-antag-syndicate-armsdealer-objective = Sell your firearms and stay away from the law.
+
+roles-antag-asakim-name = Asakim
+roles-antag-asakim-objective = Serve the ancient directives of your ship's AI.

@@ -21,7 +21,7 @@
     priceMultiplier: 0
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.55
-  - type: Food
+  - type: Edible
     requiresSpecialDigestion: true
   - type: SolutionContainerManager
     solutions:
@@ -102,7 +102,7 @@
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
   id: ClothingOuterWinterCap
-  name: station administrator's winter coat # L5
+  name: captain's winter coat
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -178,7 +178,7 @@
 - type: entity
   parent: [ ClothingOuterWinterCoatToggleable, BaseCentcommContraband ]
   id: ClothingOuterWinterCentcom
-  name: Central Administration winter coat
+  name: CentComm winter coat
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -599,7 +599,7 @@
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband]
   id: ClothingOuterWinterRD
-  name: Research Director's winter coat # DeltaV - Epistemics Department replacing Science # L5 undooo
+  name: mystagogue's winter coat # DeltaV - Epistemics Department replacing Science
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
@@ -741,12 +741,11 @@
     clothingPrototype: ClothingHeadHatHoodWinterSci
 
 ################################################################
-# L5 - warden to armorer
 - type: entity
   parent: [ClothingOuterArmorWarden, ClothingOuterArmoredWinterCoatToggleable, BaseSecurityContraband] # DeltaV - Replaced ClothingOuterWinterCoatToggleable with ClothingOuterArmoredWinterCoatToggleable
   id: ClothingOuterWinterWarden
-  name: armorer's armored winter coat
-  description: A sturdy, utilitarian winter coat designed to protect an armorer from any brig-bound threats and hypothermic events.
+  name: warden's armored winter coat
+  description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
@@ -759,7 +758,7 @@
 - type: entity
   parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband]
   id: ClothingOuterWinterWardenUnarmored
-  name: armorer's winter coat # L5 - warden to armorer
+  name: warden's winter coat
   description: A sturdy coat, a warm coat, but not an armored coat.
   components:
   - type: Sprite
@@ -884,9 +883,9 @@
       amount: 5
   - type: FlavorProfile
     flavors:
-      - cobwebs
+    - cobwebs
     ignoreReagents:
-      - Fiber
+    - Fiber
   - type: SolutionContainerManager
     solutions: # 15 (3 (fiber count of web) * 5 (to craft)) + 5 (magical crafting bonus)
       food:

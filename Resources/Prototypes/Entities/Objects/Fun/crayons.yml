@@ -21,7 +21,9 @@
       enum.CrayonUiKey.Key:
         type: CrayonBoundUserInterface
   - type: Crayon
-    capacity: 25
+    selectedState: like
+  - type: LimitedCharges
+    maxCharges: 25
   - type: Food
   - type: FlavorProfile
     flavors:
@@ -88,13 +90,35 @@
   - type: Crayon
     color: Red
     selectableColor: true
-    capacity: 30
+  - type: LimitedCharges
+    maxCharges: 30
   - type: Tag
     tags:
     - Write
     - Crayon
     - Recyclable
     - Trash
+
+- type: entity
+  parent: CrayonRainbow
+  id: CrayonInfinite # should not be player available to prevent decal spam
+  name: infinite crayon
+  components:
+  # L5 — Use magic crayon
+  - type: Sprite
+    sprite: _NF/Objects/Fun/magic_crayon.rsi
+    state: icon
+  - type: Item
+    sprite: _NF/Objects/Fun/magic_crayon.rsi
+    heldPrefix: icon
+  - type: Construction
+    graph: magic_crayon
+    node: magicCrayon
+  # End L5
+  - type: Crayon
+    deleteEmpty: false
+  - type: AutoRecharge
+    rechargeDuration: 0.1 # L5 — We trust our players
 
 - type: entity
   parent: Crayon

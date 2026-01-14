@@ -20,6 +20,9 @@
   id: Haram
 
 - type: Tag
+  id: Ingredient
+
+- type: Tag
   id: Jug # Let me put jugs in chem bags, please...
 
 - type: Tag
@@ -30,6 +33,9 @@
 
 - type: Tag
   id: Nightshade
+
+- type: Tag
+  id: PlantAnalyzer
 
 - type: Tag
   id: Synth

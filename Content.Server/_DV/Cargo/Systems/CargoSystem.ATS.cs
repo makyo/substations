@@ -16,6 +16,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Server.Shuttles.Systems;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -25,9 +26,9 @@ namespace Content.Server.Cargo.Systems;
 public sealed partial class CargoSystem
 {
     [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly ShuttleConsoleSystem _console = default!;
 
     public EntityUid? CargoMap;
 
@@ -83,16 +84,14 @@ public sealed partial class CargoSystem
             EnsureComp<StationMemberComponent>(gridUid).Station = arg.Station;
         }
 
-        // L5 - allow other shuttles to FTL to ATS for e.g: outpost
-        EnsureComp<FTLDestinationComponent>(mapUid);
-        // var ftl = EnsureComp<FTLDestinationComponent>(mapUid);
-        // ftl.Whitelist = new EntityWhitelist()
-        // {
-        //     Components =
-        //     [
-        //         _factory.GetComponentName(typeof(CargoShuttleComponent))
-        //     ]
-        // };
+        var ftl = EnsureComp<FTLDestinationComponent>(mapUid);
+        ftl.Whitelist = new EntityWhitelist()
+        {
+            Components =
+            [
+                Factory.GetComponentName<CargoShuttleComponent>()
+            ]
+        };
 
         _metaSystem.SetEntityName(mapUid, $"Automated Trade Station {_random.Next(1000):000}");
 

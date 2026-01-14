@@ -3,6 +3,7 @@ loadout-group-species-restriction = This item is not available for your current 
 
 # Miscellaneous
 loadout-group-trinkets = Trinkets
+loadout-group-jobtrinkets = Job trinkets
 loadout-group-glasses = Glasses
 loadout-group-backpack = Backpack
 loadout-group-instruments = Instruments
@@ -21,11 +22,11 @@ loadout-group-survival-mime = Mime Survival Box
 
 # Command
 # L5
-loadout-group-captain-head = System Administrator head
-loadout-group-captain-jumpsuit = System Administrator jumpsuit
-loadout-group-captain-neck = System Administrator neck
-loadout-group-captain-backpack = System Administrator backpack
-loadout-group-captain-outerclothing = System Administrator outer clothing
+loadout-group-captain-head = Station Administrator head
+loadout-group-captain-jumpsuit = Station Administrator jumpsuit
+loadout-group-captain-neck = Station Administrator neck
+loadout-group-captain-backpack = Station Administrator backpack
+loadout-group-captain-outerclothing = Station Administrator outer clothing
 
 loadout-group-hop-head = Head of Personnel head
 loadout-group-hop-jumpsuit = Head of Personnel jumpsuit
@@ -34,16 +35,19 @@ loadout-group-hop-backpack = Head of Personnel backpack
 loadout-group-hop-outerclothing = Head of Personnel outer clothing
 
 # Civilian
-loadout-group-passenger-jumpsuit = Passenger jumpsuit
-loadout-group-passenger-mask = Passenger mask
-loadout-group-passenger-gloves = Passenger gloves
-loadout-group-passenger-outerclothing = Passenger outer clothing
-loadout-group-passenger-shoes = Passenger shoes
-loadout-group-passenger-neck = Passenger neck
+# Begin DeltaV Changes - Rename Passenger to Assistant
+loadout-group-passenger-jumpsuit = Assistant jumpsuit
+loadout-group-passenger-mask = Assistant mask
+loadout-group-passenger-gloves = Assistant gloves
+loadout-group-passenger-outerclothing = Assistant outer clothing
+loadout-group-passenger-shoes = Assistant shoes
+loadout-group-passenger-neck = Assistant neck
+# End DeltaV Changes
 
 loadout-group-bartender-head = Bartender head
 loadout-group-bartender-jumpsuit = Bartender jumpsuit
 loadout-group-bartender-outerclothing = Bartender outer clothing
+loadout-group-bartender-shaker = Bartender shaker
 
 loadout-group-chef-head = Chef head
 loadout-group-chef-mask = Chef mask
@@ -60,6 +64,7 @@ loadout-group-chaplain-mask = Chaplain mask
 loadout-group-chaplain-jumpsuit = Chaplain jumpsuit
 loadout-group-chaplain-outerclothing = Chaplain outer clothing
 loadout-group-chaplain-neck = Chaplain neck
+loadout-group-chaplain-bible = Holy Book
 
 loadout-group-janitor-head = Janitor head
 loadout-group-janitor-jumpsuit = Janitor jumpsuit
@@ -127,12 +132,11 @@ loadout-group-atmospheric-technician-outerclothing = Atmospheric Technician oute
 loadout-group-atmospheric-technician-shoes = Atmospheric Technician shoes
 
 # Science
-# L5
-loadout-group-research-director-head = Research Director head
-loadout-group-research-director-neck = Research Director neck
-loadout-group-research-director-jumpsuit = Research Director jumpsuit
-loadout-group-research-director-outerclothing = Research Director outer clothing
-loadout-group-research-director-shoes = Research Director shoes
+loadout-group-research-director-head = Mystagogue head
+loadout-group-research-director-neck = Mystagogue neck
+loadout-group-research-director-jumpsuit = Mystagogue jumpsuit
+loadout-group-research-director-outerclothing = Mystagogue outer clothing
+loadout-group-research-director-shoes = Mystagogue shoes
 
 loadout-group-scientist-head = Scientist head
 loadout-group-scientist-neck = Scientist neck
@@ -151,10 +155,9 @@ loadout-group-head-of-security-jumpsuit = Head of Security jumpsuit
 loadout-group-head-of-security-neck = Head of Security neck
 loadout-group-head-of-security-outerclothing = Head of Security outer clothing
 
-# L5 - warden to armorer
-loadout-group-warden-head = Armorer head
-loadout-group-warden-jumpsuit = Armorer jumpsuit
-loadout-group-warden-outerclothing = Armorer outer clothing
+loadout-group-warden-head = Warden head
+loadout-group-warden-jumpsuit = Warden jumpsuit
+loadout-group-warden-outerclothing = Warden outer clothing
 
 loadout-group-security-head = Security head
 loadout-group-security-jumpsuit = Security jumpsuit

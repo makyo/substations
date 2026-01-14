@@ -474,6 +474,8 @@
         Heat: 0.3
         Radiation: 0.1
         Caustic: 0.2
+        Holy: 0.7 # DeltaV
+        Shadow: 0.7 # DeltaV
   - type: DamageOnShootProtection # imp
     slots: OUTERCLOTHING
     damageProtection:
@@ -1084,7 +1086,7 @@
     damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
-  - type: StaminaResistance
+  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
     damageCoefficient: 0.15 # Needs 21 hits with a disabler to stun :godo:
   - type: Armor
     modifiers:
