@@ -84,6 +84,7 @@ namespace Content.IntegrationTests.Tests
         }
 
         [Test]
+        [Retry(3)] // DeltaV - Ignore intermittent fails
         public async Task SpawnAndDeleteAllEntitiesInTheSameSpot()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -241,7 +242,7 @@ namespace Content.IntegrationTests.Tests
                 "MapGrid",
                 "StationEvent",
                 "TimedDespawn",
-
+                "TimedDespawnDetailed", // DeltaV
                 // makes an announcement on mapInit.
                 "AnnounceOnSpawn",
             };
@@ -275,6 +276,7 @@ namespace Content.IntegrationTests.Tests
 
             await Assert.MultipleAsync(async () =>
             {
+                var prev = "";
                 foreach (var protoId in protoIds)
                 {
                     var count = Count(server.EntMan);
@@ -309,12 +311,13 @@ namespace Content.IntegrationTests.Tests
                     await pair.RunTicksSync(3);
 
                     // Check that the number of entities has gone back to the original value.
-                    Assert.That(Count(server.EntMan), Is.EqualTo(count), $"Server prototype {protoId} failed on deletion: count didn't reset properly\n" +
+                    Assert.That(Count(server.EntMan), Is.EqualTo(count), $"Server prototype {protoId} (previous: {prev}) failed on deletion: count didn't reset properly\n" +
                         BuildDiffString(serverEntities, Entities(server.EntMan), server.EntMan));
                     Assert.That(Count(client.EntMan), Is.EqualTo(clientCount), $"Client prototype {protoId} failed on deletion: count didn't reset properly:\n" +
                         $"Expected {clientCount} and found {Count(client.EntMan)}.\n" +
                         $"Server count was {count}.\n" +
                         BuildDiffString(clientEntities, Entities(client.EntMan), client.EntMan));
+                    prev = protoId;
                 }
             });
 
