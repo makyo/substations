@@ -50,7 +50,7 @@
 - type: entity
   parent: [IDCardStandard, BaseGrandTheftContraband]
   id: CaptainIDCard
-  name: captain ID card
+  name: station administrator ID card # L5
   components:
   - type: Sprite
     layers:
@@ -138,7 +138,7 @@
 - type: entity
   parent: IDCardStandard
   id: RDIDCard
-  name: mystagogue ID card # DeltaV - Epistemics Department replacing Science
+  name: research director ID card
   components:
   - type: Sprite
     layers:
@@ -993,7 +993,7 @@
 - type: entity
   parent: [ SyndicateIDCard, BaseSyndicateContraband ]
   id: SyndiOperativeIDCard
-  name: gorlex operative ID card # DeltaV - slight name change
+  name: GEX operative ID card # L5 - slight name change
   components:
   - type: Sprite
     layers:
@@ -1010,7 +1010,7 @@
 - type: entity
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
   id: SyndiAgentIDCard # DeltaV - Nukie agent is still agent
-  name: gorlex agent ID card # DeltaV - slight name change
+  name: GEX agent ID card # L5 - slight name change
   components:
   - type: Sprite
     layers:
@@ -1026,7 +1026,7 @@
 - type: entity
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
   id: SyndiCommanderIDCard
-  name: gorlex commander ID card # DeltaV - slight name change
+  name: GEX commander ID card # L5 - slight name change
   components:
   - type: Sprite
     layers:
