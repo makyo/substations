@@ -67,6 +67,7 @@
   #- PKAUpgradeFireRate
   # End DeltaV Removals
   - WeaponGauntletGorilla
+  - WeaponMicrowaveEmitter # DeltaV - Microwave emitter
 
 - type: latheRecipePack
   id: FauxTiles
