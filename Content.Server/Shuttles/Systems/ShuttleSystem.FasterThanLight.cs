@@ -36,8 +36,10 @@ public sealed partial class ShuttleSystem
      * This is a way to move a shuttle from one location to another, via an intermediate map for fanciness.
      */
 
-    private readonly SoundSpecifier _startupSound =
-        new SoundPathSpecifier("/Audio/_L5/Effects/Shuttle/hyperspace_begin.ogg"); // L5 — Updated sound with no volume change.
+    private readonly SoundSpecifier _startupSound = new SoundPathSpecifier("/Audio/_L5/Effects/Shuttle/hyperspace_begin.ogg")
+    {
+        Params = AudioParams.Default.WithVolume(-2f), // L5 – was 5f
+    };
 
     private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_end.ogg")
     {
