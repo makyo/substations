@@ -576,7 +576,7 @@ public abstract partial class InventorySystem
             // Give me liberty, give me death
             // TODO: Give me an API that can tell the difference between a virtual item and an electropak being removed.
             if (!HasComp<AttachedClothingComponent>(item))
-                args.Giblets.Add(item);
+                args.GibbedParts.Add(item);
         }
     }
 }
