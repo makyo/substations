@@ -670,6 +670,9 @@ FoodDonutJellySlugcat: FoodDonutJellyScurret
 # 2025-08-29
 PrefilledSyringe: Syringe
 
+# 2025-09-12
+BaseChemistryEmptyVial: ChemistryEmptyVial
+
 # 2025-10-01
 SimpleXenoArtifact: ComplexXenoArtifact
 MediumXenoArtifact: ComplexXenoArtifact
