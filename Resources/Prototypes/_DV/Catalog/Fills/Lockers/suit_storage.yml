@@ -3,20 +3,22 @@
   parent: SuitStorageSec
   suffix: Security, DeltaV
   components:
-  - type: StorageFill
-    contents:
-    - id: OxygenTankFilled
-      amount: 2
-    - id: ClothingOuterHardsuitCombatOfficer
-      amount: 2
-    - id: ClothingMaskGasSecurity
-      amount: 2
-    - id: ClothingShoesBootsSecurityMagboots
-      amount: 2
-    - id: JetpackSecurityFilled
-      amount: 2
-    - id: HandheldGPSBasic
-      amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: OxygenTankFilled
+          amount: 2
+        - id: ClothingOuterHardsuitCombatOfficer
+          amount: 2
+        - id: ClothingMaskGasSecurity
+          amount: 2
+        - id: ClothingShoesBootsSecurityMagboots
+          amount: 2
+        - id: JetpackSecurityFilled
+          amount: 2
+        - id: HandheldGPSBasic
+          amount: 2
 
 #Paramedic hardsuit
 - type: entityTable

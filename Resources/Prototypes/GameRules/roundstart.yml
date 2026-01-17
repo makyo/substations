@@ -22,12 +22,36 @@
     rules:
     - id: Thief
       prob: 0.5
-    #- id: SubWizard # DeltaV - removed until its touched up
-    #  prob: 0.05
+    - id: SubWizard
+      prob: 0.05
+    - id: Xenoborgs
+      prob: 0.05
 
 - type: entity
   parent: BaseGameRule
   id: SubGamemodesRuleNoWizard
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
+    - id: Xenoborgs
+      prob: 0.05
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleNoXenoborg
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
+    - id: SubWizard
+      prob: 0.05
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleNoWizardNoXenoborg
   components:
   - type: SubGamemodes
     rules:
@@ -114,7 +138,8 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 10 # DeltaV - was 20
+    minTotalPlayers: 35 # DeltaV
   - type: LoadMapRule
     mapPath: /Maps/Nonstations/nukieplanet.yml
   - type: NukieOperation # DeltaV - Nukie operations!
@@ -178,6 +203,8 @@
         - Syndicate
       mindRoles:
       - MindRoleNukeops
+  - type: DynamicRuleCost
+    cost: 200
 
 - type: entity
   abstract: true
@@ -193,6 +220,8 @@
     maxDifficulty: 5
   - type: AntagSelection
     agentName: traitor-round-end-agent-name
+  - type: DynamicRuleCost
+    cost: 100
 
 - type: entity
   parent: BaseTraitorRule
@@ -212,7 +241,7 @@
       blacklist:
         components:
         - AntagImmune
-      lateJoinAdditional: true
+      lateJoinAdditional: true # L5
       mindRoles:
       - MindRoleTraitor
 
@@ -283,6 +312,8 @@
       - type: HeadRevolutionary
       mindRoles:
       - MindRoleHeadRevolutionary
+  - type: DynamicRuleCost
+    cost: 200
 
 - type: entity
   id: Sandbox
@@ -301,12 +332,19 @@
   parent: BaseGameRule
   id: BaseWizardRule
   components:
-  - type: AntagObjectives
-    objectives:
-    - WizardSurviveObjective
-    - WizardDemonstrateObjective
+  #- type: AntagObjectives # DeltaV - begin changes
+    #objectives:
+    #- WizardSurviveObjective
+    #- WizardDemonstrateObjective
+  - type: AntagRandomObjectives
+    sets:
+    - groups: WizardObjectiveGroupPrimaryDelta
+      maxPicks: 1
+    - groups: WizardObjectiveGroupSecondaryDelta
+      maxPicks: 2
+    maxDifficulty: 5 # DeltaV - end changes
   - type: LoadMapRule
-    mapPath: /Maps/Nonstations/wizardsden.yml
+    gridPath: /Maps/Shuttles/wizard.yml # DV - was /Maps/Nonstations/wizardsden.yml but switched it back for now
   - type: RuleGrids
   - type: AntagSelection
   - type: AntagLoadProfileRule
@@ -346,13 +384,16 @@
         nameFormat: name-format-wizard
       mindRoles:
       - MindRoleWizard
+  - type: DynamicRuleCost
+    cost: 150
 
 - type: entity
   id: Zombie
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 10 # DeltaV - was 20
+    minTotalPlayers: 30 # DeltaV
     delay:
       min: 600
       max: 900
@@ -390,6 +431,8 @@
         - RadioSyndicateImplant
       mindRoles:
       - MindRoleInitialInfected
+  - type: DynamicRuleCost
+    cost: 200
 
 # This rule makes the chosen players unable to get other antag rules, as a way to prevent metagaming job rolls.
 # Put this before antags assigned to station jobs, but after non-job antags (NukeOps/Wiz).
@@ -418,11 +461,28 @@
       - !type:NestedSelector
         tableId: BasicAntagEventsTable
       - !type:NestedSelector
+        tableId: ModerateAntagEventsTable
+      - !type:NestedSelector
         tableId: CargoGiftsTable
       - !type:NestedSelector
         tableId: CalmPestEventsTable
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
+
+- type: entityTable
+  id: DynamicGameRulesTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - !type:NestedSelector
+      tableId: BasicCalmEventsTable
+    - !type:NestedSelector
+      tableId: BasicAntagEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: CalmPestEventsTable
+    - !type:NestedSelector
+      tableId: SpicyPestEventsTable
 
 - type: entityTable
   id: SpaceTrafficControlTable
@@ -448,17 +508,31 @@
       tableId: BasicGameRulesTable
 
 - type: entity
+  id: DynamicStationEventScheduler # this isn't the dynamic mode, but rather the station event scheduler used for dynamic
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: DynamicGameRulesTable
+
+- type: entity
   id: RampingStationEventScheduler
   parent: BaseGameRule
   components:
   - type: NextEvent # DeltaV: Queue Event for precognition
   - type: RampingStationEventScheduler
     timeKeyPoints: # DeltaV
-    - 14, 16
-    - 32, 8
-    - 32, 4
-    - 8, 2
-    - 32, 8
+    - 10, 10
+    - 10, 6
+    - 10, 1
+    - 10, 3
+    - 15, 5
+    - 15, 4
+    - 20, 2
+    - 10, 1
+    - 10, 4
+    - 10, 3
+    - 70, 4
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
 
@@ -499,6 +573,7 @@
     - id: BasicTrashVariationPass
     - id: SolidWallRustingVariationPass
     - id: ReinforcedWallRustingVariationPass
+    - id: CutWireVariationPass
     - id: BasicPuddleMessVariationPass
       prob: 0.99
       orGroup: puddleMess
@@ -511,7 +586,7 @@
     #- id: SolarPanelEmptyVariationPass # DeltaV
     - id: BasicDecalDirtVariationPass
     - id: BasicDecalGraffitiVariationPass
-    - id: BasicDecalBrunsVariationPass
+    - id: BasicDecalBurnsVariationPass
       prob: 0.50
       orGroup: monospaceDecals
     - id: BasicDecalDirtMonospaceVariationPass
