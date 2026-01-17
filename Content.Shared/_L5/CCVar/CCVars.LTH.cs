@@ -11,28 +11,28 @@ public sealed partial class L5CCVars
         CVarDef.Create("l5.long_term_health.enabled", true, CVar.REPLICATED);
 
     /// <summary>
-    /// The duration for temporary long term effects and damage return periods.
+    /// The duration for long term effects and damage return periods.
     /// </summary>
-    public static readonly CVarDef<int> LongTermEffectsDuration =
-        CVarDef.Create("l5.long_term_health.duration", 60 * 20, CVar.REPLICATED);
+    public static readonly CVarDef<float> LongTermEffectsDuration =
+        CVarDef.Create("l5.long_term_health.duration", 60f * 15f, CVar.REPLICATED);
 
     /// <summary>
-    /// Whether or not healing should get slower the more times a temporary effect is applied
+    /// The multiplier for severe versus mild long term effects
+    /// </summary>
+    public static readonly CVarDef<float> LongTermEffectSevereMultiplier =
+        CVarDef.Create("l5.long_term_health.severe_factor", 1.5f, CVar.REPLICATED);
+
+    /// <summary>
+    /// Whether or not healing should get slower the more times an effect is applied
     /// </summary>
     public static readonly CVarDef<bool> LongTermEffectsHealDecayEnabled =
-        CVarDef.Create("l5.long_term_health.heal_decay_nabled", true, CVar.REPLICATED);
+        CVarDef.Create("l5.long_term_health.heal_decay_enabled", true, CVar.REPLICATED);
 
     /// <summary>
-    /// The factor by which healing gets slower the more times a temporary effect is applied
+    /// The factor by which healing gets slower the more times an effect is applied
     /// </summary>
     public static readonly CVarDef<float> LongTermEffectsHealDecayFactor =
         CVarDef.Create("l5.long_term_health.heal_decay_factor", 1.5f, CVar.REPLICATED);
-
-    /// <summary>
-    /// Whether long term effects can be permanent (through the end of the round).
-    /// </summary>
-    public static readonly CVarDef<bool> PermanentLongTermEffectsEnabled =
-        CVarDef.Create("l5.long_term_health.permanent_enabled", false, CVar.REPLICATED);
 
     /// <summary>
     /// The factor by which laying down reduces effects or speeds recovery.
@@ -43,20 +43,16 @@ public sealed partial class L5CCVars
         CVarDef.Create("l5.long_term_health.rest_factor", 2f, CVar.REPLICATED);
 
     /// <summary>
-    /// How many times a temporary effect can be applied before it becomes permanent
-    ///
-    /// Only applies if permanent LTEs are enabled.
+    /// How many times a mild mild effect can be applied before it becomes severe
     /// </summary>
-    public static readonly CVarDef<int> RepeatsToBecomePermanent =
-        CVarDef.Create("l5.long_term_health.repeats_to_become_permanent", 2, CVar.REPLICATED);
+    public static readonly CVarDef<int> RepeatsToBecomeSevere =
+        CVarDef.Create("l5.long_term_health.repeats_to_become_severe", 2, CVar.REPLICATED);
 
     /// <summary>
-    /// The chance that temporary effects become permanent even if the permanent threshold isn't reached.
-    ///
-    /// Only applies if permanent LTEs are enabled.
+    /// The chance that mild effects become severe even if the severe threshold isn't reached.
     /// </summary>
-    public static readonly CVarDef<float> ChanceToBecomePermanent =
-        CVarDef.Create("l5.long_term_health.permanent_chance", 0.05f, CVar.REPLICATED);
+    public static readonly CVarDef<float> ChanceToBecomeSevere =
+        CVarDef.Create("l5.long_term_health.severe_chance", 0.05f, CVar.REPLICATED);
 
     // BRUTE Injuries
 
@@ -65,57 +61,57 @@ public sealed partial class L5CCVars
     /// <summary>
     /// The threshold at which the pain trait is added temporarily.
     /// </summary>
-    public static readonly CVarDef<float> BrutePainTemporaryThreshold =
-        CVarDef.Create("l5.long_term_health.brute.pain.temporary_threshold", 100f, CVar.REPLICATED);
+    public static readonly CVarDef<float> BrutePainMildThreshold =
+        CVarDef.Create("l5.long_term_health.brute.pain.mild_threshold", 100f, CVar.REPLICATED);
 
     /// <summary>
-    /// The threshold at which the pain trait is added permanently.
+    /// The threshold at which the pain trait is added severely.
     ///
-    /// Only applies if permanent LTEs are enabled.
+    /// Only applies if severe LTEs are enabled.
     /// </summary>
-    public static readonly CVarDef<float> BrutePainPermanentThreshold =
-        CVarDef.Create("l5.long_term_health.brute.pain.permanent_threshold", 200f, CVar.REPLICATED);
+    public static readonly CVarDef<float> BrutePainSevereThreshold =
+        CVarDef.Create("l5.long_term_health.brute.pain.severe_threshold", 200f, CVar.REPLICATED);
 
     // -- Impaired Mobility
 
     /// <summary>
-    /// The threshold at which BRUTE damage to the body leads to temporary impaired mobility.
+    /// The threshold at which BRUTE damage to the body leads to mild impaired mobility.
     /// </summary>
-    public static readonly CVarDef<float> BruteImpairedMobilityBodyTemporaryThreshold =
-        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.body.temporary_threshold", 100f, CVar.REPLICATED);
+    public static readonly CVarDef<float> BruteImpairedMobilityBodyMildThreshold =
+        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.body.mild_threshold", 100f, CVar.REPLICATED);
 
     /// <summary>
-    /// The threshold at which BRUTE damage to the body leads to permanent impaired mobility.
+    /// The threshold at which BRUTE damage to the body leads to severe impaired mobility.
     ///
-    /// Only applies if permanent LTEs are enabled.
+    /// Only applies if severe LTEs are enabled.
     /// </summary>
-    public static readonly CVarDef<float> BruteImpairedMobilityBodyPermanentThreshold =
-        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.body.permanent_threshold", 200f, CVar.REPLICATED);
+    public static readonly CVarDef<float> BruteImpairedMobilityBodySevereThreshold =
+        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.body.severe_threshold", 200f, CVar.REPLICATED);
 
     /// <summary>
-    /// The threshold at which injuries to the legs temporarily adds the impaired mobility trait.
+    /// The threshold at which injuries to the legs leads to mild impaired mobility.
     /// </summary>
-    public static readonly CVarDef<float> BruteImpairedMobilityLegsTemporaryThreshold =
-        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.legs.temporary_threshold", 50f, CVar.REPLICATED);
+    public static readonly CVarDef<float> BruteImpairedMobilityLegsMildThreshold =
+        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.legs.mild_threshold", 50f, CVar.REPLICATED);
 
     /// <summary>
-    /// The threshold at which injuries to the legs permanently adds the impaired mobility trait.
+    /// The threshold at which injuries to the legs leads to severe impaired mobility.
     ///
-    /// Only applies if permanent LTEs are enabled.
+    /// Only applies if severe LTEs are enabled.
     /// </summary>
-    public static readonly CVarDef<float> BruteImpairedMobilityLegsPermanentThreshold =
-        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.legs.permanent_threshold", 100f, CVar.REPLICATED);
+    public static readonly CVarDef<float> BruteImpairedMobilityLegsSevereThreshold =
+        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.legs.severe_threshold", 100f, CVar.REPLICATED);
 
     // -- Traumatic Brain Injuries
 
     /// <summary>
-    /// The chance that receiving double the threshold of any of these makes them a permanent effect requiring ongoing
+    /// The chance that receiving double the threshold of any of these makes them a severe effect requiring ongoing
     /// treatment.
     ///
-    /// Only applies if permanent LTEs are enabled.
+    /// Only applies if severe LTEs are enabled.
     /// </summary>
-    public static readonly CVarDef<float> TBIPermanentChance =
-        CVarDef.Create("l5.long_term_health.brute.tbi.permanent_chance", 0.25f, CVar.REPLICATED);
+    public static readonly CVarDef<float> TBISevereChance =
+        CVarDef.Create("l5.long_term_health.brute.tbi.severe_chance", 0.25f, CVar.REPLICATED);
 
     /// <summary>
     /// The amount of blunt damage received to the head to trigger a woozy status.
@@ -172,28 +168,28 @@ public sealed partial class L5CCVars
     // AIRLOSS injuries
 
     /// <summary>
-    /// The threshold at which asphyxiation leads to temporary lung damage, represented by return airloss.
+    /// The threshold at which asphyxiation leads to mild lung damage, represented by return asphyxiation.
     /// </summary>
-    public static readonly CVarDef<float> AsphyxLungDamageTemporaryThreshold =
-        CVarDef.Create("l5.long_term_health.airloss.lung_damage.temporary_threshold", 75f, CVar.REPLICATED);
+    public static readonly CVarDef<float> AsphyxLungDamageMildThreshold =
+        CVarDef.Create("l5.long_term_health.airloss.lung_damage.mild_threshold", 75f, CVar.REPLICATED);
 
     /// <summary>
-    /// The threshold at which asphyxiation leads to permanent lung damage, represented by return airloss.
+    /// The threshold at which asphyxiation leads to severe lung damage, represented by return asphyxiation.
     /// </summary>
-    public static readonly CVarDef<float> AsphyxLungDamagePermanentThreshold =
-        CVarDef.Create("l5.long_term_health.airloss.lung_damage.permanent_threshold", 150f, CVar.REPLICATED);
+    public static readonly CVarDef<float> AsphyxLungDamageSevereThreshold =
+        CVarDef.Create("l5.long_term_health.airloss.lung_damage.severe_threshold", 150f, CVar.REPLICATED);
 
     /// <summary>
-    /// The threshold at which AIRLOSS leads to temporary brain damage by way of oxygen deprivation.
+    /// The threshold at which AIRLOSS leads to mild brain damage by way of oxygen deprivation.
     /// </summary>
-    public static readonly CVarDef<float> AirlossBrainDamageTemporaryThreshold =
-        CVarDef.Create("l5.long_term_health.airloss.brain_damage.temporary_threshold", 150f, CVar.REPLICATED);
+    public static readonly CVarDef<float> AirlossBrainDamageMildThreshold =
+        CVarDef.Create("l5.long_term_health.airloss.brain_damage.mild_threshold", 150f, CVar.REPLICATED);
 
     /// <summary>
-    /// The threshold at which AIRLOSS leads to temporary brain damage by way of oxygen deprivation.
+    /// The threshold at which AIRLOSS leads to severe brain damage by way of oxygen deprivation.
     /// </summary>
-    public static readonly CVarDef<float> AirlossBrainDamagePermanentThreshold =
-        CVarDef.Create("l5.long_term_health.airloss.brain_damage.permanent_threshold", 200f, CVar.REPLICATED);
+    public static readonly CVarDef<float> AirlossBrainDamageSevereThreshold =
+        CVarDef.Create("l5.long_term_health.airloss.brain_damage.severe_threshold", 200f, CVar.REPLICATED);
 
     // GENE Injuries
 
@@ -201,6 +197,7 @@ public sealed partial class L5CCVars
     /// The amount of genetic damage at which point a new random LTE is rolled.
     ///
     /// E.g: if set to 25, roll a new one at 25, 50, 75, etc.
+    /// </summary>
     public static readonly CVarDef<float> GeneticNewEffectRollAmount =
         CVarDef.Create("l5.long_term_health.genetic.new_effect_roll_amount", 25f, CVar.REPLICATED);
 }

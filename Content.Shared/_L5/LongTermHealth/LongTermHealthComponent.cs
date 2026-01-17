@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace Content.Shared._L5.LongTermHealth;
 
 [RegisterComponent]
@@ -8,19 +10,19 @@ public sealed partial class LongTermHealthComponent : Component
     /// Effects to be applied once the threshold to apply them arrives.
     /// </summary>
     [DataField]
-    public List<Effect> UpcomingEffects = new();
+    public Dictionary<EffectType, bool> UpcomingEffects = new();
 
     /// <summary>
     /// Effects currently applied to the player and their countdowns
     /// </summary>
     [DataField]
-    public Dictionary<Effect, TimeSpan> CurrentEffects = new();
+    public Dictionary<EffectType, TimeSpan> CurrentEffects = new();
 
     /// <summary>
     /// Effects that hve been applied in the past and how many times they've been applied.
     /// </summary>
     [DataField]
-    public Dictionary<Effect, int> PreviousEffects = new();
+    public Dictionary<EffectType, int> PreviousEffects = new();
 
     /// <summary>
     /// How often the effects should update. Doesn't need to be too frequently.
@@ -34,19 +36,77 @@ public sealed partial class LongTermHealthComponent : Component
     public TimeSpan NextUpdate = TimeSpan.Zero;
 }
 
-public enum Effect
+public enum EffectType
 {
-    TemporaryPain,
-    PermanentPain,
-    TemporaryImpairedMobility,
-    PermanentImpairedMobility,
-    Woozy,
-    Moody,
-    Paracusia,
-    HearingLoss,
-    VisionLoss,
+    MildPain,
+    SeverePain,
+
+    MildImpairedMobility,
+    SevereImpairedMobility,
+
+    MildMoody,
+    SevereMoody,
+    MildHearingLoss,
+    SevereHearingLoss,
+    MildParacusia,
+    SevereParacusia,
+    MildVisionLoss,
+    SevereVisionLoss,
+    MildWoozy,
+    SevereWoozy,
+
     BurnReturn,
     PoisonReturn,
-    TemporaryLungDamage,
-    PermanentLungDamage,
+
+    MildBrainDamage,
+    SevereBrainDamage,
+    MildLungDamage,
+    SevereLungDamage,
+}
+
+public static class EffectTypeExtensions
+{
+    public static EffectType[] MildEffects = new EffectType[]
+    {
+        EffectType.MildPain,
+        EffectType.MildImpairedMobility,
+        EffectType.MildLungDamage,
+        EffectType.MildMoody,
+        EffectType.MildHearingLoss,
+        EffectType.MildParacusia,
+        EffectType.MildVisionLoss,
+        EffectType.MildWoozy,
+    };
+
+    public static EffectType[] SevereEffects = new EffectType[]
+    {
+        EffectType.SeverePain,
+        EffectType.SevereImpairedMobility,
+        EffectType.SevereLungDamage,
+        EffectType.SevereMoody,
+        EffectType.SevereHearingLoss,
+        EffectType.SevereParacusia,
+        EffectType.SevereVisionLoss,
+        EffectType.SevereWoozy,
+    };
+
+    public static EffectType[] MildTBIs = new EffectType[]
+    {
+        EffectType.MildHearingLoss,
+        EffectType.MildMoody,
+        EffectType.MildParacusia,
+        EffectType.MildVisionLoss,
+        EffectType.MildWoozy,
+    };
+
+    public static EffectType[] SevereTBIs = new EffectType[]
+    {
+        EffectType.SevereHearingLoss,
+        EffectType.SevereMoody,
+        EffectType.SevereParacusia,
+        EffectType.SevereVisionLoss,
+        EffectType.SevereWoozy,
+    };
+
+    public static EffectType[] AllTBIs = MildTBIs.Concat(SevereTBIs).ToArray();
 }

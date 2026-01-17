@@ -1,18 +1,34 @@
 using Content.Shared._L5.CCVar;
+using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.FixedPoint;
+using Content.Shared.Toilet.Components;
 using Robust.Shared.Configuration;
+using Robust.Shared.Random;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._L5.LongTermHealth;
 
-public sealed class LongTermHealthSystem : EntitySystem
+public sealed partial class LongTermHealthSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+
+    private float mildEffectSeconds, severeEffectSeconds, healDecayFactor;
+    private bool healDecayEnabled;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        mildEffectSeconds = _configurationManager.GetCVar(L5CCVars.LongTermEffectsDuration);
+        severeEffectSeconds = mildEffectSeconds * _configurationManager.GetCVar(L5CCVars.LongTermEffectSevereMultiplier);
+        healDecayEnabled = _configurationManager.GetCVar(L5CCVars.LongTermEffectsHealDecayEnabled);
+        healDecayFactor = 1f;
+        if (healDecayEnabled)
+            healDecayFactor = _configurationManager.GetCVar(L5CCVars.LongTermEffectsHealDecayFactor);
 
         SubscribeLocalEvent<LongTermHealthComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<LongTermHealthComponent, DamageChangedEvent>(OnDamageChanged);
@@ -25,14 +41,11 @@ public sealed class LongTermHealthSystem : EntitySystem
 
     private void OnDamageChanged(EntityUid uid, LongTermHealthComponent component, DamageChangedEvent args)
     {
-        var temporaryEffectSeconds = _configurationManager.GetCVar(L5CCVars.LongTermEffectsDuration);
-        var healDecayFactor = 1f;
-        if (_configurationManager.GetCVar(L5CCVars.LongTermEffectsHealDecayEnabled))
-            healDecayFactor = _configurationManager.GetCVar(L5CCVars.LongTermEffectsHealDecayFactor);
+        if (args.DamageDelta == null)
+            return;
 
-        // Decide, based on the damage specifier, what events need to be added to upcoming, moved to current, or moved to past.
-
-        // Apply any events as needed
+        HandleAirloss(uid, ref component, args);
+        HandleBrute(uid, ref component, args);
         // Note to self: don't add to datafields if the player already has traits with those effects (don't add pain if they have the chronic pain trait)
         // component.TemporaryEffectCountdowns[key] = TimeSpan.FromSeconds(temporaryEffectSeconds)
     }
@@ -62,6 +75,17 @@ public sealed class LongTermHealthSystem : EntitySystem
             }
 
             comp.NextUpdate += comp.UpdateInterval;
+        }
+    }
+
+    private void ClearUpcomingTBIs(ref LongTermHealthComponent component)
+    {
+        foreach (var tbi in EffectTypeExtensions.AllTBIs)
+        {
+            if (component.UpcomingEffects.ContainsKey(tbi))
+            {
+                component.UpcomingEffects.Remove(tbi);
+            }
         }
     }
 }
