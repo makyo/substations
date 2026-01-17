@@ -17,6 +17,18 @@ public sealed partial class L5CCVars
         CVarDef.Create("l5.long_term_health.duration", 60 * 20, CVar.REPLICATED);
 
     /// <summary>
+    /// Whether or not healing should get slower the more times a temporary effect is applied
+    /// </summary>
+    public static readonly CVarDef<bool> LongTermEffectsHealDecayEnabled =
+        CVarDef.Create("l5.long_term_health.heal_decay_nabled", true, CVar.REPLICATED);
+
+    /// <summary>
+    /// The factor by which healing gets slower the more times a temporary effect is applied
+    /// </summary>
+    public static readonly CVarDef<float> LongTermEffectsHealDecayFactor =
+        CVarDef.Create("l5.long_term_health.heal_decay_factor", 1.5f, CVar.REPLICATED);
+
+    /// <summary>
     /// Whether long term effects can be permanent (through the end of the round).
     /// </summary>
     public static readonly CVarDef<bool> PermanentLongTermEffectsEnabled =

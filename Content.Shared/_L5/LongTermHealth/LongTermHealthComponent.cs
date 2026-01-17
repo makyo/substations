@@ -11,16 +11,10 @@ public sealed partial class LongTermHealthComponent : Component
     public List<Effect> UpcomingEffects = new();
 
     /// <summary>
-    /// Effects currently applied to the player.
+    /// Effects currently applied to the player and their countdowns
     /// </summary>
     [DataField]
-    public List<Effect> CurrentEffects = new();
-
-    /// <summary>
-    /// Any countdowns for temporary effects currently applied.
-    /// </summary>
-    [DataField]
-    public Dictionary<Effect, TimeSpan> TemporaryEffectCountdowns = new();
+    public Dictionary<Effect, TimeSpan> CurrentEffects = new();
 
     /// <summary>
     /// Effects that hve been applied in the past and how many times they've been applied.
