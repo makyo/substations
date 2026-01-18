@@ -1,6 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
-using Content.Server.Popups;
+using Content.Shared.Popups;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
 using Robust.Shared.Audio;
@@ -183,7 +183,7 @@ public abstract partial class SharedChatSystem
             if (!AllowedToUseEmote(source, emote))
                 continue;
 
-            validEmote |= TryInvokeEmoteEvent(uid, emote); // DeltaV / L5 - adjustment for wizden changes
+            validEmote |= TryInvokeEmoteEvent(source, emote); // DeltaV / L5 - adjustment for wizden changes
         }
 
         return validEmote; // DeltaV / L5
@@ -195,6 +195,14 @@ public abstract partial class SharedChatSystem
             {
                 trimEnd--;
             }
+
+            var trimStart = 0;
+            while (trimStart < trimEnd && char.IsPunctuation(textInput[trimStart]))
+            {
+                trimStart++;
+            }
+
+            return textInput[trimStart..trimEnd];
         }
 
     }
@@ -213,8 +221,8 @@ public abstract partial class SharedChatSystem
         }
 
         // Check the whitelist and blacklist
-        if (_whitelistSystem.IsWhitelistFail(emote.Whitelist, source) ||
-            _whitelistSystem.IsWhitelistPass(emote.Blacklist, source))
+        if (_whitelist.IsWhitelistFail(emote.Whitelist, source) ||
+            _whitelist.IsWhitelistPass(emote.Blacklist, source))
         {
             return false;
         }

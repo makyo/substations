@@ -150,7 +150,7 @@ public abstract partial class SharedChatSystem : EntitySystem
     /// <param name="channel">The channel that was requested, if any</param>
     /// <param name="quiet">Whether or not to generate an informative pop-up message.</param>
     /// <returns></returns>
-    public bool TryProcessRadioMessage(
+    public bool TryProccessRadioMessage(
         EntityUid source,
         string input,
         out string output,
@@ -352,7 +352,8 @@ public abstract partial class SharedChatSystem : EntitySystem
         ICommonSession? player = null,
         string? nameOverride = null,
         bool checkRadioPrefix = true,
-        bool ignoreActionBlocker = false)
+        bool ignoreActionBlocker = false,
+        string? color = null)
     { }
 
     /// <summary>
@@ -377,7 +378,8 @@ public abstract partial class SharedChatSystem : EntitySystem
         ICommonSession? player = null,
         string? nameOverride = null,
         bool checkRadioPrefix = true,
-        bool ignoreActionBlocker = false
+        bool ignoreActionBlocker = false,
+        string? color = null
         )
     { }
 
