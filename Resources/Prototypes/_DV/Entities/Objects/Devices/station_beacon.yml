@@ -100,13 +100,14 @@
   - type: NavMapBeacon
     defaultText: station-beacon-janitor-office
 
-- type: entity
-  parent: DefaultStationBeaconService
-  id: DefaultStationBeaconReporter
-  suffix: Reporter
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-reporter
+# Upstream now
+#- type: entity
+#  parent: DefaultStationBeaconService
+#  id: DefaultStationBeaconReporter
+#  suffix: Reporter
+#  components:
+#  - type: NavMapBeacon
+#    defaultText: station-beacon-reporter
 
 - type: entity
   parent: DefaultStationBeaconService
