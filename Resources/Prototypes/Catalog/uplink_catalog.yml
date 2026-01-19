@@ -710,7 +710,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 3 # DeltaV - was 4
+    Telecrystal: 3
   categories:
   - UplinkChemicals
 
