@@ -27,7 +27,7 @@ public abstract partial class SharedChatSystem
                     dict[lowerWord] = value.Add(emote);
 
                     var errMsg = $"Duplicate of emote word {lowerWord}";
-                    Log.Warning(errMsg);
+                    Log.Info(errMsg); // L5 – was warning
 
                     continue;
                 }
