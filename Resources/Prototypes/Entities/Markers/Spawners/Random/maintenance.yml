@@ -281,7 +281,7 @@
       - id: trayScanner
       - id: HandheldGPSBasic
       - id: HandLabeler
-      - id: GlowstickGreen
+      - id: GlowstickBase
       - id: Bucket
       - id: RadioHandheld
       - id: AppraisalTool

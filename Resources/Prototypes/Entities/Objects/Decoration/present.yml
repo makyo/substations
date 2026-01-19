@@ -368,7 +368,7 @@
         orGroup: GiftPool
       - id: Bola
         orGroup: GiftPool
-      - id: GlowstickGreen
+      - id: GlowstickBase
         orGroup: GiftPool
       - id: GlowstickBlue
         orGroup: GiftPool
