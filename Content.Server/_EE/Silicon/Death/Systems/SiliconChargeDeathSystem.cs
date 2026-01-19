@@ -4,8 +4,6 @@ using Content.Shared.Bed.Sleep;
 using Content.Server._EE.Silicon.Charge;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
-using Content.Shared.Power.Components;
-using Content.Shared.StatusEffectNew;
 
 namespace Content.Server._EE.Silicon.Death;
 
@@ -14,7 +12,6 @@ public sealed class SiliconDeathSystem : EntitySystem
     [Dependency] private readonly SleepingSystem _sleep = default!;
     [Dependency] private readonly SiliconChargeSystem _silicon = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!; // L5 - new status effects system
 
     public override void Initialize()
     {
@@ -40,7 +37,7 @@ public sealed class SiliconDeathSystem : EntitySystem
                 SiliconUnDead(uid, siliconDeadComp, batteryComp, uid);
     }
 
-    private void SiliconDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, PredictedBatteryComponent? batteryComp, EntityUid batteryUid)
+    private void SiliconDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
         var deadEvent = new SiliconChargeDyingEvent(uid, batteryComp, batteryUid);
         RaiseLocalEvent(uid, deadEvent);
@@ -48,8 +45,8 @@ public sealed class SiliconDeathSystem : EntitySystem
         if (deadEvent.Cancelled)
             return;
 
-        // L5 - new status effect system
-        _statusEffects.TrySetStatusEffectDuration(uid, SleepingSystem.StatusEffectForcedSleeping);
+        EntityManager.EnsureComponent<SleepingComponent>(uid);
+        EntityManager.EnsureComponent<ForcedSleepingStatusEffectComponent>(uid);
 
         if (TryComp(uid, out HumanoidAppearanceComponent? humanoidAppearanceComponent))
         {
@@ -62,10 +59,9 @@ public sealed class SiliconDeathSystem : EntitySystem
         RaiseLocalEvent(uid, new SiliconChargeDeathEvent(uid, batteryComp, batteryUid));
     }
 
-    private void SiliconUnDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, PredictedBatteryComponent? batteryComp, EntityUid batteryUid)
+    private void SiliconUnDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
-        // L5 - new status effect system
-        _statusEffects.TryRemoveStatusEffect(uid, SleepingSystem.StatusEffectForcedSleeping);
+        RemComp<ForcedSleepingStatusEffectComponent>(uid);
         _sleep.TryWaking(uid, true, null);
 
         siliconDeadComp.Dead = false;
@@ -84,10 +80,10 @@ public sealed class SiliconDeathSystem : EntitySystem
 public sealed class SiliconChargeDyingEvent : CancellableEntityEventArgs
 {
     public EntityUid SiliconUid { get; }
-    public PredictedBatteryComponent? BatteryComp { get; }
+    public BatteryComponent? BatteryComp { get; }
     public EntityUid BatteryUid { get; }
 
-    public SiliconChargeDyingEvent(EntityUid siliconUid, PredictedBatteryComponent? batteryComp, EntityUid batteryUid)
+    public SiliconChargeDyingEvent(EntityUid siliconUid, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
         SiliconUid = siliconUid;
         BatteryComp = batteryComp;
@@ -101,10 +97,10 @@ public sealed class SiliconChargeDyingEvent : CancellableEntityEventArgs
 public sealed class SiliconChargeDeathEvent : EntityEventArgs
 {
     public EntityUid SiliconUid { get; }
-    public PredictedBatteryComponent? BatteryComp { get; }
+    public BatteryComponent? BatteryComp { get; }
     public EntityUid BatteryUid { get; }
 
-    public SiliconChargeDeathEvent(EntityUid siliconUid, PredictedBatteryComponent? batteryComp, EntityUid batteryUid)
+    public SiliconChargeDeathEvent(EntityUid siliconUid, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
         SiliconUid = siliconUid;
         BatteryComp = batteryComp;
@@ -118,10 +114,10 @@ public sealed class SiliconChargeDeathEvent : EntityEventArgs
 public sealed class SiliconChargeAliveEvent : EntityEventArgs
 {
     public EntityUid SiliconUid { get; }
-    public PredictedBatteryComponent? BatteryComp { get; }
+    public BatteryComponent? BatteryComp { get; }
     public EntityUid BatteryUid { get; }
 
-    public SiliconChargeAliveEvent(EntityUid siliconUid, PredictedBatteryComponent? batteryComp, EntityUid batteryUid)
+    public SiliconChargeAliveEvent(EntityUid siliconUid, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
         SiliconUid = siliconUid;
         BatteryComp = batteryComp;
