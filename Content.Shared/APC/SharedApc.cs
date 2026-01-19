@@ -185,8 +185,7 @@ namespace Content.Shared.APC
         public readonly bool Tripped;
         public readonly bool PowerEnabled; // DeltaV
 
-        public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, float maxLoad, bool tripped)
-        public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, bool powerEnabled) // DeltaV - Add powerEnabled
+        public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, float maxLoad, bool tripped, bool powerEnabled) // DeltaV - Add powerEnabled
         {
             MainBreaker = mainBreaker;
             Power = power;
