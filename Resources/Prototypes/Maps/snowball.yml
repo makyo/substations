@@ -14,7 +14,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_rod.yml
+          emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_kaeri.yml
         - type: StationJobs
           availableJobs: # 49 roundstart jobs without interns,  75 total jobs including interns
             #command (7)

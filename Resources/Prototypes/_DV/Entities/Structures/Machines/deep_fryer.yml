@@ -62,55 +62,7 @@
       - Openable
     whitelist:
       components:
-      # It's what meat is.
-      - BodyPart
-      # Some clothes, shoes, uniforms.
-      - Butcherable
-      # It's already food.
       - Edible
-      - Seed
-      # A good source of fiber.
-      - Paper
-      # May as well let actual garbage get turned into food.
-      - SpaceGarbage
-      tags:
-      - Recyclable
-      - Trash
-      - Document
-    charredPrototype: FoodBadRecipe
-    goodReagents:
-      - ReagentId: Omnizine
-        Quantity: 1
-    badReagents:
-      - ReagentId: Toxin
-        Quantity: 2
-    wasteReagents:
-      - ReagentId: Charcoal
-        Quantity: 0.5
-      - ReagentId: Ash
-        Quantity: 0.5
-    # What food items are actually going to be improved by deep-frying?
-    # This is based on flavor profiles.
-    goodFlavors:
-      - bread
-      - bun
-      - donk
-      - dough
-      - fishy
-      - meaty
-      - pasta
-      - potatoes
-      - tofu
-      - onion
-      - mushroom
-    badFlavors:
-      - acid
-      - chocolate
-      - gunpowder
-      - minty
-      - raisins
-      - tea
-      - terrible
     solution: vat_oil
     fryingOils:
     - Cornoil
@@ -154,6 +106,7 @@
   - type: Edible
     edible: Drink
     solution: vat_oil
+    destroyOnEmpty: false
   - type: Appearance
   - type: Destructible
     thresholds:

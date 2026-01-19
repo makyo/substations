@@ -9,7 +9,7 @@
   rules:
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+    #- SpaceTrafficControlEventScheduler # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
     - SubGamemodesRule # DeltaV
@@ -26,7 +26,7 @@
   rules:
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+    #- SpaceTrafficControlEventScheduler # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -47,7 +47,7 @@
     - Xenoborgs
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+    ##- SpaceTrafficControlEventScheduler # L5 # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -73,7 +73,7 @@
     - MeteorSwarmMildScheduler
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+    #- SpaceTrafficControlEventScheduler # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -88,7 +88,7 @@
   rules:
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -118,7 +118,7 @@
   - DummyNonAntag
   - DynamicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -142,7 +142,7 @@
   rules:
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
+    #- SpaceTrafficControlEventScheduler # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -184,7 +184,7 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -215,7 +215,7 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -234,7 +234,7 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -251,7 +251,7 @@
   - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -268,7 +268,7 @@
   - SubGamemodesRuleNoWizardNoXenoborg # no two motherships
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -287,7 +287,7 @@
   - Zombie
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -304,6 +304,6 @@
   - Zombie
   - BasicStationEventScheduler
   - KesslerSyndromeScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV

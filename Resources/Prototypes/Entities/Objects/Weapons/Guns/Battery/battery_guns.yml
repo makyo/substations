@@ -94,8 +94,8 @@
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
           tags:
-            - PowerCell
-            - PowerCellSmall
+          - PowerCell
+          - PowerCellSmall
   - type: PowerCellSlot
     cellSlotId: cell_slot
   - type: Appearance
@@ -253,11 +253,11 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/tesla_gun.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-4
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: Gun
     projectileSpeed: 10
     soundGunshot:
@@ -397,8 +397,8 @@
     selectedMode: SemiAuto
     fireRate: 3
     availableModes:
-      - SemiAuto
-      - FullAuto
+    - SemiAuto
+    - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: BatteryAmmoProvider
@@ -486,30 +486,30 @@
   id: WeaponParticleDecelerator
   description: A portable particle decelerator capable of decomposing a tesla or singularity.
   components:
-    - type: Item
-      size: Ginormous
-    - type: MultiHandedItem
-    - type: ClothingSpeedModifier
-      walkModifier: 0.6
-      sprintModifier: 0.6
-    - type: HeldSpeedModifier
-    - type: Sprite
-      sprite: Objects/Weapons/Guns/Battery/particle_decelerator.rsi
-      layers:
-        - state: base
-          map: ["enum.GunVisualLayers.Base"]
-    - type: Gun
-      fireRate: 0.5
-      soundGunshot:
-        path: /Audio/Weapons/emitter.ogg
-        params:
-          pitch: 2
-    - type: BatteryAmmoProvider
-      proto: AntiParticlesProjectile
-      fireCost: 500
-    - type: Battery
-      maxCharge: 10000
-      startingCharge: 10000
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: ClothingSpeedModifier
+    walkModifier: 0.6
+    sprintModifier: 0.6
+  - type: HeldSpeedModifier
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/particle_decelerator.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/emitter.ogg
+      params:
+        pitch: 2
+  - type: BatteryAmmoProvider
+    proto: AntiParticlesProjectile
+    fireCost: 500
+  - type: Battery
+    maxCharge: 10000
+    startingCharge: 10000
 
 - type: entity
   name: x-ray cannon
@@ -595,17 +595,17 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-0
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-0
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/disabler.rsi
     quickEquip: false
     slots:
-      - suitStorage
-      - Belt
+    - suitStorage
+    - Belt
   - type: BatteryAmmoProvider
     proto: BulletDisabler
     fireCost: 62.5
@@ -627,21 +627,21 @@
     - 0,0,2,1
   - type: Tag
     tags:
-      - Taser
+    - Taser
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-0
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-0
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: Gun
     selectedMode: FullAuto
     fireRate: 4.5
     availableModes:
-      - SemiAuto
-      - FullAuto
+    - SemiAuto
+    - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryAmmoProvider
@@ -682,7 +682,8 @@
     slots:
     - Belt
   - type: Gun
-    fireRate: 0.5
+    fireRate: 0.2 # DeltaV - No taser spam, was 0.5
+    resetOnHandSelected: false # DeltaV - Makes it so you dont have to wait 10 seconds to shoot a taser after pulling it out
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser.ogg
     projectileSpeed: 25
@@ -695,6 +696,10 @@
     zeroVisible: true
   - type: Appearance
   - type: PacifismAllowedGun
+  - type: UseDelayOnShoot # DeltaV - No taser spam (provides a cooldown indicator)
+  - type: UseDelay # DeltaV - No taser spam (provides a cooldown indicator)
+    delay: 5
+
 
 - type: entity
   name: elite taser
@@ -901,11 +906,11 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-4
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -966,7 +971,7 @@
     - HighRiskItem
     - Sidearm
   - type: StealTarget
-    stealGroup: WeaponEnergyMagnum
+    stealGroup: HoSSidearm # Delta V - to work along side the X-01
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
@@ -977,7 +982,7 @@
     fireModes:
     - proto: BulletLaserMagnum
       fireCost: 150
-    - proto: BulletLaserWindowPiercingMagnum
+    - proto: BulletEnergyGunLaser #Delta V - Energy guns pierce by default
       fireCost: 150
     - proto: BulletDisabler
       fireCost: 62.5
@@ -1031,14 +1036,22 @@
     price: 100
 
 - type: entity
-  name: xenoborg laser gun
   parent: [WeaponAdvancedLaser, BaseXenoborgContraband]
-  id: XenoborgLaserGun
+  id: WeaponLaserGunXenoborg
+  name: xenoborg laser gun
 
 - type: entity
-  name: xenoborg heavy laser gun
-  parent: [WeaponAdvancedLaser, BaseXenoborgContraband]
-  id: XenoborgHeavyLaserGun
+  parent: [WeaponLaserCannon, BaseXenoborgContraband]
+  id: WeaponLaserCannonXenoborg
+  name: xenoborg laser cannon
   components:
-  - type: BatteryAmmoProvider
-    proto: RedHeavyLaser
+  - type: BatterySelfRecharger
+    autoRechargeRate: 30
+  # "remove" wield bonus and penalty so borgs can use it
+  - type: GunWieldBonus
+    minAngle: 0
+    maxAngle: 0
+  - type: Gun
+    fireRate: 2
+    minAngle: 1
+    maxAngle: 2
