@@ -124,8 +124,8 @@ public abstract class SharedDietaryRestrictionSystem : EntitySystem
             // If they're allergic, they can eat it, but it makes them sick.
             if (_whitelist.IsWhitelistPass(restriction.AllergicTo, food))
             {
-                // Add histamine to the chemstream and potentially vomit.
-                _bloodstream.TryAddToChemicals(user, new Solution("Histamine", restriction.HistamineAmount));
+                // Add histamine to the bloodstream and potentially vomit.
+                _bloodstream.TryAddToBloodstream(user, new Solution("Histamine", restriction.HistamineAmount));
                 if (_random.Prob(restriction.ChanceOfVomiting) && !hasVomited)
                 {
                     DoVomit(user);
