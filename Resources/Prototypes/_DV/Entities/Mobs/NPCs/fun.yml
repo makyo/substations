@@ -39,8 +39,7 @@
     - id: FoodMeatCrab
       amount: 3
   - type: Bloodstream
-    bloodMaxVolume: 100
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
       - ReagentId: BbqSauce #australia reference
         Quantity: 1
