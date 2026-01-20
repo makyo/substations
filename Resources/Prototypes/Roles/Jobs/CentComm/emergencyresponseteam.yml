@@ -604,7 +604,6 @@
     - SoapNT
     - Plunger
     - Screwdriver
-    - AdvMopItem # End of first line
     - GrenadeCleanade
     - GrenadeCleanade
     - GrenadeCleanade
@@ -615,8 +614,6 @@
     - MegaSprayBottleSpaceCleaner
     - Holoprojector
     - LightReplacer
-    - BoxLightMixed
-    - BoxLightMixed
     # - Soap # L5 - useless and overfills inventory
     - WireBrush
     - CrowbarRed
