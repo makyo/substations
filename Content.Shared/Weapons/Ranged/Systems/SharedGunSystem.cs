@@ -263,7 +263,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private bool AttemptShoot(EntityUid user, Entity<GunComponent> gun)
     {
-        if (TryComp<AutoShootGunComponent>(gunUid, out var auto) && !auto.CanFire) // Frontier
+        if (TryComp<AutoShootGunComponent>(gun, out var auto) && !auto.CanFire) // Frontier
             return false; // Frontier
 
         if (gun.Comp.FireRateModified <= 0f ||
