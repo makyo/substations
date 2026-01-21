@@ -1,5 +1,6 @@
 ﻿- type: listing
   id: UplinkBionicSyrinxImplanter
+  abstract: true # L5 — replaced by upstream voice mask
   name: uplink-bionic-syrinx-implanter-name
   description: uplink-bionic-syrinx-implanter-desc
   productEntity: BionicSyrinxImplanter

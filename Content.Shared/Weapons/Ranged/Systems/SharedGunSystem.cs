@@ -678,6 +678,12 @@ public abstract partial class SharedGunSystem : EntitySystem
         RaiseLocalEvent(uid, ref ammoEv);
         return ammoEv.Capacity;
     }
+
+    public override void Update(float frameTime)
+    {
+        UpdateBattery(frameTime);
+        UpdateBallistic(frameTime);
+    }
 }
 
 /// <summary>

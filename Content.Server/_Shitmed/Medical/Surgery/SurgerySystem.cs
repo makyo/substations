@@ -251,7 +251,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     {
         if (HasComp<AnesthesiaComponent>(args.Body)) // DeltaV
             return;
-        if (HasComp<PainNumbnessComponent>(args.Body)) // DeltaV
+        if (HasComp<PainNumbnessStatusEffectComponent>(args.Body)) // DeltaV
             return;
 
         _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);

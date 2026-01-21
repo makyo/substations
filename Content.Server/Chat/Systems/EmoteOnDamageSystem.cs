@@ -2,6 +2,7 @@ using Content.Shared.Damage.Systems;
 
 namespace Content.Server.Chat.Systems;
 
+using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Damage;
 using Robust.Shared.Prototypes;

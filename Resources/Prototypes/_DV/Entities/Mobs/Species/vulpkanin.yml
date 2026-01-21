@@ -109,7 +109,7 @@
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
   - type: DogVision
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 318 # 7 lower than base, bumped up slightly because the too hot warning is hella annoying
     coldDamageThreshold: 220 # 40 lower than base, very insulating fur
 

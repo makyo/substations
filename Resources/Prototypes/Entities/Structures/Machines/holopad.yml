@@ -82,10 +82,10 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-        enum.HolopadUiKey.InteractionWindow:
-          type: HolopadBoundUserInterface
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
+      enum.HolopadUiKey.InteractionWindow:
+        type: HolopadBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: WiresPanel
   - type: WiresVisuals
   - type: Wires
@@ -334,10 +334,10 @@
 - type: entity
   parent: Holopad
   id: HolopadCommandRd
-  suffix: Mysta # DeltaV - RD > Mysta
+  suffix: RD
   components:
   - type: Label
-    currentLabel: holopad-command-mysta # DeltaV - RD > Mysta
+    currentLabel: holopad-command-rd
 
 - type: entity
   parent: Holopad
@@ -354,7 +354,7 @@
   suffix: Anomaly
   components:
   - type: Label
-    currentLabel: holopad-epistemics-anomaly # DeltaV - Science > Epistemics
+    currentLabel: holopad-science-anomaly
 
 - type: entity
   parent: Holopad
@@ -362,39 +362,7 @@
   suffix: Artifact
   components:
   - type: Label
-    currentLabel: holopad-epistemics-artifact # DeltaV - Science > Epistemics
-
-- type: entity
-  parent: Holopad
-  id: HolopadScienceRobotics
-  suffix: Robotics
-  components:
-  - type: Label
-    currentLabel: holopad-epistemics-robotics # DeltaV - Science > Epistemics
-
-- type: entity
-  parent: Holopad
-  id: HolopadScienceRnd
-  suffix: R&D
-  components:
-  - type: Label
-    currentLabel: holopad-epistemics-rnd # DeltaV - Science > Epistemics
-
-- type: entity
-  parent: Holopad
-  id: HolopadScienceFront
-  suffix: Epi Front # DeltaV - Science > Epistemics
-  components:
-  - type: Label
-    currentLabel: holopad-epistemics-front # DeltaV - Science > Epistemics
-
-- type: entity
-  parent: Holopad
-  id: HolopadScienceBreakroom
-  suffix: Epi Breakroom # DeltaV - Science > Epistemics
-  components:
-  - type: Label
-    currentLabel: holopad-epistemics-breakroom # DeltaV - Science > Epistemics
+    currentLabel: holopad-science-artifact
 
 - type: entity
   parent: Holopad
@@ -411,6 +379,38 @@
   components:
   - type: Label
     currentLabel: holopad-science-artifact-south
+
+- type: entity
+  parent: Holopad
+  id: HolopadScienceRobotics
+  suffix: Robotics
+  components:
+  - type: Label
+    currentLabel: holopad-science-robotics
+
+- type: entity
+  parent: Holopad
+  id: HolopadScienceRnd
+  suffix: R&D
+  components:
+  - type: Label
+    currentLabel: holopad-science-rnd
+
+- type: entity
+  parent: Holopad
+  id: HolopadScienceFront
+  suffix: Sci Front
+  components:
+  - type: Label
+    currentLabel: holopad-science-front
+
+- type: entity
+  parent: Holopad
+  id: HolopadScienceBreakroom
+  suffix: Sci Breakroom
+  components:
+  - type: Label
+    currentLabel: holopad-science-breakroom
 
 # Medical
 - type: entity
@@ -485,7 +485,13 @@
   - type: Label
     currentLabel: holopad-medical-breakroom
 
-# DeltaV - Skipped med clinic(redundant)
+- type: entity
+  parent: Holopad
+  id: HolopadMedicalClinic
+  suffix: Med Clinic
+  components:
+  - type: Label
+    currentLabel: holopad-medical-clinic
 
 # Cargo
 - type: entity
@@ -518,9 +524,15 @@
   suffix: Logistics Breakroom
   components:
   - type: Label
-    currentLabel: holopad-logistics-breakroom # DeltaV - Cargo > Logistics
+    currentLabel: holopad-logistics-breakroom
 
-# DeltaV - Skipped mailroom(redundant)
+- type: entity
+  parent: Holopad
+  id: HolopadCargoMailroom
+  suffix: Logistics Mailroom
+  components:
+  - type: Label
+    currentLabel: holopad-cargo-mailroom
 
 # Engineering
 - type: entity
@@ -692,8 +704,21 @@
   - type: Label
     currentLabel: holopad-security-armory
 
-# DeltaV - Skipped sec locker room(against SoP)
-# DeltaV - Skipped brig med(redundant)
+- type: entity
+  parent: Holopad
+  id: HolopadSecurityLockerRoom
+  suffix: Sec Locker Room
+  components:
+  - type: Label
+    currentLabel: holopad-security-locker-room
+
+- type: entity
+  parent: Holopad
+  id: HolopadSecurityBrigMed
+  suffix: Brig Med
+  components:
+  - type: Label
+    currentLabel: holopad-security-brig-med
 
 - type: entity
   parent: Holopad
@@ -763,7 +788,7 @@
 - type: entity
   parent: Holopad
   id: HolopadServiceGameRoom
-  suffix: Service Game Room # DeltaV - Clarification
+  suffix: Game Room
   components:
   - type: Label
     currentLabel: holopad-service-gameroom

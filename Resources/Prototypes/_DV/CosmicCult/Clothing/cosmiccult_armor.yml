@@ -39,7 +39,7 @@
     - Hardsuit
     - WhitelistChameleon
     - HidesHarpyWings
-  #Shoulder mounted flashlight
+#Shoulder mounted flashlight
   - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
@@ -62,26 +62,25 @@
     netsync: false
   - type: LightBehaviour
     behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      interpolate: Linear
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      # minValue: 0.1 # These don't exist in the component
-      # maxValue: 2.0
-      isLooped: true
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        # minValue: 0.1 # These don't exist in the component
+        # maxValue: 2.0
+        isLooped: true
   - type: Battery
     maxCharge: 100
     startingCharge: 100
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 5
 
 # COSMIC CULT HARDSUIT HELMET

@@ -181,19 +181,19 @@ namespace Content.Shared.APC
         public readonly int Power;
         public readonly ApcExternalPowerState ApcExternalPower;
         public readonly float Charge;
-        public readonly bool PowerEnabled; // DeltaV
         public readonly float MaxLoad;
         public readonly bool Tripped;
+        public readonly bool PowerEnabled; // DeltaV
 
-        public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, bool powerEnabled, float maxLoad, bool tripped) // DeltaV - Add powerEnabled
+        public ApcBoundInterfaceState(bool mainBreaker, int power, ApcExternalPowerState apcExternalPower, float charge, float maxLoad, bool tripped, bool powerEnabled) // DeltaV - Add powerEnabled
         {
             MainBreaker = mainBreaker;
             Power = power;
             ApcExternalPower = apcExternalPower;
             Charge = charge;
-            PowerEnabled = powerEnabled; // DeltaV
             MaxLoad = maxLoad;
             Tripped = tripped;
+            PowerEnabled = powerEnabled; // DeltaV
         }
 
         public bool Equals(ApcBoundInterfaceState? other)
@@ -204,9 +204,9 @@ namespace Content.Shared.APC
                    Power == other.Power &&
                    ApcExternalPower == other.ApcExternalPower &&
                    MathHelper.CloseTo(Charge, other.Charge) &&
-                   PowerEnabled == other.PowerEnabled && // DeltaV
                    MathHelper.CloseTo(MaxLoad, other.MaxLoad) &&
-                   Tripped == other.Tripped;
+                   Tripped == other.Tripped &&
+                   PowerEnabled == other.PowerEnabled; // DeltaV;
         }
 
         public override bool Equals(object? obj)

@@ -67,7 +67,7 @@ public sealed partial class L5CCVars
     /// </summary>
     public static readonly CVarDef<bool> SignLanguageRespectsLOS =
         CVarDef.Create("chat.sign_respects_los",
-            false,
+            true,
             CVar.ARCHIVE,
             "Whether sign language can be seen through walls or not.");
 

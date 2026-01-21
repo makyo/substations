@@ -85,7 +85,7 @@
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.1,-0.1,0.1,0.1"
+          bounds: "-0.1,-0.10,0.1,0.30"
         hard: false
         mask:
         - Impassable
@@ -1141,6 +1141,17 @@
     - type: GrapplingProjectile
 
 - type: entity
+  parent: GrapplingHook
+  id: StickyHandPalm
+  name: sticky hand palm
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Launchers/sticky_hand.rsi
+  - type: Ammo
+    muzzleFlash: null
+
+- type: entity
   name : disabler bolt smg
   id: BulletDisablerSmg
   parent: BaseBullet
@@ -1367,7 +1378,7 @@
     spread: 9
 
 - type: entity
-  name: magnum laser bolt
+  name: magnum bolt #Delta V - does not fuction like a laser bolt
   id: BulletLaserMagnum
   categories: [ HideSpawnMenu ]
   parent: BulletLaser
@@ -1382,9 +1393,10 @@
     color: "#ff4300"
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
-    damage:
+    damage: #Delta V - was 30 heat
       types:
-        Heat: 30
+        Heat: 24
+        Piercing: 11
 
 - type: entity
   name: magnum window-piercing bolt

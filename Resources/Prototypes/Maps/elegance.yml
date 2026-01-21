@@ -19,8 +19,8 @@
           #civilian
             Passenger: [ -1, -1 ]
             Librarian: [ 1, 1 ]
-            Boxer: [ 2, 2 ]
-            Zookeeper: [ 2, 2 ]
+            #Boxer: [ 2, 2 ]
+            #Zookeeper: [ 2, 2 ]
           #command
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

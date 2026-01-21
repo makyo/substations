@@ -28,7 +28,7 @@
           HeadOfPersonnel: [ 1, -1 ]
           Bartender: [ 0, -1 ]
           Botanist: [ 0, -1 ]
-          Boxer: [ 0, -1 ]
+          #Boxer: [ 0, -1 ]
           Chef: [ 0, -1 ]
           Clown: [ 0, -1 ]
           Librarian: [ 0, -1 ]

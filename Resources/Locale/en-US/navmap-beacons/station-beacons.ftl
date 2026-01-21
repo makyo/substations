@@ -11,6 +11,7 @@ station-beacon-hop = HOP
 
 station-beacon-security = Security
 station-beacon-brig = Brig
+station-beacon-brig-med = Brig Med
 # L5 - warden to armorer
 station-beacon-warden = Armorer
 station-beacon-hos = HOS
@@ -28,6 +29,7 @@ station-beacon-cryonics = Cryopods
 station-beacon-cmo = CMO
 station-beacon-morgue = Morgue
 station-beacon-surgery = Surgery
+station-beacon-psychology = Psychology
 station-beacon-clinic = Clinic
 
 station-beacon-science = Science
@@ -75,6 +77,8 @@ station-beacon-janitor = Janitor
 station-beacon-ai = Station Sys-Side Representative
 station-beacon-ai-sat = System Sat
 station-beacon-ai-core = System Nucleus
+station-beacon-ai-upload = SSR Firmware Upload
+station-beacon-ai-power = SSR Power
 
 station-beacon-arrivals = Arrivals
 station-beacon-evac = Evac

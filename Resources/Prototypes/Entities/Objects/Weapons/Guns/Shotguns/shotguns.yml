@@ -111,7 +111,7 @@
   - type: Sprite
     sprite: _DV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
   - type: Item
-    sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
+    sprite: _DV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 3
@@ -166,7 +166,7 @@
   description: An old yet faithful design, and a favorite among irregular forces of many worlds. Uses .50 shotgun shells.
   components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
   - type: Item
-    sprite: Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
+    sprite: _DV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
   - type: Sprite
     sprite: _DV/Objects/Weapons/Guns/Shotguns/pump.rsi # Delta-V
   - type: Clothing
@@ -194,7 +194,7 @@
     size: Small
     shape:
     - 0,0,2,0
-    sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
+    sprite: _DV/Objects/Weapons/Guns/Shotguns/sawn.rsi # Delta-V
   - type: Gun
     fireRate: 3
   - type: GunSpreadModifier
@@ -296,3 +296,30 @@
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunImprovised
+
+- type: entity
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSyndicateContraband]
+  id: WeaponShotgunHushpup
+  name: Hushpup
+  description: An obscure modification of the Enforcer, fitted with an experimental muffler. Great for those with a strict moral code. Uses .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shotguns/hushpup.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Shotguns/hushpup.rsi
+  - type: Item
+    sprite: Objects/Weapons/Guns/Shotguns/hushpup.rsi
+    shape:
+    - 0,0,3,0 # smaller than BaseShotgun by 1 tile
+  - type: BallisticAmmoProvider
+    capacity: 4
+  - type: GunRequiresWield
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hushpup.ogg
+      params:
+        volume: -3
+        rolloffFactor: 1.3
+    fireRate: 2
+  - type: GunSpreadModifier
+    spread: 1.2
