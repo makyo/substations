@@ -24,9 +24,6 @@
         whitelist:
           components:
           - Defibrillator
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Metallic
   # Begin DeltaV additions
   - type: Charger
     slotId: ItemCabinet
@@ -36,6 +33,9 @@
   - type: LightningTarget
     priority: 1
   # End DeltaV additions
+  - type: Construction
+    graph: DefibrillatorCabinet
+    node: done
   - type: Destructible
     thresholds:
     - trigger: !type:DamageTrigger
