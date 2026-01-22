@@ -89,15 +89,14 @@ public sealed class SiliconChargeSystem : EntitySystem
                 continue;
 
             // Check if the Silicon is an NPC, and if so, follow the delay as specified in the CVAR.
-            // L5 — Thanks to predicted power, we may wish to do this no matter what.
-            // if (siliconComp.EntityType.Equals(SiliconType.Npc))
-            // {
+            if (siliconComp.EntityType.Equals(SiliconType.Npc))
+            {
                 var updateTime = _config.GetCVar(CCVars.SiliconNpcUpdateTime);
                 if (_timing.CurTime - siliconComp.LastDrainTime < TimeSpan.FromSeconds(updateTime))
                     continue;
 
                 siliconComp.LastDrainTime = _timing.CurTime;
-            // }
+            }
 
             // If you can't find a battery, set the indicator and skip it.
             if (!TryGetSiliconBattery(silicon, out var batteryComp))
