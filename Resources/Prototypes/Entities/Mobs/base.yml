@@ -1,98 +1,134 @@
-- abstract: true
+# The literal bare minimum needed to be a controllable mob. Cannot move but can interact.
+- type: entity
+  abstract: true
+  save: false
+  id: BaseControllable
   components:
-  - drawdepth: Mobs
+  - type: Sprite
     noRot: true
-    type: Sprite
+    drawdepth: Mobs
   - type: MobCollision
   - type: GravityAffected
   - type: Physics
-  - fixtures:
+  - type: Fixtures
+    fixtures:
       fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
         density: 50
-        layer:
-        - MobLayer
         mask:
         - MobMask
-        shape:
-          radius: 0.35
-    type: Fixtures
+        layer:
+        - MobLayer
   - type: Clickable
   - type: InteractionOutline
-  - context: human
-    type: Input
+  - type: Input
+    context: "human"
   - type: Actions
   - type: Alerts
   - type: Appearance
-  - defaultRotation: 0
+  - type: RotationVisuals
+    defaultRotation: 0
     horizontalRotation: 0
-    type: RotationVisuals
   - type: DoAfter
   - type: Examiner
   - type: Eye
   - type: ContentEye
   - type: CameraRecoil
   - type: MindContainer
-  - active: false
-    type: RequireProjectileTarget
+  - type: RequireProjectileTarget
+    active: False
   - type: StunVisuals
-  - type: AnimatedEmotes
-  id: BaseControllable
+  - type: AnimatedEmotes # goob edit - animated emotes
+
+# The progenitor. This should only container the most basic components possible.
+# Only put things on here if every mob *must* have it. This includes ghosts.
+- type: entity
+  abstract: true
   save: false
-  type: entity
-- abstract: true
+  parent: BaseControllable
+  id: BaseMob
   components:
   - type: MobCollision
-  - bodyType: KinematicController
-    type: Physics
+  - type: Physics
+    bodyType: KinematicController
   - type: InputMover
   - type: MobMover
   - type: MovementSpeedModifier
   - type: LagCompensation
-  id: BaseMob
-  parent: BaseControllable
+
+- type: entity
   save: false
-  type: entity
-- abstract: true
+  id: MobPolymorphable
+  abstract: true
   components:
   - type: Polymorphable
-  id: MobPolymorphable
+
+# Used for mobs that have health and can take damage.
+- type: entity
   save: false
-  type: entity
-- abstract: true
+  id: MobDamageable
+  abstract: true
   components:
-  - damageContainer: Biological
-    type: Damageable
-  - thresholds:
-    - behaviors:
-      - popup: mouth-taste-metal
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:                      # L5 - The DV comment below is kind of funny in retrospect. How about we don't round-remove people for rotting on lowpop, either?
+#    - trigger:
+#        !type:DamageTypeTrigger
+#        damageType: Blunt
+#        damage: 400
+#      behaviors:
+#      - !type:GibBehavior { }
+#    - trigger:                      # DeltaV- We don't like round removing people for being in the same room as a plasma trapped crate.
+#        !type:DamageTypeTrigger
+#        damageType: Heat
+#        damage: 1500
+#      behaviors:
+#      - !type:SpawnEntitiesBehavior
+#        spawnInContainer: true
+#        spawn:
+#          Ash:
+#            min: 1
+#            max: 1
+#      - !type:BurnBodyBehavior { }
+#      - !type:PlaySoundBehavior
+#        sound:
+#          collection: MeatLaserImpact
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 15
+      behaviors:
+      - !type:PopupBehavior
+        popup: mouth-taste-metal
         popupType: LargeCaution
         targetOnly: true
-      trigger:
-        damage: 15
+    - trigger:
+        !type:DamageTypeTrigger
         damageType: Radiation
-    - behaviors:
-      - ""
-      trigger:
         damage: 40
-        damageType: Radiation
-    type: Destructible
+      behaviors:
+      - !type:VomitBehavior
   - type: RadiationReceiver
   - type: Stamina
   - type: StunVisuals
   - type: MobState
-  - thresholds:
+  - type: MobThresholds
+    thresholds:
       0: Alive
       100: Critical
       200: Dead
-    type: MobThresholds
-  - actions:
+  - type: MobStateActions
+    actions:
       Critical:
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
-    type: MobStateActions
   - type: Deathgasp
-  - examinableTypes:
+  - type: HealthExaminable
+    examinableTypes:
     - Blunt
     - Slash
     - Piercing
@@ -102,132 +138,142 @@
     - Caustic
     - Asphyxiation
     - Radiation
-    type: HealthExaminable
-  - damage:
+  - type: DamageOnHighSpeedImpact
+    damage:
       types:
         Blunt: 5
     soundHit:
       path: /Audio/Effects/hit_kick.ogg
-    type: DamageOnHighSpeedImpact
   - type: Pullable
-  - lightningExplode: false
+  - type: LightningTarget
     priority: 2
-    type: LightningTarget
-  - baseDamage: 0.1
-    dirtinessThreshold: 100
+    lightningExplode: false
+  - type: SurgeryContaminable # DeltaV - surgery cross contamination
+    # L5 - Begin nerfing contamination because it's a good idea but holy shit
+    dirtinessThreshold: 100.0
+    baseDamage: 0.1
     inverseDamageCoefficient: 500
     toxinStepLimit: 1
-    type: SurgeryContaminable
-  - type: LongTermHealth
-  id: MobDamageable
+    # L5 - End nerf
+
+
+# Used for mobs that can enter combat mode and can attack.
+- type: entity
   save: false
-  type: entity
-- abstract: true
+  id: MobCombat
+  abstract: true
   components:
   - type: CombatMode
-  - damage:
-      groups:
-        Brute: 5
+  - type: MeleeWeapon
     hidden: true
     soundHit:
       collection: MetalThud
-    type: MeleeWeapon
-  id: MobCombat
+    damage:
+      groups:
+        Brute: 5
+
+# Used for mobs that are affected by atmospherics, pressure, and heat
+- type: entity
   save: false
-  type: entity
-- abstract: true
+  id: MobAtmosExposed
+  abstract: true
   components:
   - type: AtmosExposed
-  - coldDamage:
-      types:
-        Cold: 0.1
+  - type: Temperature
+    heatDamageThreshold: 325
     coldDamageThreshold: 0
     currentTemperature: 310.15
-    heatDamage:
+    coldDamage: #per second, scales with temperature & other constants
       types:
-        Heat: 1.5
-    heatDamageThreshold: 325
+        Cold : 0.1
     specificHeat: 42
-    type: Temperature
-  - implicitHeatRegulation: 500
-    metabolismHeat: 800
-    normalBodyTemperature: 310.15
-    radiatedHeat: 100
-    shiveringHeatRegulation: 2000
-    sweatHeatRegulation: 2000
-    thermalRegulationTemperatureThreshold: 2
-    type: ThermalRegulator
-  - type: MovedByPressure
-  id: MobAtmosExposed
-  save: false
-  type: entity
-- abstract: true
-  components:
-  - implicitHeatRegulation: 250
-    metabolismHeat: 800
-    normalBodyTemperature: 310.15
-    radiatedHeat: 100
-    shiveringHeatRegulation: 500
-    sweatHeatRegulation: 500
-    thermalRegulationTemperatureThreshold: 2
-    type: ThermalRegulator
-  - coldDamage:
+    heatDamage: #per second, scales with temperature & other constants
       types:
-        Cold: 1
+        Heat : 1.5
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 500
+    sweatHeatRegulation: 2000
+    shiveringHeatRegulation: 2000
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 2
+  - type: MovedByPressure
+
+# Used for mobs that require regular atmospheric conditions.
+- type: entity
+  parent: MobAtmosExposed
+  id: MobAtmosStandard
+  abstract: true
+  components:
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 250
+    sweatHeatRegulation: 500
+    shiveringHeatRegulation: 500
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 2
+  - type: Temperature
+    heatDamageThreshold: 325
     coldDamageThreshold: 260
     currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 1.5
-    heatDamageThreshold: 325
-    specificHeat: 42
-    type: Temperature
-  - damage:
-      types:
-        Blunt: 0.15
-    type: Barotrauma
-  id: MobAtmosStandard
-  parent: MobAtmosExposed
-  type: entity
-- abstract: true
-  components:
-  - canResistFire: true
+        Heat: 1.5 #per second, scales with temperature & other constants
+  - type: Barotrauma
     damage:
       types:
-        Heat: 1.5
-    fireSpread: true
-    type: Flammable
-  - normalState: Generic_mob_burning
-    sprite: Mobs/Effects/onfire.rsi
-    type: FireVisuals
-  id: MobFlammable
+        Blunt: 0.15 #per second, scales with pressure and other constants.
+
+# Used for mobs that can be set on fire
+- type: entity
   save: false
-  type: entity
-- abstract: true
+  id: MobFlammable
+  abstract: true
+  components:
+  - type: Flammable
+    fireSpread: true
+    canResistFire: true
+    damage: #per second, scales with number of fire 'stacks'
+      types:
+        Heat: 1.5
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Generic_mob_burning
+
+# Used for mobs that need to breathe
+- type: entity
+  save: false
+  id: MobRespirator
+  abstract: true
   components:
   - type: Internals
-  - damage:
+  - type: Respirator
+    damage:
       types:
         Asphyxiation: 2
     damageRecovery:
       types:
-        Asphyxiation: -1
-    type: Respirator
-  id: MobRespirator
+        Asphyxiation: -1.0
+
+# Used for mobs that have a bloodstream
+- type: entity
   save: false
-  type: entity
-- abstract: true
+  id: MobBloodstream
+  abstract: true
   components:
   - type: SolutionContainerManager
-  - solution: chemicals
-    type: InjectableSolution
-  - bloodlossDamage:
+  - type: InjectableSolution
+    solution: chemicals
+  - type: Bloodstream
+    bloodlossDamage:
       types:
         Bloodloss: 0.5
     bloodlossHealDamage:
       types:
         Bloodloss: -1
-    type: Bloodstream
-  id: MobBloodstream
-  save: false
-  type: entity
