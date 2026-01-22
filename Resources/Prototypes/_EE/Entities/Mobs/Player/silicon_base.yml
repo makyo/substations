@@ -297,7 +297,7 @@
         - Shock
     - type: StatusEffects
       allowed:
-        - Stun # L5 - new status effect system
+        #- Stun # L5 - new status effect system
         - KnockedDown
         - SlowedDown
         - Stutter

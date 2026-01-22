@@ -7,6 +7,8 @@
   - type: Body
     prototype: IPCTorsoOnly
   - type: IsDeadIC
+  - type: MobState
+    state: Dead
   - type: RandomHumanoidAppearance
   - type: ItemSlots
     slots:
