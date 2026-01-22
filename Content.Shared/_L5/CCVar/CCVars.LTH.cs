@@ -105,7 +105,7 @@ public sealed partial class L5CCVars
     // -- Traumatic Brain Injuries
 
     /// <summary>
-    /// The chance that receiving double the threshold of any of these makes them a severe effect requiring ongoing
+    /// The chance that receiving double the threshold of any of the traumatic brain injuries makes them a severe effect requiring ongoing
     /// treatment.
     ///
     /// Only applies if severe LTEs are enabled.
@@ -113,31 +113,13 @@ public sealed partial class L5CCVars
     public static readonly CVarDef<float> TBISevereChance =
         CVarDef.Create("l5.long_term_health.brute.tbi.severe_chance", 0.25f, CVar.REPLICATED);
 
-    /// <summary>
-    /// The amount of blunt damage received to the head to trigger a woozy status.
-    /// </summary>
-    public static readonly CVarDef<float> TBIWoozyThreshold =
-        CVarDef.Create("l5.long_term_health.brute.tbi.woozy_threshold", 20f, CVar.REPLICATED);
-
-    /// <summary>
-    /// The amount of blunt damage received to the head to add a mood disorder.
-    /// </summary>
-    public static readonly CVarDef<float> TBIMoodThreshold =
-        CVarDef.Create("l5.long_term_health.brute.tbi.mood_threshold", 30f, CVar.REPLICATED);
-
-    /// <summary>
-    /// The amount of blunt damage received to the head to add paracusia.
-    /// </summary>
-    public static readonly CVarDef<float> TBIParacusiaThreshold =
-        CVarDef.Create("l5.long_term_health.brute.tbi.paracusia_threshold", 40f, CVar.REPLICATED);
-
-    /// <summary>
-    /// The amount of blunt damage received to the head to add hearing loss.
-    /// </summary>
-    public static readonly CVarDef<float> TBIHearingLossThreshold =
-        CVarDef.Create("l5.long_term_health.brute.tbi.hearing_loss_threshold", 50f, CVar.REPLICATED);
-
     // BURN Injuries
+
+    /// <summary>
+    /// The threshold at which point burn return damage starts to occur.
+    /// </summary>
+    public static readonly CVarDef<float> BurnReturnThreshold =
+        CVarDef.Create("l5.long_term_health.burn.return_threshold", 50f, CVar.REPLICATED);
 
     /// <summary>
     /// The factor by which burn damage reappears over time, representing extended treatment.
@@ -146,18 +128,18 @@ public sealed partial class L5CCVars
         CVarDef.Create("l5.long_term_health.burn.return_factor", 0.1f, CVar.REPLICATED);
 
     /// <summary>
-    /// Whether or not to treate "tend burns" surgery as receiving a skin graft that requires ongoing therapy.
+    /// Whether or not to treat "tend burns" surgery as receiving a skin graft that requires ongoing therapy.
     /// </summary>
     public static readonly CVarDef<bool> BurnGraftEnabled =
         CVarDef.Create("l5.long_term_health.burn.graft_enabled", true, CVar.REPLICATED);
 
-    /// <summary>
-    /// The threshold at which burns on the head lead to vision loss.
-    /// </summary>
-    public static readonly CVarDef<float> BurnHeadVisionLossThreshold =
-        CVarDef.Create("l5.long_term_health.burn.vision_loss_threshold", 30f, CVar.REPLICATED);
-
     // TOXIN Injuries
+
+    /// <summary>
+    /// The threshold at which point poison return damage starts to occur.
+    /// </summary>
+    public static readonly CVarDef<float> PoisonReturnThreshold =
+        CVarDef.Create("l5.long_term_health.poison.return_threshold", 50f, CVar.REPLICATED);
 
     /// <summary>
     /// The factor by which poison damage reappears over time, representing the toxins working their way out of the system.
@@ -198,6 +180,6 @@ public sealed partial class L5CCVars
     ///
     /// E.g: if set to 25, roll a new one at 25, 50, 75, etc.
     /// </summary>
-    public static readonly CVarDef<float> GeneticNewEffectRollAmount =
-        CVarDef.Create("l5.long_term_health.genetic.new_effect_roll_amount", 25f, CVar.REPLICATED);
+    public static readonly CVarDef<int> GeneticNewEffectRollAmount =
+        CVarDef.Create("l5.long_term_health.genetic.new_effect_roll_amount", 25, CVar.REPLICATED);
 }

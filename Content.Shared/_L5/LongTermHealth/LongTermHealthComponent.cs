@@ -24,6 +24,9 @@ public sealed partial class LongTermHealthComponent : Component
     [DataField]
     public Dictionary<EffectType, int> PreviousEffects = new();
 
+    [DataField]
+    public int UpcomingGeneticEffects = 0;
+
     /// <summary>
     /// How often the effects should update. Doesn't need to be too frequently.
     /// </summary>
@@ -109,4 +112,19 @@ public static class EffectTypeExtensions
     };
 
     public static EffectType[] AllTBIs = MildTBIs.Concat(SevereTBIs).ToArray();
+
+    // Given that you were rotting, these are all pretty severe.
+    public static EffectType[] GeneticEffects = new EffectType[]
+    {
+        EffectType.SeverePain,
+        EffectType.SevereImpairedMobility,
+        EffectType.SevereLungDamage,
+        EffectType.SevereMoody,
+        EffectType.SevereHearingLoss,
+        EffectType.SevereParacusia,
+        EffectType.SevereVisionLoss,
+        EffectType.SevereWoozy,
+        EffectType.BurnReturn,
+        EffectType.PoisonReturn,
+    };
 }

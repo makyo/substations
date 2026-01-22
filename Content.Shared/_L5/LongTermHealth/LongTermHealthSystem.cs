@@ -46,8 +46,9 @@ public sealed partial class LongTermHealthSystem : EntitySystem
 
         HandleAirloss(uid, ref component, args);
         HandleBrute(uid, ref component, args);
-        // Note to self: don't add to datafields if the player already has traits with those effects (don't add pain if they have the chronic pain trait)
-        // component.TemporaryEffectCountdowns[key] = TimeSpan.FromSeconds(temporaryEffectSeconds)
+        HandleBurn(uid, ref component, args);
+        HandleToxin(uid, ref component, args);
+        HandleGenetic(uid, ref component, args);
     }
 
     public override void Update(float frameTime)
@@ -55,7 +56,6 @@ public sealed partial class LongTermHealthSystem : EntitySystem
         base.Update(frameTime);
 
         var curTime = _timing.CurTime;
-
 
         var query = EntityQueryEnumerator<LongTermHealthComponent>();
         while (query.MoveNext(out var uid, out var comp))
@@ -86,6 +86,60 @@ public sealed partial class LongTermHealthSystem : EntitySystem
             {
                 component.UpcomingEffects.Remove(tbi);
             }
+        }
+    }
+
+    private void PrepareEffect(
+        ref LongTermHealthComponent component,
+        FixedPoint2 damage,
+        EffectType mildType,
+        EffectType severeType,
+        CVarDef<float> mildCVar,
+        CVarDef<float> severeCVar)
+    {
+        if (!component.CurrentEffects.ContainsKey(severeType) &&
+            damage > _configurationManager.GetCVar(severeCVar))
+        {
+            component.UpcomingEffects.Remove(mildType);
+            component.UpcomingEffects[severeType] = true;
+        }
+        else if (!component.CurrentEffects.ContainsKey(mildType) &&
+                 damage > _configurationManager.GetCVar(mildCVar))
+        {
+            component.UpcomingEffects.Remove(severeType);
+            component.UpcomingEffects[mildType] = true;
+        }
+    }
+
+    private void ApplyEffect(
+        ref LongTermHealthComponent component,
+        FixedPoint2 damage,
+        EffectType mildType,
+        EffectType severeType,
+        CVarDef<float> mildCVar,
+        CVarDef<float> severeCVar)
+    {
+        if (component.UpcomingEffects.ContainsKey(severeType) &&
+            damage < _configurationManager.GetCVar(severeCVar))
+        {
+            var duration = severeEffectSeconds;
+            component.UpcomingEffects.Remove(severeType);
+
+            if (healDecayEnabled && component.PreviousEffects.TryGetValue(severeType, out var count))
+                duration *= healDecayFactor * count;
+
+            component.CurrentEffects[severeType] = TimeSpan.FromSeconds(duration);
+        }
+        else if (component.UpcomingEffects.ContainsKey(mildType) &&
+                 damage < _configurationManager.GetCVar(mildCVar))
+        {
+            var duration = mildEffectSeconds;
+            component.UpcomingEffects.Remove(mildType);
+
+            if (healDecayEnabled && component.PreviousEffects.TryGetValue(mildType, out var count))
+                duration *= healDecayFactor * count;
+
+            component.CurrentEffects[mildType] = TimeSpan.FromSeconds(duration);
         }
     }
 }
