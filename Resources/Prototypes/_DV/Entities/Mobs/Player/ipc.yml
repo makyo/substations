@@ -1,14 +1,13 @@
 - type: entity
   parent: MobIPC
   id: MobIPCTorsoOnly
+  abstract: true # L5 — Disabled due to IPCs being slightly broken
   name: ipc chassis
   suffix: Torso Only
   components:
   - type: Body
     prototype: IPCTorsoOnly
   - type: IsDeadIC
-  - type: MobState
-    state: Dead
   - type: RandomHumanoidAppearance
   - type: ItemSlots
     slots:
