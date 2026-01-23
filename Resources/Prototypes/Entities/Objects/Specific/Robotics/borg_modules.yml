@@ -53,6 +53,7 @@
 - type: entity
   parent: BaseAction
   id: ActionBorgSwapModule
+  # Name and description will normally be changed by BorgSystem
   name: Swap Module
   description: Select this module, enabling you to use the tools it provides.
   components:
@@ -490,29 +491,25 @@
     - item: Wirecutter
     - item: Crowbar
     - item: trayScanner
-    # Begin DeltaV additions - migrated by L5 for upstream borg hands
-    - hand:
-        emptyRepresentative: DoorElectronics
-        emptyLabel: borg-slot-circuitboards-empty
-        whitelist:
-          components:
-          - Circuitboard
-    - hand:
-        emptyRepresentative: MicroManipulatorStockPart
-        emptyLabel: borg-slot-construction-empty
-        whitelist:
-          tags:
-          - ConstructionMaterial
-    - hand:
-        emptyRepresentative: SpaceHeaterFlatpack
-        emptyLabel: borg-slot-flatpacks-empty
-        whitelist:
-          components:
-          - Flatpack
-    # End DeltaV additions
-
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: wire-module }
+
+- type: entity
+  id: BorgModuleArtistry
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: artistry cyborg module
+  description: A module for arts & crafts whilst the station burns!
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-artistry
+  - type: ItemBorgModule
+    hands:
+    - item: SprayPainterBorg
+    - item: CrayonBorg
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: artistry-module }
 
 - type: entity
   id: BorgModuleFireExtinguisher
@@ -526,15 +523,7 @@
     - state: icon-fire-extinguisher
   - type: ItemBorgModule
     hands:
-    # Begin Frontier modifications - migrated to upstream borg hands by L5
-    - item: FireExtinguisher
-      hand:
-        emptyRepresentative: FireExtinguisher
-        emptyLabel: borg-slot-fire-extinguisher-empty
-        whitelist:
-          tags:
-          - FireExtinguisher
-    # End Frontier modifications
+    - item: BorgFireExtinguisher
     - item: BorgHandheldGPSBasic
     - item: HandheldStationMapUnpowered
     - item: HandHeldMassScannerBorg
@@ -628,15 +617,7 @@
     - item: Shovel
     - item: MineralScannerUnpowered
     - item: RadioHandheld # DeltaV
-    # Begin DeltaV additions - migrated to upstream borg hands by L5
-    - item: OreBag
-      hand:
-        emptyRepresentative: OreBag
-        emptyLabel: borg-slot-ore-bag-empty
-        whitelist:
-          components:
-          - NFOreBag
-      # End DeltaV modifications
+    - item: BorgOreBag
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: mining-module }
 
@@ -656,14 +637,6 @@
     - item: Shovel
     - item: AdvancedMineralScannerUnpowered
     - item: OreBagOfHolding
-    # Begin DeltaV additions - migrated to upstream borg hands by L5
-      hand:
-        emptyRepresentative: OreBagOfHolding
-        emptyLabel: borg-slot-ore-bag-empty
-        whitelist:
-          components:
-          - NFOreBag
-      # End DeltaV additions
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-mining-module }
 
@@ -749,6 +722,9 @@
         whitelist:
           components:
           - Circuitboard
+        blacklist:
+          components:
+          - SiliconLawProvider
     - hand:
         emptyRepresentative: MicroManipulatorStockPart
         emptyLabel: borg-slot-construction-empty
@@ -793,34 +769,11 @@
     - state: icon-rcd
   - type: ItemBorgModule
     hands:
-    # Begin DeltaV modifications - migrated by L5 for upstream borg hands
-    - item: RCD
-      hand:
-        emptyRepresentative: RCD
-        emptyLabel: borg-slot-rcd-empty
-        whitelist:
-          components:
-          - RCD
-    - item: RCDAmmo
-      hand:
-        emptyRepresentative: RCDAmmo
-        emptyLabel: borg-slot-rcd-ammo-empty
-        whitelist:
-          components:
-          - RCDAmmo
-    # End DeltaV additions
+    - item: RCDRecharging
     - item: BorgFireExtinguisher
     - item: BorgHandheldGPSBasic
     - item: GasAnalyzer
-    # Begin DeltaV modifications - migrated by L5 for upstream borg hands
-    - item: HolofanProjector
-      hand:
-        emptyRepresentative: HolofanProjector
-        emptyLabel: borg-slot-holofan-empty
-        whitelist:
-          tags:
-          - HolofanProjector
-    # End DeltaV additions
+    - item: HolofanProjectorBorg
     - item: GeigerCounter
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: rcd-module }
@@ -845,10 +798,8 @@
         emptyLabel: borg-slot-soap-empty
         emptyRepresentative: SoapNT
         whitelist:
-          # Begin L5 modifications - from DeltaV, use CleansForensics instead of soap tag; seems funnier
-          components:
-          - CleansForensics
-          # End L5 modifications
+          tags:
+          - Soap
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: light-replacer-module }
 
@@ -864,15 +815,8 @@
   - type: ItemBorgModule
     hands:
     - item: MopItem
-    # Begin Frontier modifications - migrated by L5 for upstream borg hands
-    - item: Bucket
-      hand:
-        emptyLabel: borg-slot-bucket-empty
-        emptyRepresentative: Bucket
-        whitelist:
-          tags:
-          - Bucket
-    # End Frontier modifications
+    - item: WireBrush
+    - item: BorgBucket
     - item: BorgSprayBottle
     - item: HoloprojectorBorg
   - type: BorgModuleIcon
@@ -891,6 +835,7 @@
   - type: ItemBorgModule
     hands:
     - item: AdvMopItem
+    - item: WireBrushElectrical
     - item: BorgMegaSprayBottle
     - item: HoloprojectorBorg
     - item: WeaponLauncherHydraBorg # DeltaV - Let borgs have cleannades!
@@ -900,8 +845,8 @@
         emptyLabel: borg-slot-beakers-empty
         emptyRepresentative: Beaker
         whitelist:
-          tags:
-          - GlassBeaker
+          components:
+          - FitsInDispenser
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-cleaning-module }
 
@@ -917,7 +862,7 @@
     - state: icon-diagnosis
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzerUnpowered
+    - item: HandheldHealthAnalyzer
     - item: ClothingNeckStethoscope
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: diagnosis-module }
@@ -925,7 +870,7 @@
 - type: entity
   id: BorgModuleTopicals
   parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
-  name: topicals cyborg module
+  name: first aid cyborg module
   components:
   - type: Sprite
     layers:
@@ -933,7 +878,8 @@
     - state: icon-treatment
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzerUnpowered
+    - item: HandheldHealthAnalyzer
+    - item: AdvancedJetInjector
     - item: Gauze
       hand:
         emptyLabel: borg-slot-topicals-empty
@@ -955,13 +901,6 @@
         whitelist:
           components:
           - Healing
-    - item: Bloodpack
-      hand:
-        emptyLabel: borg-slot-topicals-empty
-        emptyRepresentative: Bloodpack
-        whitelist:
-          components:
-          - Healing
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: treatment-module }
 
@@ -976,12 +915,11 @@
     - state: icon-defib
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzerUnpowered
+    - item: HandheldHealthAnalyzer
     - item: DefibrillatorOneHandedUnpowered
     - item: Crowbar
     - item: BorgFireExtinguisher
     - item: BorgHandheldGPSBasic
-    - item: HandLabeler
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: defib-module }
 
@@ -993,79 +931,83 @@
   - type: Sprite
     layers:
     - state: medical
-    - state: icon-chem
+    - state: icon-chemist
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzerUnpowered
+    - item: HandLabeler
     - item: Syringe
-    - item: BorgDropper
-    - item: BaseChemistryEmptyVial
+      hand:
+        emptyLabel: borg-slot-injector-dropper-empty
+        emptyRepresentative: Syringe
+        whitelist:
+          tags:
+          - Dropper
+          - Syringe
+    - item: PillCanister
       hand:
         emptyLabel: borg-slot-small-containers-empty
-        emptyRepresentative: BaseChemistryEmptyVial
+        emptyRepresentative: PillCanister
+        whitelist:
+          tags:
+          - PillCanister
+          - Bottle
+          - Pill
+    - item: Beaker
+      hand:
+        emptyLabel: borg-slot-chemical-containers-empty
+        emptyRepresentative: Beaker
         whitelist:
           components:
           - FitsInDispenser
-    - item: BaseChemistryEmptyVial
+          tags:
+          - ChemDispensable
+    - item: Beaker
       hand:
-        emptyLabel: borg-slot-small-containers-empty
-        emptyRepresentative: BaseChemistryEmptyVial
+        emptyLabel: borg-slot-chemical-containers-empty
+        emptyRepresentative: Beaker
         whitelist:
           components:
           - FitsInDispenser
-    - item: BaseChemistryEmptyVial
-      hand:
-        emptyLabel: borg-slot-small-containers-empty
-        emptyRepresentative: BaseChemistryEmptyVial
-        whitelist:
-          components:
-          - FitsInDispenser
+          tags:
+          - ChemDispensable
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: chem-module }
 
 - type: entity
-  id: BorgModuleAdvancedChemical
+  id: BorgModuleAdvancedTopical
   parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
-  name: advanced chemical cyborg module
+  name: advanced first aid cyborg module
   description: Advanced medical module containing the cyborg adaptation of the highly coveted hypospray. Now your cyborgs can inject crew-harmers with chloral hydrate even faster!
   components:
   - type: Sprite
     layers:
     - state: medical
-    - state: icon-chemist
+    - state: icon-chem
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzerUnpowered
+    - item: HandheldHealthAnalyzer
     - item: BorgHypo
-    - item: Syringe
-    - item: BorgDropper
-    - item: Beaker
+    - item: Gauze
       hand:
-        emptyLabel: borg-slot-chemical-containers-empty
-        emptyRepresentative: Beaker
+        emptyLabel: borg-slot-topicals-empty
+        emptyRepresentative: Gauze
         whitelist:
           components:
-          - FitsInDispenser
-          tags:
-          - ChemDispensable
-    - item: Beaker
+          - Healing
+    - item: Brutepack
       hand:
-        emptyLabel: borg-slot-chemical-containers-empty
-        emptyRepresentative: Beaker
+        emptyLabel: borg-slot-topicals-empty
+        emptyRepresentative: Brutepack
         whitelist:
           components:
-          - FitsInDispenser
-          tags:
-          - ChemDispensable
-    - item: Beaker
+          - Healing
+    - item: Ointment
       hand:
-        emptyLabel: borg-slot-chemical-containers-empty
-        emptyRepresentative: Beaker
+        emptyLabel: borg-slot-topicals-empty
+        emptyRepresentative: Ointment
         whitelist:
           components:
-          - FitsInDispenser
-          tags:
-          - ChemDispensable
+          - Healing
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-chem-module }
 
@@ -1086,10 +1028,10 @@
     - item: SprayBottle
     - item: GasAnalyzer
     - item: BorgDropper
-    - item: BaseChemistryEmptyVial
+    - item: ChemistryEmptyVial
       hand:
         emptyLabel: borg-slot-small-containers-empty
-        emptyRepresentative: BaseChemistryEmptyVial
+        emptyRepresentative: ChemistryEmptyVial
         whitelist:
           components:
           - FitsInDispenser
@@ -1228,14 +1170,6 @@
     - item: HydroponicsToolSpade
     - item: HydroponicsToolClippers
     - item: Bucket
-      # Begin Frontier additions - migrated by L5 for upstream borg hands
-      hand:
-        emptyLabel: borg-slot-bucket-empty
-        emptyRepresentative: Bucket
-        whitelist:
-          tags:
-          - Bucket
-      # End Frontier additions
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: gardening-module }
 
@@ -1253,14 +1187,6 @@
     - item: HydroponicsToolScythe
     - item: HydroponicsToolHatchet
     - item: PlantBag
-      # Begin Frontier additions - migrated by L5 for upstream borg hands
-      hand:
-        emptyLabel: borg-slot-plant-bag-empty
-        emptyRepresentative: PlantBag
-        whitelist:
-          components:
-          - NFPlantBag
-      # End Frontier additions
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: harvesting-module }
 
@@ -1739,7 +1665,7 @@
     - state: icon-xenoborg-projector
   - type: ItemBorgModule
     hands:
-    - item: ChameleonProjector
+    - item: ChameleonProjectorNoBattery
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-projector-module }
 

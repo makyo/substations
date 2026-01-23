@@ -13,6 +13,16 @@
 /Resources/*.yml @DeltaV-Station/yaml-maintainers
 /Resources/**/*.yml @DeltaV-Station/yaml-maintainers
 
+/Resources/Prototypes/Body/ @DrSmugleaf @sowelipililimute # suffering
+/Resources/Prototypes/Entities/Mobs/Player/ @DrSmugleaf
+/Resources/Prototypes/Entities/Mobs/Species/ @DrSmugleaf
+/Resources/Prototypes/Guidebook/rules.yml @crazybrain23
+/Content.*/Body/ @DrSmugleaf @sowelipililimute
+/Content.*/Humanoid/ @sowelipililimute
+/Content.Client/Lobby/UI/Humanoid* @sowelipililimute
+/Content.YAMLLinter @DrSmugleaf
+/Content.Shared/Damage/ @DrSmugleaf
+
 # Sprites - Art Director
 /Resources/Textures/ @AftrLite
 

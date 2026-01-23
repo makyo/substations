@@ -84,7 +84,7 @@ namespace Content.IntegrationTests.Tests
         }
 
         [Test]
-        [Retry(3)] // DeltaV - Ignore intermittent fails
+        // [Retry(3)] // DeltaV - Ignore intermittent fails // L5 — You're making tests take too long
         public async Task SpawnAndDeleteAllEntitiesInTheSameSpot()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
