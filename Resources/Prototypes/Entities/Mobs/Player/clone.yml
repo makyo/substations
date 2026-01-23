@@ -17,16 +17,25 @@
   # traits
   - BlackAndWhiteOverlay
   - Clumsy
+  - Hemophilia
   - ImpairedMobility
   # - LegsParalyzed (you get healed)
   - LightweightDrunk
   - Muted
   - Narcolepsy
   - Pacified
+  - PainNumbness
   - Paracusia
   - PermanentBlindness
   - Snoring
   - Unrevivable
+  # job specific
+  - BibleUser
+  - CommandStaff
+  - Clumsy
+  - MindShield
+  - MimePowers
+  - SpaceNinja
   # accents
   - Accentless
   - BackwardsAccent
@@ -55,6 +64,25 @@
   - SouthernAccent
   - SpanishAccent
   - StutteringAccent
+  # Begin DeltaV Additions
+  - Addicted
+  - DogVision
+  - FrenchAccent
+  - Hushed
+  - IrishAccent
+  - MobsterAccent
+  - ChronicPain
+  - ScottishAccent
+  - UltraVision
+  - Unborgable
+  - AnglishAccent
+  # End DeltaV Additions
+  blacklist:
+    components:
+    - AttachedClothing # helmets, which are part of the suit
+    - HumanoidAppearance # will cause problems for downstream felinids getting cloned as Urists
+    - Implanter # they will spawn full again, but you already get the implant. And we can't do item slot copying yet
+    - VirtualItem
 
 # for job-specific traits etc.
 - type: cloningSettings
@@ -145,18 +173,6 @@
 - type: cloningSettings
   id: L5Additions
   components:
-  # Begin DeltaV Additions
-  - Addicted
-  - DogVision
-  - FrenchAccent
-  - Hushed
-  - IrishAccent
-  - MobsterAccent
-  - Pain
-  - ScottishAccent
-  - UltraVision
-  - Unborgable
-  # End DeltaV Additions
   # Begin L5 Additions
   - BeerHudTrait
   - CPRTraining
