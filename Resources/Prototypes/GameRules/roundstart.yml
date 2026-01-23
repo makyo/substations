@@ -580,7 +580,7 @@
     - id: BasicTrashVariationPass
     - id: SolidWallRustingVariationPass
     - id: ReinforcedWallRustingVariationPass
-    - id: CutWireVariationPass
+    #- id: CutWireVariationPass # L5 — you've been on this ship for months now
     - id: BasicPuddleMessVariationPass
       prob: 0.99
       orGroup: puddleMess
@@ -592,7 +592,7 @@
     #- id: SolarPanelDamageVariationPass # DeltaV - we have random solar panel spawner
     #- id: SolarPanelEmptyVariationPass # DeltaV
     - id: BasicDecalDirtVariationPass
-    - id: BasicDecalGraffitiVariationPass
+    #- id: BasicDecalGraffitiVariationPass # L5 — you care more about this ship than that
     - id: BasicDecalBurnsVariationPass
       prob: 0.50
       orGroup: monospaceDecals
