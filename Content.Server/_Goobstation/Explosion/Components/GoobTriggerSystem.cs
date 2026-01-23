@@ -1,6 +1,7 @@
 using Content.Server.Construction.Completions;
 using Content.Server.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
+using Content.Shared.Trigger;
 
 
 namespace Content.Server._Goobstation.Explosion.EntitySystems;

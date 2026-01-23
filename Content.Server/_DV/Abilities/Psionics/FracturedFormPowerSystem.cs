@@ -142,12 +142,6 @@ public sealed class FracturedFormPowerSystem : SharedFracturedFormPowerSystem
                 _sleeping.TrySleeping((uid, mobState));
             }
 
-            // Handle SSD indicator
-            if (_ssdQuery.TryComp(uid, out var ssd) && ssd.IsSSD)
-            {
-                ssd.IsSSD = false;
-            }
-
             // Cleanup invalid bodies
             if (!comp.ControllingForm.IsValid()
                 || Deleted(comp.ControllingForm)
