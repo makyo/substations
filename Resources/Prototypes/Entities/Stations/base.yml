@@ -10,6 +10,7 @@
   components:
     - type: StationBankAccount
       # Begin L5 additions - disable departmental economy
+      increasePerSecond: 0 # tbh should be negative with how good we are
       primaryCut: 1
       lockboxCut: 0
       accounts:
