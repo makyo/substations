@@ -289,7 +289,7 @@ public abstract partial class SharedSurgerySystem
                 if (!containerSlot.ContainedEntity.HasValue)
                     continue;
 
-                if (_tagSystem.HasTag(containerSlot.ContainedEntity.Value, "PermissibleForSurgery")) // DeltaV: allow some clothing items to be operated through
+                if (_tagSystem.HasTag(containerSlot.ContainedEntity.Value, new ProtoId<Tag.TagPrototype>("PermissibleForSurgery"))) // DeltaV: allow some clothing items to be operated through
                     continue;
 
                 args.Invalid = StepInvalidReason.Armor;
@@ -322,14 +322,6 @@ public abstract partial class SharedSurgerySystem
                 args.ValidTools[tool] = speed;
             }
         }
-    }
-
-    private EntProtoId? GetProtoId(EntityUid entityUid)
-    {
-        if (!TryComp<MetaDataComponent>(entityUid, out var metaData))
-            return null;
-
-        return metaData.EntityPrototype?.ID;
     }
 
     // I wonder if theres not a function that can do this already.
@@ -714,6 +706,8 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
+
+
     /// <summary>
     /// Do a surgery step on a part, if it can be done.
     /// Returns true if it succeeded.
@@ -771,11 +765,10 @@ public abstract partial class SharedSurgerySystem
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
             BreakOnMove = true,
-            //BreakOnTargetMove = true, I fucking hate wizden dude.
             CancelDuplicate = true,
             DuplicateCondition = DuplicateConditions.SameEvent,
             NeedHand = true,
-            BreakOnHandChange = true,
+            BreakOnHandChange = false,
         };
 
         if (!_doAfter.TryStartDoAfter(doAfter))

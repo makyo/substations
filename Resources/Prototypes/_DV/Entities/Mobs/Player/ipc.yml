@@ -1,12 +1,13 @@
 - type: entity
   parent: MobIPC
   id: MobIPCTorsoOnly
-  abstract: true # L5 — Disabled due to IPCs being slightly broken
+  #abstract: true # L5 — Disabled due to IPCs being slightly broken # Needed for exosuit fab
   name: ipc chassis
   suffix: Torso Only
   components:
   - type: Body
     prototype: IPCTorsoOnly
+  - type: Stunned # L5 - whyyyy
   - type: IsDeadIC
   - type: RandomHumanoidAppearance
   - type: ItemSlots
