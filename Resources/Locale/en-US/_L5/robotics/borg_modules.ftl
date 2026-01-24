@@ -5,4 +5,3 @@ borg-slot-rcd-ammo-empty = RCD ammo
 borg-slot-holofan-empty = Holofan projector
 borg-slot-bucket-empty = Bucket
 borg-slot-plant-bag-empty = Plant bag
-borg-slot-handcuffs-empty = Handcuffs
