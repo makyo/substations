@@ -142,18 +142,18 @@ public sealed class FracturedFormPowerSystem : SharedFracturedFormPowerSystem
                 _sleeping.TrySleeping((uid, mobState));
             }
 
-            // Handle SSD indicator
-            if (_ssdQuery.TryComp(uid, out var ssd) && ssd.IsSSD)
-            {
-                ssd.IsSSD = false;
-            }
-
             // Cleanup invalid bodies
             if (!comp.ControllingForm.IsValid()
                 || Deleted(comp.ControllingForm)
                 || !_fracturedQuery.HasComp(comp.ControllingForm))
             {
                 RemCompDeferred<FracturedFormBodyComponent>(uid);
+            }
+
+            if (TryComp<SSDIndicatorComponent>(uid, out var ssd) && ssd.IsSSD)
+            {
+                // Ensure the body isn't forcesleep'd by the SSD system.
+                ssd.IsSSD = false;
             }
         }
     }
