@@ -26,7 +26,7 @@ public sealed partial class RoundEndSystem : EntitySystem
         vote.OnFinished += (_, args) =>
         {
             if (args.Winner == null || (bool)args.Winner)
-                RequestRoundEnd(null, false, "round-end-system-vote-shuttle-called-announcement");
+                RequestRoundEnd(null, null, false, "round-end-system-vote-shuttle-called-announcement");
         };
     }
 }
