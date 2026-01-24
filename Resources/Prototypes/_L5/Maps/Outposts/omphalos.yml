@@ -13,8 +13,6 @@
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: 'NY'
-      - type: StationBankAccount
-        increasePerSecond: 0 # tbh should be negative with how good we are
       - type: StationPlanetSpawner
         planet: GlacierSurface
         gridPath: /Maps/_DV/Nonstations/glacier_surface_outpost.yml
