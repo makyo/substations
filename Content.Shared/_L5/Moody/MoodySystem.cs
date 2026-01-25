@@ -14,7 +14,6 @@ public sealed class MoodySystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StatusEffectsSystem _status = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    public static readonly EntProtoId MoodySuppressedStatusEffect = "StatusEffectMoodySuppressed";
 
     public override void Initialize()
     {
@@ -28,7 +27,7 @@ public sealed class MoodySystem : EntitySystem
         if (!Resolve(ent.Owner, ref ent.Comp, false))
             return true;
 
-        return _status.HasEffectComp<MoodyStatusEffectSuppressedComponent>(ent.Owner);
+        return _status.HasEffectComp<MoodySuppressedStatusEffectComponent>(ent.Owner);
     }
 
     private void OnMapInit(Entity<MoodyComponent> ent, ref MapInitEvent args)
