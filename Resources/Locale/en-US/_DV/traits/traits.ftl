@@ -61,3 +61,6 @@ trait-redshirt-desc =
     Something is pulling me up the hill.
     I look down in my red shirt.
     I look down in my red shirt."
+
+trait-protected-name = Marked as Protected
+trait-protected-desc = Due to your position, value, or circumstances, your survival is considered preferable. You won't be targeted by kill objectives.
