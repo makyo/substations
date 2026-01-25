@@ -25,11 +25,11 @@ public sealed partial class MoodyComponent : Component
     /// Minimum time between pain popups.
     /// </summary>
     [DataField]
-    public TimeSpan MinimumPopupDelay = TimeSpan.FromSeconds(5);
+    public TimeSpan MinimumPopupDelay = TimeSpan.FromSeconds(30);
 
     /// <summary>
     /// Maximum time between pain popups.
     /// </summary>
     [DataField]
-    public TimeSpan MaximumPopupDelay = TimeSpan.FromSeconds(40);
+    public TimeSpan MaximumPopupDelay = TimeSpan.FromSeconds(60);
 };

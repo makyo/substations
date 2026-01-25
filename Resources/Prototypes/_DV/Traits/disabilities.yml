@@ -29,7 +29,8 @@
   description: trait-depression-desc
   traitGear: PillCanisterNeurozenium
   category: Disabilities
-  components: []
+  components:
+  - type: Moody # L5
 
 - type: trait
   id: Dysgraphia
