@@ -24,6 +24,9 @@ public sealed partial class LongTermHealthComponent : Component
     [DataField]
     public Dictionary<EffectType, int> PreviousEffects = new();
 
+    /// <summary>
+    /// How many effects from genetic damage will be applied next update.
+    /// </summary>
     [DataField]
     public int UpcomingGeneticEffects = 0;
 
@@ -32,7 +35,7 @@ public sealed partial class LongTermHealthComponent : Component
     /// </summary>
     [DataField]
     [AutoNetworkedField]
-    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(2);
+    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(5);
 
     [DataField]
     [AutoPausedField]

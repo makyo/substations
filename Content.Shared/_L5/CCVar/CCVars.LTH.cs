@@ -124,7 +124,7 @@ public sealed partial class L5CCVars
     /// <summary>
     /// The factor by which burn damage reappears over time, representing extended treatment.
     /// </summary>
-    public static readonly CVarDef<float> BurnReturnFacotr =
+    public static readonly CVarDef<float> BurnReturnFactor =
         CVarDef.Create("l5.long_term_health.burn.return_factor", 0.1f, CVar.REPLICATED);
 
     /// <summary>
@@ -160,6 +160,12 @@ public sealed partial class L5CCVars
     /// </summary>
     public static readonly CVarDef<float> AsphyxLungDamageSevereThreshold =
         CVarDef.Create("l5.long_term_health.airloss.lung_damage.severe_threshold", 150f, CVar.REPLICATED);
+
+    /// <summary>
+    /// The factor by which asphyxiation damage reappears over time, representing lung damage.
+    /// </summary>
+    public static readonly CVarDef<float> AsphyxReturnFactor =
+        CVarDef.Create("l5.long_term_health.airloss.return_factor", 0.1f, CVar.REPLICATED);
 
     /// <summary>
     /// The threshold at which AIRLOSS leads to mild brain damage by way of oxygen deprivation.

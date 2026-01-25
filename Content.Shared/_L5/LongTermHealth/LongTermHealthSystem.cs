@@ -1,9 +1,18 @@
+using Content.Shared._DV.ChronicPain.Components;
 using Content.Shared._L5.CCVar;
+using Content.Shared._L5.Traits.HardOfHearing;
+using Content.Shared.Buckle;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Drunk;
+using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.FixedPoint;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Toilet.Components;
+using Content.Shared.Traits.Assorted;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Timing;
@@ -12,8 +21,12 @@ namespace Content.Shared._L5.LongTermHealth;
 
 public sealed partial class LongTermHealthSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly SharedBuckleSystem _buckle = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly DamageableSystem _damage = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private float mildEffectSeconds, severeEffectSeconds, healDecayFactor;
@@ -23,12 +36,12 @@ public sealed partial class LongTermHealthSystem : EntitySystem
     {
         base.Initialize();
 
-        mildEffectSeconds = _configurationManager.GetCVar(L5CCVars.LongTermEffectsDuration);
-        severeEffectSeconds = mildEffectSeconds * _configurationManager.GetCVar(L5CCVars.LongTermEffectSevereMultiplier);
-        healDecayEnabled = _configurationManager.GetCVar(L5CCVars.LongTermEffectsHealDecayEnabled);
+        mildEffectSeconds = _config.GetCVar(L5CCVars.LongTermEffectsDuration);
+        severeEffectSeconds = mildEffectSeconds * _config.GetCVar(L5CCVars.LongTermEffectSevereMultiplier);
+        healDecayEnabled = _config.GetCVar(L5CCVars.LongTermEffectsHealDecayEnabled);
         healDecayFactor = 1f;
         if (healDecayEnabled)
-            healDecayFactor = _configurationManager.GetCVar(L5CCVars.LongTermEffectsHealDecayFactor);
+            healDecayFactor = _config.GetCVar(L5CCVars.LongTermEffectsHealDecayFactor);
 
         SubscribeLocalEvent<LongTermHealthComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<LongTermHealthComponent, DamageChangedEvent>(OnDamageChanged);
@@ -44,11 +57,11 @@ public sealed partial class LongTermHealthSystem : EntitySystem
         if (args.DamageDelta == null)
             return;
 
-        HandleAirloss(uid, ref component, args);
-        HandleBrute(uid, ref component, args);
-        HandleBurn(uid, ref component, args);
-        HandleToxin(uid, ref component, args);
-        HandleGenetic(uid, ref component, args);
+        OnAirloss(uid, ref component, args);
+        OnBrute(uid, ref component, args);
+        OnBurn(uid, ref component, args);
+        OnToxin(uid, ref component, args);
+        OnGenetic(uid, ref component, args);
     }
 
     public override void Update(float frameTime)
@@ -58,7 +71,7 @@ public sealed partial class LongTermHealthSystem : EntitySystem
         var curTime = _timing.CurTime;
 
         var query = EntityQueryEnumerator<LongTermHealthComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        while (query.MoveNext(out var ent, out var comp))
         {
             if (comp.NextUpdate > curTime)
                 continue;
@@ -66,80 +79,78 @@ public sealed partial class LongTermHealthSystem : EntitySystem
             // Tick up return damages
             foreach (var key in comp.CurrentEffects.Keys)
             {
-                comp.CurrentEffects[key] -= comp.UpdateInterval;
+                var intervalFactor = 1f;
+                if (_buckle.IsBuckled(ent))
+                {
+                    intervalFactor = _config.GetCVar(L5CCVars.LongTermEffectsRestFactor);
+                }
+                comp.CurrentEffects[key] -= comp.UpdateInterval * intervalFactor;
                 if (comp.CurrentEffects[key] < TimeSpan.Zero)
                 {
                     // remove components/etc
                     comp.CurrentEffects.Remove(key);
+                    comp.PreviousEffects[key]++;
+                    Remove(key, ref comp);
+                }
+                else
+                {
+                    switch (key)
+                    {
+                        case EffectType.BurnReturn:
+                            _damage.ChangeDamage(ent,
+                                new DamageSpecifier(
+                                    _proto.Index<DamageTypePrototype>("Caustic"), // Requires ointment to heal oneself.
+                                    comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.BurnReturnFactor)),
+                                ignoreResistances: true);
+                            break;
+
+                        case EffectType.MildHearingLoss:
+                        case EffectType.SevereHearingLoss:
+                            EnsureComp<HardOfHearingComponent>(ent);
+                            break;
+
+                        case EffectType.MildLungDamage:
+                        case EffectType.SevereLungDamage:
+                            _damage.ChangeDamage(ent,
+                                new DamageSpecifier(
+                                    _proto.Index<DamageTypePrototype>("Asphyxiation"),
+                                    comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.AsphyxReturnFactor)),
+                                ignoreResistances: true);
+                            break;
+
+                        case EffectType.MildPain:
+                        case EffectType.SeverePain:
+                            EnsureComp<ChronicPainComponent>(ent);
+                            break;
+
+                        case EffectType.MildParacusia:
+                        case EffectType.SevereParacusia:
+                            EnsureComp<ParacusiaComponent>(ent);
+                            break;
+
+                        case EffectType.PoisonReturn:
+                            _damage.ChangeDamage(ent,
+                                new DamageSpecifier(
+                                    _proto.Index<DamageTypePrototype>("Poison"),
+                                    comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.PoisonReturnFactor)),
+                                ignoreResistances: true);
+                            break;
+
+                        case EffectType.MildVisionLoss:
+                        case EffectType.SevereVisionLoss:
+                            EnsureComp<BlurryVisionComponent>(ent);
+                            break;
+
+                        case EffectType.MildWoozy:
+                        case EffectType.SevereWoozy:
+                            if (!_statusEffects.HasStatusEffect(ent, "StatusEffectWoozy"))
+                                _statusEffects.TrySetStatusEffectDuration(ent, "StatusEffectWoozy", comp.CurrentEffects[key]);
+                            break;
+                    }
                 }
             }
 
             comp.NextUpdate += comp.UpdateInterval;
-        }
-    }
-
-    private void ClearUpcomingTBIs(ref LongTermHealthComponent component)
-    {
-        foreach (var tbi in EffectTypeExtensions.AllTBIs)
-        {
-            if (component.UpcomingEffects.ContainsKey(tbi))
-            {
-                component.UpcomingEffects.Remove(tbi);
-            }
-        }
-    }
-
-    private void PrepareEffect(
-        ref LongTermHealthComponent component,
-        FixedPoint2 damage,
-        EffectType mildType,
-        EffectType severeType,
-        CVarDef<float> mildCVar,
-        CVarDef<float> severeCVar)
-    {
-        if (!component.CurrentEffects.ContainsKey(severeType) &&
-            damage > _configurationManager.GetCVar(severeCVar))
-        {
-            component.UpcomingEffects.Remove(mildType);
-            component.UpcomingEffects[severeType] = true;
-        }
-        else if (!component.CurrentEffects.ContainsKey(mildType) &&
-                 damage > _configurationManager.GetCVar(mildCVar))
-        {
-            component.UpcomingEffects.Remove(severeType);
-            component.UpcomingEffects[mildType] = true;
-        }
-    }
-
-    private void ApplyEffect(
-        ref LongTermHealthComponent component,
-        FixedPoint2 damage,
-        EffectType mildType,
-        EffectType severeType,
-        CVarDef<float> mildCVar,
-        CVarDef<float> severeCVar)
-    {
-        if (component.UpcomingEffects.ContainsKey(severeType) &&
-            damage < _configurationManager.GetCVar(severeCVar))
-        {
-            var duration = severeEffectSeconds;
-            component.UpcomingEffects.Remove(severeType);
-
-            if (healDecayEnabled && component.PreviousEffects.TryGetValue(severeType, out var count))
-                duration *= healDecayFactor * count;
-
-            component.CurrentEffects[severeType] = TimeSpan.FromSeconds(duration);
-        }
-        else if (component.UpcomingEffects.ContainsKey(mildType) &&
-                 damage < _configurationManager.GetCVar(mildCVar))
-        {
-            var duration = mildEffectSeconds;
-            component.UpcomingEffects.Remove(mildType);
-
-            if (healDecayEnabled && component.PreviousEffects.TryGetValue(mildType, out var count))
-                duration *= healDecayFactor * count;
-
-            component.CurrentEffects[mildType] = TimeSpan.FromSeconds(duration);
         }
     }
 }
