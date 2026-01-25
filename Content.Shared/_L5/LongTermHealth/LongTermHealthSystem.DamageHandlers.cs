@@ -1,4 +1,5 @@
-using Content.Shared._DV.Pain;
+using Content.Shared._DV.ChronicPain;
+using Content.Shared._DV.ChronicPain.Components;
 using Content.Shared._L5.CCVar;
 using Content.Shared._L5.Traits.HardOfHearing;
 using Content.Shared.Damage.Systems;
@@ -127,7 +128,7 @@ public sealed partial class LongTermHealthSystem
 
         if (bruteDeltaTotal > FixedPoint2.Zero)
         {
-            if (!HasComp<PainComponent>(owner))
+            if (!HasComp<ChronicPainComponent>(owner))
                 PrepareEffect(
                     ref component,
                     bruteTotal,
@@ -243,7 +244,7 @@ public sealed partial class LongTermHealthSystem
             if (effect == EffectType.SevereParacusia && HasComp<ParacusiaComponent>(owner) ||
                 effect == EffectType.SevereHearingLoss && HasComp<HardOfHearingComponent>(owner) ||
                 effect == EffectType.SevereVisionLoss && HasComp<BlurryVisionComponent>(owner) ||
-                effect == EffectType.SeverePain && HasComp<PainComponent>(owner) ||
+                effect == EffectType.SeverePain && HasComp<ChronicPainComponent>(owner) ||
                 effect == EffectType.SevereImpairedMobility && HasComp<ImpairedMobilityComponent>(owner))
                 return;
 
