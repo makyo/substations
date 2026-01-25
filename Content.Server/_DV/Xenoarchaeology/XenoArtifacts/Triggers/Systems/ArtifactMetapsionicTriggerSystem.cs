@@ -1,4 +1,4 @@
-﻿// L5 – remove psionics
+// L5 – remove psionics
 // using Content.Server._DV.Xenoarchaeology.XenoArtifacts.Triggers.Components;
 // ﻿using Content.Server.Nyanotrasen.StationEvents.Events;
 // using Content.Server.Xenoarchaeology.Artifact;

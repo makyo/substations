@@ -1,7 +1,7 @@
 - type: listing
   id: AiRgbLighting
-  name: RGB Lighting # L5 - fix for TestNoManualEntityLocStrings
-  description: Adjust a light's color controller to add or remove an RGB effect # L5 - fix for TestNoManualEntityLocStrings
+  name: ent-ActionStationAiRgbLighting
+  description: ent-ActionStationAiRgbLighting.desc
   productAction: ActionStationAiRgbLighting
   cost:
     AiMemory: 1
@@ -13,8 +13,8 @@
 
 - type: listing
   id: AiHolopointer
-  name: Holopointer # L5 - fix for TestNoManualEntityLocStrings
-  description: Circle an area of interest with a hologram # L5 - fix for TestNoManualEntityLocStrings
+  name: ent-ActionStationAiHoloPointer
+  description: ent-ActionStationAiHoloPointer.desc
   productAction: ActionStationAiHoloPointer
   cost:
     AiMemory: 1
@@ -26,8 +26,8 @@
 
 - type: listing
   id: AiLightSynthesizer
-  name: Light Synthesizer # L5 - fix for TestNoManualEntityLocStrings
-  description: Send some nanites to synthesize a replacement light bulb in a fixture # L5 - fix for TestNoManualEntityLocStrings
+  name: ent-ActionStationAiLightSynthesizer
+  description: ent-ActionStationAiLightSynthesizer.desc
   productAction: ActionStationAiLightSynthesizer
   cost:
     AiMemory: 1
@@ -39,8 +39,8 @@
 
 - type: listing
   id: AiBikeHorn
-  name: HONK.mp3 # L5 - fix for TestNoManualEntityLocStrings
-  description: Play an amusing audio clip from a holopad # L5 - fix for TestNoManualEntityLocStrings
+  name: ent-ActionStationAiBikeHorn
+  description: ent-ActionStationAiBikeHorn.desc
   productAction: ActionStationAiBikeHorn
   cost:
     AiMemory: 1
@@ -52,8 +52,8 @@
 
 - type: listing
   id: AiEmergencySealant
-  name: Emergency Sealant # L5 - fix for TestNoManualEntityLocStrings
-  description: Deploy some metal foam to seal breaches # L5 - fix for TestNoManualEntityLocStrings
+  name: ent-ActionStationAiEmergencySealant
+  description: ent-ActionStationAiEmergencySealant.desc
   productAction: ActionStationAiEmergencySealant
   cost:
     AiMemory: 2
@@ -65,8 +65,8 @@
 
 - type: listing
   id: AiRepairNanites
-  name: Repair Nanites # L5 - fix for TestNoManualEntityLocStrings
-  description: Send some nanites to give a cyborg some minor repairs # L5 - fix for TestNoManualEntityLocStrings
+  name: ent-ActionStationAiRepairNanites
+  description: ent-ActionStationAiRepairNanites.desc
   productAction: ActionStationAiRepairNanites
   cost:
     AiMemory: 2

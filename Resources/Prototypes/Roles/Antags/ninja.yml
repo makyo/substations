@@ -14,7 +14,7 @@
   id: SpaceNinjaGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitNinja
-    back: ClothingBackpackSatchel
+    back: ClothingBackpackSatchelNinja
     mask: ClothingMaskNinja
     head: ClothingHeadHelmetSpaceNinja
     eyes: ClothingEyesVisorNinja
@@ -22,7 +22,7 @@
     outerClothing: ClothingOuterSuitSpaceNinja
     shoes: ClothingShoesSpaceNinja
     id: AgentIDCard
-    ears: ClothingHeadsetGrey
+    ears: ClothingHeadsetNinja
     pocket1: SpiderCharge
     pocket2: PinpointerStation
     belt: EnergyKatana
@@ -36,6 +36,10 @@
     - Wirecutter
     - Welder
     - Multitool
+    - EmergencyMedipen
+    - Flare
+    - FoodSnackNutribrick
+    - DrinkWaterBottleFull
 
 - type: chameleonOutfit
   id: NinjaChameleonOutfit

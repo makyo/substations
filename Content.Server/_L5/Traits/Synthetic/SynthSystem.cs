@@ -20,6 +20,7 @@ using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
 using Content.Shared._L5.Traits.Synthetic;
 using Content.Shared.Body.Components;
+using Content.Shared.Chat;
 using Content.Shared.Emp;
 using Robust.Shared.Prototypes;
 

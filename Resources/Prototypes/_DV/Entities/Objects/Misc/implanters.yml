@@ -1,4 +1,5 @@
 - type: entity
+  abstract: true # L5 — replaced by upstream
   parent: BaseImplantOnlyImplanterSyndi
   id: BionicVoiceMaskImplanter
   name: bionic voice mask implanter
@@ -7,6 +8,7 @@
     implant: BionicVoiceMaskImplant
 
 - type: entity
+  abstract: true # L5 — replaced by upstream
   parent: BionicVoiceMaskImplanter
   id: BionicSyrinxImplanter
   name: bionic syrinx implanter
@@ -21,6 +23,15 @@
   components:
   - type: Implanter
     implant: WatchdogImplant
+
+- type: entity
+  parent: BaseImplantOnlyImplanterCentcomm
+  id: CentCommImplanter
+  name: centcomm implanter
+  suffix: mindshield
+  components:
+  - type: Implanter
+    implant: CentCommImplant
 
 # Nukie implants
 

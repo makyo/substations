@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 266.0.0
+  engineVersion: 270.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/23/2025 18:34:07
+  time: 01/20/2026 23:35:06
   entityCount: 6447
 maps:
 - 1
@@ -43,31 +43,21 @@ entities:
       name: Map Entity
     - type: Transform
     - type: Map
-      mapPaused: True
+      mapPaused: true
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
       parallax: Saturn
     - type: MapAtmosphere
-      space: False
+      space: false
       mixture:
         volume: 2500
-        immutable: True
+        immutable: true
         temperature: 181.53
         moles:
-        - 0
-        - 38.29
-        - 0
-        - 0
-        - 0
-        - 0
-        - 121.4
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
+          Nitrogen: 38.29
+          Ammonia: 121.4
     - type: MapLight
       ambientLightColor: '#FFFFAAFF'
   - uid: 2
@@ -266,10 +256,8 @@ entities:
     - type: Broadphase
     - type: Physics
       bodyStatus: InAir
-      fixedRotation: False
+      fixedRotation: false
       bodyType: Dynamic
-    - type: Fixtures
-      fixtures: {}
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
@@ -642,84 +630,29 @@ entities:
         uniqueMixes:
         - volume: 2500
           temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+          moles: {}
         - volume: 2500
           temperature: 293.15
           moles:
-          - 21.824879
-          - 82.10312
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
         - volume: 2500
-          immutable: True
-          moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+          immutable: true
+          moles: {}
         - volume: 2500
           temperature: 293.15
           moles:
-          - 0
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Nitrogen: 6666.982
         - volume: 2500
           temperature: 293.15
           moles:
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Oxygen: 6666.982
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Gemini
+    - type: ExplosionAirtightGrid
 - proto: AirAlarm
   entities:
   - uid: 3
@@ -744,8 +677,6 @@ entities:
       - 5572
       - 5595
       - 5573
-    - type: Fixtures
-      fixtures: {}
   - uid: 4
     components:
     - type: Transform
@@ -782,8 +713,6 @@ entities:
       - 5559
       - 5561
       - 5582
-    - type: Fixtures
-      fixtures: {}
   - uid: 5
     components:
     - type: Transform
@@ -793,8 +722,6 @@ entities:
     - type: DeviceList
       devices:
       - 45
-    - type: Fixtures
-      fixtures: {}
 - proto: AirCanister
   entities:
   - uid: 6
@@ -854,12 +781,9 @@ entities:
     - type: Transform
       pos: -29.5,-41.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -14732.64
-      state: Opening
     - type: DeviceLinkSource
       lastSignals:
-        DoorStatus: True
+        DoorStatus: true
   - uid: 17
     components:
     - type: Transform
@@ -1155,8 +1079,6 @@ entities:
       parent: 2
     - type: PowerNetworkBattery
       supplyRampPosition: 10000
-    - type: Fixtures
-      fixtures: {}
   - uid: 48
     components:
     - type: Transform
@@ -1165,8 +1087,6 @@ entities:
       parent: 2
     - type: PowerNetworkBattery
       supplyRampPosition: 10000
-    - type: Fixtures
-      fixtures: {}
   - uid: 49
     components:
     - type: Transform
@@ -1174,8 +1094,6 @@ entities:
       parent: 2
     - type: PowerNetworkBattery
       supplyRampPosition: 10000
-    - type: Fixtures
-      fixtures: {}
 - proto: AsteroidAltRock
   entities:
   - uid: 50
@@ -20678,9 +20596,7 @@ entities:
       pos: -33.5,-47.5
       parent: 2
     - type: Lock
-      locked: False
-    - type: Fixtures
-      fixtures: {}
+      locked: false
   - uid: 3941
     components:
     - type: Transform
@@ -20688,27 +20604,21 @@ entities:
       pos: -44.5,-47.5
       parent: 2
     - type: Lock
-      locked: False
-    - type: Fixtures
-      fixtures: {}
+      locked: false
   - uid: 3942
     components:
     - type: Transform
       pos: -43.5,-48.5
       parent: 2
     - type: Lock
-      locked: False
-    - type: Fixtures
-      fixtures: {}
+      locked: false
   - uid: 3943
     components:
     - type: Transform
       pos: -34.5,-48.5
       parent: 2
     - type: Lock
-      locked: False
-    - type: Fixtures
-      fixtures: {}
+      locked: false
 - proto: Bed
   entities:
   - uid: 3944
@@ -20969,8 +20879,6 @@ entities:
     components:
     - type: Transform
       parent: 3987
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: BoxSoapsAssortedOmega
   entities:
@@ -20978,8 +20886,6 @@ entities:
     components:
     - type: Transform
       parent: 3993
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: ButtonFrameCaution
   entities:
@@ -25120,7 +25026,7 @@ entities:
       placedEntities:
       - 5626
     - type: PlaceableSurface
-      isPlaceable: False
+      isPlaceable: false
 - proto: ChemMaster
   entities:
   - uid: 4789
@@ -26170,7 +26076,7 @@ entities:
       pos: -91.74966,-12.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: ClosetWallBlack
   entities:
   - uid: 3987
@@ -26182,16 +26088,14 @@ entities:
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
-          showEnts: False
-          occludes: True
+          showEnts: false
+          occludes: true
           ents:
           - 3989
           - 3992
           - 3991
           - 3990
           - 3988
-    - type: Fixtures
-      fixtures: {}
   - uid: 3993
     components:
     - type: Transform
@@ -26201,16 +26105,14 @@ entities:
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
-          showEnts: False
-          occludes: True
+          showEnts: false
+          occludes: true
           ents:
           - 3995
           - 3996
           - 3997
           - 3994
           - 3998
-    - type: Fixtures
-      fixtures: {}
 - proto: ClosetWallEmergencyFilledRandom
   entities:
   - uid: 4988
@@ -26218,31 +26120,23 @@ entities:
     - type: Transform
       pos: -85.5,-0.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 4989
     components:
     - type: Transform
       pos: -91.5,-0.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 4990
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -91.5,-5.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 4991
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -85.5,-5.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: ComputerAlert
   entities:
   - uid: 4992
@@ -26375,7 +26269,14 @@ entities:
       pos: -100.5,-0.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
+- proto: CrateMaterialBasicResource
+  entities:
+  - uid: 5100
+    components:
+    - type: Transform
+      pos: -77.5,-4.5
+      parent: 2
 - proto: CrewMonitoringServer
   entities:
   - uid: 5008
@@ -26548,8 +26449,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -86.5,3.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: Dresser
   entities:
   - uid: 5034
@@ -26597,7 +26496,7 @@ entities:
   - uid: 5042
     components:
     - type: Transform
-      anchored: True
+      anchored: true
       pos: -73.5,-2.5
       parent: 2
     - type: DeviceLinkSink
@@ -26610,12 +26509,11 @@ entities:
         - - OutputLow
           - Off
     - type: Physics
-      canCollide: False
       bodyType: Static
   - uid: 5043
     components:
     - type: Transform
-      anchored: True
+      anchored: true
       rot: 1.5707963267948966 rad
       pos: -38.5,-37.5
       parent: 2
@@ -26629,12 +26527,11 @@ entities:
         - - OutputLow
           - Off
     - type: Physics
-      canCollide: False
       bodyType: Static
   - uid: 5044
     components:
     - type: Transform
-      anchored: True
+      anchored: true
       pos: -73.5,-3.5
       parent: 2
     - type: DeviceLinkSink
@@ -26647,12 +26544,11 @@ entities:
         - - OutputLow
           - Off
     - type: Physics
-      canCollide: False
       bodyType: Static
   - uid: 5045
     components:
     - type: Transform
-      anchored: True
+      anchored: true
       rot: 1.5707963267948966 rad
       pos: -39.5,-37.5
       parent: 2
@@ -26666,7 +26562,6 @@ entities:
         - - OutputLow
           - Off
     - type: Physics
-      canCollide: False
       bodyType: Static
 - proto: EngineeringTechFab
   entities:
@@ -26697,40 +26592,30 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -90.5,-9.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 5050
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -79.5,-9.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 5051
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -79.5,3.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 5052
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -86.5,-5.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 5053
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -90.5,3.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: FaxMachineBase
   entities:
   - uid: 5054
@@ -26755,8 +26640,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -79.5,-12.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: Firelock
   entities:
   - uid: 5057
@@ -26965,15 +26848,11 @@ entities:
     - type: Transform
       pos: -81.5,5.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 5091
     components:
     - type: Transform
       pos: -93.5,-10.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: FolderSpawner
   entities:
   - uid: 5092
@@ -26996,24 +26875,24 @@ entities:
     - type: Transform
       pos: -45.3666,-36.34062
       parent: 2
-- proto: GasFilter
+- proto: GasFilterEnabledNitrogen
   entities:
-  - uid: 5096
+  - uid: 5097
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -82.5,-9.5
       parent: 2
-    - type: GasFilter
-      filteredGas: Nitrogen
-  - uid: 5097
+    - type: AtmosPipeColor
+      color: '#990000FF'
+- proto: GasFilterEnabledOxygen
+  entities:
+  - uid: 5096
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -83.5,-9.5
       parent: 2
-    - type: GasFilter
-      filteredGas: Oxygen
     - type: AtmosPipeColor
       color: '#990000FF'
 - proto: GasMinerNitrogenStationLarge
@@ -27032,9 +26911,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -84.5,-15.5
       parent: 2
-- proto: GasMixerFlipped
+- proto: GasMixerEnabledFlipped
   entities:
-  - uid: 5100
+  - uid: 6096
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -27043,6 +26922,7 @@ entities:
     - type: GasMixer
       inletTwoConcentration: 0.25
       inletOneConcentration: 0.75
+      targetPressure: 200
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasOutletInjector
@@ -27053,6 +26933,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -79.5,-14.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5102
     components:
     - type: Transform
@@ -27068,12 +26950,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: -84.5,-14.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 5104
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -81.5,-14.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
   - uid: 5105
     components:
     - type: Transform
@@ -27089,17 +26975,23 @@ entities:
     - type: Transform
       pos: -79.5,-12.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5107
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -80.5,-12.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5108
     components:
     - type: Transform
       pos: -81.5,-10.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
   - uid: 5109
     components:
     - type: Transform
@@ -27113,6 +27005,8 @@ entities:
     - type: Transform
       pos: -80.5,-8.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5111
     components:
     - type: Transform
@@ -27135,6 +27029,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -83.5,-11.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
 - proto: GasPipeBendAlt1
   entities:
   - uid: 5114
@@ -27519,53 +27415,71 @@ entities:
       rot: 3.141592653589793 rad
       pos: -84.5,-13.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 5164
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -81.5,-13.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
   - uid: 5165
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -79.5,-13.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5166
     components:
     - type: Transform
       pos: -81.5,-11.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
   - uid: 5167
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -83.5,-10.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 5168
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -83.5,-10.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
   - uid: 5169
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -80.5,-10.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5170
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -81.5,-9.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5171
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -80.5,-11.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5172
     components:
     - type: Transform
@@ -30308,18 +30222,24 @@ entities:
       rot: 3.141592653589793 rad
       pos: -82.5,-10.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
   - uid: 5521
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -84.5,-11.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
   - uid: 5522
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -80.5,-9.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 5523
     components:
     - type: Transform
@@ -30509,12 +30429,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: -81.5,-12.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
   - uid: 5547
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -84.5,-12.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#03FCD3FF'
 - proto: GasPressurePumpAlt1
   entities:
   - uid: 5548
@@ -31203,7 +31127,7 @@ entities:
       pos: -101.5,-0.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: Holopad
   entities:
   - uid: 5607
@@ -31349,7 +31273,7 @@ entities:
       pos: -81.5,6.75
       parent: 2
     - type: CollisionWake
-      enabled: False
+      enabled: false
 - proto: LiquidOxygenCanister
   entities:
   - uid: 5627
@@ -31370,7 +31294,7 @@ entities:
       pos: -97.76281,-4.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerCaptainFilledHardsuit
   entities:
   - uid: 5630
@@ -31379,7 +31303,7 @@ entities:
       pos: -97.26281,-4.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerChiefEngineerFilledHardsuit
   entities:
   - uid: 5631
@@ -31388,7 +31312,7 @@ entities:
       pos: -80.26234,-6.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerChiefMedicalOfficerFilledHardsuit
   entities:
   - uid: 5632
@@ -31397,7 +31321,7 @@ entities:
       pos: -84.75326,6.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerEngineerFilledHardsuit
   entities:
   - uid: 5633
@@ -31406,7 +31330,7 @@ entities:
       pos: -80.76234,-6.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerHeadOfPersonnelFilled
   entities:
   - uid: 5634
@@ -31415,7 +31339,7 @@ entities:
       pos: -91.23403,-12.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerHeadOfSecurityFilledHardsuit
   entities:
   - uid: 5635
@@ -31424,7 +31348,7 @@ entities:
       pos: -97.265526,-1.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerParamedicFilledHardsuit
   entities:
   - uid: 5636
@@ -31433,7 +31357,7 @@ entities:
       pos: -84.28266,6.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerQuarterMasterFilled
   entities:
   - uid: 5637
@@ -31442,7 +31366,7 @@ entities:
       pos: -75.26872,-1.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerResearchDirectorFilledHardsuit
   entities:
   - uid: 5638
@@ -31451,7 +31375,7 @@ entities:
       pos: -96.73568,0.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerSalvageSpecialistFilledHardsuit
   entities:
   - uid: 5639
@@ -31460,21 +31384,21 @@ entities:
       pos: -75.26749,-4.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
   - uid: 5640
     components:
     - type: Transform
       pos: -75.76749,-1.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
   - uid: 5641
     components:
     - type: Transform
       pos: -75.76749,-4.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerScienceFilled
   entities:
   - uid: 5642
@@ -31483,7 +31407,7 @@ entities:
       pos: -96.26693,0.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerSteel
   entities:
   - uid: 5643
@@ -31492,28 +31416,28 @@ entities:
       pos: -30.263252,-47.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
   - uid: 5644
     components:
     - type: Transform
       pos: -31.225754,-36.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
   - uid: 5645
     components:
     - type: Transform
       pos: -44.22718,-36.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
   - uid: 5646
     components:
     - type: Transform
       pos: -47.696083,-47.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LockerWardenFilledHardsuit
   entities:
   - uid: 5647
@@ -31522,7 +31446,7 @@ entities:
       pos: -97.765526,-1.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: LogisticsTechFab
   entities:
   - uid: 5648
@@ -31634,15 +31558,11 @@ entities:
     - type: Transform
       pos: -27.5,-39.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 5666
     components:
     - type: Transform
       pos: -50.5,-39.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: MountainRock
   entities:
   - uid: 5667
@@ -33908,14 +33828,14 @@ entities:
       pos: -44.7416,-36.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
   - uid: 6076
     components:
     - type: Transform
       pos: -31.7416,-36.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: SecureCabinetCaptain
   entities:
   - uid: 6077
@@ -33924,7 +33844,7 @@ entities:
       pos: -101.5,-4.5
       parent: 2
     - type: Lock
-      locked: False
+      locked: false
 - proto: SecurityTechFab
   entities:
   - uid: 6078
@@ -33947,16 +33867,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: -50.5,-42.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 6081
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -27.5,-42.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: SignalSwitchDirectional
   entities:
   - uid: 6082
@@ -33980,8 +33896,6 @@ entities:
         44:
         - - Status
           - DoorBolt
-    - type: Fixtures
-      fixtures: {}
 - proto: SignPlaque
   entities:
   - uid: 6083
@@ -33993,8 +33907,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -92.5,-5.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: Sink
   entities:
   - uid: 6084
@@ -34046,9 +33958,7 @@ entities:
       pos: -102.5,-0.5
       parent: 2
     - type: Lock
-      locked: False
-    - type: Fixtures
-      fixtures: {}
+      locked: false
 - proto: SpawnPointAdminAssistant
   entities:
   - uid: 6091
@@ -34080,13 +33990,6 @@ entities:
 - proto: SpawnPointBotanist
   entities:
   - uid: 6095
-    components:
-    - type: Transform
-      pos: -38.5,-50.5
-      parent: 2
-- proto: SpawnPointBoxer
-  entities:
-  - uid: 6096
     components:
     - type: Transform
       pos: -38.5,-50.5
@@ -34611,8 +34514,6 @@ entities:
     components:
     - type: Transform
       parent: 3987
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: TowelColorBlue
   entities:
@@ -34620,8 +34521,6 @@ entities:
     components:
     - type: Transform
       parent: 3987
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: TowelColorGold
   entities:
@@ -34629,8 +34528,6 @@ entities:
     components:
     - type: Transform
       parent: 3987
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: TowelColorMaroon
   entities:
@@ -34638,8 +34535,6 @@ entities:
     components:
     - type: Transform
       parent: 3987
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: TowelColorPink
   entities:
@@ -34647,8 +34542,6 @@ entities:
     components:
     - type: Transform
       parent: 3993
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: TowelColorPurple
   entities:
@@ -34656,8 +34549,6 @@ entities:
     components:
     - type: Transform
       parent: 3993
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: TowelColorSilver
   entities:
@@ -34665,8 +34556,6 @@ entities:
     components:
     - type: Transform
       parent: 3993
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: TowelColorTeal
   entities:
@@ -34674,8 +34563,6 @@ entities:
     components:
     - type: Transform
       parent: 3993
-    - type: Physics
-      canCollide: False
     - type: InsideEntityStorage
 - proto: ToyRubberDuck
   entities:
@@ -35908,8 +35795,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -82.5,-13.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: WarningO2
   entities:
   - uid: 6408
@@ -35918,8 +35803,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -83.5,-13.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: WarpPoint
   entities:
   - uid: 6409

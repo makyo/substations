@@ -15,6 +15,13 @@
     tags:
     - Wall
     - Natural
+  # L5 - make gatherable
+  - type: SoundOnGather
+  - type: Gatherable
+    toolWhitelist:
+      tags:
+      - Pickaxe
+  # end L5
   - type: MiningScannerViewable
   - type: Damageable
     damageContainer: StructuralInorganic

@@ -10,13 +10,13 @@
 <!-- Summary of code changes for easier review. -->
 
 ## Media
-<!-- Attach media if the PR makes ingame changes (clothing, items, features, etc).
+<!-- Attach media if the PR makes in-game changes (clothing, items, features, etc).
 Small fixes/refactors are exempt. -->
 
 ## Requirements
 <!-- Confirm the following by placing an X in the brackets [X]: -->
 - [ ] I have tested all added content and changes.
-- [ ] I have added media to this PR or it does not require an ingame showcase.
+- [ ] I have added media to this PR or it does not require an in-game showcase.
 <!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
 
 ## Breaking changes

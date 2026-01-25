@@ -126,10 +126,12 @@
     damageContainer: InorganicMetaphysical
     damageModifierSet: EntropicColossus
   - type: Bloodstream
-    bloodMaxVolume: 650
     maxBleedAmount: 0.1
     bleedReductionAmount: 0.1
-    bloodReagent: Entropy
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Entropy
+        Quantity: 650
     bloodlossDamage:
       types:
         Bloodloss:

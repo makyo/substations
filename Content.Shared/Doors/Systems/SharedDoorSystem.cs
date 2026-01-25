@@ -123,7 +123,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!TryComp<AirlockComponent>(uid, out var airlock))
             return;
 
-        if (IsBolted(uid) || !airlock.Powered)
+        if (!airlock.Powered)
             return;
 
         if (door.State != DoorState.Closed)
@@ -368,12 +368,12 @@ public abstract partial class SharedDoorSystem : EntitySystem
             sound = door.PriedOpenSound;
 
         if (predicted)
-            Audio.PlayPredicted(sound, uid, user, AudioParams.Default); // L5 — no volume modification
+            Audio.PlayPredicted(sound, uid, user, AudioParams.Default.WithVolume(-5));
         else if (_net.IsServer)
-            Audio.PlayPvs(sound, uid, AudioParams.Default); // L5 — no volume modification
+            Audio.PlayPvs(sound, uid, AudioParams.Default.WithVolume(-5));
 
         if (lastState == DoorState.Emagging && TryComp<DoorBoltComponent>(uid, out var doorBoltComponent))
-            SetBoltsDown((uid, doorBoltComponent), !doorBoltComponent.BoltsDown, user, true);
+            SetBoltsDown((uid, doorBoltComponent), true, user, true);
     }
 
     /// <summary>
@@ -466,9 +466,9 @@ public abstract partial class SharedDoorSystem : EntitySystem
             sound = door.PriedClosedSound;
 
         if (predicted)
-            Audio.PlayPredicted(sound, uid, user, AudioParams.Default); // L5 — no volume modification
+            Audio.PlayPredicted(sound, uid, user, AudioParams.Default.WithVolume(-5));
         else if (_net.IsServer)
-            Audio.PlayPvs(sound, uid, AudioParams.Default); // L5 — no volume modification
+            Audio.PlayPvs(sound, uid, AudioParams.Default.WithVolume(-5));
     }
 
     /// <summary>

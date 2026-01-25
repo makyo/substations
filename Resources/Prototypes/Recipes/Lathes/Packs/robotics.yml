@@ -1,9 +1,6 @@
 ## Static
 
 - type: latheRecipePack
-  parent:
-  - IPCPartsStatic # Shitmed Change
-  - RoboticsStaticDeltaV # DeltaV
   id: RoboticsStatic
   recipes:
   - MMI
@@ -12,14 +9,13 @@
   - CyborgEndoskeleton
 
 - type: latheRecipePack
-  parent:
-  - BorgModulesStaticShitmed # Shitmed Change
   id: BorgModulesStatic
   recipes:
   - BorgModuleTool
   - BorgModuleCable
   - BorgModuleFireExtinguisher
   - BorgModuleInflatable
+  - BorgModuleArtistry
   # Begin L5 Additions - more printable borg modules
   - BorgModuleAnomaly
   - BorgModuleAppraisal
@@ -54,21 +50,17 @@
 ## Dynamic
 
 - type: latheRecipePack
-  parent:
-  - RoboticsDeltaV # DeltaV
   id: Robotics
   recipes:
   - ProximitySensor
 
 - type: latheRecipePack
-  parent:
-  - BorgModulesShitmed # Shitmed change
   id: BorgModules
   recipes:
   - BorgModuleAdvancedCleaning
   - BorgModuleAdvancedTool
   - BorgModuleAdvancedClowning
-  - BorgModuleAdvancedChemical
+  - BorgModuleAdvancedTopical
   - BorgModuleAdvancedMining
 
 - type: latheRecipePack

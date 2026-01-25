@@ -111,6 +111,8 @@
     baseWalkSpeed: 0
     baseSprintSpeed: 0
   - type: InputMover
+  - type: Physics
+    bodyType: KinematicController
   - type: GhostOnMove
   - type: Tag
     tags:

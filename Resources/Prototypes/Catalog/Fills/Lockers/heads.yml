@@ -326,7 +326,7 @@
     - !type:NestedSelector # DeltaV
       tableId: LockerFillHeadOfSecurityDeltaV
     - id: BookSecretDocuments
-    # - id: WeaponEnergyShotgun # DeltaV - Moved to warden locker
+    #- id: WeaponEnergyMagnum # DeltaV - Replaced with the HoSBriefcase
     #- id: BookSpaceLaw # DeltaV - Moved to dresser
     - id: BoxEncryptionKeySecurity
     #- id: CigarGoldCase # DeltaV - Moved to dresser
@@ -337,6 +337,7 @@
     #- id: ClothingMaskNeckGaiter # DeltaV - Moved to dresser
     #- id: ClothingOuterCoatHoSTrench # DeltaV - Moved to dresser
     #- id: ClothingShoesBootsJack # DeltaV - Moved to dresser
+    - id: FlashlightSeclite
     - id: DoorRemoteSecurity
     - id: HoloprojectorSecurity
     - id: RubberStampHos
@@ -383,17 +384,24 @@
         - !type:NestedSelector
           tableId: FillHeadOfSecurityHardsuit
 
-- type: entity
-  id: LockerFreezerVaultFilled
-  suffix: Vault, Locked
-  parent: LockerFreezerBase
-  components:
-  - type: AccessReader
-    access: [ [ "Command" ] ]
-  - type: StorageFill
-    contents:
+- type: entityTable
+  id: LockerFillVault
+  table: !type:AllSelector
+    children:
     - id: WeaponRevolverDeckard
     - id: JetpackBlue
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
+
+- type: entity
+  id: LockerFreezerVaultFilled
+  suffix: Vault, Filled
+  parent: LockerFreezerBase
+  components:
+  - type: AccessReader
+    access: [ [ "Command" ] ]
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillVault

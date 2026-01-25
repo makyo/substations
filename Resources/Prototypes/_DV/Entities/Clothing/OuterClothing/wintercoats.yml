@@ -28,7 +28,7 @@
 # L5
 - type: entity
   parent: ClothingOuterArmoredWinterCoat
-  id: ClothingOuterWinterCCWarden
+  id: ClothingOuterArmoredWinterCoatCentComm
   name: Central Adminstration's armored winter coat
   description: A tough, utilitarian coat designed for the armorers of Central Administration. Reinforced kevlar plating and high quality faux fur allow the user to look stylish while staying protected.
   components:
@@ -59,7 +59,7 @@
 - type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingOuterDenimJacket
-  name: Denim jacket
+  name: denim jacket
   description: A jean jacket with a warm inner lining.
   components:
   - type: Sprite
@@ -81,7 +81,7 @@
 - type: entity
   parent: ClothingOuterArmoredWinterCoat
   id: ClothingOuterCoatStasec
-  name: station security coat
+  name: station security winter coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
   components:
   - type: Sprite
@@ -92,7 +92,7 @@
 - type: entity
   parent: ClothingOuterArmoredWinterCoat
   id: ClothingOuterCoatStasecHoS
-  name: head of security's coat
+  name: head of security's winter coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is adorned with gold trim.
   components:
   - type: Sprite
@@ -104,7 +104,7 @@
 - type: entity
   parent: ClothingOuterArmoredWinterCoat
   id: ClothingOuterCoatStasecWarden
-  name: armorer's coat
+  name: armorer's winter coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version features ice-white trim.
   components:
   - type: Sprite
@@ -115,7 +115,7 @@
 - type: entity
   parent: ClothingOuterArmoredWinterCoat
   id: ClothingOuterCoatStasecDet
-  name: detective's coat
+  name: detective's winter coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is detective plum.
   components:
   - type: Sprite
@@ -126,7 +126,7 @@
 - type: entity
   parent: ClothingOuterArmoredWinterCoat
   id: ClothingOuterCoatStasecCorpsman
-  name: corpsman's coat
+  name: corpsman's winter coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is corpsman blue.
   components:
   - type: Sprite

@@ -7,6 +7,7 @@ using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Movement.Components;
+using Content.Shared.Standing;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -382,13 +383,23 @@ public partial class SharedBodySystem
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
             return;
 
-        if (legEnt.Comp.PartType == BodyPartType.Leg)
-        {
-            bodyEnt.Comp.LegEntities.Remove(legEnt);
-            UpdateMovementSpeed(bodyEnt);
-            Dirty(bodyEnt, bodyEnt.Comp);
-            Standing.Down(bodyEnt); // Shitmed Change
-        }
+        if (legEnt.Comp.PartType != BodyPartType.Leg)
+            return;
+
+        bodyEnt.Comp.LegEntities.Remove(legEnt);
+        UpdateMovementSpeed(bodyEnt);
+        Dirty(bodyEnt, bodyEnt.Comp);
+
+        if (bodyEnt.Comp.LegEntities.Count != 0)
+            return;
+
+        if (!TryComp<StandingStateComponent>(bodyEnt, out var standingState)
+            || !standingState.Standing
+            || !Standing.Down(bodyEnt, standingState: standingState))
+            return;
+
+        var ev = new DropHandItemsEvent();
+        RaiseLocalEvent(bodyEnt, ref ev);
     }
 
     // Shitmed Change: made virtual, bleeding damage is done on server

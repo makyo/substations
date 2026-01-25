@@ -8,12 +8,12 @@
 
 - type: trait
   id: InPain
-  name: trait-inpain-name
-  description: trait-inpain-desc
-  traitGear: PillCanisterSoretizone
+  name: trait-chronic-pain-name
+  description: trait-chronic-pain-desc
   category: Disabilities
+  traitGear: PillCanisterSoretizone
   components:
-  - type: Pain
+  - type: ChronicPain
 
 - type: trait
   id: Unborgable

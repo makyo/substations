@@ -2,22 +2,11 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.Radio;
 using Content.Server.SurveillanceCamera;
 using Content.Shared.Emp;
-using Robust.Shared.Map;
-using Content.Shared._NF.Emp.Components; // Frontier
-using Robust.Server.GameStates; // Frontier: EMP Blast PVS
-using Robust.Shared.Configuration; // Frontier: EMP Blast PVS
-using Robust.Shared; // Frontier: EMP Blast PVS
 
 namespace Content.Server.Emp;
 
 public sealed class EmpSystem : SharedEmpSystem
 {
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly PvsOverrideSystem _pvs = default!; // Frontier: EMP Blast PVS
-    [Dependency] private readonly IConfigurationManager _cfg = default!; // Frontier: EMP Blast PVS
-
-    public const string EmpPulseEffectPrototype = "EffectEmpBlast"; // Frontier: EffectEmpPulse
-
     public override void Initialize()
     {
         base.Initialize();

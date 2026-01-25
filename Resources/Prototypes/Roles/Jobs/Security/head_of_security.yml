@@ -30,11 +30,12 @@
   - Security
   - Armory
   - Maintenance
-  #- Service # DeltaV - Sec isn't service
   - External
   - Detective
   - Corpsman # DeltaV - added Corpsman access
   - Cryogenics
+  - GenpopEnter
+  - GenpopLeave
   - Orders # L5 - orders consoles
   special:
   - !type:AddImplantSpecial

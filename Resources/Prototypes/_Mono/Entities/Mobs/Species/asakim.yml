@@ -156,17 +156,18 @@
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 1
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 400
     coldDamageThreshold: 285
-    currentTemperature: 310.15
-    specificHeat: 42
     coldDamage:
       types:
         Cold : 0.05 #per second, scales with temperature & other constants
     heatDamage:
       types:
         Heat : 0.6 #per second, scales with temperature & other constants
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
   - type: TemperatureSpeed
     thresholds:
       301: 0.8

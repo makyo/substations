@@ -1,4 +1,5 @@
 using Content.Shared.Administration.Logs;
+using Content.Shared.Body.Part; // DeltaV
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
@@ -318,7 +319,15 @@ public sealed class SharedKitchenSpikeSystem : EntitySystem
         // Gib the victim if there is nothing else to butcher.
         if (butcherable.SpawnedEntities.Count == 0)
         {
-            _bodySystem.GibBody(args.Target.Value, true);
+            // DeltaV - Gib the body, then body parts, but leave the organs
+            var gibs = _bodySystem.GibBody(args.Target.Value, true);
+
+            foreach (var gib in gibs)
+            {
+                if (HasComp<BodyPartComponent>(gib))
+                    PredictedQueueDel(gib);
+            }
+            // END DeltaV
 
             var logSeverity = HasComp<HumanoidAppearanceComponent>(args.Target) ? LogImpact.Extreme : LogImpact.High;
 

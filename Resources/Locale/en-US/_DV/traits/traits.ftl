@@ -19,7 +19,7 @@ trait-ultravision-desc = Whether through custom bionic eyes, random mutation,
 
 trait-deuteranopia-name = Deuteranopia
 trait-deuteranopia-desc = Whether through custom bionic eyes, random mutation,
-                          or being a Vulpkanin, you have red–green colour blindness.
+                          or being a Vulpkanin, you have red-green colour blindness.
 
 trait-hushed-name = Hushed
 trait-hushed-desc = You are unable to speak louder than a whisper.
@@ -27,8 +27,8 @@ trait-hushed-desc = You are unable to speak louder than a whisper.
 trait-uncloneable-name = Uncloneable
 trait-uncloneable-desc = Cannot be cloned
 
-trait-inpain-name = Chronic pain
-trait-inpain-desc = You’re constantly in discomfort. You need painkillers to function.
+trait-chronic-pain-name = Chronic pain
+trait-chronic-pain-desc = You're constantly in discomfort. You need painkillers to function.
 
 trait-addicted-name = Addicted
 trait-addicted-desc = You crave the substance, and your thoughts keep drifting back to it. Without it, you feel incomplete, anxious, and on edge.
@@ -41,6 +41,16 @@ trait-depression-desc = No mechanical effect. The world is dark but there is a l
 
 trait-dysgraphia-name = Unable to write
 trait-dysgraphia-desc = You cannot write, whether because of a disability, your history, or by choice.
+
+trait-amputee-left-arm-name = Amputee (Arm, Left)
+trait-amputee-left-arm-desc =
+    Your left arm is missing!
+    (Note: Amputee traits do not appear in the character editor preview!)
+
+trait-amputee-right-arm-name = Amputee (Arm, Right)
+trait-amputee-right-arm-desc =
+    Your right arm is missing!
+    (Note: Amputee traits do not appear in the character editor preview!)
 
 trait-redshirt-name = Redshirt
 trait-redshirt-desc =

@@ -13,8 +13,6 @@
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: 'NY'
-      - type: StationBankAccount
-        increasePerSecond: 0 # tbh should be negative with how good we are
       - type: StationPlanetSpawner
         planet: GlacierSurface
         gridPath: /Maps/_DV/Nonstations/glacier_surface_outpost.yml
@@ -28,7 +26,7 @@
           HeadOfPersonnel: [ 1, -1 ]
           Bartender: [ 0, -1 ]
           Botanist: [ 0, -1 ]
-          Boxer: [ 0, -1 ]
+          #Boxer: [ 0, -1 ]
           Chef: [ 0, -1 ]
           Clown: [ 0, -1 ]
           Librarian: [ 0, -1 ]

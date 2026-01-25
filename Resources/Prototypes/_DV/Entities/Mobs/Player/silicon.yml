@@ -48,7 +48,7 @@
       - PositronicBrain
       borg_module:
       - BorgModuleTopicals
-      - BorgModuleAdvancedChemical
+      - BorgModuleAdvancedTopical
       - BorgModuleAdvancedSurgery
       borg_id_chip:
       - IdChipSyndie

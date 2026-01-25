@@ -23,6 +23,7 @@
     - SilentStorageUser
     - PreventAccessLogging
     - AllowBiomeLoading
+    - NotGhostnadoWarpable
   - type: Input
     context: "aghost"
   - type: Ghost
@@ -42,8 +43,8 @@
     needsHands: false
   - type: CombatMode
   - type: Physics
+    bodyType: Kinematic # Admin ghosts should ignore the laws of physics.
     ignorePaused: true
-    bodyType: Kinematic
   - type: Access
     groups:
     - AllAccess
@@ -226,6 +227,9 @@
   components:
   # Begin L5 changes - action ECS
   - type: Action
+    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
+    iconOn: { sprite: Structures/Machines/parts.rsi, state: box_2 }
+    keywords: [ "AI", "console", "interface" ]
     priority: -10
   - type: InstantAction
   # End L5 changes

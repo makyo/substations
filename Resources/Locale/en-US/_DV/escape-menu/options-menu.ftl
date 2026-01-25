@@ -4,6 +4,7 @@ ui-options-general-forknotice = Note: These settings are fork-specific and might
 
 ui-options-no-filters = Disable species vision filters
 ui-options-function-swap-hands-reversed = Swap hands (reversed)
+ui-options-disable-glimmer-effect = Disable high glimmer shader effect
 
 ## DeltaV NanoChat keybinds
 ui-options-header-nano-chat = NanoChat

@@ -33,7 +33,10 @@
       - id: FoodMeatPlant
         amount: 5
   - type: Bloodstream
-    bloodReagent: Sap
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 300
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -124,8 +127,8 @@
     darkThreshold: 0.4
     lightThreshold: 1.2
     darkDamage:
-      groups:
-        Burn: 1.0
+      types:
+        Heat: 1.0
     lightDamage:
       groups:
         Brute: -0.1

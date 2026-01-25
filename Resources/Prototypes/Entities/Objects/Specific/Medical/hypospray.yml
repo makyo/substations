@@ -14,6 +14,7 @@
     solution: hypospray
   - type: ExaminableSolution
     solution: hypospray
+    exactVolume: true
   - type: Appearance
 
 - type: entity
@@ -38,9 +39,6 @@
         maxVol: 30
   - type: RefillableSolution
     solution: hypospray
-  - type: ExaminableSolution
-    solution: hypospray
-    exactVolume: true
   - type: UseDelay
     delay: 0.5
   - type: StaticPrice
@@ -50,7 +48,6 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: Hypospray
-  - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
     fillBaseName: hypo_fill
@@ -59,17 +56,17 @@
 - type: entity
   parent: [BaseHypospray, BaseSyndicateContraband]
   id: SyndiHypo
-  name: GEX hypospray
-  description: Using reverse engineered designs from UN Medical, the Conclave of New Zealots produced these in limited quantities for the Greater Expansion Collective Marauder operatives.
+  name: GEX hypospray # L5
+  description: A sterile injector for rapid administration of drugs. Reverse-engineered from UN Medical designs, CNZ produces these in limited quantities for GEX Marauders' corpsmen. # L5
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/syndihypo.rsi
     layers:
-    - state: hypo
-      map: ["enum.SolutionContainerLayers.Base"]
-    - state: hypo_fill1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
+      - state: hypo
+        map: ["enum.SolutionContainerLayers.Base"]
+      - state: hypo_fill1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
   - type: Item
     sprite: Objects/Specific/Medical/syndihypo.rsi
   - type: SolutionContainerManager
@@ -85,11 +82,16 @@
   parent: BaseHypospray
   id: BorgHypo
   name: borghypo
-  description: A sterile injector for rapid administration of drugs to patients. A cheaper and more specialised version for medical borgs.
+  description: A sterile injector for rapid administration of drugs to patients. This integrated model is specialized for use by medical borgs.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/hypospray.rsi
-    state: borghypo
+    layers:
+    - state: borghypo
+      map: [ "enum.SolutionContainerLayers.Base" ]
+    - state: borghypo_fill1
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+      visible: false
   - type: Item
     sprite: Objects/Specific/Medical/hypospray.rsi
   - type: SolutionContainerManager
@@ -98,8 +100,10 @@
         maxVol: 10
   - type: RefillableSolution
     solution: hypospray
-  - type: ExaminableSolution
-    solution: hypospray
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: borghypo_fill
+    solutionName: hypospray
   - type: UseDelay
     delay: 0.5
 
@@ -136,9 +140,6 @@
     allowedModes:
     - JetInjectorDynamicMode
     - JetInjectorInjectMode
-  - type: Tag
-    tags:
-    - JetInjector
 
 - type: entity
   parent: JetInjector
@@ -175,18 +176,18 @@
   suffix: Admeme
   description: The ultimate application of bluespace technology and rapid chemical administration.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      hypospray:
-        maxVol: 3000
-  - type: UseDelay
-    delay: 0.0
+    - type: SolutionContainerManager
+      solutions:
+        hypospray:
+          maxVol: 3000
+    - type: UseDelay
+      delay: 0.0
 
 - type: entity
   parent: BaseHypospray
   id: ChemicalMedipen
   name: chemical medipen
-  description: A sterile injector for rapid administration of drugs to patients. This one can't be refilled.
+  description: A single-dose, non-refillable medipen.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -213,14 +214,12 @@
         maxVol: 15
   - type: ExaminableSolution
     solution: pen
-    exactVolume: true
   - type: Injector
     solutionName: pen
     currentTransferAmount: null
     activeModeProtoId: HyposprayInjectMode
     allowedModes:
     - HyposprayInjectMode
-  - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     changeColor: false
@@ -233,15 +232,12 @@
     price: 75 # These are limited supply items.
   - type: TrashOnSolutionEmpty
     solution: pen
-  - type: CosmicTransmutable # DeltaV - cosmic cult
-    transmutesTo: CosmicMedipen
-    requiredGlyphType: CosmicGlyphBlades # Well I mean it DOES have a needle in it
 
 - type: entity
-  name: emergency medipen
   parent: ChemicalMedipen
   id: EmergencyMedipen
-  description: A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Beware, as it's easy to overdose on epinephrine and tranexamic acid.
+  name: emergency medipen
+  description: A single-dose, non-refillable medipen containing epinephrine and tranexamic acid, used to temporarily stabilize patients in critical condition and buy time for them to recieve proper medical treatment. Beware of overdose.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -263,10 +259,10 @@
           Quantity: 3
 
 - type: entity
-  name: poison auto-injector
   parent: ChemicalMedipen
   id: AntiPoisonMedipen
-  description: A rapid dose of anti-poison. Contains ultravasculine and epinephrine.
+  name: poison auto-injector
+  description: A single-dose, non-refillable medipen containing ultravasculine and epinephrine, used to quickly and easily treat toxin poisoning.
   components:
   - type: Item
     inhandVisuals:
@@ -300,10 +296,10 @@
           Quantity: 5
 
 - type: entity
-  name: brute auto-injector
   parent: ChemicalMedipen
   id: BruteAutoInjector
-  description: A rapid dose of bicaridine and tranexamic acid, intended for combat applications.
+  name: brute auto-injector
+  description: A single-dose, non-refillable medipen containing bicaridine and tranexamic acid, used to quickly and easily treat simple physical injuries. Commonly used as a combat medicine.
   components:
   - type: Item
     inhandVisuals:
@@ -337,10 +333,10 @@
           Quantity: 5
 
 - type: entity
-  name: burn auto-injector
   parent: ChemicalMedipen
   id: BurnAutoInjector
-  description: A rapid dose of dermaline and leporazine, intended for combat applications.
+  name: burn auto-injector
+  description: A single-dose, non-refillable medipen containing dermaline and leporazine, used to quickly and easily treat non-chemical burns. Commonly used as a combat medicine.
   components:
   - type: Item
     inhandVisuals:
@@ -374,10 +370,10 @@
           Quantity: 10
 
 - type: entity
-  name: rad auto-injector
   parent: ChemicalMedipen
   id: RadAutoInjector
-  description: A rapid dose of anti-radiation. Contains arithrazine and bicaridine.
+  name: rad auto-injector
+  description: A single-dose, non-refillable medipen containing arithrazine and bicaridine, used to quickly and easily treat radiation poisoning.
   components:
   - type: Item
     inhandVisuals:
@@ -411,10 +407,10 @@
           Quantity: 5
 
 - type: entity
-  name: puncturase auto-injector
   parent: ChemicalMedipen
   id: PunctAutoInjector
-  description: A rapid dose of puncturase and tranexamic acid, intended for combat applications.
+  name: puncturase auto-injector
+  description: A single-dose, non-refillable medipen containing puncturase and tranexamic acid, used to quickly and easily treat puncture wounds. Commonly used as a combat medicine.
   components:
   - type: Item
     inhandVisuals:
@@ -448,10 +444,10 @@
           Quantity: 5
 
 - type: entity
-  name: pyrazine auto-injector
   parent: ChemicalMedipen
   id: PyraAutoInjector
-  description: A rapid dose of pyrazine and dermaline, intended for combat applications.
+  name: pyrazine auto-injector
+  description: A single-dose, non-refillable medipen containing pyrazine and dermaline, used to quickly and easily treat thermal burns. Commonly used as a combat medicine.
   components:
   - type: Item
     inhandVisuals:
@@ -485,10 +481,10 @@
           Quantity: 10
 
 - type: entity
-  name: airloss auto-injector
   parent: ChemicalMedipen
   id: AirlossAutoInjector
-  description: A rapid dose of saline and salbutamol, intended to get someone up quickly. # Funkychem - dex+ -> salbutamol
+  name: airloss auto-injector
+  description: A single-dose, non-refillable medipen containing saline and dexalin plus, used to quickly and easily treat blood loss and asphyxiation.
   components:
   - type: Item
     inhandVisuals:
@@ -514,20 +510,18 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 30 # Funkychem - was 40
+        maxVol: 40
         reagents:
         - ReagentId: Saline
-          Quantity: 15 # Funkychem - was 20
-        - ReagentId: Salbutamol # Funkychem - was dex+
-          Quantity: 15 # Funkychem - was 20
-  - type: Tag
-    tags: []
+          Quantity: 20
+        - ReagentId: DexalinPlus
+          Quantity: 20
 
 - type: entity
-  name: space medipen
   parent: ChemicalMedipen
   id: SpaceMedipen
-  description: Contains a mix of chemicals that protect you from the deadly effects of space.
+  name: space medipen
+  description: A single-dose, non-refillable medipen containing barozine and leporazine, used to protect exposed flesh from the deadly effects of space.
   components:
   - type: Item
     inhandVisuals:
@@ -546,7 +540,6 @@
     layers:
     - state: hypovolemic
       map: [ "enum.SolutionContainerLayers.Fill" ]
-  - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     changeColor: false
@@ -556,16 +549,16 @@
       pen:
         maxVol: 30
         reagents:
-        - ReagentId: Leporazine
-          Quantity: 10
-        - ReagentId: Barozine
-          Quantity: 20
+          - ReagentId: Stabilizine # DeltaV - replace lepo
+            Quantity: 10
+          - ReagentId: Barozine
+            Quantity: 20
 
 - type: entity
-  name: hyperzine injector
   parent: [ChemicalMedipen, BaseSyndicateContraband]
   id: Stimpack
-  description: Contains enough hyperzine for you to have the chemical's effect for 30 seconds. Use it when you're sure you're ready to throw down.
+  name: hyperzine injector
+  description: A chemical injector containing a large shot of pure hyperzine. For when it's time to throw down. Effects last for about 60 seconds.
   components:
   - type: Item
     inhandVisuals:
@@ -601,10 +594,10 @@
     price: 1500
 
 - type: entity
-  name: hyperzine microinjector
   parent: [ChemicalMedipen, BaseSyndicateContraband]
   id: StimpackMini
-  description: A microinjector of hyperzine that give you about 15 seconds of the chemical's effects.
+  name: hyperzine microinjector
+  description: A chemical microinjector containing a small shot of pure hyperzine. Effects last for about 30 seconds.
   components:
   - type: Item
     inhandVisuals:
@@ -640,10 +633,10 @@
     price: 583 # 3500 for 6 as a freaky fraction
 
 - type: entity
-  name: combat medipen
   parent: [ChemicalMedipen, BaseSyndicateContraband]
   id: CombatMedipen
-  description: A single-use medipen containing chemicals that regenerate most types of damage.
+  name: combat medipen
+  description: A single-dose, non-refillable medipen containing a chemical cocktail that treats most forms of damage.
   components:
   - type: Item
     inhandVisuals:
@@ -679,11 +672,9 @@
     price: 1500
 
 - type: entity
-  name: pen
-  suffix: Hypopen
   parent: Pen # It is just like normal pen, isn't it?
-  description: A dark ink pen.
   id: Hypopen
+  suffix: Hypopen
   components:
   - type: SolutionContainerManager
     solutions:
@@ -691,7 +682,7 @@
         maxVol: 10
   - type: RefillableSolution
     solution: hypospray
-    refillTime: 1.25
+    refillTime: 0.75
     maxRefill: 5
   - type: ExaminableSolution
     solution: hypospray
@@ -728,10 +719,10 @@
       path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  name: weh auto-injector
   parent: ChemicalMedipen
   id: WehMedipen
-  description: A rapid dose of Weh. Contains juice that makes you Weh.
+  name: weh auto-injector
+  description: A non-refillable medipen containing multiple doses of weh.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi

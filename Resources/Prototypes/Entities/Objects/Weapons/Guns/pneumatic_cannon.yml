@@ -14,9 +14,11 @@
   - type: Item
     size: Huge
   - type: Clothing
+    sprite: Objects/Weapons/Guns/Cannons/pneumatic_cannon.rsi # DeltaV
     quickEquip: false
     slots:
     - Back
+    - suitStorage # DeltaV
   - type: Gun
     fireRate: 2
     selectedMode: SemiAuto
@@ -126,14 +128,13 @@
     soundEmpty:
       path: /Audio/Items/hiss.ogg
     clumsyProof: true
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: FoodPieBananaCream
     fireCost: 30
   - type: Battery
     maxCharge: 90
     startingCharge: 90
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 1
   - type: AmmoCounter
   - type: Item
