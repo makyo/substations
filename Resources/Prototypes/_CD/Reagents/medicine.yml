@@ -13,7 +13,6 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
-        time: 2
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -65,7 +64,6 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
-        time: 2
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -140,7 +138,6 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
-        time: 2
         type: Update
       # End L5 — Moody trait
       - !type:SuppressAddiction
@@ -261,7 +258,6 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
-        time: 2
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -307,7 +303,6 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
-        time: 2
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -395,7 +390,6 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
-        time: 2
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
