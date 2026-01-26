@@ -2,4 +2,4 @@
 - type: shader
   id: StaticVisionEffect
   kind: source
-  path: "/Textures/_L5/Shaders/staticvisioneffect.swsl"
+  path: /Textures/_L5/Shaders/staticvisioneffect.swsl

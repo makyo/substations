@@ -1,13 +1,14 @@
 using Content.Shared._L5.Moody.Components;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffectNew;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._L5.Moody;
 
-public sealed class MoodySystem : EntitySystem
+public abstract partial class SharedMoodySystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -20,6 +21,10 @@ public sealed class MoodySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MoodyComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<MoodyComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<MoodyComponent, ComponentShutdown>(OnComponentShutdown);
+        SubscribeLocalEvent<MoodyComponent, LocalPlayerAttachedEvent>(OnLocalPlayerAttached);
+        SubscribeLocalEvent<MoodyComponent, LocalPlayerDetachedEvent>(OnLocalPlayerDetached);
     }
 
     public bool IsMoodySuppressed(Entity<MoodyComponent?> ent)
@@ -34,6 +39,32 @@ public sealed class MoodySystem : EntitySystem
     {
         ent.Comp.NextUpdateTime = _timing.CurTime;
         ent.Comp.NextPopupTime = _timing.CurTime;
+    }
+
+    protected virtual void OnComponentInit(EntityUid source, MoodyComponent component, ref ComponentInit args)
+    {
+        // Overridden clientside
+    }
+
+    protected virtual void OnComponentShutdown(EntityUid source,
+        MoodyComponent component,
+        ComponentShutdown args)
+    {
+        // Overridden clientside
+    }
+
+    protected virtual void OnLocalPlayerAttached(EntityUid source,
+        MoodyComponent component,
+        LocalPlayerAttachedEvent args)
+    {
+        // Overridden clientside
+    }
+
+    protected virtual void OnLocalPlayerDetached(EntityUid source,
+        MoodyComponent component,
+        LocalPlayerDetachedEvent args)
+    {
+        // Overridden clientside
     }
 
     public override void Update(float frameTime)

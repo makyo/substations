@@ -3,4 +3,4 @@
   id: StatusEffectMoodySuppressed
   name: disordered mood suppression
   components:
-      - type: MoodySuppressedStatusEffect
+  - type: MoodySuppressedStatusEffect
