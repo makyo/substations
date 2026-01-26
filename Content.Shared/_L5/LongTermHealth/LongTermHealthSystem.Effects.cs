@@ -1,7 +1,6 @@
-using Content.Shared._DV.ChronicPain;
 using Content.Shared._DV.ChronicPain.Components;
 using Content.Shared._L5.CCVar;
-using Content.Shared._L5.Moody.Components;
+using Content.Shared._L5.Traits.Moody.Components;
 using Content.Shared._L5.Traits.HardOfHearing;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
