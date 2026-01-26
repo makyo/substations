@@ -1,8 +1,7 @@
-using Content.Shared._L5.Moody;
-using Content.Shared._L5.Moody.Components;
-using Content.Shared.StatusEffect;
+using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._L5.Overlays;
@@ -13,12 +12,21 @@ public sealed class VariableSaturation : Overlay
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
+    public override bool RequestScreenTexture => true;
+    public override OverlaySpace Space => OverlaySpace.WorldSpace;
+
     private readonly ShaderInstance _shader;
+    private float _strength = 0.5f;
 
     public VariableSaturation()
     {
         IoCManager.InjectDependencies(this);
         _shader = _prototypeManager.Index<ShaderPrototype>("GreyscaleFullscreen").InstanceUnique();
+    }
+
+    public void SetStrength(float strength)
+    {
+        _strength = Math.Clamp(strength, 0f, 1f);
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -31,17 +39,16 @@ public sealed class VariableSaturation : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        if (ScreenTexture == null)
+        if (ScreenTexture is null)
             return;
 
-        _shader?.SetParameter("SCREEN_TEXTURE", ScreenTexture);
-        _shader?.SetParameter("strength", 0.5f);
+        _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
 
-        var handle = args.WorldHandle;
+        var worldHandle = args.WorldHandle;
         var viewport = args.WorldBounds;
-
-        handle.UseShader(_shader);
-        handle.DrawRect(viewport, Color.DarkGray);
-        handle.UseShader(null);
+        //worldHandle.SetTransform(Matrix3x2.Identity);
+        worldHandle.UseShader(_shader);
+        worldHandle.DrawRect(viewport, new Color(1f, 1f, 1f, 0.5f));
+        worldHandle.UseShader(null);
     }
 }

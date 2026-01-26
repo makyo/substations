@@ -1,4 +1,4 @@
-using Content.Shared._L5.Moody.Components;
+using Content.Shared._L5.Traits.Moody.Components;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Player;
@@ -6,9 +6,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._L5.Moody;
+namespace Content.Shared._L5.Traits.Moody;
 
-public abstract partial class SharedMoodySystem : EntitySystem
+public abstract class SharedMoodySystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -21,50 +21,30 @@ public abstract partial class SharedMoodySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MoodyComponent, MapInitEvent>(OnMapInit);
+
         SubscribeLocalEvent<MoodyComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<MoodyComponent, ComponentShutdown>(OnComponentShutdown);
         SubscribeLocalEvent<MoodyComponent, LocalPlayerAttachedEvent>(OnLocalPlayerAttached);
         SubscribeLocalEvent<MoodyComponent, LocalPlayerDetachedEvent>(OnLocalPlayerDetached);
     }
 
+    protected virtual void OnComponentShutdown(Entity<MoodyComponent> entity, ref ComponentShutdown args) { }
+    protected virtual void OnComponentInit(Entity<MoodyComponent> entity, ref ComponentInit args) { }
+    protected virtual void OnLocalPlayerAttached(Entity<MoodyComponent> entity, ref LocalPlayerAttachedEvent args) { }
+    protected virtual void OnLocalPlayerDetached(Entity<MoodyComponent> entity, ref LocalPlayerDetachedEvent args) { }
+
     public bool IsMoodySuppressed(Entity<MoodyComponent?> ent)
     {
         if (!Resolve(ent.Owner, ref ent.Comp, false))
             return true;
 
-        return _status.HasEffectComp<MoodySuppressedStatusEffectComponent>(ent.Owner);
+        return _status.HasEffectComp<_L5.Traits.Moody.Components.MoodySuppressedStatusEffectComponent>(ent.Owner);
     }
 
     private void OnMapInit(Entity<MoodyComponent> ent, ref MapInitEvent args)
     {
         ent.Comp.NextUpdateTime = _timing.CurTime;
         ent.Comp.NextPopupTime = _timing.CurTime;
-    }
-
-    protected virtual void OnComponentInit(EntityUid source, MoodyComponent component, ref ComponentInit args)
-    {
-        // Overridden clientside
-    }
-
-    protected virtual void OnComponentShutdown(EntityUid source,
-        MoodyComponent component,
-        ComponentShutdown args)
-    {
-        // Overridden clientside
-    }
-
-    protected virtual void OnLocalPlayerAttached(EntityUid source,
-        MoodyComponent component,
-        LocalPlayerAttachedEvent args)
-    {
-        // Overridden clientside
-    }
-
-    protected virtual void OnLocalPlayerDetached(EntityUid source,
-        MoodyComponent component,
-        LocalPlayerDetachedEvent args)
-    {
-        // Overridden clientside
     }
 
     public override void Update(float frameTime)
