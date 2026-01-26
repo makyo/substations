@@ -45,7 +45,7 @@
     whitelist:
       tags:
         - CartridgePistol
-    capacity: 15
+    capacity: 20 # Delta-V, was 16
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -267,10 +267,11 @@
         color: "#00cd42"
 
 - type: entity
-  parent: BaseMagazinePistolSubMachineGun
-  id: MagazinePistolSubMachineGun
-  name: SMG magazine (.35 auto)
-  description: 30-round double-stack magazine for submachine guns. Intended to hold general-purpose kinetic ammunition.
+  id: MagazinePistolHighCapacityEmpty
+  name: machine pistol magazine (.35 auto any)
+  description: 20-round double-stack single feed magazine for machine pistols. #Delta V
+  suffix: empty
+  parent: BaseMagazinePistolHighCapacity
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -290,11 +291,10 @@
       - state: inhand-right-mag
 
 - type: entity
-  parent: BaseMagazinePistolSubMachineGun
-  id: MagazinePistolSubMachineGunEmpty
-  name: SMG magazine (.35 auto any)
-  suffix: empty
-  description: 30-round double-stack magazine for submachine guns.
+  id: MagazinePistolHighCapacity
+  name: machine pistol magazine (.35 auto)
+  description: 20-round double-stack single feed magazine for machine pistols. Intended to hold general-purpose kinetic ammunition. #Delta V
+  parent: BaseMagazinePistolHighCapacity
   components:
   - type: BallisticAmmoProvider
     proto: null
@@ -312,10 +312,10 @@
       - state: inhand-right-mag
 
 - type: entity
-  parent: BaseMagazinePistolSubMachineGun
-  id: MagazinePistolSubMachineGunPractice
-  name: SMG magazine (.35 auto practice)
-  description: 30-round double-stack magazine for submachine guns. Intended to hold harmless practice ammunition.
+  id: MagazinePistolHighCapacityPractice
+  name: machine pistol magazine (.35 auto practice)
+  description: 20-round double-stack single feed magazine for machine pistols. Intended to hold non-harmful chalk ammunition. #Delta V
+  parent: BaseMagazinePistolHighCapacity
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
@@ -337,20 +337,6 @@
       - state: inhand-right-mag
       - state: inhand-right-stripe
         color: "#dbdbdb"
-
-- type: entity
-  id: MagazinePistolHighCapacityRubber
-  name: machine pistol magazine (.35 auto rubber)
-  parent: BaseMagazinePistolHighCapacity
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistolRubber # DeltaV: upstream still has this for some reason but not using rubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   parent: BaseMagazinePistolSubMachineGun
