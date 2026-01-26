@@ -14,7 +14,7 @@
   - Dna
   - Fingerprint
   - Grammar # Pronouns
-  - HumanoidProfile # Age, Sex, Gender
+  #- HumanoidProfile # Age, Sex, Gender # L5 — TODO uncomment with Nubody/shitmed removal
   - NpcFactionMember
   # traits
   - BlackAndWhiteOverlay

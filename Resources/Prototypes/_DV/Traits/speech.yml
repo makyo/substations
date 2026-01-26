@@ -1,52 +1,6 @@
 ## If you add a new trait, make sure to add the corresponding component to the whitelist in \Resources\Prototypes\Entities\Mobs\Player\clone.yml so it gets copied to clones correctly!
 
 - type: trait
-  id: PirateAccent
-  name: trait-pirate-accent-name
-  description: trait-pirate-accent-desc
-  category: Accents
-  cost: 2
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: PirateAccent
-
-- type: trait
-  id: SouthernAccent
-  name: trait-southern-name
-  description: trait-southern-desc
-  category: Accents
-  cost: 2
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: SouthernAccent
-
-- type: trait
-  id: CowboyAccent
-  name: trait-cowboy-name
-  description: trait-cowboy-desc
-  category: Accents
-  cost: 2
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: ReplacementAccent
-      accent: cowboy
-
-- type: trait
-  id: ItalianAccent
-  name: trait-italian-name
-  description: trait-italian-desc
-  category: Accents
-  cost: 2
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: ReplacementAccent
-      accent: italian
-
-- type: trait
   id: Muted
   name: trait-muted-name
   description: trait-muted-desc
@@ -131,8 +85,6 @@
       - type: LizardAccent
       - type: MothAccent
       - type: AllulaloAccent # Imp
-      - type: ReplacementAccent
-        accent: dwarf
 
 - type: trait
   id: SocialAnxiety
