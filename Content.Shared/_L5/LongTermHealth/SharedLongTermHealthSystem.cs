@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._L5.LongTermHealth;
 
-public sealed partial class LongTermHealthSystem : EntitySystem
+public abstract partial class SharedLongTermHealthSystem : EntitySystem
 {
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
@@ -56,6 +56,9 @@ public sealed partial class LongTermHealthSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
+        if (!_config.GetCVar(L5CCVars.LongTermHealthEnabled))
+            return;
+
         base.Update(frameTime);
 
         var curTime = _timing.CurTime;
@@ -74,16 +77,27 @@ public sealed partial class LongTermHealthSystem : EntitySystem
                 if (_buckle.IsBuckled(ent))
                     intervalFactor = _config.GetCVar(L5CCVars.LongTermEffectsRestFactor);
 
+                // If the key has already been deleted, move on.
+                if (!comp.CurrentEffects.ContainsKey(key))
+                    continue;
+
                 comp.CurrentEffects[key] -= comp.UpdateInterval * intervalFactor;
                 if (comp.CurrentEffects[key] < TimeSpan.Zero)
                 {
-                    // remove components/etc
+                    // Remove from the current effects.
                     comp.CurrentEffects.Remove(key);
+
+                    // Add to the previous effects.
+                    if (!comp.PreviousEffects.ContainsKey(key))
+                        comp.PreviousEffects[key] = 0;
                     comp.PreviousEffects[key]++;
-                    Remove(key, ref ent);
+
+                    // Remove the effect components/etc.
+                    RemoveEffect(key, ref ent);
                 }
                 else
                 {
+                    // Ensure that effect components or return damage are applied.
                     ApplyEffect(key, comp, ref ent);
                 }
             }

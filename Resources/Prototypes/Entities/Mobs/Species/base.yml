@@ -309,6 +309,7 @@
   #- type: StunVisuals # DeltaV - No stars
   - type: CanDoCPR # DeltaV - Addition of CPR
   - type: StunVisuals
+  - type: LongTermHealth # L5
 
 - type: entity
   save: false

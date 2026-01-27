@@ -153,13 +153,13 @@ public sealed partial class L5CCVars
     /// The threshold at which asphyxiation leads to mild lung damage, represented by return asphyxiation.
     /// </summary>
     public static readonly CVarDef<float> AsphyxLungDamageMildThreshold =
-        CVarDef.Create("l5.long_term_health.airloss.lung_damage.mild_threshold", 75f, CVar.REPLICATED);
+        CVarDef.Create("l5.long_term_health.airloss.lung_damage.mild_threshold", 50f, CVar.REPLICATED);
 
     /// <summary>
     /// The threshold at which asphyxiation leads to severe lung damage, represented by return asphyxiation.
     /// </summary>
     public static readonly CVarDef<float> AsphyxLungDamageSevereThreshold =
-        CVarDef.Create("l5.long_term_health.airloss.lung_damage.severe_threshold", 150f, CVar.REPLICATED);
+        CVarDef.Create("l5.long_term_health.airloss.lung_damage.severe_threshold", 100f, CVar.REPLICATED);
 
     /// <summary>
     /// The factor by which asphyxiation damage reappears over time, representing lung damage.
@@ -171,13 +171,13 @@ public sealed partial class L5CCVars
     /// The threshold at which AIRLOSS leads to mild brain damage by way of oxygen deprivation.
     /// </summary>
     public static readonly CVarDef<float> AirlossBrainDamageMildThreshold =
-        CVarDef.Create("l5.long_term_health.airloss.brain_damage.mild_threshold", 150f, CVar.REPLICATED);
+        CVarDef.Create("l5.long_term_health.airloss.brain_damage.mild_threshold", 100f, CVar.REPLICATED);
 
     /// <summary>
     /// The threshold at which AIRLOSS leads to severe brain damage by way of oxygen deprivation.
     /// </summary>
     public static readonly CVarDef<float> AirlossBrainDamageSevereThreshold =
-        CVarDef.Create("l5.long_term_health.airloss.brain_damage.severe_threshold", 200f, CVar.REPLICATED);
+        CVarDef.Create("l5.long_term_health.airloss.brain_damage.severe_threshold", 175f, CVar.REPLICATED);
 
     // GENE Injuries
 

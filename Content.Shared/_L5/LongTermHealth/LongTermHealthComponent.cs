@@ -35,7 +35,7 @@ public sealed partial class LongTermHealthComponent : Component
     /// </summary>
     [DataField]
     [AutoNetworkedField]
-    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(5);
+    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(2);
 
     [DataField]
     [AutoPausedField]

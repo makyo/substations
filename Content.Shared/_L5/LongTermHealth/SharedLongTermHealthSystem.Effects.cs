@@ -13,18 +13,20 @@ using Robust.Shared.Random;
 
 namespace Content.Shared._L5.LongTermHealth;
 
-public sealed partial class LongTermHealthSystem
+public abstract partial class SharedLongTermHealthSystem
 {
     #region Adding effects
 
     private void OnAirloss(EntityUid owner, ref LongTermHealthComponent component, DamageChangedEvent args)
     {
-        var dict = args.DamageDelta!.DamageDict;
-        var airlossDeltaTotal = dict["Asphyxiation"] + dict["Bloodloss"];
+        args.DamageDelta!.DamageDict.TryGetValue("Asphyxiation", out var asphyxDelta);
+        args.DamageDelta!.DamageDict.TryGetValue("Bloodloss", out var bloodlossDelta);
+        var airlossDelta = asphyxDelta +  bloodlossDelta;
+
         var airlossTotal = args.Damageable.Damage["Asphyxiation"] + args.Damageable.Damage["Bloodloss"];
 
         // Lung damage
-        if (dict["Asphyxiation"] > FixedPoint2.Zero)
+        if (asphyxDelta > FixedPoint2.Zero)
         {
             PrepareEffect(
                 ref component,
@@ -34,7 +36,7 @@ public sealed partial class LongTermHealthSystem
                 L5CCVars.AsphyxLungDamageMildThreshold,
                 L5CCVars.AsphyxLungDamageSevereThreshold);
         }
-        else if (dict["Asphyxiation"] < FixedPoint2.Zero)
+        else if (asphyxDelta < FixedPoint2.Zero)
         {
             InitializeEffect(
                 ref component,
@@ -46,7 +48,7 @@ public sealed partial class LongTermHealthSystem
         }
 
         // Brain damage
-        if (airlossDeltaTotal > FixedPoint2.Zero)
+        if (airlossDelta > FixedPoint2.Zero)
         {
             // We can't use PrepareEffect here because we also need to clear the upcoming TBIs, but the logic is otherwise the same.
             if (!component.CurrentEffects.ContainsKey(EffectType.SevereBrainDamage) &&
@@ -69,7 +71,7 @@ public sealed partial class LongTermHealthSystem
                 component.UpcomingEffects.Remove(EffectType.SevereBrainDamage);
             }
         }
-        else if (airlossDeltaTotal < FixedPoint2.Zero)
+        else if (airlossDelta < FixedPoint2.Zero)
         {
             // We can't use ApplyEffect here because we're technically rolling from a class of effects.
             if (component.UpcomingEffects.ContainsKey(EffectType.SevereBrainDamage) &&
@@ -127,11 +129,14 @@ public sealed partial class LongTermHealthSystem
 
     private void OnBrute(EntityUid owner, ref LongTermHealthComponent component, DamageChangedEvent args)
     {
-        var dict = args.DamageDelta!.DamageDict;
-        var bruteDeltaTotal = dict["Blunt"] + dict["Slash"] + dict["Piercing"];
+        args.DamageDelta!.DamageDict.TryGetValue("Blunt", out var bluntDelta);
+        args.DamageDelta!.DamageDict.TryGetValue("Slash", out var slashDelta);
+        args.DamageDelta!.DamageDict.TryGetValue("Piercing", out var pierceDelta);
+        var bruteDelta = bluntDelta + slashDelta + pierceDelta;
+
         var bruteTotal = args.Damageable.Damage["Blunt"] + args.Damageable.Damage["Slash"] + args.Damageable.Damage["Piercing"];
 
-        if (bruteDeltaTotal > FixedPoint2.Zero)
+        if (bruteDelta > FixedPoint2.Zero)
         {
             if (!HasComp<ChronicPainComponent>(owner))
                 PrepareEffect(
@@ -151,7 +156,7 @@ public sealed partial class LongTermHealthSystem
                     L5CCVars.BruteImpairedMobilityBodyMildThreshold,
                     L5CCVars.BruteImpairedMobilityBodySevereThreshold);
         }
-        else if (bruteDeltaTotal < FixedPoint2.Zero)
+        else if (bruteDelta < FixedPoint2.Zero)
         {
             InitializeEffect(
                 ref component,
@@ -176,16 +181,20 @@ public sealed partial class LongTermHealthSystem
 
     private void OnBurn(EntityUid owner, ref LongTermHealthComponent component, DamageChangedEvent args)
     {
-        var delta = args.DamageDelta!.DamageDict;
-        var burnDeltaTotal = delta["Heat"] + delta["Cold"] + delta["Shock"] + delta["Caustic"];
-        var damage = args.Damageable.Damage;
-        var burnTotal = damage["Heat"] + damage["Cold"] + damage["Shock"] + damage["Caustic"];
+        args.DamageDelta!.DamageDict.TryGetValue("Heat", out var heatDelta);
+        args.DamageDelta!.DamageDict.TryGetValue("Cold", out var coldDelta);
+        args.DamageDelta!.DamageDict.TryGetValue("Shock", out var shockDelta);
+        args.DamageDelta!.DamageDict.TryGetValue("Caustic", out var causticDelta);
+        var burnDelta = heatDelta + coldDelta + shockDelta + causticDelta;
 
-        if (burnDeltaTotal > FixedPoint2.Zero &&
+        var burnTotal = args.Damageable.Damage["Heat"] + args.Damageable.Damage["Cold"] +
+                        args.Damageable.Damage["Shock"] + args.Damageable.Damage["Caustic"];
+
+        if (burnDelta > FixedPoint2.Zero &&
             !component.CurrentEffects.ContainsKey(EffectType.BurnReturn) &&
             burnTotal > _config.GetCVar(L5CCVars.BurnReturnThreshold))
             component.UpcomingEffects[EffectType.BurnReturn] = true;
-        else if (burnDeltaTotal < FixedPoint2.Zero && component.UpcomingEffects.ContainsKey(EffectType.BurnReturn))
+        else if (burnDelta < FixedPoint2.Zero && component.UpcomingEffects.ContainsKey(EffectType.BurnReturn))
         {
             var duration = _mildEffectSeconds;
             component.UpcomingEffects.Remove(EffectType.BurnReturn);
@@ -201,16 +210,17 @@ public sealed partial class LongTermHealthSystem
 
     private void OnToxin(EntityUid owner, ref LongTermHealthComponent component, DamageChangedEvent args)
     {
-        var dict = args.DamageDelta!.DamageDict;
-        var toxinDeltaTotal = dict["Poison"] + dict["Radiation"];
+        args.DamageDelta!.DamageDict.TryGetValue("Radiation", out var radiationDelta);
+        args.DamageDelta!.DamageDict.TryGetValue("Poison", out var poisonDelta);
+        var toxinDelta = radiationDelta + poisonDelta;
         var damage = args.Damageable.Damage;
         var toxinTotal = damage["Poison"] + damage["Radiation"];
 
-        if (toxinDeltaTotal > FixedPoint2.Zero &&
+        if (toxinDelta > FixedPoint2.Zero &&
             !component.CurrentEffects.ContainsKey(EffectType.PoisonReturn) &&
             toxinTotal > _config.GetCVar(L5CCVars.PoisonReturnThreshold))
             component.UpcomingEffects[EffectType.BurnReturn] = true;
-        else if (toxinDeltaTotal < FixedPoint2.Zero && component.UpcomingEffects.ContainsKey(EffectType.PoisonReturn))
+        else if (toxinDelta < FixedPoint2.Zero && component.UpcomingEffects.ContainsKey(EffectType.PoisonReturn))
         {
             var duration = _mildEffectSeconds;
             component.UpcomingEffects.Remove(EffectType.PoisonReturn);
@@ -224,16 +234,14 @@ public sealed partial class LongTermHealthSystem
 
     private void OnGenetic(EntityUid owner, ref LongTermHealthComponent component, DamageChangedEvent args)
     {
-        var geneticDeltaTotal = args.DamageDelta!.DamageDict["Cellular"];
+        args.DamageDelta!.DamageDict.TryGetValue("Cellular",  out var cellularDelta);
         var geneticTotal = args.Damageable.Damage["Cellular"];
         var effectCount = geneticTotal.Int() / _config.GetCVar(L5CCVars.GeneticNewEffectRollAmount);
 
-        if (geneticDeltaTotal > FixedPoint2.Zero &&
+        if (cellularDelta > FixedPoint2.Zero &&
             effectCount > component.UpcomingGeneticEffects)
-        {
             component.UpcomingGeneticEffects++;
-        }
-        else if (geneticDeltaTotal < FixedPoint2.Zero &&
+        else if (cellularDelta < FixedPoint2.Zero &&
                  effectCount < component.UpcomingGeneticEffects)
         {
             component.UpcomingGeneticEffects--;
@@ -351,6 +359,11 @@ public sealed partial class LongTermHealthSystem
                 EnsureComp<HardOfHearingComponent>(ent);
                 break;
 
+            case EffectType.MildImpairedMobility:
+            case EffectType.SevereImpairedMobility:
+                EnsureComp<ImpairedMobilityComponent>(ent);
+                break;
+
             case EffectType.MildLungDamage:
             case EffectType.SevereLungDamage:
                 _damage.ChangeDamage(ent,
@@ -400,7 +413,7 @@ public sealed partial class LongTermHealthSystem
 
     #region Removing effects
 
-    private void Remove(EffectType key, ref EntityUid ent)
+    private void RemoveEffect(EffectType key, ref EntityUid ent)
     {
         switch (key)
         {
@@ -418,6 +431,7 @@ public sealed partial class LongTermHealthSystem
                 break;
             case EffectType.MildPain:
             case EffectType.SeverePain:
+
                 RemComp<ChronicPainComponent>(ent);
                 break;
             case EffectType.MildParacusia:
