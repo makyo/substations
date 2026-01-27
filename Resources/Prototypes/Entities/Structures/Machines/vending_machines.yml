@@ -1,4 +1,4 @@
-﻿# base
+# base
 
 - type: entity
   id: VendingMachine
@@ -2210,7 +2210,7 @@
   - type: VendingMachine
     pack: TankDispenserEVAInventory
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
+    sprite: _DV/Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualizer for remaining tanks as layers # Delta V - Changed Sprites
     state: dispenser
 
 - type: entity
@@ -2223,7 +2223,7 @@
   - type: VendingMachine
     pack: TankDispenserEngineeringInventory
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualiser for remaining tanks as layers
+    sprite: _DV/Structures/Machines/VendingMachines/tankdispenser.rsi #TODO add visualizer for remaining tanks as layers # Delta V - Changed Sprites
     layers:
     - state: dispenser
     - state: dispensereng
