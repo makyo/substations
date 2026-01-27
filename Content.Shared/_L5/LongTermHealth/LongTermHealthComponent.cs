@@ -28,7 +28,7 @@ public sealed partial class LongTermHealthComponent : Component
     /// How many effects from genetic damage will be applied next update.
     /// </summary>
     [DataField]
-    public int UpcomingGeneticEffects = 0;
+    public int UpcomingGeneticEffects;
 
     /// <summary>
     /// How often the effects should update. Doesn't need to be too frequently.
@@ -72,8 +72,8 @@ public enum EffectType
 
 public static class EffectTypeExtensions
 {
-    public static EffectType[] MildEffects = new EffectType[]
-    {
+    public static EffectType[] MildEffects =
+    [
         EffectType.MildPain,
         EffectType.MildImpairedMobility,
         EffectType.MildLungDamage,
@@ -82,10 +82,10 @@ public static class EffectTypeExtensions
         EffectType.MildParacusia,
         EffectType.MildVisionLoss,
         EffectType.MildWoozy,
-    };
+    ];
 
-    public static EffectType[] SevereEffects = new EffectType[]
-    {
+    public static EffectType[] SevereEffects =
+    [
         EffectType.SeverePain,
         EffectType.SevereImpairedMobility,
         EffectType.SevereLungDamage,
@@ -94,31 +94,31 @@ public static class EffectTypeExtensions
         EffectType.SevereParacusia,
         EffectType.SevereVisionLoss,
         EffectType.SevereWoozy,
-    };
+    ];
 
-    public static EffectType[] MildTBIs = new EffectType[]
-    {
+    public static readonly EffectType[] MildTBIs =
+    [
         EffectType.MildHearingLoss,
         EffectType.MildMoody,
         EffectType.MildParacusia,
         EffectType.MildVisionLoss,
         EffectType.MildWoozy,
-    };
+    ];
 
-    public static EffectType[] SevereTBIs = new EffectType[]
-    {
+    public static readonly EffectType[] SevereTBIs =
+    [
         EffectType.SevereHearingLoss,
         EffectType.SevereMoody,
         EffectType.SevereParacusia,
         EffectType.SevereVisionLoss,
         EffectType.SevereWoozy,
-    };
+    ];
 
-    public static EffectType[] AllTBIs = MildTBIs.Concat(SevereTBIs).ToArray();
+    public static readonly EffectType[] AllTBIs = MildTBIs.Concat(SevereTBIs).ToArray();
 
     // Given that you were rotting, these are all pretty severe.
-    public static EffectType[] GeneticEffects = new EffectType[]
-    {
+    public static readonly EffectType[] GeneticEffects =
+    [
         EffectType.SeverePain,
         EffectType.SevereImpairedMobility,
         EffectType.SevereLungDamage,
@@ -129,5 +129,5 @@ public static class EffectTypeExtensions
         EffectType.SevereWoozy,
         EffectType.BurnReturn,
         EffectType.PoisonReturn,
-    };
+    ];
 }

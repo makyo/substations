@@ -33,12 +33,12 @@ public abstract class SharedMoodySystem : EntitySystem
     protected virtual void OnLocalPlayerAttached(Entity<MoodyComponent> entity, ref LocalPlayerAttachedEvent args) { }
     protected virtual void OnLocalPlayerDetached(Entity<MoodyComponent> entity, ref LocalPlayerDetachedEvent args) { }
 
-    public bool IsMoodySuppressed(Entity<MoodyComponent?> ent)
+    protected bool IsMoodySuppressed(Entity<MoodyComponent?> ent)
     {
         if (!Resolve(ent.Owner, ref ent.Comp, false))
             return true;
 
-        return _status.HasEffectComp<_L5.Traits.Moody.Components.MoodySuppressedStatusEffectComponent>(ent.Owner);
+        return _status.HasEffectComp<MoodySuppressedStatusEffectComponent>(ent.Owner);
     }
 
     private void OnMapInit(Entity<MoodyComponent> ent, ref MapInitEvent args)

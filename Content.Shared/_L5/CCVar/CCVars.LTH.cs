@@ -20,19 +20,21 @@ public sealed partial class L5CCVars
     /// The multiplier for severe versus mild long term effects
     /// </summary>
     public static readonly CVarDef<float> LongTermEffectSevereMultiplier =
-        CVarDef.Create("l5.long_term_health.severe_factor", 1.5f, CVar.REPLICATED);
+        CVarDef.Create("l5.long_term_health.severe_factor", 2f, CVar.REPLICATED);
 
     /// <summary>
-    /// Whether or not healing should get slower the more times an effect is applied
+    /// Whether or not healing should get slower the more times an effect is applied.
     /// </summary>
     public static readonly CVarDef<bool> LongTermEffectsHealDecayEnabled =
         CVarDef.Create("l5.long_term_health.heal_decay_enabled", true, CVar.REPLICATED);
 
     /// <summary>
-    /// The factor by which healing gets slower the more times an effect is applied
+    /// The factor by which healing gets slower the more times an effect is applied.
+    ///
+    /// E.g: at 0.5, the third time an effect happens, healing takes 1.5 times as long; the fourth, twice as long; and so on.
     /// </summary>
     public static readonly CVarDef<float> LongTermEffectsHealDecayFactor =
-        CVarDef.Create("l5.long_term_health.heal_decay_factor", 1.5f, CVar.REPLICATED);
+        CVarDef.Create("l5.long_term_health.heal_decay_factor", 0.5f, CVar.REPLICATED);
 
     /// <summary>
     /// The factor by which laying down reduces effects or speeds recovery.
@@ -41,12 +43,6 @@ public sealed partial class L5CCVars
     /// </summary>
     public static readonly CVarDef<float> LongTermEffectsRestFactor =
         CVarDef.Create("l5.long_term_health.rest_factor", 2f, CVar.REPLICATED);
-
-    /// <summary>
-    /// How many times a mild mild effect can be applied before it becomes severe
-    /// </summary>
-    public static readonly CVarDef<int> RepeatsToBecomeSevere =
-        CVarDef.Create("l5.long_term_health.repeats_to_become_severe", 2, CVar.REPLICATED);
 
     /// <summary>
     /// The chance that mild effects become severe even if the severe threshold isn't reached.
@@ -66,8 +62,6 @@ public sealed partial class L5CCVars
 
     /// <summary>
     /// The threshold at which the pain trait is added severely.
-    ///
-    /// Only applies if severe LTEs are enabled.
     /// </summary>
     public static readonly CVarDef<float> BrutePainSevereThreshold =
         CVarDef.Create("l5.long_term_health.brute.pain.severe_threshold", 200f, CVar.REPLICATED);
@@ -82,36 +76,11 @@ public sealed partial class L5CCVars
 
     /// <summary>
     /// The threshold at which BRUTE damage to the body leads to severe impaired mobility.
-    ///
-    /// Only applies if severe LTEs are enabled.
     /// </summary>
     public static readonly CVarDef<float> BruteImpairedMobilityBodySevereThreshold =
         CVarDef.Create("l5.long_term_health.brute.impaired_mobility.body.severe_threshold", 200f, CVar.REPLICATED);
 
-    /// <summary>
-    /// The threshold at which injuries to the legs leads to mild impaired mobility.
-    /// </summary>
-    public static readonly CVarDef<float> BruteImpairedMobilityLegsMildThreshold =
-        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.legs.mild_threshold", 50f, CVar.REPLICATED);
-
-    /// <summary>
-    /// The threshold at which injuries to the legs leads to severe impaired mobility.
-    ///
-    /// Only applies if severe LTEs are enabled.
-    /// </summary>
-    public static readonly CVarDef<float> BruteImpairedMobilityLegsSevereThreshold =
-        CVarDef.Create("l5.long_term_health.brute.impaired_mobility.legs.severe_threshold", 100f, CVar.REPLICATED);
-
     // -- Traumatic Brain Injuries
-
-    /// <summary>
-    /// The chance that receiving double the threshold of any of the traumatic brain injuries makes them a severe effect requiring ongoing
-    /// treatment.
-    ///
-    /// Only applies if severe LTEs are enabled.
-    /// </summary>
-    public static readonly CVarDef<float> TBISevereChance =
-        CVarDef.Create("l5.long_term_health.brute.tbi.severe_chance", 0.25f, CVar.REPLICATED);
 
     // BURN Injuries
 
@@ -126,12 +95,6 @@ public sealed partial class L5CCVars
     /// </summary>
     public static readonly CVarDef<float> BurnReturnFactor =
         CVarDef.Create("l5.long_term_health.burn.return_factor", 0.1f, CVar.REPLICATED);
-
-    /// <summary>
-    /// Whether or not to treat "tend burns" surgery as receiving a skin graft that requires ongoing therapy.
-    /// </summary>
-    public static readonly CVarDef<bool> BurnGraftEnabled =
-        CVarDef.Create("l5.long_term_health.burn.graft_enabled", true, CVar.REPLICATED);
 
     // TOXIN Injuries
 

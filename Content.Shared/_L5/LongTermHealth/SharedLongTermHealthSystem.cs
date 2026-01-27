@@ -26,13 +26,6 @@ public abstract partial class SharedLongTermHealthSystem : EntitySystem
     {
         base.Initialize();
 
-        _mildEffectSeconds = _config.GetCVar(L5CCVars.LongTermEffectsDuration);
-        _severeEffectSeconds = _mildEffectSeconds * _config.GetCVar(L5CCVars.LongTermEffectSevereMultiplier);
-        _healDecayEnabled = _config.GetCVar(L5CCVars.LongTermEffectsHealDecayEnabled);
-        _healDecayFactor = 1f;
-        if (_healDecayEnabled)
-            _healDecayFactor = _config.GetCVar(L5CCVars.LongTermEffectsHealDecayFactor);
-
         SubscribeLocalEvent<LongTermHealthComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<LongTermHealthComponent, DamageChangedEvent>(OnDamageChanged);
     }
@@ -44,8 +37,18 @@ public abstract partial class SharedLongTermHealthSystem : EntitySystem
 
     private void OnDamageChanged(EntityUid uid, LongTermHealthComponent component, DamageChangedEvent args)
     {
+        if (!_config.GetCVar(L5CCVars.LongTermHealthEnabled))
+            return;
+
         if (args.DamageDelta == null)
             return;
+
+        _mildEffectSeconds = _config.GetCVar(L5CCVars.LongTermEffectsDuration);
+        _severeEffectSeconds = _mildEffectSeconds * _config.GetCVar(L5CCVars.LongTermEffectSevereMultiplier);
+        _healDecayEnabled = _config.GetCVar(L5CCVars.LongTermEffectsHealDecayEnabled);
+        _healDecayFactor = 1f;
+        if (_healDecayEnabled)
+            _healDecayFactor = _config.GetCVar(L5CCVars.LongTermEffectsHealDecayFactor);
 
         OnAirloss(uid, ref component, args);
         OnBrute(uid, ref component, args);
@@ -88,8 +91,7 @@ public abstract partial class SharedLongTermHealthSystem : EntitySystem
                     comp.CurrentEffects.Remove(key);
 
                     // Add to the previous effects.
-                    if (!comp.PreviousEffects.ContainsKey(key))
-                        comp.PreviousEffects[key] = 0;
+                    comp.PreviousEffects.TryAdd(key, 0);
                     comp.PreviousEffects[key]++;
 
                     // Remove the effect components/etc.

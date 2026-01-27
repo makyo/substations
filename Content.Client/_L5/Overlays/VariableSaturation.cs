@@ -8,7 +8,6 @@ namespace Content.Client._L5.Overlays;
 
 public sealed class VariableSaturation : Overlay
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
@@ -21,7 +20,7 @@ public sealed class VariableSaturation : Overlay
     public VariableSaturation()
     {
         IoCManager.InjectDependencies(this);
-        _shader = _prototypeManager.Index<ShaderPrototype>("GreyscaleFullscreen").InstanceUnique();
+        _shader = _prototypeManager.Index(new ProtoId<ShaderPrototype>("GreyscaleFullscreen")).InstanceUnique();
     }
 
     public void SetStrength(float strength)
@@ -48,7 +47,7 @@ public sealed class VariableSaturation : Overlay
         var viewport = args.WorldBounds;
         //worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_shader);
-        worldHandle.DrawRect(viewport, new Color(1f, 1f, 1f, 0.5f));
+        worldHandle.DrawRect(viewport, new Color(1f, 1f, 1f, _strength));
         worldHandle.UseShader(null);
     }
 }

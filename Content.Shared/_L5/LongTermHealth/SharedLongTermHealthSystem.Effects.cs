@@ -9,6 +9,7 @@ using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Shared._L5.LongTermHealth;
@@ -40,6 +41,7 @@ public abstract partial class SharedLongTermHealthSystem
         {
             InitializeEffect(
                 ref component,
+                owner,
                 args.Damageable.Damage["Asphyxiation"],
                 EffectType.MildLungDamage,
                 EffectType.SevereLungDamage,
@@ -86,11 +88,7 @@ public abstract partial class SharedLongTermHealthSystem
                     return;
 
                 // Bail if they already have one of the matching components
-                if (tbi == EffectType.SevereParacusia && HasComp<ParacusiaComponent>(owner))
-                    return;
-                if (tbi == EffectType.SevereHearingLoss && HasComp<HardOfHearingComponent>(owner))
-                    return;
-                if (tbi == EffectType.SevereVisionLoss && HasComp<BlurryVisionComponent>(owner))
+                if (BailEarly(tbi, owner))
                     return;
 
                 var duration = _severeEffectSeconds;
@@ -112,9 +110,7 @@ public abstract partial class SharedLongTermHealthSystem
                     return;
 
                 // Bail if they already have one of the matching components
-                if (tbi == EffectType.MildParacusia && HasComp<ParacusiaComponent>(owner) ||
-                    tbi == EffectType.MildHearingLoss && HasComp<HardOfHearingComponent>(owner) ||
-                    tbi == EffectType.MildVisionLoss && HasComp<BlurryVisionComponent>(owner))
+                if (BailEarly(tbi, owner))
                     return;
 
                 var duration = _severeEffectSeconds;
@@ -138,28 +134,26 @@ public abstract partial class SharedLongTermHealthSystem
 
         if (bruteDelta > FixedPoint2.Zero)
         {
-            if (!HasComp<ChronicPainComponent>(owner))
-                PrepareEffect(
-                    ref component,
-                    bruteTotal,
-                    EffectType.MildPain,
-                    EffectType.SeverePain,
-                    L5CCVars.BrutePainMildThreshold,
-                    L5CCVars.BrutePainSevereThreshold);
-
-            if (!HasComp<ImpairedMobilityComponent>(owner))
-                PrepareEffect(
-                    ref component,
-                    bruteTotal,
-                    EffectType.MildImpairedMobility,
-                    EffectType.SevereImpairedMobility,
-                    L5CCVars.BruteImpairedMobilityBodyMildThreshold,
-                    L5CCVars.BruteImpairedMobilityBodySevereThreshold);
+            PrepareEffect(
+                ref component,
+                bruteTotal,
+                EffectType.MildPain,
+                EffectType.SeverePain,
+                L5CCVars.BrutePainMildThreshold,
+                L5CCVars.BrutePainSevereThreshold);
+            PrepareEffect(
+                ref component,
+                bruteTotal,
+                EffectType.MildImpairedMobility,
+                EffectType.SevereImpairedMobility,
+                L5CCVars.BruteImpairedMobilityBodyMildThreshold,
+                L5CCVars.BruteImpairedMobilityBodySevereThreshold);
         }
         else if (bruteDelta < FixedPoint2.Zero)
         {
             InitializeEffect(
                 ref component,
+                owner,
                 bruteTotal,
                 EffectType.MildPain,
                 EffectType.SeverePain,
@@ -168,6 +162,7 @@ public abstract partial class SharedLongTermHealthSystem
 
             InitializeEffect(
                 ref component,
+                owner,
                 bruteTotal,
                 EffectType.MildImpairedMobility,
                 EffectType.SevereImpairedMobility,
@@ -175,8 +170,7 @@ public abstract partial class SharedLongTermHealthSystem
                 L5CCVars.BruteImpairedMobilityBodySevereThreshold);
         }
 
-        // TODO: TBI for damage to the head.
-        // TODO: impaired mobility for damage to the legs.
+        // TODO: TBI for damage to the head and impaired mobility for damage to the legs, pending either shitmed or offmed.
     }
 
     private void OnBurn(EntityUid owner, ref LongTermHealthComponent component, DamageChangedEvent args)
@@ -254,11 +248,7 @@ public abstract partial class SharedLongTermHealthSystem
                 return;
 
             // Bail if they already have one of the matching components
-            if (effect == EffectType.SevereParacusia && HasComp<ParacusiaComponent>(owner) ||
-                effect == EffectType.SevereHearingLoss && HasComp<HardOfHearingComponent>(owner) ||
-                effect == EffectType.SevereVisionLoss && HasComp<BlurryVisionComponent>(owner) ||
-                effect == EffectType.SeverePain && HasComp<ChronicPainComponent>(owner) ||
-                effect == EffectType.SevereImpairedMobility && HasComp<ImpairedMobilityComponent>(owner))
+            if (BailEarly(effect, owner))
                 return;
 
             var duration = _severeEffectSeconds;
@@ -277,11 +267,18 @@ public abstract partial class SharedLongTermHealthSystem
     {
         foreach (var tbi in EffectTypeExtensions.AllTBIs)
         {
-            if (component.UpcomingEffects.ContainsKey(tbi))
-            {
-                component.UpcomingEffects.Remove(tbi);
-            }
+            component.UpcomingEffects.Remove(tbi);
         }
+    }
+
+    private bool BailEarly(EffectType effect, EntityUid owner)
+    {
+        return !(
+            effect is EffectType.SevereParacusia or EffectType.MildParacusia && HasComp<ParacusiaComponent>(owner) ||
+            effect is EffectType.SevereHearingLoss or EffectType.MildHearingLoss && HasComp<HardOfHearingComponent>(owner) ||
+            effect is EffectType.SevereVisionLoss or EffectType.MildVisionLoss && HasComp<BlurryVisionComponent>(owner) ||
+            effect is EffectType.SeverePain or EffectType.MildPain && HasComp<ChronicPainComponent>(owner) ||
+            effect is EffectType.SevereImpairedMobility or EffectType.MildImpairedMobility && HasComp<ImpairedMobilityComponent>(owner));
     }
 
     private void PrepareEffect(
@@ -308,6 +305,7 @@ public abstract partial class SharedLongTermHealthSystem
 
     private void InitializeEffect(
         ref LongTermHealthComponent component,
+        EntityUid owner,
         FixedPoint2 damage,
         EffectType mildType,
         EffectType severeType,
@@ -320,6 +318,9 @@ public abstract partial class SharedLongTermHealthSystem
             var duration = _severeEffectSeconds;
             component.UpcomingEffects.Remove(severeType);
 
+            if (BailEarly(severeType, owner))
+                return;
+
             if (_healDecayEnabled && component.PreviousEffects.TryGetValue(severeType, out var count))
                 duration *= _healDecayFactor * count;
 
@@ -329,12 +330,23 @@ public abstract partial class SharedLongTermHealthSystem
                  damage < _config.GetCVar(mildCVar))
         {
             var duration = _mildEffectSeconds;
-            component.UpcomingEffects.Remove(mildType);
 
-            if (_healDecayEnabled && component.PreviousEffects.TryGetValue(mildType, out var count))
+            var type = mildType;
+            if (_random.Prob(_config.GetCVar(L5CCVars.ChanceToBecomeSevere)))
+            {
+                type = severeType;
+                duration = _severeEffectSeconds;
+            }
+
+            component.UpcomingEffects.Remove(type);
+
+            if (BailEarly(type, owner))
+                return;
+
+            if (_healDecayEnabled && component.PreviousEffects.TryGetValue(type, out var count))
                 duration *= _healDecayFactor * count;
 
-            component.CurrentEffects[mildType] = TimeSpan.FromSeconds(duration);
+            component.CurrentEffects[type] = TimeSpan.FromSeconds(duration);
         }
     }
 
@@ -349,7 +361,7 @@ public abstract partial class SharedLongTermHealthSystem
             case EffectType.BurnReturn:
                 _damage.ChangeDamage(ent,
                     new DamageSpecifier(
-                        _proto.Index<DamageTypePrototype>("Caustic"), // Requires ointment to heal oneself.
+                        _proto.Index(new ProtoId<DamageTypePrototype>("Caustic")), // Requires ointment to heal oneself.
                         comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.BurnReturnFactor)),
                     ignoreResistances: true);
                 break;
@@ -368,7 +380,7 @@ public abstract partial class SharedLongTermHealthSystem
             case EffectType.SevereLungDamage:
                 _damage.ChangeDamage(ent,
                     new DamageSpecifier(
-                        _proto.Index<DamageTypePrototype>("Asphyxiation"),
+                        _proto.Index(new ProtoId<DamageTypePrototype>("Asphyxiation")),
                         comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.AsphyxReturnFactor)),
                     ignoreResistances: true);
                 break;
@@ -391,7 +403,7 @@ public abstract partial class SharedLongTermHealthSystem
             case EffectType.PoisonReturn:
                 _damage.ChangeDamage(ent,
                     new DamageSpecifier(
-                        _proto.Index<DamageTypePrototype>("Poison"),
+                        _proto.Index(new ProtoId<DamageTypePrototype>("Poison")),
                         comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.PoisonReturnFactor)),
                     ignoreResistances: true);
                 break;
