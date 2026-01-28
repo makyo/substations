@@ -44,6 +44,8 @@ public sealed partial class LongTermHealthComponent : Component
 
 public enum EffectType
 {
+    None,
+
     MildPain,
     SeverePain,
 

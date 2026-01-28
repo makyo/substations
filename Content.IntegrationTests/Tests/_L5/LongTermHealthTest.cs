@@ -148,12 +148,12 @@ public sealed class LongTermHealthTest
             Assert.That(lthComp.UpcomingGeneticEffects, Is.EqualTo(1), "Failed to prepare first random effect.");
             damageSys.ChangeDamage(target, new DamageSpecifier(Cellular, toDeal), true);
             Assert.That(lthComp.UpcomingGeneticEffects,  Is.EqualTo(2), "Failed to prepare second random effect.");
-            Assert.That(lthComp.UpcomingGeneticEffects,  Is.EqualTo(2), "Failed to prepare second random effect.");
 
             damageSys.ChangeDamage(target, new DamageSpecifier(Cellular, -toDeal), true);
             Assert.That(lthComp.CurrentEffects.Count, Is.EqualTo(1), "Failed to roll first random effect.");
             damageSys.ChangeDamage(target, new DamageSpecifier(Cellular, -toDeal), true);
             Assert.That(lthComp.CurrentEffects.Count,  Is.EqualTo(2), "Failed to roll second random effect.");
         });
+        await pair.CleanReturnAsync();
     }
 }

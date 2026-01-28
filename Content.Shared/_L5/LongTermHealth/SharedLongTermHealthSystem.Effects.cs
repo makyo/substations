@@ -249,11 +249,17 @@ public abstract partial class SharedLongTermHealthSystem
         {
             component.UpcomingGeneticEffects--;
 
-            // Get a random effect
-            var effect = _random.Pick(EffectTypeExtensions.GeneticEffects);
+            // Ensure we always get a random effect
+            EffectType effect = default;
+            foreach (var _ in EffectTypeExtensions.GeneticEffects)
+            {
+                effect = _random.Pick(EffectTypeExtensions.GeneticEffects);
+                if (!component.CurrentEffects.ContainsKey(effect))
+                    break;
+            }
 
-            // Bail if they already have that effect
-            if (component.CurrentEffects.ContainsKey(effect))
+            // Boy, you are *fucked up* right now...
+            if (effect == default)
                 return;
 
             // Bail if they already have one of the matching components
