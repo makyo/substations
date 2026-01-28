@@ -113,7 +113,10 @@ public abstract partial class SharedLongTermHealthSystem
                 if (BailEarly(tbi, owner))
                     return;
 
-                var duration = _severeEffectSeconds;
+                var duration = _mildEffectSeconds;
+                if (_random.Prob(_config.GetCVar(L5CCVars.ChanceToBecomeSevere)))
+                    duration = _severeEffectSeconds;
+
                 if (_healDecayEnabled && component.PreviousEffects.TryGetValue(EffectType.MildBrainDamage, out var count))
                     duration *= _healDecayFactor * count;
 
@@ -191,6 +194,9 @@ public abstract partial class SharedLongTermHealthSystem
         else if (burnDelta < FixedPoint2.Zero && component.UpcomingEffects.ContainsKey(EffectType.BurnReturn))
         {
             var duration = _mildEffectSeconds;
+            if (_random.Prob(_config.GetCVar(L5CCVars.ChanceToBecomeSevere)))
+                duration = _severeEffectSeconds;
+
             component.UpcomingEffects.Remove(EffectType.BurnReturn);
 
             if (_healDecayEnabled && component.PreviousEffects.TryGetValue(EffectType.BurnReturn, out var count))
@@ -213,10 +219,13 @@ public abstract partial class SharedLongTermHealthSystem
         if (toxinDelta > FixedPoint2.Zero &&
             !component.CurrentEffects.ContainsKey(EffectType.PoisonReturn) &&
             toxinTotal > _config.GetCVar(L5CCVars.PoisonReturnThreshold))
-            component.UpcomingEffects[EffectType.BurnReturn] = true;
+            component.UpcomingEffects[EffectType.PoisonReturn] = true;
         else if (toxinDelta < FixedPoint2.Zero && component.UpcomingEffects.ContainsKey(EffectType.PoisonReturn))
         {
             var duration = _mildEffectSeconds;
+            if (_random.Prob(_config.GetCVar(L5CCVars.ChanceToBecomeSevere)))
+                duration = _severeEffectSeconds;
+
             component.UpcomingEffects.Remove(EffectType.PoisonReturn);
 
             if (_healDecayEnabled && component.PreviousEffects.TryGetValue(EffectType.PoisonReturn, out var count))
@@ -273,7 +282,7 @@ public abstract partial class SharedLongTermHealthSystem
 
     private bool BailEarly(EffectType effect, EntityUid owner)
     {
-        return !(
+        return (
             effect is EffectType.SevereParacusia or EffectType.MildParacusia && HasComp<ParacusiaComponent>(owner) ||
             effect is EffectType.SevereHearingLoss or EffectType.MildHearingLoss && HasComp<HardOfHearingComponent>(owner) ||
             effect is EffectType.SevereVisionLoss or EffectType.MildVisionLoss && HasComp<BlurryVisionComponent>(owner) ||
