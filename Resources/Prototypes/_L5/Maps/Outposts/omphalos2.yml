@@ -1,21 +1,18 @@
 - type: gameMap
-  id: Omphalos
-  mapName: Omphalos
-  mapPath: /Maps/_L5/Outposts/omphalos.yml
+  id: Omphalos2
+  mapName: Omphalos II
+  mapPath: /Maps/_L5/Outposts/omphalos2.yml
   minPlayers: 0
   maxPlayers: 10
   stations:
-    Omphalos:
+    Omphalos2:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCCS Omphalos {1}'
+        mapNameTemplate: 'SCCS Omphalos II {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: 'UN'
-      - type: StationPlanetSpawner
-        planet: GlacierSurface
-        gridPath: /Maps/_DV/Nonstations/glacier_surface_outpost.yml
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]
