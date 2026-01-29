@@ -21,7 +21,7 @@
   - type: EmitSoundOnTrigger
     sound: *BasePlushieSound
   - type: UseDelay
-    delay: 3.0
+    delay: 1.0
   - type: MeleeWeapon
     attackRate: 0.333
     wideAnimationRotation: 180
