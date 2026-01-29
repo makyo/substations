@@ -4,7 +4,7 @@ meta:
   engineVersion: 271.1.0
   forkId: ""
   forkVersion: ""
-  time: 01/29/2026 06:16:38
+  time: 01/29/2026 06:29:07
   entityCount: 846
 maps:
 - 752
@@ -353,6 +353,8 @@ entities:
     - type: Transform
       pos: -0.5,-7.5
       parent: 1
+    - type: Battery
+      lastCharge: 50000
     - type: Fixtures
       fixtures: {}
   - uid: 846
@@ -361,6 +363,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,5.5
       parent: 1
+    - type: Battery
+      lastCharge: 50000
     - type: Fixtures
       fixtures: {}
 - proto: AtmosFixNitrogenMarker
@@ -4169,6 +4173,8 @@ entities:
     - type: Transform
       pos: 6.5,-2.5
       parent: 1
+    - type: Battery
+      lastCharge: 300000
 - proto: PlushieMort
   entities:
   - uid: 826
@@ -5412,6 +5418,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-14.5
       parent: 1
+    - type: Battery
+      lastCharge: 2000000
 - proto: TableReinforced
   entities:
   - uid: 549
