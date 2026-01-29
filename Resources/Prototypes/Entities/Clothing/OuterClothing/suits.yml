@@ -8,6 +8,18 @@
     sprite: Clothing/OuterClothing/Suits/bombsuit.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/bombsuit.rsi
+    clothingVisuals: # Delta V - Need this for harpies
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-harpy:
+      - sprite: _DV/Clothing/OuterClothing/suits/bombsuit.rsi
+        state: equipped-OUTERCLOTHING-harpy
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-reptilian
+      outerClothing-dog:
+      - state: equipped-OUTERCLOTHING-dog
   - type: ClothingSpeedModifier
     walkModifier: 0.75 # DeltaV - slower for insulation, originally 0.8
     sprintModifier: 0.75 # DeltaV - slower for insulation, originally 0.8
@@ -28,16 +40,16 @@
     - HidesHarpyWings # DeltaV
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
-  - type: Insulated # DeltaV - bombs need insuls to be defused so to avoid being forced to put gloves in lockers, so added this
   - type: HideLayerClothing
     slots:
-      - Tail
+    - Tail
+  - type: Insulated # DeltaV - bombs need insuls to be defused so to avoid being forced to put gloves in lockers, so added this
 
 - type: entity
   parent: ClothingOuterSuitBomb
   id: ClothingOuterSuitJanitorBomb
   name: janitorial bomb suit
-  description: A heavy helmet designed to withstand explosions formed from reactions between chemicals.
+  description: Heavy body armor designed to withstand explosions formed from reactions between chemicals.
   categories: [ DoNotMap ]
   components:
   - type: Sprite
@@ -55,6 +67,18 @@
     sprite: _DV/Clothing/OuterClothing/Suits/fire.rsi # DeltaV
   - type: Clothing
     sprite: _DV/Clothing/OuterClothing/Suits/fire.rsi # DeltaV
+    clothingVisuals: # Delta V - Need this for harpies
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-harpy:
+      - sprite: _DV/Clothing/OuterClothing/suits/fire.rsi
+        state: equipped-OUTERCLOTHING-harpy
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-reptilian
+      outerClothing-dog:
+      - state: equipped-OUTERCLOTHING-dog
   - type: PressureProtection
     highPressureMultiplier: 0.04
   - type: TemperatureProtection
@@ -75,12 +99,12 @@
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
-  - type: Tag
-    tags:
-      - HidesHarpyWings
   - type: HideLayerClothing
     slots:
     - Tail
+  - type: Tag # Delta V 
+    tags:
+      - HidesHarpyWings
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -92,6 +116,18 @@
     sprite: Clothing/OuterClothing/Suits/atmos_firesuit.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/atmos_firesuit.rsi
+    clothingVisuals: # Delta V - Need this for harpies
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-harpy:
+      - sprite: _DV/Clothing/OuterClothing/suits/atmos_firesuit.rsi
+        state: equipped-OUTERCLOTHING-harpy
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-reptilian
+      outerClothing-dog:
+      - state: equipped-OUTERCLOTHING-dog
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -115,12 +151,13 @@
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
+    - HidesHarpyWings
     - CorgiWearable
     - WhitelistChameleon
-    - HidesHarpyWings
   - type: HideLayerClothing
     slots:
     - Tail
+
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing]
@@ -137,6 +174,18 @@
         Radiation: 0.01
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/rad.rsi
+    clothingVisuals: # Delta V - Need this for harpies
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-harpy:
+      - sprite: _DV/Clothing/OuterClothing/suits/rad.rsi
+        state: equipped-OUTERCLOTHING-harpy
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-reptilian
+      outerClothing-dog:
+      - state: equipped-OUTERCLOTHING-dog
   - type: GroupExamine
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodRad
@@ -144,14 +193,15 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
-  - type: Tag
-    tags:
-      - HidesHarpyWings
   - type: HideLayerClothing
     slots:
     - Tail
+  - type: Tag
+    tags:
+      - HidesHarpyWings
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseHighlyIllegalContraband]
@@ -177,6 +227,7 @@
         Slash: 0.8
         Piercing: 0.8
         Heat: 0.8
+        Ion: 0 # DeltaV - I love self gibbing as ninja IPC!!
   # phase cloak
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
@@ -198,8 +249,6 @@
     noPowerPopup: ninja-no-power
   # core ninja suit stuff
   - type: NinjaSuit
-  - type: EmpResistance
-    strengthMultiplier: 0
   - type: UseDelay
     delay: 5 # disable time
   - type: PowerCellSlot
@@ -270,6 +319,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
@@ -290,6 +340,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
   - type: Construction
     graph: ClothingOuterSuitIan
     node: suit
@@ -315,6 +366,18 @@
     size: Normal
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/carpsuit.rsi
+    clothingVisuals: # Delta V - Need this for harpies
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-harpy:
+      - sprite: _DV/Clothing/OuterClothing/suits/carpsuit.rsi
+        state: equipped-OUTERCLOTHING-harpy
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-reptilian
+      outerClothing-dog:
+      - state: equipped-OUTERCLOTHING-dog
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodCarp
   - type: Tag
@@ -323,6 +386,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
   - type: HideLayerClothing
     slots:
     - Tail
