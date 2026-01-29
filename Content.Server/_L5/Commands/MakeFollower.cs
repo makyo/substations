@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Server.Administration;
+using Content.Server.NPC;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Shared.Administration;
@@ -19,6 +20,7 @@ namespace Content.Server._L5.Commands;
 internal sealed class MakeFollowerCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly NPCSystem _npc = default!;
+    [Dependency] private readonly HTNSystem _htn = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
     [Dependency] private readonly TagSystem _tag = default!;
 
@@ -62,7 +64,7 @@ internal sealed class MakeFollowerCommand : LocalizedEntityCommands
         EntityManager.EnsureComponent<HTNComponent>(follower, out var htn);
         htn.RootTask = new HTNCompoundTask()
         {
-            Task = "FollowCompound",
+            Task = "HeelCompound",
         };
 
         _npc.SetBlackboard(follower, "TargetCoordinates", new EntityCoordinates(target, Vector2.Zero));

@@ -1,5 +1,6 @@
+# A more pet-like version of FollowCompound (used for RatKings)
 - type: htnCompound
-  id: FollowCompound
+  id: HeelCompound
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
@@ -33,6 +34,6 @@
   branches:
   - tasks:
     - !type:HTNCompoundTask
-      task: FollowCompound
+      task: HeelCompound
     - !type:HTNCompoundTask
       task: InteractCompound
