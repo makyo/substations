@@ -1,0 +1,38 @@
+- type: htnCompound
+  id: FollowCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        pathfindInPlanning: false
+        removeKeyOnFinish: false
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+
+# These are also provided in case you want the NPC to interact with the target
+- type: htnCompound
+  id: InteractCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      operator: !type:InteractWithOperator
+        targetKey: Target
+        expectDoAfter: false
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: IdleTime
+      operator: !type:WaitOperator
+        key: IdleTime
+
+- type: htnCompound
+  id: FollowInteractCompound
+  branches:
+  - tasks:
+    - !type:HTNCompoundTask
+      task: FollowCompound
+    - !type:HTNCompoundTask
+      task: InteractCompound
