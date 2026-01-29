@@ -342,7 +342,7 @@
 - type: entity
   parent: FilledSecureCabinet
   id: SecureCabinetCentComm
-  suffix: Dept CentComm
+  suffix: Dept Central Admin
   components:
   - type: AccessReader
     access: [["CentralCommand"]]

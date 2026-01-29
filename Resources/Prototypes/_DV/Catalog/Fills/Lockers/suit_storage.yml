@@ -76,11 +76,11 @@
   - type: AccessReader
     access: [["Quartermaster"]]
 
-#ERT and CC hardsuit
+#IRIS and CC hardsuit
 - type: entity
   parent: SuitStorageBase
   id: SuitStorageCC
-  suffix: CentComm
+  suffix: Central Admin
   components:
   - type: EntityTableContainerFill
     containers:

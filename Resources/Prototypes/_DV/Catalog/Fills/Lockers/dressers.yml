@@ -315,7 +315,7 @@
 #CentComm
 - type: entity
   id: DresserCentCommFilledDV
-  suffix: Filled, CentComm
+  suffix: Filled, Central Admin
   parent: DresserLargeCommand
   components:
   - type: StorageFill
