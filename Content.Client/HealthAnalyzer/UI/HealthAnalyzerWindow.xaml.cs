@@ -46,8 +46,6 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
 
     public void Populate(HealthAnalyzerScannedUserMessage msg)
     {
-        HealthAnalyzer.Populate(msg.State);
-
         // Begin DeltaV - Medical Records
         if (msg.State.MedicalRecord is not {} records)
         {
@@ -57,5 +55,7 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
 
         _triageControls[records.Status].Pressed = true;
         // End DeltaV - Medical Records
+
+        HealthAnalyzer.Populate(msg.State);
     }
 }

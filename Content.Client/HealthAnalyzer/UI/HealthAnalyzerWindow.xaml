@@ -3,29 +3,34 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:ui="clr-namespace:Content.Client.HealthAnalyzer.UI"
     MaxHeight="525"
-    MinWidth="300">
+    MinWidth="400"> <!-- DeltaV — for medical records buttons -->
     <ScrollContainer
         Margin="5 5 5 5"
         ReturnMeasure="True"
         VerticalExpand="True">
 
-        <!-- Begin DeltaV - Medical Records -->
-        <BoxContainer Name="TriageControls" Orientation="Vertical">
-            <BoxContainer Name="StatusBox"
-                          Orientation="Horizontal"
-                          HorizontalAlignment="Center"
-                          Margin="0 8 0 0">
+        <!-- This container DeltaV — medical records -->
+        <BoxContainer
+            VerticalExpand="True"
+            Orientation="Vertical">
+            <ui:HealthAnalyzerControl
+                Name="HealthAnalyzer"/>
+
+            <!-- Begin DeltaV - Medical Records -->
+            <BoxContainer Name="TriageControls" Orientation="Vertical">
+                <BoxContainer Name="StatusBox"
+                              Orientation="Horizontal"
+                              HorizontalAlignment="Center"
+                              Margin="0 8 0 0">
+                </BoxContainer>
+
+                <Button Name="ClaimButton"
+                        Text="{Loc 'health-analyzer-window-triage-claim'}"
+                        MinSize="60 0" />
+
+                <PanelContainer StyleClasses="LowDivider" Margin="0 8 0 0"/>
             </BoxContainer>
-
-            <Button Name="ClaimButton"
-                    Text="{Loc 'health-analyzer-window-triage-claim'}"
-                    MinSize="60 0" />
-
-            <PanelContainer StyleClasses="LowDivider" Margin="0 8 0 0"/>
+            <!-- End DeltaV - Medical Records -->
         </BoxContainer>
-        <!-- End DeltaV - Medical Records -->
-
-        <ui:HealthAnalyzerControl
-            Name="HealthAnalyzer"/>
     </ScrollContainer>
 </controls:FancyWindow>
