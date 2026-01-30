@@ -1,6 +1,5 @@
 // DeltaV Start - Fix EvenHealing with Limbs.
 using System.Linq;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body.Systems;
 // DeltaV End - Fix EvenHealing with Limbs.
 using Content.Shared.Damage;
@@ -40,28 +39,6 @@ public sealed partial class EvenHealthChangeEntityEffectSystem : EntityEffectSys
             args.Effect.IgnoreResistances,
             interruptsDoAfters: false,
             doPartDamage: false); // DeltaV - Even Healing with Limbs
-
-        var bodyParts = SharedTargetingSystem.GetValidParts();
-        foreach (var bodyPart in bodyParts)
-        {
-            var (targetType, targetSymmetry) = _body.ConvertTargetBodyPart(bodyPart);
-            if (_body.GetBodyChildrenOfType(entity, targetType, symmetry: targetSymmetry) is { } part)
-            {
-                var dspec = GetDamageSpec(part.FirstOrDefault().Id, ref args);
-
-                if (dspec.GetTotal() == 0)
-                    continue;
-
-                _damageable.TryChangeDamage(
-                    entity.AsNullable(),
-                    dspec * args.Scale,
-                    args.Effect.IgnoreResistances,
-                    interruptsDoAfters: false,
-                    targetPart: bodyPart,
-                    onlyDamageParts: true,
-                    canSever: false);
-            }
-        }
         // END DeltaV
     }
 

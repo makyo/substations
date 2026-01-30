@@ -28,10 +28,7 @@ public sealed partial class HealthChangeEntityEffectSystem : EntityEffectSystem<
                 damageSpec,
                 args.Effect.IgnoreResistances,
                 interruptsDoAfters: false,
-                // Shitmed
-                targetPart: _Shitmed.Targeting.TargetBodyPart.All,
-                canSever: false);
-                // END Shitmed
+                canSever: false); // TODO: make sure we need this first
     }
 }
 

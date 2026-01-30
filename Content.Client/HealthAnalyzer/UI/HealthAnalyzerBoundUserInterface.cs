@@ -1,5 +1,4 @@
 ﻿using Content.Shared.MedicalScanner;
-using Content.Shared._Shitmed.Targeting; // Shitmed Change
 using Content.Shared._DV.MedicalRecords; // DeltaV - Medical Records
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;

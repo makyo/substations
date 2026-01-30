@@ -1,8 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
-using Content.Shared._Shitmed.Body.Components; // Shitmed Change
-using Content.Shared._Shitmed.Body.Organ; // Shitmed Change
 using Content.Server.Chat.Systems;
 using Content.Shared._DV.Body.Components; // DeltaV - Addition of CPR
 using Content.Shared.Body.Systems;
@@ -90,22 +88,18 @@ public sealed class RespiratorSystem : EntitySystem
 
             respirator.NextUpdate += respirator.AdjustedUpdateInterval;
 
-            if (_mobState.IsDead(uid) || HasComp<BreathingImmunityComponent>(uid)) // Shitmed: BreathingImmunity
-                continue;
-
             // Begin DeltaV Additions
-            var organs = _bodySystem.GetBodyOrganEntityComps<LungComponent>((uid, body));
+            var organs = _body.TryGetOrgansWithComponent<LungComponent>((uid, body), out var lungs);
             var multiplier = -1f;
-            foreach (var (_, lung, _) in organs)
+            foreach (var lung in lungs)
             {
-                multiplier *= lung.SaturationLoss;
+                multiplier *= lung.Comp.SaturationLoss;
             }
             // End DeltaV Additions
             UpdateSaturation(uid, multiplier * (float) respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
 
-            if ((!_mobState.IsIncapacitated(uid)
+            if (!_mobState.IsIncapacitated(uid)
                 || TryComp<AffectedByCPRComponent>(uid, out var cprComp) && cprComp.IsActive) // DeltaV - Addition of CPR
-                && !HasComp<DebrainedComponent>(uid)) // Shitmed Change - Cannot breathe in crit or when no brain.
             {
                 switch (respirator.Status)
                 {
@@ -341,9 +335,6 @@ public sealed class RespiratorSystem : EntitySystem
     {
         if (ent.Comp.SuffocationCycles == 2)
             _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(ent):entity} started suffocating");
-
-        var suffocationDamage = HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage; // Shitmed Change - Increased damage for debrained
-        _damageableSys.ChangeDamage(ent.Owner, suffocationDamage, interruptsDoAfters: false, ignoreResistances: true);  // Shitmed Change
 
         if (ent.Comp.SuffocationCycles < ent.Comp.SuffocationCycleThreshold)
             return;
