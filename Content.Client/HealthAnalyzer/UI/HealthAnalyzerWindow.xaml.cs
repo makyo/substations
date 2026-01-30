@@ -50,10 +50,12 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
         if (msg.State.MedicalRecord is not {} records)
         {
             TriageControls.Visible = false;
-            return;
         }
-
-        _triageControls[records.Status].Pressed = true;
+        else
+        {
+            TriageControls.Visible = true;
+            _triageControls[records.Status].Pressed = true;
+        }
         // End DeltaV - Medical Records
 
         HealthAnalyzer.Populate(msg.State);

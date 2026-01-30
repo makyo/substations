@@ -45,6 +45,13 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         SubscribeLocalEvent<HealthAnalyzerComponent, EntGotInsertedIntoContainerMessage>(OnInsertedIntoContainer);
         SubscribeLocalEvent<HealthAnalyzerComponent, ItemToggledEvent>(OnToggled);
         SubscribeLocalEvent<HealthAnalyzerComponent, DroppedEvent>(OnDropped);
+        // DeltaV - medical records
+        Subs.BuiEvents<HealthAnalyzerComponent>(HealthAnalyzerUiKey.Key, subs =>
+        {
+            subs.Event<HealthAnalyzerTriageStatusMessage>(OnHealthAnalyzerTriageStatusSelected);
+            subs.Event<HealthAnalyzerTriageClaimMessage>(OnHealthAnalyzerTriageClaimSelected);
+        });
+        // End DeltaV - medical records
     }
 
     public override void Update(float frameTime)
@@ -78,6 +85,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             }
 
             component.IsAnalyzerActive = true; // DeltaV - Analyzer Reactivation
+            UpdateScannedUser(uid, patient, true);
         }
     }
 
