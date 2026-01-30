@@ -33,7 +33,7 @@ public struct HealthAnalyzerUiState
 
     public HealthAnalyzerUiState() {}
 
-    public HealthAnalyzerUiState(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable)
+    public HealthAnalyzerUiState(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, MedicalRecord? medicalRecord)
     {
         TargetEntity = targetEntity;
         Temperature = temperature;

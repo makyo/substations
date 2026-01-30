@@ -1,5 +1,8 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._DV.Traits.Assorted;
+using Content.Shared._DV.MedicalRecords;
+using Content.Shared._DV.Traits.Assorted;
 using Content.Shared.Atmos;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -30,6 +33,8 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     private readonly SpriteSystem _spriteSystem;
     private readonly IPrototypeManager _prototypes;
     private readonly IResourceCache _cache;
+    private readonly UnborgableSystem _unborgable; // DeltaV
+    private readonly RedshirtSystem _redshirt; // DeltaV
 
     public HealthAnalyzerControl()
     {
@@ -40,6 +45,8 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         _spriteSystem = _entityManager.System<SpriteSystem>();
         _prototypes = dependencies.Resolve<IPrototypeManager>();
         _cache = dependencies.Resolve<IResourceCache>();
+        _unborgable = _entityManager.System<UnborgableSystem>(); // DeltaV
+        _redshirt = _entityManager.System<RedshirtSystem>(); // DeltaV
     }
 
     public void Populate(HealthAnalyzerUiState state)
@@ -105,7 +112,9 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         // Alerts
 
-        var showAlerts = state.Unrevivable == true || state.Bleeding == true;
+        var unborgable = _unborgable.IsUnborgable(target.Value); // DeltaV
+        var redshirt = _redshirt.IsRedshirt(target.Value) && mobStateComponent?.CurrentState == MobState.Dead; // DeltaV - Redshirt
+        var showAlerts = state.Unrevivable == true || state.Bleeding == true || unborgable || redshirt; // DeltaV - Unborgable/Redshirt
 
         AlertsDivider.Visible = showAlerts;
         AlertsContainer.Visible = showAlerts;
@@ -125,6 +134,22 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             AlertsContainer.AddChild(new RichTextLabel
             {
                 Text = Loc.GetString("health-analyzer-window-entity-bleeding-text"),
+                Margin = new Thickness(0, 4),
+                MaxWidth = 300
+            });
+
+        if (unborgable) // DeltaV
+            AlertsContainer.AddChild(new RichTextLabel
+            {
+                Text = Loc.GetString("health-analyzer-window-entity-unborgable-text"),
+                Margin = new Thickness(0, 4),
+                MaxWidth = 300
+            });
+
+        if (redshirt) // DeltaV
+            AlertsContainer.AddChild(new RichTextLabel
+            {
+                Text = Loc.GetString("health-analyzer-window-entity-redshirt-text"),
                 Margin = new Thickness(0, 4),
                 MaxWidth = 300
             });

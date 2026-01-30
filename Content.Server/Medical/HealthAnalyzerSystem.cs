@@ -73,7 +73,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             if (component.MaxScanRange != null && !_transformSystem.InRange(patientCoordinates, transform.Coordinates, component.MaxScanRange.Value))
             {
                 //Range too far, disable updates
-                PauseAnalyzingEntity((uid, component), patient, component.CurrentBodyPart); // DeltaV - Analyzer Reactivation
+                PauseAnalyzingEntity((uid, component), patient); // DeltaV - Analyzer Reactivation
                 continue;
             }
 
@@ -188,38 +188,14 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// </summary>
     /// <param name="healthAnalyzer">The health analyzer that's receiving the updates</param>
     /// <param name="target">The entity to analyze</param>
-    private void PauseAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target, EntityUid? part = null)
+    private void PauseAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target)
     {
         if (!healthAnalyzer.Comp.IsAnalyzerActive)
             return;
 
-        UpdateScannedUser(healthAnalyzer, target, false, part);
+        UpdateScannedUser(healthAnalyzer, target, false);
         healthAnalyzer.Comp.IsAnalyzerActive = false;
     }
-
-    // Shitmed Change Start
-    /// <summary>
-    /// Shitmed Change: Handle the selection of a body part on the health analyzer
-    /// </summary>
-    /// <param name="healthAnalyzer">The health analyzer that's receiving the updates</param>
-    /// <param name="args">The message containing the selected part</param>
-    private void OnHealthAnalyzerPartSelected(Entity<HealthAnalyzerComponent> healthAnalyzer, ref HealthAnalyzerPartMessage args)
-    {
-        if (!TryGetEntity(args.Owner, out var owner))
-            return;
-
-        if (args.BodyPart == null)
-        {
-            BeginAnalyzingEntity(healthAnalyzer, owner.Value, null);
-        }
-        else
-        {
-            var (targetType, targetSymmetry) = _bodySystem.ConvertTargetBodyPart(args.BodyPart.Value);
-            if (_bodySystem.GetBodyChildrenOfType(owner.Value, targetType, symmetry: targetSymmetry) is { } part)
-                BeginAnalyzingEntity(healthAnalyzer, owner.Value, part.FirstOrDefault().Id);
-        }
-    }
-    // Shitmed Change End
 
     // Begin DeltaV - Medical Records
     private void OnHealthAnalyzerTriageStatusSelected(Entity<HealthAnalyzerComponent> healthAnalyzer, ref HealthAnalyzerTriageStatusMessage args)
@@ -299,7 +275,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             null,
             bleeding,
             unrevivable,
-            _medicalRecords.GetMedicalRecords(target), // DeltaV - Medical Records
-        ));
+            _medicalRecords.GetMedicalRecords(target) // DeltaV - Medical Records
+        );
     }
 }
