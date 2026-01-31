@@ -464,7 +464,7 @@
     - DoorBumpOpener
 
 - type: entity
-  name: logistics officer PDA # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer PDA # DeltaV - Logistics Department replacing Cargo # L5
   parent: BasePDA
   id: QuartermasterPDA
   description: PDA for the guy that directs logistics. # DeltaV - Logistics Department replacing Cargo
@@ -689,7 +689,7 @@
 - type: entity
   parent: BasePDA
   id: HoPPDA
-  name: head of personnel PDA
+  name: hospitality director PDA # L5
   description: Looks like it's been chewed on.
   components:
   - type: Pda
@@ -1210,7 +1210,7 @@
 - type: entity
   parent: BaseSecurityPDA
   id: ERTLeaderPDA
-  name: ERT Leader PDA
+  name: IRIS Leader PDA # L5
   suffix: Leader
   description: Red for firepower.
   components:

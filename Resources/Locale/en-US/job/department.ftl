@@ -1,6 +1,5 @@
 department-Cargo = Cargo
 department-Civilian = Civilian
-# L5
 department-Command = Leadership
 department-CentralCommand = Central Administration
 department-Engineering = Engineering

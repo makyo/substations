@@ -3,7 +3,7 @@
   id: CrateCargoLuxuryHardsuit
   name: luxury mining hardsuit crate
   # DeltaV - Logistics Department - Replace Quartermaster with Logistics Officer
-  description: Finally, a hardsuit the Logistics Officer could call their own. Central has heard you, now stop asking. # L5
+  description: Finally, a hardsuit the Chief Logistics Officer could call their own. Central has heard you, now stop asking. # L5
   # End of modified code
   components:
   - type: EntityTableContainerFill

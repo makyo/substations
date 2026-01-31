@@ -134,7 +134,7 @@
     state: stamp-cmo
 
 - type: entity
-  name: head of personnel's rubber stamp
+  name: hospitality director's rubber stamp # L5
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampHop
   categories: [ DoNotMap ]
@@ -147,7 +147,7 @@
     state: stamp-hop
 
 - type: entity
-  name: head of security's rubber stamp
+  name: IRIS representative's rubber stamp # L5
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampHos
   categories: [ DoNotMap ]
@@ -174,7 +174,7 @@
     state: stamp-mime
 
 - type: entity
-  name: logistics officer's rubber stamp # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer's rubber stamp # DeltaV - Logistics Department replacing Cargo # L5
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampQm
   categories: [ DoNotMap ]
@@ -187,7 +187,7 @@
     state: stamp-qm
 
 - type: entity
-  name: research director's rubber stamp # DeltaV - Epistemics Department replacing Science # L5 undooo
+  name: research director's rubber stamp
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampRd
   categories: [ DoNotMap ]

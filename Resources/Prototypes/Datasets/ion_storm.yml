@@ -337,8 +337,8 @@
   - CYBORGS
   - DETECTIVES
   # - GENETICISTS
-  - HEADS OF PERSONNEL
-  - HEADS OF SECURITY
+  - HOSPITALITY DIRECTORS # L5
+  - IRIS REPRESENTATIVES # L5
   - HEADS OF STAFF
   - JANITORS
   - LAWYERS
@@ -350,7 +350,7 @@
   - PARAMEDICS
   - PASSENGERS
   # DeltaV - Logistics Department - Replace Quartermaster with Logistics Officer
-  - LOGISTICS OFFICERS
+  - CHIEF LOGISTICS OFFICERS # L5
   # End of modified code
   # DeltaV - Epistemics Department - Replace Research Director with Mystagogue # L5 undooo
   - RESEARCH DIRECTORS
@@ -359,7 +359,7 @@
   - RODENTS
   - SALVAGE SPECIALISTS
   - SCIENTISTS
-  - SECURITY OFFICERS
+  - PEACEKEEPERS # L5
   - STATION ENGINEERS
   # - VIROLOGISTS
   - ARMORERS # L5 - warden to armorer

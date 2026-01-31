@@ -1,4 +1,5 @@
 ## Random humanoids
+# L5 - ERT to IRIS, CentComm to Central Admin
 
 - type: randomHumanoidSettings
   id: EventHumanoid
@@ -77,7 +78,7 @@
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeader
-  name: ERT leader
+  name: IRS leader
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -108,7 +109,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT leader
+  name: IRIS leader
   suffix: ERTRole, EVA
   components:
     - type: Sprite
@@ -146,7 +147,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTChaplain
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT chaplain
+  name: IRIS chaplain
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -178,7 +179,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTChaplainEVA
   parent: RandomHumanoidSpawnerERTChaplain
-  name: ERT chaplain
+  name: IRIS chaplain
   suffix: ERTRole, EVA
   components:
     - type: Sprite
@@ -200,7 +201,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTJanitor
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT janitor
+  name: IRIS janitor
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -252,7 +253,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTEngineer
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT engineer
+  name: IRIS engineer
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -324,7 +325,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTSecurity
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT security
+  name: IRIS security
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -355,7 +356,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVA
   parent: RandomHumanoidSpawnerERTSecurity
-  name: ERT security
+  name: IRIS security
   suffix: ERTRole, EVA
   components:
     - type: Sprite
@@ -382,7 +383,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityArmedRifle
   parent: RandomHumanoidSpawnerERTSecurityEVA
-  name: ERT security rifleman
+  name: IRIS security rifleman
   suffix: ERTRole, Armed, EVA
   components:
   - type: RandomHumanoidSpawner
@@ -403,7 +404,7 @@
 - type: entity
   parent: RandomHumanoidSpawnerERTSecurityEVA
   id: RandomHumanoidSpawnerERTSecurityArmedGrenade
-  name: ERT security grenadier
+  name: IRIS security grenadier
   suffix: ERTRole, Armed, EVA
   components:
   - type: RandomHumanoidSpawner
@@ -424,7 +425,7 @@
 - type: entity
   parent: RandomHumanoidSpawnerERTSecurityEVA
   id: RandomHumanoidSpawnerERTSecurityArmedVanguard
-  name: ERT security vanguard
+  name: IRIS security vanguard
   suffix: ERTRole, Armed, EVA
   components:
   - type: RandomHumanoidSpawner
@@ -445,7 +446,7 @@
 - type: entity
   parent: RandomHumanoidSpawnerERTSecurityEVA
   id: RandomHumanoidSpawnerERTSecurityArmedShotgun
-  name: ERT security breacher
+  name: IRIS security breacher
   suffix: ERTRole, Armed, EVA
   components:
   - type: RandomHumanoidSpawner
@@ -468,7 +469,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTMedical
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT medic
+  name: IRIS medic
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -571,7 +572,7 @@
 ## Central Command
 
 - type: entity
-  name: CentComm official
+  name: Central Admin official
   id: RandomHumanoidSpawnerCentcomOfficial
   components:
     - type: Sprite
@@ -634,7 +635,7 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: NukeOperative
-    - type: PsionicBonusChance #Nyano - Summary: makes more likely to be psionic. 
+    - type: PsionicBonusChance #Nyano - Summary: makes more likely to be psionic.
       multiplier: 7
       warn: false
 

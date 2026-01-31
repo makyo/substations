@@ -67,7 +67,7 @@
 - type: entity
   parent: SuitStorageBase
   id: SuitStorageQM
-  suffix: Logistics Officer
+  suffix: Chief Logistics Officer # L5
   components:
   - type: EntityTableContainerFill
     containers:

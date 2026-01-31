@@ -100,7 +100,7 @@ bounty-description-donut = Central's security forces are facing heavy losses aga
 bounty-description-figurine = The vice president's son saw an ad for action figures on the telescreen and now he won't shut up about them. Ship some to ease his complaints.
 bounty-description-flesh-monster = We've recently receieved reports of some kind of flesh monster infestation onboard several stations. Send us a few samples of these creatures so we can investigate new botanical opportunities.
 # L5
-bounty-description-flower = Administrator Zot really wants to sweep Security Officer Olivia off her feet. Send a shipment of flowers and he'll happily reward you.
+bounty-description-flower = Administrator Zot really wants to sweep Peacekeeper Olivia off her feet. Send a shipment of flowers and he'll happily reward you.
 bounty-description-galaxythistle = After a particularly nasty foam backpressure from a scrubber, a high-ranking officer got badly poisoned. Send us some galaxythistle so we can prepare him a homeopathic remedy.
 # L5
 bounty-description-handcuffs = A large influx of escaped convicts have arrived at Central Administration. Now is the perfect time to ship out spare handcuffs (or restraints).
@@ -152,11 +152,11 @@ bounty-description-vegetable = The new chef is a vegetarian, and botany can't ke
 # L5
 bounty-description-chili = Today's the Central Administration Chili Cookoff, and, well, a few of us forgot to make some. Please help cover for us.
 # L5
-bounty-description-rollerskates = Central Security is proposing a new strategy for helping officers win foot pursuits. Send them a couple so they can learn how bad an idea this is.
+bounty-description-rollerskates = UN Security is proposing a new strategy for helping officers win foot pursuits. Send them a couple so they can learn how bad an idea this is.
 bounty-description-bedsheet = Someone in Atmos keeps turning down the heater, and we're all shivering in our beds. Please send us some extra sheets to stay warm.
 bounty-description-bandana =  Bzzzt... Transmission from prison planet OC-1001: We're... reorganizing our command structure. Send us some bandanas so we can tell gan- I mean, departments apart.
 bounty-description-steak = The vegetarian cook is refusing to make us anything with meat, and the lizards are getting restless. Can you smuggle us a few steaks to keep them happy?
-bounty-description-banana = Hi station! Botany won't gimme any more. They said slipping the HoS out an open airlock wasn't funny! Can you believe it? Help me out! HONK.
+bounty-description-banana = Hi station! Botany won't gimme any more. They said slipping the IRIS Rep out an open airlock wasn't funny! Can you believe it? Help me out! HONK.
 bounty-description-beer = Some nefarious agent has stolen every single drink in the bar. Yes, everything. Help tide us over until we can find them.
 bounty-description-hi-viz-vest  = The clown stole the AME controller and won't give it back. It's pretty dark in here. Some hi-viz vests would make seeing each other in the dark a little more bearable.
 bounty-description-torch = The chef made all the monkeys and kobolds at once, and they rebelled and took over the cargo shuttle. They're demanding supplies and free passage to a jungle planet, and we're giving in to their demands. All they need now is a few torches.

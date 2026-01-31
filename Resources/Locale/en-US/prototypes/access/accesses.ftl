@@ -1,11 +1,11 @@
 # L5
 id-card-access-level-command = Leadership
 id-card-access-level-captain = Station Administrator
-id-card-access-level-head-of-personnel = Head of Personnel
+id-card-access-level-head-of-personnel = Hospitality Director
 id-card-access-level-cryogenics = Cryogenics
 id-card-access-level-emergency-shuttle-repeal = E.Shuttle Repeal All
 
-id-card-access-level-head-of-security = Head of Security
+id-card-access-level-head-of-security = IRIS Representative
 id-card-access-level-security = Security
 id-card-access-level-armory = Armory
 id-card-access-level-brig = Brig
@@ -27,7 +27,7 @@ id-card-access-level-chemistry = Chemistry
 id-card-access-level-paramedic = Paramedic
 id-card-access-level-psychologist = Psychologist
 
-id-card-access-level-quartermaster = Logistics Officer
+id-card-access-level-quartermaster = Chief Logistics Officer
 id-card-access-level-cargo = Logistics
 id-card-access-level-salvage = Salvage
 

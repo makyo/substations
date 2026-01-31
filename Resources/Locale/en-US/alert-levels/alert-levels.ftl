@@ -36,9 +36,10 @@ alert-level-delta-announcement = Station scuttling is imminent, or there is anot
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
 ## DeltaV - Epsilon rewrite
+# L5
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Only orders from Central Command Officials are to be obeyed by the Station's Crew. Martial Law is now in effect.
-alert-level-epsilon-instructions = Crewmember are advised to await instructions from Central Command Personnel and to follow their orders when given.
+alert-level-epsilon-announcement = IRIS has ordered the Epsilon security level on the station. Only orders from IRIS Officials are to be obeyed by the Station's Crew. Martial Law is now in effect.
+alert-level-epsilon-instructions = Crewmember are advised to await instructions from IRIS Personnel and to follow their orders when given.
 
 ## DeltaV - Cosmic Cult
 alert-level-octarine = Octarine

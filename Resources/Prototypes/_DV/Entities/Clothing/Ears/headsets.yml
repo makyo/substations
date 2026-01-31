@@ -2,7 +2,7 @@
   parent: ClothingHeadsetService
   id: ClothingHeadsetHoP
   name: hop headset
-  description: A headset used by the head of personnel.
+  description: A headset used by the hospitality director. # L5
   components:
   - type: ContainerFill
     containers:

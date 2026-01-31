@@ -210,9 +210,9 @@
   id: CommandRoles
   values:
     - Station Administrator # L5
-    - Logistics Officer # DeltaV - what is a quartermaster
+    - Chief Logistics Officer # L5
     - Head of Security
-    - Head of Personnel
+    - Hospitality Director # L5
     - Chief Engineer
     - Chief Medical Officer
     # Begin DeltaV Additions

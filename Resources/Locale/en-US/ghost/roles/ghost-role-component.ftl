@@ -162,22 +162,23 @@ ghost-role-information-remilia-description = Follow and obey the chaplain. Eat f
 ghost-role-information-cerberus-name = Cerberus, Evil Familiar
 ghost-role-information-cerberus-description = Obey your master. Spread chaos.
 
-ghost-role-information-ert-leader-name = ERT Leader
+# L5 - ERT to IRIS
+ghost-role-information-ert-leader-name = IRIS Leader
 ghost-role-information-ert-leader-description = Lead a team of specialists to resolve the station's issues.
 
-ghost-role-information-ert-chaplain-name = ERT Chaplain
+ghost-role-information-ert-chaplain-name = IRIS Chaplain
 ghost-role-information-ert-chaplain-description = Assist with mourning to resolve the station's crew moral issues.
 
-ghost-role-information-ert-janitor-name = ERT Janitor
+ghost-role-information-ert-janitor-name = IRIS Janitor
 ghost-role-information-ert-janitor-description = Assist with custodial efforts to resolve the station's issues.
 
-ghost-role-information-ert-engineer-name = ERT Engineer
+ghost-role-information-ert-engineer-name = IRIS Engineer
 ghost-role-information-ert-engineer-description = Assist with engineering efforts to resolve the station's issues.
 
-ghost-role-information-ert-security-name = ERT Security
+ghost-role-information-ert-security-name = IRIS Security
 ghost-role-information-ert-security-description = Assist with security efforts to resolve the station's issues.
 
-ghost-role-information-ert-medical-name = ERT Medical
+ghost-role-information-ert-medical-name = IRIS Medical
 ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
 
 ghost-role-information-cburn-agent-name = CBURN Agent
