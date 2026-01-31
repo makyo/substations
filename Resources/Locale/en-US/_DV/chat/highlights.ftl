@@ -1,6 +1,7 @@
 # These IDs are generated from job IDs
 # The corresponding prototypes are located in Resources/Prototypes/Catalog/_DV/Chat/highlights.yml
 # if you add or remove a string here, update the protoype
+# L5 - matching our canon and vibe
 
 ###### Centcomm
 highlight-centcomm-agent-1 = Centcomm
@@ -16,26 +17,26 @@ highlight-centcomm-quarantine-officer-2 = Central Command
 highlight-centcomm-quarantine-officer-3 = "CBURN"
 
 
-###### ERT
-highlight-ert-leader-1 = "ERT Leader
+###### IRIS (L5 - was ERT)
+highlight-ert-leader-1 = "IRIS Leader
 highlight-ert-leader-2 = Leader
-highlight-ert-leader-3 = "ERT"
+highlight-ert-leader-3 = "IRIS"
 
 highlight-ert-chaplain-1 = Chaplain
 highlight-ert-chaplain-2 = "Chap"
 highlight-ert-chaplain-3 = Chapel
-highlight-ert-chaplain-4 = "ERT"
+highlight-ert-chaplain-4 = "IRIS"
 
 highlight-ert-engineer-1 = Station Engineer
 highlight-ert-engineer-2 = Engineering
 highlight-ert-engineer-3 = Engineer
 highlight-ert-engineer-4 = "Engi"
-highlight-ert-engineer-5 = "ERT"
+highlight-ert-engineer-5 = "IRIS"
 
 highlight-ert-janitor-1 = Janitorial
 highlight-ert-janitor-2 = Janitor
 highlight-ert-janitor-3 = "Jani"
-highlight-ert-janitor-4 = "ERT"
+highlight-ert-janitor-4 = "IRIS"
 
 highlight-ert-medic-1 = Medical Doctor
 highlight-ert-medic-2 = Doctor
@@ -43,66 +44,66 @@ highlight-ert-medic-3 = "Doc"
 highlight-ert-medic-4 = MedBay
 highlight-ert-medic-5 = "Med"
 highlight-ert-medic-6 = Medic
-highlight-ert-medic-7 = "ERT"
+highlight-ert-medic-7 = "IRIS"
 
-highlight-ert-security-1 = Security Officer
+highlight-ert-security-1 = IRIS Officer
 highlight-ert-security-2 = Secoff
 highlight-ert-security-3 = Officer
 highlight-ert-security-4 = Security
 highlight-ert-security-5 = "Sec"
-highlight-ert-security-6 = "ERT"
+highlight-ert-security-6 = "IRIS"
 
 
 ###### Command
-highlight-captain-1 = Captain
-highlight-captain-2 = "Cap"
-highlight-captain-3 = Command
+highlight-captain-1 = Station Administrator
+highlight-captain-2 = "Stadmin"
+highlight-captain-3 = Leadership
 
 highlight-chief-justice-1 = Chief justice
 highlight-chief-justice-2 = "CJ"
 highlight-chief-justice-3 = Justice
-highlight-chief-justice-4 = Command
+highlight-chief-justice-4 = Leadership
 
 highlight-chief-engineer-1 = Chief Engineer
 highlight-chief-engineer-2 = "CE"
 highlight-chief-engineer-3 = Engineering
 highlight-chief-engineer-4 = Engineer
 highlight-chief-engineer-5 = "Engi"
-highlight-chief-engineer-6 = Command
+highlight-chief-engineer-6 = Leadership
 
 highlight-chief-medical-officer-1 = Chief Medical Officer
 highlight-chief-medical-officer-2 = "CMO"
 highlight-chief-medical-officer-3 = MedBay
 highlight-chief-medical-officer-4 = "Med"
-highlight-chief-medical-officer-5 = Command
+highlight-chief-medical-officer-5 = Leadership
 
-highlight-head-of-personnel-1 = Head Of Personnel
-highlight-head-of-personnel-2 = "HoP"
+highlight-head-of-personnel-1 = Hospitality Director
+highlight-head-of-personnel-2 = "HD"
 highlight-head-of-personnel-3 = Service
-highlight-head-of-personnel-4 = Command
+highlight-head-of-personnel-4 = Leadership
 
-highlight-head-of-security-1 = Head of Security
-highlight-head-of-security-2 = "HoS"
+highlight-head-of-security-1 = IRIS Representative
+highlight-head-of-security-2 = IRIS Rep
 highlight-head-of-security-3 = Security
 highlight-head-of-security-4 = "Sec"
-highlight-head-of-security-5 = Command
+highlight-head-of-security-5 = Leadership
 
-highlight-logistics-officer-1 = Logistics Officer
-highlight-logistics-officer-2 = "LO"
+highlight-logistics-officer-1 = Chief Logistics Officer
+highlight-logistics-officer-2 = "CLO"
 highlight-logistics-officer-3 = Logistics
 highlight-logistics-officer-4 = Logi
-highlight-logistics-officer-5 = Command
+highlight-logistics-officer-5 = Leadership
 
-highlight-mystagogue-1 = Mystagogue
-highlight-mystagogue-2 = Mysta
-highlight-mystagogue-3 = "MG"
-highlight-mystagogue-4 = Epistemics
-highlight-mystagogue-5 = "Epi"
-highlight-mystagogue-6 = Command
+highlight-mystagogue-1 = Research Director
+highlight-mystagogue-2 = Research Director
+highlight-mystagogue-3 = "RD"
+highlight-mystagogue-4 = Science
+highlight-mystagogue-5 = "Sci"
+highlight-mystagogue-6 = Leadership
 
 highlight-administrative-assistant-1 = Administrative Assistant
 highlight-administrative-assistant-2 = "AA"
-highlight-administrative-assistant-3 = Command
+highlight-administrative-assistant-3 = Leadership
 
 
 ###### Security
@@ -111,24 +112,23 @@ highlight-detective-2 = "Det"
 highlight-detective-3 = Security
 highlight-detective-4 = "Sec"
 
-highlight-security-cadet-1 = Security Cadet
+highlight-security-cadet-1 = Peacekeeper Cadet
 highlight-security-cadet-2 = Cadet
 highlight-security-cadet-3 = Security
 highlight-security-cadet-4 = "Sec"
 
-highlight-security-officer-1 = Security Officer
-highlight-security-officer-2 = Secoff
+highlight-security-officer-1 = Peacekeeper
+highlight-security-officer-2 = "PK"
 highlight-security-officer-3 = Officer
 highlight-security-officer-4 = Security
 highlight-security-officer-5 = "Sec"
 
-# L5 - leaving "warden" in during the transition to armorer
-highlight-warden-1 = Warden
-highlight-warden-2 = "Ward"
+# L5 - dupes so we don't have to futz with the amount of highlights
+highlight-warden-1 = Armorer
+highlight-warden-2 = Armorer
 highlight-warden-3 = Security
 highlight-warden-4 = "Sec"
 highlight-warden-5 = Brig
-# L5
 highlight-warden-6 = Armorer
 highlight-warden-7 = Perma
 
@@ -189,15 +189,15 @@ highlight-technical-assistant-5 = "Engi"
 ###### Epistemics
 highlight-scientist-1 = Scientist
 highlight-scientist-2 = Epistemics
-highlight-scientist-3 = "Epi"
+highlight-scientist-3 = "Sci"
 
 highlight-roboticist-1 = Roboticist
 highlight-roboticist-2 = Epistemics
-highlight-roboticist-3 = "Epi"
+highlight-roboticist-3 = "Sci"
 
 highlight-research-assistant-1 = Research Assistant
 highlight-research-assistant-2 = Epistemics
-highlight-research-assistant-3 = "Epi"
+highlight-research-assistant-3 = "Sci"
 
 highlight-psionic-mantis-1 = "Mantis"
 highlight-psionic-mantis-2 = Psionic Mantis
@@ -341,5 +341,5 @@ highlight-security-cyborg-4 = Security
 highlight-security-cyborg-5 = Secborg
 highlight-security-cyborg-6 = Security Cyborg
 
-highlight-station-ai-1 = Station AI
-highlight-station-ai-2 = "AI"
+highlight-station-ai-1 = Sys-side Representative
+highlight-station-ai-2 = "SSR"

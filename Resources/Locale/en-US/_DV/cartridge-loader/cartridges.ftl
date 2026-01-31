@@ -69,12 +69,14 @@ crime-assist-question-isitcategorycde = Is the item in question a category C, D,
 crime-assist-question-isitcontrolleditem = Was stolen object a controlled item?
 crime-assist-question-wassuspectinarestrictedlocation = Was the suspect in a restricted location, or anywhere the suspect did not have legal access to?
 crime-assist-question-wasentrancelocked = Did the suspect force through a locked access point to get to the location?
-crime-assist-question-questionwasithighsec = Was location that the suspect entered a High Security Area? (e.g. Bridge, Vault, Armory, Life support, AI etc)
+# L5
+crime-assist-question-questionwasithighsec = Was location that the suspect entered a High Security Area? (e.g. Bridge, Vault, Armory, Life support, System Shard etc)
 crime-assist-question-didsuspectbreaksomething = Did the suspect break something?
 crime-assist-question-weretheremanysuspects = Were there many suspects in a group causing a disturbance?
 crime-assist-question-wasdamagesmall = Was the damage minor, or easily undone?
 crime-assist-question-islargepartofstationdestroyed = Was a large part of the station destroyed or made uninhabitable?
-crime-assist-question-didirreversablydamageHSA = Did the suspect cause irreversible damage to a High Security Area? (e.g. Bridge, Vault, Armory, Life support, AI etc)
+# L5
+crime-assist-question-didirreversablydamageHSA = Did the suspect cause irreversible damage to a High Security Area? (e.g. Bridge, Vault, Armory, Life support, System Shard etc)
 crime-assist-question-falselyreportingtosecurity = Has the suspect made a report, in person or through radio channels, to security that was proven to be intentionally false?
 crime-assist-question-happenincourt = Was the suspect a nuisance in court?
 crime-assist-question-duringactiveinvestigation = Did the suspect interfere with an investigation, arrest, warrant, or court order?

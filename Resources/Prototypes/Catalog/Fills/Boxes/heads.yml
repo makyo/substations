@@ -47,7 +47,7 @@
 - type: entity
   parent: ToteBase
   id: BoxHoPCircuitboards
-  name: head of personnel circuit tote
+  name: hospitality director circuit tote # L5
   components:
   - type: EntityTableContainerFill
     containers:
@@ -61,7 +61,7 @@
 - type: entity
   parent: BoxStamps
   id: BoxHoPStamps
-  name: head of personnel's stamp box
+  name: hospitality director's stamp box # L5
   components:
   - type: EntityTableContainerFill
     containers:
@@ -111,7 +111,7 @@
 - type: entity
   parent: BoxStamps
   id: BoxQMStamps
-  name: logicistics officer's stamp box
+  name: chief logicistics officer's stamp box
   components:
   - type: EntityTableContainerFill
     containers:

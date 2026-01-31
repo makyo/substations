@@ -1,6 +1,7 @@
 steal-target-groups-plutonium-core = plutonium core
-steal-target-groups-lucky-bill = logistics officer's lucky bill
-steal-target-groups-ian-dossier = head of personnel's photobook
+# L5
+steal-target-groups-lucky-bill = chief logistics officer's lucky bill
+steal-target-groups-ian-dossier = hospitality director's photobook
 steal-target-groups-secret-documents = secret documents
 steal-target-groups-hos-sidearm = energy sidearm
 steal-target-groups-notary-stamp = notary stamp
@@ -13,4 +14,5 @@ steal-target-groups-engineering-techfab-circuitboard = engineering techfab's cir
 steal-target-groups-logistics-techfab-circuitboard = logistics techfab's circuitboard
 steal-target-groups-service-techfab-circuitboard = service techfab's circuitboard
 steal-target-groups-epistemics-techfab-circuitboard = epistemics techfab's circuitboard
-steal-target-groups-hardsuit-rhino = logistics officer's rhino hardsuit
+# L5
+steal-target-groups-hardsuit-rhino = chief logistics officer's rhino hardsuit

@@ -8,13 +8,14 @@ job-name-courier = Courier
 job-name-cargo-assistant = Cargo Assistant
 job-name-security-borg = Security Cyborg
 job-name-admin-assistant = Administrative Assistant
-job-name-librarian = Archivist
+# job-name-librarian = Librarian
 # Used by the Agent ID
 job-name-senior-physician = Physician Mentor
 job-name-senior-researcher = Research Mentor
 job-name-senior-engineer = Engineering Mentor
-job-name-senior-officer = Security Mentor
-job-name-qm = Logistics Officer
+# L5
+job-name-senior-officer = Peacekeeper Mentor
+job-name-qm = Chief Logistics Officer
 
 # Alternate titles
 job-alt-title-tourist = Tourist
@@ -55,7 +56,7 @@ job-alt-title-senior-researcher = Research Mentor
 job-alt-title-lab-technician = Lab Technician
 job-alt-title-xenoarch = Xenoarchaeologist
 
-job-alt-title-senior-officer = Security Mentor
+job-alt-title-senior-officer = Peacekeeper Mentor
 
 job-alt-title-jester = Jester
 job-alt-title-fool = Fool

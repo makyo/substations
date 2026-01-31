@@ -35,8 +35,8 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleHOP
-  name: head of personnel's mantle
-  description: A good HOP knows that paper pushing is only half the job... petting your dog and looking fashionable is the other half.
+  name: hospitality director's mantle
+  description: A good HD knows that paper pushing is only half the job... petting your dog and looking fashionable is the other half.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Neck/mantles/hopmantle.rsi # DeltaV - resprite
@@ -46,8 +46,8 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleHOS
-  name: head of security's mantle
-  description: Shootouts with syndicate agents are just another Tuesday for this HoS. This mantle is a symbol of commitment to the station.
+  name: IRIS Representative's mantle
+  description: Shootouts with syndicate agents are just another Tuesday for this IRIS Rep. This mantle is a symbol of commitment to the station. # L5
   components:
   - type: Sprite
     sprite: Clothing/Neck/mantles/hosmantle.rsi
@@ -68,7 +68,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleQM
-  name: logistics officer's mantle # DeltaV - Logistics Department replacing Cargo
+  name: chieflogistics officer's mantle # DeltaV - Logistics Department replacing Cargo
   description: For the master of goods and materials to rule over the department, a befitting mantle to show off superiority!
   components:
   - type: Sprite
@@ -85,4 +85,4 @@
   - type: Sprite
     sprite: Clothing/Neck/mantles/mantle.rsi
   - type: Clothing
-    sprite: Clothing/Neck/mantles/mantle.rsi 
+    sprite: Clothing/Neck/mantles/mantle.rsi
