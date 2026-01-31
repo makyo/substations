@@ -27,6 +27,7 @@ job-name-deathsquad = UN Agent
 job-name-reporter = Reporter
 job-name-musician = Musician
 job-name-librarian = Librarian
+# L5
 job-name-lawyer = Attorney
 job-name-mime = Mime
 job-name-ce = Chief Engineer
@@ -37,6 +38,7 @@ job-name-bartender = Bartender
 job-name-passenger = Passenger
 job-name-salvagespec = Salvage Specialist
 job-name-station-ai = Sys-Side Representative
+# L5
 job-name-qm = Chief Logistics Officer
 job-name-cargotech = Cargo Technician
 job-name-chef = Chef

@@ -3,7 +3,7 @@ job-name-surgeon = Surgeon
 job-name-chief-justice = Chief Justice
 job-name-clerk = Clerk
 job-name-prosecutor = Prosecutor
-job-name-lawyer = Attorney
+# job-name-lawyer = Attorney
 job-name-courier = Courier
 job-name-cargo-assistant = Cargo Assistant
 job-name-security-borg = Security Cyborg
@@ -15,7 +15,7 @@ job-name-senior-researcher = Research Mentor
 job-name-senior-engineer = Engineering Mentor
 # L5
 job-name-senior-officer = Peacekeeper Mentor
-job-name-qm = Chief Logistics Officer
+# job-name-qm = Chief Logistics Officer
 
 # Alternate titles
 job-alt-title-tourist = Tourist
