@@ -27,8 +27,7 @@ public sealed partial class HealthChangeEntityEffectSystem : EntityEffectSystem<
                 entity.AsNullable(),
                 damageSpec,
                 args.Effect.IgnoreResistances,
-                interruptsDoAfters: false,
-                canSever: false); // TODO: make sure we need this first
+                interruptsDoAfters: false);
     }
 }
 

@@ -2,6 +2,7 @@ using Content.Server._EE.Silicon.WeldingHealing;
 using Content.Server.Body.Systems; // DeltaV
 using Content.Shared.Tools.Components;
 using Content.Shared._EE.Silicon.WeldingHealing;
+using Content.Shared.Body;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Components;
@@ -20,8 +21,8 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstream = default!; // DeltaV
+    [Dependency] private readonly BodySystem _bodySystem = default!;
 
-    [Dependency] private readonly SharedBodySystem _bodySystem = default!;
     public override void Initialize()
     {
         SubscribeLocalEvent<WeldingHealableComponent, InteractUsingEvent>(Repair);
@@ -83,12 +84,12 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
             || args.User == args.Target && !(component.AllowSelfHeal && healableComponent.AllowSelfHeal)) // DeltaV - self heal disabled by WeldingHealable
             return;
 
-        float delay = args.User == args.Target
+        var delay = args.User == args.Target
             ? component.DoAfterDelay * component.SelfHealPenalty
             : component.DoAfterDelay;
 
-        args.Handled = _toolSystem.UseTool
-            (args.Used,
+        args.Handled = _toolSystem.UseTool(
+            args.Used,
             args.User,
             args.Target,
             delay,
