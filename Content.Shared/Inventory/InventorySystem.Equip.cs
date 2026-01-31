@@ -1,8 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Armor;
+using Content.Shared.Body.Events;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
-using Content.Shared.Gibbing;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;

@@ -149,6 +149,8 @@
   - type: LightningTarget
     priority: 2
     lightningExplode: false
+  - type: GhostOnMove
+    mustBeDead: true
   - type: SurgeryContaminable # DeltaV - surgery cross contamination
     # L5 - Begin nerfing contamination because it's a good idea but holy shit
     dirtinessThreshold: 100.0

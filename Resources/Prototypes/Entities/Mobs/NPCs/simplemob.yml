@@ -108,5 +108,3 @@
   - type: MobPrice
     price: 150
   - type: FloatingVisuals
-  - type: GhostOnMove
-    mustBeDead: true
