@@ -3,7 +3,9 @@
   name: trait-cpr-training-name
   description: trait-cpr-training-desc
   category: Skills # L5 - moved to Skills
-  components:
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: CPRTraining
 
 - type: trait
@@ -11,23 +13,29 @@
   name: trait-surgery-training-name
   description: trait-surgery-training-desc
   category: Skills # L5 - moved to Skills
-  components:
-  - type: SurgerySpeedModifier
-    speedModifier: 1.6
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: SurgerySpeedModifier
+      speedModifier: 1.6
 
 - type: trait
   id: ExperiencedSurgeon
   name: trait-experienced-surgeon-name
   description: trait-experienced-surgeon-desc
   category: Skills # L5 - moved to Skills
-  components:
-  - type: SurgerySpeedModifier
-    speedModifier: 2.5
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: SurgerySpeedModifier
+      speedModifier: 2.5
 
 - type: trait
   id: SignLanguage
   name: trait-sign-language-name
   description: trait-sign-language-name
   category: Skills
-  components:
-  - type: SignLanguage
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: SignLanguage

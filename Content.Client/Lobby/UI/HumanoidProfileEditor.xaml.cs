@@ -242,7 +242,6 @@ namespace Content.Client.Lobby.UI
                 SpeciesButton.SelectId(args.Id);
                 SetSpecies(_species[args.Id].ID);
                 UpdateHairPickers();
-                RefreshTraits(); // DeltaV - allows for hiding traits
                 OnSkinColorOnValueChanged();
             };
 
