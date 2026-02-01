@@ -1,31 +1,4 @@
 ﻿Entries:
-- author: NoElkaTheGod
-  changes:
-  - message: Kitsune transformation no longer cause issues with cosmic cult. Hopefully.
-    type: Fix
-  - message: Fixed a few minor cosmic cult bugs.
-    type: Fix
-  id: 1616
-  time: '2025-08-20T19:43:21.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/4233
-- author: NoElkaTheGod
-  changes:
-  - message: Glyph of cessation is now available to the cosmic cult at stage 2, while
-      glyph of warding has been moved to stage 3
-    type: Tweak
-  - message: Cult armor is now more resistant to pierce and heat, but less resistant
-      to other types of damage.
-    type: Tweak
-  id: 1617
-  time: '2025-08-20T19:43:54.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/4236
-- author: 0vrseer
-  changes:
-  - message: Fixed IPCs standing when dead or crit.
-    type: Fix
-  id: 1618
-  time: '2025-08-20T20:10:21.0000000+00:00'
-  url: https://github.com/DeltaV-Station/Delta-v/pull/4232
 - author: 0vrseer
   changes:
   - message: removed some IPC markings that resulted in invisible body parts.
@@ -4489,4 +4462,25 @@
   id: 2115
   time: '2026-02-01T19:32:36.0000000+00:00'
   url: https://github.com/DeltaV-Station/Delta-v/pull/5313
+- author: Pharaz4
+  changes:
+  - message: Changed the mapped enabled pumps from 310 to 300 kPa
+    type: Tweak
+  id: 2116
+  time: '2026-02-01T19:34:53.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/5336
+- author: makyo
+  changes:
+  - message: Rodentia! Now your sneak action has an icon showing your sneak status.
+    type: Add
+  id: 2117
+  time: '2026-02-01T19:39:29.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/5308
+- author: makyo
+  changes:
+  - message: Perma chefvends now get a few bowls!
+    type: Add
+  id: 2118
+  time: '2026-02-01T19:43:05.0000000+00:00'
+  url: https://github.com/DeltaV-Station/Delta-v/pull/5304
 Order: 1
