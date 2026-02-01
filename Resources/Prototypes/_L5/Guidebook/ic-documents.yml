@@ -1,0 +1,48 @@
+- type: guideEntry
+  id: OP
+  name: guide-entry-op
+  text: "/ServerInfo/Guidebook/_L5/Security/SecurityRegulations.xml"
+
+# SOP
+
+- type: guideEntry
+  id: SOP
+  name: guide-entry-sop
+  text: "/ServerInfo/Guidebook/_L5/Security/SOP/StandardOperatingProcedure.xml"
+  children:
+  - SOPGeneral
+  - SOPControlledItems
+  - SOPStationAdministrator
+  - SOPSecurityProcedures
+  - SOPJusticeProcedures
+  - SOPMedicalProcedures
+
+- type: guideEntry
+  id: SOPGeneral
+  name: guide-entry-sop-general
+  text: "/ServerInfo/Guidebook/_L5/Security/SOP/General.xml"
+
+- type: guideEntry
+  id: SOPControlledItems
+  name: guide-entry-sop-controlled-items
+  text: "/ServerInfo/Guidebook/_L5/Security/SOP/ControlledItems.xml"
+
+- type: guideEntry
+  id: SOPStationAdministrator
+  name: guide-entry-sop-station-administrator
+  text: "/ServerInfo/Guidebook/_L5/Security/SOP/StationAdministrator.xml"
+
+- type: guideEntry
+  id: SOPSecurityProcedures
+  name: guide-entry-sop-security-procedures
+  text: "/ServerInfo/Guidebook/_L5/Security/SOP/SecurityProcedures.xml"
+
+- type: guideEntry
+  id: SOPJusticeProcedures
+  name: guide-entry-sop-justice-procedures
+  text: "/ServerInfo/Guidebook/_L5/Security/SOP/JusticeProcedures.xml"
+
+- type: guideEntry
+  id: SOPMedicalProcedures
+  name: guide-entry-sop-medical-procedures
+  text: "/ServerInfo/Guidebook/_L5/Security/SOP/MedicalProcedures.xml"
