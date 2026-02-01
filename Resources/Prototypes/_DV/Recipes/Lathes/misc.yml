@@ -55,10 +55,11 @@
   materials:
     Steel: 250
 
-- type: latheRecipe
-  parent: BaseFauxTileRecipe
-  id: FauxTileMowedAstroSnow
-  result: FloorTileItemMowedAstroSnow
+# L5
+#- type: latheRecipe
+#  parent: BaseFauxTileRecipe
+#  id: FauxTileMowedAstroSnow
+#  result: FloorTileItemMowedAstroSnow
 
 - type: latheRecipe
   id: SheetPlasteel1Engineering

@@ -7,7 +7,7 @@ namespace Content.Shared.Shipyard.Prototypes;
 /// Prevents making typos being silently ignored by the linter.
 /// </summary>
 [Prototype("vesselCategory")]
-public sealed class VesselCategoryPrototype : IPrototype
+public sealed partial class VesselCategoryPrototype : IPrototype // L5 - made partial
 {
     /// <summary>
     /// The unique ID for the vessel category.

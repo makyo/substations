@@ -43,6 +43,30 @@
     # L5 – no devil
     #- id: Devil # Goob
     #  prob: 0.05 # DeltaV - Was 0.02
+    # Begin DeltaV additions - Disable Xenoborgs
+    #- id: Xenoborgs
+    #  prob: 0.05
+    # End DeltaV additions - Disable Xenoborgs
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleNoXenoborg
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
+    - id: SubWizard
+      prob: 0.05
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleNoWizardNoXenoborg
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
 
 - type: entity
   parent: BaseGameRule
@@ -268,7 +292,21 @@
       - type: ChangelingTransform
       - type: ActionGrant
         actions:
-        - ActionRetractableItemArmBlade # Temporary addition, will inevitably be a purchasable in the bio-store
+        - ActionChangelingStore
+      # TODO: Make it so the changeling gamerule changeling can inherit from the changeling store preset somehow
+      - type: Store
+        name: store-preset-name-changeling
+        categories:
+        - ChangelingAbilities
+        currencyWhitelist:
+        - ChangelingDNA
+        balance:
+          ChangelingDNA: 50
+      - type: UserInterface
+        interfaces:
+          enum.StoreUiKey.Key:
+            type: StoreBoundUserInterface
+            requireInputValidation: false
       mindRoles:
       - MindRoleChangeling
   - type: AntagObjectives
@@ -319,9 +357,9 @@
   id: BaseWizardRule
   components:
   #- type: AntagObjectives # DeltaV - begin changes
-    #objectives:
-    #- WizardSurviveObjective
-    #- WizardDemonstrateObjective
+  #objectives:
+  #- WizardSurviveObjective
+  #- WizardDemonstrateObjective
   - type: AntagRandomObjectives
     sets:
     - groups: WizardObjectiveGroupPrimaryDelta
@@ -351,7 +389,7 @@
       playerRatio: 1
       spawnerPrototype: SpawnPointGhostWizard
       roleLoadout:
-       - RoleSurvivalExtended
+      - RoleSurvivalExtended
       briefing:
         text: wizard-role-greeting
         color: Turquoise
@@ -442,18 +480,18 @@
   id: BasicGameRulesTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-      - !type:NestedSelector
-        tableId: BasicCalmEventsTable
-      - !type:NestedSelector
-        tableId: BasicAntagEventsTable
-      - !type:NestedSelector
-        tableId: ModerateAntagEventsTable
-      - !type:NestedSelector
-        tableId: CargoGiftsTable
-      - !type:NestedSelector
-        tableId: CalmPestEventsTable
-      - !type:NestedSelector
-        tableId: SpicyPestEventsTable
+    - !type:NestedSelector
+      tableId: BasicCalmEventsTable
+    - !type:NestedSelector
+      tableId: BasicAntagEventsTable
+    - !type:NestedSelector
+      tableId: ModerateAntagEventsTable
+    - !type:NestedSelector
+      tableId: CargoGiftsTable
+    - !type:NestedSelector
+      tableId: CalmPestEventsTable
+    - !type:NestedSelector
+      tableId: SpicyPestEventsTable
 
 - type: entityTable
   id: DynamicGameRulesTable
