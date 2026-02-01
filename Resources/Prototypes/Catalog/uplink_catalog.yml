@@ -138,24 +138,6 @@
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkDisposableTurret
-  name: uplink-disposable-turret-name
-  description: uplink-disposable-turret-desc
-  productEntity: ToolboxElectricalTurretFilled
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 3
-  cost:
-    Telecrystal: 6
-  categories:
-  - UplinkWeaponry
-  conditions:
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
-
-- type: listing
   id: UplinkEshield
   name: uplink-eshield-name
   description: uplink-eshield-desc
