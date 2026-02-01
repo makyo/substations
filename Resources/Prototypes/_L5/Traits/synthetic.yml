@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 - type: trait
-  category: Quirks
+  category: Medical # Close enough...
   id: Synthetic
   name: trait-synth-name
   description: trait-synth-desc

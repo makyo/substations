@@ -39,7 +39,7 @@
   id: MessyDrinker
   name: trait-messy-drinker-name
   description: trait-messy-drinker-desc
-  category: Quirks
+  category: Disabilities # Yes, this is not a disability, but via l10n, we've renamed disabilities to physical traits
   effects:
   - !type:AddCompsEffect
     components:
