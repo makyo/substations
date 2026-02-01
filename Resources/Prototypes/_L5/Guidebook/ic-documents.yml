@@ -1,6 +1,21 @@
 - type: guideEntry
+  id: ICDocuments
+  priority: 30
+  name: guide-entry-ic-documents
+  text: "/ServerInfo/Guidebook/_L5/ICDocuments.xml"
+  children:
+  - OP
+  - SOP
+  - SecurityRegulations
+
+- type: guideEntry
   id: OP
   name: guide-entry-op
+  text: "/ServerInfo/Guidebook/_L5/OrganizationPolicy.xml"
+
+- type: guideEntry
+  id: SecurityRegulations
+  name: guide-entry-security-regulations
   text: "/ServerInfo/Guidebook/_L5/Security/SecurityRegulations.xml"
 
 # SOP
