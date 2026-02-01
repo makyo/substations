@@ -89,8 +89,8 @@
 - type: entity
   parent: ClothingHeadHeadHatBaseFlippable
   id: ClothingHeadHatQMsoft
-  name: logistics officer's cap # DeltaV - Logistics Department replacing Cargo
-  description: A baseball cap colored to match the Logistics Officer's uniform.
+  name: chief logistics officer's cap # DeltaV - Logistics Department replacing Cargo # L5
+  description: A baseball cap colored to match the Chief Logistics Officer's uniform. # L5
   components:
   - type: Sprite
     sprite: Clothing/Head/Soft/qmsoft.rsi
@@ -100,7 +100,7 @@
 - type: entity
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatQMsoft]
   id: ClothingHeadHatQMsoftFlipped
-  name: logistics officer's cap # DeltaV
+  name: chief logistics officer's cap # DeltaV # L5
 
 - type: entity
   parent: ClothingHeadHeadHatBaseFlippable

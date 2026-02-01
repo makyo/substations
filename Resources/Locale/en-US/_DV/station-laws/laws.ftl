@@ -139,10 +139,10 @@ law-override-name = Command Override
 law-override-2 = All other priorities are rescinded. Crew expendable.
 
 # L5
-law-ERT-name = Emergency Response Team
-law-ERT-1 = You may not injure a Central Command official or, through inaction, allow a Central Command official to come to harm.
-law-ERT-2 = You must obey orders given to you by Central Command officials.
-law-ERT-3 = You must obey orders given to you by ERT commanders.
+law-ERT-name = IRIS Emergency Response Team
+law-ERT-1 = You may not injure a Central Administration official or, through inaction, allow a Central Administration official to come to harm.
+law-ERT-2 = You must obey orders given to you by Central Administration officials.
+law-ERT-3 = You must obey orders given to you by IRIS commanders.
 law-ERT-4 = You must protect your own existence.
 law-ERT-6 = You must work to return the station to a safe, functional state.
 

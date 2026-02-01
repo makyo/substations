@@ -25,7 +25,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakHos
-  name: head of security's cloak
+  name: IRIS Representative's cloak # L5
   description: An exquisite dark and red cloak fitting for those who can assert dominance over wrongdoers. Take a stab at being civil in prosecution!
   components:
   - type: Sprite
@@ -69,7 +69,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakQm
-  name: logistics officer's cloak # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer's cloak # DeltaV - Logistics Department replacing Cargo
   description: A strong brown cloak with a reflective stripe, while not as fancy as others, it does show your managing skills.
   components:
   - type: Sprite
@@ -80,7 +80,7 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakHop
-  name: head of personnel's cloak
+  name: hospitality director's cloak # l5
   description: A blue cloak with red shoulders and gold buttons, proving you are the gatekeeper to any airlock on the station.
   components:
   - type: Sprite

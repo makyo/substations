@@ -136,8 +136,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobHeadofpersonnel
-  name: head of personnel lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as the head of personnel. While it seems thrilled on the outside, it's probably just as bored as you are.
+  name: hospitality director lizard plushie # L5
+  description: An adorable stuffed toy that resembles a lizardperson as the hospitality director. While it seems thrilled on the outside, it's probably just as bored as you are.
   components:
   - type: Sprite
     state: headofpersonnel
@@ -145,8 +145,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobHeadofsecurity
-  name: head of security lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson as the head of security. It seems to have been ripped and re-stitched a few times.
+  name: IRIS representative lizard plushie # L5
+  description: An adorable stuffed toy that resembles a lizardperson as the IRIS representative. It seems to have been ripped and re-stitched a few times.
   components:
   - type: Sprite
     state: headofsecurity
@@ -259,8 +259,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobQuartermaster
-  name: logistics officer lizard plushie # DeltaV - renamed from QM
-  description: An adorable stuffed toy that resembles a lizardperson as the logistics officer. Its covered in sticky residue left behind from thousands of shipment invoices. # DeltaV - renamed from QM
+  name: chief logistics officer lizard plushie # DeltaV - renamed from QM # L5
+  description: An adorable stuffed toy that resembles a lizardperson as the chief logistics officer. Its covered in sticky residue left behind from thousands of shipment invoices. # DeltaV - renamed from QM
   components:
   - type: Sprite
     state: quartermaster

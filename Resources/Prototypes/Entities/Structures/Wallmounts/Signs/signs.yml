@@ -145,11 +145,13 @@
 - type: entity
   parent: BaseSignDirectional
   id: SignDirectionalHop
-  name: hop sign
-  description: A direction sign, pointing out which way Head of Personnel's office is.
+  name: HD sign
+  description: A direction sign, pointing out which way Hospitality Director's office is.
   components:
+  # L5
   - type: Sprite
-    state: direction_hop
+    sprite: _L5/Structures/Wallmounts/signs.rsi
+    state: direction_hd
 
 - type: entity
   parent: BaseSignDirectional

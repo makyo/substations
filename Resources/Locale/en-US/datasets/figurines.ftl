@@ -135,7 +135,8 @@ figurines-security-2 = You have violated article 1984.
 figurines-security-3 = Whenever I get bored I use the clown as target practice.
 figurines-security-4 = You have two rights: to remain silent and to cry about it.
 figurines-security-5 = Harmbaton? It sure as hell harms!
-figurines-security-6 = Space law? Never heard of it.
+# L5
+figurines-security-6 = Security procedure? Never heard of it.
 figurines-security-7 = Random search! Hand it over.
 figurines-security-8 = I love donuts.
 figurines-security-9 = Greytide this, motherfucker.

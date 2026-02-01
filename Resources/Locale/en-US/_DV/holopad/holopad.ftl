@@ -1,6 +1,6 @@
 # Command
 # L5
-holopad-command-lo = Leadership - LO
+holopad-command-lo = Leadership - CLO
 holopad-command-mysta = Leadership - RD
 holopad-command-cj = Leadership - CJ
 holopad-command-evac = Leadership - Evac

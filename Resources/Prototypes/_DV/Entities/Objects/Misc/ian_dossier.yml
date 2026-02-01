@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: BookIanDossier
-  name: head of personnel's photobook
-  description: VERY CONFIDENTIAL. This folder contains various pictures of Ian cherished by the Head of Personnel.
+  name: hospitality director's photobook # L5
+  description: VERY CONFIDENTIAL. This folder contains various pictures of Ian cherished by the Hospitality Director.
   components:
     - type: Sprite
       sprite: _DV/Objects/Misc/bureaucracy.rsi

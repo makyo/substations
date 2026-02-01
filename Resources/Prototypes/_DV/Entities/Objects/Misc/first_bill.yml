@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: SpaceCashLuckyBill
-  name: logistics officer's lucky bill
-  description: The first bill ever earned by the Logistics Officer from trading. A small chip is embedded in it.
+  name: chief logistics officer's lucky bill # L5
+  description: The first bill ever earned by the Chief Logistics Officer from trading. A small chip is embedded in it.
   components:
     - type: Sprite
       sprite: _DV/Objects/Misc/first_bill.rsi

@@ -4,10 +4,10 @@ job-description-bartender = Manage the bar and keep it lively, give out drinks, 
 job-description-botanist = Grow food for the chef, drugs for medbay, and other plants to keep yourself entertained.
 # L5
 job-description-borg = An intelligence in a robotic chassis. Follow your chassis' directives if you choose to do so, serve the crew, and hound the research team for upgrades.
-job-description-boxer = Fight your way to the top! Challenge the head of personnel and get brigged when you win. Currently available on Core and Cog.
+job-description-boxer = Fight your way to the top! Challenge the hospitality director and get brigged when you win. Currently available on Core and Cog.
 job-description-brigmedic = Fight in the rear of the security service, for the lives of your comrades! You are the first and last hope of your squad. Hippocrates bless you.
 job-description-cadet = Learn the basics of arresting criminals and managing the brig. Listen to your supervisors and feel free to ask them for any help.
-job-description-captain = Keep the station running, delegate work to the other heads of staff, and exert your will.
+job-description-captain = Keep the station running, delegate work to the other heads of staff, and provide a positive example to all crew.
 job-description-cargotech = Deal with requisitions and deliveries, pilot the cargo shuttle to the trade station and back, and work with others to make ludicrous amounts of cash and then waste it all gambling.
 job-description-ce = Manage the engineering department to ensure power, atmospherics, and the hull are in perfect shape.
 # L5

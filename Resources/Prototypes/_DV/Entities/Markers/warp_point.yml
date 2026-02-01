@@ -275,7 +275,7 @@
 - type: entity
   id: WarpPointHOP
   parent: WarpPoint
-  suffix: HoP
+  suffix: HD
   components:
   - type: WarpPoint
     location: HoP

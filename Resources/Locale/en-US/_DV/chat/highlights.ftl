@@ -1,10 +1,11 @@
-
 # DeltaV-Specific Jobs
 # Follows format of Resources/Locale/en-US/chat/highlights.ftl
 
+# L5 — modified for our canon
+
 # Command
-highlights-chief-justice = Chief Justice, "CJ", Justice, Command, Warrant, "Law"
-highlights-mystagogue = Mystagogue, Mysta, "MG", Epistemics, "Epi", Command, Science
+highlights-chief-justice = Chief Justice, "CJ", Justice, Leadership, Command, Warrant, "Law"
+highlights-mystagogue = Mystagogue, Mysta, "MG", Epistemics, "Epi", Leadership, Command, Science
 
 # Security
 highlights-prison-guard = Prison Guard, Prison, Guard, Security, "Sec", Security
@@ -41,14 +42,14 @@ highlight-security-cyborg = Cyborg, Borg, Security, Secborg, Justice
 highlight-medical-cyborg = Cyborg, Borg, Medical, Medborg, Justice
 
 # Centcomm
-highlight-centcomm-agent = Centcomm, Central Command, Death Squad, DeathSquad
-highlight-centcomm-official = Centcomm, Central Command, "CC"
-highlight-centcomm-quarantine-officer = Centcomm, Central Command, "CBURN"
+highlight-centcomm-agent = Central, Central Admin, Central Administration, Death Squad, DeathSquad
+highlight-centcomm-official = Central, Central Admin, Central Administration
+highlight-centcomm-quarantine-officer = Central, Central Admin, Central Administration, "CBURN"
 
 # ERT
-highlight-ert-leader = "ERT", Leader, CentComm
-highlight-ert-chaplain = Chaplain, "Chap", "ERT"
-highlight-ert-engineer = Engineer, "Engi", "ERT"
+highlight-ert-leader = "IRIS", Leader, Central, Central Admin, Central Administration
+highlight-ert-chaplain = Chaplain, "Chap", "IRIS"
+highlight-ert-engineer = Engineer, "Engi", "IRIS"
 highlight-ert-janitor = Janitorial, Janitor, "Jani", "ERT", "mess"
-highlight-ert-medic = Doctor, "Doc", "Med", "Medic", Medical, "ERT"
-highlight-ert-security-1 = Security, Officer, Secoff, "Sec", "ERT"
+highlight-ert-medic = Doctor, "Doc", "Med", "Medic", Medical, "IRIS"
+highlight-ert-security-1 = Security, Officer, Secoff, Peacekeeper, "PK" "Sec", "IRIS"
