@@ -1,0 +1,238 @@
+<Document>
+  # Security Regulations
+  Security Regulations are a broad set of rules and regulations, collected and regulated by the United Nations, enacted and enforced by the System Consortium and its security contractors, with the oversight of Central Administration — and, on occasion, the UN's security forces. These regulations apply to all ranks and positions on stations under its jurisdiction, from the lowliest assistant to the highest Station Administrator; all are equal under the eyes of the Law, and all must ultimately answer to it.
+
+  It is highly recommended to read the **[[Standard Operating Procedure|Standard Operating Procedures]]**. Summaries of several pertinent sections are listed below.
+
+  * **Controlled Items:** If a member of station crew requires access to a Controlled Item for use in their job, or for regular function, they must obtain the signed and stamped approval of a relevant member of Station Leadership or the Station Administrator. The latter is able to override the decisions of Station Leadership in this regard, however.
+  * **Entity:** Any thing with distinct, independent existence.
+  * **Employee:** An entity who has an employment contract with a Company.
+  * **Pet:** Any Entity that is provided to the System Consortium's Space Stations - either through the station's Logistics Department, or brought on board by the crew - for the purposes of emotional support.
+  * **Security Jurisdiction:** Station law enforcement officers are bound by these regulations; they cannot operate outside of standard accessible areas, or perform searches, unless such action is allowed by either Alert Procedure or a valid warrant.
+  * **Arrest :** Any entity may be arrested, during which they are restrained, informed of their charges, and taken to the brig for search and processing under **Brig Procedure**.
+  * **Sentencing:** Any member of law enforcement is allowed to pass sentence on Misdemeanor, Felony, and Grand Felony charges. The Chief Justice, or in their absence, the Head of Security are allowed to pass sentence on all Charges.
+  * **Treatment of Prisoners:** Prisoners must be provided with food, water, clothing, free movement within the brig, adequate medical care, access to the Common and Prison radio channels, and moral, spiritual, or legal counseling if requested and available. If the brig becomes uninhabitable, prisoners must be securely and safely relocated to another area until the brig is functional once more.
+  * **Paroles and Pardons:** Parole may be offered under the discretion of the Chief Justice, IRIS Representative, or Station Administrator. Pardons may be issued by the arresting officer, the Judge of a trial, or by the Station Administrator, when deemed in the best interest of the crew or vessel, or when the circumstances of the crime warrant suspension of sentence.
+  * **Pressing Charges:** Any Employee may press charges against any other entity. Individuals may only be charged with a crime if it can be proven beyond reasonable doubt that they have committed the crime.
+  * **Hearing Procedure:** A criminal hearing’s Judge must be, in sequential order: The Chief Justice, the Court Clerk, an impartial member of Justice, or Station Leadership. The Prosecution should ideally be the Prosecutor, or an available member of Station Command or Station Security in that order. The Defense should ideally be a member of the Justice department assigned to the defendant, though they are allowed to represent themselves if they wish.
+  * **Alert Procedure:** Codes Blue, Red, Gamma, and Delta authorize Security to carry progressively more advanced equipment, and loosen **Rules of Engagement** regarding their use. The former two codes discourage openly carrying firearms by personnel; the latter two suspend many rights to privacy, and grant Security the power to do whatever necessary to retake or scuttle the station.
+
+  ##Procedural Defense##
+  If a defendant is accused of a crime, they are granted the privilege to challenge the legitimacy of charges of claims brought against them. Any of the following may be invoked:
+
+  * Double Jeopardy Clause: accused persons may are not to be charged on the same charges following an acquittal or conviction, except in the case of acquittal and subsequent credible admission of guilt.
+  * Entrapment Clause: accused persons found to be induced or coerced into the commission of the crimes listed in the charges are to be acquitted.
+  * Exclusionary Clause: evidence collected and/or analyzed in violation of accused persons’ rights under law is inadmissible.
+
+  ### Crime Codes Quick Reference
+  Use this to quickly find the Crime Code Numbers.
+
+  Crime codes are organized into four Category Codes (_XX) as listed below, with the most severe crimes being given the highest Severity Codes (x__). The sentencing officer or Judge should use discretion, and not charge an entity with two similar crimes for a singular offense.
+
+  For example, an attack upon an Employee which causes them to die of their injuries is Murder, not Assault AND Murder. Likewise, an entity should not be charged for both Possession AND Grand Possession on a singular Controlled Item held without proper authorization.
+
+  #### [color=#999933BF]1XX — Misdemeanor[/color]
+  * 101 — Animal Cruelty
+  * 102 — Harassment
+  * 103 — Vigilantism
+  * 104 — Petty Larceny
+  * 105 — Trespass
+  * 106 — Vandalism
+  * 107 — Hooliganism
+
+  #### [color=#996633BF]2XX — Felony[/color]
+  * 201 — Assault
+  * 202 — Breaking and Entering
+  * 203 — Rioting
+  * 204 — Endangerment
+  * 205 — Possession
+  * 206 — Obstruction of Justice
+  * 207 — Perjury
+  * 208 — Contempt of Court
+  * 209 — Identity Theft
+
+  #### [color=#993333BF]3XX — Grand Felony[/color]
+  * 301 — Manslaughter
+  * 302 — Kidnapping
+  * 303 — Grand Possession
+  * 304 — Sabotage
+  * 305 — Abuse of Power
+  * 306 — Grand Larceny
+  * 307 — Black Marketeering
+
+  #### [color=#990033BF]4XX — Capital[/color]
+  * 401 — Murder
+  * 402 — Terrorism
+  * 403 — Grand Sabotage
+  * 404 — Prevention of Revival
+  * 405 — Sedition
+  * 406 — Breach of Custody
+
+  ## Sentences
+  ### Capital
+  Capital crimes require exfiltration: the immediate retrieval of the convict via a SysCon or UN prison transport. The prisoner is to remain in confinement until transport arrives.
+
+  ### Standard
+
+  * **Brigging**: Placing the convict into a temporary holding cell.
+  * **Catch and Release**: Taking the convict to Security, processing them, searching them, and then releasing them.
+  * **Demotion**: Downgrading the convict’s employment contract and revoking their access accordingly, with permission from or when ordered by the convict’s head of department. May be applied when the convict has committed a crime relating to their employment within their department or with SysCon as a whole.
+  * **Licence restriction**: Downgrading or suspending the convict’s armament licence and confiscating possessions accordingly. May be applied when the convict is guilty of possession or a crime involving a weapon they were lawfully permitted to carry.
+
+  ## Crime Modifiers
+  Sentencing modifiers are to be applied by the sentencing officer, judge, or arbiter. Aggravating modifiers may not extend a sentence beyond the specified limit, while extenuating modifiers may not reduce a sentence below the specified limit.
+
+  ### Aggravating
+
+  * **Solicitation**
+    *Any entity found guilty of encouraging, bribing, requesting, or instructing someone to commit a crime, with the intent that the entity being solicited commit the crime, will receive for the crimes they solicited in full.
+  * **Accessory**
+    *Any entity found guilty of assisting in the commission of a crime, without participating in the crime itself, knowing that a crime will be, has been, or is being committed, will receive the sentence for the crimes in which they took part in full.
+  * **Attempts**
+    *Any entity found guilty of attempting to commit a crime, with the intent to carry out that crime, will receive the sentence for the crimes they attempted in full.
+  * **Conspiracy**
+    *Any entity found guilty of planning to commit a crime, with the intent to carry out that crime eventually, and having committed an overt act pursuant to that end, will receive the sentence for the crimes they conspired towards in full.
+  * **Deadly weapon**
+    *Any entity found guilty of committing a crime, utilizing any object used offensively for the purpose of inflicting mortal or great bodily harm, will receive an additional modifier of, at most, +50% of the original sentence.
+  * **Aggravation**
+    *Any entity found guilty of committing a crime with reckless abandon, evident signs of lack of regret or remorse, or blatant disregard for potential collateral damage, will receive an additional modifier of, at most, +50% of the original sentence.
+  * **Recidivism**
+    *Any entity convicted of the same criminal charge multiple times within one shift will receive an additional modifier of, at most, +100% of the original sentence.
+
+  ### Extenuating
+
+  * **Cooperation**
+    *Any entity who shares actionable intelligence with the authorities, turns oneself in, testifies against accomplices, confesses to their crime, or otherwise aids the prosecution, may have their sentence reduced to no less than 50% of the original sentence.
+  * **Dire Emergency**
+    *Any entity found to have committed a crime in the process of absolutely necessary and reasonable actions, taken with the intent to resolve or mitigate the effects of a dire emergency on one’s vessel or habitat, may have their sentence reduced by any amount, or completely waived.
+  * **Self-Defence**
+    *Any entity found to have committed a crime or crimes in protection of oneself or another, and only to the necessary extent to avert a direct and imminent threat to the health and life of innocent persons, may have their sentence reduced by any amount, or completely waived.
+  * **Good Behavior**
+    *Any convict who peacefully complies with the authorities, displays clear signs of remorse concerning the committed crime, and/or conducts themselves peacefully while imprisoned, may be paroled as outlined in the Standard Operating Procedures.
+
+  ## Crimes
+  ### [color=#990033BF]Capital Crimes[/color]
+  * **401**
+    * Murder
+    * Capital
+    * To maliciously commit an act resulting in the death of an Entity, with reckless indifference to their life.
+  * **402**
+    * **Terrorism**
+    * Capital
+    * To maliciously commit an act or take hostages with reckless indifference to life in order to provoke a state of terror in, intimidate, or otherwise compel an Entity to act or abstain from acting.
+  * **403**
+    * Grand Sabotage
+    * Capital
+    * To maliciously commit an act that, directly or indirectly, renders a vessel or its part uninhabitable or inoperable; or, to commit an act that causes irreversible damage to High Security Areas and/or systems of a vessel.
+  * **404**
+    * **Prevention of Revival**
+    * Capital
+    * To commit an act that prevents the revival of an Entity by standard medical care following their death.
+  * **405**
+    * Sedition
+    * Capital
+    * To act to overthrow a rightfully established Chain of Command or governing body without lawful or legitimate cause.
+  * **406**
+    * Breach of Custody
+    * Capital
+    * To escape the custody of law enforcement while serving a legal sentence, or awaiting trial for a capital offense.
+
+  ### Grand Felonies
+  * **301**
+    * Manslaughter
+    * 10 minutes
+    * To act without malice in a manner which, directly or indirectly, leads to the death of an Entity.
+  * **302**
+    * Kidnapping
+    * 10 minutes
+    * To unlawfully confine or restrict the free movement of an Entity against their will.
+  * **303**
+    * Grand Possession
+    * 12-20 minutes
+    * To be in the possession of a Category C, D, or E Controlled Armament.
+  * **304**
+    * Sabotage
+    * 8 minutes
+    * To maliciously commit an act that, directly or indirectly, hinders the operation of a vessel of its part; or, to commit an act that modifies and/or damages technology or equipment one is not authorized to access.
+  * **305**
+    * Abuse of Power
+    * 10 minutes
+    * To intentionally misuse or wrongfully exercise one’s own authority, influence, or control, resulting in harm, unjust treatment, or demonstratable loss to another Entity.
+  * **306**
+    * Grand Larceny
+    * 8 minutes
+    * To deprive an Entityof any Controlled Item in their lawful possession.
+  * **307**
+    * Black Marketeering
+    * 8 minutes
+    * To sell, distribute, or otherwise circulate Controlled Items to unauthorized entities.
+
+  ### Felonies
+  * **201**
+    * Assault
+    * 5 minutes
+    * To cause physical harm or to effect unwanted physical contact on an Entity, without the apparent intent to kill them, or to threaten such actions with both capability and intent to do so.
+  * **202**
+    * Breaking and Entering
+    * 5 minutes
+    * To break and enter into a high security area where one is not authorised nor invited, with intent to commit a crime within.
+  * **203**
+    * Rioting
+    * 4 minutes
+    * To partake in an unauthorised riotous, tumultuous, and disruptive public assembly that refuses to disperse after warning.
+  * **204**
+    * Endangerment
+    * 6 minutes
+    * To recklessly abandon obligations involving the continued wellbeing and/or protection of life and property, through malpractice, action, or inaction.
+  * **205**
+    * Possession
+    * 3-8 minutes
+    * To be in unauthorised possession of restricted items or items of particular danger. See [[Standard_Operating_Procedure#Controlled_Substances/Items|Controlled Substances/Items]], [[Standard_Operating_Procedure#Controlled_Armaments|Controlled Armaments]].
+  * **206**
+    * Obstruction of Justice
+    * 4 minutes
+    * To wilfully disobey, interfere with, or refuse a decree of the court, warrant, or arrest.
+  * **207**
+    * Perjury or False Report
+    * 4 minutes
+    * To wilfully and maliciously tell an untruth either in court or in the process of making an actionable report to law enforcement.
+  * **208**
+    * Contempt of Court
+    * 4 minutes
+    * To conduct oneself disruptively and disrespectfully before the court.
+  * **209**
+    * Identity Theft
+    * 5 minutes
+    * To maliciously assume the identity of an Entity, such as through writing, attire, and/or speech.
+
+  ### Misdemeanors
+  * **101**
+    * Animal Cruelty
+    * 2 minutes
+    * To inflict unnecessary suffering on an animal with malicious intent.
+  * **102**
+    * Harassment
+    * 3 minutes
+    * To verbally demean, humiliate, or harass an Entity with malice; or maliciously spread false information amongst a population.
+  * **103**
+    * Vigilantism
+    * 4 minutes
+    * To perform the responsibility and duty of a law enforcement official without approval or due cause to act.
+  * **104**
+    * Petty Larceny
+    * 2 minutes
+    * To deprive an Entity of an item in their lawful property without consent.
+  * **105**
+    * Trespass
+    * 2 minutes
+    * To enter into an area where one is not authorised nor invited.
+  * **106**
+    * Vandalism
+    * 2 minutes
+    * To deface or superficially damage public property, or property belonging to another Entity.
+  * **107**
+    * Hooliganism
+    * As necessary
+    * To intentionally and maliciously engage in disruptive conduct, where one refuses to cease.
+
+</Document>
