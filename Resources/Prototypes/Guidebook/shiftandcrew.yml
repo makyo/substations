@@ -3,11 +3,11 @@
   name: guide-entry-jobs
   text: "/ServerInfo/Guidebook/Jobs.xml"
   children:
+  - Command
   - Service
   - Cargo
   - Medical
   - Science
   - Engineering
   - Security
-  #- Command # DeltaV - not used
   - Justice # DeltaV

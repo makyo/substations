@@ -84,7 +84,7 @@
       Dead: 0
     baseDecayRate: 0.1
   - type: DamageStateVisuals
-    rotate: true
+    #rotate: true # L5 - was causing problems
     states:
       Alive:
         Base: regalrat
@@ -126,9 +126,10 @@
     - NamesRegalratKingdom
     - NamesRegalratTitle
     nameFormat: name-format-regal-rat
-  - type: GuideHelp
-    guides:
-    - MinorAntagonists
+    # L5 - guide removed
+#  - type: GuideHelp
+#    guides:
+#    - MinorAntagonists
   - type: Grammar
     attributes:
       gender: male
@@ -168,9 +169,10 @@
     speedModifierThresholds:
       200: 0.7
       250: 0.5
-  - type: GuideHelp
-    guides:
-    - MinorAntagonists
+  # L5 - guides removed
+#  - type: GuideHelp
+#    guides:
+#    - MinorAntagonists
 
 - type: entity
   name: rat servant
@@ -314,9 +316,10 @@
     isBoss: false
   - type: Speech
     speechVerb: SmallMob
-  - type: GuideHelp
-    guides:
-    - MinorAntagonists
+  # L5 - guides removed
+#  - type: GuideHelp
+#    guides:
+#    - MinorAntagonists
   - type: FelinidFood # Nyanotrasen - Felinid, ability to eat rat, see Content.Server/Nyanotrasen/Abilities/Felinid/FelinidSystem.cs
   - type: Food
   - type: Item

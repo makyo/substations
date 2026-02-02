@@ -208,7 +208,6 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
                     if (scale < effect.MinScale)
                         continue;
 
-                    // L5 — will be replaced by Metabolizer Stages #42172
                     if (effect.Probability < 1.0f && !_random.Prob(effect.Probability))
                         continue;
 

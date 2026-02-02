@@ -264,7 +264,7 @@
   - type: GuideHelp
     guides:
     - Bartender
-    #- Drinks # DeltaV - doesn't exist
+    - Drinks
 
 - type: entity
   parent: VendingMachineBooze
@@ -1035,7 +1035,7 @@
   - type: GuideHelp
     guides:
     - Security
-    - Antagonists
+    #- Antagonists # L5 - guides removed
 
 - type: entity
   parent: VendingMachine

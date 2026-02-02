@@ -230,7 +230,7 @@
   - type: GuideHelp
     guides:
     - Security
-    - Antagonists
+    # - Antagonists
 
 - type: entity
   id: BookHowToKeepStationClean
@@ -361,10 +361,10 @@
       color: "#87011c"
     - state: icon_law
       color: "#f7d61a"
-  #- type: GuideHelp
-    #openOnActivation: true
-    #guides:
-    #- SpaceLaw # TODO: Delta-V space law guidebook
+  - type: GuideHelp
+    openOnActivation: true
+    guides:
+    - SecurityRegulations # L5
 
 - type: entity
   parent: BookBase

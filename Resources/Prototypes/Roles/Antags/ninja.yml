@@ -7,7 +7,7 @@
   requirements:
   - !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
     time: 72h
-  guides: [ SpaceNinja ]
+  # guides: [ SpaceNinja ] # L5 - guides removed
 
 #Ninja Gear
 - type: startingGear

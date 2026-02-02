@@ -7,7 +7,7 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 24h # i really just want people to read the guidebook please please please
-  guides: [ CosmicCult ]
+  # guides: [ CosmicCult ] # L5 - guides removed
 
 - type: antag
   id: CosmicAntagColossus

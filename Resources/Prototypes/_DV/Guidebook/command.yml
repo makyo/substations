@@ -1,4 +1,4 @@
 - type: guideEntry
   id: AlertProcedure
   name: guide-entry-alert-levels
-  text: "/ServerInfo/Guidebook/_DV/AlertProcedure.xml"
+  text: "/ServerInfo/Guidebook/_L5/AlertProcedure.xml" # L5

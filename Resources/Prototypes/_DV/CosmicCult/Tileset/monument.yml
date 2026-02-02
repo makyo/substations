@@ -94,9 +94,10 @@
     - ccGlyphProjection
     selectedGlyph: ccGlyphKnowledge
     totalEntropy: 0
-  - type: GuideHelp
-    guides:
-    - CosmicCult
+  # L5 - guides removed
+#  - type: GuideHelp
+#    guides:
+#    - CosmicCult
   - type: WarpPoint
     location: The Monument
     blacklist:
