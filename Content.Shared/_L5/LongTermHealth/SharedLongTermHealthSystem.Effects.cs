@@ -366,6 +366,15 @@ public abstract partial class SharedLongTermHealthSystem
         }
     }
 
+    private void ShowPopup(string effect, int count, float chance, EntityUid ent)
+    {
+        if (_random.Prob(chance))
+        {
+            var number = _random.Next(0, count) + 1;
+            _popup.PopupEntity(Loc.GetString($"effect-{effect}-popup-{number}"), ent, ent);
+        }
+    }
+
     #endregion
 
     #region Applying effects
@@ -378,20 +387,24 @@ public abstract partial class SharedLongTermHealthSystem
         {
             case EffectType.BurnReturn:
                 ApplyReturnDamage(key, "Caustic", _maxBurnReturn, comp, ent);
+                ShowPopup("burn-return", MessagesPerEffect, EffectMessageProbability, ent);
                 break;
 
             case EffectType.MildHearingLoss:
             case EffectType.SevereHearingLoss:
+                ShowPopup("hearing-loss", MessagesPerEffect, EffectMessageProbability, ent);
                 EnsureComp<HardOfHearingComponent>(ent);
                 break;
 
             case EffectType.MildImpairedMobility:
             case EffectType.SevereImpairedMobility:
+                ShowPopup("impaired-mobility", MessagesPerEffect, EffectMessageProbability, ent);
                 EnsureComp<ImpairedMobilityComponent>(ent);
                 break;
 
             case EffectType.MildLungDamage:
             case EffectType.SevereLungDamage:
+                ShowPopup("asphyx-return", MessagesPerEffect, EffectMessageProbability, ent);
                 ApplyReturnDamage(key, "Asphyxiation", _maxAsphyxReturn, comp, ent);
                 break;
 
@@ -407,20 +420,24 @@ public abstract partial class SharedLongTermHealthSystem
 
             case EffectType.MildParacusia:
             case EffectType.SevereParacusia:
+                ShowPopup("paracusia", MessagesPerEffect, EffectMessageProbability, ent);
                 EnsureComp<ParacusiaComponent>(ent);
                 break;
 
             case EffectType.PoisonReturn:
+                ShowPopup("poison-return", MessagesPerEffect, EffectMessageProbability, ent);
                 ApplyReturnDamage(key, "Poison", _maxPoisonReturn, comp, ent);
                 break;
 
             case EffectType.MildVisionLoss:
             case EffectType.SevereVisionLoss:
+                ShowPopup("vision-loss", MessagesPerEffect, EffectMessageProbability, ent);
                 EnsureComp<BlurryVisionComponent>(ent);
                 break;
 
             case EffectType.MildWoozy:
             case EffectType.SevereWoozy:
+                ShowPopup("woozy", MessagesPerEffect, EffectMessageProbability, ent);
                 // Update this every time because they may be resting, which modifies how fast they recover.
                 _statusEffects.TrySetStatusEffectDuration(ent, "StatusEffectWoozy", comp.CurrentEffects[key]);
                 break;
@@ -482,6 +499,9 @@ public abstract partial class SharedLongTermHealthSystem
                 _statusEffects.TryRemoveStatusEffect(ent, "StatusEffectWoozy");
                 break;
         }
+
+        // There's a chance you'll get notified that the effect is clearing.
+        ShowPopup("end", MessagesPerEffect, EndingMessageProbability, ent);
     }
 
     #endregion

@@ -1,6 +1,7 @@
 using Content.Shared._L5.CCVar;
 using Content.Shared.Buckle;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Popups;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
@@ -14,10 +15,17 @@ public abstract partial class SharedLongTermHealthSystem : EntitySystem
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+
+    // Constants used for popup messages
+    // see Resource/Locale/en-US/_L5/long-term-health/effect-messages.ftl
+    private const int MessagesPerEffect = 4;
+    private const float EffectMessageProbability = 0.05f;
+    private const float EndingMessageProbability = 0.5f;
 
     private float _mildEffectSeconds, _severeEffectSeconds, _healDecayFactor, _maxBurnReturn, _maxPoisonReturn, _maxAsphyxReturn;
     private bool _healDecayEnabled;
