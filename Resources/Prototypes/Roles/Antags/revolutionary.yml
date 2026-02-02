@@ -18,7 +18,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-rev-objective
-  guides: [ Revolutionaries ]
+  # guides: [ Revolutionaries ] # L5 - guides removed
 
 - type: startingGear
   id: HeadRevGear
