@@ -110,6 +110,7 @@ namespace Content.IntegrationTests.Tests
             "Tortuga", // DeltaV
             "Nucleus", // L5
             "Omphalos", // L5
+            "Omphalos2", // L5
             "Gemini", // L5
         };
 

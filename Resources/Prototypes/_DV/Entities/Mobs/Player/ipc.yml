@@ -1,18 +1,18 @@
-- type: entity
-  parent: MobIPC
-  id: MobIPCTorsoOnly
-  #abstract: true # L5 — Disabled due to IPCs being slightly broken # Needed for exosuit fab
-  name: ipc chassis
-  suffix: Torso Only
-  components:
-  - type: Body
-    prototype: IPCTorsoOnly
-  - type: Stunned # L5 - whyyyy
-  - type: IsDeadIC
-  - type: RandomHumanoidAppearance
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        locked: true
-        name: power-cell-slot-component-slot-name-default
-        startingItem: null
+# L5 – revert to lathes just printing TorsoIPC, as this was causing test failures
+#- type: entity
+#  parent: MobIPC
+#  id: MobIPCTorsoOnly
+#  name: ipc chassis
+#  suffix: Torso Only
+#  components:
+#  - type: Body
+#    prototype: IPCTorsoOnly
+#  - type: IsDeadIC
+#    dead: true
+#  - type: RandomHumanoidAppearance
+#  - type: ItemSlots
+#    slots:
+#      cell_slot:
+#        locked: true
+#        name: power-cell-slot-component-slot-name-default
+#        startingItem: null

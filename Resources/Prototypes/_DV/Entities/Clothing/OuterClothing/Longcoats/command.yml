@@ -1,8 +1,8 @@
 - type: entity
   parent: [ClothingOuterArmorCaptainCarapace, BaseCommandContraband]
   id: ClothingLongcoatCaptainArmored
-  name: captain's armored longcoat
-  description: A navy blue double-breasted longcoat with gold embelleshments, specifically designed for the captain. It's been reinforced with a special alloy for some added protection.
+  name: station administrator's armored longcoat
+  description: A navy blue double-breasted longcoat with gold embelleshments, specifically designed for the station admin. It's been reinforced with a special alloy for some added protection.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Longcoats/captain.rsi
@@ -15,8 +15,8 @@
 - type: entity
   parent: [ClothingOuterWinterCoat, BaseCommandContraband]
   id: ClothingLongcoatQM
-  name: logistics officer's longcoat
-  description: A saturated brown double-breasted longcoat with mossy trim, specifically designed for the logistics officer. Longcoats are fairly robust, offering some protection from the elements.
+  name: chief logistics officer's longcoat # L5
+  description: A saturated brown double-breasted longcoat with mossy trim, specifically designed for the chief logistics officer. Longcoats are fairly robust, offering some protection from the elements.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Longcoats/logstics-officer.rsi
@@ -26,8 +26,8 @@
 - type: entity
   parent: [ClothingOuterWinterCoat, ClothingUniformFoldableBase, BaseCommandContraband]
   id: ClothingLongcoatRD
-  name: mystagogue's longcoat
-  description: A pure white double-breasted longcoat with a purple stripe, specifically designed for the mystagogue. Longcoats are fairly robust, offering some protection from the elements.
+  name: research director's longcoat
+  description: A pure white double-breasted longcoat with a purple stripe, specifically designed for the RD. Longcoats are fairly robust, offering some protection from the elements.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Longcoats/mystagogue.rsi
@@ -65,8 +65,8 @@
 - type: entity
   parent: [ClothingOuterWinterCoat, BaseCommandContraband]
   id: ClothingLongcoatHoP
-  name: head of personnel's longcoat
-  description: A navy blue double-breasted longcoat with red shoulderpads, specifically designed for the head of personnel. Longcoats are fairly robust, offering some protection from the elements.
+  name: hospitality director's longcoat # L5
+  description: A navy blue double-breasted longcoat with red shoulderpads, specifically designed for the hospitatlity director. Longcoats are fairly robust, offering some protection from the elements.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Longcoats/head-of-personnel.rsi
@@ -76,8 +76,8 @@
 - type: entity
   parent: [ClothingOuterCoatStasecHoS, BaseSecurityCommandContraband]
   id: ClothingLongcoatHoS
-  name: head of security's armored longcoat
-  description: A black double-breasted longcoat with gold buttons and gray sleeves with velvet trim along the whole outfit, specifically designed for the head of security. Security longcoats sport protective plates underneath, but are fairly heavy.
+  name: IRIS representative's armored longcoat # L5
+  description: A black double-breasted longcoat with gold buttons and gray sleeves with velvet trim along the whole outfit, specifically designed for the IRIS representative. Security longcoats sport protective plates underneath, but are fairly heavy.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Longcoats/head-of-security.rsi
@@ -96,8 +96,8 @@
   parent: [ClothingOuterArmorBaseCarapace, ClothingOuterWinterCoat, BaseCentcommContraband]
   id: ClothingLongcoatCentCommArmored
   categories: [ DoNotMap ]
-  name: central command armored longcoat
-  description: A royal green double-breasted longcoat with gold embellishments, specifically designed for a central command agent. Longcoats are fairly robust, offering some protection from the elements. It's been reinforced with a special alloy for some added protection.
+  name: central administration armored longcoat # L5
+  description: A royal green double-breasted longcoat with gold embellishments, specifically designed for a central admin agent. Longcoats are fairly robust, offering some protection from the elements. It's been reinforced with a special alloy for some added protection.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Longcoats/centcomm.rsi

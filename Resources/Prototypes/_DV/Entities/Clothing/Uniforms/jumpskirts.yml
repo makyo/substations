@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHoPMess
-  name: head of personnel's mess kit
+  name: hospitality director's mess kit # L5
   description: A swanky uniform with tasteful gold and red trim. Keep your latte away from this.
   components:
   - type: Sprite
@@ -67,7 +67,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtQMFormal
-  name: logistics officer's formal dress
+  name: chief logistics officer's formal dress # L5
   description: Inspired by the logistics officers of military's past, the perfect outfit for supplying a formal occasion.
   components:
   - type: Sprite
@@ -78,7 +78,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHoPFormal
-  name: head of personnel's formal dress
+  name: hospitality director's formal dress # L5
   description: A well-made dress with gold buttons and a red trim. Might as well look sharp when botany goes up in flames.
   components:
   - type: Sprite
@@ -163,7 +163,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpskirtSecSenior
-  name: senior officer's jumpskirt
+  name: senior Peacekeeper's jumpskirt # L5
   description: A tight-fitting tactical jumpsuit, made of light and breathable yet durable material. Can be worn all year round.
   components:
   - type: Sprite
@@ -174,7 +174,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpskirtSecTurtle
-  name: senior officer's turtleneck
+  name: senior Peacekeeper's turtleneck # L5
   description: A comfortable and tight-fitting turtleneck for those with the resolve to reach the position of Senior Officer.
   components:
   - type: Sprite
@@ -223,7 +223,7 @@
 - type: entity
   parent: ClothingUniformSkirtRollableBase
   id: ClothingUniformJumpskirtHoSBlue
-  name: head of security's blue jumpskirt
+  name: IRIS representative's blue jumpskirt # L5
   description: A blue Station Security shirt with charcoal skirt. Features gold emblems and commander's epaulettes.
   components:
   - type: Sprite
@@ -246,7 +246,7 @@
 - type: entity
   parent: ClothingUniformSkirtRollableBase
   id: ClothingUniformJumpskirtHoSGrey
-  name: head of security's grey jumpskirt
+  name: IRIS representative's grey jumpskirt
   description: A grey Station Security shirt with charcoal skirt. Stands out with red highlights, gold emblems, and commander's epaulettes.
   components:
   - type: Sprite
@@ -257,7 +257,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpskirtHoSTurtle
-  name: head of security's turtleneck
+  name: IRIS representative's turtleneck
   description: A comfortable and tight-fitting turtleneck for those with the tenacity to reach the position of Head of Security.
   components:
   - type: Sprite

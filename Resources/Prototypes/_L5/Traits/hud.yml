@@ -15,9 +15,11 @@
   id: SecurityHUD
   name: trait-hud-security-name
   description: trait-hud-security-desc
-  components:
-  - type: SecHudTrait
-    actions: [ActionToggleSecHud]
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: SecHudTrait
+      actions: [ActionToggleSecHud]
 
 - type: entity
   parent: BaseActionToggleHud
@@ -41,9 +43,11 @@
   id: MedicalHUD
   name: trait-hud-medical-name
   description: trait-hud-medical-desc
-  components:
-  - type: MedHudTrait
-    actions: [ActionToggleMedHud]
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MedHudTrait
+      actions: [ActionToggleMedHud]
 
 - type: entity
   parent: BaseActionToggleHud
@@ -67,9 +71,11 @@
   id: BeerHUD
   name: trait-hud-beer-name
   description: trait-hud-beer-desc
-  components:
-  - type: BeerHudTrait
-    actions: [ActionToggleBeerHud]
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: BeerHudTrait
+      actions: [ActionToggleBeerHud]
 
 - type: entity
   parent: BaseActionToggleHud
@@ -92,9 +98,11 @@
   id: DiagnosticHUD
   name: trait-hud-diagnostic-name
   description: trait-hud-diagnostic-desc
-  components:
-  - type: DiagnosticHudTrait
-    actions: [ActionToggleDiagnosticHud, ActionToggleHudDiagnosticAICamera]
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: DiagnosticHudTrait
+      actions: [ActionToggleDiagnosticHud, ActionToggleHudDiagnosticAICamera]
 
 - type: entity
   parent: BaseActionToggleHud
