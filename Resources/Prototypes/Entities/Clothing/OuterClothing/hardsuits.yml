@@ -598,9 +598,9 @@
     tags:
     - WhitelistChameleon
     - HighRiskItem
+    - HidesHarpyWings # DeltaV: Couldn't see the wings for their species-specific sprite because of a lack of this.
     - CorgiWearable
     - Hardsuit
-    - HidesHarpyWings # DeltaV: Couldn't see the wings for their species-specific sprite because of a lack of this.
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitRd
   - type: StaticPrice
@@ -731,8 +731,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
-  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.75
+  - type: StaminaResistance # DeltaV - uncommented
+    damageCoefficient: 0.2 # DeltaV - was 0.75
   - type: Armor
     modifiers:
       coefficients:
@@ -758,7 +758,7 @@
     difficulty: 5
     newItem: ClothingOuterHardsuitSyndieReverseEngineered
     recipes:
-      - ClothingOuterHardsuitSyndieReverseEngineered
+    - ClothingOuterHardsuitSyndieReverseEngineered
   - type: Tag
     tags:
     - MonkeyWearable
@@ -767,11 +767,11 @@
     - CorgiWearable
     - ScurretWearable
     - HidesHarpyWings
-  - type: StaticPrice
-    price: 5000
   - type: MappingCategories # DeltaV
     categories:
     - Syndicate
+  - type: StaticPrice
+    price: 5000
 
 # Syndicate Medic Hardsuit
 - type: entity
@@ -838,14 +838,14 @@
     damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
-  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.6
+  - type: StaminaResistance # DeltaV - uncommented
+    damageCoefficient: 0.3 # DeltaV - was 0.6
   - type: Armor
     modifiers:
       coefficients:
         Blunt: 0.8 # DeltaV - was 0.6
         Slash: 0.8 # DeltaV - was 0.6
-        Piercing: 0.7 # DeltaV - was 0.6
+        Piercing: 0.6
         Heat: 0.2
         Radiation: 0.01
         Caustic: 0.5
@@ -898,8 +898,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
-  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.6
+  - type: StaminaResistance # DeltaV - uncommented
+    damageCoefficient: 0.2 # DeltaV - was 0.6
   - type: Armor
     modifiers:
       coefficients:
@@ -921,6 +921,9 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
+  - type: MappingCategories # DeltaV
+    categories:
+    - Syndicate
   - type: Tag
     tags:
     - CorgiWearable
@@ -958,7 +961,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.3
-  # - type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
+  - type: StaminaResistance # DeltaV
+    damageCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -1034,14 +1038,14 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWizard
+  - type: MappingCategories # DeltaV
+    categories:
+    - Wizard
   - type: Tag
     tags:
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
-  - type: MappingCategories # DeltaV
-    categories:
-    - Wizard
 
 #Ling Space Suit
 - type: entity
@@ -1168,7 +1172,7 @@
 
 #ERT Chaplain Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndie ]
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitJuggernaut ]
   id: ClothingOuterHardsuitERTChaplain
   name: ERT chaplain's hardsuit
   description: A protective hardsuit worn by the chaplains of an Emergency Response Team.
@@ -1182,7 +1186,7 @@
 
 #ERT Engineer Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieElite ]
+  parent: ClothingOuterHardsuitCBURN
   id: ClothingOuterHardsuitERTEngineer
   name: ERT engineer's hardsuit
   description: A protective hardsuit worn by the engineers of an emergency response team.
@@ -1231,7 +1235,7 @@
 
 #ERT Janitor Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieElite ]
+  parent: ClothingOuterHardsuitCBURN
   id: ClothingOuterHardsuitERTJanitor
   name: ERT janitor's hardsuit
   description: A protective hardsuit worn by the janitors of an emergency response team.
@@ -1403,6 +1407,7 @@
   - type: ContainerContainer # Delta V-Brings back clownsuit but make it make sense
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
 
 #Mime Hardsuit
 - type: entity
