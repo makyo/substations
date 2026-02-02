@@ -80,7 +80,7 @@
     range: 200
   - type: DeviceLinkSource
     ports:
-      - Pressed
+    - Pressed
   - type: Transform
     anchored: false
   - type: Destructible
@@ -190,7 +190,7 @@
 - type: entity
   parent: LockableButton
   id: LockableButtonCaptain
-  suffix: StationAdministrator # L5
+  suffix: Station Administrator # L5
   components:
   - type: AccessReader
     access: [["Captain"]]
@@ -275,13 +275,13 @@
   - type: AccessReader
     access: [["Armory"]]
 
-#- type: entity
-#  parent: LockableButton
-#  id: LockableButtonBrig
-#  suffix: Brig
-#  components:
-#  - type: AccessReader
-#    access: [["Brig"]]
+# - type: entity # DeltaV - This was commented out with no context so idk
+#   parent: LockableButton
+#   id: LockableButtonBrig
+#   suffix: Brig
+#   components:
+#   - type: AccessReader
+#     access: [["Brig"]]
 
 - type: entity
   parent: LockableButton
@@ -426,6 +426,14 @@
   components:
   - type: AccessReader
     access: [["Atmospherics"]]
+
+- type: entity
+  parent: LockableButton
+  id: LockableButtonCentcomm
+  suffix: Central Admin
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"]]
 
 # button frames
 

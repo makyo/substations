@@ -29,11 +29,11 @@ loadout-group-captain-neck = Station Administrator neck
 loadout-group-captain-backpack = Station Administrator backpack
 loadout-group-captain-outerclothing = Station Administrator outer clothing
 
-loadout-group-hop-head = Head of Personnel head
-loadout-group-hop-jumpsuit = Head of Personnel jumpsuit
-loadout-group-hop-neck = Head of Personnel neck
-loadout-group-hop-backpack = Head of Personnel backpack
-loadout-group-hop-outerclothing = Head of Personnel outer clothing
+loadout-group-hop-head = Hospitality Director head
+loadout-group-hop-jumpsuit = Hospitality Director jumpsuit
+loadout-group-hop-neck = Hospitality Director neck
+loadout-group-hop-backpack = Hospitality Director backpack
+loadout-group-hop-outerclothing = Hospitality Director outer clothing
 
 # Civilian
 # Begin DeltaV Changes - Rename Passenger to Assistant
@@ -95,11 +95,12 @@ loadout-group-musician-jumpsuit = Musician jumpsuit
 loadout-group-musician-outerclothing = Musician outer clothing
 
 # Cargo
-loadout-group-quartermaster-head = Logistics Officer head
-loadout-group-quartermaster-jumpsuit = Logistics Officer jumpsuit
-loadout-group-quartermaster-neck = Logistics Officer neck
-loadout-group-quartermaster-outerclothing = Logistics Officer outer clothing
-loadout-group-quartermaster-shoes = Logistics Officer shoes
+# L5
+loadout-group-quartermaster-head = Chief Logistics Officer head
+loadout-group-quartermaster-jumpsuit = Chief Logistics Officer jumpsuit
+loadout-group-quartermaster-neck = Chief Logistics Officer neck
+loadout-group-quartermaster-outerclothing = Chief Logistics Officer outer clothing
+loadout-group-quartermaster-shoes = Chief Logistics Officer shoes
 
 loadout-group-cargo-technician-head = Cargo Technician head
 loadout-group-cargo-technician-jumpsuit = Cargo Technician jumpsuit
@@ -151,14 +152,14 @@ loadout-group-scientist-id = Scientist ID
 loadout-group-research-assistant-jumpsuit = Research Assistant jumpsuit
 
 # Security
-loadout-group-head-of-security-head = Head of Security head
-loadout-group-head-of-security-jumpsuit = Head of Security jumpsuit
-loadout-group-head-of-security-neck = Head of Security neck
-loadout-group-head-of-security-outerclothing = Head of Security outer clothing
+loadout-group-head-of-security-head = IRIS Representative head
+loadout-group-head-of-security-jumpsuit = IRIS Representative jumpsuit
+loadout-group-head-of-security-neck = IRIS Representative neck
+loadout-group-head-of-security-outerclothing = IRIS Representative outer clothing
 
-loadout-group-warden-head = Warden head
-loadout-group-warden-jumpsuit = Warden jumpsuit
-loadout-group-warden-outerclothing = Warden outer clothing
+loadout-group-warden-head = Armorer head
+loadout-group-warden-jumpsuit = Armorer jumpsuit
+loadout-group-warden-outerclothing = Armorer outer clothing
 
 loadout-group-security-head = Security head
 loadout-group-security-jumpsuit = Security jumpsuit
@@ -173,7 +174,7 @@ loadout-group-detective-neck = Detective neck
 loadout-group-detective-jumpsuit = Detective jumpsuit
 loadout-group-detective-outerclothing = Detective outer clothing
 
-loadout-group-security-cadet-jumpsuit = Security cadet jumpsuit
+loadout-group-security-cadet-jumpsuit = Peacekeeper cadet jumpsuit
 loadout-group-security-star = Security Star
 
 # Medical

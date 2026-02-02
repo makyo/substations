@@ -12,7 +12,7 @@
         mapNameTemplate: 'SCCS Omphalos {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: 'NY'
+          prefixCreator: 'UN'
       - type: StationPlanetSpawner
         planet: GlacierSurface
         gridPath: /Maps/_DV/Nonstations/glacier_surface_outpost.yml

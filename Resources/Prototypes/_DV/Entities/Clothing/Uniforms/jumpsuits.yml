@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitHoPMess
-  name: head of personnel's mess kit
+  name: hospitality director's mess kit
   description: A swanky uniform with tasteful gold and red trim. Keep your latte away from this.
   components:
   - type: Sprite
@@ -12,7 +12,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitHoPFormal
-  name: head of personnel's formal suit
+  name: hospitality director's formal suit
   description: A well-made suit with gold buttons and a red trim. Might as well look sharp when botany goes up in flames.
   components:
   - type: Sprite
@@ -344,7 +344,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpsuitHoSTurtle
-  name: head of security's turtleneck
+  name: IRIS representative's turtleneck
   description: A comfortable and tight-fitting turtleneck for those with the tenacity to reach the position of Head of Security.
   components:
   - type: Sprite

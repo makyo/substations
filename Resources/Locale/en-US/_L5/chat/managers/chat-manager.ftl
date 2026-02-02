@@ -9,5 +9,6 @@ chat-manager-entity-unknown-sign-wrap-message = { PROPER($entity) ->
 [true] [color={$color}]{$entityName} gestures something.[/color]
     }
 
+hud-chatbox-channel-Sign = Sign
 hud-chatbox-select-channel-Sign = Sign
 chat-manager-entity-sign-no-free-hands = You need at least one free hand to sign!

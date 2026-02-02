@@ -49,9 +49,9 @@ ui-options-misc-label = Misc
 ui-options-interface-label = Interface
 
 
-#ui-options-auto-fill-highlights = Auto-fill the highlights with the character's information
-#ui-options-highlights-color = Highlights color:
-#ui-options-highlights-color-example = This is highlighted text.
+ui-options-auto-fill-highlights = Automatically set the highlights list based on your character's name and job
+ui-options-highlights-color = Highlights color:
+ui-options-highlights-color-example = This is highlighted text.
 ui-options-show-held-item = Show held item next to cursor
 ui-options-show-combat-mode-indicators = Show combat mode indicators with cursor
 ui-options-opaque-storage-window = Opaque storage window
@@ -108,6 +108,9 @@ ui-options-hud-layout = HUD layout:
 
 ## Controls menu
 
+ui-options-hold-to-attack-melee = Hold to attack (melee)
+ui-options-hold-to-attack-ranged = Hold to attack (ranged)
+
 ui-options-binds-reset-all = Reset ALL keybinds
 ui-options-binds-explanation = Click to change binding, right-click to clear
 ui-options-unbound = Unbound
@@ -159,6 +162,7 @@ ui-options-function-alt-activate-item-in-world = Alternative activate item in wo
 ui-options-function-drop = Drop item
 ui-options-function-examine-entity = Examine
 ui-options-function-swap-hands = Swap hands
+ui-options-function-swap-hands-reverse = Swap hands (other direction)
 ui-options-function-move-stored-item = Move stored item
 ui-options-function-rotate-stored-item = Rotate stored item
 ui-options-function-save-item-location = Save item location
@@ -392,6 +396,9 @@ ui-options-admin-player-tab-color-setting-character = Colorize antag character n
 ui-options-admin-player-tab-color-setting-roletype = Colorize all role types
 ui-options-admin-player-tab-color-setting-both = Colorize both
 
+ui-options-admin-logs-title = Admin Logs
+ui-options-admin-logs-highlight-color = Highlight Color
+
 ui-options-admin-overlay-title = Admin Overlay
 
 ui-options-admin-overlay-antag-format = Antag label style
@@ -409,3 +416,4 @@ ui-options-admin-enable-overlay-starting-job = Show starting job
 ui-options-admin-overlay-merge-distance = Stack merge distance
 ui-options-admin-overlay-ghost-fade-distance = Ghost overlay fade range from mouse
 ui-options-admin-overlay-ghost-hide-distance = Ghost overlay hide range from mouse
+

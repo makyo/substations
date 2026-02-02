@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 using System.Linq;
+using Content.Shared._DV.Traits;
 using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;

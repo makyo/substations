@@ -12,7 +12,7 @@
         mapNameTemplate: 'SCS Gemini {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: 'NY'
+          prefixCreator: 'UN'
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]

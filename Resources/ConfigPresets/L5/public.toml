@@ -1,0 +1,6 @@
+[game]
+hostname      = "[EN][HRP][18+][WL] Lagrange"
+desc          = "An HRP Space Station 14 server centered around the System, a machine that dreams. You will be building a new station to house a shard of the System. This is a whitelist-only server, so be sure to check the wiki for more information."
+
+[server]
+id = "public"

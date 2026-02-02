@@ -26,7 +26,6 @@ enabled = true
 max_announcement_length = 1000
 sign_respects_los       = true
 all_can_sign            = false
-in_space_range          = 10 # Same as voice in atmos
 
 [ooc]
 enable_during_round = true
@@ -40,29 +39,22 @@ id_job_length    = 40
 
 [atmos]
 space_wind   = true
-#grid_impulse = true # this just sends some salvage wrecks flying.
+grid_impulse = false # this just sends some salvage wrecks flying.
 
 [shuttle]
 arrivals                       = false # doesn't work very well in general, and not at all with Outpost
 emergency_dock_time            = 360 # an extra 2 minutes over the default
 emergency_transit_time_min     = 90
 auto_call_time                 = 0 # don't automatically call the shuttle
-emergency_early_launch_allowed = true # MRP server command ban time
+emergency_early_launch_allowed = true
 recall_turning_point           = 0.33
 
 [cargo]
 # Departmental-economy-b-gone
 allow_primary_cut_adjustment = false
 
-[biomass]
-easy_mode = false # reclaimer can work on soul-ful bodies, mrp server
-
 [surgery]
 can_operate_on_self = false # mrp...
-
-# Disabled because it causes giga lag
-#[worldgen]
-#enabled = true
 
 [rules]
 time = 15
@@ -104,6 +96,5 @@ rules_file             = "L5Ruleset"
 [control]
 storage_limit = 2
 
-# L5 - we'll get our own icon in soon.
 [discord]
 rich_main_icon_id = "l5"
