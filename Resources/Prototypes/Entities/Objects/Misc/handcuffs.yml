@@ -26,7 +26,7 @@
   - type: GuideHelp
     guides:
     - Security
-    - Antagonists
+    #- Antagonists # L5 - guides removed
   - type: UseDelay
     delay: 3
 

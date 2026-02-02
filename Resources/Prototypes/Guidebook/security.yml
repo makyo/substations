@@ -1,7 +1,7 @@
 ﻿- type: guideEntry
   id: Security
   name: guide-entry-security
-  text: "/ServerInfo/Guidebook/Security/Security.xml"
+  text: "/ServerInfo/Guidebook/_L5/Security/Security.xml" # L5
   children:
   - Forensics
   - Defusal

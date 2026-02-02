@@ -582,7 +582,7 @@
     guides:
     - Cyborgs
     - Robotics
-    - Xenoborgs
+    #- Xenoborgs # L5 - guides removed
   - type: Access
     enabled: false # DeltaV - comment to prevent upstream removing, borg id chips
     tags:
