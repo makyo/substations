@@ -126,9 +126,10 @@
     - NamesRegalratKingdom
     - NamesRegalratTitle
     nameFormat: name-format-regal-rat
-  - type: GuideHelp
-    guides:
-    - MinorAntagonists
+    # L5 - guide removed
+#  - type: GuideHelp
+#    guides:
+#    - MinorAntagonists
   - type: Grammar
     attributes:
       gender: male

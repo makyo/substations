@@ -66,10 +66,11 @@
       enabled: true
       isLooped: true
       reverseWhenFinished: true
-  - type: GuideHelp
-    guides:
-    - AnomalousResearch
-    - CosmicCult
+  # L5 - guides removed
+#  - type: GuideHelp
+#    guides:
+#    - AnomalousResearch
+#    - CosmicCult
   - type: Anomaly
     pulseSound:
       path: /Audio/_DV/CosmicCult/effigy_pulse.ogg
