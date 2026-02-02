@@ -33,8 +33,10 @@
     children:
     - !type:NestedSelector # DeltaV
       tableId: BasicAntagEventsTableDeltaV
-    - id: ClosetSkeleton
-    - id: KingRatMigration
+    - id: DragonSpawn
+    - id: ColossusSpawn # DeltaV
+    #- id: ClosetSkeleton # DeltaV - replaced with MenaceSkeleton
+    #- id: KingRatMigration # DeltaV - disabled
     - id: RevenantSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
@@ -44,15 +46,12 @@
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: DragonSpawn
-    - id: ColossusSpawn # DeltaV
-    #- id: KingRatMigration # DeltaV - disabled
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
-    - id: RevenantSpawn
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
-    # - id: WizardSpawn # DeltaV - disabled until its touched up
+    #- id: WizardSpawn # DeltaV - Disabled until overhauled
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -102,7 +101,7 @@
     delay:
       min:  40
       max:  60
-
+# Anomaly
 - type: entity
   id: AnomalySpawn
   parent: BaseStationEventShortDelay
@@ -116,7 +115,7 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-anomaly-spawn-result-message
   - type: AnomalySpawnRule
-
+# Bluespace Artifact
 - type: entity
   id: BluespaceArtifact
   parent: BaseStationEventShortDelay
@@ -134,7 +133,7 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-bluespace-artifact-result-message
   - type: BluespaceArtifactRule
-
+# Bluespace Locker
 - type: entity
   id: BluespaceLocker
   parent: BaseGameRule
@@ -147,7 +146,7 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-bluespace-locker-result-message
   - type: BluespaceLockerRule
-
+# Random APC Power off
 - type: entity
   id: BreakerFlip
   parent: BaseGameRule
@@ -159,7 +158,7 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-breaker-flip-result-message
   - type: BreakerFlipRule
-
+# Bureaucratic Error
 - type: entity
   id: BureaucraticError
   parent: BaseGameRule
@@ -181,6 +180,7 @@
     - SecurityCadet
     - TechnicalAssistant
 
+# Clerical Error
 - type: entity
   id: ClericalError
   parent: BaseGameRule
@@ -193,26 +193,26 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-clerical-error-result-message
   - type: ClericalErrorRule
-
+# Closet Skeleton (Replaced with Menace DeltaV)
 - type: entity
   parent: BaseGameRule
   id: ClosetSkeleton
   components:
   - type: StationEvent
-    weight: 8 # DeltaV - was 10
+    weight: 5
     duration: 1
     minimumPlayers: 10
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-closet-skeleton-result-message
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
-
+# Dragon
 - type: entity
   parent: BaseGameRule
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 2 # DeltaV - was 6.5
+    weight: 2.5 # DeltaV - was 6.5
     earliestStart: 60 # DeltaV - was 40
     reoccurrenceDelay: 20
     minimumPlayers: 45 # DeltaV - was 20
@@ -237,7 +237,10 @@
       pickPlayer: false
       mindRoles:
       - MindRoleDragon
+  - type: DynamicRuleCost
+    cost: 75
 
+# Ninja
 - type: entity
   parent: BaseGameRule
   id: NinjaSpawn
@@ -276,7 +279,7 @@
       pickPlayer: false
       startingGear: SpaceNinjaGear
       roleLoadout:
-      - RoleSurvivalSpaceNinja
+      - RoleSurvivalEVA
       briefing:
         text: ninja-role-greeting
         color: Green
@@ -296,6 +299,8 @@
         nameFormat: name-format-ninja
       mindRoles:
       - MindRoleNinja
+  - type: DynamicRuleCost
+    cost: 75
 
 - type: entity
   parent: BaseGameRule
@@ -306,7 +311,7 @@
     duration: null
     earliestStart: 25 # DeltaV - was 20
     reoccurrenceDelay: 5 # DeltaV - was 20
-    minimumPlayers: 15
+    minimumPlayers: 20
   - type: ParadoxCloneRule
     objectiveBlacklist:
       tags:
@@ -333,7 +338,10 @@
         sound: /Audio/Misc/paradox_clone_greeting.ogg
       mindRoles:
       - MindRoleParadoxClone
+  - type: DynamicRuleCost
+    cost: 50
 
+# Revenant (standard, not GlimmerRevenantSpawn)
 - type: entity
   parent: BaseGameRule
   id: RevenantSpawn
@@ -347,17 +355,17 @@
     message: psionic-power-precognition-revenant-spawn-result-message
   - type: RandomSpawnRule
     prototype: MobRevenant
-
+# Wizard
 - type: entity
   parent: BaseWizardRule
   id: WizardSpawn
   components:
   - type: StationEvent
-    weight: 1 # rare
+    weight: 2 # rare
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 10
+    minimumPlayers: 20
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -384,6 +392,8 @@
         - NamesWizardFirst
         - NamesWizardLast
         nameFormat: name-format-wizard
+      - type: RandomHumanoidAppearance # DeltaV - randomizes character
+        randomizeName: false
       mindRoles:
       - MindRoleWizard
 
@@ -396,7 +406,7 @@
 #    weight: 15
 #    duration: 1
 #  - type: FalseAlarmRule
-
+# Gas leak
 - type: entity
   id: GasLeak
   parent: BaseStationEventShortDelay
@@ -410,7 +420,7 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-gas-leak-result-message
   - type: GasLeakRule
-
+# Kudzu growth
 - type: entity
   id: KudzuGrowth
   parent: BaseStationEventLongDelay
@@ -423,7 +433,7 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-kudzu-growth-result-message
   - type: KudzuGrowthRule
-
+# power grid check
 - type: entity
   id: PowerGridCheck
   parent: BaseStationEventShortDelay
@@ -441,7 +451,7 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-power-grid-check-result-message
   - type: PowerGridCheckRule
-
+# Solar Flare
 - type: entity
   parent: BaseGameRule
   id: SolarFlare
@@ -473,7 +483,7 @@
     extraCount: 3 # DeltaV - was 2
     lightBreakChancePerSecond: 0.0003
     doorToggleChancePerSecond: 0.001
-
+# Vent Clog
 - type: entity
   id: VentClog
   parent: BaseStationEventLongDelay
@@ -489,7 +499,7 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-vent-clog-result-message
   - type: VentClogRule
-
+# Slime Spawn
 - type: entity
   id: SlimesSpawn
   parent: BaseStationEventShortDelay
@@ -510,7 +520,7 @@
       - id: MobAdultSlimesBlueAngry
       - id: MobAdultSlimesGreenAngry
       - id: MobAdultSlimesYellowAngry
-
+# Snake Spawns
 - type: entity
   id: SnakeSpawn
   parent: BaseStationEventShortDelay
@@ -531,7 +541,7 @@
       - id: MobPurpleSnake
       - id: MobSmallPurpleSnake
       - id: MobCobraSpace
-
+# Spider Spawns
 - type: entity
   id: SpiderSpawn
   parent: BaseStationEventShortDelay
@@ -549,7 +559,7 @@
   - type: VentCrittersRule
     table: # DeltaV: EntityTable instead of spawn entries
       id: MobGiantSpiderAngry
-
+# Clown Spider Spawns
 - type: entity
   id: SpiderClownSpawn
   parent: BaseStationEventShortDelay
@@ -568,7 +578,7 @@
     playerRatio: 35 # DeltaV: Clown spiders are very robust
     table: # DeltaV: EntityTable instead of spawn entries
       id: MobClownSpider
-
+# Zombie outbreak
 - type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
@@ -603,19 +613,25 @@
       - type: InitialInfected
       mindRoles:
       - MindRoleInitialInfected
+  - type: DynamicRuleCost
+    cost: 200
 
+# Lone Operative
 - type: entity
   parent: BaseNukeopsRule
   id: LoneOpsSpawn
   components:
   - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
-    minimumPlayers: 20
+    earliestStart: 45 # DeltaV - was 35
+    weight: 3 # DeltaV - was 5.5
+    minimumPlayers: 30 # DeltaV - was 20
+    reoccurrenceDelay: 30 # DeltaV
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-lone-ops-spawn-result-message
   - type: RuleGrids
   - type: LoadMapRule
-    gridPath: /Maps/_DV/Shuttles/hammer.yml # DeltaV - Was /Shuttles/ShuttleEvent/striker.yml
+    gridPath: /Maps/_DV/Shuttles/Event/hammer.yml # DeltaV - Was /Shuttles/ShuttleEvent/striker.yml
   - type: NukeopsRule
     roundEndBehavior: Nothing
   - type: AntagSelection
@@ -640,7 +656,10 @@
         - Syndicate
       mindRoles:
       - MindRoleLoneops
+  - type: DynamicRuleCost
+    cost: 75
 
+# Sleepers
 - type: entity
   parent: BaseTraitorRule
   id: SleeperAgents
@@ -671,7 +690,7 @@
         - AntagImmune
       mindRoles:
       - MindRoleTraitorSleeper
-
+# Mass Hallucination
 - type: entity
   id: MassHallucinations
   parent: BaseGameRule
@@ -688,7 +707,7 @@
     maxSoundDistance: 7
     sounds:
       collection: Paracusia
-
+# Ion Storm
 - type: entity
   parent: BaseGameRule
   id: IonStorm
@@ -712,7 +731,7 @@
 #      maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
 #      weight: 5
 #    - type: MobReplacementRule
-
+# Greytide virus
 - type: entity
   id: GreytideVirus
   parent: BaseStationEventShortDelay
@@ -733,7 +752,7 @@
     - Service
     blacklist:
     - External # don't space everything
-
+# Smuggler stash
 - type: entity
   parent: BaseGameRule
   id: SmugglerStashVariationPass
@@ -746,7 +765,7 @@
     weight: 10
   - type: RandomSpawnRule
     prototype: RandomSatchelSpawner
-
+# Derilict Cyborg
 - type: entity
   parent: BaseGameRule
   id: DerelictEngineerCyborgSpawn
