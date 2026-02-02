@@ -19,7 +19,7 @@ public abstract partial class SharedLongTermHealthSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    private float _mildEffectSeconds, _severeEffectSeconds, _healDecayFactor;
+    private float _mildEffectSeconds, _severeEffectSeconds, _healDecayFactor, _maxBurnReturn, _maxPoisonReturn, _maxAsphyxReturn;
     private bool _healDecayEnabled;
 
     public override void Initialize()
@@ -49,6 +49,9 @@ public abstract partial class SharedLongTermHealthSystem : EntitySystem
         _healDecayFactor = 1f;
         if (_healDecayEnabled)
             _healDecayFactor = _config.GetCVar(L5CCVars.LongTermEffectsHealDecayFactor);
+        _maxBurnReturn = _config.GetCVar(L5CCVars.MaxBurnReturn);
+        _maxPoisonReturn = _config.GetCVar(L5CCVars.MaxPoisonReturn);
+        _maxAsphyxReturn = _config.GetCVar(L5CCVars.MaxAsphyxReturn);
 
         OnAirloss(uid, ref component, args);
         OnBrute(uid, ref component, args);
@@ -95,12 +98,12 @@ public abstract partial class SharedLongTermHealthSystem : EntitySystem
                     comp.PreviousEffects[key]++;
 
                     // Remove the effect components/etc.
-                    RemoveEffect(key, ref ent);
+                    RemoveEffect(key, ent);
                 }
                 else
                 {
                     // Ensure that effect components or return damage are applied.
-                    ApplyEffect(key, comp, ref ent);
+                    ApplyEffect(key, comp, ent);
                 }
             }
 

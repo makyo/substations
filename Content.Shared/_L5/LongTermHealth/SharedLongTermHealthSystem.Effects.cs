@@ -3,6 +3,7 @@ using Content.Shared._L5.CCVar;
 using Content.Shared._L5.Traits.Moody.Components;
 using Content.Shared._L5.Traits.HardOfHearing;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Eye.Blinding.Components;
@@ -369,16 +370,14 @@ public abstract partial class SharedLongTermHealthSystem
 
     #region Applying effects
 
-    private void ApplyEffect(EffectType key, LongTermHealthComponent comp, ref EntityUid ent)
+    private void ApplyEffect(EffectType key, LongTermHealthComponent comp, EntityUid ent)
     {
+        DamageSpecifier damage;
+        DamageableComponent? damageComp;
         switch (key)
         {
             case EffectType.BurnReturn:
-                _damage.ChangeDamage(ent,
-                    new DamageSpecifier(
-                        _proto.Index(new ProtoId<DamageTypePrototype>("Caustic")), // Requires ointment to heal oneself.
-                        comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.BurnReturnFactor)),
-                    ignoreResistances: true);
+                ApplyReturnDamage(key, "Caustic", _maxBurnReturn, comp, ent);
                 break;
 
             case EffectType.MildHearingLoss:
@@ -393,11 +392,7 @@ public abstract partial class SharedLongTermHealthSystem
 
             case EffectType.MildLungDamage:
             case EffectType.SevereLungDamage:
-                _damage.ChangeDamage(ent,
-                    new DamageSpecifier(
-                        _proto.Index(new ProtoId<DamageTypePrototype>("Asphyxiation")),
-                        comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.AsphyxReturnFactor)),
-                    ignoreResistances: true);
+                ApplyReturnDamage(key, "Asphyxiation", _maxAsphyxReturn, comp, ent);
                 break;
 
             case EffectType.MildMoody:
@@ -416,11 +411,7 @@ public abstract partial class SharedLongTermHealthSystem
                 break;
 
             case EffectType.PoisonReturn:
-                _damage.ChangeDamage(ent,
-                    new DamageSpecifier(
-                        _proto.Index(new ProtoId<DamageTypePrototype>("Poison")),
-                        comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.PoisonReturnFactor)),
-                    ignoreResistances: true);
+                ApplyReturnDamage(key, "Poison", _maxPoisonReturn, comp, ent);
                 break;
 
             case EffectType.MildVisionLoss:
@@ -436,11 +427,28 @@ public abstract partial class SharedLongTermHealthSystem
         }
     }
 
+    private void ApplyReturnDamage(EffectType key, string damageType, float max, LongTermHealthComponent comp, EntityUid ent)
+    {
+        // Don't give more than the max return damage
+        if (!TryComp<DamageableComponent>(ent, out var damageComp))
+            return;
+
+        var damageSpecifier = _damage.GetDamage((ent, damageComp));
+        if (damageSpecifier.DamageDict.TryGetValue(damageType, out var damage) && damage > max)
+            return;
+
+        _damage.ChangeDamage(ent,
+            new DamageSpecifier(
+                _proto.Index(new ProtoId<DamageTypePrototype>(damageType)),
+                Math.Min(comp.CurrentEffects[key].Seconds * _config.GetCVar(L5CCVars.BurnReturnFactor), max)),
+            ignoreResistances: true);
+    }
+
     #endregion
 
     #region Removing effects
 
-    private void RemoveEffect(EffectType key, ref EntityUid ent)
+    private void RemoveEffect(EffectType key, EntityUid ent)
     {
         switch (key)
         {

@@ -13,7 +13,7 @@ public sealed partial class LongTermHealthComponent : Component
     public Dictionary<EffectType, bool> UpcomingEffects = new();
 
     /// <summary>
-    /// Effects currently applied to the player and their countdowns
+    /// Effects currently applied to the player and their countdowns.
     /// </summary>
     [DataField]
     public Dictionary<EffectType, TimeSpan> CurrentEffects = new();
