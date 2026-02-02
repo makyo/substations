@@ -80,7 +80,7 @@ public abstract class SharedMoodySystem : EntitySystem
             return;
 
         var effect = _random.Pick(effects);
-        _popup.PopupPredicted(Loc.GetString(effect), entity, entity);
+        _popup.PopupEntity(Loc.GetString(effect), entity, entity);
 
         // Set next popup time
         var delay = _random.Next(entity.Comp.MinimumPopupDelay, entity.Comp.MaximumPopupDelay);

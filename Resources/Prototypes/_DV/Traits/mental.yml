@@ -23,6 +23,9 @@
   effects:
   - !type:SpawnItemInHandEffect
     item: PillCanisterNeurozenium
+  - !type:AddCompsEffect # L5
+    components:
+    - type: Moody
 
 - type: trait
   id: Addicted

@@ -48,7 +48,7 @@ public sealed partial class L5CCVars
     /// The chance that mild effects become severe even if the severe threshold isn't reached.
     /// </summary>
     public static readonly CVarDef<float> ChanceToBecomeSevere =
-        CVarDef.Create("long_term_health.severe_chance", 0.05f, CVar.REPLICATED);
+        CVarDef.Create("long_term_health.severe_chance", 0.01f, CVar.REPLICATED);
 
     // BRUTE Injuries
 
@@ -94,7 +94,13 @@ public sealed partial class L5CCVars
     /// The factor by which burn damage reappears over time, representing extended treatment.
     /// </summary>
     public static readonly CVarDef<float> BurnReturnFactor =
-        CVarDef.Create("long_term_health.burn.return_factor", 0.1f, CVar.REPLICATED);
+        CVarDef.Create("long_term_health.burn.return_factor", 0.01f, CVar.REPLICATED);
+
+    /// <summary>
+    /// The maximum amount of burn return damage to allow. This should probably be less than the threshold so that return damage does not cause further return damage.
+    /// </summary>
+    public static readonly CVarDef<float> MaxBurnReturn =
+        CVarDef.Create("long_term_health.burn.max_return", 25f, CVar.REPLICATED);
 
     // TOXIN Injuries
 
@@ -108,7 +114,13 @@ public sealed partial class L5CCVars
     /// The factor by which poison damage reappears over time, representing the toxins working their way out of the system.
     /// </summary>
     public static readonly CVarDef<float> PoisonReturnFactor =
-        CVarDef.Create("long_term_health.poison.return_factor", 0.1f, CVar.REPLICATED);
+        CVarDef.Create("long_term_health.poison.return_factor", 0.01f, CVar.REPLICATED);
+
+    /// <summary>
+    /// The maximum amount of poison return damage to allow. This should probably be less than the threshold so that return damage does not cause further return damage.
+    /// </summary>
+    public static readonly CVarDef<float> MaxPoisonReturn =
+        CVarDef.Create("long_term_health.poison.max_return", 25f, CVar.REPLICATED);
 
     // AIRLOSS injuries
 
@@ -128,7 +140,13 @@ public sealed partial class L5CCVars
     /// The factor by which asphyxiation damage reappears over time, representing lung damage.
     /// </summary>
     public static readonly CVarDef<float> AsphyxReturnFactor =
-        CVarDef.Create("long_term_health.airloss.return_factor", 0.1f, CVar.REPLICATED);
+        CVarDef.Create("long_term_health.airloss.return_factor", 0.05f, CVar.REPLICATED);
+
+    /// <summary>
+    /// The maximum amount of asphyxiation return damage to allow. This should probably be less than the threshold so that return damage does not cause further return damage.
+    /// </summary>
+    public static readonly CVarDef<float> MaxAsphyxReturn =
+        CVarDef.Create("long_term_health.burn.max_return", 25f, CVar.REPLICATED);
 
     /// <summary>
     /// The threshold at which AIRLOSS leads to mild brain damage by way of oxygen deprivation.
