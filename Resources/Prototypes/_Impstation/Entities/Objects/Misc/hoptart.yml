@@ -257,7 +257,7 @@
 - type: entity
   parent: HopTartCookedBase
   id: HopTartCookedHeadOfSecurity
-  suffix: IRIS Representative
+  suffix: Chief Security Officer
   components:
   - type: FlavorProfile
     flavors:

@@ -76,8 +76,8 @@
 - type: entity
   parent: [ClothingOuterCoatStasecHoS, BaseSecurityCommandContraband]
   id: ClothingLongcoatHoS
-  name: IRIS representative's armored longcoat # L5
-  description: A black double-breasted longcoat with gold buttons and gray sleeves with velvet trim along the whole outfit, specifically designed for the IRIS representative. Security longcoats sport protective plates underneath, but are fairly heavy.
+  name: chief security officer's armored longcoat # L5
+  description: A black double-breasted longcoat with gold buttons and gray sleeves with velvet trim along the whole outfit, specifically designed for the chief security officer. Security longcoats sport protective plates underneath, but are fairly heavy.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Longcoats/head-of-security.rsi

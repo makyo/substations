@@ -158,7 +158,7 @@
 - type: entity
   parent: IDCardStandard
   id: HoSIDCard
-  name: IRIS representative ID card # L5
+  name: chief security officer ID card # L5
   components:
   - type: Sprite
     layers:

@@ -14,7 +14,7 @@ station-beacon-brig = Brig
 station-beacon-brig-med = Brig Med
 # L5 - warden to armorer
 station-beacon-warden = Armorer
-station-beacon-hos = IRIS Rep
+station-beacon-hos = CSO
 station-beacon-armory = Armory
 station-beacon-perma-brig = Perma
 station-beacon-detective = Detective

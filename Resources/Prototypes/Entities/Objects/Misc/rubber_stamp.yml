@@ -147,7 +147,7 @@
     state: stamp-hop
 
 - type: entity
-  name: IRIS representative's rubber stamp # L5
+  name: chief security officer's rubber stamp # L5
   parent: [RubberStampBase, BaseCommandContraband]
   id: RubberStampHos
   categories: [ DoNotMap ]

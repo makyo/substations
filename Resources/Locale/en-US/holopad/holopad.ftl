@@ -68,7 +68,7 @@ holopad-command-cmo = Leadership - CMO
 holopad-command-qm = Leadership - CLO
 holopad-command-ce = Leadership - CE
 holopad-command-rd = Leadership - RD
-holopad-command-hos = Leadership - IRIS Rep
+holopad-command-hos = Leadership - CSO
 
 # Science
 holopad-science-anomaly = Science - Anomaly

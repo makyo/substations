@@ -323,7 +323,7 @@
 - type: entity
   id: LockerHeadOfSecurity
   parent: CommandLockerBaseSecureDeltaV # DeltaV - resprite security lockers, altered health due to being command locker
-  name: IRIS representative's locker # L5
+  name: chief security officer's locker # L5
   components:
   - type: Appearance
   - type: EntityStorageVisuals

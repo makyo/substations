@@ -118,7 +118,7 @@ loadout-group-atmos-id-delta = Atmospheric Technician PDA
 loadout-group-atmospheric-technician-head = Atmospheric Technician Head
 
 # Security
-loadout-group-head-of-security-shoes = IRIS Representative shoes
+loadout-group-head-of-security-shoes = Chief Security Officer shoes
 
 loadout-group-security-cadet-head = Peacekeeper Cadet head
 loadout-group-security-neck = Security neck

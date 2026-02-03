@@ -336,7 +336,7 @@
 - type: entity
   parent: [ClothingUniformRollableBase, BaseCommandContraband] # DeltaV - add rollable jumpsuits
   id: ClothingUniformJumpsuitHoS
-  name: IRIS Representative's jumpsuit
+  name: chief security officer's jumpsuit
   description: A standard Station Security uniform, adorned with gold emblems and commander's epaulettes. # DeltaV - improved description
   components:
   - type: Sprite
@@ -347,7 +347,7 @@
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBaseImpstation] # imp - Add foldable uniform jumpsuits
   id: ClothingUniformJumpsuitHoSAlt
-  name: IRIS Representative's turtleneck
+  name: chief security officer's turtleneck
   description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
@@ -358,7 +358,7 @@
 - type: entity
   parent: [ClothingUniformRollableBase, BaseCommandContraband] # DeltaV - add rollable jumpsuits
   id: ClothingUniformJumpsuitHoSBlue
-  name: IRIS Representative's blue jumpsuit # L5
+  name: chief security officer's blue jumpsuit # L5
   description: A blue Station Security shirt with charcoal trousers. Features gold emblems and commander's epaulettes. # DeltaV - improved description
   components:
   - type: Sprite
@@ -369,7 +369,7 @@
 - type: entity
   parent: [ClothingUniformRollableBase, BaseCommandContraband] # DeltaV - add rollable jumpsuits
   id: ClothingUniformJumpsuitHoSGrey
-  name: IRIS Representative's grey jumpsuit # L5
+  name: chief security officer's grey jumpsuit # L5
   description: A grey Station Security shirt with charcoal trousers. Stands out with red highlights, gold emblems, and commander's epaulettes. # DeltaV - improved description
   components:
   - type: Sprite
@@ -380,8 +380,8 @@
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
   id: ClothingUniformJumpsuitHoSParadeMale
-  name: IRIS Representative's parade uniform # L5
-  description: An IRIS Representative's luxury-wear, for special occasions.
+  name: chief security officer's parade uniform # L5
+  description: An chief security officer's luxury-wear, for special occasions.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/hos_parade.rsi

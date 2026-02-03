@@ -76,7 +76,7 @@
 - type: entity
   id: DresserHeadOfSecurityFilled
   parent: Dresser
-  suffix: Filled, IRIS Representative # L5
+  suffix: Filled, Chief Security Officer # L5
   categories: [ HideSpawnMenu ] # DeltaV - Replaced with bigger dresser in Resources/Prototypes/_DV/Catalog/Fills/Lockers/dressers.yml
   components:
   - type: EntityTableContainerFill

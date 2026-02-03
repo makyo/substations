@@ -232,7 +232,7 @@
 - type: entity
   id: SuitStorageHOS
   parent: SuitStorageBase
-  suffix: IRIS Representative # L5
+  suffix: Chief Security Officer # L5
   components:
   - type: EntityTableContainerFill
     containers:

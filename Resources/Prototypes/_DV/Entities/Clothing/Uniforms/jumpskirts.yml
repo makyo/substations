@@ -223,7 +223,7 @@
 - type: entity
   parent: ClothingUniformSkirtRollableBase
   id: ClothingUniformJumpskirtHoSBlue
-  name: IRIS representative's blue jumpskirt # L5
+  name: chief security officer's blue jumpskirt # L5
   description: A blue Station Security shirt with charcoal skirt. Features gold emblems and commander's epaulettes.
   components:
   - type: Sprite
@@ -246,7 +246,7 @@
 - type: entity
   parent: ClothingUniformSkirtRollableBase
   id: ClothingUniformJumpskirtHoSGrey
-  name: IRIS representative's grey jumpskirt
+  name: chief security officer's grey jumpskirt
   description: A grey Station Security shirt with charcoal skirt. Stands out with red highlights, gold emblems, and commander's epaulettes.
   components:
   - type: Sprite
@@ -257,7 +257,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpskirtHoSTurtle
-  name: IRIS representative's turtleneck
+  name: chief security officer's turtleneck
   description: A comfortable and tight-fitting turtleneck for those with the tenacity to reach the position of Head of Security.
   components:
   - type: Sprite

@@ -46,8 +46,8 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleHOS
-  name: IRIS Representative's mantle
-  description: Shootouts with syndicate agents are just another Tuesday for this IRIS Rep. This mantle is a symbol of commitment to the station. # L5
+  name: chief security officer's mantle
+  description: Shootouts with syndicate agents are just another Tuesday for this CSO. This mantle is a symbol of commitment to the station. # L5
   components:
   - type: Sprite
     sprite: Clothing/Neck/mantles/hosmantle.rsi
