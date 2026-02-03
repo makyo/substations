@@ -5,7 +5,7 @@ id-card-access-level-head-of-personnel = Hospitality Director
 id-card-access-level-cryogenics = Cryogenics
 id-card-access-level-emergency-shuttle-repeal = E.Shuttle Repeal All
 
-id-card-access-level-head-of-security = IRIS Representative
+id-card-access-level-head-of-security = Chief Security Officer
 id-card-access-level-security = Security
 id-card-access-level-armory = Armory
 id-card-access-level-brig = Brig

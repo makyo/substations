@@ -145,8 +145,8 @@
 - type: entity
   parent: BasePlushieLizardJob
   id: PlushieLizardJobHeadofsecurity
-  name: IRIS representative lizard plushie # L5
-  description: An adorable stuffed toy that resembles a lizardperson as the IRIS representative. It seems to have been ripped and re-stitched a few times.
+  name: chief security officer lizard plushie # L5
+  description: An adorable stuffed toy that resembles a lizardperson as the chief security officer. It seems to have been ripped and re-stitched a few times.
   components:
   - type: Sprite
     state: headofsecurity

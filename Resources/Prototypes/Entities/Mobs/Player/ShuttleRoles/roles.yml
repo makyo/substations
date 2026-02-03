@@ -46,7 +46,7 @@
 
 - type: entity
   id: RandomHumanoidVisitorHOS
-  name: visiting IRIS Rep ghost role # L5
+  name: visiting CSO ghost role # L5
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -505,7 +505,7 @@
 - type: entity
   id: RandomHumanoidChallengeVictimHOS
   parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim IRIS Rep ghost role # L5
+  name: disaster victim CSO ghost role # L5
   suffix: CHALLENGE
   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
   components:

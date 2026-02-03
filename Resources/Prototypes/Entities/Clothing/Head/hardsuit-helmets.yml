@@ -533,7 +533,7 @@
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitSecurityRed
   name: head of security's hardsuit helmet
-  description: Security hardsuit helmet with the latest top secret SysCon-HUD software. Belongs to the IRIS Rep. # L5
+  description: Security hardsuit helmet with the latest top secret SysCon-HUD software. Belongs to the CSO. # L5
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/security-red.rsi

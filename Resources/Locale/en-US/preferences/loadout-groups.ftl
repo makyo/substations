@@ -152,10 +152,10 @@ loadout-group-scientist-id = Scientist ID
 loadout-group-research-assistant-jumpsuit = Research Assistant jumpsuit
 
 # Security
-loadout-group-head-of-security-head = IRIS Representative head
-loadout-group-head-of-security-jumpsuit = IRIS Representative jumpsuit
-loadout-group-head-of-security-neck = IRIS Representative neck
-loadout-group-head-of-security-outerclothing = IRIS Representative outer clothing
+loadout-group-head-of-security-head = Chief Security Officer head
+loadout-group-head-of-security-jumpsuit = Chief Security Officer jumpsuit
+loadout-group-head-of-security-neck = Chief Security Officer neck
+loadout-group-head-of-security-outerclothing = Chief Security Officer outer clothing
 
 loadout-group-warden-head = Armorer head
 loadout-group-warden-jumpsuit = Armorer jumpsuit

@@ -125,7 +125,7 @@
 - type: entity
   parent: FilledSecureCabinet
   id: SecureCabinetHoS
-  suffix: IRIS Representative # L5
+  suffix: Chief Security Officer # L5
   components:
   - type: AccessReader
     access: [["HeadOfSecurity"]]

@@ -344,7 +344,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpsuitHoSTurtle
-  name: IRIS representative's turtleneck
+  name: chief security officer's turtleneck
   description: A comfortable and tight-fitting turtleneck for those with the tenacity to reach the position of Head of Security.
   components:
   - type: Sprite

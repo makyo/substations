@@ -159,7 +159,7 @@
 - type: entity
   id: DresserHeadOfSecurityFilledDV
   parent: DresserLargeCommand
-  suffix: Filled, IRIS Representative # L5
+  suffix: Filled, Chief Security Officer # L5
   components:
   - type: EntityTableContainerFill
     containers:

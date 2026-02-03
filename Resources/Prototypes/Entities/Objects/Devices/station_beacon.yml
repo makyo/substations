@@ -199,7 +199,7 @@
 - type: entity
   parent: DefaultStationBeaconSecurity
   id: DefaultStationBeaconHOSRoom
-  suffix: IRIS Rep’s Room # L5
+  suffix: CSO’s Room # L5
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-hos

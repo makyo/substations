@@ -22,7 +22,7 @@ flavor-complex-engineering = like engineering access
 flavor-complex-external = like external access
 # L5
 flavor-complex-headofpersonnel = like hospitality director access
-flavor-complex-headofsecurity = like IRIS Representative access
+flavor-complex-headofsecurity = like chief security officer access
 flavor-complex-hospitalitydirector = like hospitality director access
 flavor-complex-hydroponics = like hydroponics access
 flavor-complex-janitor = like janitor access

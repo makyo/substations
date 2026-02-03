@@ -178,7 +178,7 @@
 - type: entity
   parent: [ClothingUniformSkirtRollableBase, BaseCommandContraband] # DeltaV - add rollable jumpsuits
   id: ClothingUniformJumpskirtHoS
-  name: IRIS Representative's jumpskirt
+  name: chief security officer's jumpskirt
   description: A standard Station Security uniform, adorned with gold emblems and commander's epaulettes. # DeltaV - improved description
   components:
   - type: Sprite
@@ -189,7 +189,7 @@
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtHoSAlt
-  name: IRIS Representative's turtleneck
+  name: chief security officer's turtleneck
   description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
@@ -200,8 +200,8 @@
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtHoSParadeMale
-  name: IRIS Representative's parade uniform
-  description: A IRIS Representative's luxury-wear, for special occasions.
+  name: chief security officer's parade uniform
+  description: A chief security officer's luxury-wear, for special occasions.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi

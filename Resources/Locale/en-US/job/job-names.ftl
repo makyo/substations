@@ -2,7 +2,7 @@
 job-name-warden = Armorer
 job-name-security = Peacekeeper
 job-name-cadet = Peacekeeper Cadet
-job-name-hos = IRIS Representative
+job-name-hos = Chief Security Officer
 job-name-detective = Detective
 job-name-brigmedic = Corpsman
 job-name-borg = Cyborg
@@ -95,7 +95,7 @@ JobERTLeader = IRIS Leader
 JobERTMedical = IRIS Medical
 JobERTSecurity = IRIS Security
 JobHeadOfPersonnel = Hospitality Director
-JobHeadOfSecurity = IRIS Representative
+JobHeadOfSecurity = Chief Security Officer
 JobJanitor = Janitor
 JobLawyer = Lawyer
 JobLibrarian = Librarian
