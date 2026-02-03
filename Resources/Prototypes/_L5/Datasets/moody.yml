@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: MoodyEffects
+  values:
+    prefix: moody-effect
+    count: 4

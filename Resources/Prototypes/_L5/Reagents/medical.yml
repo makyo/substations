@@ -1,0 +1,9 @@
+- type: reaction
+  id: Dimenine
+  reactants:
+    Diphenhydramine:
+      amount: 1
+    Coffee:
+      amount: 2
+  products:
+    Dimenine: 2

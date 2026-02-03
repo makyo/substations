@@ -10,6 +10,11 @@
     Medicine:
       metabolismRate : 0.03
       effects:
+      # L5 — Moody trait
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMoodySuppressed
+        type: Update
+      # End L5 — Moody trait
       - !type:PopupMessage
         type: Local
         visualType: Small
@@ -56,6 +61,11 @@
     Medicine:
       metabolismRate : 0.02
       effects:
+      # L5 — Moody trait
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMoodySuppressed
+        type: Update
+      # End L5 — Moody trait
       - !type:PopupMessage
         type: Local
         visualType: Medium
@@ -125,6 +135,11 @@
     Medicine:
       metabolismRate : 0.01
       effects:
+      # L5 — Moody trait
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMoodySuppressed
+        type: Update
+      # End L5 — Moody trait
       - !type:SuppressAddiction
       - !type:PopupMessage
         type: Local
@@ -240,6 +255,11 @@
     Medicine:
       metabolismRate : 0.03
       effects:
+      # L5 — Moody trait
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMoodySuppressed
+        type: Update
+      # End L5 — Moody trait
       - !type:PopupMessage
         type: Local
         visualType: Small
@@ -280,6 +300,11 @@
     Medicine:
       metabolismRate : 0.02
       effects:
+      # L5 — Moody trait
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMoodySuppressed
+        type: Update
+      # End L5 — Moody trait
       - !type:PopupMessage
         type: Local
         visualType: Small
@@ -362,6 +387,11 @@
     Medicine:
       metabolismRate : 0.01
       effects:
+      # L5 — Moody trait
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMoodySuppressed
+        type: Update
+      # End L5 — Moody trait
       - !type:PopupMessage
         type: Local
         visualType: Small

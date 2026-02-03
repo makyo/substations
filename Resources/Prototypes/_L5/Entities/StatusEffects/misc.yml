@@ -1,0 +1,6 @@
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectMoodySuppressed
+  name: disordered mood suppression
+  components:
+  - type: MoodySuppressedStatusEffect
