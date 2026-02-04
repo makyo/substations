@@ -1,3 +1,4 @@
+using Content.Shared._L5.Contract;
 using Content.Shared.Access.Systems;
 using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
@@ -27,6 +28,7 @@ namespace Content.Client.Access.UI
             _window.OnJobChanged += OnJobChanged;
             _window.OnJobIconChanged += OnJobIconChanged;
             _window.OnNumberChanged += OnNumberChanged; // DeltaV
+            _window.OnContractChanged += OnContractChanged;
         }
 
         // DeltaV - Add number change handler
@@ -48,6 +50,11 @@ namespace Content.Client.Access.UI
         public void OnJobIconChanged(ProtoId<JobIconPrototype> newJobIconId)
         {
             SendMessage(new AgentIDCardJobIconChangedMessage(newJobIconId));
+        }
+
+        private void OnContractChanged(ProtoId<ContractPrototype> newContract)
+        {
+            SendMessage(new AgentIdCardContractChangedMessage(newContract));
         }
 
         /// <summary>

@@ -10,6 +10,7 @@ using Robust.Shared.Prototypes;
 using System.Numerics;
 using System.Linq;
 using Content.Client.Stylesheets;
+using Content.Shared._L5.Contract;
 
 namespace Content.Client.Access.UI
 {
@@ -29,6 +30,9 @@ namespace Content.Client.Access.UI
 
         public event Action<uint>? OnNumberChanged; // DeltaV - Add event for number changes
 
+        public event Action<ProtoId<ContractPrototype>>? OnContractChanged;
+        private List<string> _contracts = [];
+
         public event Action<ProtoId<JobIconPrototype>>? OnJobIconChanged;
 
         public AgentIDCardWindow()
@@ -42,6 +46,23 @@ namespace Content.Client.Access.UI
 
             JobLineEdit.OnTextEntered += e => OnJobChanged?.Invoke(e.Text);
             JobLineEdit.OnFocusExit += e => OnJobChanged?.Invoke(e.Text);
+
+            // L5 — Contracts
+            foreach (var contract in _prototypeManager.EnumeratePrototypes<ContractPrototype>())
+            {
+                if (contract.Selectable)
+                {
+                    ContractEdit.AddItem(Loc.GetString(contract.Name));
+                    _contracts.Add(contract.ID);
+                }
+            }
+
+            ContractEdit.OnItemSelected += args =>
+            {
+                ContractEdit.SelectId(args.Id);
+                OnContractChanged!.Invoke(_prototypeManager.Index<ContractPrototype>(_contracts[args.Id]));
+            };
+            // End L5 — Contracts
 
             // DeltaV - Add handlers for number changes
             NumberLineEdit.OnTextEntered += OnNumberEntered;

@@ -9,6 +9,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Content.Shared.Roles;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Contracts;
 using Content.Shared._DV.Access.Components; // DeltaV
 using Content.Shared._DV.NanoChat; // DeltaV
 using Content.Server.Clothing.Systems;
@@ -17,7 +18,8 @@ using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Lock;
 using Content.Shared.PDA;
-using Content.Shared._DV.NanoChat; // DeltaV
+using Content.Shared._DV.NanoChat;
+using Content.Shared._L5.Contract; // DeltaV
 
 namespace Content.Server.Access.Systems
 {
@@ -43,6 +45,7 @@ namespace Content.Server.Access.Systems
             SubscribeLocalEvent<AgentIDCardComponent, AgentIDCardJobIconChangedMessage>(OnJobIconChanged);
             SubscribeLocalEvent<AgentIDCardComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(OnChameleonControllerOutfitChangedItem);
             SubscribeLocalEvent<AgentIDCardComponent, AgentIDCardNumberChangedMessage>(OnNumberChanged); // DeltaV
+            SubscribeLocalEvent<AgentIDCardComponent, AgentIdCardContractChangedMessage>(OnContractChanged); // L5
         }
 
         private void OnChameleonControllerOutfitChangedItem(Entity<AgentIDCardComponent> ent, ref InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent> args)
@@ -92,6 +95,15 @@ namespace Content.Server.Access.Systems
 
             _nanoChat.SetNumber((ent, comp), args.Number);
             Dirty(ent, comp);
+        }
+
+        // L5 — Contracts
+        private void OnContractChanged(Entity<AgentIDCardComponent> ent, ref AgentIdCardContractChangedMessage args)
+        {
+            if (!TryComp<ContractComponent>(ent, out var contract))
+                return;
+
+            contract.Contract = _prototypeManager.Index(args.ContractId);
         }
 
         private void OnAfterInteract(EntityUid uid, AgentIDCardComponent component, AfterInteractEvent args)
