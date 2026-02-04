@@ -146,7 +146,7 @@ public sealed partial class L5CCVars
     /// The maximum amount of asphyxiation return damage to allow. This should probably be less than the threshold so that return damage does not cause further return damage.
     /// </summary>
     public static readonly CVarDef<float> MaxAsphyxReturn =
-        CVarDef.Create("long_term_health.burn.max_return", 25f, CVar.REPLICATED);
+        CVarDef.Create("long_term_health.airloss.max_return", 25f, CVar.REPLICATED);
 
     /// <summary>
     /// The threshold at which AIRLOSS leads to mild brain damage by way of oxygen deprivation.
