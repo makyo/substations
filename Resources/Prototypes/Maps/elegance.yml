@@ -10,8 +10,8 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} Lady Elegance {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'DV'
+            !type:SysConNameGenerator
+            stationType: S # for 'Station'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_transport.yml
         - type: StationJobs

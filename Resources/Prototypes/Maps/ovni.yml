@@ -10,8 +10,9 @@
       components:
       - type: StationNameSetup
         mapNameTemplate: '{0} Ovni Station {1}'
-        nameGenerator: !type:NanotrasenNameGenerator
-          prefixCreator: 'NY'
+        nameGenerator:
+          !type:SysConNameGenerator
+          stationType: S # for 'Station'
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]

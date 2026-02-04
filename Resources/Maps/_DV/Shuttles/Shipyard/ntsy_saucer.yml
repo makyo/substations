@@ -34,7 +34,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: NTEX-RE Saucer
+      name: UNRS Saucer
     - type: Transform
       parent: invalid
     - type: MapGrid

@@ -32,7 +32,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Automated Trade Station
+      name: UN Automated Trade Station
     - type: Transform
       pos: 0.18314725,-0.53125
       parent: invalid

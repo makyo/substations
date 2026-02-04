@@ -9,10 +9,10 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCS Gemini {1}'
+        mapNameTemplate: '{0} Gemini {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: 'UN'
+          !type:SysConNameGenerator
+          stationType: S # for 'Station'
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]
