@@ -52,6 +52,18 @@ namespace Content.Shared.Access.Systems
         }
     }
 
+    // L5 — contract changed message
+    [Serializable, NetSerializable]
+    public sealed class AgentIdCardContractChangedMessage : BoundUserInterfaceMessage
+    {
+        public ProtoId<ContractPrototype> ContractId {get; }
+
+        public AgentIdCardContractChangedMessage(ProtoId<ContractPrototype> contractId)
+        {
+            ContractId = contractId;
+        }
+    }
+
     [Serializable, NetSerializable]
     public sealed class AgentIDCardNameChangedMessage : BoundUserInterfaceMessage
     {
@@ -82,17 +94,6 @@ namespace Content.Shared.Access.Systems
         public AgentIDCardJobIconChangedMessage(ProtoId<JobIconPrototype> jobIconId)
         {
             JobIconId = jobIconId;
-        }
-    }
-
-    [Serializable, NetSerializable]
-    public sealed class AgentIdCardContractChangedMessage : BoundUserInterfaceMessage
-    {
-        public ProtoId<ContractPrototype> ContractId {get; }
-
-        public AgentIdCardContractChangedMessage(ProtoId<ContractPrototype> contractId)
-        {
-            ContractId = contractId;
         }
     }
 }

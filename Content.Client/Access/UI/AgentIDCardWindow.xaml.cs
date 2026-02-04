@@ -30,6 +30,7 @@ namespace Content.Client.Access.UI
 
         public event Action<uint>? OnNumberChanged; // DeltaV - Add event for number changes
 
+        // L5 — contracts
         public event Action<ProtoId<ContractPrototype>>? OnContractChanged;
         private List<string> _contracts = [];
 

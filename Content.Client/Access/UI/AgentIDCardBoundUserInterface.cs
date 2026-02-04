@@ -28,13 +28,19 @@ namespace Content.Client.Access.UI
             _window.OnJobChanged += OnJobChanged;
             _window.OnJobIconChanged += OnJobIconChanged;
             _window.OnNumberChanged += OnNumberChanged; // DeltaV
-            _window.OnContractChanged += OnContractChanged;
+            _window.OnContractChanged += OnContractChanged; // L5
         }
 
         // DeltaV - Add number change handler
         private void OnNumberChanged(uint newNumber)
         {
             SendMessage(new AgentIDCardNumberChangedMessage(newNumber));
+        }
+
+        // L5 — Contracts
+        private void OnContractChanged(ProtoId<ContractPrototype> newContract)
+        {
+            SendMessage(new AgentIdCardContractChangedMessage(newContract));
         }
 
         private void OnNameChanged(string newName)
@@ -50,11 +56,6 @@ namespace Content.Client.Access.UI
         public void OnJobIconChanged(ProtoId<JobIconPrototype> newJobIconId)
         {
             SendMessage(new AgentIDCardJobIconChangedMessage(newJobIconId));
-        }
-
-        private void OnContractChanged(ProtoId<ContractPrototype> newContract)
-        {
-            SendMessage(new AgentIdCardContractChangedMessage(newContract));
         }
 
         /// <summary>
