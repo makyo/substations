@@ -52,6 +52,8 @@
       state: nyanoPrisonGuard
   - type: PresetIdCard
     job: PrisonGuard
+  - type: Contract
+    contract: ContractUNPeacekeeper
 
 - type: entity
   parent: IDCardStandard
@@ -263,6 +265,8 @@
   - type: MappingCategories
     categories:
     - Debug
+  - type: Contract
+    contract: ContractAdmin
 
 - type: entity
   parent: ReverseAgentIDOverwiting
@@ -275,6 +279,8 @@
     overwrite: false
   - type: IdCard
     jobTitle: job-title-admeme-adding
+  - type: Contract
+    contract: ContractAdmin
 
 - type: entity
   parent: IDCardStandard
@@ -302,3 +308,5 @@
   - type: MappingCategories
     categories:
     - Debug
+  - type: Contract
+    contract: ContractAdmin

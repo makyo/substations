@@ -33,7 +33,9 @@ namespace Content.Client.PDA
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
         private string _currentDate = Loc.GetString("comp-pda-ui-unknown"); // DeltaV - PDA date
-        
+        private string _contractName = Loc.GetString("comp-pda-ui-unknown"); // L5
+        private string _contractDesc = Loc.GetString("comp-pda-ui-unknown"); // L5
+
 
         private int _currentView;
 
@@ -133,8 +135,17 @@ namespace Content.Client.PDA
             };
             // End DeltaV additions
 
-            
+            // Begin L5 additions
+            ContractNameButton.OnPressed += _ =>
+            {
+                _clipboard.SetText(_contractName);
+            };
 
+            ContractDescButton.OnPressed += _ =>
+            {
+                _clipboard.SetText(_contractDesc);
+            };
+            // End L5 additions
 
             HideAllViews();
             ToHomeScreen();
@@ -169,6 +180,20 @@ namespace Content.Client.PDA
             {
                 IdInfoLabel.SetMarkup(Loc.GetString("comp-pda-ui-blank"));
             }
+
+            // L5 — contracts
+            _contractName = state.PdaOwnerInfo.ContractName != null
+                ? Loc.GetString(state.PdaOwnerInfo.ContractName)
+                : Loc.GetString("contract-unknown-name");
+            ContractNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-contract-name",
+                ("contractName", _contractName)));
+
+            _contractDesc = state.PdaOwnerInfo.ContractDesc != null
+                ? Loc.GetString(state.PdaOwnerInfo.ContractDesc)
+                :  Loc.GetString("contract-unknown-desc");
+            ContractDescLabel.SetMarkup(Loc.GetString("comp-pda-ui-contract-desc",
+                ("contractDesc", _contractDesc)));
+            // End L5 — contracts
 
             _stationName = state.StationName ?? Loc.GetString("comp-pda-ui-unknown");
             StationNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-station",

@@ -1,3 +1,4 @@
+using Content.Shared._L5.Contract;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -29,13 +30,19 @@ namespace Content.Shared.Access.Systems
         public string CurrentJob { get; }
         public string CurrentJobIconId { get; }
         public uint? CurrentNumber { get; } // DeltaV
+        public string CurrentContract { get; } // L5
 
-        public AgentIDCardBoundUserInterfaceState(string currentName, string currentJob, string currentJobIconId, uint? currentNumber = null) // DeltaV - Added currentNumber
+        public AgentIDCardBoundUserInterfaceState(string currentName,
+                string currentJob,
+                string currentJobIconId,
+                string currentContract, // L5
+                uint? currentNumber = null) // DeltaV - Added currentNumber
         {
             CurrentName = currentName;
             CurrentJob = currentJob;
             CurrentJobIconId = currentJobIconId;
             CurrentNumber = currentNumber; // DeltaV
+            CurrentContract = currentContract; // L5
         }
     }
 
@@ -48,6 +55,18 @@ namespace Content.Shared.Access.Systems
         public AgentIDCardNumberChangedMessage(uint number)
         {
             Number = number;
+        }
+    }
+
+    // L5 — contract changed message
+    [Serializable, NetSerializable]
+    public sealed class AgentIdCardContractChangedMessage : BoundUserInterfaceMessage
+    {
+        public ProtoId<ContractPrototype> ContractId {get; }
+
+        public AgentIdCardContractChangedMessage(ProtoId<ContractPrototype> contractId)
+        {
+            ContractId = contractId;
         }
     }
 

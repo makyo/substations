@@ -17,7 +17,7 @@ using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Lock;
 using Content.Shared.PDA;
-using Content.Shared._DV.NanoChat; // DeltaV
+using Content.Shared._L5.Contract; // L5
 
 namespace Content.Server.Access.Systems
 {
@@ -43,6 +43,7 @@ namespace Content.Server.Access.Systems
             SubscribeLocalEvent<AgentIDCardComponent, AgentIDCardJobIconChangedMessage>(OnJobIconChanged);
             SubscribeLocalEvent<AgentIDCardComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(OnChameleonControllerOutfitChangedItem);
             SubscribeLocalEvent<AgentIDCardComponent, AgentIDCardNumberChangedMessage>(OnNumberChanged); // DeltaV
+            SubscribeLocalEvent<AgentIDCardComponent, AgentIdCardContractChangedMessage>(OnContractChanged); // L5
         }
 
         private void OnChameleonControllerOutfitChangedItem(Entity<AgentIDCardComponent> ent, ref InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent> args)
@@ -92,6 +93,15 @@ namespace Content.Server.Access.Systems
 
             _nanoChat.SetNumber((ent, comp), args.Number);
             Dirty(ent, comp);
+        }
+
+        // L5 — Contracts
+        private void OnContractChanged(Entity<AgentIDCardComponent> ent, ref AgentIdCardContractChangedMessage args)
+        {
+            if (!TryComp<ContractComponent>(ent, out var contract))
+                return;
+
+            contract.Contract = _prototypeManager.Index(args.ContractId);
         }
 
         private void OnAfterInteract(EntityUid uid, AgentIDCardComponent component, AfterInteractEvent args)
@@ -161,10 +171,15 @@ namespace Content.Server.Access.Systems
             if (TryComp<NanoChatCardComponent>(uid, out var comp))
                 currentNumber = comp.Number;
 
+            var currentContract = string.Empty;
+            if (TryComp<ContractComponent>(uid, out var contract))
+                currentContract = contract.Contract;
+
             var state = new AgentIDCardBoundUserInterfaceState(
                 idCard.FullName ?? "",
                 idCard.LocalizedJobTitle ?? "",
                 idCard.JobIcon,
+                currentContract, // L5 — current contract ID
                 currentNumber); // DeltaV - Pass current number
 
             _uiSystem.SetUiState(uid, AgentIDCardUiKey.Key, state);

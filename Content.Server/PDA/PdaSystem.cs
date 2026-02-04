@@ -8,6 +8,7 @@ using Content.Server.Station.Systems;
 using Content.Server.Store.Systems;
 using Content.Server.Traitor.Uplink;
 using Content.Shared._DV.CCVars; // DeltaV - PDA date
+using Content.Shared._L5.Contract; // L5 — Contracts
 using Content.Shared.Access.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Chat;
@@ -23,6 +24,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Configuration; // DeltaV - PDA date
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server.PDA
@@ -40,6 +42,7 @@ namespace Content.Server.PDA
         [Dependency] private readonly ContainerSystem _containerSystem = default!;
         [Dependency] private readonly IdCardSystem _idCard = default!;
         [Dependency] private readonly IConfigurationManager _config = default!; // DeltaV
+        [Dependency] private readonly IPrototypeManager _proto = default!; // L5
 
         private static DateTime ServerDate; // DeltaV - PDA
 
@@ -213,6 +216,8 @@ namespace Content.Server.PDA
 
             var programs = _cartridgeLoader.GetAvailablePrograms(uid, loader);
             var id = CompOrNull<IdCardComponent>(pda.ContainedId);
+            var contractId = CompOrNull<ContractComponent>(pda.ContainedId);
+            var contract = _proto.Index(contractId?.Contract);
             var state = new PdaUpdateState(
                 programs,
                 GetNetEntity(loader.ActiveProgram),
@@ -224,9 +229,11 @@ namespace Content.Server.PDA
                     ActualOwnerName = pda.OwnerName,
                     IdOwner = id?.FullName,
                     JobTitle = id?.LocalizedJobTitle,
+                    ContractName = contract?.Name,
+                    ContractDesc =  contract?.Description,
                     CurrentDate = pda.CurrentDate, // DeltaV - PDA date
                     StationAlertLevel = pda.StationAlertLevel,
-                    StationAlertColor = pda.StationAlertColor
+                    StationAlertColor = pda.StationAlertColor,
                 },
                 pda.StationName,
                 showUplink,
