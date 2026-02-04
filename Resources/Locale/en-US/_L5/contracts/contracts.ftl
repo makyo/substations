@@ -27,3 +27,5 @@ contract-unknown-desc = No contract information available.
 
 comp-pda-ui-contract-name = Contract: [color=white]{$contractName}[/color]
 comp-pda-ui-contract-desc = [italic][color=white]{$contractDesc}[/color][/italic]
+
+agent-id-card-current-contract = Current Contract:
