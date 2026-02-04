@@ -30,13 +30,19 @@ namespace Content.Shared.Access.Systems
         public string CurrentJob { get; }
         public string CurrentJobIconId { get; }
         public uint? CurrentNumber { get; } // DeltaV
+        public string CurrentContract { get; } // L5
 
-        public AgentIDCardBoundUserInterfaceState(string currentName, string currentJob, string currentJobIconId, uint? currentNumber = null) // DeltaV - Added currentNumber
+        public AgentIDCardBoundUserInterfaceState(string currentName,
+                string currentJob,
+                string currentJobIconId,
+                string currentContract, // L5
+                uint? currentNumber = null) // DeltaV - Added currentNumber
         {
             CurrentName = currentName;
             CurrentJob = currentJob;
             CurrentJobIconId = currentJobIconId;
             CurrentNumber = currentNumber; // DeltaV
+            CurrentContract = currentContract; // L5
         }
     }
 

@@ -97,6 +97,12 @@ namespace Content.Client.Access.UI
             NumberLineEdit.Text = number?.ToString("D4") ?? "";
         }
 
+        // L5 — contracts
+        public void SetCurrentContract(string contractId)
+        {
+            ContractEdit.SelectId(_contracts.IndexOf(contractId));
+        }
+
         public void SetAllowedIcons(string currentJobIconId)
         {
             IconGrid.RemoveAllChildren();

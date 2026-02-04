@@ -171,10 +171,15 @@ namespace Content.Server.Access.Systems
             if (TryComp<NanoChatCardComponent>(uid, out var comp))
                 currentNumber = comp.Number;
 
+            var currentContract = string.Empty;
+            if (TryComp<ContractComponent>(uid, out var contract))
+                currentContract = contract.Contract;
+
             var state = new AgentIDCardBoundUserInterfaceState(
                 idCard.FullName ?? "",
                 idCard.LocalizedJobTitle ?? "",
                 idCard.JobIcon,
+                currentContract, // L5 — current contract ID
                 currentNumber); // DeltaV - Pass current number
 
             _uiSystem.SetUiState(uid, AgentIDCardUiKey.Key, state);
