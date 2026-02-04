@@ -8,7 +8,7 @@ using Content.Server.Station.Systems;
 using Content.Server.Store.Systems;
 using Content.Server.Traitor.Uplink;
 using Content.Shared._DV.CCVars;
-using Content.Shared._L5.Contract; // DeltaV - PDA date
+using Content.Shared._L5.Contract; // L5 — Contracts
 using Content.Shared.Access.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Chat;

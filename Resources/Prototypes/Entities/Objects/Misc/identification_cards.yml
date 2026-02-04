@@ -1286,7 +1286,7 @@
 - type: entity
   parent: IDCardStandard
   id: CentcomIDCardDeathsquad
-  name: death squad ID card #
+  name: death squad ID card
   components:
   - type: Sprite
     layers:

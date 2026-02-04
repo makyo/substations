@@ -9,7 +9,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Content.Shared.Roles;
 using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Contracts;
 using Content.Shared._DV.Access.Components; // DeltaV
 using Content.Shared._DV.NanoChat; // DeltaV
 using Content.Server.Clothing.Systems;
@@ -18,8 +17,7 @@ using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Lock;
 using Content.Shared.PDA;
-using Content.Shared._DV.NanoChat;
-using Content.Shared._L5.Contract; // DeltaV
+using Content.Shared._L5.Contract; // L5
 
 namespace Content.Server.Access.Systems
 {
