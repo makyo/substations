@@ -93,7 +93,7 @@ public sealed partial class CargoSystem
             ]
         };
 
-        _metaSystem.SetEntityName(mapUid, $"Automated Trade Station {_random.Next(1000):000}");
+        _metaSystem.SetEntityName(mapUid, $"UN Automated Trade Station {_random.Next(1000):000}"); // L5
 
         _console.RefreshShuttleConsoles();
     }

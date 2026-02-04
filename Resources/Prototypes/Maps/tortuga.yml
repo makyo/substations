@@ -10,8 +10,8 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} Tortuga Station {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'NY'
+            !type:SysConNameGenerator
+            stationType: S # for 'Station'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_seal.yml
         - type: StationCargoShuttle

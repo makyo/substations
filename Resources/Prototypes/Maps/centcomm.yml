@@ -11,5 +11,5 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} Central Command {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'TG'
+            !type:SysConNameGenerator
+            stationType: S # for 'Station'

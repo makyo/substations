@@ -28,7 +28,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Reclaimer MK2
+      name: UNMS Reclaimer MK2 # L5
     - type: Transform
       pos: -0.515625,-0.5
       parent: invalid

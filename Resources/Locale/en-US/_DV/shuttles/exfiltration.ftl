@@ -1,4 +1,5 @@
-exfiltration-shuttle-sender = GALPOL
+# L5
+exfiltration-shuttle-sender = UN Peacekeepers
 exfiltration-shuttle-failed = Request received. An exfiltration shuttle could not be prepared to be sent to {$station}.
 exfiltration-shuttle-called = Request received. An exfiltration has been called for {$station}. Estimate {$time} seconds until arrival.
 exfiltration-shuttle-recalled = Request received. The exfiltration shuttle has been recalled for {$station}.

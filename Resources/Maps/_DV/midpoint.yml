@@ -54,7 +54,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Midpoint
+      name: SysCon Midpoint # L5
     - type: Transform
       pos: -0.515625,-0.46875
       parent: invalid
@@ -51202,7 +51202,7 @@ entities:
       pos: 0.5,0.5
       parent: 1
     - type: WarpPoint
-      location: Midpoint
+      location: SysCon Midpoint # L5
 - proto: GoldRing
   entities:
   - uid: 1842

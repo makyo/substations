@@ -15,8 +15,8 @@
       - type: StationNameSetup
         mapNameTemplate: '{0} Lighthouse {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: '14'
+          !type:SysConNameGenerator
+          stationType: S # for 'Station'
       - type: StationJobs
         availableJobs:
         #command

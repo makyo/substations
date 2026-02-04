@@ -11,8 +11,8 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} The Hive {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'NY'
+            !type:SysConNameGenerator
+            stationType: S # for 'Station'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_fishbowl.yml
         - type: StationJobs

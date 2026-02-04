@@ -4,7 +4,7 @@
 
 - type: vessel
   id: Ares
-  name: NT-Ares
+  name: UNIS Ares # L5
   description: A small ship, outfitted with some combat supplies for those extra dangerous ERT situations. Combat supplies include a Hristov, 4 hyperzine injectors, a handheld crew monitor, and an experimenal RCD.
   price: 1000000
   path: /Maps/Shuttles/AdminSpawn/ERT-Small-Deathsquad.yml

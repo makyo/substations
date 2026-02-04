@@ -42,7 +42,7 @@ entities:
   - uid: 1668
     components:
     - type: MetaData
-      name: Central Command
+      name: Central Administrator
     - type: Transform
       parent: invalid
     - type: MapGrid
@@ -21219,7 +21219,7 @@ entities:
       pos: -2.5,-2.5
       parent: 1668
     - type: FaxMachine
-      name: CentComm
+      name: Central Admin # L5
 - proto: filingCabinet
   entities:
   - uid: 594
@@ -26141,7 +26141,7 @@ entities:
       pos: -0.5,3.5
       parent: 1668
     - type: WarpPoint
-      location: Centcomm
+      location: Central Administration
 - proto: GravityGenerator
   entities:
   - uid: 1140
@@ -28039,7 +28039,7 @@ entities:
       pos: -0.5,-1.5
       parent: 1668
     - type: Label
-      currentLabel: CentComm
+      currentLabel: Central Administration
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 3422

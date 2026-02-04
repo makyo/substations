@@ -9,10 +9,10 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCCS Omphalos {1}'
+        mapNameTemplate: '{0} Omphalos {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: 'UN'
+          !type:SysConNameGenerator
+          stationType: CS # for 'Contruction Ship'
       - type: StationPlanetSpawner
         planet: GlacierSurface
         gridPath: /Maps/_DV/Nonstations/glacier_surface_outpost.yml

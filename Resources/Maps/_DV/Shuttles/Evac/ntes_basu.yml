@@ -30,7 +30,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
-      name: NTES Evac Basu
+      name: UNCS Basu # L5
     - type: Transform
       parent: invalid
     - type: MapGrid

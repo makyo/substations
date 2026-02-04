@@ -11,8 +11,8 @@
       - type: StationNameSetup
         mapNameTemplate: '{0} Academy {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: 'DV'
+          !type:SysConNameGenerator
+          stationType: S # for 'Station'
       - type: StationEmergencyShuttle
         emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_academy.yml
       - type: StationJobs

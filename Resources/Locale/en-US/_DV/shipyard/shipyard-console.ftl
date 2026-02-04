@@ -8,7 +8,8 @@ shipyard-console-price-free = Free
 
 # Vessel Categories
 vessel-category-civilian = Civilian
-vessel-category-military = Military
+# L5
+vessel-category-military = IRIS — Military
 vessel-category-experimental = Experimental
 vessel-category-small = Small
 vessel-category-medium = Medium
@@ -18,5 +19,6 @@ vessel-category-mining = Mining
 vessel-category-research = Research
 vessel-category-shipping = Shipping
 vessel-category-transport = Transport
-vessel-category-centcomm = CentComm
-vessel-category-ert = ERT
+# L5
+vessel-category-centcomm = Central Administration
+vessel-category-ert = IRIS — Emergency

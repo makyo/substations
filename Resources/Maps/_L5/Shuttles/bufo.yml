@@ -28,7 +28,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: UNMS-Bufo
+      name: UNCS-MI Bufo
     - type: Transform
       pos: -2.3595505,0.22978973
       parent: invalid

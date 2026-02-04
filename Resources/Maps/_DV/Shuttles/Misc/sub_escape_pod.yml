@@ -13,7 +13,7 @@ entities:
   - uid: 29
     components:
     - type: MetaData
-      name: Submarine Escape Pod
+      name: SCES Submarine Escape Pod # L5
     - type: Transform
       parent: invalid
     - type: ProtectedGrid

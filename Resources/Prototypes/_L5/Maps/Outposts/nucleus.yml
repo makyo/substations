@@ -9,10 +9,10 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCCS Nucleus {1}'
+        mapNameTemplate: '{0} Nucleus {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: 'UN'
+          !type:SysConNameGenerator
+          stationType: CS # for 'Contruction Ship'
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]

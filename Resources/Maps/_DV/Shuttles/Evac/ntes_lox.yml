@@ -24,7 +24,7 @@ entities:
   - uid: 670
     components:
     - type: MetaData
-      name: NT Evac Lox
+      name: UNCS Lox # L5
     - type: Transform
       pos: 2.2710133,-2.4148211
       parent: invalid
