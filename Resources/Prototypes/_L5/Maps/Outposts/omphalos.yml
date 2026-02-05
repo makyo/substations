@@ -3,7 +3,7 @@
   mapName: Omphalos
   mapPath: /Maps/_L5/Outposts/omphalos.yml
   minPlayers: 0
-  maxPlayers: 10
+  maxPlayers: 50 # Just the max server pop
   stations:
     Omphalos:
       stationProto: StandardNanotrasenStation
