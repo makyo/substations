@@ -929,3 +929,11 @@ Entries:
       message: Stations and shuttles now have Lagrange lore names
   id: 128
   time: '2026-02-04T21:11:05.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        PDAs now show who you work for and what your job entails. (Agent ID
+        cards can mimic this!)
+  id: 129
+  time: '2026-02-04T18:14:48.0000000+00:00'
