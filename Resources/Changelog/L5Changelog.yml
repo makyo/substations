@@ -985,3 +985,9 @@ Entries:
       message: Fixed missing locale strings for the ChemMaster 4k
   id: 136
   time: '2026-01-24T19:37:51.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: New ATS!
+  id: 137
+  time: '2026-01-25T22:58:03.0000000+00:00'
