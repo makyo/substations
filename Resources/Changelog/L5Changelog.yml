@@ -1037,3 +1037,9 @@ Entries:
       message: In-character SysCon documents are now available in the guidebook
   id: 144
   time: '2026-02-02T20:37:06.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Paper styling while writing is now correct
+  id: 145
+  time: '2026-02-02T21:13:33.0000000+00:00'
