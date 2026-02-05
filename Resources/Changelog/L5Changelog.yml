@@ -951,3 +951,9 @@ Entries:
       message: Emergency shuttle startup time now matches FTL sounds.
   id: 131
   time: '2026-01-16T19:20:15.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Medical crashcart was ported from DV.
+  id: 132
+  time: '2026-01-17T00:43:32.0000000+00:00'
