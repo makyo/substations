@@ -965,3 +965,9 @@ Entries:
         jumping to different angles.
   id: 133
   time: '2026-01-17T02:22:55.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Asteroid walls are no longer all but immune to crushers
+  id: 134
+  time: '2026-01-24T18:07:24.0000000+00:00'
