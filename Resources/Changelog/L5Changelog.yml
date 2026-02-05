@@ -1005,3 +1005,9 @@ Entries:
       message: Minor fixes on the Omphalos and Nucleus.
   id: 139
   time: '2026-01-29T06:49:24.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Corpses removed from salvage spawners (again).
+  id: 140
+  time: '2026-01-29T17:01:36.0000000+00:00'
