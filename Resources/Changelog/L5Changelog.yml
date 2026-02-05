@@ -979,3 +979,9 @@ Entries:
         `{$chargePercentage}`
   id: 135
   time: '2026-01-24T18:17:48.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Fixed missing locale strings for the ChemMaster 4k
+  id: 136
+  time: '2026-01-24T19:37:51.0000000+00:00'
