@@ -1011,3 +1011,9 @@ Entries:
       message: Corpses removed from salvage spawners (again).
   id: 140
   time: '2026-01-29T17:01:36.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Plushies are no longer slow to squeak
+  id: 141
+  time: '2026-01-29T19:06:52.0000000+00:00'
