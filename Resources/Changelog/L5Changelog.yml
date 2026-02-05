@@ -971,3 +971,11 @@ Entries:
       message: Asteroid walls are no longer all but immune to crushers
   id: 134
   time: '2026-01-24T18:07:24.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: >-
+        Rechargers no longer tell you your battery is charged to
+        `{$chargePercentage}`
+  id: 135
+  time: '2026-01-24T18:17:48.0000000+00:00'
