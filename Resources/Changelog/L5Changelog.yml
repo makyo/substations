@@ -991,3 +991,9 @@ Entries:
       message: New ATS!
   id: 137
   time: '2026-01-25T22:58:03.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Hardsuit lights and omnitools now work
+  id: 138
+  time: '2026-01-25T22:58:25.0000000+00:00'
