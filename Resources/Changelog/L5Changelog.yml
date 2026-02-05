@@ -1025,3 +1025,9 @@ Entries:
         make friends.
   id: 142
   time: '2026-01-29T21:30:10.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Job titles updated to match canon!
+  id: 143
+  time: '2026-01-31T22:25:28.0000000+00:00'
