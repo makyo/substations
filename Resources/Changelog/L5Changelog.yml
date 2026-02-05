@@ -997,3 +997,11 @@ Entries:
       message: Hardsuit lights and omnitools now work
   id: 138
   time: '2026-01-25T22:58:25.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: The Omphalos's twin, Omphalos II, is now ready for operation in space!
+    - type: Fix
+      message: Minor fixes on the Omphalos and Nucleus.
+  id: 139
+  time: '2026-01-29T06:49:24.0000000+00:00'
