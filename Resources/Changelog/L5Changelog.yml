@@ -1043,3 +1043,9 @@ Entries:
       message: Paper styling while writing is now correct
   id: 145
   time: '2026-02-02T21:13:33.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Long-term health effects after receiving damage
+  id: 146
+  time: '2026-02-03T00:45:15.0000000+00:00'
