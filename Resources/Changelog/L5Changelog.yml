@@ -1017,3 +1017,11 @@ Entries:
       message: Plushies are no longer slow to squeak
   id: 141
   time: '2026-01-29T19:06:52.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Added the makefollower command so you can make friends without having to
+        make friends.
+  id: 142
+  time: '2026-01-29T21:30:10.0000000+00:00'
