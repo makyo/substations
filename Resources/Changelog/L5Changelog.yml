@@ -943,3 +943,11 @@ Entries:
       message: Added letterhead for SysCon and the UN!
   id: 130
   time: '2026-02-03T01:13:37.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Interior doors and FTL are now quieter
+    - type: Fix
+      message: Emergency shuttle startup time now matches FTL sounds.
+  id: 131
+  time: '2026-01-16T19:20:15.0000000+00:00'
