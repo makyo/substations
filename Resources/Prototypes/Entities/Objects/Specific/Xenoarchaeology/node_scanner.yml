@@ -2,7 +2,7 @@
   parent: BaseItem
   id: NodeScanner
   name: node scanner
-  description: The archeologist's friend, able to identify the node of an artifact with only a single scan.
+  description: The metamaterial scientist's friend, able to identify the node of an metamaterial artifact with only a single scan. # L5
   components:
     - type: Sprite
       sprite: Objects/Specific/Xenoarchaeology/node_scanner.rsi

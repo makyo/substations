@@ -54,7 +54,8 @@ job-alt-title-excavator = Excavator
 
 job-alt-title-senior-researcher = Research Mentor
 job-alt-title-lab-technician = Lab Technician
-job-alt-title-xenoarch = Xenoarchaeologist
+# L5
+job-alt-title-xenoarch = Metamaterials Scientist
 
 job-alt-title-senior-officer = Peacekeeper Mentor
 

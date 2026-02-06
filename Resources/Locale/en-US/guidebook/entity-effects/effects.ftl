@@ -469,10 +469,10 @@ entity-effect-guidebook-artifact-unlock =
     { $chance ->
         [1] Helps
         *[other] help
-        } unlock an alien artifact.
+        } unlock a metamaterial artifact.
 
 entity-effect-guidebook-artifact-durability-restore =
-    Restores {$restored} durability in active alien artifact nodes.
+    Restores {$restored} durability in active metamaterial artifact nodes.
 
 entity-effect-guidebook-plant-attribute =
     { $chance ->

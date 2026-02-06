@@ -1,8 +1,8 @@
 - type: entity
-  name: glimmer mite
+  name: research mite # L5
   parent: MobCockroach
   id: MobGlimmerMite
-  description: A strange pest from a world beyond the noosphere.
+  description: You know...like a bug? A hardware bug? Get it? # L5
   components:
   - type: Sprite
     sprite: _DV/Mobs/Ghosts/glimmermite.rsi
@@ -37,7 +37,7 @@
   - MobCombat
   - MobDamageable
   id: MobGlimmerWisp
-  name: glimmer wisp
+  name: wisp # L5
   description: A strange orb that moves with intent.
   components:
   # appearance

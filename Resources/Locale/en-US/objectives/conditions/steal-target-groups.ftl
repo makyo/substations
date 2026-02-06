@@ -55,7 +55,8 @@ steal-target-groups-altar-nanotrasen = nanotrasen altar (any)
 steal-target-groups-nuclear-bomb = nuclear fission explosive
 steal-target-groups-fax-machine-captain = captain long range fax machine
 steal-target-groups-chem-dispenser = chemical dispenser
-steal-target-groups-xeno-artifact = alien artifact
+# L5
+steal-target-groups-xeno-artifact = metamaterial artifact
 steal-target-groups-booze-dispenser = booze dispenser
 steal-target-groups-plant-rd = "RD's potted plant"
 steal-target-groups-toilet-golden-dirty-water = golden toilet

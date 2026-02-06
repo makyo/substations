@@ -2,7 +2,7 @@
   parent: [BaseItem, BaseXenoArtifact]
   id: BaseXenoArtifactItem
   name: artifact
-  description: A strange artifact from time unknown. Looks like a good time. Fits in hand perfectly.
+  description: A strange chunk of metamaterial, prime for researching. Fits in hand perfectly. # L5
   abstract: true
   noSpawn: true
   components:
@@ -79,7 +79,7 @@
   id: ArtifactFragment
   parent: BaseItem
   name: artifact fragment
-  description: A broken piece of an artifact. You could probably repair it if you had more.
+  description: A broken piece of an metamaterial. You could probably repair it if you had more. # L5
   components:
   - type: Sprite
     sprite: Objects/Specific/Xenoarchaeology/artifact_fragments.rsi

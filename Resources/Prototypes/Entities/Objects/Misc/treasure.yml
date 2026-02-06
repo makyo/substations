@@ -75,7 +75,7 @@
   parent: BaseItem
   id: TreasureCPUSupercharged
   name: supercharged CPU
-  description: Some kind of super alien space tech. Shame all the computers already come with CPUs nowadays.
+  description: Some kind of super advanced space tech. Shame all the computers already come with CPUs nowadays. # L5
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi

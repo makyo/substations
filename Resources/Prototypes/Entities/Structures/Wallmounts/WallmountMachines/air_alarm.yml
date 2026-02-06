@@ -156,7 +156,7 @@
 - type: entity
   id: AirAlarmXeno
   parent: AirAlarm
-  description: An alien air alarm. Hopefully they didn't breathe poison.
+  description: An unknown air alarm. Hopefully they didn't breathe poison. # L5
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors_xeno.rsi
@@ -171,7 +171,7 @@
 - type: entity
   id: AirAlarmAssemblyXeno
   parent: AirAlarmAssembly
-  description: An alien air alarm. Why are the wires pulsating?...
+  description: A strange-looking air alarm. Why are the wires pulsating?... # L5
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors_xeno.rsi

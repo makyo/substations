@@ -2,7 +2,7 @@
   abstract: true
   id: BaseAnomaly
   name: anomaly
-  description: An impossible object. Should you be standing this close to it?
+  description: A seemingly impossible object. Should you be standing this close to it? # L5
   components:
   - type: Anomaly
     offset: 0, 0.15
