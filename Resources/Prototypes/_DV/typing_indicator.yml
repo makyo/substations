@@ -4,6 +4,7 @@
   typingState: felinid0
   idleState: felinid0
   offset: 0, 0.2 # 0625
+  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: rodentia
@@ -11,6 +12,7 @@
   typingState: rodentia0
   idleState: rodentia0
   offset: 0, 0.2 # 0625
+  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: Chitinid
@@ -18,6 +20,7 @@
   typingState: chitinid0
   idleState: chitinid0
   offset: -0.2, 0.1 # 0625
+  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: Thaven
@@ -25,12 +28,14 @@
   typingState: thaven0
   idleState: thaven0
   offset: -0.2, 0.1 # 0625
+  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: feroxi
   spritePath: /Textures/_DV/Effects/speech.rsi
   typingState: feroxi0
   idleState: feroxi0
+  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: kitsune
@@ -38,6 +43,7 @@
   typingState: kitsune0
   idleState: kitsune0
   offset: 0, 0.25
+  hasSynthVariant: true # L5
 
 - type: typingIndicator
   id: aac
