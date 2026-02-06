@@ -548,7 +548,7 @@
   parent: BaseComputerAiAccess
   id: ComputerAnalysisConsole
   name: analysis console
-  description: A computer used to interface with the artifact analyzer.
+  description: A computer used to interface with the metamaterial artifact analyzer. # L5
   components:
   - type: Sprite
     layers:

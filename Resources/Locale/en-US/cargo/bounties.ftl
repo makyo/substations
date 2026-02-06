@@ -1,4 +1,4 @@
-bounty-item-artifact = Alien artifact
+bounty-item-artifact = Metamaterial artifact
 bounty-item-baseball-bat = Baseball bat
 bounty-item-box-hugs = Box of hugs
 bounty-item-brain = Brain
@@ -140,12 +140,14 @@ bounty-description-tech-disk = The new research assistant on Station 13 spilled 
 bounty-description-trash = Recently a group of janitors have run out of trash to clean up. Without any trash, Central Administration wants to fire them to cut costs. Send a shipment of trash to keep them employed, and they'll give you a small compensation.
 bounty-description-anomaly-core = Suddenly we've run out of anomaly cores, including inert nuclei. Send us any anomaly cores so that we can continue to observe their final decay process.
 bounty-description-borg-module = Scientists at the neighboring station have only studied Borg production, not module production. They are stuck in the research process and need references to work from. Send any Borg modules to inspire your colleagues.
-bounty-description-artifact-fragment = Scientists at a nearby station are requesting artifact fragments for microxenoarchaeology studies. Ordinary artifacts are too large for their micro research platforms. Send some of the artifact fragments your sector is rich in.
+# L5
+bounty-description-artifact-fragment = Scientists at a nearby station are requesting artifact fragments for micrometamaterial studies. Mmm... Ordinary artifacts are too large for their micro research platforms. Send some of the artifact fragments your sector is rich in.
 bounty-description-organs = Arachnid settlement orders a large supply of organs. The official reason is "a thorough study of the similarities and differences of the humanoid races."
 bounty-description-labeler = Due to a bureaucratic error, our sorting center almost sent hundreds of crates of carrots to the Unathi settlement. We urgently need additional labelers to restore order in the warehouse as a matter of urgency.
 bounty-description-warm-cloth = The Unath construction crew freezes and is unable to restore power to their station. They need to be sent a set of any clothing to protect them from the cold.
 bounty-description-battery = As the Arachnid settlement prepares for a solar flare, they are requesting a large shipment of power batteries. We're sending out a request for delivery.
-bounty-description-lasergun = The Salvage Caravan requests a large shipment of laser weapons to mop up a hive of xenomorphs.
+# L5
+bounty-description-lasergun = The Salvage Caravan requests a large shipment of laser weapons to mop up a hive of strange creatures.
 bounty-description-food = After the rat king invasion, a neighboring unathi station was left completely without food. A large meat food shipment is needed.
 bounty-description-fruit = A heroic monkey helped the chaplain catch a troublemaker hiding in the chapel, and the crew wants to reward him for his good work.
 bounty-description-vegetable = The new chef is a vegetarian, and botany can't keep up with their demands. We need some additional veggies to help keep things stocked.

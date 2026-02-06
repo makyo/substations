@@ -2,7 +2,7 @@
   id: MachineArtifactAnalyzer
   parent: [ BaseMachinePowered, SmallConstructibleMachine ]
   name: artifact analyzer
-  description: A platform capable of performing analysis on various types of artifacts.
+  description: A platform capable of performing analysis on various types of metamaterial artifacts. # L5
   components:
   - type: Sprite
     noRot: true

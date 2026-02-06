@@ -1,7 +1,8 @@
 <Document>
-  # Xenoarchaeology
+  <!-- L5 — metamaterials -->
+  # Metamaterials Research
 
-  Xenoarchaeology is a branch of Science focused on researching alien [bold]artifacts[/bold].
+  Metamaterials research is a branch of Science focused on researching [bold]artifacts[/bold] made of strange and new metamaterials.
 
   Unlocking their secrets grants research points and reveals strange, potentially useful, or dangerous effects.
 
@@ -47,5 +48,5 @@
   <Box>
     <GuideEntityEmbed Entity="ArtifactFragment" Caption="Artifact Fragment"/>
   </Box>
-  - [bold]Artifact Fragment:[/bold] Pieces of destroyed artifacts. Four fragments can be rebuilt into a new artifact using the craft menu.
+  - [bold]Artifact Fragment:[/bold] Partial fragments of metamaterial. Four fragments can be rebuilt into a new artifact using the craft menu.
 </Document>

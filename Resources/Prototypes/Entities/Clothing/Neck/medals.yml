@@ -100,7 +100,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckSecuritymedal
   name: security medal
-  description: Whether it's catching armed terrorists, guarding the crew from alien threats, or just having a conversation in the corridor - this medal is to be assigned only for the best work in the security department. # DeltaV - Updated description for flavour
+  description: Whether it's catching armed terrorists, guarding the crew from existential threats, or just having a conversation in the corridor - this medal is to be assigned only for the best work in the security department. # DeltaV - Updated description for flavour # L5 — nixed 'xenos'
   components:
   - type: Sprite
     sprite: _DV/Clothing/Neck/Medals/securitymedal.rsi # DeltaV - resprite

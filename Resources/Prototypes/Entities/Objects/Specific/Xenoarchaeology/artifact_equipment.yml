@@ -2,7 +2,7 @@
   parent: [ BaseStructureDynamic, BasePaperLabelableVisualized ]
   id: CrateArtifactContainer
   name: artifact container
-  description: Used to safely contain and move artifacts.
+  description: Used to safely contain and move metamaterial artifacts. # L5
   components:
     - type: Transform
       noRot: true
@@ -96,7 +96,7 @@
   parent: BaseStorageItem
   id: HandheldArtifactContainer
   name: handheld artifact container
-  description: A handheld case used to safely contain and move small artifacts.
+  description: A handheld case used to safely contain and move small metamaterial artifacts. # L5
   components:
   - type: Sprite
     sprite: Objects/Storage/artifact_container.rsi

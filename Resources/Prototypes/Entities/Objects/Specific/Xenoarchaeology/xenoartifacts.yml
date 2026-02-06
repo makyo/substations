@@ -1,8 +1,8 @@
 - type: entity
   id: BaseXenoArtifact
   parent: BaseMob # we use this since it can technically get inhabited
-  name: artifact
-  description: A strange artifact from time unknown. Looks like a good time.
+  name: metamaterial artifact # L5
+  description: A strange chunk of metamaterial, prime for researching. # L5
   abstract: true
   noSpawn: true
   components:
@@ -69,14 +69,14 @@
   id: SimpleXenoArtifact
   parent: ComplexXenoArtifact
   name: "Simple Artifact"
-  description: "A simple xeno artifact placeholder."
+  description: "A simple metamaterial artifact placeholder." # L5
   components: []
 
 - type: entity
   id: MediumXenoArtifact
   parent: ComplexXenoArtifact
   name: "Medium Artifact"
-  description: "A medium xeno artifact placeholder."
+  description: "A medium metamaterial artifact placeholder." # L5
   components: []
 
 - type: entity

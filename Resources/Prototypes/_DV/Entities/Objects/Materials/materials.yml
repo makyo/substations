@@ -43,12 +43,13 @@
   - type: Stack
     count: 1
 
+# L5 — normality crystals to He3 crystals
 - type: entity
   parent: MaterialBluespace
   id: CrystalNormality # this is 1 not full because other stuff may assume its single
-  name: normality crystal
+  name: Compressed He3
   suffix: 1
-  description: It looks... normal.
+  description: It looks...startlingly dull.
   components:
   - type: Sprite
     layers:
