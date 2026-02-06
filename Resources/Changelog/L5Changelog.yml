@@ -1055,3 +1055,9 @@ Entries:
       message: A lot of science has been rebranded to fit our lore
   id: 147
   time: '2026-02-06T19:11:51.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Alt typing indicators now work for synths.
+  id: 148
+  time: '2026-02-06T23:07:50.0000000+00:00'
