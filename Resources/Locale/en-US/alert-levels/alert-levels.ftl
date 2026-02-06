@@ -19,8 +19,9 @@ alert-level-violet = Violet
 alert-level-violet-announcement = There is a serious viral outbreak, ongoing major death event, or there is another significant medical emergency. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 alert-level-violet-instructions = Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 
+# L5
 alert-level-white = White
-alert-level-white-announcement = The station is suffering dangerously high levels of glimmer, there are several active psionic threats, or there is another significant epistemic emergency. Turn off all glimmer probers. Seek psionic insulation. Psychics should report for mindbreaking.
+alert-level-white-announcement = The station is suffering dangerously high levels of external waste heat, there are several active technological or psionic threats, or there is another significant epistemic emergency. Turn off all passive research probers. Seek psionic insulation. Psychics should report for mindbreaking.
 alert-level-white-instructions = Crewmembers are advised to seek psionic insulation. Psychics should report for mindbreaking or golemization.
 
 alert-level-yellow = Yellow

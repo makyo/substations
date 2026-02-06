@@ -1,11 +1,12 @@
 <Document>
+  <!-- L5 – metamaterials -->
   # Unlocking Nodes
   <Box>
     <GuideEntityEmbed Entity="ComplexXenoArtifact" Caption=""/>
     <GuideEntityEmbed Entity="ComplexXenoArtifactItem" Caption=""/>
   </Box>
 
-  To activate and unlock nodes on an artifact, you should:
+  To activate and unlock nodes on a metamaterial artifact, you should:
   - Check a node on the [bold]Analysis Console[/bold] to check its triggers and effects.
   - Perform the [bold]triggers[/bold] listed in the console. Some require direct interaction with the artifact, while others may only need the correct environment or a specific action performed nearby.
   - Once a trigger is successfully performed, the artifact will respond with the message: [italic]"It begins to shift in strange ways..."[/italic]. The [bold]Node Scanner[/bold] will then indicate which specific nodes are being triggered.

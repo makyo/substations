@@ -126,7 +126,7 @@
 
 - type: entity
   name: unitology tome
-  description: Technically hallowed, this is just six volumes discussing xenoarch and asking for spesos.
+  description: Technically hallowed, this is just six volumes discussing videogames and asking for RACs. # L5
   parent: Bible
   id: HolyTextUnitologyTome
   components:

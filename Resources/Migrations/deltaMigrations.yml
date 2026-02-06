@@ -148,7 +148,8 @@ MetempsychoticMachine: null
 MetempsychoticMachineCircuitboard: null
 
 # 2025-03-12
-SmartFridge: DVSmartFridgeMedical
+# L5
+#SmartFridge: DVSmartFridgeMedical
 
 # 2025-03-23
 DrinkDaiquiriGlass: DrinkDaiquiri

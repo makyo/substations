@@ -3,7 +3,7 @@
   mapName: Nucleus
   mapPath: /Maps/_L5/Outposts/nucleus.yml
   minPlayers: 0
-  maxPlayers: 6
+  maxPlayers: 50 # Just the max server pop
   stations:
     Nucleus:
       stationProto: StandardNanotrasenStation

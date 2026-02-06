@@ -43,7 +43,8 @@ research-technology-dual-wielding-technology = Dual Wielding Technology
 
 research-technology-basic-robotics = Basic Robotics
 research-technology-basic-anomalous-research = Basic Anomalous Research
-research-technology-basic-xenoarcheology = Basic XenoArcheology
+# L5
+research-technology-basic-xenoarcheology = Basic Metamaterials Science
 research-technology-alternative-research = Alternative Research
 research-technology-magnets-tech = Localized Magnetism
 research-technology-advanced-parts = Advanced Parts
