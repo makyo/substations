@@ -1,23 +1,4 @@
 ﻿Entries:
-- author: 2DSiggy
-  changes:
-  - message: Thief can now be tasked with stealing Secoff/detective handguns, Captain's
-      sabre, and the CE's toolbelt.
-    type: Add
-  - message: Heavily reduced the likelihood of the LAMP objective for thief moths
-      and reduced the chance of beer goggles appearing as an objective.
-    type: Tweak
-  id: 8987
-  time: '2025-09-18T20:09:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39867
-- author: IProduceWidgets
-  changes:
-  - message: The Experimental Lecter 8 (XL8) has been added as an admin event weapon
-      for roles such as ERT.
-    type: Add
-  id: 8988
-  time: '2025-09-19T19:30:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40372
 - author: Absotively
   changes:
   - message: Air alarms will not replace the number you're currently typing
@@ -4003,3 +3984,18 @@
   id: 9493
   time: '2026-02-06T10:44:18.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/42613
+- author: AreYouConfused
+  changes:
+  - message: Vox's tail rings no longer replace the vox's tail and now correctly layer
+      ontop of the tail.
+    type: Fix
+  id: 9494
+  time: '2026-02-06T21:18:22.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42808
+- author: 11BelowStudio
+  changes:
+  - message: Chaplains can now choose a custom name. Hallelujah!
+    type: Add
+  id: 9495
+  time: '2026-02-07T01:46:53.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42819
