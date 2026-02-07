@@ -1,34 +1,4 @@
 ﻿Entries:
-- author: Absotively
-  changes:
-  - message: Air alarms will not replace the number you're currently typing
-    type: Tweak
-  id: 8989
-  time: '2025-09-20T18:55:34.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40338
-- author: Absotively
-  changes:
-  - message: Hand labeler's set text now displays on examine.
-    type: Tweak
-  id: 8990
-  time: '2025-09-20T19:00:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40334
-- author: PJB3005
-  changes:
-  - message: Fixed stuff like camera views causing your computer to melt, explode,
-      and then collapse into a black hole.
-    type: Fix
-  id: 8991
-  time: '2025-09-21T05:16:17.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40181
-- author: cmorley191
-  changes:
-  - message: Improved reliability of cleanade/grenade launcher rounds and other collision-triggered
-      devices and spells.
-    type: Fix
-  id: 8992
-  time: '2025-09-21T15:23:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40428
 - author: ToastEnjoyer
   changes:
   - message: Changed the description to the corpsman antagonist.
@@ -3999,3 +3969,33 @@
   id: 9495
   time: '2026-02-07T01:46:53.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/42819
+- author: Velken
+  changes:
+  - message: Plasma finally got the memo that Christmas is over.
+    type: Tweak
+  id: 9496
+  time: '2026-02-07T07:01:55.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42822
+- author: InsoPL
+  changes:
+  - message: Optical Thermal Scanners can now be found in the Engi-Vend.
+    type: Add
+  id: 9497
+  time: '2026-02-07T10:10:58.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42824
+- author: DIMMoon1
+  changes:
+  - message: Firelocks now automatically re-close if they have a danger signal and
+      they're powered.
+    type: Fix
+  id: 9498
+  time: '2026-02-07T10:35:56.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/37523
+- author: qwerltaz
+  changes:
+  - message: Ammonia and Nitrous Oxide now do more damage according to the concentration
+      of gas in the atmosphere.
+    type: Tweak
+  id: 9499
+  time: '2026-02-07T10:51:57.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/39591
