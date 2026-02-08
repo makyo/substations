@@ -1458,9 +1458,6 @@
     sprite: Structures/Walls/mining.rsi
   - type: Icon
     sprite: Structures/Walls/mining.rsi
-  - type: Construction # L5 - constructible
-    graph: ReinforcedGirder
-    node: miningWall
   - type: Destructible
     thresholds:
     - trigger:
@@ -1492,9 +1489,6 @@
   - type: Icon
     sprite: Structures/Walls/mining_diagonal.rsi
     state: state0
-  - type: Construction # L5 - constructible
-    graph: ReinforcedGirder
-    node: miningWall
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong

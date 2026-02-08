@@ -1,3 +1,4 @@
+using Content.Shared._EE.CCVar;
 using Content.Shared.Damage.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
@@ -18,13 +19,13 @@ public sealed partial class ContestsSystem : EntitySystem
     {
         base.Initialize();
 
-        Subs.CVar(_cfg, CCVars.DoContestsSystem, value => _doContests = value, true);
-        Subs.CVar(_cfg, CCVars.ContestsMaxPercentage, value => _contestsMaxPercentage = value, true);
+        Subs.CVar(_cfg, EECCVars.DoContestsSystem, value => _doContests = value, true);
+        Subs.CVar(_cfg, EECCVars.ContestsMaxPercentage, value => _contestsMaxPercentage = value, true);
 
         if (_doContests)
         {
-            Subs.CVar(_cfg, CCVars.DoMassContests, value => _doMassContest = value, true);
-            Subs.CVar(_cfg, CCVars.DoStaminaContests, value => _doStamContest = value, true);
+            Subs.CVar(_cfg, EECCVars.DoMassContests, value => _doMassContest = value, true);
+            Subs.CVar(_cfg, EECCVars.DoStaminaContests, value => _doStamContest = value, true);
         }
         else
         {

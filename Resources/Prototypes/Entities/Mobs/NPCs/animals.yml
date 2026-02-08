@@ -212,8 +212,6 @@
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: chicken-0
       sprite: Mobs/Animals/chicken.rsi
-  - type: Carriable #DeltaV
-    freeHandsRequired: 1
   - type: SpriteMovement
     movementLayers:
       movement:

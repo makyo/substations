@@ -1,5 +1,4 @@
 reagent-physical-desc-unholy = unholy
-reagent-physical-desc-malign = malign
 reagent-physical-desc-shimmering-blood = nacreous
 reagent-physical-desc-appletini = vaguely appletini-ish
 reagent-physical-desc-alive = alive
@@ -15,10 +14,7 @@ reagent-physical-desc-rodent = mousy
 reagent-physical-desc-lovepotion = romantic
 reagent-physical-desc-irwizine = Oceanian
 reagent-physical-desc-sad = sad
-reagent-physical-desc-nervous = nervous
-reagent-physical-desc-reallynervous = really nervous
 reagent-physical-desc-space-grease = dangerously shiny
 reagent-physical-desc-floral = floral
-reagent-physical-desc-thin = thin
 reagent-physical-desc-ghostly = ghostly
 reagent-physical-desc-something = kind of

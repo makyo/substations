@@ -14,9 +14,9 @@
     Chitter:
       path: /Audio/_Impstation/Allulalo/allulalo_chitter.ogg
     Sneeze:
-      collection: UnisexSneezes #placeholder
+      collection: FemaleSneezes #placeholder
     Cough:
-      collection: UnisexCoughs #placeholder
+      collection: FemaleCoughs #placeholder
     Yawn:
       path: /Audio/_Impstation/Allulalo/allulalo_say.ogg
     Honk:

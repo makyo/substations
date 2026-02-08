@@ -19,8 +19,12 @@
     Flammable:
       methods: [ Touch ]
       effects:
-      - !type:FlammableReaction
+      - !type:Flammable
   tileReactions:
   - !type:FlammableTileReaction
     temperatureMultiplier: 1.35
   plantMetabolism:
+  - !type:PlantAdjustNutrition
+    amount: 0.25
+  - !type:PlantAdjustWater
+    amount: 0.7

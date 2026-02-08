@@ -22,6 +22,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
 using System.Threading;
+using Content.Shared._EE.CCVar;
 // frontier:
 using CCVars = Content.Shared._EE.CCVar.EECCVars;
 using Content.Shared._EE.Contests;
@@ -31,6 +32,7 @@ using Robust.Shared.Network;
 // imp:
 using Content.Shared._Impstation.Carrying;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Item;
 
 namespace Content.Shared._EE.Carrying;
 
@@ -61,9 +63,9 @@ public sealed partial class CarryingSystem : EntitySystem
 
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
-        Subs.CVar(_cfg, CCVars.BaseDistanceCoeff, value => _baseDistanceCoeff = value, true);
-        Subs.CVar(_cfg, CCVars.MaxDistanceCoeff, value => _maxDistanceCoeff = value, true);
-        Subs.CVar(_cfg, CCVars.DefaultMaxThrowDistance, value => _defaultMaxThrowDistance = value, true);
+        Subs.CVar(_cfg, EECCVars.BaseDistanceCoeff, value => _baseDistanceCoeff = value, true);
+        Subs.CVar(_cfg, EECCVars.MaxDistanceCoeff, value => _maxDistanceCoeff = value, true);
+        Subs.CVar(_cfg, EECCVars.DefaultMaxThrowDistance, value => _defaultMaxThrowDistance = value, true);
 
         SubscribeLocalEvent<CarriableComponent, GetVerbsEvent<AlternativeVerb>>(AddCarryVerb);
         SubscribeLocalEvent<CarryingComponent, VirtualItemDeletedEvent>(OnVirtualItemDeleted);
@@ -412,5 +414,22 @@ public sealed partial class CarryingSystem : EntitySystem
             _transform.SetLocalPosition(carried, Vector2.Zero, xform);
         }
         query.Dispose();
+    }
+
+    // L5 — needed for Nyano code
+    public bool TryCarry(EntityUid carrier, Entity<CarriableComponent?> toCarry)
+    {
+        if (!Resolve(toCarry, ref toCarry.Comp, false))
+            return false;
+
+        if (!CanCarry(carrier, (toCarry, toCarry.Comp)))
+            return false;
+
+        // The second one means that carrier is a pseudo-item and is inside a bag.
+        if (HasComp<BeingCarriedComponent>(carrier) || HasComp<ItemComponent>(carrier))
+            return false;
+
+        Carry(carrier, toCarry);
+        return true;
     }
 }
