@@ -1067,3 +1067,9 @@ Entries:
       message: 'New species! Allulalo, little birds that are too smol :c '
   id: 149
   time: '2026-02-08T04:01:37.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: All HUDs now have corresponding augment traits! (I think...)
+  id: 150
+  time: '2026-02-08T19:47:10.0000000+00:00'
