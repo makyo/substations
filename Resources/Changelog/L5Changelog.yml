@@ -1073,3 +1073,11 @@ Entries:
       message: All HUDs now have corresponding augment traits! (I think...)
   id: 150
   time: '2026-02-08T19:47:10.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        CE now gets their own special goggles offering both thermal vision and
+        welding protection
+  id: 151
+  time: '2026-02-08T21:10:37.0000000+00:00'
