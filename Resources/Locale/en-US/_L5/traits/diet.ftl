@@ -2,28 +2,6 @@
 # SPDX-FileCopyrightText: (c) 2025 Madison Rye Progress (https://github.com/makyo)
 # SPDX-License-Identifier: MIT
 
-trait-synth-name = Synthetic
-trait-synth-desc = You are a biomechanical construct, whether a cladist or not. You are susceptible to ion storms and EMPs, bleed coolant, and have a unique brain.
-
-trait-sign-language-name = Sign language
-trait-sign-language-desc = You can speak the most common signed language, allowing you to interact with others who know it.
-
-trait-messy-drinker-name = Messy drinker
-trait-messy-drinker-desc = You don't drink, you slurp like a stupid idiot dog — and you are a bit messy about it.
-
-# Disability traits
-trait-lowmobility-name = Low Mobility
-trait-lowmobility-desc = You aren't able to get around very fast. Not without your trusty wheelchair, anyways! Careful not to bump into anything.
-
-trait-hard-of-hearing-name = Hard of hearing
-trait-hard-of-hearing-desc = You aren't able to hear well. Voices far away may appear muffled or unintelligible.
-
-trait-profoundly-deaf-name = Profoundly deaf
-trait-profoundly-deaf-desc = You're unable to hear at all, and must communicate through sign language and other non-verbal means.
-
-# Dietary restrictions traits
-trait-category-diet = Dietary Restrictions
-
 trait-dietary-restriction-PescetarianRestriction-name = Pescetarian
 trait-dietary-restriction-PescetarianRestriction-desc = You don't eat meat except for fish
 trait-dietary-restriction-PescetarianRestriction-fail = Eugh! That's meat! The only meat you eat is fish!
@@ -67,25 +45,3 @@ trait-dietary-restriction-ReptilianDiet-fail = You can't eat that with your diet
 trait-dietary-restriction-MothDiet-name = Moth diet
 trait-dietary-restriction-MothDiet-desc = You stick to fruit and veggies, and you have an affinity for things made of cloth
 trait-dietary-restriction-MothDiet-fail = You can't eat that with your diet...
-
-# Skills
-trait-hud-security-name = Security HUD
-trait-hud-security-desc = A Security HUD is installed in your display. Doesn't actually increase how secure you feel, especially if Paul's around.
-
-trait-hud-medical-name = Medical HUD
-trait-hud-medical-desc = A Medical HUD is installed in your display. If you're not working in Medical, you only want this because you've played too many RPG games.
-
-trait-hud-beer-name = Beer HUD
-trait-hud-beer-desc = A Beer HUD is installed in your display. Still doesn't make it easier to keep your own BAC low, though.
-
-trait-hud-diagnostic-name = Diagnostic HUD
-trait-hud-diagnostic-desc = You have an integrated diagnostic HUD for troubleshooting and repairing silicons around the station.
-
-trait-hud-chemical-name = Chemical Analysis HUD
-trait-hud-chemical-desc = A Chemical Analysis HUD is installed in your display. For when you need your Double Ice Cream to have 99.1% Purity.
-
-trait-hud-thermal-name = Thermal Vision HUD
-trait-hud-thermal-desc = A Thermal Vision HUD is installed in your display for troubleshooting issues with atmospherics.
-
-trait-hud-administration-name = Administration HUD
-trait-hud-administration-desc = An Administration HUD is installed in your display. For when you want to spy on everyone, but don't want to do sec's job.

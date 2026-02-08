@@ -13,7 +13,7 @@
 # Sec HUD
 
 - type: trait
-  category: Skills
+  category: Augments
   id: SecurityHUD
   name: trait-hud-security-name
   description: trait-hud-security-desc
@@ -43,7 +43,7 @@
 # Med HUD
 
 - type: trait
-  category: Skills
+  category: Augments
   id: MedicalHUD
   name: trait-hud-medical-name
   description: trait-hud-medical-desc
@@ -73,7 +73,7 @@
 #  Beer HUD
 
 - type: trait
-  category: Skills
+  category: Augments
   id: BeerHUD
   name: trait-hud-beer-name
   description: trait-hud-beer-desc
@@ -103,7 +103,7 @@
 # Diagnostics HUD
 
 - type: trait
-  category: Skills
+  category: Augments
   id: DiagnosticHUD
   name: trait-hud-diagnostic-name
   description: trait-hud-diagnostic-desc
@@ -163,7 +163,7 @@
 # Chem Goggles
 
 - type: trait
-  category: Skills
+  category: Augments
   id: ChemHUD
   name: trait-hud-chemical-name
   description: trait-hud-chemical-desc
@@ -193,7 +193,7 @@
 # Thermal Sight HUD
 
 - type: trait
-  category: Skills
+  category: Augments
   id: ThermHUD
   name: trait-hud-thermal-name
   description: trait-hud-thermal-desc
@@ -223,7 +223,7 @@
 # Administration HUD
 
 - type: trait
-  category: Skills
+  category: Augments
   id: ThermalHUD
   name: trait-hud-administration-name
   description: trait-hud-administration-desc

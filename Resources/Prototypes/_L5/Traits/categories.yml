@@ -9,3 +9,9 @@
   name: trait-category-skills
   priority: 25
   accentColor: "#f4a460" # sandy brown
+
+- type: traitCategory
+  id: Augments
+  name: trait-category-augments
+  priority: 27
+  accentColor: "#fffacd" # lemon chiffon
