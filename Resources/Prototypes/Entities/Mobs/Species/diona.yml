@@ -121,6 +121,7 @@
     baseSprintSpeed: 3.0
   - type: FTLKnockdownImmune # Frontier
   - type: Rootable
+  - type: Carriable # Carrying system from nyanotrasen.
   - type: LightReactive # DeltaV
     manual: true
   - type: LightLevelHealth # DeltaV

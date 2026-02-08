@@ -49,3 +49,6 @@ flavor-complex-wizard = like wizard access
 
 flavor-base-stardust = like stardust
 flavor-base-whimsy = whimsical
+
+# Imp
+flavor-complex-allulalo = like hand sanitizer

@@ -164,6 +164,7 @@
           32:
             sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
             state: hands
+  - type: Carriable # Carrying system from nyanotrasen.
   - type: UserInterface
     interfaces:
       enum.ThavenMoodsUiKey.Key: # impstation edit

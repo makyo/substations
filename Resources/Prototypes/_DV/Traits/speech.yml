@@ -130,6 +130,7 @@
       removes:
       - type: LizardAccent
       - type: MothAccent
+      - type: AllulaloAccent # Imp
       - type: ReplacementAccent
         accent: dwarf
 

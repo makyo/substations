@@ -1,0 +1,9 @@
+- type: emoteSounds
+  id: KeporiEmotes
+  params:
+    variation: 0.05
+  sounds:
+    Whistle:
+      path: /Audio/_Shiptest/Voice/Kepori/kepiwhistle.ogg
+    Click:
+      path: /Audio/_Shiptest/Voice/Kepori/kepiclick.ogg

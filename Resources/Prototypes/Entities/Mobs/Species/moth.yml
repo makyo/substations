@@ -178,6 +178,7 @@
           32:
             sprite: Mobs/Species/Moth/displacement.rsi
             state: shoes
+  - type: Carriable # Carrying system from nyanotrasen.
   - type: CosmicMarkVisuals # DeltaV - cosmic cult
     subtleState: moth
 
