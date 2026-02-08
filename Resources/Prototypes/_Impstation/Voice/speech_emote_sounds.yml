@@ -24,7 +24,9 @@
     Sigh:
       path: /Audio/_Impstation/Allulalo/allulalo_say.ogg #placeholder
     Whistle:
-      collection: Whistles
+      path: /Audio/_Shiptest/Voice/Kepori/kepiwhistle.ogg # L5
+    Click:
+      path: /Audio/_Shiptest/Voice/Kepori/kepiclick.ogg # L5
     Crying:
       path: /Audio/_Impstation/Allulalo/allulalo_cry.ogg
     Weh:
