@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 - type: trait
-  category: Medical # Close enough...
+  category: Augments
   id: Synthetic
   name: trait-synth-name
   description: trait-synth-desc

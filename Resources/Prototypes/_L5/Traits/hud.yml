@@ -10,8 +10,10 @@
   - type: InstantAction
     event: !type:ToggleEvent
 
+# Sec HUD
+
 - type: trait
-  category: Skills
+  category: Augments
   id: SecurityHUD
   name: trait-hud-security-name
   description: trait-hud-security-desc
@@ -24,7 +26,7 @@
 - type: entity
   parent: BaseActionToggleHud
   id: ActionToggleSecHud
-  name: Toggle Sec Hud
+  name: Toggle Sec HUD
   description: Toggles your security HUD.
   components:
   - type: Action
@@ -38,8 +40,10 @@
       - type: ShowMindShieldIcons
       - type: ShowCriminalRecordIcons
 
+# Med HUD
+
 - type: trait
-  category: Skills
+  category: Augments
   id: MedicalHUD
   name: trait-hud-medical-name
   description: trait-hud-medical-desc
@@ -52,7 +56,7 @@
 - type: entity
   parent: BaseActionToggleHud
   id: ActionToggleMedHud
-  name: Toggle Med Hud
+  name: Toggle Med HUD
   description: Toggles your medical HUD.
   components:
   - type: Action
@@ -66,8 +70,10 @@
       - type: ShowHealthIcons
       - type: ShowTriageIcons
 
+#  Beer HUD
+
 - type: trait
-  category: Skills
+  category: Augments
   id: BeerHUD
   name: trait-hud-beer-name
   description: trait-hud-beer-desc
@@ -80,7 +86,7 @@
 - type: entity
   parent: BaseActionToggleHud
   id: ActionToggleBeerHud
-  name: Toggle Beer Hud
+  name: Toggle Beer HUD
   description: Toggles your beer HUD.
   components:
   - type: Action
@@ -92,9 +98,12 @@
       components:
       - type: ShowThirstIcons
       - type: SolutionScanner
+      - type: SafeSolutionThrower
+
+# Diagnostics HUD
 
 - type: trait
-  category: Skills
+  category: Augments
   id: DiagnosticHUD
   name: trait-hud-diagnostic-name
   description: trait-hud-diagnostic-desc
@@ -107,7 +116,7 @@
 - type: entity
   parent: BaseActionToggleHud
   id: ActionToggleDiagnosticHud
-  name: Toggle Diagnostic Hud
+  name: Toggle Diagnostic HUD
   description: Toggles your diagnostic HUD.
   components:
   - type: Action
@@ -150,3 +159,94 @@
       components:
       - type: StationAiOverlay
         cosmetic: true
+
+# Chem Goggles
+
+- type: trait
+  category: Augments
+  id: ChemHUD
+  name: trait-hud-chemical-name
+  description: trait-hud-chemical-desc
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ChemHudTrait
+      actions: [ActionToggleChemHud]
+
+- type: entity
+  parent: BaseActionToggleHud
+  id: ActionToggleChemHud
+  name: Toggle Chem HUD
+  description: Toggles your chemical analysis HUD.
+  components:
+  - type: Action
+    icon:
+      sprite: Clothing/Eyes/Glasses/science.rsi
+      state: icon
+    sound: /Audio/_L5/Effects/HUD/ChemHudEnable.ogg
+    soundOff: /Audio/_L5/Effects/HUD/ChemHudDisable.ogg
+  - type: InstantAction
+    event: !type:RelayedActionComponentChangeEvent
+      components:
+      - type: SolutionScanner
+
+# Thermal Sight HUD
+
+- type: trait
+  category: Augments
+  id: ThermHUD
+  name: trait-hud-thermal-name
+  description: trait-hud-thermal-desc
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ThermHudTrait
+      actions: [ActionToggleThermHud]
+
+- type: entity
+  parent: BaseActionToggleHud
+  id: ActionToggleThermHud
+  name: Toggle Thermal Vision
+  description: Toggles your thermal vision HUD.
+  components:
+  - type: Action
+    icon:
+      sprite: Clothing/Eyes/Glasses/thermal.rsi
+      state: icon
+    sound: /Audio/_L5/Effects/HUD/ThermHudEnable.ogg
+    soundOff: /Audio/_L5/Effects/HUD/ThermHudDisable.ogg
+  - type: InstantAction
+    event: !type:RelayedActionComponentChangeEvent
+      components:
+      - type: ThermalSight
+
+# Administration HUD
+
+- type: trait
+  category: Augments
+  id: ThermalHUD
+  name: trait-hud-administration-name
+  description: trait-hud-administration-desc
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: AdministrationHudTrait
+      actions: [ActionToggleAdministrationHud]
+
+- type: entity
+  parent: BaseActionToggleHud
+  id: ActionToggleAdministrationHud
+  name: Toggle Administration HUD
+  description: Toggles your administration HUD.
+  components:
+  - type: Action
+    icon:
+      sprite: Clothing/Eyes/Glasses/commandglasses.rsi
+      state: icon
+    sound: /Audio/_L5/Effects/HUD/AdminHudEnable.ogg
+    soundOff: /Audio/_L5/Effects/HUD/AdminHudDisable.ogg
+  - type: InstantAction
+    event: !type:RelayedActionComponentChangeEvent
+      components:
+      - type: ShowJobIcons
+      - type: ShowMindShieldIcons

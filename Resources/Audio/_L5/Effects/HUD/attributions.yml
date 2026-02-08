@@ -6,3 +6,18 @@
   license: "CC-BY-NC-4.0"
   copyright: "created by Cheeses-The-Mac on github"
   source: "https://github.com/lagrange14/substations/pull/396"
+
+- files: [ "ChemHudEnable.ogg", "ChemHudDisable.ogg" ]
+  license: "CC-BY-3.0"
+  copyright: "created by Greencouch, edited by makyo on github"
+  source: "https://freesound.org/s/124903/"
+
+- files: [ "ThermHudEnable.ogg", "ThermHudDisable.ogg" ]
+  license: "CC-BY-3.0"
+  copyright: "created by JonnyRuss01, edited by makyo on github"
+  source: "https://freesound.org/s/478189/"
+
+- files: [ "AdminHudEnable.ogg", "AdminHudDisable.ogg" ]
+  license: "CC-BY-3.0"
+  copyright: "created by thisusernameis, edited by makyo on github"
+  source: "https://freesound.org/s/426892/"
