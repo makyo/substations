@@ -193,7 +193,7 @@
   id: VoxTailAnimated
   bodyPart: Tail
   markingCategory: Tail
-  groupWhitelist: []
+  #groupWhitelist: []
   forcedColoring: true
   sprites:
   - sprite: Mobs/Customization/vox_parts.rsi
@@ -213,7 +213,7 @@
   id: VoxTailShortAnimated
   bodyPart: Tail
   markingCategory: Tail
-  groupWhitelist: []
+  #groupWhitelist: []
   forcedColoring: true
   sprites:
   - sprite: Mobs/Customization/vox_parts.rsi
@@ -233,7 +233,7 @@
   id: VoxTailBigAnimated
   bodyPart: Tail
   markingCategory: Tail
-  groupWhitelist: []
+  #groupWhitelist: []
   forcedColoring: true
   sprites:
   - sprite: Mobs/Customization/vox_parts.rsi
@@ -253,7 +253,7 @@
   id: VoxTailSpikesAnimated
   bodyPart: Tail
   markingCategory: Tail
-  groupWhitelist: []
+  #groupWhitelist: []
   forcedColoring: true
   sprites:
   - sprite: Mobs/Customization/vox_parts.rsi
@@ -273,7 +273,7 @@
   id: VoxTailDockedAnimated
   bodyPart: Tail
   markingCategory: Tail
-  groupWhitelist: []
+  #groupWhitelist: []
   forcedColoring: true
   sprites:
   - sprite: Mobs/Customization/vox_parts.rsi
@@ -294,7 +294,7 @@
   id: VoxTailSplitAnimated
   bodyPart: Tail
   markingCategory: Tail
-  groupWhitelist: []
+  #groupWhitelist: []
   forcedColoring: true
   sprites:
   - sprite: Mobs/Customization/vox_parts.rsi
