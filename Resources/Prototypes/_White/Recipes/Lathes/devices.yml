@@ -15,8 +15,8 @@
     Gold: 100
 
 - type: latheRecipe
-  id: ClothingEyesGlassesThermal
-  result: ClothingEyesGlassesThermal
+  id: ClothingEyesGlassesThermalWhite # L5
+  result: ClothingEyesGlassesThermalWhite # L5
   completetime: 2
   materials:
     Steel: 200

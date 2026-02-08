@@ -1,5 +1,6 @@
-﻿reagent-name-heparin = heparin
-reagent-desc-heparin = A fast-acting toxin that rapidly thins blood and opens wounds.
+﻿# L5 — this is a chem in upstream now
+#reagent-name-heparin = heparin
+#reagent-desc-heparin = A fast-acting toxin that rapidly thins blood and opens wounds.
 
 reagent-name-rhigoxane = rhigoxane
 reagent-desc-rhigoxane = A toxin that rapidly freezes anything it comes into contact with.

@@ -1,16 +1,17 @@
-- type: reaction
-  id: Heparin
-  reactants:
-    TableSalt:
-      amount: 1
-    Aluminium:
-      amount: 1
-    Ethanol:
-      amount: 1
-    Lithium:
-      amount: 1
-  products:
-    Heparin: 4
+# L5 — this is now an upstream thing
+#- type: reaction
+#  id: Heparin
+#  reactants:
+#    TableSalt:
+#      amount: 1
+#    Aluminium:
+#      amount: 1
+#    Ethanol:
+#      amount: 1
+#    Lithium:
+#      amount: 1
+#  products:
+#    Heparin: 4
 
 - type: reaction
   id: Rhigoxane
