@@ -75,14 +75,17 @@ trait-hud-security-desc = A Security HUD is installed in your display. Doesn't a
 trait-hud-medical-name = Medical HUD
 trait-hud-medical-desc = A Medical HUD is installed in your display. If you're not working in Medical, you only want this because you've played too many RPG games.
 
-trait-hud-administration-name = Administration HUD
-trait-hud-administration-desc = An Administration HUD is installed in your display. For when you want to spy on everyone, but don't want to do sec's job.
-
 trait-hud-beer-name = Beer HUD
 trait-hud-beer-desc = A Beer HUD is installed in your display. Still doesn't make it easier to keep your own BAC low, though.
+
+trait-hud-diagnostic-name = Diagnostic HUD
+trait-hud-diagnostic-desc = You have an integrated diagnostic HUD for troubleshooting and repairing silicons around the station.
 
 trait-hud-chemical-name = Chemical Analysis HUD
 trait-hud-chemical-desc = A Chemical Analysis HUD is installed in your display. For when you need your Double Ice Cream to have 99.1% Purity.
 
-trait-hud-diagnostic-name = Diagnostic HUD
-trait-hud-diagnostic-desc = You have an integrated diagnostic HUD for troubleshooting and repairing silicons around the station.
+trait-hud-thermal-name = Thermal Vision HUD
+trait-hud-thermal-desc = A Thermal Vision HUD is installed in your display for troubleshooting issues with atmospherics.
+
+trait-hud-administration-name = Administration HUD
+trait-hud-administration-desc = An Administration HUD is installed in your display. For when you want to spy on everyone, but don't want to do sec's job.

@@ -10,6 +10,9 @@ public sealed partial class ActionGrantSystem
         SubComponent<MedHudTraitComponent>();
         SubComponent<BeerHudTraitComponent>();
         SubComponent<DiagnosticHudTraitComponent>();
+        SubComponent<ChemHudTraitComponent>();
+        SubComponent<ThermHudTraitComponent>();
+        SubComponent<AdministrationHudTraitComponent>();
     }
 
     // Oop moment.
