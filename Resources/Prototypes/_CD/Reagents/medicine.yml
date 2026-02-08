@@ -64,6 +64,7 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
+        time: 2 # L5 — More effective than Serenitol (16 min vs 11 min)
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -138,6 +139,7 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
+        time: 8 # More effective than Neuro (66 min vs 33 min)
         type: Update
       # End L5 — Moody trait
       - !type:SuppressAddiction
@@ -303,6 +305,7 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
+        time: 2 # L5 — more effective than Calma (25 min vs 11 min)
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -390,6 +393,7 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
+        time: 8 # L5 — more effective than Tranq (65 min vs 25 min)
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
