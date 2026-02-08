@@ -87,7 +87,7 @@
 - type: entity
   parent: BaseMachinePowered
   id: GlimmerDrain
-  name: Helium-3 laser heatsink # L5
+  name: Helium-3 laser cooling system # L5
   description: Uses a difficult-to-manufacture He3 laser in order to rid the station of excess waste heat. # L5
   components:
   - type: Psionic

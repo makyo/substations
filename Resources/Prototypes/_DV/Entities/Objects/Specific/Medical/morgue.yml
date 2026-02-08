@@ -2,8 +2,8 @@
   parent: Ash
   id: EctoplasmRevenant
   suffix: DO NOT MAP
-  name: ectoplasm
-  description: Slimey, vaporous residue of an ancient spirit.
+  name: Impure Helium-3 Precursor
+  description: An impure and dangerous mix of He-3 precursor.
   components:
     - type: Sprite
       sprite: _DV/Mobs/Ghosts/revenant.rsi
