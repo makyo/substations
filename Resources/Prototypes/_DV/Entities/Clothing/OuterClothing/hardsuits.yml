@@ -198,13 +198,19 @@
 
 #DeltaV ERT hardsuits
 #Everything Below this is RED level hardsuits except for engineer.
-
-# Base ERT hardsuit, who the fuck makes the leader hardsuit the parent???
+#ERT Leader Hardsuit
 - type: entity
-  abstract: true
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
-  id: ClothingOuterHardsuitERTBase
+  id: ClothingOuterHardsuitERTLeaderBase
+  name: ERT leader's hardsuit
+  description: A protective hardsuit worn by the leader of an emergency response team.
   components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitERTLeader
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -227,55 +233,23 @@
     walkModifier: 0.9
     sprintModifier: 0.9
 
-#ERT Leader Hardsuit
-- type: entity
-  parent: ClothingOuterHardsuitERTBase
-  id: ClothingOuterHardsuitERTLeaderBase
-  name: ERT leader's hardsuit
-  description: A protective hardsuit worn by the leader of an emergency response team.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: equipped-OUTERCLOTHING
-      outerClothing-harpy:
-      - sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
-        state: equipped-OUTERCLOTHING-harpy
-      outerClothing-vox:
-      - state: equipped-OUTERCLOTHING-vox
-      outerClothing-reptilian:
-      - state: equipped-OUTERCLOTHING-reptilian
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitERTLeader
-
 #ERT Chaplain Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTBase
+  parent: ClothingOuterHardsuitERTLeaderBase
   id: ClothingOuterHardsuitERTChaplainBase
   name: ERT chaplain's hardsuit
   description: A protective hardsuit worn by the chaplains of an Emergency Response Team.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi #if you change this, please update the humanoid.yml with a better markers sprite.
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: equipped-OUTERCLOTHING
-      outerClothing-harpy:
-      - sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
-        state: equipped-OUTERCLOTHING-harpy
-      outerClothing-reptilian:
-      - state: equipped-OUTERCLOTHING-reptilian
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTChaplain
 
 #ERT Engineer Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTBase
+  parent: ClothingOuterHardsuitERTLeaderBase
   id: ClothingOuterHardsuitERTEngineerBase
   name: ERT engineer's hardsuit
   description: A protective hardsuit worn by the engineers of an emergency response team.
@@ -284,16 +258,6 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: equipped-OUTERCLOTHING
-      outerClothing-harpy:
-      - sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
-        state: equipped-OUTERCLOTHING-harpy
-      outerClothing-vox:
-      - state: equipped-OUTERCLOTHING-vox
-      outerClothing-reptilian:
-      - state: equipped-OUTERCLOTHING-reptilian
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTEngineer
   - type: FireProtection  #Only engineer gets fireproof
@@ -302,7 +266,7 @@
 
 #ERT Medic Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTBase
+  parent: ClothingOuterHardsuitERTLeaderBase
   id: ClothingOuterHardsuitERTMedicalBase
   name: ERT medic's hardsuit
   description: A protective hardsuit worn by the medics of an emergency response team.
@@ -311,22 +275,12 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: equipped-OUTERCLOTHING
-      outerClothing-harpy:
-      - sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
-        state: equipped-OUTERCLOTHING-harpy
-      outerClothing-vox:
-      - state: equipped-OUTERCLOTHING-vox
-      outerClothing-reptilian:
-      - state: equipped-OUTERCLOTHING-reptilian
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTMedical
 
 #ERT Security Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTBase
+  parent: ClothingOuterHardsuitERTLeaderBase
   id: ClothingOuterHardsuitERTSecurityBase
   name: ERT security's hardsuit
   description: A protective hardsuit worn by the security officers of an emergency response team.
@@ -335,22 +289,12 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: equipped-OUTERCLOTHING
-      outerClothing-harpy:
-      - sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
-        state: equipped-OUTERCLOTHING-harpy
-      outerClothing-vox:
-      - state: equipped-OUTERCLOTHING-vox
-      outerClothing-reptilian:
-      - state: equipped-OUTERCLOTHING-reptilian
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTSecurity
 
 #ERT Janitor Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTBase
+  parent: ClothingOuterHardsuitERTLeaderBase
   id: ClothingOuterHardsuitERTJanitorBase
   name: ERT janitor's hardsuit
   description: A protective hardsuit worn by the janitors of an emergency response team.
@@ -359,27 +303,24 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: equipped-OUTERCLOTHING
-      outerClothing-harpy:
-      - sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
-        state: equipped-OUTERCLOTHING-harpy
-      outerClothing-vox:
-      - state: equipped-OUTERCLOTHING-vox
-      outerClothing-reptilian:
-      - state: equipped-OUTERCLOTHING-reptilian
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTJanitor
 
 #Everything Below this is GAMMA level hardsuits.
 
-#ERT Elite Base
+#ERT Leader Hardsuit
 - type: entity
-  abstract: true
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
-  id: ClothingOuterHardsuitERTEliteBase
+  id: ClothingOuterHardsuitERTLeaderElite
+  name: Elite ERT Leader Hardsuit
+  description: A protective hardsuit worn by the leader of an emergency response team.
   components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/eliteertleader.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/eliteertleader.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitERTLeaderElite
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -404,23 +345,9 @@
     walkModifier: 1.0
     sprintModifier: 1.0
 
-#ERT Leader Elite Hardsuit
+#ERT Chaplain Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTEliteBase
-  id: ClothingOuterHardsuitERTLeaderElite
-  name: Elite ERT Leader Hardsuit
-  description: A protective hardsuit worn by the leader of an emergency response team.
-  components:
-  - type: Sprite
-    sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/eliteertleader.rsi
-  - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/eliteertleader.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitERTLeaderElite
-
-#ERT Chaplain Elite Hardsuit
-- type: entity
-  parent: ClothingOuterHardsuitERTEliteBase
+  parent: ClothingOuterHardsuitERTLeaderElite
   id: ClothingOuterHardsuitERTChaplainElite
   name: Elite ERT chaplain's hardsuit
   description: A protective hardsuit worn by the chaplains of an Emergency Response Team.
@@ -432,9 +359,9 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTChaplainElite
 
-#ERT Engineer Elite Hardsuit
+#ERT Engineer Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTEliteBase
+  parent: ClothingOuterHardsuitERTLeaderElite
   id: ClothingOuterHardsuitERTEngineerElite
   name: Elite ERT engineer's hardsuit
   description: A protective hardsuit worn by the engineers of an emergency response team.
@@ -447,9 +374,9 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTEngineerElite
 
 
-#ERT Medic Elite Hardsuit
+#ERT Medic Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTEliteBase
+  parent: ClothingOuterHardsuitERTLeaderElite
   id: ClothingOuterHardsuitERTMedicalElite
   name: Elite ERT medic's hardsuit
   description: A protective hardsuit worn by the medics of an emergency response team.
@@ -461,9 +388,9 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTMedicalElite
 
-#ERT Security Elite Hardsuit
+#ERT Security Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTEliteBase
+  parent: ClothingOuterHardsuitERTLeaderElite
   id: ClothingOuterHardsuitERTSecurityElite
   name: Elite ERT security's hardsuit
   description: A protective hardsuit worn by the security officers of an emergency response team.
@@ -475,9 +402,9 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTSecurityElite
 
-#ERT Janitor Elite Hardsuit
+#ERT Janitor Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitERTEliteBase
+  parent: ClothingOuterHardsuitERTLeaderElite
   id: ClothingOuterHardsuitERTJanitorElite
   name: Elite ERT janitor's hardsuit
   description: A protective hardsuit worn by the janitors of an emergency response team.

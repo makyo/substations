@@ -59,7 +59,7 @@
     newItem: null
 
 - type: entity
-  parent: ClothingOuterHardsuitERTBase
+  parent: ClothingOuterHardsuitERTLeader
   id: ClothingOuterHardsuitERTCentcomm
   name: Central Administration hardsuit  # L5
   components:
