@@ -52,7 +52,7 @@
 - type: entity
   id: SpawnPointQuartermaster
   parent: SpawnPointJobBase
-  name: logistics officer # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer # DeltaV - Logistics Department replacing Cargo # L5
   components:
   - type: SpawnPoint
     job_id: Quartermaster

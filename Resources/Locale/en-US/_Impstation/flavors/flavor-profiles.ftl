@@ -20,8 +20,9 @@ flavor-complex-cryogenics = like cryogenics access
 flavor-complex-detective = like detective access
 flavor-complex-engineering = like engineering access
 flavor-complex-external = like external access
-flavor-complex-headofpersonnel = like head of personnel access
-flavor-complex-headofsecurity = like head of security access
+# L5
+flavor-complex-headofpersonnel = like hospitality director access
+flavor-complex-headofsecurity = like chief security officer access
 flavor-complex-hospitalitydirector = like hospitality director access
 flavor-complex-hydroponics = like hydroponics access
 flavor-complex-janitor = like janitor access
@@ -34,7 +35,8 @@ flavor-complex-medical = like medical access
 flavor-complex-mime = like mime access
 flavor-complex-musician = like musician access
 flavor-complex-nuclearoperative = like nuclear operative access
-flavor-complex-quartermaster = like quartermaster access
+# L5
+flavor-complex-quartermaster = like chief logistics officer access
 flavor-complex-reporter = like reporter access
 flavor-complex-research = like research access
 flavor-complex-researchdirector = like research director access
@@ -47,3 +49,6 @@ flavor-complex-wizard = like wizard access
 
 flavor-base-stardust = like stardust
 flavor-base-whimsy = whimsical
+
+# Imp
+flavor-complex-allulalo = like hand sanitizer

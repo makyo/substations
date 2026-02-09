@@ -1,4 +1,5 @@
 # This file will contain strings for both DeltaV and Nyanotrasen loadouts, because I'm lazy
+# L5 - matching our vibe
 
 # Miscellaneous
 loadout-group-survival-corpsman = Corpsman Survival Box
@@ -7,8 +8,8 @@ loadout-group-survival-corpsman = Corpsman Survival Box
 # L5
 loadout-group-captain-gloves = Station administrator's gloves
 loadout-group-captain-shoes = Station administrator's shoes
-loadout-group-hop-gloves = Head of Personnel gloves
-loadout-group-hop-shoes = Head of Personnel shoes
+loadout-group-hop-gloves = Hospitality Director gloves
+loadout-group-hop-shoes = Hospitality Director shoes
 loadout-group-chief-engineer-gloves = Chief Engineer Gloves
 
 # Civilian
@@ -117,9 +118,9 @@ loadout-group-atmos-id-delta = Atmospheric Technician PDA
 loadout-group-atmospheric-technician-head = Atmospheric Technician Head
 
 # Security
-loadout-group-head-of-security-shoes = Head of Security shoes
+loadout-group-head-of-security-shoes = Chief Security Officer shoes
 
-loadout-group-security-cadet-head = Security Cadet head
+loadout-group-security-cadet-head = Peacekeeper Cadet head
 loadout-group-security-neck = Security neck
 loadout-group-security-gloves = Security gloves
 loadout-group-security-eyewear = Security eyewear

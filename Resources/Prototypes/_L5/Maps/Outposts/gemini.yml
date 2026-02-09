@@ -3,16 +3,16 @@
   mapName: Gemini
   mapPath: /Maps/_L5/Outposts/gemini.yml
   minPlayers: 0
-  maxPlayers: 10
+  maxPlayers: 50 # Just the max server pop
   stations:
     Gemini:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCS Gemini {1}'
+        mapNameTemplate: '{0} Gemini {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: 'NY'
+          !type:SysConNameGenerator
+          stationType: S # for 'Station'
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]

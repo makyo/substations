@@ -27,7 +27,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: NT-Phoenix
+      name: UNIS Phoenix
     - type: Transform
       parent: invalid
     - type: MapGrid

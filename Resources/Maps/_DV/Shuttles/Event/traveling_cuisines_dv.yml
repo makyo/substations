@@ -32,7 +32,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: SRV "Salami-Salami"
+      name: UNCS-SV "Salami-Salami" # L5
     - type: Transform
       pos: -0.53125,-0.484375
       parent: invalid

@@ -67,7 +67,7 @@
     - RandomHumanoidVisitorCMO
 
 - type: entity
-  name: visiting head of personnel spawner
+  name: visiting hospitality director spawner
   id: VisitorHOPSpawner
   parent: MarkerBase
   components:

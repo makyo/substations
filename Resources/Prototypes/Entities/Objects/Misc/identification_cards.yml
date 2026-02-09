@@ -28,6 +28,8 @@
   - type: NanoChatCard # DeltaV
   - type: MiningPoints # DeltaV
   - type: FishingPoints # DeltaV
+  - type: Contract # L5
+    contract: ContractSysCon
 
 #IDs with layers
 
@@ -78,7 +80,7 @@
 - type: entity
   parent: IDCardStandard
   id: HoPIDCard
-  name: head of personnel ID card
+  name: hospitality director ID card # L5
   components:
   - type: Sprite
     layers:
@@ -138,7 +140,7 @@
 - type: entity
   parent: IDCardStandard
   id: RDIDCard
-  name: mystagogue ID card # DeltaV - Epistemics Department replacing Science
+  name: research director ID card
   components:
   - type: Sprite
     layers:
@@ -158,7 +160,7 @@
 - type: entity
   parent: IDCardStandard
   id: HoSIDCard
-  name: head of security ID card
+  name: chief security officer ID card # L5
   components:
   - type: Sprite
     layers:
@@ -174,6 +176,8 @@
     heldPrefix: silver
   - type: PresetIdCard
     job: HeadOfSecurity
+  - type: Contract # L5
+    contract: ContractUNPeacekeeper
 
 - type: entity
   parent: IDCardStandard
@@ -457,6 +461,8 @@
       state: SecurityCadet
   - type: PresetIdCard
     job: SecurityCadet
+  - type: Contract # L5
+    contract: ContractUNPeacekeeper
 
 - type: entity
   parent: IDCardStandard
@@ -475,6 +481,8 @@
       state: SecurityOfficer
   - type: PresetIdCard
     job: SecurityOfficer
+  - type: Contract # L5
+    contract: ContractUNPeacekeeper
 
 - type: entity
   parent: IDCardStandard
@@ -493,6 +501,8 @@
       state: Warden
   - type: PresetIdCard
     job: Warden
+  - type: Contract # L5
+    contract: ContractUNPeacekeeper
 
 - type: entity
   parent: IDCardStandard
@@ -511,6 +521,8 @@
       state: Detective
   - type: PresetIdCard
     job: Detective
+  - type: Contract # L5
+    contract: ContractUNPeacekeeper
 
 - type: entity
   parent: IDCardStandard
@@ -527,6 +539,8 @@
     - sprite: *icon-rsi-dv # DeltaV - Sec Icon Resprite
       offset: *icon-offset
       state: Brigmedic
+  - type: Contract # L5
+    contract: ContractUNPeacekeeper
 
 - type: entity
   parent: SecurityIDCard
@@ -546,6 +560,8 @@
   - type: IdCard # DeltaV
     jobTitle: job-name-senior-officer
     jobIcon: JobIconSeniorOfficer
+  - type: Contract # L5
+    contract: ContractUNPeacekeeper
 
 #Service
 
@@ -966,6 +982,8 @@
         type: ChameleonBoundUserInterface
   - type: NanoChatCard # DeltaV
     listNumber: false
+  - type: Contract # L5
+    contract: ContractCNZ
 
 - type: entity
   parent: AgentIDCard
@@ -977,6 +995,8 @@
     - Maintenance
     - SyndicateAgent
     - NuclearOperative
+  - type: Contract # L5
+    contract: ContractGEX
 
 - type: entity
   parent: [ IDCardStandard, BaseSyndicateContraband ]
@@ -993,6 +1013,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Syndicate
+  - type: IdCard
+    jobIcon: JobIconSyndicate
   - type: Item
     heldPrefix: black
   - type: Access
@@ -1001,11 +1023,13 @@
     - SyndicateAgent
   - type: NanoChatCard # DeltaV
     listNumber: false
+  - type: Contract # L5
+    contract: ContractCNZ
 
 - type: entity
   parent: [ SyndicateIDCard, BaseSyndicateContraband ]
   id: SyndiOperativeIDCard
-  name: gorlex operative ID card # DeltaV - slight name change
+  name: GEX operative ID card # L5 - slight name change
   components:
   - type: Sprite
     layers:
@@ -1018,11 +1042,13 @@
       offset: *icon-offset
       state: SyndicateOperative
   - type: AgentIDCard
+  - type: Contract # L5
+    contract: ContractGEX
 
 - type: entity
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
   id: SyndiAgentIDCard # DeltaV - Nukie agent is still agent
-  name: gorlex agent ID card # DeltaV - slight name change
+  name: GEX agent ID card # L5 - slight name change
   components:
   - type: Sprite
     layers:
@@ -1034,11 +1060,13 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: SyndicateCorpsman
+  - type: Contract # L5
+    contract: ContractGEX
 
 - type: entity
   parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
   id: SyndiCommanderIDCard
-  name: gorlex commander ID card # DeltaV - slight name change
+  name: GEX commander ID card # DeltaV - slight name change
   components:
   - type: Sprite
     layers:
@@ -1121,10 +1149,12 @@
   - type: PresetIdCard
     job: CentralCommandOfficial
 
+# Begin L5 — ERT to IRIS
+
 - type: entity
   parent: IDCardStandard
   id: ERTLeaderIDCard
-  name: ERT leader ID card
+  name: IRIS leader ID card
   components:
   - type: Sprite
     layers:
@@ -1140,11 +1170,13 @@
     heldPrefix: gold
   - type: PresetIdCard
     job: ERTLeader
+  - type: Contract # L5
+    contract: ContractUNIRIS
 
 - type: entity
   parent: IDCardStandard
   id: ERTChaplainIDCard
-  name: ERT chaplain ID card
+  name: IRIS chaplain ID card
   components:
   - type: Sprite
     layers:
@@ -1160,11 +1192,13 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: ERTChaplain
+  - type: Contract # L5
+    contract: ContractUNIRIS
 
 - type: entity
   parent: IDCardStandard
   id: ERTEngineerIDCard
-  name: ERT engineer ID card
+  name: IRIS engineer ID card
   components:
   - type: Sprite
     layers:
@@ -1180,11 +1214,13 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: ERTEngineer
+  - type: Contract # L5
+    contract: ContractUNIRIS
 
 - type: entity
   parent: IDCardStandard
   id: ERTJanitorIDCard
-  name: ERT janitor ID card
+  name: IRIS janitor ID card
   components:
   - type: Sprite
     layers:
@@ -1200,11 +1236,13 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: ERTJanitor
+  - type: Contract # L5
+    contract: ContractUNIRIS
 
 - type: entity
   parent: IDCardStandard
   id: ERTMedicIDCard
-  name: ERT medic ID card
+  name: IRIS medic ID card
   components:
   - type: Sprite
     layers:
@@ -1220,11 +1258,13 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: ERTMedical
+  - type: Contract # L5
+    contract: ContractUNIRIS
 
 - type: entity
   parent: IDCardStandard
   id: ERTSecurityIDCard
-  name: ERT security ID card
+  name: IRIS security ID card
   components:
   - type: Sprite
     layers:
@@ -1240,6 +1280,10 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: ERTSecurity
+  - type: Contract # L5
+    contract: ContractUNIRIS
+
+# End L5 — ERT to IRIS
 
 - type: entity
   parent: IDCardStandard
@@ -1258,11 +1302,13 @@
       state: DeathSquad
   - type: PresetIdCard
     job: DeathSquad
+  - type: Contract # L5
+    contract: ContractIndependent
 
 - type: entity
   parent: IDCardStandard
   id: CBURNIDcard
-  name: CBURN ID card
+  name: IRIS CBURN ID card
   suffix: CBURN
   components:
   - type: Sprite
@@ -1279,6 +1325,8 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CBURN
+  - type: Contract # L5
+    contract: ContractUNIRIS
 
 - type: entity
   parent: IDCardStandard
@@ -1329,3 +1377,5 @@
     interfaces:
       enum.AgentIDCardUiKey.Key:
         type: AgentIDCardBoundUserInterface
+  - type: Contract
+    contract: ContractAdmin

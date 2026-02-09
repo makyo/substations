@@ -11,8 +11,8 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} Shōkō "Little Port" {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'NY'
+            !type:SysConNameGenerator
+            stationType: S # for 'Station'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_kaeri.yml
         - type: StationJobs

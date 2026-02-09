@@ -1,0 +1,42 @@
+- type: contract
+  id: ContractSysCon
+  name: contract-syscon-name
+  description: contract-syscon-desc
+
+- type: contract
+  id: ContractUNPeacekeeper
+  name: contract-peacekeeper-name
+  description: contract-peacekeeper-desc
+
+- type: contract
+  id: ContractUNIRIS
+  name: contract-iris-name
+  description: contract-iris-desc
+
+- type: contract
+  id: ContractCNZ
+  name: contract-cnz-name
+  description: contract-cnz-desc
+
+- type: contract
+  id: ContractGEX
+  name: contract-gex-name
+  description: contract-gex-desc
+
+- type: contract
+  id: ContractITP
+  name: contract-itp-name
+  description: contract-itp-desc
+
+# Contracts for cards that aren't generally used in-game
+
+- type: contract
+  id: ContractIndependent
+  name: contract-independent-name
+  description: contract-independent-desc
+
+- type: contract
+  id: ContractAdmin
+  name: contract-admin-name
+  description: contract-admin-desc
+  selectable: false

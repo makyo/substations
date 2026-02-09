@@ -125,7 +125,7 @@
 - type: entity
   parent: FilledSecureCabinet
   id: SecureCabinetHoS
-  suffix: Head Of Security
+  suffix: Chief Security Officer # L5
   components:
   - type: AccessReader
     access: [["HeadOfSecurity"]]
@@ -134,7 +134,7 @@
 - type: entity
   parent: FilledSecureCabinet
   id: SecureCabinetHoP
-  suffix: Head Of Personnel
+  suffix: Hospitality Director # L5
   components:
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
@@ -143,7 +143,7 @@
 - type: entity
   parent: FilledSecureCabinet
   id: SecureCabinetLO
-  suffix: Logistics Officer
+  suffix: Chief Logistics Officer # L5
   components:
   - type: AccessReader
     access: [["Quartermaster"]]
@@ -256,6 +256,15 @@
   - type: AccessReader
     access: [["Mantis"]]
 
+#Archivist
+- type: entity
+  parent: FilledSecureCabinet
+  id: SecureCabinetArchivist
+  suffix: Archivist
+  components:
+  - type: AccessReader
+    access: [["Library"]]
+
 #Department Secure Cabinets
 #Command
 - type: entity
@@ -328,3 +337,12 @@
   components:
   - type: AccessReader
     access: [["Justice"]]
+
+#CentComm
+- type: entity
+  parent: FilledSecureCabinet
+  id: SecureCabinetCentComm
+  suffix: Dept Central Admin
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"]]

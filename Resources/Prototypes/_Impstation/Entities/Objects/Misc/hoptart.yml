@@ -248,7 +248,7 @@
 - type: entity
   parent: HopTartCookedBase
   id: HopTartCookedHeadOfPersonnel
-  suffix: Head of Personnel
+  suffix: Hospitality Director
   components:
   - type: FlavorProfile
     flavors:
@@ -257,7 +257,7 @@
 - type: entity
   parent: HopTartCookedBase
   id: HopTartCookedHeadOfSecurity
-  suffix: Head of Security
+  suffix: Chief Security Officer
   components:
   - type: FlavorProfile
     flavors:
@@ -374,7 +374,7 @@
 - type: entity
   parent: HopTartCookedBase
   id: HopTartCookedQuartermaster
-  suffix: Quartermaster
+  suffix: Chief Logistics Officer # L5
   components:
   - type: FlavorProfile
     flavors:

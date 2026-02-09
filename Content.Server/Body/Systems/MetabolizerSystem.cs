@@ -208,6 +208,9 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
                     if (scale < effect.MinScale)
                         continue;
 
+                    if (effect.Probability < 1.0f && !_random.Prob(effect.Probability))
+                        continue;
+
                     // See if conditions apply
                     if (effect.Conditions != null && !CanMetabolizeEffect(actualEntity, ent, soln.Value, effect.Conditions))
                         continue;

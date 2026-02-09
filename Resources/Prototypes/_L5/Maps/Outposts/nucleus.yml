@@ -3,16 +3,16 @@
   mapName: Nucleus
   mapPath: /Maps/_L5/Outposts/nucleus.yml
   minPlayers: 0
-  maxPlayers: 6
+  maxPlayers: 50 # Just the max server pop
   stations:
     Nucleus:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: 'SCCS Nucleus {1}'
+        mapNameTemplate: '{0} Nucleus {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: 'NY'
+          !type:SysConNameGenerator
+          stationType: CS # for 'Contruction Ship'
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]

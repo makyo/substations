@@ -4,10 +4,10 @@ job-description-bartender = Manage the bar and keep it lively, give out drinks, 
 job-description-botanist = Grow food for the chef, drugs for medbay, and other plants to keep yourself entertained.
 # L5
 job-description-borg = An intelligence in a robotic chassis. Follow your chassis' directives if you choose to do so, serve the crew, and hound the research team for upgrades.
-job-description-boxer = Fight your way to the top! Challenge the head of personnel and get brigged when you win. Currently available on Core and Cog.
+job-description-boxer = Fight your way to the top! Challenge the hospitality director and get brigged when you win. Currently available on Core and Cog.
 job-description-brigmedic = Fight in the rear of the security service, for the lives of your comrades! You are the first and last hope of your squad. Hippocrates bless you.
 job-description-cadet = Learn the basics of arresting criminals and managing the brig. Listen to your supervisors and feel free to ask them for any help.
-job-description-captain = Keep the station running, delegate work to the other heads of staff, and exert your will.
+job-description-captain = Keep the station running, delegate work to the other heads of staff, and provide a positive example to all crew.
 job-description-cargotech = Deal with requisitions and deliveries, pilot the cargo shuttle to the trade station and back, and work with others to make ludicrous amounts of cash and then waste it all gambling.
 job-description-ce = Manage the engineering department to ensure power, atmospherics, and the hull are in perfect shape.
 # L5
@@ -43,7 +43,8 @@ job-description-rd = Manage the Science department, unlocking technologies, acqu
 job-description-research-assistant = Learn the basics of robotics and how to research various artifacts & anomalies.
 job-description-reporter = Entertain & inform the crew with your vibrant journalism through wireless cameras, the radio and the news.
 job-description-salvagespec = Use the salvage magnet to draw in detached scraps & asteroids to loot and enrich the station, build a salvage ship and then travel to new planets, while fighting off any space fauna along the way.
-job-description-scientist = Research alien artifacts, unlock new technologies, build newer and better machines around the station, and make everything run more efficiently.
+# L5
+job-description-scientist = Research metamaterial artifacts, unlock new technologies, build newer and better machines around the station, and make everything run more efficiently.
 job-description-security = Catch criminals and enemies of the station, enforce the law, and ensure that the station does not fall into disarray.
 job-description-serviceworker = Learn the basics of bartending, cooking, and growing plants.
 # L5

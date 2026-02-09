@@ -72,6 +72,10 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("colorLinks")]
         public Dictionary<string, string>? ColorLinks { get; private set; }
 
+
+		[DataField("shader")]
+		public string? Shader { get; private set; } = null;
+
         public Marking AsMarking()
         {
             return new Marking(ID, Sprites.Count);

@@ -3,17 +3,22 @@
 # SPDX-License-Identifier: MIT
 
 - type: trait
-  category: Quirks
+  category: Augments
   id: Synthetic
   name: trait-synth-name
   description: trait-synth-desc
-  components:
-  - type: Synth
-  # Begin DeltaV Additions - blacklist IPCs
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-    - Silicon
-    - BorgChassis
-  excludedSpecies:
-  - IPC
-  # End DeltaV Additions
+    - type: Synth
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true

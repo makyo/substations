@@ -65,8 +65,8 @@
 - type: entity
   parent: [ClothingHeadsetCargo, BaseCommandContraband]
   id: ClothingHeadsetQM
-  name: logistics officer's headset # DeltaV - Logistics Department replacing Cargo
-  description: A headset used by the logistics officer. # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer's headset # DeltaV - Logistics Department replacing Cargo # L5
+  description: A headset used by the chief logistics officer. # DeltaV - Logistics Department replacing Cargo # L5
   components:
   - type: ContainerFill
     containers:

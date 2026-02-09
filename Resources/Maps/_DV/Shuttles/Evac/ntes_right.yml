@@ -39,7 +39,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: NTEX Right
+      name: UNCS Right # L5
     - type: Transform
       pos: -0.46875,-0.52606076
       parent: invalid

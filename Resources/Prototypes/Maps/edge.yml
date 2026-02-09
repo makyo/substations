@@ -13,8 +13,8 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} Edge Station {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'DV'
+            !type:SysConNameGenerator
+            stationType: S # for 'Station'
         - type: StationJobs
           availableJobs:
           #command

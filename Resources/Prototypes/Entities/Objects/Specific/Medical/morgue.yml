@@ -152,6 +152,7 @@
               Quantity: 5
             - ReagentId: Ectoplasm  # DeltaV - for normality crystals
               Quantity: 5          # DeltaV
-    - type: GuideHelp
-      guides:
-      - MinorAntagonists
+    # L5 - guides removed
+#    - type: GuideHelp
+#      guides:
+#      - MinorAntagonists

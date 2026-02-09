@@ -27,7 +27,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: NTCS Express Model B
+      name: SCCS Express Model B # L5
     - type: Transform
       pos: -0.484375,-0.5
       parent: invalid

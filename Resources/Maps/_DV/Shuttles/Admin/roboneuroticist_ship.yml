@@ -28,7 +28,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Kizame
+      name: CNZ Kizame
     - type: Transform
     - type: MapGrid
       chunks:

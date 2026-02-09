@@ -80,8 +80,8 @@
 - type: entity
   parent: BaseTechFabCircuitboardDV
   id: EpistemicsTechFabCircuitboard
-  name: epistemics techfab machine board
-  description: A machine printed circuit board for a epistemics techfab.
+  name: R&D techfab machine board # L5
+  description: A machine printed circuit board for a R&D techfab. # L5
   components:
   - type: Sprite
     state: science

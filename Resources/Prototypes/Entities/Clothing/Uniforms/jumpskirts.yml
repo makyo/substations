@@ -167,7 +167,7 @@
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtHoP
-  name: head of personnel's jumpskirt
+  name: hospitality director's jumpskirt
   description: Rather bland and inoffensive. Perfect for vanishing off the face of the universe.
   components:
   - type: Sprite
@@ -178,7 +178,7 @@
 - type: entity
   parent: [ClothingUniformSkirtRollableBase, BaseCommandContraband] # DeltaV - add rollable jumpsuits
   id: ClothingUniformJumpskirtHoS
-  name: head of security's jumpskirt
+  name: chief security officer's jumpskirt
   description: A standard Station Security uniform, adorned with gold emblems and commander's epaulettes. # DeltaV - improved description
   components:
   - type: Sprite
@@ -189,7 +189,7 @@
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtHoSAlt
-  name: head of security's turtleneck
+  name: chief security officer's turtleneck
   description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
@@ -200,8 +200,8 @@
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtHoSParadeMale
-  name: head of security's parade uniform
-  description: A head of security's luxury-wear, for special occasions.
+  name: chief security officer's parade uniform
+  description: A chief security officer's luxury-wear, for special occasions.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi
@@ -330,7 +330,7 @@
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtQM
-  name: logistics officer's jumpskirt # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer's jumpskirt # DeltaV - Logistics Department replacing Cargo
   description: 'What can brown do for you?'
   components:
   - type: Sprite
@@ -341,7 +341,7 @@
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
   id: ClothingUniformJumpskirtQMTurtleneck
-  name: logistics officer's turtleneck # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer's turtleneck # DeltaV - Logistics Department replacing Cargo
   description: A sharp turtleneck made for the hardy work environment of supply.
   components:
     - type: Sprite
@@ -656,7 +656,7 @@
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseSecurityContraband]
   id: ClothingUniformJumpskirtSeniorOfficer
-  name: senior officer jumpskirt
+  name: senior Peacekeeper jumpskirt # L5
   description: A sign of skill and prestige within the security department.
   components:
   - type: Sprite
@@ -668,7 +668,7 @@
   parent: [ClothingUniformSkirtFoldableBase, BaseSecurityContraband] # DeltaV - add foldable jumpsuits
   id: ClothingUniformJumpskirtSecGrey
   name: grey security jumpskirt
-  description: A light grey shirt with bright red highlights, for dedicated and responsive security officers. # DeltaV - improved description
+  description: A light grey shirt with bright red highlights, for dedicated and responsive Peacekeepers. # DeltaV - improved description # L5
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/security_grey.rsi # DeltaV - resprite

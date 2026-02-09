@@ -45,7 +45,7 @@ public sealed class TypingIndicatorVisualizerSystem : VisualizerSystem<TypingInd
             layer = SpriteSystem.LayerMapReserve((uid, args.Sprite), TypingIndicatorLayers.Base);
 
         // L5 - synth typing indicators
-        var useSynth = component.UseSyntheticVariant && !proto.NoSynthVariant;
+        var useSynth = component.TypingIndicatorOverridePrototype == null && component.UseSyntheticVariant && !proto.NoSynthVariant;
         if (useSynth)
             SpriteSystem.LayerSetRsi((uid, args.Sprite), layer, proto.SynthSpritePath);
         else

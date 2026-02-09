@@ -28,7 +28,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: GLX-225-DREADNOUGHT
+      name: GEX-225-DREADNOUGHT
     - type: Transform
       pos: -2.0520835,2.2466989
       parent: invalid

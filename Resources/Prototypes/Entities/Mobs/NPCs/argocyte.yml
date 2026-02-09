@@ -3,7 +3,7 @@
   parent: [ BaseSimpleMob, BaseMobAnimal, MobCombat ]
   id: BaseMobArgocyte
   suffix: AI
-  description: A dangerous alien found on the wrong side of planets, known for their propensity for munching on ruins.
+  description: A dangerous engineered critter found on the wrong side of planets, known for their propensity for munching on ruins. # L5
   abstract: true
   components:
   - type: NpcFactionMember
@@ -132,7 +132,7 @@
   parent: BaseMobArgocyte
   id: MobArgocyteSkitter
   name: skitter
-  description: A devious little alien... Make sure they don't run off with your rations!
+  description: A devious little creature... Make sure they don't run off with your rations!
   components:
   - type: Sprite
     layers:

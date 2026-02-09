@@ -145,11 +145,13 @@
 - type: entity
   parent: BaseSignDirectional
   id: SignDirectionalHop
-  name: hop sign
-  description: A direction sign, pointing out which way Head of Personnel's office is.
+  name: HD sign
+  description: A direction sign, pointing out which way Hospitality Director's office is.
   components:
+  # L5
   - type: Sprite
-    state: direction_hop
+    sprite: _L5/Structures/Wallmounts/signs.rsi
+    state: direction_hd
 
 - type: entity
   parent: BaseSignDirectional
@@ -208,12 +210,11 @@
 - type: entity
   parent: BaseSignDirectional
   id: SignDirectionalSci
-  name: epistemics sign # DeltaV - Epistemics Department replacing Science
-  description: A direction sign, pointing out which way the Epistemics department is. # DeltaV - Epistemics Department replacing Science
+  name: science sign
+  description: A direction sign, pointing out which way the Science department is.
   components:
   - type: Sprite
-    sprite: Nyanotrasen/Structures/Wallmounts/signs.rsi # DeltaV - Epistemics Department replacing Science
-    state: direction_epi # DeltaV - Epistemics Department replacing Science
+    state: direction_sci
 
 - type: entity
   parent: BaseSignDirectional
@@ -322,8 +323,8 @@
 - type: entity
   parent: BaseSign
   id: SignAnomaly
-  name: xenoarcheology lab sign
-  description: A sign indicating the xenoarchaeology lab.
+  name: metamaterials lab sign # L5
+  description: A sign indicating the metamaterials lab. # L5
   components:
   - type: Sprite
     state: xenoarch
@@ -779,12 +780,11 @@
 - type: entity
   parent: BaseSign
   id: SignScience
-  name: epistemics sign # DeltaV - Epistemics Department replacing Science
-  description: A sign indicating the epistemics area. # DeltaV - Epistemics Department replacing Science
+  name: science sign
+  description: A sign indicating the science area.
   components:
   - type: Sprite
-    sprite: _DV/Structures/Wallmounts/signs.rsi # DeltaV - Epistemics Department replacing Science
-    state: epistemics # DeltaV - Epistemics Department replacing Science
+    state: sci
 
 - type: entity
   parent: BaseSign

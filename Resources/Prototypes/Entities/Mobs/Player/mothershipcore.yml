@@ -159,10 +159,11 @@
     - SiliconEmotes
     - CanPilot
     - Structure
-  - type: GuideHelp
-    guides:
-    - Robotics
-    - Xenoborgs
+   # L5 - guides removed
+#  - type: GuideHelp
+#    guides:
+#    - Robotics
+#    - Xenoborgs
   - type: Inventory
     templateId: borg
   - type: NpcFactionMember

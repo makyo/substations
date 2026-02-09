@@ -1,0 +1,7 @@
+- type: gameMapPool
+  id: OutpostMapPool
+  maps:
+  - Nucleus
+  - Omphalos
+  - Omphalos2
+  - Gemini

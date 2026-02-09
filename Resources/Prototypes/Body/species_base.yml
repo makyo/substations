@@ -250,3 +250,4 @@
     alternateState: Standing
   - type: CanDoCPR # DeltaV - Addition of CPR
   - type: StunVisuals
+  - type: LongTermHealth # L5

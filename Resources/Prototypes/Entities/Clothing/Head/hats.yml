@@ -124,7 +124,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretQM
   # DeltaV - Logistics Department - Replace Quartermaster with Logistics Officer
-  name: logistics officer's beret
+  name: chief logistics officer's beret
   description: A beret with the logistics department's insignia emblazoned on it. For logistics officers that are more inclined towards style.
   # End of modified code
   components:
@@ -144,7 +144,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretHoS
-  name: head of security's beret
+  name: Chief Security Officer's beret # L5
   description: A black beret with a commander's rank emblem. For officers that are more inclined towards style than safety.
   components:
   - type: Sprite
@@ -390,8 +390,9 @@
 - type: entity
   parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHopcap
-  name: head of personnel's cap
-  description: A stylish cap worn by the Head of Personnel. Shows paperwork who's in charge.
+  # L5
+  name: hospitality director's cap
+  description: A stylish cap worn by the Hospitality Director. Shows paperwork who's in charge.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hats/hopcap.rsi # DeltaV - resprite
@@ -409,7 +410,7 @@
 - type: entity
   parent: [ClothingHeadBase, BaseCommandContraband]
   id: ClothingHeadHatHoshat
-  name: head of security's hat
+  name: chief security officer's hat # L5
   description: "There's a new sheriff in station."
   components:
   - type: Sprite
@@ -1526,7 +1527,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretHop
-  name: head of personnel's beret
+  name: hospitality director's beret # L5
   description: A dark blue beret with a ruby inserted in the center, for true connoisseurs of bureaucracy!
   components:
   - type: Sprite

@@ -31,7 +31,7 @@ entities:
   - uid: 60
     components:
     - type: MetaData
-      name: NTES Seal
+      name: UNCS Seal # L5
     - type: Transform
       pos: 0.47916666,0.4948031
       parent: invalid

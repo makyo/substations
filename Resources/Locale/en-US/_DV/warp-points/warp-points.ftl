@@ -23,7 +23,8 @@ warp-point-engineering = Engineering
 warp-point-singularity = Singularity
 warp-point-atmospherics = Atmos
 
-warp-point-hop = HoP
+# L5
+warp-point-hop = HD
 warp-point-kitchen = Kitchen
 warp-point-bar = Bar
 warp-point-botany = Botany

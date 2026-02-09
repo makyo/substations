@@ -261,12 +261,12 @@
     - state: folder-base
 
 - type: entity
-  parent: [BoxFolderCentComEmpty, BoxFolderFill]
+  parent: [BoxFolderCentComEmpty, BoxFolderFillSysCon]
   id: BoxFolderCentCom
   suffix: DO NOT MAP; Filled
 
 - type: entity
-  parent: [BoxFolderCentComEmpty, BoxFolderFillThreePapers]
+  parent: [BoxFolderCentComEmpty, BoxFolderFillSysConThreePapers] # L5
   id: BoxFolderCentComThreePapers
   suffix: DO NOT MAP; 3 papers
 
@@ -387,11 +387,11 @@
     sprite: Objects/Misc/cc-clipboard.rsi
 
 - type: entity
-  parent: [BoxFolderCentComClipboardEmpty, BoxFolderFill]
+  parent: [BoxFolderCentComClipboardEmpty, BoxFolderFillSysCon]
   id: BoxFolderCentComClipboard
 
 - type: entity
-  parent: [BoxFolderCentComClipboardEmpty, BoxFolderFillThreePapers]
+  parent: [BoxFolderCentComClipboardEmpty, BoxFolderFillSysConThreePapers]
   id: BoxFolderCentComClipboardThreePapers
 
 - type: entity

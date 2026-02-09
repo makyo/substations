@@ -52,7 +52,7 @@
 
 - type: entity
   parent: ClothingEyesBase
-  id: ClothingEyesGlassesThermal
+  id: ClothingEyesGlassesThermalWhite # L5
   name: thermal vision goggles
   description: Now you can see everyone!
   components:

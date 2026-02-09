@@ -2,9 +2,12 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Content.Shared._DV.CCVars; // DeltaV
 using Content.Shared.CCVar;
 using Content.Client.CharacterInfo;
 using static Content.Client.CharacterInfo.CharacterInfoSystem;
+using System.Collections;
+using Content.Shared.Mobs;
 
 namespace Content.Client.UserInterface.Systems.Chat;
 
@@ -42,14 +45,16 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
     private void InitializeHighlights()
     {
+        MigrateDVHighlightSettings(); // TODO: SUM - Remove (DeltaV)
+
         _config.OnValueChanged(CCVars.ChatAutoFillHighlights, (value) => { _autoFillHighlightsEnabled = value; }, true);
 
         _config.OnValueChanged(CCVars.ChatHighlightsColor, (value) => { _highlightsColor = value; }, true);
 
         // Load highlights if any were saved.
-        var highlights = _config.GetCVar(CCVars.ChatHighlights);
+        var highlights = _config.GetCVar(DCCVars.ChatHighlights); // DeltaV - Switched to use our CVar
 
-        if (!string.IsNullOrEmpty(highlights))
+        if (!string.IsNullOrEmpty(highlights) || AutoHighlightsEnabled) // DeltaV - Message auto-highlighting
         {
             UpdateHighlights(highlights, true);
         }
@@ -78,18 +83,19 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
     public void UpdateHighlights(string newHighlights, bool firstLoad = false)
     {
-        // Do nothing if the provided highlights are the same as the old ones and it is not the first time.
-        if (!firstLoad && _config.GetCVar(CCVars.ChatHighlights).Equals(newHighlights, StringComparison.CurrentCultureIgnoreCase))
-            return;
-
-        _config.SetCVar(CCVars.ChatHighlights, newHighlights);
-        _config.SaveToFile();
-
+        // DeltaV - Heavily modified to split out the auto-generated highlights from the user-defined ones.
+        if (!firstLoad && !_config.GetCVar(DCCVars.ChatHighlights).Equals(newHighlights, StringComparison.CurrentCultureIgnoreCase))
+        {
+            _config.SetCVar(DCCVars.ChatHighlights, newHighlights); // DV - Moved inside this if because the comparison
+            _config.SaveToFile();
+        }
         _highlights.Clear();
 
         // We first subdivide the highlights based on newlines to prevent replacing
         // a valid "\n" tag and adding it to the final regex.
-        var splittedHighlights = newHighlights.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        var allHighlights = $"{newHighlights}\n{AutoHighlights}"; // Even if AutoHighlights is empty, the split below will remove it.
+        var splittedHighlights = allHighlights.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        // END DeltaV
 
         for (var i = 0; i < splittedHighlights.Length; i++)
         {
@@ -128,7 +134,9 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         _highlights.Sort((x, y) => y.Length.CompareTo(x.Length));
     }
 
-    private void OnCharacterUpdated(CharacterData data)
+    // DeltaV - Modified and moved to Content.Client/_DV/UserInterfaces/Systems/Chat/ChatUIController.cs
+    // Commented out so that if you get a conflict, you actually put that change in the updated method.
+    /*private void OnCharacterUpdated(CharacterData data)
     {
         // If _charInfoIsAttach is false then the opening of the character panel was the one
         // to generate the event, dismiss it.
@@ -158,5 +166,5 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         UpdateHighlights(newHighlights);
         HighlightsUpdated?.Invoke(newHighlights);
         _charInfoIsAttach = false;
-    }
+    }*/
 }

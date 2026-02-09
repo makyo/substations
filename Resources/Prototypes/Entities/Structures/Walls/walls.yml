@@ -1524,7 +1524,7 @@
 - type: entity
   parent: BaseWall
   id: WallVaultAlien
-  name: alien vault wall
+  name: ornate vault wall # L5
   description: A mysterious ornate looking wall. There may be ancient dangers inside.
   components:
   - type: Sprite

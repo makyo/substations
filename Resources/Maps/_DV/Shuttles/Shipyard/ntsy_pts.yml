@@ -28,7 +28,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: NTCI-TR Private Transport Shuttle
+      name: UNCS-TR Private Transport Shuttle
     - type: Transform
       parent: invalid
     - type: MapGrid
@@ -557,7 +557,7 @@ entities:
       pos: 0.5,3.5
       parent: 1
     - type: FaxMachine
-      name: NTCI-TR PTS
+      name: UNCS-TR PTS
 - proto: FirelockGlass
   entities:
   - uid: 65
@@ -831,12 +831,12 @@ entities:
   - uid: 166
     components:
     - type: MetaData
-      name: long-range holopad (NTCI-TR PTS)
+      name: long-range holopad (UNCS-TR PTS)
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
     - type: Label
-      currentLabel: NTCI-TR PTS
+      currentLabel: UNCS-TR PTS
     - type: NameModifier
       baseName: long-range holopad
 - proto: IntercomCommon
@@ -1258,7 +1258,7 @@ entities:
       pos: -0.5,-0.5
       parent: 1
     - type: WarpPoint
-      location: NTCI-TR Private Transport Shuttle
+      location: UNCS-TR Private Transport Shuttle
 - proto: Window
   entities:
   - uid: 160

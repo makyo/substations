@@ -12,3 +12,6 @@ thaven-mood-admin-ui-delete = Delete
 
 admin-trick-add-random-mood-description = Add a random mood to this entity.
 admin-trick-give-moods-description = Give this entity moods.
+
+# L5 - quieting an error
+Thaven = Thaven

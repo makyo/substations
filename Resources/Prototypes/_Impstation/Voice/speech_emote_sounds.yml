@@ -1,4 +1,42 @@
 - type: emoteSounds
+  id: Allulalo
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_Impstation/Allulalo/allulalo_scream.ogg
+    Laugh:
+      path: /Audio/_Impstation/Allulalo/allulalo_laugh.ogg
+    Hiss:
+      collection: VoxHiss
+      params:
+        volume: -5
+    Chitter:
+      path: /Audio/_Impstation/Allulalo/allulalo_chitter.ogg
+    Sneeze:
+      collection: FemaleSneezes #placeholder
+    Cough:
+      collection: FemaleCoughs #placeholder
+    Yawn:
+      path: /Audio/_Impstation/Allulalo/allulalo_say.ogg
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      path: /Audio/_Impstation/Allulalo/allulalo_say.ogg #placeholder
+    Whistle:
+      path: /Audio/_Shiptest/Voice/Kepori/kepiwhistle.ogg # L5
+    Click:
+      path: /Audio/_Shiptest/Voice/Kepori/kepiclick.ogg # L5
+    Crying:
+      path: /Audio/_Impstation/Allulalo/allulalo_cry.ogg
+    Weh:
+      collection: Weh
+    Gasp:
+      path: /Audio/_Impstation/Allulalo/allulalo_say.ogg
+    DefaultDeathgasp:
+      /Audio/_Impstation/Allulalo/allulalo_deathgasp.ogg
+
+- type: emoteSounds
   id: MaleThaven
   sounds:
     Scream:
@@ -126,4 +164,3 @@
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
   params:
     variation: 0.05
-    pitch: 1.25

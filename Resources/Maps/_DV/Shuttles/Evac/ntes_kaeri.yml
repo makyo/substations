@@ -36,7 +36,7 @@ entities:
   - uid: 617
     components:
     - type: MetaData
-      name: NTES Kaeri
+      name: UNCS Kaeri # L5
     - type: Transform
       pos: 0.5416667,0.4426683
       parent: invalid

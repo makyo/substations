@@ -36,7 +36,7 @@
 - type: entity
   id: LockerQuarterMaster
   parent: LockerBaseSecure
-  name: logistics officer's locker # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer's locker # DeltaV - Logistics Department replacing Cargo # L5
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -77,7 +77,7 @@
 - type: entity
   id: LockerHeadOfPersonnel
   parent: LockerBaseSecure
-  name: head of personnel's locker
+  name: hospitality director's locker
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -323,7 +323,7 @@
 - type: entity
   id: LockerHeadOfSecurity
   parent: CommandLockerBaseSecureDeltaV # DeltaV - resprite security lockers, altered health due to being command locker
-  name: head of security's locker
+  name: chief security officer's locker # L5
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -365,7 +365,7 @@
 - type: entity
   id: LockerSecurity
   parent: LockerBaseSecureDeltaV # DeltaV - resprite security lockers
-  name: security officer's locker
+  name: Peacekeeper's locker
   components:
   - type: Appearance
   - type: EntityStorageVisuals

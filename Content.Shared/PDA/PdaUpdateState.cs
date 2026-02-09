@@ -50,5 +50,7 @@ namespace Content.Shared.PDA
         public string? StationAlertLevel;
         public Color StationAlertColor;
         public DateTime? CurrentDate; // DeltaV - PDA date
+        public string? ContractName; // L5
+        public string? ContractDesc; // L5
     }
 }

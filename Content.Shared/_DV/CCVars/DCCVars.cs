@@ -113,6 +113,29 @@ public sealed partial class DCCVars
         CVarDef.Create("game.current_year_offset", 550, CVar.SERVERONLY);
 
     /*
+     * Traits
+     */
+
+    /// <summary>
+    /// Maximum number of traits that can be selected globally.
+    /// </summary>
+    public static readonly CVarDef<int> MaxTraitCount =
+        CVarDef.Create("traits.max_count", 10, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Maximum trait points available to spend.
+    /// Traits with positive cost consume points, negative cost traits grant points.
+    /// </summary>
+    public static readonly CVarDef<int> MaxTraitPoints =
+        CVarDef.Create("traits.max_points", 15, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// Whether to skip showing the disabled traits popup when spawning.
+    /// </summary>
+    public static readonly CVarDef<bool> SkipDisabledTraitsPopup =
+        CVarDef.Create("traits.skip_disabled_traits_popup", false, CVar.CLIENT | CVar.ARCHIVE);
+
+    /*
      * Feedback webhook
      */
 
@@ -168,7 +191,7 @@ public sealed partial class DCCVars
         CVarDef.Create("game.disable_preset_test", false, CVar.SERVERONLY);
 
     /// <summary>
-    /// A string containing a list of newline-separated strings to be highlighted in the chat.
+    /// A string containing a list of newline-separated strings to be highlighted in the chat. Use this instead of Wizden's CVar.
     /// </summary>
     public static readonly CVarDef<string> ChatHighlights =
         CVarDef.Create("deltav.chat.highlights",
@@ -179,6 +202,7 @@ public sealed partial class DCCVars
     /// <summary>
     /// An option to toggle the automatic filling of the highlights with the character's info, if available.
     /// </summary>
+    [Obsolete("Use CCVar.ChatAutoFillHighlights instead.")]
     public static readonly CVarDef<bool> ChatAutoFillHighlights =
         CVarDef.Create("deltav.chat.auto_fill_highlights",
             false,
@@ -188,6 +212,7 @@ public sealed partial class DCCVars
     /// <summary>
     /// The color in which the highlights will be displayed.
     /// </summary>
+    [Obsolete("Use CCVar.ChatHighlightsColor instead.")]
     public static readonly CVarDef<string> ChatHighlightsColor =
         CVarDef.Create("deltav.chat.highlights_color",
             "#17FFC1FF",

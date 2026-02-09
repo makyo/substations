@@ -274,7 +274,7 @@
   id: ArtifactCrusherMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: artifact crusher machine board
-  description: A machine printed circuit board for an artifact crusher.
+  description: A machine printed circuit board for a metamaterial artifact crusher. # L5
   components:
   - type: Sprite
     state: science

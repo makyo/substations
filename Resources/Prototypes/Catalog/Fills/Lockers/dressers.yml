@@ -1,7 +1,7 @@
 - type: entity
   id: DresserCaptainFilled
   parent: Dresser
-  suffix: Filled, StationAdministrator # L5
+  suffix: Filled, Station Administrator # L5
   categories: [ HideSpawnMenu ] # DeltaV - Replaced with bigger dresser in Resources/Prototypes/_DV/Catalog/Fills/Lockers/dressers.yml
   components:
   - type: EntityTableContainerFill
@@ -59,7 +59,7 @@
 - type: entity
   id: DresserHeadOfPersonnelFilled
   parent: Dresser
-  suffix: Filled, Head Of Personnel
+  suffix: Filled, Hospitality Director
   categories: [ HideSpawnMenu ] # DeltaV - Replaced with bigger dresser in Resources/Prototypes/_DV/Catalog/Fills/Lockers/dressers.yml
   components:
   - type: EntityTableContainerFill
@@ -76,7 +76,7 @@
 - type: entity
   id: DresserHeadOfSecurityFilled
   parent: Dresser
-  suffix: Filled, Head Of Security
+  suffix: Filled, Chief Security Officer # L5
   categories: [ HideSpawnMenu ] # DeltaV - Replaced with bigger dresser in Resources/Prototypes/_DV/Catalog/Fills/Lockers/dressers.yml
   components:
   - type: EntityTableContainerFill
@@ -98,7 +98,7 @@
 - type: entity
   id: DresserQuarterMasterFilled
   parent: Dresser
-  suffix: Filled, Quarter Master
+  suffix: Filled, Chief Logistics Officer # L5
   categories: [ HideSpawnMenu ] # DeltaV - Replaced with bigger dresser in Resources/Prototypes/_DV/Catalog/Fills/Lockers/dressers.yml
   components:
   - type: EntityTableContainerFill

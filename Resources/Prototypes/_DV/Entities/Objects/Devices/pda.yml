@@ -640,7 +640,7 @@
 - type: entity
   parent: SciencePDA
   id: XenoarchPDA
-  name: xenoarchaeologist PDA
+  name: metamaterials scientist PDA # L5
   components:
   - type: Pda
     id: XenoarchIDCard
