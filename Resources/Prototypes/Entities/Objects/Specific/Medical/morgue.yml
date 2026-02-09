@@ -131,8 +131,8 @@
 - type: entity
   parent: Ash
   id: Ectoplasm
-  name: ectoplasm
-  description: Much less deadly in this form.
+  name: Helium-3 Precursor
+  description: A complex semisolid precursor to Helium-3. Useful in constructing a He3 cooling system.
   components:
     - type: Sprite
       sprite: _DV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite

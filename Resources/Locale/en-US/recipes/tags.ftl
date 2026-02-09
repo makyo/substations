@@ -79,7 +79,8 @@ construction-graph-tag-core-pinpointer-piece = piece of core pinpointer
 # toys
 construction-graph-tag-rubber-ducky = a rubber ducky
 construction-graph-tag-ghost = ghost soft toy
-construction-graph-tag-ectoplasm = ectoplasm
+# L5
+construction-graph-tag-ectoplasm = Helium-3 precursor
 construction-graph-tag-lizard-plushie = lizard plushie
 
 # carpet
