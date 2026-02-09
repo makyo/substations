@@ -1095,3 +1095,9 @@ Entries:
         construct instead of holy water.
   id: 153
   time: '2026-02-09T01:32:33.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Fix
+      message: Plants no longer mutate when you so much as look at them.
+  id: 154
+  time: '2026-02-09T01:46:47.0000000+00:00'
