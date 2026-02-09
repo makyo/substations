@@ -1087,3 +1087,11 @@ Entries:
       message: Antidepressants now last longer.
   id: 152
   time: '2026-02-09T00:28:57.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: >-
+        Ectoplasm is now He-3 precursor, and Helium-3 crystals now use saline to
+        construct instead of holy water.
+  id: 153
+  time: '2026-02-09T01:32:33.0000000+00:00'
