@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: Hitlinemoss
-  changes:
-  - message: The autolathe and uniform printer can now produce towels.
-    type: Add
-  id: 9004
-  time: '2025-09-25T21:53:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40160
-- author: SirWarock
-  changes:
-  - message: Rollerbed sprites now don't stack when a patient is buckled to it!
-    type: Fix
-  id: 9005
-  time: '2025-09-25T23:57:25.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40550
 - author: Princess-Cheeseballs
   changes:
   - message: You can now put plushies in your cotton burgers.
@@ -3996,3 +3982,19 @@
   id: 9510
   time: '2026-02-09T15:32:39.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/42768
+- author: TytosB
+  changes:
+  - message: adjusted several rooms and added missing items on map serpentcrest. increased
+      min pop to 50.
+    type: Tweak
+  id: 9511
+  time: '2026-02-09T20:34:02.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42863
+- author: SeaWyrm
+  changes:
+  - message: Horizonal and vertical steel slat floor tiles, as well as their dark
+      and white variants, can now be created with a Cutter lathe.
+    type: Add
+  id: 9512
+  time: '2026-02-10T01:48:01.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/37832
