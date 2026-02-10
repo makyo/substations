@@ -29,6 +29,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         RaiseNetworkEvent(new RequestCharacterInfoEvent(GetNetEntity(entity.Value)));
     }
 
+    // Persistence: detail examinable editing
     public void UpdateDetailExaminable(string content)
     {
         RaiseNetworkEvent(new UpdateDetailExaminableEvent(content));
@@ -40,7 +41,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         if (!TryGetEntity(msg.NetEntity, out var entity))
             return;
 
-        var data = new CharacterData(entity.Value, msg.JobTitle, msg.Objectives, msg.Briefing, msg.DetailExaminable, Name(entity.Value));
+        var data = new CharacterData(entity.Value, msg.JobTitle, msg.Objectives, msg.Briefing, msg.DetailExaminable, Name(entity.Value)); // Persistence: detail examinable editing
         OnCharacterUpdate?.Invoke(data);
     }
 
@@ -56,7 +57,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         string Job,
         Dictionary<string, List<ObjectiveInfo>> Objectives,
         string? Briefing,
-        string? DetailExaminable,
+        string? DetailExaminable, // Persistence: detail examinable editing
         string EntityName
     );
 

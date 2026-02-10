@@ -1,7 +1,8 @@
-role-type-crew-aligned-name = Crew Aligned
-role-type-solo-antagonist-name = Solo Antagonist
-role-type-team-antagonist-name = Team Antagonist
-role-type-free-agent-name = Free Agent
+# L5 — matching our lore
+role-type-crew-aligned-name = The System Consortium
+role-type-solo-antagonist-name = The Conclave of New Zealots
+role-type-team-antagonist-name = The Conclave of New Zealots
+role-type-free-agent-name =Independent Contractor
 role-type-familiar-name = Familiar
 role-type-silicon-name = Silicon
 role-type-silicon-antagonist-name = Altered Silicon
@@ -19,7 +20,7 @@ role-type-silicon-color = #6495ed
 role-type-silicon-antagonist-color = #c832e6
 
 # Ideally, subtype names should be short
-role-subtype-traitor = Traitor
+role-subtype-traitor = Instigator
 role-subtype-thief = Thief
 role-subtype-ninja = Ninja
 role-subtype-nukie = Nukie
@@ -31,7 +32,7 @@ role-subtype-zombie = Zombie
 role-subtype-dragon = Dragon
 role-subtype-survivor = Survivor
 role-subtype-subverted = Subverted
-role-subtype-paradox-clone = Paradox
+role-subtype-paradox-clone = Unauthorized Duplicate
 role-subtype-wizard = Wizard
 role-subtype-xenoborg = Xenoborg
 role-subtype-xenoborg-core = Xenoborg Core
