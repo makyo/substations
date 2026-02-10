@@ -1,12 +1,16 @@
-﻿using Content.Server.Mind;
+﻿using Content.Server.Administration.Logs;
+using Content.Server.Mind;
+using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
 using Content.Shared.CCVar;
 using Content.Shared.CharacterInfo;
+using Content.Shared.Database;
 using Content.Shared.DetailExaminable;
 using Content.Shared.Objectives;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
+using Content.Shared.Preferences;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
 
@@ -14,11 +18,14 @@ namespace Content.Server.CharacterInfo;
 
 public sealed class CharacterInfoSystem : EntitySystem
 {
+    [Dependency] private readonly IAdminLogManager _log = default!;
     [Dependency] private readonly JobSystem _jobs = default!;
     [Dependency] private readonly MindSystem _minds = default!;
     [Dependency] private readonly RoleSystem _roles = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
+    [Dependency] private readonly IDependencyCollection _dependencies = default!;
 
     public override void Initialize()
     {
@@ -95,6 +102,16 @@ public sealed class CharacterInfoSystem : EntitySystem
 
         var detail = EnsureComp<DetailExaminableComponent>(entity);
         detail.Content = newContent;
+
+        // L5 — persist across rounds
+        var preferences = _preferencesManager.GetPreferences(args.SenderSession.UserId);
+        var profile = (HumanoidCharacterProfile) preferences.SelectedCharacter;
+        profile.FlavorText = newContent;
+        _preferencesManager.SetProfile(args.SenderSession.UserId, preferences.SelectedCharacterIndex, profile);
+
+        // L5 — log the change
+        _log.Add(LogType.Identity, LogImpact.Medium, $"{ToPrettyString(args.SenderSession.AttachedEntity):user} updated their flavor text");
+
         Dirty(entity, detail);
     }
 }

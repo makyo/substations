@@ -294,6 +294,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
 
         var text = Rope.Collapse(_window.DetailExaminableTextEdit.TextRope).Trim();
+        _window.DetailExaminableSubmitButton.Disabled = true; // L5
         _characterInfo.UpdateDetailExaminable(text);
     }
 
