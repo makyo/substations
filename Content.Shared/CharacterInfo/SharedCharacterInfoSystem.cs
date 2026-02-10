@@ -21,7 +21,7 @@ public sealed class CharacterInfoEvent : EntityEventArgs
     public readonly string JobTitle;
     public readonly Dictionary<string, List<ObjectiveInfo>> Objectives;
     public readonly string? Briefing;
-    public readonly string? DetailExaminable;
+    public readonly string? DetailExaminable; // Persistence — update flavor text in-round
 
     public CharacterInfoEvent(NetEntity netEntity, string jobTitle, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, string? detailExaminable)
     {
@@ -33,6 +33,7 @@ public sealed class CharacterInfoEvent : EntityEventArgs
     }
 }
 
+// Persistence — update flavor text in-round
 [Serializable, NetSerializable]
 public sealed class UpdateDetailExaminableEvent : EntityEventArgs
 {

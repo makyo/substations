@@ -76,6 +76,7 @@ public sealed class CharacterInfoSystem : EntitySystem
         Dirty(entity, detail);
     }
 
+    // Persistence — update flavor text in-round
     private void OnUpdateDetailExaminableEvent(UpdateDetailExaminableEvent msg, EntitySessionEventArgs args)
     {
         if (args.SenderSession.AttachedEntity is not { } entity)
@@ -96,14 +97,4 @@ public sealed class CharacterInfoSystem : EntitySystem
         detail.Content = newContent;
         Dirty(entity, detail);
     }
-
-//     var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
-//         if (FlavorText.Length > maxFlavorTextLength)
-//     {
-//         flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
-//     }
-// else
-// {
-//     flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
-// }
 }
