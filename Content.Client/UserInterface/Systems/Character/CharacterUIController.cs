@@ -137,15 +137,14 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, faction, bankBal, objectives, briefing, detailExaminable, entityName) = data;
+        var (entity, job, objectives, briefing, detailExaminable, entityName) = data;
 
         _window.SpriteView.SetEntity(entity);
 
         UpdateRoleType();
 
         _window.NameLabel.Text = entityName;
-        _window.SubText.Text = (faction != null) ? job + " | " + faction : job; // If off-duty don't show faction
-        _window.SubTextBankBal.Text = bankBal;
+        _window.SubText.Text = job;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
 
@@ -282,6 +281,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         }
     }
 
+    // Persistence: update examine text in-game
     private void OnDetailExaminableSubmit(ButtonEventArgs args)
     {
         if (_window == null)
