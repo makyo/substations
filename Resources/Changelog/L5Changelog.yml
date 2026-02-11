@@ -1107,3 +1107,11 @@ Entries:
       message: Port a fix for IPC charge indicators
   id: 155
   time: '2026-02-10T18:01:49.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: You can now change your examine/flavor text in-round.
+    - type: Tweak
+      message: You no longer automatically deadmin when joining a round.
+  id: 156
+  time: '2026-02-11T09:20:26.0000000+00:00'
