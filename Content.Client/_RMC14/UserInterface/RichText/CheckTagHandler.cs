@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Numerics;
 using Robust.Client.UserInterface.RichText;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -82,14 +81,10 @@ public sealed class CheckTagHandler : IMarkupTagHandler
     /// </summary>
     public bool TryCreateControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
     {
-        var btn = new Button
+        // L5 — fiddled with styling
+        var btn = new CheckBox
         {
-            Text = "☐",
-            MinSize = new Vector2(FontLineHeight + 2, FontLineHeight + 2),
-            MaxSize = new Vector2(FontLineHeight + 2, FontLineHeight + 2),
-            Margin = new Thickness(1, 0, 1, 0),
-            StyleClasses = { "ButtonSquare" },
-            TextAlign = Label.AlignMode.Center
+            Margin = new Thickness(0, 2, 0, 0),
         };
 
         var checkIndex = GetCheckIndex(node);

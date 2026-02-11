@@ -4,9 +4,8 @@ using Robust.Client.UserInterface.RichText;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
-using Robust.Shared.IoC;
 using Content.Client.Paper.UI;
-using Robust.Client.Graphics;
+using Content.Client.Stylesheets;
 
 namespace Content.Client._RMC14.UserInterface.RichText;
 
@@ -89,14 +88,15 @@ public sealed class SignatureTagHandler : IMarkupTagHandler
     /// </summary>
     public bool TryCreateControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
     {
+        // L5 — fiddled with styling
         var btn = new Button
         {
             Text = "Sign",
-            MinSize = new Vector2(48, FontLineHeight + 4),
-            MaxSize = new Vector2(48, FontLineHeight + 4),
-            Margin = new Thickness(1, 2, 1, 2),
-            StyleClasses = { "ButtonSquare" },
-            TextAlign = Label.AlignMode.Center
+            MinSize = new Vector2(44, FontLineHeight),
+            MaxSize = new Vector2(44, FontLineHeight),
+            Margin = new Thickness(1, 1, 1, 0),
+            StyleClasses = { StyleClass.ButtonSmall },
+            TextAlign = Label.AlignMode.Center,
         };
 
         var signatureIndex = GetSignatureIndex(node);

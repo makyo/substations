@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Shared.Utility;
 using Content.Client.Paper.UI;
-using Robust.Client.Graphics;
+using Content.Client.Stylesheets;
 
 namespace Content.Client._RMC14.UserInterface.RichText;
 
@@ -112,12 +112,13 @@ public sealed class FormTagHandler : IMarkupTagHandler
     {
         var btn = new Button
         {
+            // L5 — fiddled with styling
             Text = "Fill",
-            MinSize = new Vector2(32, FontLineHeight + 2),
-            MaxSize = new Vector2(32, FontLineHeight + 2),
-            Margin = new Thickness(1, 0, 1, 0),
-            StyleClasses = { "ButtonSquare" },
-            TextAlign = Label.AlignMode.Center
+            MinSize = new Vector2(34, FontLineHeight),
+            MaxSize = new Vector2(34, FontLineHeight),
+            Margin = new Thickness(1, 1, 1, 0),
+            StyleClasses = { StyleClass.ButtonSmall },
+            TextAlign = Label.AlignMode.Center,
         };
 
         var formIndex = GetFormIndex(node);
