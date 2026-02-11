@@ -49,7 +49,7 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
-  - ShredderMachineCircuitboard
+  - ShredderMachineCircuitboard # Persistence
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic

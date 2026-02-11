@@ -400,11 +400,6 @@
   result: OreProcessorMachineCircuitboard
 
 - type: latheRecipe
-  parent: [ BaseCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
-  id: ShredderMachineCircuitboard
-  result: ShredderMachineCircuitboard
-
-- type: latheRecipe
   parent: [ BaseGoldCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
   id: OreProcessorIndustrialMachineCircuitboard
   result: OreProcessorIndustrialMachineCircuitboard
