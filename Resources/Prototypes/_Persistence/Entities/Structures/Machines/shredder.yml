@@ -12,10 +12,9 @@
     - state: shredder-powered
       shader: unshaded
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-      visible: false
-#    - state: shredder-ready      # I couldn't figure out how to set a sprite based on the MaterialReclaimer's processing state
-#    - state: shredder-processing # I think it's going to need a new visualizer for the MaterialReclaimer. PowerDeviceVisuals.cs might help with this
+    # L5 — the original instance had a processing light that they couldn't get to work and I don't care to.
   - type: Appearance
+  - type: InteractionOutline # L5
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:
@@ -38,10 +37,10 @@
     powerLoad: 250
   - type: MaterialReclaimer
     enabled: true
-    scaleProcessSpeed: true # takes time
+    scaleProcessSpeed: true
     minimumProcessDuration: 1
     reclaimSolutions: false
-    reclaimMaterials: false # some items with Document tag are infinite: nanotask, paper, nanotask, maybe more
+    reclaimMaterials: false
     whitelist:
       tags:
       - Document
@@ -81,4 +80,3 @@
     color: "#d1a34d"
   - type: LitOnPowered
   - type: ItemToggle
-    onUse: false # What does this do in this context?
