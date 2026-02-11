@@ -1115,3 +1115,11 @@ Entries:
       message: You no longer automatically deadmin when joining a round.
   id: 156
   time: '2026-02-11T09:20:26.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Document printers, shredders, and fillable forms! Yay! Includes some L5
+        documents with room for more.
+  id: 157
+  time: '2026-02-11T21:53:34.0000000+00:00'
