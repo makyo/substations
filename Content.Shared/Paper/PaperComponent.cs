@@ -58,6 +58,7 @@ public sealed partial class PaperComponent : Component
         }
     }
 
+    // RMC
     [Serializable, NetSerializable]
     public sealed class PaperSignatureRequestMessage : BoundUserInterfaceMessage
     {

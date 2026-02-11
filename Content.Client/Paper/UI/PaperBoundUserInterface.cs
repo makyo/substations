@@ -55,6 +55,7 @@ public sealed partial class PaperBoundUserInterface : BoundUserInterface // Delt
         }
     }
 
+    // RMC
     private void OnSignatureRequested(int signatureIndex)
     {
         SendMessage(new PaperSignatureRequestMessage(signatureIndex));
