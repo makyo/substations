@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 using Content.Client.Paper.UI;
 using Robust.Client.Graphics;
 
-namespace Content.Client.UserInterface.RichText;
+namespace Content.Client._RMC14.UserInterface.RichText;
 
 /// <summary>
 /// Converts [form] tags into clickable buttons that open fill-in dialogs.
@@ -24,7 +24,7 @@ public sealed class FormTagHandler : IMarkupTagHandler
     private static int _formCounter = 0;
     private static readonly Dictionary<string, int> _formPositions = new();
     private static string _lastText = "";
-    
+
     /// <summary>
     /// Font line height set by PaperWindow to ensure buttons match text height
     /// </summary>

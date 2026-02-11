@@ -8,7 +8,7 @@ using Robust.Shared.IoC;
 using Content.Client.Paper.UI;
 using Robust.Client.Graphics;
 
-namespace Content.Client.UserInterface.RichText;
+namespace Content.Client._RMC14.UserInterface.RichText;
 
 /// <summary>
 /// Converts [signature] tags into clickable buttons that sign with the player's name.
@@ -17,7 +17,7 @@ public sealed class SignatureTagHandler : IMarkupTagHandler
 {
     public string Name => "signature";
     private static int _signatureCounter = 0;
-    
+
     /// <summary>
     /// Font line height set by PaperWindow to ensure buttons match text height
     /// </summary>

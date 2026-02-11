@@ -1,0 +1,257 @@
+# Letterhead
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterhead
+  result: PrintedDocumentSCLetterhead
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterheadMedical
+  result: PrintedDocumentSCLetterheadMedical
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterheadSecurity
+  result: PrintedDocumentSCLetterheadSecurity
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterheadScience
+  result: PrintedDocumentSCLetterheadScience
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterheadLogistics
+  result: PrintedDocumentSCLetterheadLogistics
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterheadEngi
+  result: PrintedDocumentSCLetterheadEngi
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterheadService
+  result: PrintedDocumentSCLetterheadService
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterheadJustice
+  result: PrintedDocumentSCLetterheadJustice
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCLetterheadLeadership
+  result: PrintedDocumentSCLetterheadLeadership
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentUNLetterhead
+  result: PrintedDocumentUNLetterhead
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentUNFormalCommunique
+  result: PrintedDocumentUNFormalCommunique
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentCNZLetterhead
+  result: PrintedDocumentCNZLetterhead
+  categories:
+  - DocumentsLetterhead
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+# Medical
+
+- type: latheRecipe
+  id: PrintedDocumentSCMedicalPrescription
+  result: PrintedDocumentSCMedicalPrescription
+  categories:
+  - DocumentsMedical
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCMedicalDirective
+  result: PrintedDocumentSCMedicalDirective
+  categories:
+  - DocumentsMedical
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCSurgeryRequest
+  result: PrintedDocumentSCSurgeryRequest
+  categories:
+  - DocumentsMedical
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCMedicalBayGuide
+  result: PrintedDocumentSCMedicalBayGuide
+  categories:
+  - DocumentsMedical
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+# Security
+
+- type: latheRecipe
+  id: PrintedDocumentSCArmoryInventory
+  result: PrintedDocumentSCArmoryInventory
+  categories:
+  - DocumentsSecurity
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCWeaponsPermit
+  result: PrintedDocumentSCWeaponsPermit
+  categories:
+  - DocumentsSecurity
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+# Justice
+
+- type: latheRecipe
+  id: PrintedDocumentSCArrestWarrant
+  result: PrintedDocumentSCArrestWarrant
+  categories:
+  - DocumentsJustice
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCComplaint
+  result: PrintedDocumentSCComplaint
+  categories:
+  - DocumentsJustice
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCCourtOrder
+  result: PrintedDocumentSCCourtOrder
+  categories:
+  - DocumentsJustice
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCHearingDecision
+  result: PrintedDocumentSCHearingDecision
+  categories:
+  - DocumentsJustice
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCIndictment
+  result: PrintedDocumentSCIndictment
+  categories:
+  - DocumentsJustice
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCParoleDecision
+  result: PrintedDocumentSCParoleDecision
+  categories:
+  - DocumentsJustice
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentSCSearchWarrant
+  result: PrintedDocumentSCSearchWarrant
+  categories:
+  - DocumentsJustice
+  completeTime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100

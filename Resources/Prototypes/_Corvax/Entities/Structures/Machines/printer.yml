@@ -32,10 +32,10 @@
     idleState: icon
     runningState: building
     staticPacks:
-    - DocumentPrinterStaticImp
+    - DocumentPrinterStaticL5 # L5
   - type: EmagLatheRecipes
     emagStaticPacks:
-    - DocumentPrinterStaticEmagImp
+    - DocumentPrinterStaticEmagL5 # L5
   - type: Fixtures
     fixtures:
       fix1:

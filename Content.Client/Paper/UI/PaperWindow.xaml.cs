@@ -1,4 +1,6 @@
 using System.Numerics;
+using Content.Client._L5.UserInterface.RichText;
+using Content.Client._RMC14.UserInterface.RichText;
 using Content.Client.RichText;
 using Content.Shared.Paper;
 using static Content.Shared.Paper.PaperComponent;
@@ -46,7 +48,8 @@ namespace Content.Client.Paper.UI
         // Store original margin to restore when switching modes
         private Thickness _originalContentMargin;
 
-        private readonly Type[] _allowedTags = new Type[] {
+        private readonly Type[] _allowedTags =
+        [
             typeof(BoldItalicTag),
             typeof(BoldTag),
             typeof(BulletTag),
@@ -54,10 +57,19 @@ namespace Content.Client.Paper.UI
             typeof(HeadingTag),
             typeof(ItalicTag),
             typeof(MonoTag),
+
+            // RMC — forms
             typeof(FormTagHandler),
             typeof(SignatureTagHandler),
-            typeof(CheckTagHandler)
-        };
+            typeof(CheckTagHandler),
+
+            // L5 — logos, banners, and flags
+            typeof(UNFlagTagHandler),
+            typeof(UNLogoTagHandler),
+            typeof(UNBannerTagHandler),
+            typeof(SCBannerTagHandler),
+            typeof(SCLogoTagHandler),
+        ];
 
         public event Action<string>? OnSaved;
         public event Action? Typing; // DeltaV
@@ -269,7 +281,7 @@ namespace Content.Client.Paper.UI
         /// Processes markup tags like [form] and [signature] for interactive elements.
         /// </summary>
         /// <param name="state">Current paper state containing text, mode, and stamp information</param>
-        public void Populate(PaperComponent.PaperBoundUserInterfaceState state)
+         public void Populate(PaperComponent.PaperBoundUserInterfaceState state)
         {
             _currentState = state;
             _currentRawText = state.Text;
@@ -302,7 +314,6 @@ namespace Content.Client.Paper.UI
                 }
                 return;
             }
-            WrittenTextLabel.SetMessage(msg, _allowedTags, DefaultTextColor);
 
             // Reset form, signature, and check counters before processing to ensure consistent indexing
             // This is crucial because the tag handlers maintain state between renders
@@ -649,8 +660,9 @@ namespace Content.Client.Paper.UI
 
             while (pos < text.Length)
             {
-                var foundPos = text.IndexOf(checkTag, pos);
-                if (foundPos == -1) break;
+                var foundPos = text.IndexOf(checkTag, pos, StringComparison.Ordinal);
+                if (foundPos == -1)
+                    break;
 
                 if (currentIndex == index)
                 {
