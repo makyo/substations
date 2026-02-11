@@ -8,7 +8,6 @@
   - EpistemicsTechFabCircuitboard
   - SecurityTechFabCircuitboard
   - AmmoTechFabCircuitboard
-  - PrinterDocMachineCircuitboard # Corvax
 
 - type: latheRecipePack
   id: MedicalBiofabMachineboard
