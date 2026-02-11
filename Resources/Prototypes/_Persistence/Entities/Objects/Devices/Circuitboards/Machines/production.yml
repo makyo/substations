@@ -1,0 +1,12 @@
+- type: entity
+  id: ShredderMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: shredder machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: Shredder
+    stackRequirements:
+      Manipulator: 2
+      Steel: 4
