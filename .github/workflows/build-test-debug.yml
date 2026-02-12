@@ -11,13 +11,14 @@ on:
 jobs:
   build:
     if: github.event.pull_request.draft == false && github.actor != 'L5-bot'
-    # L5 — use our server for testing/debug until
-#    strategy:
-#      matrix:
-#        os: [ubuntu-latest]
-#
-#    runs-on: ${{ matrix.os }}
-    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+    # L5 — for using our server for testing/debug until GHAOOM calms down.
+    #runs-on: self-hosted
 
     steps:
     - name: Checkout Master

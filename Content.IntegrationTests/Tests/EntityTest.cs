@@ -15,7 +15,7 @@ using Robust.Shared.Serialization.Manager.Attributes;
 namespace Content.IntegrationTests.Tests
 {
     [TestFixture]
-    [TestOf(typeof(EntityUid))]
+    [TestOf(typeof(EntityUid)), NonParallelizable]
     public sealed class EntityTest
     {
         private static readonly ProtoId<EntityCategoryPrototype> SpawnerCategory = "Spawner";
