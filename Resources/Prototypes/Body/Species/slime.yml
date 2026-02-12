@@ -38,6 +38,7 @@
   components:
   - type: Storage
     clickInsert: false
+    openOnActivate: false # DeltaV
     grid:
     - 0,0,1,2
     maxItemSize: Large
@@ -130,6 +131,11 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
+  # Fork additions
+  - type: FootPrints # DeltaV port from EE, blood splatter
+    leftBarePrint: "footprint-left-bare-slime"
+    rightBarePrint: "footprint-right-bare-slime"
+  - type: Carriable # Carrying system from nyanotrasen.
 
 - type: entity
   parent: OrganBase

@@ -143,6 +143,10 @@
       289: 0.9
       275: 0.8
       250: 0.7
+  # Fork additions
+  - type: Carriable # Carrying system from nyanotrasen.
+  - type: CosmicMarkVisuals # DeltaV - cosmic cult
+    subtleState: moth
 
 - type: entity
   parent: OrganBase

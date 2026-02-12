@@ -188,6 +188,13 @@
     damage:
       types:
         Slash: 5 # Reduce?
+  # Fork additions
+  - type: FootPrints # DeltaV port from EE, blood splatter
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
+  - type: Carriable # Carrying system from nyanotrasen.
+  - type: CosmicMarkVisuals # DeltaV - cosmic cult
+    subtleState: vox
 
 - type: entity
   parent: OrganBase

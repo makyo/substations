@@ -78,6 +78,8 @@
           - MobLayer
   - type: TypingIndicator
     proto: gingerbread
+  # Fork additions
+  - type: Carriable # Carrying system from nyanotrasen.
 
 - type: entity
   parent: OrganBase
