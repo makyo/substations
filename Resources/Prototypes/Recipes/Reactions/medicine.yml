@@ -676,7 +676,7 @@
     Fiber: 2
 
 - type: reaction
-  id: Warfarin
+  id: Heparin
   reactants:
     SulfuricAcid:
       amount: 1
@@ -685,12 +685,12 @@
     Sodium:
       amount: 1
   products:
-    Warfarin: 2
+    Heparin: 2
 
 - type: reaction
   id: Hemorrhinol
   reactants:
-    Warfarin:
+    Heparin:
       amount: 2
     Razorium:
       amount: 2

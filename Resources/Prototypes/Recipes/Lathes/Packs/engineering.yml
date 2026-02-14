@@ -49,6 +49,7 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
+  - ShredderMachineCircuitboard # Persistence
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
@@ -98,4 +99,4 @@
   - HolopadMachineCircuitboard
   - PowerComputerCircuitBoard # L5
   - AtmosMonitoringComputerCircuitBoard # L5
-#  - WallmountGeneratorElectronics # L5 (j/k too easymode
+  - BladeServerRackMachineCircuitboard # Moffstation - Blade Server Rack constructibility

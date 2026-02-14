@@ -63,6 +63,7 @@
     damage:
       types:
         Slash: 5 # Reduce?
+  - type: Wagging
   - type: Sprite # Need to redefine the whole order to draw the tail over their gas tank
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
@@ -176,6 +177,7 @@
         32:
           sprite: Mobs/Species/Vox/displacement.rsi
           state: hand_r
+  - type: Carriable # Carrying system from nyanotrasen.
   - type: CosmicMarkVisuals # DeltaV - cosmic cult
     subtleState: vox
 

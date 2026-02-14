@@ -47,7 +47,7 @@
 - type: entity
   parent: MaterialBluespace
   id: CrystalNormality # this is 1 not full because other stuff may assume its single
-  name: Compressed He3
+  name: Compressed Helium-3
   suffix: 1
   description: It looks...startlingly dull.
   components:

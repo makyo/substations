@@ -38,16 +38,17 @@
         damage:
           types:
             Poison: 0.01
-      - !type:PopupMessage
-        type: Local
-        visualType: Small
-        messages:
-        - "reagent-effect-antidepressant-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
-        probability: 0.4
-        conditions:
-        - !type:ReagentCondition
-          reagent: Serenitol
-          max: 0.1
+      # L5 — prevent pill-guzzling meta
+#      - !type:PopupMessage
+#        type: Local
+#        visualType: Small
+#        messages:
+#        - "reagent-effect-antidepressant-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+#        probability: 0.4
+#        conditions:
+#        - !type:ReagentCondition
+#          reagent: Serenitol
+#          max: 0.1
 
 - type: reagent
   id: Neurozenium
@@ -64,6 +65,7 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
+        time: 2 # L5 — More effective than Serenitol (16 min vs 11 min)
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -112,16 +114,17 @@
         - !type:ReagentCondition
           reagent: Serenitol # Purges Serenitol if dosage is too high.
           min: 10
-      - !type:PopupMessage
-        type: Local
-        visualType: Medium
-        messages:
-        - "reagent-effect-antidepressant-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
-        probability: 0.4
-        conditions:
-        - !type:ReagentCondition
-          reagent: Neurozenium
-          max: 0.1
+      # L5 — prevent pill-guzzling meta
+#      - !type:PopupMessage
+#        type: Local
+#        visualType: Medium
+#        messages:
+#        - "reagent-effect-antidepressant-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+#        probability: 0.4
+#        conditions:
+#        - !type:ReagentCondition
+#          reagent: Neurozenium
+#          max: 0.1
 
 - type: reagent
   id: Blissifylovene
@@ -138,6 +141,7 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
+        time: 8 # More effective than Neuro (66 min vs 33 min)
         type: Update
       # End L5 — Moody trait
       - !type:SuppressAddiction
@@ -231,16 +235,17 @@
         damage:
           types:
             Poison: 0.5
-      - !type:PopupMessage
-        type: Local
-        visualType: Large
-        messages:
-        - "reagent-effect-antidepressant-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
-        probability: 0.2
-        conditions:
-        - !type:ReagentCondition
-          reagent: Blissifylovene
-          max: 0.1
+      # L5 — prevent pill-guzzling meta
+#      - !type:PopupMessage
+#        type: Local
+#        visualType: Large
+#        messages:
+#        - "reagent-effect-antidepressant-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+#        probability: 0.2
+#        conditions:
+#        - !type:ReagentCondition
+#          reagent: Blissifylovene
+#          max: 0.1
 
 
 - type: reagent
@@ -277,16 +282,17 @@
           min: 30
         reagent: Calmafluxine
         amount: -1.2
-      - !type:PopupMessage
-        type: Local
-        visualType: Large
-        messages:
-        - "reagent-effect-anxietymed-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
-        probability: 0.35
-        conditions:
-        - !type:ReagentCondition
-          reagent: Calmafluxine
-          max: 0.1
+      # L5 — prevent pill-guzzling meta
+#      - !type:PopupMessage
+#        type: Local
+#        visualType: Large
+#        messages:
+#        - "reagent-effect-anxietymed-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+#        probability: 0.35
+#        conditions:
+#        - !type:ReagentCondition
+#          reagent: Calmafluxine
+#          max: 0.1
 
 - type: reagent
   id: Tranquinase
@@ -303,6 +309,7 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
+        time: 2 # L5 — more effective than Calma (25 min vs 11 min)
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -364,16 +371,17 @@
         damage:
           types:
             Poison: 1
-      - !type:PopupMessage
-        type: Local
-        visualType: Large
-        messages:
-        - "reagent-effect-anxietymed-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
-        probability: 0.32
-        conditions:
-        - !type:ReagentCondition
-          reagent: Tranquinase
-          max: 0.1
+      # L5 — prevent pill-guzzling meta
+#      - !type:PopupMessage
+#        type: Local
+#        visualType: Large
+#        messages:
+#        - "reagent-effect-anxietymed-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+#        probability: 0.32
+#        conditions:
+#        - !type:ReagentCondition
+#          reagent: Tranquinase
+#          max: 0.1
 
 - type: reagent
   id: Equilibrazine
@@ -390,6 +398,7 @@
       # L5 — Moody trait
       - !type:ModifyStatusEffect
         effectProto: StatusEffectMoodySuppressed
+        time: 8 # L5 — more effective than Tranq (65 min vs 25 min)
         type: Update
       # End L5 — Moody trait
       - !type:PopupMessage
@@ -453,16 +462,17 @@
       - !type:AdjustReagent
         reagent: Tranquinase # purges Tranquinase
         amount: -1.5
-      - !type:PopupMessage
-        type: Local
-        visualType: Large
-        messages:
-        - "reagent-effect-anxietymed-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
-        probability: 0.2
-        conditions:
-        - !type:ReagentCondition
-          reagent: Equilibrazine
-          max: 0.1
+      # L5 — prevent pill-guzzling meta
+#      - !type:PopupMessage
+#        type: Local
+#        visualType: Large
+#        messages:
+#        - "reagent-effect-anxietymed-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+#        probability: 0.2
+#        conditions:
+#        - !type:ReagentCondition
+#          reagent: Equilibrazine
+#          max: 0.1
 
 - type: reagent
   id: Stubantazine

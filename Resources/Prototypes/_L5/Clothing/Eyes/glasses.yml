@@ -1,0 +1,9 @@
+- type: entity
+  id: ClothingEyesGlassesCE
+  parent: ClothingEyesGlassesMeson
+  components:
+  - type: ThermalSight
+  - type: Sprite
+    sprite: _L5/Clothing/Eyes/Glasses/ce.rsi
+  - type: Clothing
+    sprite: _L5/Clothing/Eyes/Glasses/ce.rsi

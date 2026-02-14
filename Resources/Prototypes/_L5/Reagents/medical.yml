@@ -1,9 +1,15 @@
-- type: reaction
+- type: reagent
   id: Dimenine
-  reactants:
-    Diphenhydramine:
-      amount: 1
-    Coffee:
-      amount: 2
-  products:
-    Dimenine: 2
+  name: reagent-name-dimenine
+  group: Medicine
+  desc: reagent-desc-dimenine
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#2d5708"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectWoozy
+        time: 4.0
+        type: Remove

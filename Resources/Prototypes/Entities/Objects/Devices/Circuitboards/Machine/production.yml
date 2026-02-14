@@ -191,6 +191,10 @@
     prototype: ResearchAndDevelopmentServer
     stackRequirements:
       Plasma: 5
+  # Moffstation - Begin - R&D Blade Server
+  - type: BladeServerBoard
+    prototype: ResearchAndDevelopmentBladeServer
+  # Moffstation - End
 
 - type: entity
   id: BiogeneratorMachineCircuitboard
@@ -522,6 +526,10 @@
       stackRequirements:
         Steel: 1
         Cable: 2
+  # Moffstation - Begin - CrewMon Blade Server
+    - type: BladeServerBoard
+      prototype: CrewMonitoringBladeServer
+  # Moffstation - End
 
 - type: entity
   id: CryoPodMachineCircuitboard
@@ -1160,6 +1168,10 @@
     prototype: SurveillanceCameraRouterConstructed
     stackRequirements:
       Cable: 1
+  # L5 — camera router blade server
+  - type: BladeServerBoard
+    prototype: SurveillanceCameraRouterBladeServerConstructed
+  # End L5 — camera router blade server
   - type: ReverseEngineering # DeltaV
     difficulty: 2
     recipes:
@@ -1178,6 +1190,10 @@
     stackRequirements:
       Cable: 2
       Glass: 1
+  # L5 — camera router blade server
+  - type: BladeServerBoard
+    prototype: SurveillanceCameraWirelessRouterBladeServerConstructed
+  # End L5 — camera router blade server
   - type: ReverseEngineering # DeltaV
     difficulty: 2
     recipes:
@@ -1196,6 +1212,10 @@
     stackRequirements:
       Cable: 2
       Glass: 1
+  # L5 — camera router blade server
+  - type: BladeServerBoard
+    prototype: SurveillanceCameraWirelessRouterBladeServerXenoborg
+  # End L5 — camera router blade server
 
 - type: entity
   id: SurveillanceWirelessCameraMovableCircuitboard
