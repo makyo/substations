@@ -9,9 +9,14 @@ public class SharedOperateMobSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
 
-    public List<MindContainerComponent> GetAvailableMinds(NetUserId? userId)
+    /// <summary>
+    /// Retrieve a list of all entities this user is the operator of.
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <returns></returns>
+    public List<Entity<MindContainerComponent>> GetOperatedEntities(NetUserId? userId)
     {
-        List<MindContainerComponent> availableMinds = new();
+        List<Entity<MindContainerComponent>> availableMinds = new();
 
         if (userId == null)
             return availableMinds;
@@ -25,7 +30,7 @@ public class SharedOperateMobSystem : EntitySystem
             if (!TryComp<MindContainerComponent>(mob, out var container))
                 continue;
 
-            availableMinds.Add(container);
+            availableMinds.Add((mob, container));
         }
 
         return availableMinds;
