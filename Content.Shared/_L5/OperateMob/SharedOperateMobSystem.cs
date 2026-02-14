@@ -1,11 +1,10 @@
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
-using Content.Shared.Players;
 using Robust.Shared.Network;
 
 namespace Content.Shared._L5.OperateMob;
 
-public sealed class SharedOperateMobSystem : EntitySystem
+public class SharedOperateMobSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
@@ -17,22 +16,18 @@ public sealed class SharedOperateMobSystem : EntitySystem
         if (userId == null)
             return availableMinds;
 
-        EntityUid userMindId = default!;
-
-        foreach (var mind in _entityManager.EntityQuery<MindComponent>())
+        var query = EntityQueryEnumerator<OperatedMobComponent>();
+        while (query.MoveNext(out var mob, out var comp))
         {
-            if (mind.OwnedEntity == null || mind.OriginalOwnerUserId != userId)
+            if (comp.Operator != userId)
                 continue;
 
-            userMindId = mind.Owner;
-            break;
+            if (!TryComp<MindContainerComponent>(mob, out var container))
+                continue;
+
+            availableMinds.Add(container);
         }
 
-        foreach (var container in _entityManager.EntityQuery<MindContainerComponent>())
-        {
-            if (container.OriginalMind == userMindId)
-                availableMinds.Add(container);
-        }
         return availableMinds;
     }
 

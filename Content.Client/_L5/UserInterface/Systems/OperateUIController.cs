@@ -48,7 +48,7 @@ public sealed class OperateUIController : UIController, IOnStateChanged<Gameplay
             var options = (
                 from mind in availableMinds
                 let character = _entity.GetComponent<MetaDataComponent>(mind.Owner)
-                select new RadialMenuActionOption<MindContainerComponent>(m => _operate.OperateMob(userId!.Value, m), mind)
+                select new RadialMenuActionOption<MindContainerComponent>(m => _operate.OperateMob(userId!.Value, m.Owner), mind)
                 {
                     IconSpecifier = new RadialMenuEntityIconSpecifier(mind.Owner),
                     ToolTip = character.EntityName,
