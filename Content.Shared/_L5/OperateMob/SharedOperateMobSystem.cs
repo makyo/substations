@@ -4,9 +4,8 @@ using Robust.Shared.Network;
 
 namespace Content.Shared._L5.OperateMob;
 
-public class SharedOperateMobSystem : EntitySystem
+public abstract class SharedOperateMobSystem : EntitySystem
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
 
     /// <summary>
@@ -16,21 +15,16 @@ public class SharedOperateMobSystem : EntitySystem
     /// <returns></returns>
     public List<Entity<MindContainerComponent>> GetOperatedEntities(NetUserId? userId)
     {
-        List<Entity<MindContainerComponent>> availableMinds = new();
+        List<Entity<MindContainerComponent>> availableMinds = [];
 
         if (userId == null)
             return availableMinds;
 
-        var query = EntityQueryEnumerator<OperatedMobComponent>();
-        while (query.MoveNext(out var mob, out var comp))
+        var query = EntityQueryEnumerator<OperatedMobComponent, MindContainerComponent>();
+        while (query.MoveNext(out var mob, out var comp, out var container))
         {
-            if (comp.Operator != userId)
-                continue;
-
-            if (!TryComp<MindContainerComponent>(mob, out var container))
-                continue;
-
-            availableMinds.Add((mob, container));
+            if (comp.Operator == userId)
+                availableMinds.Add((mob, container));
         }
 
         return availableMinds;

@@ -1,16 +1,12 @@
 using System.Linq;
+using Content.Client._L5.OperateMob;
 using Content.Client.Gameplay;
-using Content.Client.Mind;
 using Content.Client.UserInterface.Controls;
-using Content.Shared._L5.OperateMob;
 using Content.Shared.Input;
-using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
-using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Input.Binding;
-using Robust.Shared.Network;
 
 namespace Content.Client._L5.UserInterface.Systems;
 
@@ -20,6 +16,7 @@ public sealed class OperateUIController : UIController, IOnStateChanged<Gameplay
     [Dependency] private readonly IPlayerManager _player = default!;
 
     private SimpleRadialMenu? _menu;
+    private OperateMobSystem _operate = default!;
 
     public void OnStateEntered(GameplayState state)
     {
@@ -27,6 +24,7 @@ public sealed class OperateUIController : UIController, IOnStateChanged<Gameplay
             .Bind(ContentKeyFunctions.OperateCharacter,
                 InputCmdHandler.FromDelegate(_ => ToggleOperateMenu()))
             .Register<OperateUIController>();
+        _operate = EntitySystemManager.GetEntitySystem<OperateMobSystem>();
     }
 
     public void OnStateExited(GameplayState state)
@@ -36,7 +34,6 @@ public sealed class OperateUIController : UIController, IOnStateChanged<Gameplay
 
     private void ToggleOperateMenu()
     {
-        var _operate = EntitySystemManager.GetEntitySystem<SharedOperateMobSystem>();
         if (_menu == null)
         {
             // Setup menu
