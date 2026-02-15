@@ -1135,3 +1135,9 @@ Entries:
       message: Blade servers for all camera/wireless camera routers!
   id: 159
   time: '2026-02-12T04:00:46.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: You can now switch between your characters with `O`!
+  id: 160
+  time: '2026-02-15T21:22:47.0000000+00:00'
