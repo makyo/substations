@@ -224,6 +224,10 @@ binds:
 - function: OpenEmotesMenu
   type: State
   key: Y
+# L5 — operating multiple characters
+- function: OperateCharacter
+  type: State
+  key: O
 - function: TextCursorSelect
   # TextCursorSelect HAS to be above ExamineEntity
   # So that LineEdit receives it correctly.

@@ -119,6 +119,7 @@
   id: MobCorgiMouse
   description: It's 100% a real hungry mouse.
   components:
+  - type: Godmode # L5 — ;.;
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
