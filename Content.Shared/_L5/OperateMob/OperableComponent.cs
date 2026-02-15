@@ -5,7 +5,7 @@ namespace Content.Shared._L5.OperateMob;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
-public sealed partial class OperatedMobComponent : Component
+public sealed partial class OperableComponent : Component
 {
     [DataField]
     [AutoNetworkedField]

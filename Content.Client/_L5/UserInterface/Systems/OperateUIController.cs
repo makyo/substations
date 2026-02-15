@@ -44,7 +44,7 @@ public sealed class OperateUIController : UIController, IOnStateChanged<Gameplay
                 from mob in availableMobs
                 let character = _entity.GetComponent<MetaDataComponent>(mob.Owner)
                 where mob.Owner != _player.LocalEntity
-                select new RadialMenuActionOption<Entity<OperatedMobComponent>>(m => _operate.OperateMob(userId!.Value, m, availableMobs), mob)
+                select new RadialMenuActionOption<Entity<OperableComponent>>(m => _operate.OperateMob(userId!.Value, m, availableMobs), mob)
                 {
                     IconSpecifier = new RadialMenuEntityIconSpecifier(mob.Owner),
                     ToolTip = character.EntityName,

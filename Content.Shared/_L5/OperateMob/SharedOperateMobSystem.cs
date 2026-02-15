@@ -13,7 +13,7 @@ public abstract class SharedOperateMobSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<OperatedMobComponent, MindAddedMessage>(OnMindGotAdded);
+        SubscribeLocalEvent<OperableComponent, MindAddedMessage>(OnMindGotAdded);
     }
 
     /// <summary>
@@ -22,7 +22,7 @@ public abstract class SharedOperateMobSystem : EntitySystem
     /// <param name="uid"></param>
     /// <param name="comp"></param>
     /// <param name="args"></param>
-    private void OnMindGotAdded(EntityUid uid, OperatedMobComponent comp, ref MindAddedMessage args)
+    private void OnMindGotAdded(EntityUid uid, OperableComponent comp, ref MindAddedMessage args)
     {
         if (comp.Operator != null)
             return;
@@ -36,14 +36,14 @@ public abstract class SharedOperateMobSystem : EntitySystem
     /// </summary>
     /// <param name="userId"></param>
     /// <returns></returns>
-    public List<Entity<OperatedMobComponent>> GetAvailableMobs(NetUserId? userId)
+    public List<Entity<OperableComponent>> GetAvailableMobs(NetUserId? userId)
     {
-        List<Entity<OperatedMobComponent>> availableMobs = [];
+        List<Entity<OperableComponent>> availableMobs = [];
 
         if (userId == null)
             return availableMobs;
 
-        var query = EntityQueryEnumerator<OperatedMobComponent>();
+        var query = EntityQueryEnumerator<OperableComponent>();
         while (query.MoveNext(out var mob, out var comp))
         {
             if (comp.Operator == userId)
@@ -53,7 +53,7 @@ public abstract class SharedOperateMobSystem : EntitySystem
         return availableMobs;
     }
 
-    public void OperateMob(NetUserId? player, Entity<OperatedMobComponent> mob, List<Entity<OperatedMobComponent>> availableMobs)
+    public void OperateMob(NetUserId? player, Entity<OperableComponent> mob, List<Entity<OperableComponent>> availableMobs)
     {
         if (!_entity.TryGetNetEntity(mob, out var nMob))
             return;
