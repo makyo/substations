@@ -236,7 +236,8 @@
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
-  - type: Carriable #
+  - type: Carriable # DeltaV
+  - type: Operable # L5
 
 - type: entity
   save: false
