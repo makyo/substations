@@ -1,9 +1,10 @@
 using System.Linq;
 using Content.Client._L5.OperateMob;
 using Content.Client.Gameplay;
+using Content.Client.Mind;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._L5.OperateMob;
 using Content.Shared.Input;
-using Content.Shared.Mind.Components;
 using Robust.Client.Player;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Input.Binding;
@@ -16,7 +17,7 @@ public sealed class OperateUIController : UIController, IOnStateChanged<Gameplay
     [Dependency] private readonly IPlayerManager _player = default!;
 
     private SimpleRadialMenu? _menu;
-    private OperateMobSystem _operate = default!;
+    private SharedOperateMobSystem _operate = default!;
 
     public void OnStateEntered(GameplayState state)
     {
@@ -36,21 +37,26 @@ public sealed class OperateUIController : UIController, IOnStateChanged<Gameplay
     {
         if (_menu == null)
         {
-            // Setup menu
-            _menu = new SimpleRadialMenu();
-
             var userId = _player.LocalUser;
-            var availableMinds = _operate.GetOperatedEntities(userId);
+            var availableMobs = _operate.GetAvailableMobs(userId);
 
             var options = (
-                from mind in availableMinds
-                let character = _entity.GetComponent<MetaDataComponent>(mind.Owner)
-                select new RadialMenuActionOption<Entity<MindContainerComponent>>(m => _operate.OperateMob(userId!.Value, m.Owner), mind)
+                from mob in availableMobs
+                let character = _entity.GetComponent<MetaDataComponent>(mob.Owner)
+                where mob.Owner != _player.LocalEntity
+                select new RadialMenuActionOption<Entity<OperatedMobComponent>>(m => _operate.OperateMob(userId!.Value, m, availableMobs), mob)
                 {
-                    IconSpecifier = new RadialMenuEntityIconSpecifier(mind.Owner),
+                    IconSpecifier = new RadialMenuEntityIconSpecifier(mob.Owner),
                     ToolTip = character.EntityName,
                 }).Cast<RadialMenuOptionBase>()
                 .ToList();
+
+            // No-op if they only have one mind.
+            if (options.Count == 0)
+                return;
+
+            // Setup menu
+            _menu = new SimpleRadialMenu();
 
             _menu.SetButtons(options);
 
