@@ -13,9 +13,9 @@ public sealed class SubdermalBionicSyrinxImplantSystem : EntitySystem
         // SubscribeLocalEvent<VoiceMaskComponent, ImplantImplantedEvent>(OnInsert);
     }
 
-    private void OnInsert(Entity<VoiceMaskComponent> ent, ref ImplantImplantedEvent args)
-    {
-        // Update the name so it's the entities default name. You can't take it off like a voice mask so it's important!
-        ent.Comp.VoiceMaskName = Name(args.Implanted);
-    }
+    // private void OnInsert(Entity<VoiceMaskComponent> ent, ref ImplantImplantedEvent args)
+    // {
+    //     // Update the name so it's the entities default name. You can't take it off like a voice mask so it's important!
+    //     ent.Comp.VoiceMaskName = Name(args.Implanted);
+    // }
 }
