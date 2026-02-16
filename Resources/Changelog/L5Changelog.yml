@@ -1153,3 +1153,11 @@ Entries:
       message: AI camera router now has a blade server variant
   id: 162
   time: '2026-02-16T10:29:16.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        We've figured out how to build computers that sit on tables and screens
+        that sit on walls! Ported tabletop/wallmount computers from Frontier.
+  id: 163
+  time: '2026-02-16T23:25:40.0000000+00:00'
