@@ -251,8 +251,6 @@
     prototype: ComputerShuttleCargo
   - type: StealTarget
     stealGroup: CargoShuttleConsoleCircuitboard
-  - type: ComputerTabletopBoard # Frontier
-    prototype: ComputerTabletopShuttleCargo # Frontier
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -530,8 +528,6 @@
     state: cpu_syndicate
   - type: ComputerBoard
     prototype: ComputerShuttleSyndie
-  - type: ComputerTabletopBoard # Frontier
-    prototype: ComputerTabletopShuttleSyndie # Frontier
 
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseCloningBoard ] # DeltaV
@@ -597,8 +593,6 @@
       state: cpu_engineering
     - type: ComputerBoard
       prototype: ComputerSensorMonitoring
-    - type: ComputerTabletopBoard # Frontier
-      prototype: ComputerTabletopSensorMonitoring # Frontier
 
 - type: entity
   parent: BaseComputerCircuitboard

@@ -36,7 +36,7 @@
             - !type:DoActsBehavior
               acts: ["Destruction"]
     - type: StaticPrice
-      price: 100
+      price: 105 # L5 — was 100; something about our pricing scheme is slightly different.
 
 - type: entity
   parent: BaseStructureComputerWallmount
