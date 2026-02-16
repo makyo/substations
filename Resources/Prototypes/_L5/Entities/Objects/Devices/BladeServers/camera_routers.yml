@@ -26,6 +26,7 @@
     - SurveillanceCameraGeneral
     - SurveillanceCameraMedical
     - SurveillanceCameraCommand
+    - SurveillanceCameraAI
 
 - type: entity
   id: SurveillanceCameraRouterBladeServerEngineering
@@ -99,49 +100,11 @@
   - type: SurveillanceCameraRouter
     subnetFrequency: SurveillanceCameraCommand
 
-# Wireless camera router
 - type: entity
-  id: SurveillanceCameraWirelessRouterBladeServerBase
-  abstract: true
-  parent: [ BaseSurveillanceCameraWirelessRouter, ConstructibleBladeServer ]
-  name: wireless camera router blade server
-  description: A wireless surveillance camera router. It routes. Perhaps.
-  components:
-  - type: BladeServer
-    stripeColor: "#000000FF"
-  - type: Machine
-    board: SurveillanceCameraWirelessRouterCircuitboard
-
-- type: entity
-  id: SurveillanceCameraWirelessRouterBladeServerConstructed
-  parent: SurveillanceCameraWirelessRouterBladeServerBase
-  suffix: constructed
+  id: SurveillanceCameraRouterBladeServerAI
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: AI camera router
+  suffix: AI
   components:
   - type: SurveillanceCameraRouter
-    setupAvailableNetworks:
-    - SurveillanceCameraEntertainment
-
-- type: entity
-  id: SurveillanceCameraWirelessRouterBladeServerEntertainment
-  parent: SurveillanceCameraWirelessRouterBladeServerBase
-  name: entertainment camera router
-  suffix: entertainment
-  components:
-  - type: SurveillanceCameraRouter
-    subnetFrequency: SurveillanceCameraEntertainment
-
-- type: entity
-  id: SurveillanceCameraWirelessRouterBladeServerXenoborg
-  parent: SurveillanceCameraWirelessRouterBladeServerBase
-  name: xenoborg camera router
-  components:
-  - type: DeviceNetwork
-    deviceNetId: Wireless
-    receiveFrequencyId: Mothership
-    transmitFrequencyId: Mothership
-  - type: WirelessNetworkConnection
-    range: 2000 # longer range to get xenoborgs even when the mothership is far away
-  - type: SurveillanceCameraRouter
-    subnetFrequency: Xenoborg
-  - type: Machine
-    board: SurveillanceCameraWirelessRouterXenoborgCircuitboard
+    subnetFrequency: SurveillanceCameraAI
