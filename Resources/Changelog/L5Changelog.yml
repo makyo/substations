@@ -1147,3 +1147,9 @@ Entries:
       message: Implants now work again!
   id: 161
   time: '2026-02-16T09:09:57.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: AI camera router now has a blade server variant
+  id: 162
+  time: '2026-02-16T10:29:16.0000000+00:00'
