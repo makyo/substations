@@ -416,8 +416,8 @@
     state: cpu_syndicate
   - type: ComputerBoard
     prototype: SyndicateComputerComms
-- type: ComputerTabletopBoard # Frontier
-  prototype: SyndicateComputerTabletopComms # Frontier
+  - type: ComputerTabletopBoard # Frontier
+    prototype: SyndicateComputerTabletopComms # Frontier
 
 - type: entity
   parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
