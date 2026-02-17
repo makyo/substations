@@ -7,10 +7,10 @@
   description: A secure cabinet to keep all your confidential files or items away from prying hands.
   components:
   - type: Storage
-    grid:
-    - 0,0,2,1
-    - 0,3,2,4
-    - 0,6,2,7
+    grid: # L5 — embiggened; used to be 0,x,2,y
+    - 0,0,4,1
+    - 0,3,4,4
+    - 0,6,4,7
     maxItemSize: Normal
   - type: Sprite
     sprite: _DV/Structures/Storage/secure_cabinet.rsi
