@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Grid
-  engineVersion: 268.0.0
+  category: Map
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/30/2026 02:28:34
-  entityCount: 7238
-maps: []
+  time: 02/17/2026 03:54:00
+  entityCount: 7240
+maps:
+- 6630
 grids:
 - 1668
-orphans:
-- 1668
+orphans: []
 nullspace: []
 tilemap:
   0: Space
@@ -44,7 +44,7 @@ entities:
     - type: MetaData
       name: Central Administrator
     - type: Transform
-      parent: invalid
+      parent: 6630
     - type: MapGrid
       chunks:
         -1,-1:
@@ -2822,6 +2822,19 @@ entities:
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: ImplicitRoof
+    - type: TileHistory
+      chunkHistory: {}
+    - type: ExplosionAirtightGrid
+  - uid: 6630
+    components:
+    - type: MetaData
+      name: Map Entity
+    - type: Transform
+    - type: Map
+      mapPaused: True
+    - type: GridTree
+    - type: Broadphase
+    - type: OccluderTree
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 1455
@@ -21219,7 +21232,7 @@ entities:
       pos: -2.5,-2.5
       parent: 1668
     - type: FaxMachine
-      name: Central Admin # L5
+      name: Central Admin
 - proto: filingCabinet
   entities:
   - uid: 594
@@ -28726,11 +28739,6 @@ entities:
       parent: 1668
 - proto: PaperBin10
   entities:
-  - uid: 6630
-    components:
-    - type: Transform
-      pos: -3.5,-2.5
-      parent: 1668
   - uid: 6994
     components:
     - type: Transform
@@ -28754,6 +28762,20 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 27.5,-2.5
+      parent: 1668
+- proto: PaperBin20SC
+  entities:
+  - uid: 7219
+    components:
+    - type: Transform
+      pos: -3.0955465,-2.5
+      parent: 1668
+- proto: PaperBin20UN
+  entities:
+  - uid: 7240
+    components:
+    - type: Transform
+      pos: -3.5786924,-2.5
       parent: 1668
 - proto: PaperOffice
   entities:
