@@ -1161,3 +1161,11 @@ Entries:
         that sit on walls! Ported tabletop/wallmount computers from Frontier.
   id: 163
   time: '2026-02-16T23:25:40.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Bookshelves and secure lockers now hold more
+    - type: Tweak
+      message: Small updates to outpost maps
+  id: 164
+  time: '2026-02-17T09:08:53.0000000+00:00'
