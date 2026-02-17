@@ -13,9 +13,8 @@
     # End L5: animal-safe drinks
   contrabandInventory:
     DrinkTeapot: 2
+    DrinkNothing: 2
     # Begin L5: Sirius Agritech's animal-safe drinks
     DrinkDogstarOatHotCocoa: 3
     DrinkDogstarOatMocha: 3
     # End L5: animal-safe drinks
-  emaggedInventory:
-    DrinkNothing: 2

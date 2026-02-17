@@ -16,6 +16,8 @@
 - type: speciesBaseSprites
   id: MobMothSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobMothHead
     Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
@@ -51,30 +53,28 @@
       points: 0
       required: false
     Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ MothWingsDefault ]
+      points: 9 # L5 Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     Snout:
-      points: 1
+      points: 9 # L5 Increase Limit from 1
       required: false
     HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ MothAntennasDefault ]
+      points: 9 # L5 Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     HeadSide:
-      points: 1
+      points: 9 # L5 Increase Limit from 1
       required: false
     Head:
-      points: 1
+      points: 9 # L5 Increase Limit from 1
       required: false
     UndergarmentTop:
-      points: 1
+      points: 9 # L5 Increase Limit from 1
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 9 # L5 Increase Limit from 1
       required: false
     Chest:
-      points: 1
+      points: 2
       required: false
     Legs:
       points: 6

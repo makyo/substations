@@ -20,6 +20,15 @@
     damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
+    - trigger: # Excess damage, don't spawn entities
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 30
@@ -47,9 +56,11 @@
   - type: Pullable
   - type: Occluder
   - type: Storage
-    grid:
-    - 0,0,5,1 # DeltaV, make it 2 rows of 6 instead of a giant block
-    - 0,3,5,4
+    grid: # L5 made it four rows of eight to hold two book bags. They're whole-ass bookshelves, they should be able to do that
+    - 0,0,7,1
+    - 0,3,7,4
+    - 0,6,7,7
+    - 0,9,7,10
     #maxItemSize: Normal # DeltaV: removed whitelist and max item size
   - type: UserInterface
     interfaces:

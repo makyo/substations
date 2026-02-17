@@ -232,7 +232,8 @@ public sealed class OracleSystem : EntitySystem
     public List<string> GetAllProtos(OracleComponent component)
     {
         var allTechs = _prototypeManager.EnumeratePrototypes<TechnologyPrototype>();
-        var allRecipes = new List<string>();
+        // L5 - component changed
+        var allRecipes = new List<EntProtoId>();
 
         foreach (var tech in allTechs)
         {
@@ -278,6 +279,7 @@ public sealed class OracleSystem : EntitySystem
             allProtos.Remove(proto);
         }
 
-        return allProtos;
+        // L5 - component changed
+        return allProtos.Select(x => x.Id).ToList();
     }
 }

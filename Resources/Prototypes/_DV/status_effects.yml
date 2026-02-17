@@ -1,3 +1,7 @@
+# DO NOT ADD ANY NEW STATUS EFFECTS HERE.
+
+# Use the new status effects system.
+
 - type: statusEffect
   id: Addicted
 
@@ -5,10 +9,7 @@
   id: SuppressAddiction
 
 - type: statusEffect
-  id: InPain
-
-- type: statusEffect
-  id: SuppressPain
-
-- type: statusEffect
   id: Anesthesia
+
+- type: statusEffect
+  id: PainNumbness

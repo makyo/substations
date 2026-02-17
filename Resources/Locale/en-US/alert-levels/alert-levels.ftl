@@ -19,8 +19,9 @@ alert-level-violet = Violet
 alert-level-violet-announcement = There is a serious viral outbreak, ongoing major death event, or there is another significant medical emergency. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 alert-level-violet-instructions = Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 
+# L5
 alert-level-white = White
-alert-level-white-announcement = The station is suffering dangerously high levels of glimmer, there are several active psionic threats, or there is another significant epistemic emergency. Turn off all glimmer probers. Seek psionic insulation. Psychics should report for mindbreaking.
+alert-level-white-announcement = The station is suffering dangerously high levels of external waste heat, there are several active technological or psionic threats, or there is another significant epistemic emergency. Turn off all passive research probers. Seek psionic insulation. Psychics should report for mindbreaking.
 alert-level-white-instructions = Crewmembers are advised to seek psionic insulation. Psychics should report for mindbreaking or golemization.
 
 alert-level-yellow = Yellow
@@ -35,6 +36,14 @@ alert-level-delta = Delta
 alert-level-delta-announcement = Station scuttling is imminent, or there is another existential crisis affecting the station. All crew and passengers must be evacuated as applicable. Martial Law is now in effect.
 alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
 
+## DeltaV - Epsilon rewrite
+# L5
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = The Epsilon alert level is now in effect. Consider all contracts terminated.
-alert-level-epsilon-instructions = Crewmembers are advised to make their way to an accessible location for efficient termination.
+alert-level-epsilon-announcement = IRIS has ordered the Epsilon security level on the station. Only orders from IRIS Officials are to be obeyed by the Station's Crew. Martial Law is now in effect.
+alert-level-epsilon-instructions = Crewmember are advised to await instructions from IRIS Personnel and to follow their orders when given.
+
+## DeltaV - Cosmic Cult
+alert-level-octarine = Octarine
+alert-level-octarine-announcement = A cataclysmic noospheric event threatens to envelop realspace. Station crew are to contain the event if possible, or else evacuate.
+alert-level-octarine-instructions = Crewmembers are advised to listen to heads of staff for more information.
+

@@ -5,13 +5,13 @@ steal-target-groups-clothing-outer-hardsuit-rd = experimental research hardsuit
 steal-target-groups-hand-teleporter = hand teleporter
 steal-target-groups-clothing-shoes-boots-mag-adv = advanced magboots
 steal-target-groups-box-folder-qm-clipboard = requisition digi-board
+steal-target-groups-clothing-hands-knuckledusters-qm = golden knuckledusters
 steal-target-groups-food-meat-corgi = prime-cut corgi meat
-# L5
 steal-target-groups-captain-id-card = station admin ID card
 steal-target-groups-jetpack-captain-filled = station admin's jetpack
 steal-target-groups-weapon-antique-laser = antique laser pistol
 steal-target-groups-nuke-disk = nuclear authentication disk
-steal-target-groups-weapon-energy-shot-gun = energy shotgun
+steal-target-groups-weapon-energy-magnum = energy magnum
 
 # Thief Collection
 steal-target-groups-figurines = figurine
@@ -23,13 +23,14 @@ steal-target-groups-encryption-keys = encryption key
 steal-target-groups-technology-disks = technology disk
 steal-target-groups-mail = mail
 steal-target-groups-id-cards = ID Card
+steal-target-groups-officer-handguns = Peacekeeper's handgun
 steal-target-groups-lamps = LAMP
 
 # Thief single item
 steal-target-groups-forensic-scanner = forensic scanner
 steal-target-groups-flippo-engraved-lighter = detective's Flippo engraved lighter
 steal-target-groups-ammo-tech-fab-circuitboard = ammo techfab circuit board
-steal-target-groups-clothing-head-hat-warden = warden's cap
+steal-target-groups-clothing-head-hat-warden = armorer's cap
 steal-target-groups-clothing-outer-hardsuit-void-paramed = paramedic void suit
 steal-target-groups-medical-tech-fab-circuitboard = medical techfab machine board
 steal-target-groups-clothing-headset-alt-medical = chief medical officer's over-ear headset
@@ -42,22 +43,22 @@ steal-target-groups-clothing-eyes-hud-beer = beer goggles
 steal-target-groups-bible = bible
 steal-target-groups-clothing-neck-goldmedal = gold medal of crewmanship
 steal-target-groups-clothing-neck-clownmedal = clown medal
+steal-target-groups-wanted-list-cartridge = wanted list cartridge
+steal-target-groups-belt-ce = chief engineer's toolbelt
+steal-target-groups-captain-sword = captain's sabre
 
 # Thief structures
 steal-target-groups-teg = teg generator part
 steal-target-groups-freezer-heater = freezer or heater
-# L5
-steal-target-groups-altar-nanotrasen = SysCon or UN altar (any)
+steal-target-groups-altar-nanotrasen = nanotrasen altar (any)
 
 steal-target-groups-nuclear-bomb = nuclear fission explosive
-# L5
-steal-target-groups-fax-machine-captain = station admin's long range fax machine
+steal-target-groups-fax-machine-captain = captain long range fax machine
 steal-target-groups-chem-dispenser = chemical dispenser
-steal-target-groups-xeno-artifact = alien artifact
+# L5
+steal-target-groups-xeno-artifact = metamaterial artifact
 steal-target-groups-booze-dispenser = booze dispenser
-# DeltaV - Epistemics Department - Replace RD with Mystagogue
-# L5 undo that :P
-steal-target-groups-plant-rd = "research director's potted plant"
+steal-target-groups-plant-rd = "RD's potted plant"
 steal-target-groups-toilet-golden-dirty-water = golden toilet
 
 # Thief Animal
@@ -68,6 +69,5 @@ steal-target-groups-animal-mc-griff = McGriff
 steal-target-groups-animal-walter = Walter
 steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renault
-# DeltaV - Adjusts from Shiva because we have multiple possible sec animals
-steal-target-groups-animal-shiva = Security Pet
+steal-target-groups-animal-shiva = Shiva
 steal-target-groups-animal-tropico = Tropico

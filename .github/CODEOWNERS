@@ -7,14 +7,24 @@
 /Resources/ @DeltaV-Station/maintainers
 
 # Server config files
-/Resources/ConfigPresets/ @MilonPL
+/Resources/ConfigPresets/ @deltanedas
 
 # YML files
 /Resources/*.yml @DeltaV-Station/yaml-maintainers
 /Resources/**/*.yml @DeltaV-Station/yaml-maintainers
 
-# Sprites
-/Resources/Textures/ @DeltaV-Station/direction
+/Resources/Prototypes/Body/ @DrSmugleaf @sowelipililimute # suffering
+/Resources/Prototypes/Entities/Mobs/Player/ @DrSmugleaf
+/Resources/Prototypes/Entities/Mobs/Species/ @DrSmugleaf
+/Resources/Prototypes/Guidebook/rules.yml @crazybrain23
+/Content.*/Body/ @DrSmugleaf @sowelipililimute
+/Content.*/Humanoid/ @sowelipililimute
+/Content.Client/Lobby/UI/Humanoid* @sowelipililimute
+/Content.YAMLLinter @DrSmugleaf
+/Content.Shared/Damage/ @DrSmugleaf
+
+# Sprites - Art Director
+/Resources/Textures/ @AftrLite
 
 # Lobby art and music - automatically direction issues since its immediately visible to players
 /Resources/Audio/Lobby/ @DeltaV-Station/direction
@@ -24,15 +34,28 @@
 /Resources/Maps/ @DeltaV-Station/maptainers
 /Resources/Prototypes/Maps/ @DeltaV-Station/maptainers
 /Content.IntegrationTests/Tests/PostMapInitTest.cs @DeltaV-Station/maptainers
+/Content.*/Trigger/ @slarticodefast
+
+/Content.*/Stunnable/ @Princess-Cheeseballs
+/Content.*/Nutrition/ @Princess-Cheeseballs
+/Content.*/EntityEffects @Princess-Cheeseballs @sowelipililimute
+
+# SKREEEE
+/Content.*.Database/ @PJB3005 @DrSmugleaf
+/Content.Shared.Database/Log*.cs @PJB3005 @DrSmugleaf @crazybrain23
+/Pow3r/ @PJB3005
+/Content.Server/Power/Pow3r/ @PJB3005
 
 # Server rules
 /Resources/ServerInfo/Guidebook/DeltaV/Rules/ @DeltaV-Station/head-administrators
 
 # Tools and scripts
-/Tools/ @deltanedas @MilonPL
+/Tools/ @deltanedas
 
 # Workflows, codeowners, templates, etc.
-/.github/ @deltanedas @MilonPL
+/.github/ @deltanedas
 
 # Standalone files in the root repo
 /* @deltanedas
+
+/Content.*/Atmos/** @ArtisticRoomba

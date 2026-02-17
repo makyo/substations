@@ -24,7 +24,8 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Stasicillin
           min: 11
         damage:
           groups:
@@ -32,13 +33,13 @@
             Toxin: -4
             Brute: -4.5
             Burn: -6
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Stasicillin
           min: 11
-        key: ForcedSleep
-        component: ForcedSleeping
-        refresh: false
+        effectProto: StatusEffectForcedSleeping
+        time: 1.5
         type: Add
 
 - type: reagent
@@ -55,7 +56,7 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:TotalDamage
+        - !type:TotalDamageCondition
           min: 30
         damage:
           groups:
@@ -76,7 +77,7 @@
     Narcotic:
       metabolismRate: 0.2
       effects:
-      - !type:MovespeedModifier
+      - !type:MovementSpeedModifier
         walkSpeedModifier: 1.35
         sprintSpeedModifier: 1.35
       - !type:GenericStatusEffect
@@ -89,7 +90,7 @@
         type: Remove
       - !type:GenericStatusEffect
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: Haloperidol
           max: 0.01
         key: Drowsiness
@@ -110,7 +111,7 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:TotalDamage
+        - !type:TotalDamageCondition
           min: 90 # Heals a bit above crit # DeltaV - this brings people to a bit more stable condition
         damage:
           groups: # 5 Damage every type except rad/pois
@@ -126,11 +127,13 @@
   physicalDesc: reagent-physical-desc-fluffy
   flavor: medicine
   color: "#ffaa00"
-#  metabolisms: # L5 - little TOO silly, but leaving in the ability to create a corgi puppy as an Easter egg (see also: buzzchloric bees)
-#    Poison:
-#      effects:
-#      - !type:Polymorph
-#        prototype: CorgiMorph # PERMANENT. There's a reason this chem's an exotic chem, not a low-mid level chem. Exotic's primary toxin.
-#        conditions:
-#        - !type:ReagentThreshold
-#          min: 20
+  metabolisms:
+    Poison:
+      effects:
+      - !type:SpawnEntity # DeltaV - was polymorph, just have a chance to spawn a corgi instead
+        entity: MobCorgiPuppy
+        probability: 0.25
+        conditions:
+        - !type:ReagentCondition
+          reagent: Corgium
+          min: 25 # DeltaV - need more corgium for that to happen, was 20

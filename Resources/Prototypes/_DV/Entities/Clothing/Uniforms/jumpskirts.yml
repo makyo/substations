@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHoPMess
-  name: head of personnel's mess kit
+  name: hospitality director's mess kit # L5
   description: A swanky uniform with tasteful gold and red trim. Keep your latte away from this.
   components:
   - type: Sprite
@@ -40,6 +40,17 @@
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/overalls.rsi
 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtWaitstaffFormal
+  name: waitstaff skirt
+  description: A sharp vest with a pencil skirt made for serving tables and looking professional.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/waitingskirt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/waitingskirt.rsi
+
 # Formal uniforms
 
 - type: entity
@@ -56,7 +67,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtQMFormal
-  name: logistics officer's formal dress
+  name: chief logistics officer's formal dress # L5
   description: Inspired by the logistics officers of military's past, the perfect outfit for supplying a formal occasion.
   components:
   - type: Sprite
@@ -67,7 +78,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHoPFormal
-  name: head of personnel's formal dress
+  name: hospitality director's formal dress # L5
   description: A well-made dress with gold buttons and a red trim. Might as well look sharp when botany goes up in flames.
   components:
   - type: Sprite
@@ -152,7 +163,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpskirtSecSenior
-  name: senior officer's jumpskirt
+  name: senior Peacekeeper's jumpskirt # L5
   description: A tight-fitting tactical jumpsuit, made of light and breathable yet durable material. Can be worn all year round.
   components:
   - type: Sprite
@@ -163,7 +174,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpskirtSecTurtle
-  name: senior officer's turtleneck
+  name: senior Peacekeeper's turtleneck # L5
   description: A comfortable and tight-fitting turtleneck for those with the resolve to reach the position of Senior Officer.
   components:
   - type: Sprite
@@ -172,12 +183,13 @@
     sprite: _DV/Clothing/Uniforms/Jumpskirt/security_alt.rsi
 
 # Warden alt uniforms
+# L5 - warden to armorer
 
 - type: entity
   parent: ClothingUniformSkirtRollableBase
   id: ClothingUniformJumpskirtWardenBlue
-  name: blue warden's jumpskirt
-  description: A cool blue shirt with ice-white markings and warden's epaulettes.
+  name: blue armorer's jumpskirt
+  description: A cool blue shirt with ice-white markings and armorer's epaulettes.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/armourer_blue.rsi
@@ -187,8 +199,8 @@
 - type: entity
   parent: ClothingUniformSkirtRollableBase
   id: ClothingUniformJumpskirtWardenGrey
-  name: grey warden's jumpskirt
-  description: Charcoal skirt, a grey shirt, and white warden's markings and epaulettes.
+  name: grey armorer's jumpskirt
+  description: Charcoal skirt, a grey shirt, and white armorer's markings and epaulettes.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/armourer_grey.rsi
@@ -198,8 +210,8 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpskirtWardenTurtle
-  name: warden's turtleneck
-  description: A comfortable and tight-fitting turtleneck for those with the patience to reach the position of Warden.
+  name: armorer's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the patience to reach the position of Armorer.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/armourer_alt.rsi
@@ -211,7 +223,7 @@
 - type: entity
   parent: ClothingUniformSkirtRollableBase
   id: ClothingUniformJumpskirtHoSBlue
-  name: head of security's blue jumpskirt
+  name: chief security officer's blue jumpskirt # L5
   description: A blue Station Security shirt with charcoal skirt. Features gold emblems and commander's epaulettes.
   components:
   - type: Sprite
@@ -234,7 +246,7 @@
 - type: entity
   parent: ClothingUniformSkirtRollableBase
   id: ClothingUniformJumpskirtHoSGrey
-  name: head of security's grey jumpskirt
+  name: chief security officer's grey jumpskirt
   description: A grey Station Security shirt with charcoal skirt. Stands out with red highlights, gold emblems, and commander's epaulettes.
   components:
   - type: Sprite
@@ -245,7 +257,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpskirtHoSTurtle
-  name: head of security's turtleneck
+  name: chief security officer's turtleneck
   description: A comfortable and tight-fitting turtleneck for those with the tenacity to reach the position of Head of Security.
   components:
   - type: Sprite
@@ -395,3 +407,27 @@
     sprite: _DV/Clothing/Uniforms/Jumpskirt/roboneuroticistpurple.rsi
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/roboneuroticistpurple.rsi
+
+# Seasonal
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtFestiveDressRed
+  name: festive red dress
+  description: A festive red dress with white fur trim, perfect for holiday parties.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/festive_red_dress.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/festive_red_dress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtElf
+  name: elf jumpskirt
+  description: An elf costume complete with a green skirt and red-and-white striped stockings.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/elf.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/elf.rsi

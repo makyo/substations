@@ -2,11 +2,23 @@
   parent: BaseComputer
   id: ComputerShipyard
   name: shipyard console
-  description: Used to purchase and sell shuttles
+  description: Used to purchase shuttles for the station.
   components:
   - type: ShipyardConsole
+    categories:
+    - Transport
+    - Shipping
+    - Medical
+    - Mining
+    - Civilian
+    - Research
+    - Military
+    - Experimental
+    - Small
+    - Medium
+    - Large
   - type: AccessReader
-    access: [[ Captain ]]
+    access: [[ Captain ], [ Quartermaster ]]
   - type: ActivatableUI
     key: enum.ShipyardConsoleUiKey.Key
   - type: UserInterface
@@ -29,6 +41,33 @@
       state: request
     - map: ["computerLayerKeys"]
       state: tech_key
+
+- type: entity
+  parent: ComputerShipyard
+  id: ComputerShipyardAdmin
+  name: central command shipyard console
+  description: Used to purchase shuttles for CentComm personnel and agents to use. The costs are heavily subsidized and small amounts of funds are laundered from all of NanoTrasen's stations, making ships purchased here essentially free.
+  components:
+  - type: ShipyardConsole
+    channel: CentCom
+    useStationFunds: false
+    categories:
+    - CentComm
+    - ERT
+    - Transport
+    - Shipping
+    - Medical
+    - Mining
+    - Civilian
+    - Research
+    - Military
+    - Experimental
+    - Small
+    - Medium
+    - Large
+    defaultCategory: ERT # Probably switch to CentComm once we have ships in that category
+  - type: AccessReader
+    access: [[ CentralCommand ]]
 
 - type: entity
   abstract: true
@@ -117,6 +156,7 @@
     account: Justice
     announcementChannel: Justice
     removeLimitAccess: [ "ChiefJustice" ]
+    mode: SendToPrimary
   - type: ActiveRadio
     channels:
     - Justice
@@ -126,3 +166,85 @@
     color: "#641327"
   - type: AccessReader
     access: [["Justice"]]
+
+- type: entity
+  parent: ComputerId
+  id: ComputerIdAdmeme
+  name: Universal ID card computer
+  suffix: Admeme
+  components:
+  - type: IdCardConsole
+    accessLevels:
+    - Admeme1
+    - Admeme2
+    - Admeme3
+    - Armory
+    - Atmospherics
+    - Bar
+    - BasicSilicon
+    - Borg
+    - Boxer
+    - Captain
+    - Cargo
+    - CentralCommand
+    - Chapel
+    - Chemistry
+    - ChiefEngineer
+    - ChiefJustice
+    - ChiefMedicalOfficer
+    - Clerk
+    - Clown
+    - Command
+    - Corpsman
+    - Cryogenics
+    - Detective
+    - DV-SpareSafe
+    - EmergencyShuttleRepealAll
+    - Engineering
+    - External
+    - HeadOfPersonnel
+    - HeadOfSecurity
+    - Hydroponics
+    - Janitor
+    - Justice
+    - Kitchen
+    - Lawyer
+    - Library
+    - Mail
+    - Maintenance
+    - Mantis
+    - Medical
+    - Mime
+    - Musician
+    - NuclearOperative
+    - Paramedic
+    - Prosecutor
+    - Psychologist
+    - Quartermaster
+    - Reporter
+    - Research
+    - ResearchDirector
+    - Robotics
+    - Salvage
+    - Security
+    - Service
+    - StationAi
+    - Surgery
+    - SyndicateAgent
+    - Theatre
+    - Wizard
+    - Zookeeper
+  - type: MappingCategories
+    categories:
+    - Debug
+
+- type: entity
+  parent: ComputerCrewMonitoring
+  id: ComputerCrewMonitoringSyndicate
+  suffix: Syndicate, Long Range
+  components:
+  # TODO: unique sprite please someone
+  - type: LongRangeCrewMonitor
+  - type: MappingCategories
+    categories:
+    - Syndicate

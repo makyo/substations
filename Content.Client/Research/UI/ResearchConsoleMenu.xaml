@@ -1,4 +1,4 @@
-﻿<controls:FancyWindow xmlns="https://spacestation14.io"
+<controls:FancyWindow xmlns="https://spacestation14.io"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
@@ -14,7 +14,11 @@
                       MinHeight="85"
                       Margin="10">
             <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
-                <RichTextLabel Name="ResearchAmountLabel"/>
+                <BoxContainer Orientation="Horizontal" VerticalExpand="True" HorizontalExpand="True">
+                    <RichTextLabel Name="ResearchAmountLabel"/>
+                    <!-- L5 - bluespace crystal purchasing -->
+                    <Button Name="GenerateCrystalButton" Text="{Loc 'research-console-menu-generate-crystal-button'}" Margin="10 0 0 0"/>
+                </BoxContainer>
                 <RichTextLabel Name="MainDisciplineLabel"/>
                 <Control VerticalExpand="True"/>
                 <BoxContainer Name="TierDisplayContainer" Orientation="Horizontal" HorizontalExpand="True" VerticalAlignment="Bottom"/>
@@ -22,6 +26,7 @@
             </BoxContainer>
             <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalAlignment="Right">
                 <Button Name="ServerButton" Text="{Loc 'research-console-menu-server-selection-button'}" MinHeight="40"/>
+                <Button Name="RediscoverButton" Margin="0 5 0 0" ToolTip="{Loc 'research-console-menu-server-rediscover-tooltip'}" MinHeight="40"/>
             </BoxContainer>
         </BoxContainer>
         <BoxContainer Orientation="Horizontal"

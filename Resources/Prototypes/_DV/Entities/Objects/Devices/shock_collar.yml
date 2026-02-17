@@ -18,10 +18,22 @@
     slots:
     - neck
   - type: SelfUnremovableClothing
+  - type: ShockOnUnequip
+    damage: 10
+    duration: 3
+  - type: AccessReader
+    access:
+    - - Security
   - type: ShockOnTrigger
     damage: 5
     duration: 3
-    cooldown: 4
+    targetContainer: true
+  # Begin L5 modifications - trigger refactor
+  - type: UseDelayOnTrigger
+  - type: UseDelay
+    delay: 4
+  - type: UseDelayTriggerCondition
+  # End L5
   - type: TriggerOnSignal
   - type: DeviceLinkSink
     ports:

@@ -16,11 +16,12 @@
     back:
     - SilverRing
 
-- type: loadout
-  id: Cane
-  storage:
-    back:
-    - Cane
+# L5 - added upstream
+# - type: loadout
+#   id: Cane
+#   storage:
+#     back:
+#     - Cane
 
 - type: loadout
   id: WhiteCane
@@ -45,3 +46,20 @@
   storage:
     back:
     - Wristwatch
+
+- type: loadout
+  id: Eyepatch
+  equipment:
+    eyes: ClothingEyesEyepatch
+
+- type: loadout
+  id: PlushieExperiment
+  storage:
+    back:
+    - PlushieExperiment
+
+- type: loadout
+  id: PlushieBee
+  storage:
+    back:
+    - PlushieBee

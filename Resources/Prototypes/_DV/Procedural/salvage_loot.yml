@@ -1,0 +1,8 @@
+# - High value
+# L5 - bluespace ore removed in favor of research
+#- type: salvageLoot
+#  id: OreBluespace
+#  guaranteed: true
+#  loots:
+#  - !type:BiomeMarkerLoot
+#    proto: OreBluespace

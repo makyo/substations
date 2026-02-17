@@ -1,4 +1,4 @@
-bounty-item-artifact = Alien artifact
+bounty-item-artifact = Metamaterial artifact
 bounty-item-baseball-bat = Baseball bat
 bounty-item-box-hugs = Box of hugs
 bounty-item-brain = Brain
@@ -11,6 +11,7 @@ bounty-item-clown-shoes = Clown shoes
 bounty-item-corn = Ear of corn
 bounty-item-crayon = Crayon
 bounty-item-cuban-carp = Cuban carp
+bounty-item-diamond = Diamond
 bounty-item-donk-pocket = Donk-pocket
 bounty-item-donut = Donut
 bounty-item-figurine = Action figure
@@ -25,6 +26,11 @@ bounty-item-lime = Lime
 bounty-item-lung = Lung
 bounty-item-monkey-cube = Monkey cube
 bounty-item-mouse = Dead mouse
+bounty-item-ore-bananium = Bananium ore
+bounty-item-ore-gold = Gold ore
+bounty-item-ore-plasma = Plasma ore
+bounty-item-ore-silver = Silver ore
+bounty-item-ore-uranium = Uranium ore
 bounty-item-pancake = Pancake
 bounty-item-pen = Pen
 bounty-item-percussion = Percussion instrument
@@ -32,6 +38,7 @@ bounty-item-pie = Pie
 bounty-item-prison-uniform = Prison uniform
 bounty-item-radio = Radio or Headset
 bounty-item-research-disk = Research disk
+bounty-item-scrap = Scrap
 bounty-item-shiv = Shiv
 bounty-item-soap = Soap
 bounty-item-soup = Soup
@@ -68,6 +75,9 @@ bounty-item-microwave-machine-board = Microwave machine board
 bounty-item-flash = Flash
 bounty-item-tooth-space-carp = Space Carp Tooth
 bounty-item-tooth-sharkminnow = Sharkminnow Tooth
+bounty-item-ring = Ring
+bounty-item-remains = Hivelord Remains
+bounty-item-plates = Goliath Hide Plates
 
 # L5
 bounty-description-artifact = UN Agricultural agents are in some hot water for stealing artifacts from non-spacefaring planets. Return one and we'll compensate you for it.
@@ -81,7 +91,7 @@ bounty-description-carrot-fries = Night sight can mean life or death! A shipment
 bounty-description-carp = Senior Administrator Pavlov has gone on strike ever since Central Administration confiscated her "pet." She is demanding a space carp as a replacement, dead or alive.
 bounty-description-clown-costume = Due to a recent issue at a space carp petting zoo, we've unfortunately lost Bonobobonobo the Clown. Send us a new costume so the kids can see him once more.
 bounty-description-corn = After the recent destruction of Space Ohio, our corn imports are down 80%. Send us some so we can make up for it.
-bounty-description-crayon = Dr Jones' kid ate all our crayons again. Please send us yours.
+bounty-description-crayon = Dr Jones's kid ate all our crayons again. Please send us yours.
 # L5
 bounty-description-cuban-carp = To celebrate the birth of Castro XXVII, ship one cuban carp to Central.
 bounty-description-donk-pocket = Consumer safety recall: Warning. Donk-Pockets manufactured in the past year contain hazardous lizard biomatter. Return units to CentComm immediately.
@@ -90,7 +100,7 @@ bounty-description-donut = Central's security forces are facing heavy losses aga
 bounty-description-figurine = The vice president's son saw an ad for action figures on the telescreen and now he won't shut up about them. Ship some to ease his complaints.
 bounty-description-flesh-monster = We've recently receieved reports of some kind of flesh monster infestation onboard several stations. Send us a few samples of these creatures so we can investigate new botanical opportunities.
 # L5
-bounty-description-flower = Administrator Zot really wants to sweep Security Officer Olivia off her feet. Send a shipment of flowers and he'll happily reward you.
+bounty-description-flower = Administrator Zot really wants to sweep Peacekeeper Olivia off her feet. Send a shipment of flowers and he'll happily reward you.
 bounty-description-galaxythistle = After a particularly nasty foam backpressure from a scrubber, a high-ranking officer got badly poisoned. Send us some galaxythistle so we can prepare him a homeopathic remedy.
 # L5
 bounty-description-handcuffs = A large influx of escaped convicts have arrived at Central Administration. Now is the perfect time to ship out spare handcuffs (or restraints).
@@ -130,25 +140,27 @@ bounty-description-tech-disk = The new research assistant on Station 13 spilled 
 bounty-description-trash = Recently a group of janitors have run out of trash to clean up. Without any trash, Central Administration wants to fire them to cut costs. Send a shipment of trash to keep them employed, and they'll give you a small compensation.
 bounty-description-anomaly-core = Suddenly we've run out of anomaly cores, including inert nuclei. Send us any anomaly cores so that we can continue to observe their final decay process.
 bounty-description-borg-module = Scientists at the neighboring station have only studied Borg production, not module production. They are stuck in the research process and need references to work from. Send any Borg modules to inspire your colleagues.
-bounty-description-artifact-fragment = Scientists at a nearby station are requesting artifact fragments for microxenoarchaeology studies. Ordinary artifacts are too large for their micro research platforms. Send some of the artifact fragments your sector is rich in.
+# L5
+bounty-description-artifact-fragment = Scientists at a nearby station are requesting artifact fragments for micrometamaterial studies. Mmm... Ordinary artifacts are too large for their micro research platforms. Send some of the artifact fragments your sector is rich in.
 bounty-description-organs = Arachnid settlement orders a large supply of organs. The official reason is "a thorough study of the similarities and differences of the humanoid races."
 bounty-description-labeler = Due to a bureaucratic error, our sorting center almost sent hundreds of crates of carrots to the Unathi settlement. We urgently need additional labelers to restore order in the warehouse as a matter of urgency.
 bounty-description-warm-cloth = The Unath construction crew freezes and is unable to restore power to their station. They need to be sent a set of any clothing to protect them from the cold.
 bounty-description-battery = As the Arachnid settlement prepares for a solar flare, they are requesting a large shipment of power batteries. We're sending out a request for delivery.
-bounty-description-lasergun = The Salvage Caravan requests a large shipment of laser weapons to mop up a hive of xenomorphs.
+# L5
+bounty-description-lasergun = The Salvage Caravan requests a large shipment of laser weapons to mop up a hive of strange creatures.
 bounty-description-food = After the rat king invasion, a neighboring unathi station was left completely without food. A large meat food shipment is needed.
 bounty-description-fruit = A heroic monkey helped the chaplain catch a troublemaker hiding in the chapel, and the crew wants to reward him for his good work.
 bounty-description-vegetable = The new chef is a vegetarian, and botany can't keep up with their demands. We need some additional veggies to help keep things stocked.
 # L5
 bounty-description-chili = Today's the Central Administration Chili Cookoff, and, well, a few of us forgot to make some. Please help cover for us.
 # L5
-bounty-description-rollerskates = Central Security is proposing a new strategy for helping officers win foot pursuits. Send them a couple so they can learn how bad an idea this is.
+bounty-description-rollerskates = UN Security is proposing a new strategy for helping officers win foot pursuits. Send them a couple so they can learn how bad an idea this is.
 bounty-description-bedsheet = Someone in Atmos keeps turning down the heater, and we're all shivering in our beds. Please send us some extra sheets to stay warm.
 bounty-description-bandana =  Bzzzt... Transmission from prison planet OC-1001: We're... reorganizing our command structure. Send us some bandanas so we can tell gan- I mean, departments apart.
 bounty-description-steak = The vegetarian cook is refusing to make us anything with meat, and the lizards are getting restless. Can you smuggle us a few steaks to keep them happy?
-bounty-description-banana = Hi station! Botany won't gimme any more. They said slipping the HoS out an open airlock wasn't funny! Can you believe it? Help me out! HONK.
+bounty-description-banana = Hi station! Botany won't gimme any more. They said slipping the CSO out an open airlock wasn't funny! Can you believe it? Help me out! HONK.
 bounty-description-beer = Some nefarious agent has stolen every single drink in the bar. Yes, everything. Help tide us over until we can find them.
-bounty-description-hi-viz-vest  = The clown stole the AME controller and won't back. It's pretty dark in here. Some hi-viz vests would make seeing each other in the dark a little mroe bearable.
+bounty-description-hi-viz-vest  = The clown stole the AME controller and won't give it back. It's pretty dark in here. Some hi-viz vests would make seeing each other in the dark a little more bearable.
 bounty-description-torch = The chef made all the monkeys and kobolds at once, and they rebelled and took over the cargo shuttle. They're demanding supplies and free passage to a jungle planet, and we're giving in to their demands. All they need now is a few torches.
 # L5
 bounty-description-medkit-box = Central Administration is putting on a play set in a hospital, and needs some props. Just send us some empty medkit boxes, and the show will go on!
@@ -157,5 +169,4 @@ bounty-description-wine = The new librarian and the Quartermaster are falling he
 bounty-description-cotton-boll = A massive swarm of mothroaches ate all the paper and cloth on the station. Send us some cotton to help keep our winged crewmembers fed.
 bounty-description-microwave-machine-board = Mr. Giggles thought it'd be funny to stick forks in all the kitchen microwaves. Help us replace them before the chefs start making clown burgers.
 bounty-description-flashes = GREETINGS \[Station] WE REQUIRE 6 FLASHES DUE TO A NORMAL \[TrainingExercise] WITH SECURITY. EVERYTHING IS \[Normal].
-bounty-description-tooth-space-carp = Some lads from "down unda" need some teeth to make their traditional apparel. Send them a few from some space carp.
-bounty-description-tooth-sharkminnow = The chef is claiming that the teeth of sharkminnows are some kind of high-quality knife. I don't know what they're on about, but they want a set. Send it to them.
+bounty-description-ring = On this EXTRAORDINARY day there will be a wedding between the Gelts, but Mr. Gelt has lost the rings. They need a new pair.

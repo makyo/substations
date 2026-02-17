@@ -13,7 +13,9 @@
   - MiningDrill
   - MineralScannerEmpty
   - OreProcessorIndustrialMachineCircuitboard
+  - SalvageExpeditionsComputerCircuitboard # DeltaV
   - ClothingMaskWeldingGas
+  - ClothingShoesBootsJump
 
 - type: technology
   id: SpaceScanning
@@ -27,7 +29,6 @@
   recipeUnlocks:
   - RadarConsoleCircuitboard
   - HandHeldMassScanner
-  - BorgModuleGPS
 
 - type: technology
   id: AdvancedPowercells
@@ -159,6 +160,7 @@
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
   - FireExtinguisherBluespace # DeltaV
+  - StaticFieldMachineCircuitboard # L5
   technologyPrerequisites:
   - AtmosphericTech
 
@@ -192,6 +194,7 @@
     - OreBagOfHolding
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
+    - BorgModuleAdvancedMining
 
 # Tier 3
 
@@ -208,7 +211,7 @@
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
-  - MaterialSiloCircuitboard # EE - material silo
+  - MaterialSiloMachineCircuitboard # L5 - material silo
 
 - type: technology
   id: PortableFission

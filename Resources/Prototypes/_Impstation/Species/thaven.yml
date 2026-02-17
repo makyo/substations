@@ -22,6 +22,10 @@
 - type: speciesBaseSprites
   id: MobThavenSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # L5
+    TailOversuit: MobHumanoidAnyMarking # L5
+    TailBehindBackpack: MobHumanoidAnyMarking # imp
+    TailUnderlay: MobHumanoidAnyMarking # imp
     Hair: MobHumanoidAnyMarking
     Eyes: MobThavenEyes
     Head: MobThavenHead
@@ -29,6 +33,7 @@
     HeadSide: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking # L5
     Chest: MobThavenTorso
     LArm: MobThavenLArm
     RArm: MobThavenRArm
@@ -44,15 +49,14 @@
   onlyWhitelisted: true
   points:
     Hair:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     HeadTop:
       points: 4 # DeltaV - was previously 2, more markings require more space
       required: false
     HeadSide:
-      points: 1
-      required: true
-      defaultMarkings: [ ThavenEars1 ]
+      points: 9 # L5 - Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     Head:
       points: 4
       required: false
@@ -66,7 +70,10 @@
       points: 6
       required: false
     Snout:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
+      required: false
+    Tail: # L5
+      points: 9
       required: false
 
 - type: humanoidBaseSprite

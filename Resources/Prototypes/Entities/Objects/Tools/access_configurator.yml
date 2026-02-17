@@ -48,6 +48,8 @@
       - Security
       - Service
       - Theatre
+      - GenpopEnter
+      - GenpopLeave
       # Begin DeltaV Additions
       - Boxer
       - ChiefJustice
@@ -92,6 +94,7 @@
       requiresComplex: true
       requireActiveHand: false
       singleUser: true
+      inHandsOnly: true
     - type: ItemSlots
     - type: ContainerContainer
       containers:
@@ -110,6 +113,30 @@
     sprite: Objects/Tools/universal_access_configurator.rsi
   - type: AccessOverrider
     accessLevels:
+    # Begin DeltaV Additions
+    - Boxer
+    - ChiefJustice
+    - Clerk
+    - Clown
+    - Corpsman
+    - DV-SpareSafe
+    - Justice
+    - Library
+    - Mail
+    - Mantis
+    - Mime
+    - Musician
+    - Paramedic
+    - Prosecutor
+    - Psychologist
+    - Reporter
+    - Robotics
+    - Surgery
+    - Zookeeper
+    - Admeme1 # admeme-only access levels
+    - Admeme2
+    - Admeme3
+    # End DeltaV Additions
     - Armory
     - Atmospherics
     - Bar
@@ -148,32 +175,44 @@
     - NuclearOperative
     - SyndicateAgent
     - Wizard
-    # Begin DeltaV Additions
-    - Boxer
-    - ChiefJustice
-    - Clerk
-    - Clown
-    - Corpsman
-    - DV-SpareSafe
-    - Justice
-    - Library
-    - Mail
-    - Mantis
-    - Mime
-    - Musician
-    - Paramedic
-    - Prosecutor
-    - Psychologist
-    - Reporter
-    - Robotics
-    - Surgery
-    - Zookeeper
-    # End DeltaV Additions
+    - Xenoborg
+    - GenpopEnter
+    - GenpopLeave
     privilegedIdSlot:
       name: id-card-console-privileged-id
+      startingItem: UniversalIDCard
       ejectSound: /Audio/Machines/id_swipe.ogg
       insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
       ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+        - IdCard
+    denialSound:
+      path: /Audio/Machines/custom_deny.ogg
+    doAfter: 0.5
+
+- type: entity
+  parent: AccessConfigurator
+  id: AccessConfiguratorXenoborg
+  name: xenoborg access configurator
+  description: A modified access configurator used by the xenoborgs.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/access_configurator.rsi
+  - type: Clothing
+    sprite: Objects/Tools/access_configurator.rsi
+  - type: AccessOverrider
+    showPrivilegedId: false
+    accessLevels:
+    - Xenoborg
+    privilegedIdSlot:
+      name: id-card-console-privileged-id
+      startingItem: XenoborgIDCard
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      disableEject: true
       swap: false
       whitelist:
         components:

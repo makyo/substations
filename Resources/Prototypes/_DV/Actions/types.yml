@@ -1,62 +1,83 @@
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionOpenRadioImplant
   name: Open Radio Implant
   description: Opens the bluespace key compartment of the radio implant embedded in your skull.
   components:
-  - type: InstantAction
+  - type: Action # L5 - action ECS
     itemIconStyle: BigAction
     priority: -20
     icon:
       sprite: Clothing/Ears/Headsets/base.rsi
       state: icon
+  - type: InstantAction # L5 - action ECS
     event: !type:OpenStorageImplantEvent
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionOpenMouthStorage
   name: Open cheek storage
-  description: Allows you to store items in your cheeks. 
+  description: Allows you to store items in your cheeks.
   components:
-  - type: InstantAction
+  - type: Action # L5 - action ECS
     itemIconStyle: BigAction
     priority: -10
     icon: _DV/Interface/Actions/mouthStorageOpen.png
+  - type: InstantAction # L5 - action ECS
     event: !type:OpenStorageImplantEvent
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionToggleSneakMode
   name: Toggle sneak mode
-  description: Sneak underneath tables. 
+  description: Sneak underneath tables.
   components:
-  - type: InstantAction
+  - type: Action # L5 - action ECS
     itemIconStyle: BigAction
     useDelay: 3
+    # L5 - toggle icon
     icon:
-      sprite: Structures/Furniture/Tables/generic.rsi
-      state: full
+      sprite: _L5/Actions/sneak.rsi
+      state: sneak
+    iconOn:
+      sprite: _L5/Actions/sneak.rsi
+      state: stand
+  - type: InstantAction # L5 - action ECS
     event: !type:ToggleCrawlingStateEvent
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionChitzite
   name: Cough Up Chitzite
   description: Purge the excess radiation build-up from your body, and gain a cool danger rock.
   components:
-  - type: InstantAction
-    charges: 0
+  - type: Action # L5 - action ECS
     enabled: false
-    maxCharges: 1
     icon: { sprite: _DV/Objects/Specific/Species/chitinid.rsi, state: chitzite }
     useDelay: 300
+  - type: InstantAction # L5 - action ECS
     event: !type:CoughItemActionEvent
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionHairball
   name: Cough Up Hairball
   description: Purge some of your chemstream, and gain a cool hairball to throw at people.
   components:
-  - type: InstantAction
-    charges: 1
+  - type: Action # L5 - action ECS
     icon:
       sprite: Nyanotrasen/Objects/Specific/Species/felinid.rsi
       state: icon
     useDelay: 30
+  - type: InstantAction # L5 - action ECS
     event: !type:CoughItemActionEvent
+
+- type: entity
+  parent: BaseToggleAction
+  id: ActionToggleBipod
+  name: Set up your bipod
+  description: Increase the accuracy and fire rate of your firearm.
+  components:
+  - type: Action
+    icon: { sprite: _DV/Objects/Weapons/Guns/LMGs/NT-3.rsi, state: bipod-off }
+    iconOn: { sprite: _DV/Objects/Weapons/Guns/LMGs/NT-3.rsi, state: bipod-on }

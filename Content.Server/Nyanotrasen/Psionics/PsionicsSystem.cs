@@ -18,6 +18,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Random;
+using Content.Shared._DV.Abilities.Psionics;
 
 namespace Content.Server.Psionics
 {
@@ -51,7 +52,8 @@ namespace Content.Server.Psionics
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<PotentialPsionicComponent, MapInitEvent>(OnStartup);
+            // L5 — psionics removed
+            //SubscribeLocalEvent<PotentialPsionicComponent, MapInitEvent>(OnStartup);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, MeleeHitEvent>(OnMeleeHit);
             SubscribeLocalEvent<AntiPsionicWeaponComponent, StaminaMeleeHitEvent>(OnStamHit);
 
@@ -59,13 +61,14 @@ namespace Content.Server.Psionics
             SubscribeLocalEvent<PsionicComponent, ComponentRemove>(OnRemove);
         }
 
-        private void OnStartup(EntityUid uid, PotentialPsionicComponent component, MapInitEvent args)
-        {
-            if (HasComp<PsionicComponent>(uid))
-                return;
-
-            _rollers.Enqueue((component, uid));
-        }
+        // L5 — psionics removed
+        // private void OnStartup(EntityUid uid, PotentialPsionicComponent component, MapInitEvent args)
+        // {
+        //     if (HasComp<PsionicComponent>(uid))
+        //         return;
+        //
+        //     _rollers.Enqueue((component, uid));
+        // }
 
         private void OnMeleeHit(EntityUid uid, AntiPsionicWeaponComponent component, MeleeHitEvent args)
         {
@@ -176,6 +179,14 @@ namespace Content.Server.Psionics
 
             RollPsionics(uid, psionic, multiplier: bonusMuliplier);
             psionic.Rerolled = true;
+        }
+
+        public void GrantNewPsionicReroll(EntityUid uid, PotentialPsionicComponent? psionic = null)
+        {
+            if (!Resolve(uid, ref psionic, false))
+                return;
+
+            psionic.Rerolled = false;
         }
     }
 }

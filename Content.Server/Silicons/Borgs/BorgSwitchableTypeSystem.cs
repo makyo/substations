@@ -1,6 +1,6 @@
 ﻿using Content.Server.Inventory;
-using Content.Server.Radio.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Radio.Components;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Prototypes;
@@ -44,11 +44,13 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         if (TryComp(ent, out BorgChassisComponent? chassis))
         {
             var chassisEnt = (ent.Owner, chassis);
-            _borgSystem.SetMaxModules(
-                chassisEnt,
-                prototype.ExtraModuleCount + prototype.DefaultModules.Length);
+            // L5 - increase borg module capacity; just use the prototype module limit
+            // _borgSystem.SetMaxModules(
+            //     chassisEnt,
+            //     prototype.ExtraModuleCount + prototype.DefaultModules.Length);
 
-            _borgSystem.SetModuleWhitelist(chassisEnt, prototype.ModuleWhitelist);
+            // L5 - disable borg module whitelist
+            // _borgSystem.SetModuleWhitelist(chassisEnt, prototype.ModuleWhitelist);
 
             foreach (var module in prototype.DefaultModules)
             {
@@ -65,7 +67,7 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         // End DeltaV Code
 
         // Configure special components
-        if (Prototypes.TryIndex(ent.Comp.SelectedBorgType, out var previousPrototype))
+        if (Prototypes.Resolve(ent.Comp.SelectedBorgType, out var previousPrototype))
         {
             if (previousPrototype.AddComponents is { } removeComponents)
                 EntityManager.RemoveComponents(ent, removeComponents);

@@ -1,9 +1,11 @@
-- type: artifactTrigger
-  id: TriggerMetapsionic
-  targetDepth: 3
-  triggerHint: artifact-trigger-hint-psionic
-  components:
-  - type: ArtifactMetapsionicTrigger
-  - type: MetapsionicPower
+# L5 — Removing psionics, switching to new xenoarch
 
-# TODO: when golemization is ported, add a trigger for golemizing someone, target 7 or something
+#- type: artifactTrigger
+#  id: TriggerMetapsionic
+#  targetDepth: 3
+#  triggerHint: artifact-trigger-hint-psionic
+#  components:
+#  - type: ArtifactMetapsionicTrigger
+#  - type: MetapsionicPower
+#
+## TODO: when golemization is ported, add a trigger for golemizing someone, target 7 or something

@@ -1,3 +1,4 @@
+using Content.Shared._L5.Research;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
 using JetBrains.Annotations;
@@ -7,23 +8,22 @@ using Robust.Shared.Prototypes;
 namespace Content.Client.Research.UI;
 
 [UsedImplicitly]
-public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
+public sealed class ResearchConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
     [ViewVariables]
     private ResearchConsoleMenu? _consoleMenu;
-
-    public ResearchConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
 
     protected override void Open()
     {
         base.Open();
 
-        var owner = Owner;
-
         _consoleMenu = this.CreateWindow<ResearchConsoleMenu>();
-        _consoleMenu.SetEntity(owner);
+        _consoleMenu.SetEntity(Owner);
+
+        _consoleMenu.OnTechnologyRediscoverPressed += () =>
+        {
+            SendMessage(new ConsoleRediscoverTechnologyMessage());
+        };
 
         _consoleMenu.OnTechnologyCardPressed += id =>
         {
@@ -33,6 +33,12 @@ public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
         _consoleMenu.OnServerButtonPressed += () =>
         {
             SendMessage(new ConsoleServerSelectionMessage());
+        };
+
+        // L5 - bluespace crystal purchasing
+        _consoleMenu.OnGenerateCrystalButtonPressed += () =>
+        {
+            SendMessage(new GenerateCrystalMessage());
         };
     }
 
@@ -56,6 +62,7 @@ public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
 
         if (state is not ResearchConsoleBoundInterfaceState castState)
             return;
+
         _consoleMenu?.UpdatePanels(castState);
         _consoleMenu?.UpdateInformationPanel(castState);
     }

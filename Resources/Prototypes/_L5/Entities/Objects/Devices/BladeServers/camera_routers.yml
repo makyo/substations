@@ -1,0 +1,110 @@
+# Wired camera routers
+- type: entity
+  id: SurveillanceCameraRouterBladeServerBase
+  abstract: true
+  parent: [ BaseSurveillanceCameraRouter, ConstructibleBladeServer ]
+  name: camera router blade server
+  description: A surveillance camera router. It routes. Perhaps.
+  components:
+  - type: BladeServer
+    stripeColor: "#AAAAAAFF"
+  - type: Machine
+    board: SurveillanceCameraRouterCircuitboard
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerConstructed
+  parent: SurveillanceCameraRouterBladeServerBase
+  suffix: constructed
+  components:
+  - type: SurveillanceCameraRouter
+    setupAvailableNetworks:
+    - SurveillanceCameraEngineering
+    - SurveillanceCameraSecurity
+    - SurveillanceCameraService
+    - SurveillanceCameraSupply
+    - SurveillanceCameraScience
+    - SurveillanceCameraGeneral
+    - SurveillanceCameraMedical
+    - SurveillanceCameraCommand
+    - SurveillanceCameraAI
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerEngineering
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: engineering camera router
+  suffix: engineering
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraEngineering
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerSecurity
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: security camera router
+  suffix: security
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraSecurity
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerService
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: service camera router
+  suffix: service
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraService
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerSupply
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: logistics camera router # L5
+  suffix: logistics # L5
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraSupply
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerScience
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: science camera router
+  suffix: science
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraScience
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerGeneral
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: general camera router
+  suffix: general
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraGeneral
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerMedical
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: medical camera router
+  suffix: medical
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraMedical
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerCommand
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: leadership camera router
+  suffix: leadership
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraCommand
+
+- type: entity
+  id: SurveillanceCameraRouterBladeServerAI
+  parent: SurveillanceCameraRouterBladeServerBase
+  name: AI camera router
+  suffix: AI
+  components:
+  - type: SurveillanceCameraRouter
+    subnetFrequency: SurveillanceCameraAI

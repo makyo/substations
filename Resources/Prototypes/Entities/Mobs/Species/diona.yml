@@ -8,10 +8,9 @@
   - type: HumanoidAppearance
     species: Diona
   - type: Hunger
-    baseDecayRate: 0.015 # DeltaV
+    #baseDecayRate: 0.015 # DeltaV # L5 — nerf hunger (make consistent)
   - type: Thirst
-    baseDecayRate: 0.15 # DeltaV
-  - type: Carriable # Carrying system from nyanotrasen.
+    baseDecayRate: 0.15 # DeltaV # L5 — leaving this one because it's funny :c
   - type: Icon
     sprite: Mobs/Species/Diona/parts.rsi
     state: full
@@ -34,7 +33,10 @@
       - id: FoodMeatPlant
         amount: 5
   - type: Bloodstream
-    bloodReagent: Sap
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 300
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -44,17 +46,16 @@
     - reagents: [Water, SpaceCleaner]
       methods: [Touch]
       effects:
-      - !type:WashCreamPieReaction
+      - !type:WashCreamPie
     - reagents: [ PlantBGone ]
       methods: [ Touch ]
       effects:
       - !type:HealthChange
-        scaleByQuantity: true
         damage:
           types:
-            Blunt: 0.1
-            Slash: 0.1
-            Piercing: 0.15
+            Blunt: 0.05
+            Slash: 0.05
+            Piercing: 0.075
       - !type:PopupMessage
         type: Local
         visualType: Large
@@ -64,10 +65,9 @@
       methods: [ Touch ]
       effects:
       - !type:HealthChange
-        scaleByQuantity: true
         damage:
           types:
-            Poison: 0.25
+            Poison: 0.125
       - !type:PopupMessage
         type: Local
         visualType: Large
@@ -93,6 +93,8 @@
       Male: UnisexDiona
       Female: UnisexDiona
       Unsexed: UnisexDiona
+  - type: TypingIndicator
+    proto: diona
   - type: BodyEmotes
     soundsId: DionaBodyEmotes
   - type: IgnoreKudzu
@@ -118,6 +120,23 @@
     baseWalkSpeed: 1.0
     baseSprintSpeed: 3.0
   - type: FTLKnockdownImmune # Frontier
+  - type: Rootable
+  - type: Carriable # Carrying system from nyanotrasen.
+  - type: LightReactive # DeltaV
+    manual: true
+  - type: LightLevelHealth # DeltaV
+    darkThreshold: 0.4
+    lightThreshold: 1.2
+    darkDamage:
+      types:
+        Heat: 1.0
+    lightDamage:
+      groups:
+        Brute: -0.1
+        Burn: -0.1
+        Toxin: -0.1
+        Airloss: -0.1
+    darkMovementSpeedMultiplier: 0.7
 
 - type: entity
   parent: BaseSpeciesDummy

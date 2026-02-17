@@ -1,9 +1,18 @@
 <ScrollContainer xmlns="https://spacestation14.io"
-              SizeFlagsStretchRatio="8"
-              HorizontalExpand="True"
-              VerticalExpand="True">
-    <BoxContainer Name="MaterialList" Orientation="Vertical">
-        <Label Name="ConnectToSiloLabel" Text="{Loc 'lathe-menu-connected-to-silo-message'}" Align="Center"/>
-        <Label Name="NoMatsLabel" Text="{Loc 'lathe-menu-no-materials-message'}" Align="Center"/>
+                 SizeFlagsStretchRatio="8"
+                 HorizontalExpand="True"
+                 VerticalExpand="True">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True">
+        <BoxContainer Name="MaterialList" Orientation="Vertical" VerticalExpand="True">
+            <Label Name="NoMatsLabel" Text="{Loc 'lathe-menu-no-materials-message'}" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalExpand="True"/>
+        </BoxContainer>
+        <!-- Begin L5 changes - ore processor silo support -->
+        <BoxContainer Name="SiloLinkedBox" Orientation="Horizontal" Visible="False">
+            <Label Name="SiloLinkedLabel" Text="{Loc 'lathe-menu-silo-linked-message'}" StyleClasses="LabelSubText"
+                   HorizontalAlignment="Center" HorizontalExpand="True" />
+            <CheckBox Name="SiloEnableCheckbox" Text="{Loc 'lathe-menu-silo-enabled'}" Pressed="True"
+                      Visible="False" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+        </BoxContainer>
+        <!-- End L5 changes -->
     </BoxContainer>
 </ScrollContainer>

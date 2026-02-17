@@ -1,5 +1,7 @@
 using System.Linq;
 using Content.Shared._DV.Polymorph;
+using Content.Shared.Body.Organ;
+using Content.Shared.Intellicard;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Containers;
 
@@ -38,8 +40,23 @@ public sealed class ContentContainerSystem : EntitySystem
             {
                 foreach (var entity in container.ContainedEntities)
                 {
+                    // We will end up recursing over each of our body parts, so
+                    // we need to make sure that we don't end up dropping our
+                    // own brain, since that can gain a MindContainer if it was
+                    // operated on.
+                    if (TryComp<OrganComponent>(entity, out var organ)
+                        && organ.Body.HasValue) // Yeah so that's KINDA in use.
+                        continue;
+
                     if (HasComp<MindContainerComponent>(entity))
                     {
+                        _found.Add(entity);
+                        continue;
+                    }
+
+                    if (HasComp<IntellicardComponent>(entity))
+                    {
+                        // Dump out the WHOLE intellicard rather than just the entities contained inside.
                         _found.Add(entity);
                         continue;
                     }

@@ -3,123 +3,229 @@
   id: PescetarianDiet
   name: trait-dietary-restriction-PescetarianRestriction-name
   description: trait-dietary-restriction-PescetarianRestriction-desc
-  components:
-  - type: PescetarianRestriction
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-    - Silicon
-    - BorgChassis
-  excludedSpecies:
-  - IPC
+    - type: PescetarianRestriction
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
 
 - type: trait
   category: Diet
   id: VegetarianDiet
   name: trait-dietary-restriction-VegetarianRestriction-name
   description: trait-dietary-restriction-VegetarianRestriction-desc
-  components:
-    - type: VegetarianRestriction
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-      - Silicon
-      - BorgChassis
-  excludedSpecies:
-    - IPC
+    - type: VegetarianRestriction
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
 
 - type: trait
   category: Diet
   id: VeganDiet
   name: trait-dietary-restriction-VeganRestriction-name
   description: trait-dietary-restriction-VeganRestriction-desc
-  components:
-    - type: VeganRestriction
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-      - Silicon
-      - BorgChassis
-  excludedSpecies:
-    - IPC
+    - type: VeganRestriction
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
 
 - type: trait
   category: Diet
   id: KosherDiet
   name: trait-dietary-restriction-KosherRestriction-name
   description: trait-dietary-restriction-KosherRestriction-desc
-  components:
-    - type: KosherRestriction
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-      - Silicon
-      - BorgChassis
-  excludedSpecies:
-    - IPC
+    - type: KosherRestriction
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
 
 - type: trait
   category: Diet
   id: HalalDiet
   name: trait-dietary-restriction-HalalRestriction-name
   description: trait-dietary-restriction-HalalRestriction-desc
-  components:
-    - type: HalalRestriction
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-      - Silicon
-      - BorgChassis
-  excludedSpecies:
-    - IPC
+    - type: HalalRestriction
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
 
 - type: trait
   category: Diet
   id: DairyAllergy
   name: trait-dietary-restriction-DairyAllergy-name
   description: trait-dietary-restriction-DairyAllergy-desc
-  components:
-    - type: DairyAllergy
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-      - Silicon
-      - BorgChassis
-  excludedSpecies:
-    - IPC
+    - type: DairyAllergy
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
 
 - type: trait
   category: Diet
   id: GlutenAllergy
   name: trait-dietary-restriction-GlutenAllergy-name
   description: trait-dietary-restriction-GlutenAllergy-desc
-  components:
-    - type: GlutenAllergy
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-      - Silicon
-      - BorgChassis
-  excludedSpecies:
-    - IPC
+    - type: GlutenAllergy
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
 
 - type: trait
   category: Diet
   id: LatexAllergy
   name: trait-dietary-restriction-LatexAllergy-name
   description: trait-dietary-restriction-LatexAllergy-desc
-  components:
-    - type: LatexAllergy
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-      - Silicon
-      - BorgChassis
-  excludedSpecies:
-    - IPC
+    - type: LatexAllergy
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
 
 - type: trait
   category: Diet
   id: NightshadeAllergy
   name: trait-dietary-restriction-NightshadeAllergy-name
   description: trait-dietary-restriction-NightshadeAllergy-desc
-  components:
-    - type: NightshadeAllergy
-  blacklist:
+  effects:
+  - !type:AddCompsEffect
     components:
-      - Silicon
-      - BorgChassis
-  excludedSpecies:
-    - IPC
+    - type: NightshadeAllergy
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
+
+- type: trait
+  category: Diet
+  id: ReptilianDiet
+  name: trait-dietary-restriction-ReptilianDiet-name
+  description: trait-dietary-restriction-ReptilianDiet-desc
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ReptilianDiet
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
+
+- type: trait
+  category: Diet
+  id: MothDiet
+  name: trait-dietary-restriction-MothDiet-name
+  description: trait-dietary-restriction-MothDiet-desc
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MothDiet
+  conditions:
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+    tooltip: trait-condition-borg-not
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
+

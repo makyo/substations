@@ -9,6 +9,8 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using System.Numerics;
 using System.Linq;
+using Content.Client.Stylesheets;
+using Content.Shared._L5.Contract;
 
 namespace Content.Client.Access.UI
 {
@@ -28,6 +30,10 @@ namespace Content.Client.Access.UI
 
         public event Action<uint>? OnNumberChanged; // DeltaV - Add event for number changes
 
+        // L5 — contracts
+        public event Action<ProtoId<ContractPrototype>>? OnContractChanged;
+        private List<string> _contracts = [];
+
         public event Action<ProtoId<JobIconPrototype>>? OnJobIconChanged;
 
         public AgentIDCardWindow()
@@ -41,6 +47,23 @@ namespace Content.Client.Access.UI
 
             JobLineEdit.OnTextEntered += e => OnJobChanged?.Invoke(e.Text);
             JobLineEdit.OnFocusExit += e => OnJobChanged?.Invoke(e.Text);
+
+            // L5 — Contracts
+            foreach (var contract in _prototypeManager.EnumeratePrototypes<ContractPrototype>())
+            {
+                if (contract.Selectable)
+                {
+                    ContractEdit.AddItem(Loc.GetString(contract.Name));
+                    _contracts.Add(contract.ID);
+                }
+            }
+
+            ContractEdit.OnItemSelected += args =>
+            {
+                ContractEdit.SelectId(args.Id);
+                OnContractChanged!.Invoke(_prototypeManager.Index<ContractPrototype>(_contracts[args.Id]));
+            };
+            // End L5 — Contracts
 
             // DeltaV - Add handlers for number changes
             NumberLineEdit.OnTextEntered += OnNumberEntered;
@@ -74,9 +97,15 @@ namespace Content.Client.Access.UI
             NumberLineEdit.Text = number?.ToString("D4") ?? "";
         }
 
+        // L5 — contracts
+        public void SetCurrentContract(string contractId)
+        {
+            ContractEdit.SelectId(_contracts.IndexOf(contractId));
+        }
+
         public void SetAllowedIcons(string currentJobIconId)
         {
-            IconGrid.DisposeAllChildren();
+            IconGrid.RemoveAllChildren();
 
             var jobIconButtonGroup = new ButtonGroup();
             var i = 0;
@@ -84,12 +113,12 @@ namespace Content.Client.Access.UI
             icons.Sort((x, y) => string.Compare(x.LocalizedJobName, y.LocalizedJobName, StringComparison.CurrentCulture));
             foreach (var jobIcon in icons)
             {
-                String styleBase = StyleBase.ButtonOpenBoth;
+                String styleBase = StyleClass.ButtonOpenBoth;
                 var modulo = i % JobIconColumnCount;
                 if (modulo == 0)
-                    styleBase = StyleBase.ButtonOpenRight;
+                    styleBase = StyleClass.ButtonOpenRight;
                 else if (modulo == JobIconColumnCount - 1)
-                    styleBase = StyleBase.ButtonOpenLeft;
+                    styleBase = StyleClass.ButtonOpenLeft;
 
                 // Generate buttons
                 var jobIconButton = new Button

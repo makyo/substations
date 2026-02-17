@@ -1,0 +1,39 @@
+- type: latheCategory
+  id: Aprons
+  name: lathe-category-aprons
+
+- type: latheCategory
+  id: DocumentsLetterhead
+  name: lathe-category-letterhead
+
+- type: latheCategory
+  id: DocumentsMedical
+  name: lathe-category-medical
+
+- type: latheCategory
+  id: DocumentsLogistics
+  name: lathe-category-logistics
+
+- type: latheCategory
+  id: DocumentsJustice
+  name: lathe-category-justice
+
+- type: latheCategory
+  id: DocumentsSecurity
+  name: lathe-category-security
+
+- type: latheCategory
+  id: DocumentsService
+  name: lathe-category-service
+
+- type: latheCategory
+  id: DocumentsEngineering
+  name: lathe-category-engineering
+
+- type: latheCategory
+  id: DocumentsScience
+  name: lathe-category-science
+
+- type: latheCategory
+  id: DocumentsLeadership
+  name: lathe-category-leadership

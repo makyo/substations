@@ -11,23 +11,22 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/_DV/Shuttles/NTES_BC20.yml
+        emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_bc20.yml
       - type: StationNameSetup
         mapNameTemplate: '{0} Lighthouse {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: '14'
+          !type:SysConNameGenerator
+          stationType: S # for 'Station'
       - type: StationJobs
         availableJobs:
         #command
           Captain: [ 1, 1 ]
-          AdministrativeAssistant: [ 1, 1 ]
           StationAi: [ 1, 1 ]
         #service
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 2, 4 ]
           Botanist: [ 2, 2 ]
-          Boxer: [ 2, 2 ]
+          #Boxer: [ 2, 2 ]
           Chef: [ 1, 2 ]
           Clown: [ 1, 1 ]
           Librarian: [ 1, 1 ]

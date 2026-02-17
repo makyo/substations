@@ -3,17 +3,19 @@ job-name-surgeon = Surgeon
 job-name-chief-justice = Chief Justice
 job-name-clerk = Clerk
 job-name-prosecutor = Prosecutor
-job-name-lawyer = Attorney
+# job-name-lawyer = Attorney
 job-name-courier = Courier
 job-name-cargo-assistant = Cargo Assistant
 job-name-security-borg = Security Cyborg
 job-name-admin-assistant = Administrative Assistant
+# job-name-librarian = Librarian
 # Used by the Agent ID
-job-name-senior-physician = Senior Physician
-job-name-senior-researcher = Senior Researcher
-job-name-senior-engineer = Senior Engineer
-job-name-senior-officer = Senior Officer
-job-name-qm = Logistics Officer
+job-name-senior-physician = Physician Mentor
+job-name-senior-researcher = Research Mentor
+job-name-senior-engineer = Engineering Mentor
+# L5
+job-name-senior-officer = Peacekeeper Mentor
+# job-name-qm = Chief Logistics Officer
 
 # Alternate titles
 job-alt-title-tourist = Tourist
@@ -29,14 +31,16 @@ job-alt-title-pizzaiolo = Pizzaiolo
 job-alt-title-practical-nurse = Practical Nurse
 job-alt-title-resident = Resident
 
-job-alt-title-senior-physician = Senior Physician
+job-alt-title-senior-physician = Physician Mentor
 job-alt-title-clinician = Clinician
 job-alt-title-cryogenics-specialist = Cryogenics Specialist
+
+job-alt-title-pharmacist = Pharmacist
 
 job-alt-title-life-support = Life Support Technician
 job-alt-title-plasma-scientist = Plasma Scientist
 
-job-alt-title-senior-engineer = Senior Engineer
+job-alt-title-senior-engineer = Engineering Mentor
 job-alt-title-electrician = Electrician
 job-alt-title-mechanic = Mechanic
 
@@ -48,11 +52,12 @@ job-alt-title-mail-carrier = Mail Carrier
 job-alt-title-prospector = Prospector
 job-alt-title-excavator = Excavator
 
-job-alt-title-senior-researcher = Senior Researcher
+job-alt-title-senior-researcher = Research Mentor
 job-alt-title-lab-technician = Lab Technician
-job-alt-title-xenoarch = Xenoarchaeologist
+# L5
+job-alt-title-xenoarch = Metamaterials Scientist
 
-job-alt-title-senior-officer = Senior Officer
+job-alt-title-senior-officer = Peacekeeper Mentor
 
 job-alt-title-jester = Jester
 job-alt-title-fool = Fool
@@ -62,6 +67,9 @@ job-alt-title-hygiene-technician = Hygiene Technician
 job-alt-title-psychiatrist = Psychiatrist
 job-alt-title-social-worker = Social Worker
 job-alt-title-therapist = Therapist
+
+job-title-admeme-overwriting = Overwriting
+job-title-admeme-adding = Adding
 
 # Role timers
 JobMedicalBorg = Medical Cyborg

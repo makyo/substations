@@ -64,7 +64,8 @@ tips-dataset-62 = As the Chef, your knife can act as a weapon in an emergency.
 tips-dataset-63 = As the Chef, you can sneak liquids into your foods. As a traitor, putting a little bit of amatoxin or other poison can greatly annoy the crew!
 # DeltaV
 tips-dataset-64 = As the Mime, your vow to not speak is your source of power. Breaking it robs you of your powers and of your honor.
-tips-dataset-65 = As the Lawyer, try to negotiate with the Warden if sentences seem too high for the crime.
+# L5 - warden to sec
+tips-dataset-65 = As the Lawyer, try to negotiate with security if sentences seem too high for the crime.
 tips-dataset-66 = As a Security Officer, communicate and coordinate with your fellow officers using the security radio channel to avoid confusion.
 tips-dataset-67 = As a Security Officer, remember that correlation does not equal causation. Someone may have just been at the wrong place at the wrong time!
 tips-dataset-68 = As a Detective, you can chase criminals more effectively by using fingerprint fiber data and DNA obtained from forensic scans of objects the perpetrator likely interacted with.
@@ -79,13 +80,13 @@ tips-dataset-75 = As the station administrator, you are one of the highest prior
 tips-dataset-76 = As the station administrator, always take the nuclear disk and pinpointer with you every shift. It's a good idea to give one of these to another head you can trust with keeping it safe.
 tips-dataset-77 = As the station administrator, you have absolute access and control over the station, but this does not mean that being a horrible person won't result in mutiny.
 tips-dataset-78 = As the station administrator, try to be active and patrol the station. Staying in the bridge might be tempting, but you'll just end up putting a bigger target on your back!
-tips-dataset-79 = As a Scientist, you can try random things on an artifact while the scanner is on cooldown to speed up the point extraction process significantly.
+tips-dataset-79 = As a Scientist, you can use the node scanner to see when an artifact is able to react to triggers, and which triggers it is currently reacting to; each number it shows corresponds to a different trigger!
 tips-dataset-80 = As a Scientist, you can utilize upgraded versions of machines to increase its effectiveness. This can make certain machines significantly better; salvage will love you if you upgrade their ore processor!
 tips-dataset-81 = As a Scientist, you can build cyborgs using positronic brains and a chassis, they are just as useful as a new crew member.
 tips-dataset-82 = As a Medical Doctor, try to be wary of overdosing your patients, especially if someone else has already been on the scene. Overdoses are often lethal to patients in crit!
 tips-dataset-83 = As a Medical Doctor, don't underestimate your cryo pods! They heal almost every type of damage, making them very useful when you are overloaded or need to heal someone in a pinch.
 tips-dataset-84 = As a Medical Doctor, exercise caution when putting reptilians in cryopods. They will take a lot of extra cold damage, but you can mitigate this with some burn medicine or leporazine.
-tips-dataset-85 = As a Medical Doctor, remember that the health analyzer can be used if you lose your PDA. However it has a battery, and if it drains too quickly for your taste you can ask epistemics to print a better battery for you!
+tips-dataset-85 = As a Medical Doctor, remember that the health analyzer can be used if you lose your PDA.
 tips-dataset-86 = As a Chemist, once you've made everything you've needed to, don't be afraid to make more silly reagents. Have you tried desoxyephedrine or licoxide?
 tips-dataset-87 = As a Medical Doctor, Chemist, or Chief Medical Officer, you can use chloral hydrate to non-lethally sedate unruly patients.
 tips-dataset-88 = Don't be afraid to ask for help, whether from your peers in character or through LOOC, or from admins!
@@ -139,3 +140,5 @@ tips-dataset-135 = Instead of picking it up, you can alt-click food to eat it. T
 tips-dataset-136 = If you're trapped behind an electrified door, disable the APC or throw your ID at the door to avoid getting shocked!
 # L5
 tips-dataset-137 = If the station's Sys-Side Representative electrifies a door and you have insulated gloves, snip and mend the power wire to reset their electrification!
+tips-dataset-138 = If you want to stop your prisoner from escaping from the cell right after being uncuffed, turn on combat mode while uncuffing - this will shove the prisoner down.
+tips-dataset-139 = Make sure to clean your illegal implanters with a soap or a damp rag after you use them! Detectives can scan used implanters for incriminating DNA evidence, but not if they've been wiped clean.

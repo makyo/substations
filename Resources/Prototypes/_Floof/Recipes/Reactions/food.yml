@@ -1,0 +1,15 @@
+- type: reaction
+  id: CreateFrosting
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Butter:
+      amount: 5
+    Sugar:
+      amount: 15
+  effects:
+  - !type:SpawnEntity
+    entity: FoodFrosting

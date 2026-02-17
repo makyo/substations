@@ -63,12 +63,12 @@ holopad-command-bridge-hallway = Leadership - Bridge Hallway
 holopad-command-meeting-room = Leadership - Meeting Room
 holopad-command-lounge = Leadership - Lounge
 holopad-command-captain = Leadership - Station Administrator
-holopad-command-hop = Leadership - HoP
+holopad-command-hop = Leadership - HD
 holopad-command-cmo = Leadership - CMO
-holopad-command-qm = Leadership - QM
+holopad-command-qm = Leadership - CLO
 holopad-command-ce = Leadership - CE
 holopad-command-rd = Leadership - RD
-holopad-command-hos = Leadership - HoS
+holopad-command-hos = Leadership - CSO
 
 # Science
 holopad-science-anomaly = Science - Anomaly
@@ -117,7 +117,7 @@ holopad-engineering-main = Engineering - Main
 # Security
 holopad-security-front = Security - Front
 holopad-security-brig = Security - Brig
-holopad-security-warden = Security - Warden
+holopad-security-warden = Security - Armorer
 holopad-security-interrogation = Security - Interrogation
 holopad-security-breakroom = Security - Breakroom
 holopad-security-detective = Security - Detective
@@ -126,7 +126,8 @@ holopad-security-courtroom = Security - Courtroom
 holopad-security-lawyer = Security - Lawyer
 holopad-security-armory = Security - Armory
 holopad-security-locker-room = Security - Locker Room
-holopad-security-brig-med = Security - Brig Med
+# L5
+holopad-security-brig-med = Security - Corpsman
 holopad-security-evac-checkpoint = Security - Evac Checkpoint
 holopad-security-arrivals-checkpoint = Security - Arrivals Checkpoint
 

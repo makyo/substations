@@ -15,21 +15,19 @@
   id: MobFelinidMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 9 # L5 Increase Limit from 1
       required: false
     FacialHair:
-      points: 1
+      points: 9 # L5 Increase Limit from 1
       required: false
     Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ FelinidTailBasic ]
+      points: 9 # L5 Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ FelinidEarsBasic ]
+      points: 9 # L5 Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     Chest:
-      points: 1
+      points: 2
       required: false
     Legs:
       points: 6

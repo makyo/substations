@@ -1,9 +1,6 @@
 ## Static
 
 - type: latheRecipePack
-  parent:
-  - IPCPartsStatic # Shitmed Change
-  - RoboticsStaticDeltaV # DeltaV
   id: RoboticsStatic
   recipes:
   - MMI
@@ -14,10 +11,31 @@
 - type: latheRecipePack
   id: BorgModulesStatic
   recipes:
+  - BorgModuleTool
   - BorgModuleCable
   - BorgModuleFireExtinguisher
-  - BorgModuleRadiationDetection
-  - BorgModuleTool
+  - BorgModuleInflatable
+  - BorgModuleArtistry
+  # Begin L5 Additions - more printable borg modules
+  - BorgModuleAnomaly
+  - BorgModuleAppraisal
+  - BorgModuleArtifact
+  - BorgModuleCable
+  - BorgModuleChemical
+  - BorgModuleCleaning
+  - BorgModuleClowning
+  - BorgModuleConstruction
+  - BorgModuleCustodial
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  - BorgModuleMining
+  - BorgModuleMusique
+  - BorgModuleRCD
+  - BorgModuleRescue
+  - BorgModuleService
+  - BorgModuleTopicals
+  - BorgModuleTraversal
+  # End L5
 
 - type: latheRecipePack
   id: BorgLimbsStatic
@@ -32,27 +50,18 @@
 ## Dynamic
 
 - type: latheRecipePack
-  parent:
-  - RoboticsDeltaV # DeltaV
   id: Robotics
   recipes:
   - ProximitySensor
 
 - type: latheRecipePack
-  parent:
-  #- BorgModulesDeltaV # DeltaV
-  - BorgModulesShitmed # Shitmed change
   id: BorgModules
   recipes:
   - BorgModuleAdvancedCleaning
   - BorgModuleAdvancedTool
-  - BorgModuleGPS
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
-  - BorgModuleGardening
-  - BorgModuleHarvesting
-  #- BorgModuleDefibrillator # DeltaV - made a default module
-  - BorgModuleAdvancedTreatment
+  - BorgModuleAdvancedClowning
+  - BorgModuleAdvancedTopical
+  - BorgModuleAdvancedMining
 
 - type: latheRecipePack
   id: MechParts

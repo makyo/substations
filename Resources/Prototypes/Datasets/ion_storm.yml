@@ -188,7 +188,6 @@
   - PLANTS
   - PLASMA
   - ROBOTS
-  - SHUTTLES
   - SPACE
   - SUNLIGHT
   - WATER
@@ -338,12 +337,12 @@
   - CYBORGS
   - DETECTIVES
   # - GENETICISTS
-  - HEADS OF PERSONNEL
-  - HEADS OF SECURITY
+  - HOSPITALITY DIRECTORS # L5
+  - CHIEF SECURITY OFFICERS # L5
   - HEADS OF STAFF
   - JANITORS
   - LAWYERS
-  - LIBRARIANS
+  - ARCHIVISTS # DeltaV - Replace librarians with Curators
   - MEDICAL DOCTORS
   - MIMES
   - MUSICIANS
@@ -351,7 +350,7 @@
   - PARAMEDICS
   - PASSENGERS
   # DeltaV - Logistics Department - Replace Quartermaster with Logistics Officer
-  - LOGISTICS OFFICERS
+  - CHIEF LOGISTICS OFFICERS # L5
   # End of modified code
   # DeltaV - Epistemics Department - Replace Research Director with Mystagogue # L5 undooo
   - RESEARCH DIRECTORS
@@ -360,10 +359,10 @@
   - RODENTS
   - SALVAGE SPECIALISTS
   - SCIENTISTS
-  - SECURITY OFFICERS
+  - PEACEKEEPERS # L5
   - STATION ENGINEERS
   # - VIROLOGISTS
-  - WARDENS
+  - ARMORERS # L5 - warden to armorer
 
 # only including complex dangerous or funny drinks no water allowed
 - type: dataset

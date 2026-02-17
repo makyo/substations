@@ -1,8 +1,10 @@
-namespace Content.Server._DV.Xenoarchaeology.XenoArtifacts.Triggers.Components;
+// L5 — Removing psionics, switching to new xenoarch
 
-/// <summary>
-/// Triggers if a psionic power is used nearby.
-/// Requires <c>MetapsionicPowerComponent</c> to be added too.
-/// </summary>
-[RegisterComponent]
-public sealed partial class ArtifactMetapsionicTriggerComponent : Component;
+// namespace Content.Server._DV.Xenoarchaeology.XenoArtifacts.Triggers.Components;
+//
+// /// <summary>
+// /// Triggers if a psionic power is used nearby.
+// /// Requires <c>MetapsionicPowerComponent</c> to be added too.
+// /// </summary>
+// [RegisterComponent]
+// public sealed partial class ArtifactMetapsionicTriggerComponent : Component;

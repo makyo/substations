@@ -9,6 +9,7 @@
   # QM
   - ClothingHeadHatBeretLogi
   - ClothingUniformJumpskirtQMFormal
+  - ClothingLongcoatQM
   # Salvage
   - ClothingUniformJumpskirtSalvageSpecialist
 
@@ -20,6 +21,7 @@
   # HoP
   - ClothingUniformJumpsuitHoPFormal
   - ClothingUniformJumpskirtHoPFormal
+  - ClothingLongcoatHoP
   # Administrative Assistant
   - ClothingUniformJumpsuitAdminAssistant
   - ClothingUniformJumpskirtAdminAssistant
@@ -30,6 +32,7 @@
   # Mystagogue
   - ClothingHeadHatBeretMysta
   - ClothingHeadHoodMysta
+  - ClothingLongcoatRD
   # Psionic Mantis
   - ClothingUniformJumpsuitMantis
   - ClothingUniformSkirtMantis
@@ -40,6 +43,8 @@
 - type: latheRecipePack
   id: ClothingMedicalDeltaV
   recipes:
+  # CMO
+  - ClothingLongcoatCMO
   # Chemist
   - ClothingUniformJumpsuitChemShirt
   - ClothingUniformJumpskirtChemShirt
@@ -90,6 +95,8 @@
 - type: latheRecipePack
   id: ClothingEngineeringDeltaV
   recipes:
+  # CE
+  - ClothingLongcoatCE
   # Atmos
   - ClothingUniformJumpsuitAtmos
   - ClothingUniformJumpskirtAtmos

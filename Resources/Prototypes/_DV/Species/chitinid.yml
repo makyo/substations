@@ -16,6 +16,8 @@
 - type: speciesBaseSprites
   id: MobChitinidSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobChitinidHead
     Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
@@ -51,21 +53,19 @@
       points: 0
       required: false
     Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ ChitinidWingsDefault ]
+      points: 3 # Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     Snout:
-      points: 1
+      points: 3 # Increase Limit from 1
       required: false
     HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ ChitinidAntennasDefault ]
+      points: 3 # Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     HeadSide:
-      points: 1
+      points: 3 # Increase Limit from 1
       required: false
     Head:
-      points: 1
+      points: 3 # Increase Limit from 1
       required: false
     Chest:
       points: 1

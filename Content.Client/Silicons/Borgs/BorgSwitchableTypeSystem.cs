@@ -2,6 +2,7 @@
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Client.GameObjects;
+using Robust.Shared.Serialization; // DeltaV
 
 namespace Content.Client.Silicons.Borgs;
 
@@ -37,12 +38,15 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
         Entity<BorgSwitchableTypeComponent> entity,
         BorgTypePrototype prototype)
     {
-        // Begin DeltaV Code
+        // Begin DeltaV Additions
         if (prototype.ClientComponents is {} add)
             EntityManager.AddComponents(entity, add);
-        // End DeltaV Code
+        // End DeltaV Additions
         if (TryComp(entity, out SpriteComponent? sprite))
         {
+            // Begin DeltaV Additions - work around engine bug with AddComponents
+            ((ISerializationHooks) sprite).AfterDeserialization();
+            // End DeltaV Additions
             sprite.LayerSetState(BorgVisualLayers.Body, prototype.SpriteBodyState);
             sprite.LayerSetState(BorgVisualLayers.LightStatus, prototype.SpriteToggleLightState);
         }
@@ -59,25 +63,6 @@ public sealed partial class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeS
                 // Queue update so state changes apply.
                 _appearance.QueueUpdate(entity, appearance);
             }
-        }
-
-        if (prototype.SpriteBodyMovementState is { } movementState)
-        {
-            var spriteMovement = EnsureComp<SpriteMovementComponent>(entity);
-            spriteMovement.NoMovementLayers.Clear();
-            spriteMovement.NoMovementLayers["movement"] = new PrototypeLayerData
-            {
-                State = prototype.SpriteBodyState,
-            };
-            spriteMovement.MovementLayers.Clear();
-            spriteMovement.MovementLayers["movement"] = new PrototypeLayerData
-            {
-                State = movementState,
-            };
-        }
-        else
-        {
-            RemComp<SpriteMovementComponent>(entity);
         }
 
         base.UpdateEntityAppearance(entity, prototype);

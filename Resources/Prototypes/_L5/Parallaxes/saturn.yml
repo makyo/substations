@@ -1,0 +1,30 @@
+- type: parallax
+  id: Saturn
+  layers:
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_L5/Parallaxes/saturn/saturn_surface.png"
+    slowness: 0.9875
+    scrolling: "0.065, 0"
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_L5/Parallaxes/saturn/saturn_clouds_lower.png"
+    slowness: 0.985
+    scale: "0.25, 0.25"
+    scrolling: "0.05, 0"
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_L5/Parallaxes/saturn/saturn_city.png"
+    slowness: 0.975
+    scrolling: "0, 0"
+    tiled: false
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_L5/Parallaxes/saturn/saturn_clouds_lower.png"
+    slowness: 0.95
+    scrolling: "-0.1, 0.05"
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_L5/Parallaxes/saturn/saturn_clouds_upper.png"
+    slowness: 0.8
+    scrolling: "0.75, -0.05"

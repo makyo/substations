@@ -1,20 +1,25 @@
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionFoxfire
   name: Create Foxfire
   description: Form a cool, gently glowing wisp of flame
   components:
-  - type: InstantAction
-    charges: 3
+  - type: LimitedCharges
+    maxCharges: 3
     disableWhenEmpty: false
+  - type: Action # L5 - action ECS
     icon: { sprite: _DV/Structures/Specific/Species/Kitsune/foxfire.rsi, state: icon }
+  - type: InstantAction # L5 - action ECS
     event: !type:CreateFoxfireActionEvent
 
 - type: entity
+  parent: BaseAction # L5 - action ECS
   id: ActionKitsuneMorph
   name: Kitsune Shapeshift
   description: Shift into your fox form
   components:
-  - type: InstantAction
+  - type: Action # L5 - action ECS
     icon: { sprite: Mobs/Animals/fox.rsi, state: fox }
     useDelay: 2
+  - type: InstantAction # L5 - action ECS
     event: !type:MorphIntoKitsune

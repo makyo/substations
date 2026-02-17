@@ -1,3 +1,12 @@
+## Static
+
+- type: latheRecipePack
+  id: EngineeringStaticDeltaV
+  recipes:
+  - Oilpack
+  - HoloprojectorEngineering
+  - SheetPlasteel1Engineering
+
 ## Dynamic
 
 - type: latheRecipePack
@@ -22,3 +31,12 @@
   recipes:
   - LatheUpgradeKitHyper
   - LatheUpgradeKitCryo
+
+- type: latheRecipePack
+  id: EngineeringHardsuits
+  recipes:
+  - ClothingOuterHardsuitEngineering
+  - ClothingOuterHardsuitAtmos
+  - ClothingOuterSuitAtmosFire
+  - ClothingHeadHelmetAtmosFire
+  - ClothingOuterVoidsuitEngineering

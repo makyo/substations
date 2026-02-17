@@ -1,13 +1,13 @@
-job-name-warden = Warden
-job-name-security = Security Officer
-job-name-cadet = Security Cadet
-job-name-hos = Head of Security
+# L5 - Jobs changed to match our canon
+job-name-warden = Armorer
+job-name-security = Peacekeeper
+job-name-cadet = Peacekeeper Cadet
+job-name-hos = Chief Security Officer
 job-name-detective = Detective
 job-name-brigmedic = Corpsman
 job-name-borg = Cyborg
 job-name-scientist = Scientist
 job-name-research-assistant = Research Assistant
-# L5 - Back to RD rather than MG
 job-name-rd = Research Director
 job-name-psychologist = Psychologist
 job-name-intern = Medical Intern
@@ -18,19 +18,17 @@ job-name-chemist = Chemist
 job-name-technical-assistant = Technical Assistant
 job-name-engineer = Station Engineer
 job-name-atmostech = Atmospheric Technician
-job-name-hop = Head of Personnel
-# L5
+job-name-hop = Hospitality Director
 job-name-captain = Station Administrator
 job-name-serviceworker = Service Worker
-# L5 - SysCon and UN
 job-name-centcomoff = System Consortium Administrator
 job-name-cburn = UN Quarantine Officer
 job-name-deathsquad = UN Agent
 job-name-reporter = Reporter
 job-name-musician = Musician
 job-name-librarian = Librarian
-# DeltaV - Changed Lawyer to Attorney
-# job-name-lawyer = Lawyer
+# L5
+job-name-lawyer = Attorney
 job-name-mime = Mime
 job-name-ce = Chief Engineer
 job-name-janitor = Janitor
@@ -39,22 +37,22 @@ job-name-botanist = Botanist
 job-name-bartender = Bartender
 job-name-passenger = Passenger
 job-name-salvagespec = Salvage Specialist
-# L5
 job-name-station-ai = Sys-Side Representative
-# DeltaV - Hopefully makes LO maintaining easier
-# job-name-qm = Quartermaster
+# L5
+job-name-qm = Chief Logistics Officer
 job-name-cargotech = Cargo Technician
 job-name-chef = Chef
 job-name-clown = Clown
-job-name-ertleader = ERT Leader
-job-name-ertchaplain = ERT Chaplain
-job-name-ertengineer = ERT Engineer
-job-name-ertsecurity = ERT Security
-job-name-ertmedic = ERT Medic
-job-name-ertjanitor = ERT Janitor
+job-name-ertleader = IRIS Leader
+job-name-ertchaplain = IRIS Chaplain
+job-name-ertengineer = IRIS Engineer
+job-name-ertsecurity = IRIS Security
+job-name-ertmedic = IRIS Medic
+job-name-ertjanitor = IRIS Janitor
 job-name-boxer = Boxer
 job-name-zookeeper = Zookeeper
 job-name-visitor = Visitor
+job-name-cluwne = Cluwne
 
 # unused jobs
 # these are required for the agent ID job icon tooltips
@@ -79,10 +77,8 @@ JobBartender = Bartender
 JobBorg = Borg
 JobBotanist = Botanist
 JobBoxer = Boxer
-# L5
 JobCaptain = Station Administrator
 JobCargoTechnician = Cargo Technician
-# L5
 JobCentralCommandOfficial = System Consortium Administrator
 JobChaplain = Chaplain
 JobChef = Chef
@@ -92,14 +88,14 @@ JobChiefMedicalOfficer = Chief Medical Officer
 JobClown = Clown
 JobDetective = Detective
 JobBrigmedic = Corpsman
-JobERTChaplain = ERT Chaplain
-JobERTEngineer = ERT Engineer
-JobERTJanitor = ERT Janitor
-JobERTLeader = ERT Leader
-JobERTMedical = ERT Medical
-JobERTSecurity = ERT Security
-JobHeadOfPersonnel = Head of Personnel
-JobHeadOfSecurity = Head of Security
+JobERTChaplain = IRIS Chaplain
+JobERTEngineer = IRIS Engineer
+JobERTJanitor = IRIS Janitor
+JobERTLeader = IRIS Leader
+JobERTMedical = IRIS Medical
+JobERTSecurity = IRIS Security
+JobHeadOfPersonnel = Hospitality Director
+JobHeadOfSecurity = Chief Security Officer
 JobJanitor = Janitor
 JobLawyer = Lawyer
 JobLibrarian = Librarian
@@ -110,20 +106,18 @@ JobMusician = Musician
 JobParamedic = Paramedic
 JobPassenger = Passenger
 JobPsychologist = Psychologist
-JobQuartermaster = Logistics Officer
+JobQuartermaster = Chief Logistics Officer
 JobReporter = Reporter
 JobResearchAssistant = Research Assistant
-# L5
 JobResearchDirector = Research Director
 JobSalvageSpecialist = Salvage Specialist
 JobScientist = Scientist
-JobSecurityCadet = Security Cadet
-JobSecurityOfficer = Security Officer
+JobSecurityCadet = Peacekeeper Cadet
+JobSecurityOfficer = Peacekeeper
 JobServiceWorker = Service Worker
-# L5
 JobStationAi = Sys-Side Representative
 JobStationEngineer = Station Engineer
 JobTechnicalAssistant = Technical Assistant
 JobVisitor = Visitor
-JobWarden = Warden
+JobWarden = Armorer
 JobZookeeper = Zookeeper

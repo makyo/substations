@@ -1,0 +1,38 @@
+- type: construction
+  name: crafting-sink-small
+  id: Sink
+  graph: Sink
+  startNode: start
+  targetNode: sink
+  category: construction-category-structures
+  description: crafting-sink-small-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true # because tables
+  canRotate: true
+
+- type: construction
+  name: crafting-sink-wide
+  id: WideSink
+  graph: Sink
+  startNode: start
+  targetNode: sinkWide
+  category: construction-category-structures
+  description: crafting-sink-wide-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true # because tables
+  canRotate: true
+
+- type: construction
+  name: crafting-drain
+  id: Drain
+  graph: Drain
+  startNode: start
+  targetNode: drain
+  category: construction-category-structures
+  description: crafting-drain-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true # because tables
+  canRotate: true

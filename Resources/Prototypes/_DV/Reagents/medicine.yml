@@ -1,86 +1,4 @@
 - type: reagent
-  id: Hemoxadone
-  name: reagent-name-hemoxadone
-  group: Medicine
-  desc: reagent-desc-hemoxadone
-  physicalDesc: reagent-physical-desc-metallic
-  flavor: medicine
-  color: "#ee0044"
-  worksOnTheDead: true
-  metabolisms:
-    Poison:
-      effects:
-      - !type:HealthChange
-        conditions:
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: true
-        damage:
-          types:
-            Poison: 2
-    Medicine:
-      effects:
-      - !type:HealthChange
-        conditions:
-        - !type:Temperature
-          max: 213.0
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: false
-        damage:
-          types:
-            Bloodloss: -6
-      - !type:ModifyBloodLevel
-        conditions:
-        - !type:Temperature
-          max: 213.0
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: false
-        amount: 6
-
-- type: reagent
-  id: Cyanoxadone
-  name: reagent-name-cyanoxadone
-  group: Medicine
-  desc: reagent-desc-cyanoxadone
-  physicalDesc: reagent-physical-desc-metallic
-  flavor: medicine
-  color: "#00eeff"
-  worksOnTheDead: true
-  metabolisms:
-    Poison:
-      effects:
-      - !type:HealthChange
-        conditions:
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: false
-        damage:
-          types:
-            Poison: 2
-    Medicine:
-      effects:
-      - !type:HealthChange
-        conditions:
-        - !type:Temperature
-          max: 213.0
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: true
-        damage:
-          types:
-            Bloodloss: -6
-      - !type:ModifyBloodLevel
-        conditions:
-        - !type:Temperature
-          max: 213.0
-        - !type:OrganType
-          type: Arachnid
-          shouldHave: true
-        amount: 6
-
-- type: reagent
   id: Netinadone
   name: reagent-name-netinadone
   group: Medicine
@@ -95,12 +13,12 @@
       - !type:ReduceRotting
         seconds: 10
         conditions:
-        - !type:HasComponent
+        - !type:HasComponentCondition
           bodyPart: Torso
           explanation: reagent-explanation-netinadone-ribcage
           components:
           - type: RibcageOpen
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 150.0
         - !type:MobStateCondition
           mobstate: Dead
@@ -129,10 +47,10 @@
   id: UnholyWater # going to be renamed later alongside holy water
   name: reagent-name-unholy-water
   group: Toxins
-  desc: reagent-name-unholy-water
+  desc: reagent-desc-unholy-water
   physicalDesc: reagent-physical-desc-menacing
   flavor: UnholyWater
-  color: "#1614143d"
+  color: "#c4c4c4"
   metabolisms:
     Medicine:
       effects:
@@ -140,3 +58,55 @@
         damage:
           types:
             Cold: 1 # plan to change this when holy counterpart damage exists
+
+- type: reagent
+  id: Anodynafil
+  name: reagent-name-anodynafil
+  desc: reagent-desc-anodynafil
+  flavor: tingly
+  color: "#8FABA3"
+  physicalDesc: reagent-physical-desc-sticky
+  group: Medicine
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:GenericStatusEffect
+        key: Anesthesia
+        component: Anesthesia
+        time: 4.0
+        type: Add
+      - !type:GenericStatusEffect
+        key: PainNumbness
+        component: PainNumbness
+        time: 8.0
+        type: Add
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 0.5
+        sprintSpeedModifier: 0.5
+
+- type: reagent
+  id: Stabilizine
+  name: reagent-name-stabilizine
+  group: Medicine
+  desc: reagent-desc-stabilizine
+  physicalDesc: reagent-physical-desc-thick
+  flavor: medicine
+  color: "#ff7db5"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          max: 293.15
+        amount: 40000 # thermal energy, not temperature!
+      - !type:AdjustTemperature
+        conditions: # Increase the effect at lower temperatures, to reduce rubberbanding
+        - !type:TemperatureCondition
+          max: 253.15
+        amount: 60000 # Remember, this adds with the above condition!
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          min: 293.15
+        amount: -10000

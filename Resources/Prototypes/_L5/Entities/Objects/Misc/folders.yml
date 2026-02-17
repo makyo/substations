@@ -1,0 +1,48 @@
+- type: entity
+  abstract: true
+  id: BoxFolderFillSysCon # Include this as a parent prototype to add 0-5 random papers to a folder's inventory when spawned.
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PaperSysCon
+          prob: 0.5
+        - id: PaperOffice
+          prob: 0.4
+        - id: Paper
+          prob: 0.3
+        - id: PaperSysCon
+          prob: 0.2
+        - id: PaperUN
+          prob: 0.01 # Rare :3
+
+- type: entity
+  abstract: true
+  id: BoxFolderFillSysConThreePapers
+  suffix: 3 papers
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: PaperSysCon
+        amount: 3
+
+- type: entity
+  abstract: true
+  id: BoxFolderFillUNThreePapers
+  suffix: 3 papers
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: PaperUN
+        amount: 3
+
+- type: entity
+  parent: [BoxFolderCentComEmpty, BoxFolderFillUNThreePapers]
+  categories: [ ]
+  id: BoxFolderIRIS
+  name: IRIS folder
+  suffix: UN, 3 papers

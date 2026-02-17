@@ -6,13 +6,19 @@
   - ClothingNeckShockCollar
   - ClothingOuterArmorPlateCarrier # plate carrier body armour
   - ClothingOuterArmorDuraVest # stabproof vest body armour
+  - ClothingOuterArmorDuraVestK9 # k9 stabproof vest body armour
+  - ClothingOuterArmorReflective
   - HoloprojectorSecurity
+  - RadioHandheldSecurity
+  - WeaponSwordSilver
+  - ClothingBeltBandolier
 
 - type: latheRecipePack
   id: SecurityPracticeStaticDeltaV
   recipes:
   - MagazineBoxSpecialPractice
   - SpeedLoaderSpecialPractice
+  - MagazinePistolHighCapacityPractice
 
 - type: latheRecipePack
   id: SecurityAmmoStaticDeltaV
@@ -25,6 +31,14 @@
   - BoxShellTranquilizer
   - MagazineShotgunBeanbag
   - MagazineLaser
+  - MagazinePistolHighCapacity
+
+- type: latheRecipePack
+  id: SecurityShotgunDrumsStatic
+  recipes:
+  - MagazineShotgun
+  - MagazineShotgunEmpty
+  - MagazineShotgunSlug
 
 - type: latheRecipePack
   id: SecurityRubberAmmoStatic
@@ -39,6 +53,8 @@
   - MagazineBoxLightRifleRubber
   - MagazineBoxRifleRubber
   - MagazineBoxSpecialRubber
+  - MagazinePistolSubMachineGunRubber
+  - MagazinePistolHighCapacityRubber
 
 - type: latheRecipePack
   parent: SecurityDisablers
@@ -58,6 +74,8 @@
   - MagazineBoxSpecialHoly
   - MagazineBoxSpecialMindbreaker
   - GamblagatorCapacitor
+  - MagazinePistolHighCapacityUranium
+  - MagazinePistolHighCapacityIncendiary
 
 - type: latheRecipePack
   parent: SecurityHardsuits
@@ -87,3 +105,18 @@
   recipes:
   - ClothingOuterHardsuitJuggernautReverseEngineered
   - ClothingOuterHardsuitSyndieReverseEngineered
+  - ClothingOuterHardsuitCombatOfficer
+  - ClothingOuterHardsuitCombatK9 # k9 combat suit
+  - ClothingOuterHardsuitCombatRiotK9 # k9 riot suit
+
+- type: latheRecipePack
+  id: PrisonerSoftsuits
+  recipes:
+  - ClothingOuterHardsuitEVAPrisoner
+  - ClothingHeadHelmetEVALarge
+
+- type: latheRecipePack
+  id: AdvancedPsionicProsthetics
+  recipes:
+  - PyroLeftArm
+  - ZapLeftArm

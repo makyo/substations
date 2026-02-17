@@ -4,44 +4,51 @@ using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
+using Robust.Shared.Timing;
 
 namespace Content.Server.GameTicking.Commands
 {
     [AdminCommand(AdminFlags.Round)]
-    public sealed class GoLobbyCommand : IConsoleCommand
+    public sealed class GoLobbyCommand : LocalizedEntityCommands
     {
-        [Dependency] private readonly IEntityManager _e = default!;
+        [Dependency] private readonly IConfigurationManager _configManager = default!;
+        [Dependency] private readonly GameTicker _gameTicker = default!;
+        [Dependency] private readonly IGameTiming _time = default!; // L5
 
-        public string Command => "golobby";
-        public string Description => "Enables the lobby and restarts the round.";
-        public string Help => $"Usage: {Command} / {Command} <preset>";
-        public void Execute(IConsoleShell shell, string argStr, string[] args)
+        public override string Command => "golobby";
+
+        public override void Execute(IConsoleShell shell, string argStr, string[] args)
         {
             GamePresetPrototype? preset = null;
             var presetName = string.Join(" ", args);
-
-            var ticker = _e.System<GameTicker>();
-
-            if (args.Length > 0)
+            // Begin L5 changes - add confirm
+            var confirm = presetName.EndsWith("confirm");
+            if (confirm)
+                presetName = presetName[..^"confirm".Length].TrimEnd();
+            else if (_time.RealTime > TimeSpan.FromHours(1))
             {
-                if (!ticker.TryFindGamePreset(presetName, out preset))
+                shell.WriteLine(Loc.GetString("cmd-golobby-needs-confirm"));
+                return;
+            }
+            // End L5 changes
+
+            if (presetName.Length > 0) // L5 - was args.Length
+            {
+                if (!_gameTicker.TryFindGamePreset(presetName, out preset))
                 {
-                    shell.WriteLine($"No preset found with name {presetName}");
+                    shell.WriteLine(Loc.GetString($"cmd-forcepreset-no-preset-found", ("preset", presetName)));
                     return;
                 }
             }
 
-            var config = IoCManager.Resolve<IConfigurationManager>();
-            config.SetCVar(CCVars.GameLobbyEnabled, true);
+            _configManager.SetCVar(CCVars.GameLobbyEnabled, true);
 
-            ticker.RestartRound();
+            _gameTicker.RestartRound();
 
             if (preset != null)
-            {
-                ticker.SetGamePreset(preset);
-            }
+                _gameTicker.SetGamePreset(preset);
 
-            shell.WriteLine($"Enabling the lobby and restarting the round.{(preset == null ? "" : $"\nPreset set to {presetName}")}");
+            shell.WriteLine(Loc.GetString(preset == null ? "cmd-golobby-success" : "cmd-golobby-success-with-preset", ("preset", presetName)));
         }
     }
 }

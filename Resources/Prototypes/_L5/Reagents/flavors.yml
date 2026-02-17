@@ -1,0 +1,9 @@
+- type: flavor
+  id: flyingdutchman
+  flavorType: Complex
+  description: flavor-complex-flying-dutchman
+
+- type: flavor
+  id: doublelemondrop
+  flavorType: Complex
+  description: flavor-complex-double-lemondrop

@@ -16,6 +16,8 @@
 - type: speciesBaseSprites
   id: MobVulpkaninSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobVulpkaninHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -40,15 +42,14 @@
   id: MobVulpkaninMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     FacialHair:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ VulpTail ]
+      points: 9 # L5 - Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     Head:
       points: 3
       required: false
@@ -59,12 +60,11 @@
       points: 6
       required: false
     Snout:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ VulpEar ]
+      points: 9 # L5 - Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
 
 - type: humanoidBaseSprite
   id: MobVulpkaninHead

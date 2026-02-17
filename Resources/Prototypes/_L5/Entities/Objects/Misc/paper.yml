@@ -1,0 +1,47 @@
+- type: entity
+  name: SysCon letterhead
+  parent: Paper
+  id: PaperSysCon
+  description: "A sheet of SysCon letterhead. Smells...official."
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+      color: "#eeeeee"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#e6e6fa"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperLabelType
+    paperType: SysConPaper
+  - type: PaperVisuals
+    headerImagePath: "/Textures/_L5/Interface/Paper/paper_heading_syscon.png"
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
+    backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
+
+- type: entity
+  name: UN letterhead
+  parent: Paper
+  id: PaperUN
+  description: "A sheet of UN letterhead. Smells...official."
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+      color: "#ffffff"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#e6e6fa"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperLabelType
+    paperType: UNPaper
+  - type: PaperVisuals
+    headerImagePath: "/Textures/_L5/Interface/Paper/paper_heading_un.png"
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
+    backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0

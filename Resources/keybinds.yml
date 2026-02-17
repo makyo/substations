@@ -44,9 +44,6 @@ binds:
 - function: Walk
   type: State
   key: Shift
-- function: ToggleStanding
-  type: State
-  key: R
 # Shuttle
 - function: ShuttleStrafeUp
   type: State
@@ -112,6 +109,17 @@ binds:
   type: State
   mod1: Shift
   key: Apostrophe
+- function: FocusSubtle # floof
+  type: State
+  key: Minus
+- function: FocusSubtleOOC # floof
+  type: State
+  mod1: Shift
+  key: LBracket
+- function: FocusSign # L5
+  type: State
+  mod1: Shift
+  key: Tilde
 - function: FocusWhisperChatWindow
   type: State
   key: Comma
@@ -212,10 +220,14 @@ binds:
   mod1: Alt
 - function: OpenCharacterMenu
   type: State
-  key: C
+  key: U
 - function: OpenEmotesMenu
   type: State
   key: Y
+# L5 — operating multiple characters
+- function: OperateCharacter
+  type: State
+  key: O
 - function: TextCursorSelect
   # TextCursorSelect HAS to be above ExamineEntity
   # So that LineEdit receives it correctly.
@@ -281,6 +293,18 @@ binds:
   type: State
   key: E
   mod1: Shift
+- function: SmartEquipPocket1
+  type: State
+  key: F
+  mod1: Shift
+- function: SmartEquipPocket2
+  type: State
+  key: G
+  mod1: Shift
+- function: SmartEquipSuitStorage
+  type: State
+  key: H
+  mod1: Shift
 - function: OpenBackpack
   type: State
   key: V
@@ -294,6 +318,14 @@ binds:
 - function: InspectEntity
   type: State
   key: v
+  mod1: Alt
+- function: InspectServerComponent
+  type: State
+  key: b
+  mod1: Alt
+- function: InspectClientComponent
+  type: State
+  key: c
   mod1: Alt
 - function: MouseMiddle
   type: State
@@ -551,6 +583,9 @@ binds:
 - function: Arcade3
   type: State
   key: Z
+- function: ToggleKnockdown
+  type: State
+  key: C
 - function: OpenAbilitiesMenu
   type: State
   key: K
@@ -584,6 +619,46 @@ binds:
 - function: Hotbar9
   type: State
   key: Num9
+- function: HotbarShift0
+  type: State
+  key: Num0
+  mod1: Shift
+- function: HotbarShift1
+  type: State
+  key: Num1
+  mod1: Shift
+- function: HotbarShift2
+  type: State
+  key: Num2
+  mod1: Shift
+- function: HotbarShift3
+  type: State
+  key: Num3
+  mod1: Shift
+- function: HotbarShift4
+  type: State
+  key: Num4
+  mod1: Shift
+- function: HotbarShift5
+  type: State
+  key: Num5
+  mod1: Shift
+- function: HotbarShift6
+  type: State
+  key: Num6
+  mod1: Shift
+- function: HotbarShift7
+  type: State
+  key: Num7
+  mod1: Shift
+- function: HotbarShift8
+  type: State
+  key: Num8
+  mod1: Shift
+- function: HotbarShift9
+  type: State
+  key: Num9
+  mod1: Shift
 - function: MappingUnselect
   type: State
   key: MouseRight

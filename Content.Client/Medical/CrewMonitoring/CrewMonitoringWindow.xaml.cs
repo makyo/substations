@@ -28,6 +28,12 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
     private readonly SharedTransformSystem _transformSystem;
     private readonly SpriteSystem _spriteSystem;
 
+    // L5 - map-global suit sensors. For some reason "mapUid" actually means
+    // gridUid in NavMap stuff, but we want to reference both map and grid ID's
+    // for displaying, e.g., the grid map if the console is on grid. At the same
+    // time, we want to display stuff in the reference frame of the real map.
+    private EntityUid? _coordMapUid;
+
     private NetEntity? _trackedEntity;
     private bool _tryToScrollToListFocus;
     private Texture? _blipTexture;
@@ -47,11 +53,12 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
     {
         _blipTexture = _spriteSystem.Frame0(new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/NavMap/beveled_circle.png")));
 
+        // L5 - map-global suit sensors
         if (_entManager.TryGetComponent<TransformComponent>(mapUid, out var xform))
-            NavMap.MapUid = xform.GridUid;
-
-        else
-            NavMap.Visible = false;
+        {
+            NavMap.MapUid = xform.GridUid ?? xform.MapUid;
+            _coordMapUid = xform.MapUid;
+        }
 
         StationName.AddStyleClass("LabelBig");
         StationName.Text = stationName;
@@ -79,10 +86,28 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
 
         NoServerLabel.Visible = false;
 
+        // Collect one status per user, using the sensor with the most data available.
+        Dictionary<NetEntity, SuitSensorStatus> uniqueSensorsMap = new();
+        foreach (var sensor in sensors)
+        {
+            if (uniqueSensorsMap.TryGetValue(sensor.OwnerUid, out var existingSensor))
+            {
+                // Skip if we already have a sensor with more data for this mob.
+                if (existingSensor.Coordinates != null && sensor.Coordinates == null)
+                    continue;
+
+                if (existingSensor.DamagePercentage != null && sensor.DamagePercentage == null)
+                    continue;
+            }
+
+            uniqueSensorsMap[sensor.OwnerUid] = sensor;
+        }
+        var uniqueSensors = uniqueSensorsMap.Values.ToList();
+
         // Order sensor data
-        var orderedSensors = sensors.OrderBy(n => n.Name).OrderBy(j => j.Job);
+        var orderedSensors = uniqueSensors.OrderBy(n => n.Name).OrderBy(j => j.Job);
         var assignedSensors = new HashSet<SuitSensorStatus>();
-        var departments = sensors.SelectMany(d => d.JobDepartments).Distinct().OrderBy(n => n);
+        var departments = uniqueSensors.SelectMany(d => d.JobDepartments).Distinct().OrderBy(n => n);
 
         // Create department labels and populate lists
         foreach (var department in departments)
@@ -112,7 +137,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
             };
 
             deparmentLabel.SetMessage(department);
-            deparmentLabel.StyleClasses.Add(StyleNano.StyleClassTooltipActionDescription);
+            deparmentLabel.StyleClasses.Add("font-large");
 
             SensorsTable.AddChild(deparmentLabel);
 
@@ -137,8 +162,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
                 HorizontalExpand = true,
             };
 
-            deparmentLabel.SetMessage(Loc.GetString("crew-monitoring-user-interface-no-department"));
-            deparmentLabel.StyleClasses.Add(StyleNano.StyleClassTooltipActionDescription);
+            deparmentLabel.SetMessage(Loc.GetString("crew-monitoring-ui-no-department-label"));
 
             SensorsTable.AddChild(deparmentLabel);
 
@@ -148,7 +172,9 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
         // Show monitor on nav map
         if (monitorCoords != null && _blipTexture != null)
         {
-            NavMap.TrackedEntities[_entManager.GetNetEntity(monitor)] = new NavMapBlip(monitorCoords.Value, _blipTexture, Color.Cyan, true, false);
+            // L5 - map-global sensors; move monitor blip to be in the map's reference frame
+            NavMap.TrackedEntities[_entManager.GetNetEntity(monitor)] =
+                new NavMapBlip(CoordinatesToLocal(monitorCoords.Value), _blipTexture, Color.Cyan, true, false);
         }
     }
 
@@ -176,7 +202,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
             };
 
             if (sensor.SuitSensorUid == _trackedEntity)
-                sensorButton.AddStyleClass(StyleNano.StyleClassButtonColorGreen);
+                sensorButton.AddStyleClass(StyleClass.Positive);
 
             SensorsTable.AddChild(sensorButton);
 
@@ -311,7 +337,8 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
                     else
                     {
                         _trackedEntity = sensor.SuitSensorUid;
-                        NavMap.CenterToCoordinates(coordinates.Value);
+                        NavMap.CenterToCoordinates(CoordinatesToLocal(coordinates.Value,
+                            useGridCoords: true)); // L5 - map-global suit sensors
                     }
 
                     NavMap.Focus = _trackedEntity;
@@ -346,10 +373,10 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
             var castSensor = (CrewMonitoringButton) sensor;
 
             if (castSensor.SuitSensorUid == prevTrackedEntity)
-                castSensor.RemoveStyleClass(StyleNano.StyleClassButtonColorGreen);
+                castSensor.RemoveStyleClass(StyleClass.Positive);
 
             else if (castSensor.SuitSensorUid == currTrackedEntity)
-                castSensor.AddStyleClass(StyleNano.StyleClassButtonColorGreen);
+                castSensor.AddStyleClass(StyleClass.Positive);
 
             if (castSensor?.Coordinates == null)
                 continue;
@@ -410,17 +437,18 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
     /// but if the blip is attached to another grid which is moving, that
     /// blip will move smoothly, unlike the others. By converting the
     /// coordinates, we are back in control of the blip movement.
+    ///
+    /// L5 - map-global suit sensors: this function is rewritten to reframe the
+    /// given coordinates relative to coordsMapUid, if it exists, otherwise it
+    /// returns the given reference coords. Setting useGridCoords to true will
+    /// return coordinates in reference to the monitor's grid, if able.
     /// </summary>
-    private EntityCoordinates CoordinatesToLocal(EntityCoordinates refCoords)
+    private EntityCoordinates CoordinatesToLocal(EntityCoordinates refCoords, bool useGridCoords = false)
     {
-        if (NavMap.MapUid != null)
-        {
-            return _transformSystem.WithEntityId(refCoords, (EntityUid)NavMap.MapUid);
-        }
-        else
-        {
-            return refCoords;
-        }
+        var uid = useGridCoords ? NavMap.MapUid : _coordMapUid;
+        return uid != null
+            ? _transformSystem.WithEntityId(refCoords, uid.Value)
+            : refCoords;
     }
 
     private void ClearOutDatedData()

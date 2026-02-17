@@ -1,0 +1,141 @@
+- type: entity
+  parent: PaperBin
+  id: PaperBin5SC
+  suffix: 5, SysCon letterhead
+  components:
+  - type: Bin
+    initialContents:
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    whitelist:
+      tags:
+      - Document
+      - Write
+
+- type: entity
+  parent: PaperBin
+  id: PaperBin10SC
+  suffix: 10, SysCon letterhead
+  components:
+  - type: Bin
+    initialContents:
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    whitelist:
+      tags:
+      - Document
+      - Write
+
+- type: entity
+  parent: PaperBin
+  id: PaperBin20SC
+  suffix: 20, SysCon letterhead
+  components:
+  - type: Bin
+    initialContents:
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    - PaperSysCon
+    whitelist:
+      tags:
+      - Document
+      - Write
+
+- type: entity
+  parent: PaperBin
+  id: PaperBin5UN
+  suffix: 5, UN letterhead
+  components:
+  - type: Bin
+    initialContents:
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    whitelist:
+      tags:
+      - Document
+      - Write
+
+- type: entity
+  parent: PaperBin
+  id: PaperBin10UN
+  suffix: 10, UN letterhead
+  components:
+  - type: Bin
+    initialContents:
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    whitelist:
+      tags:
+      - Document
+      - Write
+
+- type: entity
+  parent: PaperBin
+  id: PaperBin20UN
+  suffix: 20, UN letterhead
+  components:
+  - type: Bin
+    initialContents:
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    - PaperUN
+    whitelist:
+      tags:
+      - Document
+      - Write

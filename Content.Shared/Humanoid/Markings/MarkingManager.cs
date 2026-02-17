@@ -62,12 +62,18 @@ namespace Content.Shared.Humanoid.Markings
             string species)
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = _prototypeManager.Index(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var markingPoints = _prototypeManager.Index(speciesProto.MarkingPoints);
             var res = new Dictionary<string, MarkingPrototype>();
+
+            // Begin DeltaV addition - prevents errors when category is missing
+            if (!markingPoints.Points.ContainsKey(category))
+                return res;
+            // End DeltaV addition
 
             foreach (var (key, marking) in MarkingsByCategory(category))
             {
-                if (onlyWhitelisted && marking.SpeciesRestrictions == null)
+                // L5 - verify that our markingPoints.Points actually has a value associated with its key so we don't crash if it doesn't
+                if ((markingPoints.OnlyWhitelisted || !markingPoints.Points.TryGetValue(category, out var val) || val.OnlyWhitelisted) && marking.SpeciesRestrictions == null)
                 {
                     continue;
                 }
@@ -254,9 +260,9 @@ namespace Content.Shared.Humanoid.Markings
             IoCManager.Resolve(ref prototypeManager);
             var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
             if (
-                !prototypeManager.TryIndex(speciesProto.SpriteSet, out var baseSprites) ||
+                !prototypeManager.Resolve(speciesProto.SpriteSet, out var baseSprites) ||
                 !baseSprites.Sprites.TryGetValue(layer, out var spriteName) ||
-                !prototypeManager.TryIndex(spriteName, out HumanoidSpeciesSpriteLayer? sprite) ||
+                !prototypeManager.Resolve(spriteName, out HumanoidSpeciesSpriteLayer? sprite) ||
                 sprite == null ||
                 !sprite.MarkingsMatchSkin
             )

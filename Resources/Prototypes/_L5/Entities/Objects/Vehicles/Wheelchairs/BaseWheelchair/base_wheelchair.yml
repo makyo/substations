@@ -11,3 +11,8 @@
   - type: Rotatable
   - type: PilotOnBuckle
   - type: InputMover
+  - type: Physics
+    bodyType: KinematicController
+  - type: Tag
+    tags:
+    - DoorBumpOpener

@@ -1,0 +1,59 @@
+- type: construction
+  name: crafting-diagonal-wall
+  id: WallSolidDiagonal
+  graph: Girder
+  startNode: start
+  targetNode: diagonalWall
+  category: construction-category-structures
+  description: crafting-diagonal-wall-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: crafting-diagonal-wall-reinforced
+  id: WallReinforcedDiagonal
+  graph: Girder
+  startNode: start
+  targetNode: diagonalReinforcedWall
+  category: construction-category-structures
+  description: crafting-diagonal-wall-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: crafting-wall-stone
+  id: WallNecropolis
+  graph: Girder
+  startNode: start
+  targetNode: stoneWall
+  category: construction-category-structures
+  description: crafting-wall-stone-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: crafting-wall-sandstone
+  id: WallSandstone
+  graph: Girder
+  startNode: start
+  targetNode: sandstoneWall
+  category: construction-category-structures
+  description: crafting-wall-sandstone-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

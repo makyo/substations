@@ -1,9 +1,11 @@
+using  Content.Shared.Inventory;
+
 namespace Content.Shared.Actions;
 
 /// <summary>
 /// <see cref="ActionGrantComponent"/>
 /// </summary>
-public sealed class ActionGrantSystem : EntitySystem
+public sealed partial class ActionGrantSystem : EntitySystem // L5 - made partial
 {
     [Dependency] private readonly SharedActionsSystem _actions = default!;
 
@@ -13,11 +15,17 @@ public sealed class ActionGrantSystem : EntitySystem
         SubscribeLocalEvent<ActionGrantComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ActionGrantComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<ItemActionGrantComponent, GetItemActionsEvent>(OnItemGet);
+
+        InitializeL5(); // L5 - duh
     }
 
     private void OnItemGet(Entity<ItemActionGrantComponent> ent, ref GetItemActionsEvent args)
     {
+
         if (!TryComp(ent.Owner, out ActionGrantComponent? grant))
+            return;
+
+        if (ent.Comp.ActiveIfWorn && (args.SlotFlags == null || args.SlotFlags == SlotFlags.POCKET))
             return;
 
         foreach (var action in grant.ActionEntities)
@@ -26,7 +34,8 @@ public sealed class ActionGrantSystem : EntitySystem
         }
     }
 
-    private void OnMapInit(Entity<ActionGrantComponent> ent, ref MapInitEvent args)
+    // L5 - made generic
+    private void OnMapInit<T>(Entity<T> ent, ref MapInitEvent args) where T : ActionGrantComponent
     {
         foreach (var action in ent.Comp.Actions)
         {
@@ -38,7 +47,8 @@ public sealed class ActionGrantSystem : EntitySystem
         }
     }
 
-    private void OnShutdown(Entity<ActionGrantComponent> ent, ref ComponentShutdown args)
+    // L5 - made generic
+    private void OnShutdown<T>(Entity<T> ent, ref ComponentShutdown args) where T : ActionGrantComponent
     {
         foreach (var actionEnt in ent.Comp.ActionEntities)
         {

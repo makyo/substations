@@ -1,39 +1,54 @@
 - type: entity
+  abstract: true # L5 — replaced by upstream
   parent: BaseImplantOnlyImplanterSyndi
   id: BionicVoiceMaskImplanter
-  suffix: bionic voice mask
+  name: bionic voice mask implanter
   components:
   - type: Implanter
     implant: BionicVoiceMaskImplant
 
 - type: entity
+  abstract: true # L5 — replaced by upstream
   parent: BionicVoiceMaskImplanter
   id: BionicSyrinxImplanter
-  suffix: bionic syrinx
+  name: bionic syrinx implanter
   components:
   - type: Implanter
     implant: BionicSyrinxImplant
 
 - type: entity
   parent: BaseImplantOnlyImplanter
-  id: GenericRadioImplanter
-  suffix: generic radio
+  id: WatchdogImplanter
+  name: watchdog implanter
   components:
   - type: Implanter
-    implant: RadioImplant
+    implant: WatchdogImplant
+
+- type: entity
+  parent: BaseImplantOnlyImplanterCentcomm
+  id: CentCommImplanter
+  name: centcomm implanter
+  suffix: mindshield
+  components:
+  - type: Implanter
+    implant: CentCommImplant
+
+# Nukie implants
 
 - type: entity
   parent: BaseImplantOnlyImplanterSyndi
-  id: SyndicateRadioImplanter
-  suffix: syndicate radio
+  id: HostageImplanter
+  name: hostage implanter
   components:
   - type: Implanter
-    implant: SyndicateRadioImplant
+    implant: HostageImplant
+    implantTime: 20
+    drawTime: 15
 
 - type: entity
-  parent: BaseImplantOnlyImplanter
-  id: RadioImplanterCentcomm
-  suffix: centcomm radio
+  id: NukeopsUplinkImplanter
+  suffix: Nukeops Uplink
+  parent: BaseImplantOnlyImplanterSyndi
   components:
   - type: Implanter
-    implant: RadioImplantCentcomm
+    implant: NukeopsUplinkImplant

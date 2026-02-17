@@ -4,9 +4,10 @@
   id: BoxEncryptionKeyPrisoner
   description: A box of spare encryption keys.
   components:
-  - type: StorageFill
-    contents:
-      - id: EncryptionKeyPrison
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: EncryptionKeyPrison
         amount: 4
   - type: Sprite
     layers:
@@ -18,14 +19,27 @@
       - EncryptionKey
 
 - type: entity
+  parent: BoxEncryptionKeyPassenger
+  id: BoxEncryptionKeyTraffic
+  name: traffic encryption key box
+  description: A box of spare encryption keys.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: EncryptionKeyTraffic
+        amount: 4
+
+- type: entity
   name: justice encryption key box
   parent: BoxEncryptionKeyPassenger
   id: BoxEncryptionKeyJustice
   description: A box of spare encryption keys.
   components:
-  - type: StorageFill
-    contents:
-      - id: EncryptionKeyJustice
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: EncryptionKeyJustice
         amount: 4
 
 - type: entity
@@ -38,10 +52,11 @@
     layers:
     - state: box_of_doom
     - state: implant
-  - type: StorageFill
-    contents:
-    - id: SyndicateRadioImplanter
-      amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: RadioImplanterSyndicate
+        amount: 2
 
 - type: entity
   name: syndicate hostage implanter box
@@ -60,10 +75,11 @@
     whitelist:
       components:
       - Implanter
-  - type: StorageFill
-    contents:
-    - id: HostageImplanter
-      amount: 6
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: HostageImplanter
+        amount: 6
 
 - type: entity
   name: syndicate handcuff box
@@ -82,10 +98,11 @@
     whitelist:
       components:
       - Handcuff
-  - type: StorageFill
-    contents:
-    - id: Handcuffs
-      amount: 10
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: Handcuffs
+        amount: 10
 
 - type: entity
   parent: BoxCardboard
@@ -101,10 +118,69 @@
     maxItemSize: Normal
     grid:
     - 0,0,3,1
-  - type: StorageFill
-    contents:
-    - id: Stunbaton
-    - id: WeaponDisabler
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Stunbaton
+        - id: WeaponDisabler
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxSyndicateFigurines
+  name: syndicate figurines box
+  components:
+  - type: Sprite
+    layers:
+    - state: box_of_doom
+    - state: writing_of_doom
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,1
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ToyFigurineNukie
+        - id: ToyFigurineNukieElite
+        - id: ToyFigurineNukieCommander
+        - id: ToyFigurineFootsoldier
+  description: A box of a full set of syndicate figurines!
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxRandomDonk
+  components:
+  - type: Sprite
+    layers:
+    - state: box
+    - state: writing_of_doom
+  - type: Storage
+    maxItemSize: Normal
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:GroupSelector
+        children:
+        #Main
+        - id: FoodBoxDonkpocketHonk
+          prob: 0.15
+        - id: FoodBoxDonkpocketBerry
+          prob: 0.1
+        - id: FoodBoxDonkpocketCarp
+          prob: 0.05
+        - id: FoodBoxDonkpocketDink
+          prob: 0.1
+        - id: FoodBoxDonkpocket
+          prob: 0.2
+        - id: FoodBoxDonkpocketStonk
+          prob: 0.05
+        - id: FoodBoxDonkpocketPizza
+          prob: 0.15
+        - id: FoodBoxDonkpocketSpicy
+          prob: 0.1
+        - id: FoodBoxDonkpocketTeriyaki
+          prob: 0.1
 
 - type: entity
   parent: BoxCardboard
@@ -116,9 +192,29 @@
     layers:
     - state: box_of_doom
     - state: writing_of_doom
-  - type: StorageFill
-    contents:
-    - id: ChemistryBottleFirebugsFriend
-      amount: 8
-    - id: SyndicateFlippo
-      amount: 1
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryBottleFirebugsFriend
+          amount: 8
+        - id: SyndicateFlippoDV
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxSyndicateSydicatC4
+  name: Syndicat C4 Bundle Box
+  description: A box containing a Syndicat radio, a C4, an advanced remote signaler, and a multitool.
+  components:
+  - type: Sprite
+    layers:
+    - state: box_of_doom
+    - state: writing_of_doom
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: C4
+        - id: Multitool
+        - id: RemoteSignallerAdvanced
+        - id: ReinforcementRadioSyndicateYarn

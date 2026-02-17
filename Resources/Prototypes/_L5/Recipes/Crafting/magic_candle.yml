@@ -1,0 +1,59 @@
+- type: construction
+  name: crafting-magic-candle-plain
+  id: MagicCandle
+  graph: MagicCandle
+  startNode: start
+  targetNode: candle
+  category: construction-category-misc
+  description: crafting-magic-candle-desc
+  objectType: Item
+
+- type: construction
+  name: crafting-magic-candle-black
+  id: MagicCandleBlack
+  graph: MagicCandle
+  startNode: start
+  targetNode: candleBlack
+  category: construction-category-misc
+  description: crafting-magic-candle-desc
+  objectType: Item
+
+- type: construction
+  name: crafting-magic-candle-blue
+  id: MagicCandleBlue
+  graph: MagicCandle
+  startNode: start
+  targetNode: candleBlue
+  category: construction-category-misc
+  description: crafting-magic-candle-desc
+  objectType: Item
+
+- type: construction
+  name: crafting-magic-candle-green
+  id: MagicCandleGreen
+  graph: MagicCandle
+  startNode: start
+  targetNode: candleGreen
+  category: construction-category-misc
+  description: crafting-magic-candle-desc
+  objectType: Item
+
+- type: construction
+  name: crafting-magic-candle-purple
+  id: MagicCandlePurple
+  graph: MagicCandle
+  startNode: start
+  targetNode: candlePurple
+  category: construction-category-misc
+  description: crafting-magic-candle-desc
+  objectType: Item
+
+- type: construction
+  name: crafting-magic-candle-red
+  id: MagicCandleRed
+  graph: MagicCandle
+  startNode: start
+  targetNode: candleRed
+  category: construction-category-misc
+  description: crafting-magic-candle-desc
+  objectType: Item

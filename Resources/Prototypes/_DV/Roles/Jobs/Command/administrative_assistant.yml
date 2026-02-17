@@ -13,6 +13,8 @@
   access:
   - Command
   - Maintenance
+  - Orders # L5 - orders consoles
+  requireSpawner: false # L5 - backwards compatability with removal from DV maps
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

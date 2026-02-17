@@ -241,7 +241,8 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadPropellerHat
+  id: ClothingHeadPropellerHatDV # L5 FIXME - dupe with wizden's propeller
+  suffix: DeltaV # L5 FIXME
   name: propeller hat
   description: A colorful propeller hat made for those that wish to have some whimsy in their life. Fly away now, fly away now, fly away!
   components:
@@ -249,3 +250,105 @@
     sprite: _DV/Clothing/Head/Hats/propellerhat.rsi
   - type: Clothing
     sprite: _DV/Clothing/Head/Hats/propellerhat.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretAtmospherics
+  name: atmospherics beret
+  description: A yellow and blue beret that encourages you to make canister bombs. Do not listen.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/beret_atmos.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/beret_atmos.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatReindeer
+  name: reindeer headband
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/reindeer.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/reindeer.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatRedRibbon
+  name: red ribbon
+  description: A little red ribbon.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/red_ribbon.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/red_ribbon.rsi
+    slots:
+    - HEAD
+    - neck
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFestiveHatRed
+  name: festive red hat
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/festive_red.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/festive_red.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFestiveHatGreen
+  name: festive green hat
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/festive_green.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/festive_green.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCandyCane
+  name: candy cane headband
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/candycane.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/candycane.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatStar
+  name: star topper headband
+  description: Festive headwear to get you in the holiday spirit.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/star.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/star.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFestiveLights
+  name: festive lights
+  description: Seems like you got tangled in these.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/festive_lights.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/festive_lights.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatElf
+  name: elf hat
+  description: Santa's little helper's hat.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/elf.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/elf.rsi

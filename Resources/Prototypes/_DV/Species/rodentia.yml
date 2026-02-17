@@ -19,6 +19,8 @@
 - type: speciesBaseSprites
   id: MobRodentiaSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobRodentiaHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -43,15 +45,14 @@
   id: MobRodentiaMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     FacialHair:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ RodentiaTailDefault ]
+      points: 9 # L5 - Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     Legs:
       points: 6
       required: false
@@ -59,14 +60,13 @@
       points: 6
       required: false
     Snout:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ RodentiaHeadTopEarDefault ]
+      points: 9 # L5 - Increase Limit from 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     HeadSide:
-      points: 1
+      points: 9 # L5 - Increase Limit from 1
       required: false
     Chest:
       points: 2

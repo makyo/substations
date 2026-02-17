@@ -13,9 +13,6 @@
       state: captain
     - type: RandomHumanoidSpawner
       settings: VisitorCaptain
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorCE
@@ -26,9 +23,6 @@
       state: ce
     - type: RandomHumanoidSpawner
       settings: VisitorCE
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorCMO
@@ -39,35 +33,26 @@
       state: cmo
     - type: RandomHumanoidSpawner
       settings: VisitorCMO
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorHOP
-  name: visiting HOP ghost role
+  name: visiting HD ghost role
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
       state: hop
     - type: RandomHumanoidSpawner
       settings: VisitorHOP
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorHOS
-  name: visiting HOS ghost role
+  name: visiting CSO ghost role # L5
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
       state: hos
     - type: RandomHumanoidSpawner
       settings: VisitorHOS
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorRD
@@ -78,9 +63,6 @@
       state: rd
     - type: RandomHumanoidSpawner
       settings: VisitorResearchDirector
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorQM
@@ -91,9 +73,6 @@
       state: qm
     - type: RandomHumanoidSpawner
       settings: VisitorQM
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 # Security
 
@@ -106,9 +85,6 @@
       state: security_cadet
     - type: RandomHumanoidSpawner
       settings: VisitorSecurityCadet
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorSecurityOfficer
@@ -119,9 +95,6 @@
       state: security_officer
     - type: RandomHumanoidSpawner
       settings: VisitorSecurityOfficer
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorDetective
@@ -132,22 +105,16 @@
       state: detective
     - type: RandomHumanoidSpawner
       settings: VisitorDetective
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidVisitorWarden
-  name: visiting warden ghost role
+  name: visiting armorer ghost role # L5 - warden to armorer
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
       state: warden
     - type: RandomHumanoidSpawner
       settings: VisitorWarden
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 # Cargo
 
@@ -504,9 +471,6 @@
       state: skull_icon
     - type: RandomHumanoidSpawner
       settings: ChallengeVictimCaptain
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidChallengeVictimCE
@@ -517,9 +481,6 @@
   components:
     - type: RandomHumanoidSpawner
       settings: ChallengeVictimChiefEngineer
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidChallengeVictimCMO
@@ -530,35 +491,26 @@
   components:
     - type: RandomHumanoidSpawner
       settings: ChallengeVictimCMO
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidChallengeVictimHOP
   parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim HOP ghost role
+  name: disaster victim HD ghost role
   suffix: CHALLENGE
   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
   components:
     - type: RandomHumanoidSpawner
       settings: ChallengeVictimHeadOfPersonnel
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidChallengeVictimHOS
   parent: RandomHumanoidChallengeVictimCaptain
-  name: disaster victim HOS ghost role
+  name: disaster victim CSO ghost role # L5
   suffix: CHALLENGE
   # This is supposed to be for challenge events. Its intentionally missing QOL gear to make interesting scenarios.
   components:
     - type: RandomHumanoidSpawner
       settings: ChallengeVictimHeadOfSecurity
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidChallengeVictimRD
@@ -569,9 +521,6 @@
   components:
     - type: RandomHumanoidSpawner
       settings: ChallengeVictimResearchDirector
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 - type: entity
   id: RandomHumanoidChallengeVictimQM
@@ -582,9 +531,6 @@
   components:
     - type: RandomHumanoidSpawner
       settings: ChallengeVictimQuartermaster
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
 
 # Security
 

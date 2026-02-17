@@ -12,6 +12,8 @@
   - TargetHuman
   - TargetSyndicate
   - Zipties
+  - CrimeAssist # L5
+  - LogProbe # L5
 
 # Practice ammo/mags and practice weapons
 - type: latheRecipePack
@@ -26,6 +28,11 @@
   - MagazineBoxRiflePractice
   - WeaponDisablerPractice
   - WeaponLaserCarbinePractice
+  - MagazineLightRiflePractice
+  - MagazineRiflePractice
+  - MagazinePistolPractice
+  - SpeedLoaderMagnumPractice
+  - MagazinePistolSubMachineGunPractice
   - WeaponFlareGunSecurity
 
 # Shared between secfab and emagged autolathe
@@ -36,6 +43,7 @@
   recipes:
   - BoxLethalshot
   - BoxShotgunSlug
+  - BoxShotgunFlare # DeltaV - added
   - MagazineBoxLightRifle
   - MagazineBoxMagnum
   - MagazineBoxPistol
@@ -50,9 +58,6 @@
   - MagazinePistolSubMachineGunTopMountedEmpty
   - MagazineRifle
   - MagazineRifleEmpty
-  - MagazineShotgun
-  - MagazineShotgunEmpty
-  - MagazineShotgunSlug
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
 
@@ -82,6 +87,7 @@
   - PowerCageMedium
   - PowerCageSmall
   - TelescopicShield
+  - ClothingBackpackHarmpack
 
 - type: latheRecipePack
   id: SecurityBoards
@@ -96,6 +102,8 @@
   - ScienceExplosives # sec gets everything for modular grenade making that sci does
   id: SecurityExplosives
   recipes:
+  - CableDetStack1
+  - EmptyDetonator
   - ExplosivePayload
   - GrenadeBlast
   - GrenadeEMP
@@ -143,6 +151,7 @@
   - WeaponLaserCannon
   - WeaponLaserCarbine
   - WeaponXrayCannon
+  - WeaponTemperatureGun
 
 - type: latheRecipePack
   id: SecurityDisablers

@@ -5,7 +5,7 @@
   - !type:SpeciesLoadoutEffect
     species:
     - SlimePerson
-    - Vox
+#    - Vox # L5 - Vox breathe oxygen now. (Slimes probably will too at some point.)
 
 - type: loadoutEffectGroup
   id: OxygenBreather
@@ -14,7 +14,6 @@
     species:
     - Arachnid
     - Diona
-    - Dwarf
     - Human
     - Moth
     - Reptilian
@@ -27,14 +26,17 @@
     - Chitinid
     - Thaven
     - Kitsune
+    - Avali
+    - Ovinia
     # End DeltaV additions
+    - Vox # L5
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
   effects:
   - !type:SpeciesLoadoutEffect
-    species:
-    - Vox
+    species: []
+#    - Vox # L5 - box breathe oxygen, don't need special loadout.
 
 # Basic
 - type: loadout
@@ -75,11 +77,39 @@
     - BoxHugNitrogen
 
 # Mime
+- type: loadoutEffectGroup
+  id: OxygenBreatherMime
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Arachnid
+    - Diona
+    - Human
+    - Reptilian
+    # Begin DeltaV additions
+    - Felinid
+    - Harpy
+    - Oni
+    - Vulpkanin
+    - Rodentia
+    - Chitinid
+    - Thaven
+    - Kitsune
+    - Avali
+    # End DeltaV additions
+
+- type: loadoutEffectGroup
+  id: OxygenBreatherMimeMoth
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Moth
+
 - type: loadout
   id: EmergencyOxygenMime
   effects:
   - !type:GroupLoadoutEffect
-    proto: OxygenBreather
+    proto: OxygenBreatherMime
   storage:
     back:
     - BoxMime
@@ -93,6 +123,14 @@
     back:
     - BoxMimeNitrogen
 
+- type: loadout
+  id: EmergencySpeciesMothMime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OxygenBreatherMimeMoth
+  storage:
+    back:
+    - BoxMimeMoth
 
 # Engineering / Extended
 - type: loadout
@@ -169,6 +207,29 @@
   storage:
     back:
     - BoxSurvivalSyndicateNitrogen
+
+# Military / Double Extended
+- type: loadout
+  id: EmergencyOxygenMilitaryDouble
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OxygenBreather
+  equipment:
+    pocket1: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - BoxSurvivalMilitaryDouble
+
+- type: loadout
+  id: EmergencyNitrogenMilitaryDouble
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: NitrogenBreather
+  equipment:
+    pocket1: DoubleEmergencyNitrogenTankFilled
+  storage:
+    back:
+    - BoxSurvivalMilitaryDoubleNitrogen
 
 # Pre-equipped species gear
 

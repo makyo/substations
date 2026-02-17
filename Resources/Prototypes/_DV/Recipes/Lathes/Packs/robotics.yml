@@ -1,10 +1,9 @@
 ## Static
 
 - type: latheRecipePack
+  parent:
+  - IPCPartsStatic # Shitmed
   id: RoboticsStaticDeltaV
-  recipes:
-  - Oilpack
-  - IdChipBasic
 
 - type: latheRecipePack
   id: RoboticsEmagStatic
@@ -17,14 +16,47 @@
   - BorgModuleSyndicateWeapon
   - BorgModuleRadioJammerRecharging
   - BorgModuleMartyr
-  - BorgModuleBlades
   - BorgModuleCHIMP
   - BorgModuleSyndicateRadio
   - BorgModuleCrewMonitor
   - SyndicateNeuroling
   - BorgModuleOperative
   - BorgModuleChameleonProjector
+  - BorgModuleBuccaneer
+  - BorgModuleSleeper
   - IdChipRoboNeuroticist
+
+- type: latheRecipePack
+  id: BorgModulesResearched # For SRN, else they can NEVER get the advanced modules
+  recipes:
+  - BorgModuleSecurityChase
+  - BorgModuleSecurityEscalate
+  - BorgModuleSecurityBastion
+  - BorgModuleFauna
+  - BorgModuleAdvancedCleaning
+  - BorgModuleAdvancedTool
+  - BorgModuleAdvancedTopical
+  - BorgModuleAdvancedMining
+  - BorgModuleAdvancedSurgery
+
+- type: latheRecipePack
+  id: BorgModulesSecurityDeltaVStatic
+  recipes:
+  - BorgModuleSecurityDetective
+
+- type: latheRecipePack
+  id: BorgDVModulesStatic
+  recipes:
+  - BorgModuleDecoration
+
+
+# If you add anything to this, know that the SyndicateExosuitFabricator does not
+# get this pack due to IdChipBorgAA not being available to SRNs. Probably should
+# seperate the chip out if we ever add anything to this static pack.
+- type: latheRecipePack
+  id: BorgIdentificationStaticDeltaV
+  recipes:
+  - IdChipBorgAA
 
 ## Dynamic
 
@@ -33,8 +65,10 @@
   recipes:
   - ClothingEyesHudDiagnostic
 
-#- type: latheRecipePack
-#  id: BorgModulesDeltaV
+- type: latheRecipePack
+  parent:
+  - BorgModulesShitmed # Shitmed
+  id: BorgModulesDeltaV
 
 - type: latheRecipePack
   id: BorgModulesSecurityDeltaV
@@ -58,3 +92,10 @@
   - AugmentBotanyPanelElectronics
   - AugmentSurgeryPanelElectronics
   - AugmentPaperworkPanelElectronics
+
+- type: latheRecipePack
+  id: PsionicProsthetics
+  recipes:
+  - DispelLeftArm
+  - RecallLeftArm
+  - ForcewallLeftArm

@@ -9,15 +9,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 10800 #3 hrs
+      time: 9000 #2.5 hrs
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 21600 #6 hrs
+      time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 36000 #10 hrs
-    - !type:OverallPlaytimeRequirement
-      time: 144000 #40 hrs
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
@@ -38,6 +36,7 @@
   - Psychologist
   - Surgery
   # End DeltaV Additions
+  - Orders # L5 - orders consoles
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -51,6 +50,7 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.5 # DeltaV
+    - type: CPRTraining
 
 - type: startingGear
   id: CMOGear
@@ -61,3 +61,15 @@
   storage:
     back:
     - Flash
+
+- type: chameleonOutfit
+  id: ChiefMedicalOfficerChameleonOutfit
+  job: ChiefMedicalOfficer
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretCmo
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskSterile
+    neck: ClothingCloakCmo
+    outerClothing: ClothingOuterCoatLabCmo
+    gloves: ClothingHandsGlovesNitrile

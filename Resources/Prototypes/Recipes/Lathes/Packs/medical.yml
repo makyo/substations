@@ -17,6 +17,9 @@
   - Syringe
   - PillCanister
   - HandLabeler
+  - ChemistryEmptyVial
+  - ChemistryEmptyVialSmall
+  - Dropper
 
 - type: latheRecipePack
   parent:
@@ -38,6 +41,7 @@
   - Drill
   - Saw
   - Hemostat
+  - ClothingNeckVetCone # L5
 
 - type: latheRecipePack
   parent:
@@ -50,7 +54,13 @@
   - DiseaseSwab
   - BodyBag
   - WhiteCane
-  - Cane
+  - OffsetCane
+  - OffsetCaneWood
+  - JetInjector
+  - Cane # L5
+  - MedTek # L5
+  - Cane # L5
+  - MedTek # L5
 
 - type: latheRecipePack
   id: RollerBedsStatic
@@ -104,6 +114,9 @@
   - SyringeCryostasis
   - BluespaceBeaker
   - SyringeBluespace
+  - LauncherSyringe
+  - MiniSyringe
+  - AdvancedJetInjector
 
 - type: latheRecipePack
   parent:

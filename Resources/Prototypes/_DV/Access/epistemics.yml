@@ -5,3 +5,11 @@
 - type: accessLevel
   id: Robotics
   name: id-card-access-level-robotics
+
+- type: accessGroup
+  id: Epistemics
+  tags:
+  - Robotics
+  - Mantis
+  - Chapel
+  - Library # DeltaV - Add Library access

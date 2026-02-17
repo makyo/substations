@@ -14,6 +14,8 @@
 - type: speciesBaseSprites
   id: MobHarpySprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking # Floof
+    TailOversuit: MobHumanoidAnyMarking # Floof
     Head: MobHarpyHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -33,36 +35,34 @@
     RLeg: MobHarpyRLeg
     LFoot: MobHarpyLFoot
     RFoot: MobHarpyRFoot
+    RArmExtension: MobHumanoidAnyMarking # Frontier
 
 
 - type: markingPoints
   id: MobHarpyMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 9 # L5 - Increase Limit From 1
       required: false
     FacialHair:
-      points: 1
+      points: 9 # L5 - Increase Limit From 1
       required: false
     Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ HarpyTailPhoenix ]
+      points: 9 # L5 - Increase Limit From 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ HarpyEarsDefault ]
+      points: 9 # L5 - Increase Limit From 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
     Chest:
-      points: 1
+      points: 2
       required: true
       defaultMarkings: [ HarpyChestDefault ]
     Legs:
-      points: 2
+      points: 9 # L5 - Increase Limit From 2
       required: false
     Arms:
-      points: 1
-      required: false
-      defaultMarkings: [ HarpyWingDefaultHuescale ]
+      points: 9 # L5 - Increase Limit From 1
+      required: false # L5 - Disable requirement to allow for multiple simultaneous options
 
 - type: humanoidBaseSprite
   id: MobHarpyHead

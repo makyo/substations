@@ -1,9 +1,10 @@
 using Content.Server.DoAfter;
+using Content.Server.Hands.Systems;
 using Content.Server.Item;
 using Content.Server.Popups;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.Bed.Sleep;
-﻿using Content.Shared._DV.Carrying;
+using Content.Shared._EE.Carrying; // Imp
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Item;
@@ -22,6 +23,7 @@ public sealed class PseudoItemSystem : SharedPseudoItemSystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly CarryingSystem _carrying = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly HandsSystem _hands = default!; // L5 - hands system refactor
 
     public override void Initialize()
     {
@@ -44,14 +46,16 @@ public sealed class PseudoItemSystem : SharedPseudoItemSystem
         if (!CheckItemFits((uid, component), (args.Using.Value, targetStorage)))
             return;
 
-        if (args.Hands?.ActiveHandEntity == null)
+        // L5 - hands system refactor
+        if (!_hands.TryGetActiveItem((args.User, args.Hands), out var activeItem))
             return;
 
         AlternativeVerb verb = new()
         {
             Act = () =>
             {
-                StartInsertDoAfter(args.User, uid, args.Hands.ActiveHandEntity.Value, component);
+                // L5 - hands system refactor
+                StartInsertDoAfter(args.User, uid, activeItem.Value, component);
             },
             Text = Loc.GetString("action-name-insert-other", ("target", Identity.Entity(args.Target, EntityManager))),
             Priority = 2

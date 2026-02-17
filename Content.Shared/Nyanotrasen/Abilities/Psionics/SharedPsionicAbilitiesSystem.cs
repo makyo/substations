@@ -70,9 +70,8 @@ public sealed class SharedPsionicAbilitiesSystem : EntitySystem
         if (component.PsionicAbility == null)
             return;
 
-        _actions.TryGetActionData( component.PsionicAbility, out var actionData );
-
-        if (actionData == null)
+        // L5 - modified for ECS actions
+        if (_actions.GetAction(component.PsionicAbility) is not { } actionData)
             return;
 
         _actions.SetEnabled(actionData.Owner, IsEligibleForPsionics(uid));

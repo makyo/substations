@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 using System.Linq;
+using Content.Shared._DV.Traits;
 using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
@@ -14,6 +15,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Rejuvenate;
+using Content.Shared.Tag;
 using Content.Shared.Traits;
 using Content.Shared.Zombies;
 using JetBrains.Annotations;
@@ -33,6 +35,7 @@ public abstract class SharedSynthSystem : EntitySystem
     [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] protected readonly SharedPointLightSystem _light = default!;
     [Dependency] protected readonly SharedTransformSystem _transform = default!;
+    [Dependency] protected readonly TagSystem _tag = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
 
     [Dependency] private readonly ILogManager _log = default!;
@@ -158,7 +161,7 @@ public abstract class SharedSynthSystem : EntitySystem
         // identity blocking system.
         if (!_inventory.TryGetContainerSlotEnumerator(uid, out var inventory))
         {
-            _sawmill.Error($"Couldn't get container slot enumerator for {uid}");
+            _sawmill.Warning($"Couldn't get container slot enumerator for {uid}");
             return;
         }
 
@@ -229,7 +232,7 @@ public abstract class SharedSynthSystem : EntitySystem
     {
         if (!_humanoidAppearanceQuery.HasComp(uid))
         {
-            _sawmill.Error($"Can't turn {uid} into a synth because they are not humanoid!");
+            _sawmill.Warning($"Can't turn {uid} into a synth because they are not humanoid!");
             return;
         }
 
@@ -237,6 +240,10 @@ public abstract class SharedSynthSystem : EntitySystem
 
         _humanoidAppearance.SetSynthetic(uid, true);
         _typingIndicator.SetUseSyntheticVariant(uid, true);
+
+        // Add the Synth tag to ensure synths can be filtered.
+        EnsureComp<TagComponent>(uid);
+        _tag.TryAddTag(uid, "Synth");
 
         RaiseLocalEvent(uid, new TurnedSyntheticEvent());
     }

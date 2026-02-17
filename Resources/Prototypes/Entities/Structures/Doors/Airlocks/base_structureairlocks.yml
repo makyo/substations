@@ -4,6 +4,10 @@
   name: airlock
   description: It opens, it closes, and maybe crushes you.
   components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
   - type: StationAiWhitelist
   - type: MeleeSound
     soundGroups:
@@ -67,11 +71,16 @@
       types:
         Blunt: 15
     openSound:
-      path: /Audio/Machines/airlock_open.ogg
+      path: /Audio/_Shiptest/Machines/airlocks/standard/open.ogg # L5
     closeSound:
-      path: /Audio/Machines/airlock_close.ogg
+      path: /Audio/_Shiptest/Machines/airlocks/standard/close.ogg # L5
     denySound:
-      path: /Audio/Machines/airlock_deny.ogg
+      path: /Audio/_Shiptest/Machines/airlocks/access_denied.ogg # L5
+    # L5 — separate prying sounds
+    priedOpenSound:
+      path: /Audio/_Shiptest/Machines/airlocks/open_force.ogg
+    priedClosedSound:
+      path: /Audio/_Shiptest/Machines/airlocks/close_force.ogg
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -158,12 +167,8 @@
     - board
   - type: PlacementReplacement
     key: walls
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
-  - type: PaintableAirlock
-    group: StandardDeltaV # DeltaV
-    department: Civilian
+  - type: Paintable
+    group: AirlockStandard
   - type: StaticPrice
     price: 150
   - type: LightningTarget
@@ -223,8 +228,8 @@
   - type: Construction
     graph: Airlock
     node: glassAirlock
-  - type: PaintableAirlock
-    group: GlassDeltaV # DeltaV
+  - type: Paintable
+    group: AirlockGlass
   - type: RadiationBlocker
     resistance: 2
   - type: Tag

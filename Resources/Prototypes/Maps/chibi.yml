@@ -11,8 +11,8 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} Chibi Station {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'DV'
+            !type:SysConNameGenerator
+            stationType: S # for 'Station'
         - type: StationJobs
           availableJobs:
             Captain: [ 1, 1 ]
@@ -20,7 +20,7 @@
             Janitor: [ 1, 1 ]
             ServiceWorker: [ 3, 3 ]
           #engineering
-            AtmosphericTechnician: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
             ChiefEngineer: [ 1, 1 ]
             StationEngineer: [ 1, 1 ]
             TechnicalAssistant: [ 1, 1 ]

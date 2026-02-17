@@ -1,15 +1,18 @@
 # L5: Emergency Shuttle→Evacuation Shuttle
 # Commands
 ## Delay shuttle round end
-emergency-shuttle-command-round-desc = Stops the timer that ends the round when the Evacuation Shuttle exits hyperspace.
+cmd-delayroundend-desc = Stops the timer that ends the round when the Evacuation Shuttle exits hyperspace.
+cmd-delayroundend-help = Usage: delayroundend
 emergency-shuttle-command-round-yes = Round delayed.
 emergency-shuttle-command-round-no = Unable to delay round end.
 
 ## Dock Evacuation Shuttle
-emergency-shuttle-command-dock-desc = Calls the Evacuation Shuttle and docks it to the station... if it can.
+cmd-dockemergencyshuttle-desc = Calls the Evacuation Shuttle and docks it to the station... if it can.
+cmd-dockemergencyshuttle-help = Usage: dockemergencyshuttle
 
 ## Launch Evacuation Shuttle
-emergency-shuttle-command-launch-desc = Early launches the Evacuation Shuttle if possible.
+cmd-launchemergencyshuttle-desc = Early launches the Evacuation Shuttle if possible.
+cmd-launchemergencyshuttle-help = Usage: launchemergencyshuttle
 
 # Evacuation Shuttle
 # L5

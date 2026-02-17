@@ -8,16 +8,33 @@
     <ScrollContainer>
         <BoxContainer Orientation="Vertical">
             <Label Name="RoleType" VerticalAlignment="Top" Margin="0 6 0 10" HorizontalAlignment="Center" StyleClasses="LabelHeading" Access="Public"/>
-            <BoxContainer Orientation="Horizontal">
-                <SpriteView OverrideDirection="South" Scale="2 2" Name="SpriteView" Access="Public" SetSize="64 64"/>
-                <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
-                    <Label Name="NameLabel" Access="Public"/>
-                    <Label Name="SubText" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/>
+            <PanelContainer StyleClasses="PanelLight" Margin = "0 4 0 0">
+                <BoxContainer Orientation="Horizontal">
+                    <SpriteView OverrideDirection="South" Scale="2 2" Name="SpriteView" Access="Public" SetSize="64 64"/>
+                    <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
+                        <Label Name="NameLabel" Access="Public"/>
+                        <Label Name="SubText" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/>
+                    </BoxContainer>
                 </BoxContainer>
-            </BoxContainer>
+            </PanelContainer>
             <Label Name="ObjectivesLabel" Access="Public" Text="{Loc 'character-info-objectives-label'}" HorizontalAlignment="Center"/>
             <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public"/>
             <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>
+            <PanelContainer StyleClasses="PanelLight" Margin = "0 4 0 0">
+                <!-- Persistence: allow editing in-round -->
+                <BoxContainer Orientation="Vertical" Name="DetailExaminableContainer" Access="Public" Margin="10 2 10 0">
+                    <BoxContainer Orientation="Horizontal">
+                        <Label Text="{Loc 'character-info-detail-examinable-label'}" StyleClasses="LabelKeyText" VerticalAlignment="Bottom"/>
+                    </BoxContainer>
+                    <PanelContainer StyleClasses="PanelDark" Margin = "0 0 0 6">
+                        <TextEdit Name="DetailExaminableTextEdit" Access="Public" MinHeight="200" Margin="5 5" VerticalExpand="True"/>
+                    </PanelContainer>
+                    <BoxContainer Orientation="Horizontal">
+                        <Control HorizontalExpand="True"/>
+                        <Button Name="DetailExaminableSubmitButton" Text="{Loc 'character-info-detail-examinable-submit'}" Disabled="True" Access="Public" HorizontalAlignment="Right"/>
+                    </BoxContainer>
+                </BoxContainer>
+            </PanelContainer>
         </BoxContainer>
     </ScrollContainer>
 </windows:CharacterWindow>

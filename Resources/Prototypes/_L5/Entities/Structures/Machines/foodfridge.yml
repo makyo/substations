@@ -1,0 +1,14 @@
+- type: entity
+  parent: SmartFridge
+  id: SmartFridgeFood
+  name: FoodMate
+  description: An insulated device that serves as both a hot- and cold-pass, storing food and maintaining its temperature to keep everything fresh and ready to eat or cook.
+  components:
+  - type: SmartFridge
+    whitelist:
+      components:
+      - FitsInDispenser
+      - Food
+      - Seed
+      - Produce
+      - Edible

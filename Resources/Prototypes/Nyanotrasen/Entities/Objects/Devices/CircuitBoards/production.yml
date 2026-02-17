@@ -23,8 +23,8 @@
     stackRequirements:
       Cable: 1
       PlasmaGlass: 5
-      MatterBin: 1
-      Manipulator: 1
+#      MatterBin: 1 # Wizden removed
+      Manipulator: 2 # L5 - raised from 1 to 2
     tagRequirements:
       BorgArm:
         amount: 3
@@ -44,8 +44,9 @@
       Steel: 4
       Glass: 2
       Cable: 4
-      Capacitor: 1
-      MatterBin: 1
+#      Capacitor: 1 # Wizden removed
+#      MatterBin: 1
+      Manipulator: 2 # L5 - added
 
 - type: entity
   id: MailTeleporterMachineCircuitboard
@@ -59,5 +60,6 @@
     stackRequirements:
       Steel: 4
       Cable: 4
-      Capacitor: 1
-      MatterBin: 1
+#      Capacitor: 1 # Wizden removed
+#      MatterBin: 1
+      Manipulator: 2 # L5 - added

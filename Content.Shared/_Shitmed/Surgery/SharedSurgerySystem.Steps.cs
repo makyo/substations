@@ -9,6 +9,8 @@ using Content.Shared._Shitmed.Body.Events;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
@@ -174,7 +176,7 @@ public abstract partial class SharedSurgerySystem
         {
             if (!HasComp<SanitizedComponent>(args.User))
             {
-                var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+                var sepsis = new DamageSpecifier(_prototypes.Index(new ProtoId<DamageTypePrototype>("Poison")), 5);
                 var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
                 RaiseLocalEvent(args.Body, ref ev);
             }
@@ -287,7 +289,7 @@ public abstract partial class SharedSurgerySystem
                 if (!containerSlot.ContainedEntity.HasValue)
                     continue;
 
-                if (_tagSystem.HasTag(containerSlot.ContainedEntity.Value, "PermissibleForSurgery")) // DeltaV: allow some clothing items to be operated through
+                if (_tagSystem.HasTag(containerSlot.ContainedEntity.Value, new ProtoId<Tag.TagPrototype>("PermissibleForSurgery"))) // DeltaV: allow some clothing items to be operated through
                     continue;
 
                 args.Invalid = StepInvalidReason.Armor;
@@ -320,14 +322,6 @@ public abstract partial class SharedSurgerySystem
                 args.ValidTools[tool] = speed;
             }
         }
-    }
-
-    private EntProtoId? GetProtoId(EntityUid entityUid)
-    {
-        if (!TryComp<MetaDataComponent>(entityUid, out var metaData))
-            return null;
-
-        return metaData.EntityPrototype?.ID;
     }
 
     // I wonder if theres not a function that can do this already.
@@ -712,6 +706,8 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
+
+
     /// <summary>
     /// Do a surgery step on a part, if it can be done.
     /// Returns true if it succeeded.
@@ -769,11 +765,10 @@ public abstract partial class SharedSurgerySystem
         var doAfter = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(duration), ev, body, part)
         {
             BreakOnMove = true,
-            //BreakOnTargetMove = true, I fucking hate wizden dude.
             CancelDuplicate = true,
             DuplicateCondition = DuplicateConditions.SameEvent,
             NeedHand = true,
-            BreakOnHandChange = true,
+            BreakOnHandChange = false,
         };
 
         if (!_doAfter.TryStartDoAfter(doAfter))
@@ -814,7 +809,7 @@ public abstract partial class SharedSurgerySystem
         {
             var buckledEvent = new SurgerySpeedModifyEvent(speed);
             RaiseLocalEvent(buckledTo, ref buckledEvent);
-            speed = ev.Multiplier;
+            speed = buckledEvent.Multiplier;
         }
 
         return stepComp.Duration / speed;

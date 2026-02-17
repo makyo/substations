@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Client.Parallax.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Parallax.Biomes;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
@@ -17,8 +18,8 @@ public sealed class ParallaxOverlay : Overlay
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IParallaxManager _manager = default!;
+    private readonly SharedMapSystem _mapSystem;
     private readonly ParallaxSystem _parallax;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowWorld;
@@ -27,12 +28,13 @@ public sealed class ParallaxOverlay : Overlay
     {
         ZIndex = ParallaxSystem.ParallaxZIndex;
         IoCManager.InjectDependencies(this);
+        _mapSystem = _entManager.System<SharedMapSystem>();
         _parallax = _entManager.System<ParallaxSystem>();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
-        if (args.MapId == MapId.Nullspace || _entManager.HasComponent<BiomeComponent>(_mapManager.GetMapEntityId(args.MapId)))
+        if (args.MapId == MapId.Nullspace || _entManager.HasComponent<BiomeComponent>(_mapSystem.GetMapOrInvalid(args.MapId)))
             return false;
 
         return true;
@@ -51,15 +53,26 @@ public sealed class ParallaxOverlay : Overlay
 
         var layers = _parallax.GetParallaxLayers(args.MapId);
         var realTime = (float) _timing.RealTime.TotalSeconds;
+        var curTime = (float)_timing.CurTime.TotalSeconds; // L5
 
         foreach (var layer in layers)
         {
-            ShaderInstance? shader;
-
+            // Begin L5 changes
+            ShaderInstance? shader = null;
             if (!string.IsNullOrEmpty(layer.Config.Shader))
-                shader = _prototypeManager.Index<ShaderPrototype>(layer.Config.Shader).Instance();
-            else
-                shader = null;
+            {
+                var proto = _prototypeManager.Index<ShaderPrototype>(layer.Config.Shader);
+                if (layer.Config.NeedsUniqueShader)
+                {
+                    shader = proto.InstanceUnique();
+                    shader.SetParameter("curTime", curTime);
+                }
+                else
+                {
+                    shader = proto.Instance();
+                }
+            }
+            // End L5 changes
 
             worldHandle.UseShader(shader);
             var tex = layer.Texture;

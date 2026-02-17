@@ -8,4 +8,15 @@ uplink-hardsuit-agent-syndie-name = Agent's Hardsuit
 uplink-hardsuit-agent-syndie-desc = The iconic blood-white hardsuit, painted with patterns specifically designed to make you a less appealing target. Limit of 1.
 
 uplink-hardsuit-syndieelite-delta-name = Syndicate Thermal Hardsuit
-uplink-hardsuit-syndieelite-desc-deltav = An alternate version of the blood-red hardsuit, with improved mobility and fireproofing, but less resistance to physical damage. Property of Gorlex Marauders.
+# L5
+uplink-hardsuit-syndieelite-desc-deltav = An alternate version of the blood-red hardsuit, with improved mobility and fireproofing, but less resistance to physical damage. Property of GEX Marauders.
+
+# L5
+uplink-cwpgorlex-name = GEX Cold Weather Poncho
+uplink-cwpgorlex-desc = A warm poncho for extreme weather. Made of cut-proof fabric, and protects against freezing weapons as well.
+
+uplink-night-vision-goggles-name = Night Vision Goggles
+uplink-night-vision-goggles-desc = High-tech goggles that allow you to see in the dark.
+
+uplink-thermal-goggles-name = Thermal Goggles
+uplink-thermal-goggles-desc = High-tech goggles that allow you to see heat signatures. These ones look like Night Vision Goggles to avoid detection.

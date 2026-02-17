@@ -65,6 +65,7 @@
   - type: Pullable
   - type: Physics
     bodyType: KinematicController
+  - type: GravityAffected
   - type: Clickable
   - type: WiresPanel
   - type: Fixtures
@@ -140,6 +141,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.25
     baseSprintSpeed: 3.6
+  - type: StaticPrice # L5 yea baby become a mech factory woo
+    price: 3000 # L5
 
 - type: entity
   id: MechRipleyBattery

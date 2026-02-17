@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "copyright": "widgetbeck via https://www.github.com/impstation/imp-station-14/pull/439",
+    "license": "CC-BY-SA-3.0",
+    "states": [
+        {
+            "name": "littletykescar",
+            "directions": 4
+        },
+        {
+            "name": "littletykescar_open",
+            "directions": 4
+        }
+    ]
+}

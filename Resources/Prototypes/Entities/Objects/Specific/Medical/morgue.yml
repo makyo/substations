@@ -1,6 +1,6 @@
 - type: entity
   id: BodyBag
-  parent: BaseDeployFoldable
+  parent: [ BaseDeployFoldable, BasePaperLabelableVisualized ]
   name: body bag
   description: A plastic bag designed for the storage and transportation of cadavers to stop body decomposition.
   components:
@@ -54,16 +54,6 @@
     openSound:
       path: /Audio/Misc/zip.ogg
   - type: EntityStorageLayingDownOverride
-  - type: PaperLabel
-    labelSlot:
-      insertVerbText: comp-paper-label-insert
-      ejectVerbText: comp-paper-label-eject
-      whitelist:
-        components:
-        - Paper
-      blacklist:
-        tags:
-        - Book
   - type: Appearance
   - type: EntityStorageVisuals
     stateDoorOpen: open_overlay
@@ -88,7 +78,6 @@
           False: {visible: true}
   - type: Pullable
   - type: AntiRottingContainer
-  - type: ItemSlots
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
@@ -142,8 +131,8 @@
 - type: entity
   parent: Ash
   id: Ectoplasm
-  name: ectoplasm
-  description: Much less deadly in this form.
+  name: Helium-3 Precursor
+  description: A complex semisolid precursor to Helium-3. Useful in constructing a He3 cooling system.
   components:
     - type: Sprite
       sprite: _DV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
@@ -163,6 +152,7 @@
               Quantity: 5
             - ReagentId: Ectoplasm  # DeltaV - for normality crystals
               Quantity: 5          # DeltaV
-    - type: GuideHelp
-      guides:
-      - MinorAntagonists
+    # L5 - guides removed
+#    - type: GuideHelp
+#      guides:
+#      - MinorAntagonists

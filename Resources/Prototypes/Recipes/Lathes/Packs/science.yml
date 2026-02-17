@@ -9,14 +9,6 @@
   - ExosuitFabricatorMachineCircuitboard
   - CutterMachineCircuitboard
   - BorgChargerCircuitboard
-  - MaterialSiloCircuitboard
-
-- type: latheRecipePack
-  id: CircuitFloorsStatic
-  recipes:
-  - FloorGreenCircuit
-  - FloorBlueCircuit
-  - FloorRedCircuit
 
 ## Dynamic
 
@@ -32,6 +24,8 @@
   - HoloprojectorField
   - SignallerAdvanced
   - DeviceQuantumSpinInverter
+  - DeviceDesynchronizer
+  - ClothingBackpackHarmpack
 
 - type: latheRecipePack
   id: ScienceClothing
@@ -39,6 +33,7 @@
   - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
   - ClothingShoesBootsSpeed
+  - ClothingShoesBootsJump
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
@@ -55,21 +50,17 @@
   id: ScienceWeapons
   recipes:
   - WeaponPistolCHIMP
-  #- WeaponForceGun # DeltaV
-  #- WeaponLaserSvalinn # DeltaV
-  - WeaponProtoKineticAccelerator
-  #- WeaponTetherGun # DeltaV
+  - WeaponForceGun # DeltaV # L5 - revert
+  - WeaponLaserSvalinn # DeltaV # L5 - revert
+  - WeaponTetherGun # DeltaV # L5 - revert
+  # Begin DeltaV Removals - lrp/moved to logi techfab
+  #- WeaponProtoKineticAccelerator
+  #- PKAUpgradeDamage
+  #- PKAUpgradeRange
+  #- PKAUpgradeFireRate
+  # End DeltaV Removals
   - WeaponGauntletGorilla
-
-- type: latheRecipePack
-  id: FauxTiles
-  recipes:
-  - FauxTileAstroGrass
-  - FauxTileMowedAstroGrass
-  - FauxTileJungleAstroGrass
-  - FauxTileAstroIce
-  - FauxTileAstroSnow
-  - FauxTileAstroAsteroidSand
+  - WeaponMicrowaveEmitter # DeltaV - Microwave emitter
 
 # Only contains parts for making basic modular grenades, no actual explosives
 - type: latheRecipePack

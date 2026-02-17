@@ -1,0 +1,33 @@
+# L5 TODO: Make this parented or something when https://github.com/space-wizards/space-station-14/pull/38890 is merged
+# This is just UnisexSilicon but no screams
+- type: emoteSounds
+  id: SynthEmotes
+  params:
+    variation: 0.05
+  sounds:
+    RobotBeep: # disease
+      path: /Audio/Effects/tesla_consume.ogg
+      params:
+        variation: 0.125
+    Beep: # normal
+      path: /Audio/_EE/Voice/IPC/beep_2000.ogg
+    Boop:
+      path: /Audio/_EE/Voice/IPC/beep_500.ogg
+    Buzz:
+      path: /Audio/Machines/buzz-sigh.ogg
+    Honk:
+      path: /Audio/Items/bikehorn.ogg
+      params:
+        variation: 0.125
+    Chime:
+      path: /Audio/Effects/Cargo/ping.ogg
+    Buzz-Two:
+      path: /Audio/Machines/buzz-two.ogg
+    Ping:
+      path: /Audio/Effects/beep1.ogg
+      params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
+        variation: 0.125
+    Whirr:
+      collection: IPCWhirrs
+      params:
+        variation: 0

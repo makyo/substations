@@ -36,12 +36,23 @@
   - type: SpawnPoint
     spawn_type: LateJoin
 
+- type: entity
+  name: any job spawn point
+  id: SpawnPointAnyJob # used for integration tests so we don't need to map every single job spawner on the test map
+  parent: SpawnPointJobBase
+  components:
+  - type: Sprite
+    state: green
+  - type: SpawnPoint
+    spawn_type: Job
+    job_id: null # any job can spawn here
+
 # Logistics
 
 - type: entity
   id: SpawnPointQuartermaster
   parent: SpawnPointJobBase
-  name: logistics officer # DeltaV - Logistics Department replacing Cargo
+  name: chief logistics officer # DeltaV - Logistics Department replacing Cargo # L5
   components:
   - type: SpawnPoint
     job_id: Quartermaster
@@ -456,7 +467,7 @@
 - type: entity
   id: SpawnPointWarden
   parent: SpawnPointJobBase
-  name: warden
+  name: armorer # L5 - warden to armorer
   components:
   - type: SpawnPoint
     job_id: Warden

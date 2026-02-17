@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitHoPMess
-  name: head of personnel's mess kit
+  name: hospitality director's mess kit
   description: A swanky uniform with tasteful gold and red trim. Keep your latte away from this.
   components:
   - type: Sprite
@@ -12,7 +12,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitHoPFormal
-  name: head of personnel's formal suit
+  name: hospitality director's formal suit
   description: A well-made suit with gold buttons and a red trim. Might as well look sharp when botany goes up in flames.
   components:
   - type: Sprite
@@ -207,6 +207,28 @@
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpsuit/littleguy_overalls.rsi
 
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitWaitstaffFormal
+  name: waitstaff suit
+  description: A sharp vest with comfortable slacks made for serving tables and looking professional.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/waitingsuit.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/waitingsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitWorkvest
+  name: work vest
+  description: A sturdy suspender vest over a rolled up workshirt, shorts, and a pair of blue leggings. For when you want to look good while you work.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/workvest.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/workvest.rsi
+
 # Formal uniforms
 
 - type: entity
@@ -282,12 +304,13 @@
     sprite: _DV/Clothing/Uniforms/Jumpsuit/security_alt.rsi
 
 # Warden alt uniforms
+# L5 - warden to armorer
 
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpsuitWardenBlue
-  name: blue warden's jumpsuit
-  description: A cool blue shirt with ice-white markings and warden's epaulettes.
+  name: blue armorer's jumpsuit
+  description: A cool blue shirt with ice-white markings and armorer's epaulettes.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpsuit/armourer_blue.rsi
@@ -297,8 +320,8 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpsuitWardenGrey
-  name: grey warden's jumpsuit
-  description: Charcoal pants, a grey shirt, and white warden's markings and epaulettes.
+  name: grey armorer's jumpsuit
+  description: Charcoal pants, a grey shirt, and white armorer's markings and epaulettes.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpsuit/armourer_grey.rsi
@@ -308,8 +331,8 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpsuitWardenTurtle
-  name: warden's turtleneck
-  description: A comfortable and tight-fitting turtleneck for those with the patience to reach the position of Warden.
+  name: armorer's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the patience to reach the position of Armorer.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpsuit/armourer_alt.rsi
@@ -321,7 +344,7 @@
 - type: entity
   parent: ClothingUniformRollableBase
   id: ClothingUniformJumpsuitHoSTurtle
-  name: head of security's turtleneck
+  name: chief security officer's turtleneck
   description: A comfortable and tight-fitting turtleneck for those with the tenacity to reach the position of Head of Security.
   components:
   - type: Sprite
@@ -537,3 +560,36 @@
     sprite: _DV/Clothing/Uniforms/Jumpsuit/cybersunrnd.rsi
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpsuit/cybersunrnd.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAsakim
+  name: combat jumpsuit
+  description: A comfortable and flexible jumpsuit, designed to be worn under a hardsuit.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/ninja.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/ninja.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformHarbingerTunic
+  name: harbinger tunic
+  description: Something easy to move in. Good for hunting.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/harbingertunic.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/harbingertunic.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformElf
+  name: elf jumpsuit
+  description: An elf costume complete with red-and-white striped stockings.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/elf.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/elf.rsi

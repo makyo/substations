@@ -1,0 +1,13 @@
+# Command
+- type: roleLoadout
+  id: JobAdministrativeAssistant
+  groups:
+  - AdminAssistantHead
+  - AdminAssistantJumpsuit
+  - AdminAssistantOuter
+  - AdminAssistantShoes
+  - AdminAssistantGloves
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets

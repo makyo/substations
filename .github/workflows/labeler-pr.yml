@@ -1,14 +1,15 @@
-﻿name: "Labels: PR"
+name: "Labels: PR"
 
 on:
 - pull_request_target
 
 jobs:
   labeler:
-    if: github.actor != 'PJBot' && github.actor != 'DeltaV-Bot'
+    if: github.actor != 'L5-bot'
     permissions:
       contents: read
       pull-requests: write
+      issues: write
     runs-on: ubuntu-latest
     steps:
     - uses: actions/labeler@v5

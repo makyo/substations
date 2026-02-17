@@ -10,17 +10,18 @@
         - type: StationNameSetup
           mapNameTemplate: '{0} Tortuga Station {1}'
           nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'NY'
+            !type:SysConNameGenerator
+            stationType: S # for 'Station'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/_DV/Shuttles/NTES_Seal.yml
+          emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_seal.yml
+        - type: StationCargoShuttle
+          path: /Maps/_DV/Shuttles/Cargo/ntcs_express_model_b.yml
         - type: StationJobs
           availableJobs:
           #civilian
             Passenger: [ -1, -1 ]
             Librarian: [ 1, 1 ]
           #command
-            AdministrativeAssistant: [ 1, 1 ]
             Captain: [ 1, 1 ]
             StationAi: [ 1, 1 ]
           #engineering
@@ -43,7 +44,7 @@
             Surgeon: [ 1, 2 ]
           #security
             Brigmedic: [ 1, 1 ]
-            Detective: [ 1, 1 ]
+            Detective: [ 2, 2 ]
             HeadOfSecurity: [ 1, 1 ]
             Prisoner: [ 2, 3 ]
             PrisonGuard: [ 1, 1 ]
@@ -53,7 +54,7 @@
           #service
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]
-            Boxer: [ 2, 2 ]
+            #Boxer: [ 2, 2 ]
             Chef: [ 3, 4 ]
             Clown: [ 1, 2 ]
             HeadOfPersonnel: [ 1, 1 ]

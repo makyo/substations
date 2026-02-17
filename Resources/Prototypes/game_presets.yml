@@ -9,8 +9,7 @@
   rules:
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    #- SpaceTrafficControlFriendlyEventScheduler # DeltaV: spam of garbage roles nobody takes every 10-20 minutes
+    #- SpaceTrafficControlEventScheduler # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
     - SubGamemodesRule # DeltaV
@@ -27,7 +26,7 @@
   rules:
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+    #- SpaceTrafficControlEventScheduler # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -43,9 +42,12 @@
     - Traitor
     - Revolutionary
     - Zombie
+    - Wizard
+    - CosmicCult # DeltaV
+    - Xenoborgs
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+    ##- SpaceTrafficControlEventScheduler # L5 # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -64,13 +66,14 @@
     - Traitor
     - Revolutionary
     - Zombie
+    - Wizard
+    - Xenoborgs
     - BasicStationEventScheduler
     - KesslerSyndromeScheduler
     - MeteorSwarmMildScheduler
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
+    #- SpaceTrafficControlEventScheduler # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -85,7 +88,7 @@
   rules:
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -98,9 +101,25 @@
   showInVote: true #4boring4vote # DeltaV - Enable greenshift in gamemode vote
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
+
+- type: gamePreset
+  id: Dynamic
+  alias:
+  - dynamic
+  - multiantag
+  - director
+  name: dynamic-title
+  showInVote: true
+  description: dynamic-description
+  rules:
+  - DynamicRule
+  - DummyNonAntag
+  - DynamicStationEventScheduler
+  - MeteorSwarmScheduler
+  #- SpaceTrafficControlEventScheduler # L5
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: Secret
@@ -123,7 +142,7 @@
   rules:
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
+    #- SpaceTrafficControlEventScheduler # L5
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -135,7 +154,7 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
+  #- SpaceTrafficControlFriendlyEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -165,7 +184,7 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -196,7 +215,7 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -215,7 +234,7 @@
   - SubGamemodesRule
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -232,9 +251,25 @@
   - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
+
+- type: gamePreset
+  id: Xenoborgs
+  alias:
+    - xenoborgs
+  name: xenoborgs-title
+  description: xenoborgs-description
+  showInVote: false
+  rules:
+  - Xenoborgs
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoWizardNoXenoborg # no two motherships
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  #- SpaceTrafficControlEventScheduler # L5
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: Zombie
@@ -252,7 +287,7 @@
   - Zombie
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
 
@@ -269,6 +304,6 @@
   - Zombie
   - BasicStationEventScheduler
   - KesslerSyndromeScheduler
-  - SpaceTrafficControlEventScheduler
+  #- SpaceTrafficControlEventScheduler # L5
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV

@@ -1,0 +1,18 @@
+- type: loadoutGroup
+  id: ChaplainBook
+  name: loadout-group-chaplain-books
+  minLimit: 1
+  loadouts:
+  - ChaplainBookBible
+  - ChaplainBookQuran
+  - ChaplainBookTanakh
+  - ChaplainBookScroll
+  - ChaplainBookTablet
+  - ChaplainBookGreybible
+  - ChaplainBookKojiki
+  - ChaplainBookTao
+  - ChaplainBookGrimoire
+  - ChaplainBookETB
+  - ChaplainBookDiscordia
+  - ChaplainBookUnitology
+  - ChaplainBookBibble

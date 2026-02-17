@@ -19,6 +19,9 @@ using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
 using Content.Shared._L5.Traits.Synthetic;
+using Content.Shared.Body.Components;
+using Content.Shared.Chat;
+using Content.Shared.Emp;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._L5.Traits.Synthetic;
@@ -36,14 +39,10 @@ public sealed class SynthSystem : SharedSynthSystem
 
     private EntityQuery<MutedComponent> _mutedQuery;
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private readonly ProtoId<ReagentPrototype> _reagentSynthBloodId = "SynthBlood";
-    [ValidatePrototypeId<SpeciesPrototype>]
-    private readonly ProtoId<SpeciesPrototype> _speciesDionaId = "diona";
-    [ValidatePrototypeId<EntityPrototype>]
-    private readonly EntProtoId<SynthBrainComponent> _synthBrainId = "OrganSynthBrain";
-    [ValidatePrototypeId<EmoteSoundsPrototype>]
-    private readonly ProtoId<EmoteSoundsPrototype> _emoteSoundsId = "UnisexSilicon";
+    private static readonly ProtoId<ReagentPrototype> ReagentSynthBloodId = "SynthBlood";
+    private static readonly ProtoId<SpeciesPrototype> SpeciesDionaId = "Diona";
+    private static readonly EntProtoId<SynthBrainComponent> SynthBrainId = "OrganSynthBrain";
+    private static readonly ProtoId<EmoteSoundsPrototype> EmoteSoundsId = "SynthEmotes";
 
     private const string BrainSlot = "brain";
 
@@ -110,7 +109,7 @@ public sealed class SynthSystem : SharedSynthSystem
         args.Disabled = true;
         // shit fucks you up
         _popup.PopupEntity("You feel your electronics freak out!", uid, uid, PopupType.LargeCaution);
-        _stun.TryParalyze(uid, TimeSpan.FromSeconds(5), false);
+        _stun.TryAddParalyzeDuration(uid, TimeSpan.FromSeconds(5));
         _statusEffects.TryAddStatusEffect(uid, "Stutter", TimeSpan.FromSeconds(15), false, "StutteringAccent");
 
         // tell their client to show the emp effect
@@ -136,7 +135,7 @@ public sealed class SynthSystem : SharedSynthSystem
     /// </summary>
     private void OnTurnedSynthetic(EntityUid uid, SynthComponent component, TurnedSyntheticEvent args)
     {
-        _bloodstream.ChangeBloodReagent(uid, _reagentSynthBloodId);
+        _bloodstream.ChangeBloodReagent(uid, ReagentSynthBloodId);
 
         if (!_humanoidAppearanceQuery.TryComp(uid, out var humanoidAppearanceComponent))
             return;
@@ -144,7 +143,7 @@ public sealed class SynthSystem : SharedSynthSystem
         var species = humanoidAppearanceComponent.Species;
 
         // dionae turn into nymphs when you gib them, so don't mess with their brains
-        if (species != _speciesDionaId)
+        if (species != SpeciesDionaId)
             ReplaceBrain(uid);
 
         if (!TryComp<TransformComponent>(uid, out var transform)
@@ -218,7 +217,7 @@ public sealed class SynthSystem : SharedSynthSystem
             return;
 
         // new brain time
-        var newBrainUid = Spawn(_synthBrainId);
+        var newBrainUid = Spawn(SynthBrainId);
         if (!_body.InsertOrgan(brainContainingBodyPartUid, newBrainUid, BrainSlot))
         {
             // nevermind
@@ -237,7 +236,7 @@ public sealed class SynthSystem : SharedSynthSystem
             return;
 
         // missing the prototype!?
-        if (!_proto.TryIndex(_emoteSoundsId, out var emoteSoundsPrototype))
+        if (!_proto.TryIndex(EmoteSoundsId, out var emoteSoundsPrototype))
             return;
 
         // try to play a cyborg sound

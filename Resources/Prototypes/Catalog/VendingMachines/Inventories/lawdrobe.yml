@@ -28,6 +28,7 @@
     BoxFolderBlue: 2
     BoxFolderYellow: 2
     BoxFolderBlack: 2
+    ClothingBeltPaperwork: 3
     # End DeltaV additions
   contrabandInventory:
     ClothingOuterRobesJudge: 1
@@ -35,10 +36,9 @@
     # "Legally" obtained currency
     SpaceCash100: 2
     ToyFigurineLawyer: 1
+    CyberPen: 1
     # Begin DeltaV additions
     ClothingUniformCybersunAttorney: 1
     CybersunBriefcase: 1
     ClothingOuterCybersunOvercoat: 1
     # End DeltaV additions
-  emaggedInventory:
-    CyberPen: 1

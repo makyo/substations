@@ -5,12 +5,13 @@
   name: moth stomach # Shitmed
   components:
   - type: Stomach
-    specialDigestible:
-      tags:
-      - ClothMade
-      - Fruit # DeltaV - Moth can eat fruits.
-      - Paper
-      - Pill # DeltaV - Moth can eat pills.
+# L5: moved to trait
+#    specialDigestible:
+#      tags:
+#      - ClothMade
+#      - Fruit # DeltaV - Moth can eat fruits.
+#      - Paper
+#      - Pill
   - type: SolutionContainerManager
     solutions:
       stomach:

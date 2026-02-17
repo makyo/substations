@@ -68,9 +68,8 @@
   chanceOfVomiting: 0.1
 
 # Species
-# This is currently just an example and doesn't replace the way stomachs work.
 - type: dietaryRestriction
-  id: LizardDiet
+  id: ReptilianDiet
   mustHave:
     tags:
     - Fruit
@@ -79,3 +78,12 @@
     - Pill
     - Crayon
     - Paper
+
+- type: dietaryRestriction
+  id: MothDiet
+  mustHave:
+    tags:
+    - ClothMade
+    - Fruit # DeltaV - Moth can eat fruits.
+    - Paper
+    - Pill

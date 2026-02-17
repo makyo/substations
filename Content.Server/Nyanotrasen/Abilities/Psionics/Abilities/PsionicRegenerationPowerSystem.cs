@@ -2,7 +2,6 @@ using Robust.Shared.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Chemistry.EntitySystems;
@@ -14,12 +13,12 @@ using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Popups;
 using Content.Shared.Psionics.Events;
-using Content.Shared.Tag;
 using Content.Shared.Examine;
 using static Content.Shared.Examine.ExamineSystemShared;
 using Robust.Shared.Timing;
 using Content.Server.Mind;
 using Content.Shared.Actions.Events;
+using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Robust.Server.Audio;
 
@@ -32,7 +31,6 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly SolutionContainerSystem _solutionSystem = default!;
         [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
         [Dependency] private readonly AudioSystem _audioSystem = default!;
-        [Dependency] private readonly TagSystem _tagSystem = default!;
         [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
         [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
@@ -54,9 +52,9 @@ namespace Content.Server.Abilities.Psionics
         private void OnInit(EntityUid uid, PsionicRegenerationPowerComponent component, ComponentInit args)
         {
             _actions.AddAction(uid, ref component.PsionicRegenerationActionEntity, component.PsionicRegenerationActionId );
-            _actions.TryGetActionData( component.PsionicRegenerationActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.PsionicRegenerationActionEntity);
+
+            // L5 - modified for action ECS
+            _actions.StartUseDelay(component.PsionicRegenerationActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
             {
                 psionic.PsionicAbility = component.PsionicRegenerationActionEntity;
@@ -120,8 +118,8 @@ namespace Content.Server.Abilities.Psionics
             var percentageComplete = Math.Min(1f, (_gameTiming.CurTime - args.StartedAt).TotalSeconds / component.UseDelay);
 
             var solution = new Solution();
-            solution.AddReagent("PsionicRegenerationEssence", FixedPoint2.New(component.EssenceAmount * percentageComplete));
-            _bloodstreamSystem.TryAddToChemicals(uid, solution, stream);
+            solution.AddReagent("Prometheum", FixedPoint2.New(component.EssenceAmount * percentageComplete));
+            _bloodstreamSystem.TryAddToBloodstream((uid, stream), solution);
         }
     }
 }

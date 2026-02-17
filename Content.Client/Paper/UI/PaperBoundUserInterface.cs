@@ -8,7 +8,7 @@ using static Content.Shared.Paper.PaperComponent;
 namespace Content.Client.Paper.UI;
 
 [UsedImplicitly]
-public sealed class PaperBoundUserInterface : BoundUserInterface
+public sealed partial class PaperBoundUserInterface : BoundUserInterface // DeltaV - made partial
 {
     [ViewVariables]
     private PaperWindow? _window;
@@ -23,6 +23,10 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
 
         _window = this.CreateWindow<PaperWindow>();
         _window.OnSaved += InputOnTextEntered;
+        _window.Typing += OnTyping; // DeltaV
+        _window.SubmitPressed += OnSubmit; // DeltaV
+        _window.OnClose += OnSubmit; // DeltaV
+        _window.OnSignatureRequested += OnSignatureRequested; // RMC
 
         if (EntMan.TryGetComponent<PaperComponent>(Owner, out var paper))
         {
@@ -49,5 +53,11 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
             _window.Input.TextRope = Rope.Leaf.Empty;
             _window.Input.CursorPosition = new TextEdit.CursorPos(0, TextEdit.LineBreakBias.Top);
         }
+    }
+
+    // RMC
+    private void OnSignatureRequested(int signatureIndex)
+    {
+        SendMessage(new PaperSignatureRequestMessage(signatureIndex));
     }
 }

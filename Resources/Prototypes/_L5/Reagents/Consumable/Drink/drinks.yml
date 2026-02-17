@@ -89,7 +89,7 @@
   color: "#664300"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/cafe_latte.rsi
-    state: icon_empty
+    state: icon
   metamorphicMaxFillLevels: 1
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
@@ -236,3 +236,51 @@
       - !type:AdjustReagent
         reagent: Neobromine
         amount: 0.05
+
+- type: reagent
+  id: FlyingDutchman
+  name: reagent-name-flying-dutchman
+  parent: BaseAlcohol
+  desc: reagent-desc-flying-dutchman
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: flyingdutchman
+  color: "#20b2aa"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/tortuga.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.03
+
+- type: reagent
+  id: DoubleLemonDrop
+  name: reagent-name-double-lemondrop
+  parent: BaseAlcohol
+  desc: reagent-desc-double-lemondrop
+  physicalDesc: reagent-physical-desc-sour
+  flavor: doublelemondrop
+  color: "#f5ff38"
+  metamorphicSprite:
+    sprite: _DV/Objects/Consumable/Drinks/lemondrop.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.12
+      - !type:AdjustReagent
+        reagent: Tazinide
+        amount: 0.01

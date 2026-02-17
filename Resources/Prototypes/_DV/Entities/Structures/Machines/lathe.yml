@@ -9,12 +9,17 @@
   - type: Lathe
     staticPacks:
     - BorgModulesSyndicateStatic
+    - RoboticsStaticDeltaV
+    - RoboticsStatic
+    - BorgModulesStatic
+    - BorgLimbsStatic
+    - BorgModulesResearched
   - type: Machine
     board: SyndieExosuitFabricatorMachineCircuitboard
 
 - type: entity
-  parent: [BaseLatheLube, BaseMaterialSiloUtilizer] # L5 - material silo
-  id: BaseTechFabDepartamental
+  parent: [BaseLatheLube]
+  id: BaseTechFabDepartmental
   abstract: true
   components:
   - type: Sprite
@@ -32,9 +37,22 @@
     - SecurityExplosives
     - SecurityEquipment
     - SecurityWeapons
+  - type: BlueprintReceiver
+    whitelist:
+      tags:
+      - BlueprintAutolathe
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+  - type: OreSiloClient
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - blueprint
 
 - type: entity
-  parent: BaseTechFabDepartamental
+  parent: BaseTechFabDepartmental
   id: EngineeringTechFab
   name: engineering techfab
   description: Prints equipment for engineers.
@@ -62,6 +80,8 @@
     - LightsStatic
     - MaterialsStatic
     - ReportingStatic
+    - EVASuit
+    - EngineeringStaticDeltaV
     dynamicPacks:
     - AdvancedTools
     - PowerCells
@@ -70,13 +90,16 @@
     - FauxTiles
     - Equipment
     - UpgradeKits
+    - EngineeringHardsuits
   - type: Machine
     board: EngineeringTechFabCircuitboard
   - type: StealTarget
     stealGroup: EngineeringTechFabCircuitboard
+  - type: LatheAnnouncing
+    channels: [Engineering]
 
 - type: entity
-  parent: BaseTechFabDepartamental
+  parent: BaseTechFabDepartmental
   id: LogisticsTechFab
   name: logistics techfab
   description: Prints equipment for the logistics department.
@@ -97,20 +120,26 @@
     staticPacks:
     - ToolsStatic
     - PartsStatic
+    - PowerCellsStatic
     - LVCablesStatic
     - CargoStatic
     - ReportingStatic
+    - SimpleElectronicsStatic
+    - EVASuit
     dynamicPacks:
     - Equipment
     - Mining
     - SalvageWeapons
+    - SalvageHardsuits
   - type: Machine
     board: LogisticsTechFabCircuitboard
   - type: StealTarget
     stealGroup: LogisticsTechFabCircuitboard
+  - type: LatheAnnouncing
+    channels: [Supply]
 
 - type: entity
-  parent: BaseTechFabDepartamental
+  parent: BaseTechFabDepartmental
   id: ServiceTechFab
   name: service techfab
   description: Prints equipment for the service department.
@@ -132,9 +161,13 @@
     - RingsStatic
     - ReportingStatic
     - LVCablesStatic
+    - PowerCellsStatic
     - LightsStatic
     - ServiceStatic
     - PartsStaticDeltaV # Add Beaker and Hand Labeler to the service techfab
+    - SimpleToolsStaticDeltaV
+    - SimpleElectronicsStatic
+    - EVASuit
     dynamicPacks:
     - Janitor
     - Instruments
@@ -143,9 +176,11 @@
     board: ServiceTechFabCircuitboard
   - type: StealTarget
     stealGroup: ServiceTechFabCircuitboard
+  - type: LatheAnnouncing
+    channels: [Service]
 
 - type: entity
-  parent: BaseTechFabDepartamental
+  parent: BaseTechFabDepartmental
   id: EpistemicsTechFab
   name: epistemics techfab
   description: Prints equipment for the epistemics department.
@@ -172,12 +207,15 @@
     - ChemistryStatic
     - PowerCellsStatic
     - ReportingStatic
+    - SimpleElectronicsStatic
+    - EVASuit
     dynamicPacks:
     - ScienceEquipment
     - ScienceClothing
     - ScienceWeapons
     - Chemistry
     - PowerCells
+    #- ExperimentalDevices # L5 - commented out until we figure out hand teleporters
   - type: Machine
     board: EpistemicsTechFabCircuitboard
   - type: StealTarget

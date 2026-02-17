@@ -20,7 +20,7 @@ public sealed partial class TelephoneComponent : Component
     /// Sets how long the telephone can remain idle in-call before it automatically hangs up
     /// </summary>
     [DataField]
-    public float IdlingTimeout = 60;
+    public float IdlingTimeout = 120;
 
     /// <summary>
     /// Sets how long the telephone will stay in the hanging up state before return to idle
@@ -80,12 +80,6 @@ public sealed partial class TelephoneComponent : Component
     /// </summary>
     [DataField]
     public float ListeningRange = 2;
-
-    /// <summary>
-    /// Specifies whether this telephone require power to fucntion
-    /// </summary>
-    [DataField]
-    public bool RequiresPower = true;
 
     /// <summary>
     /// This telephone should not appear on public telephone directories

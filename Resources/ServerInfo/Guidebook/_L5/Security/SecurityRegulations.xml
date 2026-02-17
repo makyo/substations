@@ -1,0 +1,355 @@
+<Document>
+  # Security Regulations
+
+  Security Regulations are a broad set of rules and regulations, collected and regulated by the United Nations, enacted and enforced by the System Consortium and its security contractors, with the oversight of Central Administration — and, on occasion, the UN's security forces. These regulations apply to all ranks and positions on stations under its jurisdiction, from the lowliest assistant to the highest Station Administrator; all are equal under the eyes of the Law, and all must ultimately answer to it.
+
+  It is highly recommended to read the [bold]Standard Operating Procedure[/bold]. Summaries of several pertinent sections are listed below.
+
+  [bullet/][bold]Controlled Items:[/bold] If a member of station crew requires access to a Controlled Item for use in their job, or for regular function, they must obtain the signed and stamped approval of a relevant member of Station Leadership or the Station Administrator. The latter is able to override the decisions of Station Leadership in this regard, however.
+
+  [bullet/][bold]Sophont:[/bold] Any individual or system of individuals with distinct, independent existence.
+
+  [bullet/][bold]Employee:[/bold] A Sophont who has an employment contract with a Company.
+
+  [bullet/][bold]Pet:[/bold] Any living being, organic or otherwise, that is provided to the System Consortium's Space Stations — either through the station's Logistics Department, or brought on board by the crew - for the purposes of emotional support.
+
+  [bullet/][bold]Security Jurisdiction:[/bold] IRIS and Peacekeeper officers are bound by these regulations; they cannot operate outside of standard accessible areas, or perform searches, unless such action is allowed by either Alert Procedure or a valid warrant.
+
+  [bullet/][bold]Arrest :[/bold] Any Sophont with a physical form may be arrested, during which they are restrained, informed of their charges, and taken to the brig for search and processing under [bold]Brig Procedure[/bold].
+
+  [bullet/][bold]Sentencing:[/bold] Any member of security is allowed to pass sentence on Misdemeanor, Felony, and Grand Felony charges. The Chief Justice, or in their absence, the Head of Security are allowed to pass sentence on all Charges.
+
+  [bullet/][bold]Treatment of Prisoners:[/bold] Prisoners must be provided with food, water, clothing, free movement within the brig, adequate medical care, access to the Common and Prison radio channels, and moral, spiritual, or legal counseling if requested and available. If the brig becomes uninhabitable, prisoners must be securely and safely relocated to another area until the brig is functional once more.
+
+  [bullet/][bold]Paroles and Pardons:[/bold] Parole may be offered under the discretion of the Chief Justice, Chief Security Officer, or Station Administrator. Pardons may be issued by the arresting officer, the Judge of a trial, or by the Station Administrator, when deemed in the best interest of the crew or vessel, or when the circumstances of the crime warrant suspension of sentence.
+
+  [bullet/][bold]Pressing Charges:[/bold] Any Employee may press charges against any other Sophont. Individuals may only be charged with a crime if it can be proven beyond reasonable doubt that they have committed the crime.
+
+  [bullet/][bold]Hearing Procedure:[/bold] A criminal hearing’s Judge must be, in sequential order: The Chief Justice, the Court Clerk, an impartial member of Justice, or Station Leadership. The Prosecution should ideally be the Prosecutor, or an available member of Station Command or Station Security in that order. The Defense should ideally be a member of the Justice department assigned to the defendant, though they are allowed to represent themselves if they wish.
+
+  [bullet/][bold]Alert Procedure:[/bold] Codes Blue, Red, Gamma, and Delta authorize Security to carry progressively more advanced equipment, and loosen [bold]Rules of Engagement[/bold] regarding their use. The former two codes discourage openly carrying firearms by personnel; the latter two suspend many rights to privacy, and grant Security the power to do whatever necessary to retake or scuttle the station.
+
+  ## Procedural Defense
+
+  If a defendant is accused of a crime, they are granted the privilege to challenge the legitimacy of charges of claims brought against them. Any of the following may be invoked:
+
+  [bullet/]Double Jeopardy Clause: accused Sophonts may are not to be charged on the same charges following an acquittal or conviction, except in the case of acquittal and subsequent credible admission of guilt.
+
+  [bullet/]Entrapment Clause: accused Sophonts found to be induced or coerced into the commission of the crimes listed in the charges are to be acquitted.
+
+  [bullet/]Exclusionary Clause: evidence collected and/or analyzed in violation of accused Sophonts’ rights under law is inadmissible.
+
+  ### Crime Codes Quick Reference
+
+  Use this to quickly find the Crime Code Numbers.
+
+  Crime codes are organized into four Category Codes (_XX) as listed below, with the most severe crimes being given the highest Severity Codes (x__). The sentencing officer or Judge should use discretion, and not charge a Sophont with two similar crimes for a singular offense.
+
+  For example, an attack upon an Employee which causes them to die of their injuries is Murder, not Assault AND Murder. Likewise, a Sophont should not be charged for both Possession AND Grand Possession on a singular Controlled Item held without proper authorization.
+
+  [head=3][color=#999933]1XX — Misdemeanor[/color][/head]
+
+  [bullet/]101 — Animal Cruelty
+
+  [bullet/]102 — Harassment
+
+  [bullet/]103 — Vigilantism
+
+  [bullet/]104 — Petty Larceny
+
+  [bullet/]105 — Trespass
+
+  [bullet/]106 — Vandalism
+
+  [bullet/]107 — Hooliganism
+
+  [head=3][color=#996633]2XX — Felony[/color][/head]
+
+  [bullet/]201 — Assault
+
+  [bullet/]202 — Breaking and Entering
+
+  [bullet/]203 — Rioting
+
+  [bullet/]204 — Endangerment
+
+  [bullet/]205 — Possession
+
+  [bullet/]206 — Obstruction of Justice
+
+  [bullet/]207 — Perjury
+
+  [bullet/]208 — Contempt of Court
+
+  [bullet/]209 — Identity Theft
+
+  [head=3][color=#993333]3XX — Grand Felony[/color][/head]
+
+  [bullet/]301 — Manslaughter
+
+  [bullet/]302 — Kidnapping
+
+  [bullet/]303 — Grand Possession
+
+  [bullet/]304 — Sabotage
+
+  [bullet/]305 — Abuse of Power
+
+  [bullet/]306 — Grand Larceny
+
+  [bullet/]307 — Black Marketeering
+
+  [head=3][color=#990033]4XX — Capital[/color][/head]
+
+  [bullet/]401 — Murder
+
+  [bullet/]402 — Terrorism
+
+  [bullet/]403 — Grand Sabotage
+
+  [bullet/]404 — Prevention of Revival
+
+  [bullet/]405 — Sedition
+
+  [bullet/]406 — Breach of Custody
+
+  ## Sentences
+  ### Capital
+  Capital crimes require exfiltration: the immediate retrieval of the convict via a SysCon or UN prison transport. The prisoner is to remain in confinement until transport arrives.
+
+  ### Standard
+
+  [bullet/][bold]Brigging[/bold]: Placing the convict into a temporary holding cell.
+
+  [bullet/][bold]Catch and Release[/bold]: Taking the convict to Security, processing them, searching them, and then releasing them.
+
+  [bullet/][bold]Demotion[/bold]: Downgrading the convict’s employment contract and revoking their access accordingly, with permission from or when ordered by the convict’s head of department. May be applied when the convict has committed a crime relating to their employment within their department or with SysCon as a whole.
+
+  [bullet/][bold]Licence restriction[/bold]: Downgrading or suspending the convict’s armament licence and confiscating possessions accordingly. May be applied when the convict is guilty of possession or a crime involving a weapon they were lawfully permitted to carry.
+
+  ## Crime Modifiers
+  Sentencing modifiers are to be applied by the sentencing officer, judge, or arbiter. Aggravating modifiers may not extend a sentence beyond the specified limit, while extenuating modifiers may not reduce a sentence below the specified limit.
+
+  ### Aggravating
+
+  [bold]Solicitation[/bold]
+
+    [bullet/]Any entity found guilty of encouraging, bribing, requesting, or instructing someone to commit a crime, with the intent that the entity being solicited commit the crime, will receive for the crimes they solicited in full.
+
+  [bold]Accessory[/bold]
+
+    [bullet/]Any entity found guilty of assisting in the commission of a crime, without participating in the crime itself, knowing that a crime will be, has been, or is being committed, will receive the sentence for the crimes in which they took part in full.
+
+  [bold]Attempts[/bold]
+
+    [bullet/]Any entity found guilty of attempting to commit a crime, with the intent to carry out that crime, will receive the sentence for the crimes they attempted in full.
+
+  [bold]Conspiracy[/bold]
+
+    [bullet/]Any entity found guilty of planning to commit a crime, with the intent to carry out that crime eventually, and having committed an overt act pursuant to that end, will receive the sentence for the crimes they conspired towards in full.
+
+  [bold]Deadly weapon[/bold]
+
+    [bullet/]Any entity found guilty of committing a crime, utilizing any object used offensively for the purpose of inflicting mortal or great bodily harm, will receive an additional modifier of, at most, +50% of the original sentence.
+
+  [bold]Aggravation[/bold]
+
+    [bullet/]Any entity found guilty of committing a crime with reckless abandon, evident signs of lack of regret or remorse, or blatant disregard for potential collateral damage, will receive an additional modifier of, at most, +50% of the original sentence.
+
+  [bold]Recidivism[/bold]
+
+    [bullet/]Any entity convicted of the same criminal charge multiple times within one shift will receive an additional modifier of, at most, +100% of the original sentence.
+
+  ### Extenuating
+
+  [bold]Cooperation[/bold]
+
+    [bullet/]Any entity who shares actionable intelligence with the authorities, turns oneself in, testifies against accomplices, confesses to their crime, or otherwise aids the prosecution, may have their sentence reduced to no less than 50% of the original sentence.
+
+  [bold]Dire Emergency[/bold]
+
+    [bullet/]Any entity found to have committed a crime in the process of absolutely necessary and reasonable actions, taken with the intent to resolve or mitigate the effects of a dire emergency on one’s vessel or habitat, may have their sentence reduced by any amount, or completely waived.
+
+  [bold]Self-Defence[/bold]
+
+    [bullet/]Any entity found to have committed a crime or crimes in protection of oneself or another, and only to the necessary extent to avert a direct and imminent threat to the health and life of innocent persons, may have their sentence reduced by any amount, or completely waived.
+
+  [bold]Good Behavior[/bold]
+
+    [bullet/]Any convict who peacefully complies with the authorities, displays clear signs of remorse concerning the committed crime, and/or conducts themselves peacefully while imprisoned, may be paroled as outlined in the Standard Operating Procedures.
+
+  ## Crimes
+
+  [head=3][color=#990033]Capital Crimes[/color][/head]
+
+  All capital crimes, if convicted, will lead to extradition
+
+  [bold]401[/bold] — Murder
+
+    [bullet/]To maliciously commit an act resulting in the death of a Sophont, with reckless indifference to their life.
+
+  [bold]402[/bold] — Terrorism
+
+    [bullet/]To maliciously commit an act or take hostages with reckless indifference to life in order to provoke a state of terror in, intimidate, or otherwise compel a Sophont to act or abstain from acting.
+
+  [bold]403[/bold] — Grand Sabotage
+
+    [bullet/]To maliciously commit an act that, directly or indirectly, renders a vessel or its part uninhabitable or inoperable; or, to commit an act that causes irreversible damage to High Security Areas and/or systems of a vessel.
+
+  [bold]404[/bold] — Prevention of Revival
+
+    [bullet/]To commit an act that prevents the revival of a Sophont by standard medical care following their death.
+
+  [bold]405[/bold] — Sedition
+
+    [bullet/]To act to overthrow a rightfully established Chain of Command or governing body without lawful or legitimate cause.
+
+  [bold]406[/bold] — Breach of Custody
+
+    [bullet/]To escape the custody of law enforcement while serving a legal sentence, or awaiting trial for a capital offense.
+
+  [head=3][color=#993333]Grand Felony[/color][/head]
+
+  [bold]301[/bold] — Manslaughter
+
+    [bullet/]10 minutes
+
+    [bullet/]To act without malice in a manner which, directly or indirectly, leads to the death of a Sophont.
+
+  [bold]302[/bold] — Kidnapping
+
+    [bullet/]10 minutes
+
+    [bullet/]To unlawfully confine or restrict the free movement of a Sophont against their will.
+
+  [bold]303[/bold] — Grand Possession
+
+    [bullet/]12-20 minutes
+
+    [bullet/]To be in the possession of a Category C, D, or E Controlled Armament.
+
+  [bold]304[/bold] — Sabotage
+
+    [bullet/]8 minutes
+
+    [bullet/]To maliciously commit an act that, directly or indirectly, hinders the operation of a vessel of its part; or, to commit an act that modifies and/or damages technology or equipment one is not authorized to access.
+
+  [bold]305[/bold] — Abuse of Power
+
+    [bullet/]10 minutes
+
+    [bullet/]To intentionally misuse or wrongfully exercise one’s own authority, influence, or control, resulting in harm, unjust treatment, or demonstratable loss to another Sophont.
+
+  [bold]306[/bold] — Grand Larceny
+
+    [bullet/]8 minutes
+
+    [bullet/]To deprive a Sophont of any Controlled Item in their lawful possession.
+
+  [bold]307[/bold] — Black Marketeering
+
+    [bullet/]8 minutes
+
+    [bullet/]To sell, distribute, or otherwise circulate Controlled Items to unauthorized entities.
+
+  [head=3][color=#996633]Felony[/color][/head]
+
+  [bold]201[/bold] — Assault
+
+    [bullet/]5 minutes
+
+    [bullet/]To cause physical harm or to effect unwanted physical contact on a Sophont, without the apparent intent to kill them, or to threaten such actions with both capability and intent to do so.
+
+  [bold]202[/bold] — Breaking and Entering
+
+    [bullet/]5 minutes
+
+    [bullet/]To break and enter into a high security area where one is not authorised nor invited, with intent to commit a crime within.
+
+  [bold]203[/bold] — Rioting
+
+    [bullet/]4 minutes
+
+    [bullet/]To partake in an unauthorised riotous, tumultuous, and disruptive public assembly that refuses to disperse after warning.
+
+  [bold]204[/bold] — Endangerment
+
+    [bullet/]6 minutes
+
+    [bullet/]To recklessly abandon obligations involving the continued wellbeing and/or protection of life and property, through malpractice, action, or inaction.
+
+  [bold]205[/bold] — Possession
+
+    [bullet/]3-8 minutes
+
+    [bullet/]To be in unauthorised possession of restricted items or items of particular danger. See the list of controlled items.
+
+  [bold]206[/bold] — Obstruction of Justice
+
+    [bullet/]4 minutes
+
+    [bullet/]To wilfully disobey, interfere with, or refuse a decree of the court, warrant, or arrest.
+
+  [bold]207[/bold] — Perjury or False Report
+
+    [bullet/]4 minutes
+
+    [bullet/]To wilfully and maliciously tell an untruth either in court or in the process of making an actionable report to law enforcement.
+
+  [bold]208[/bold] — Contempt of Court
+
+    [bullet/]4 minutes
+
+    [bullet/]To conduct oneself disruptively and disrespectfully before the court.
+
+  [bold]209[/bold] — Identity Theft
+
+    [bullet/]5 minutes
+
+    [bullet/]To maliciously assume the identity of a Sophont, such as through writing, attire, and/or speech.
+
+  [head=3][color=#999933]Misdemeanor[/color][/head]
+
+  [bold]101[/bold] — Animal Cruelty
+
+    [bullet/]2 minutes
+
+    [bullet/]To inflict unnecessary suffering on an animal with malicious intent.
+
+ [bold]102[/bold] — Harassment
+
+    [bullet/]3 minutes
+
+    [bullet/]To verbally demean, humiliate, or harass a Sophont with malice; or maliciously spread false information amongst a population.
+
+  [bold]103[/bold] — Vigilantism
+
+    [bullet/]4 minutes
+
+    [bullet/]To perform the responsibility and duty of a law enforcement official without approval or due cause to act.
+
+ [bold]104[/bold] — Petty Larceny
+
+    [bullet/]2 minutes
+
+    [bullet/]To deprive a Sophont of an item in their lawful property without consent.
+
+  [bold]105[/bold] — Trespass
+
+    [bullet/]2 minutes
+
+    [bullet/]To enter into an area where one is not authorised nor invited.
+
+  [bold]106[/bold] — Vandalism
+
+    [bullet/]2 minutes
+
+    [bullet/]To deface or superficially damage public property, or property belonging to another Sophont.
+
+ [bold]107[/bold] — Hooliganism
+
+    [bullet/]As necessary
+
+    [bullet/]To intentionally and maliciously engage in disruptive conduct, where one refuses to cease.
+
+</Document>

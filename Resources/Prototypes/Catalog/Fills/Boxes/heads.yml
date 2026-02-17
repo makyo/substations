@@ -1,0 +1,142 @@
+- type: entity
+  parent: ToteBase
+  id: BoxCaptainCircuitboards
+  name: bridge circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CommsComputerCircuitboard
+        - id: StationRecordsComputerCircuitboard
+        - id: IDComputerCircuitboard # DeltaV
+
+- type: entity
+  parent: ToteBase
+  id: BoxCECircuitboards
+  name: engineering circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CargoRequestEngineeringComputerCircuitboard
+        - id: AlertsComputerCircuitboard
+        - id: AtmosMonitoringComputerCircuitboard
+        - id: PowerComputerCircuitboard
+        - id: SolarControlComputerCircuitboard
+        - id: IDComputerCircuitboard # DeltaV
+        - id: EngineeringTechFabCircuitboard # DeltaV
+        - id: CircuitImprinterMachineCircuitboard # DeltaV
+
+- type: entity
+  parent: ToteBase
+  id: BoxCMOCircuitboards
+  name: medical circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MedicalTechFabCircuitboard
+        - id: CargoRequestMedicalComputerCircuitboard
+        - id: IDComputerCircuitboard # DeltaV
+        - id: MedicalBiofabMachineBoard # DeltaV
+        - id: AutoclaveMachineCircuitboard # DeltaV
+
+- type: entity
+  parent: ToteBase
+  id: BoxHoPCircuitboards
+  name: hospitality director circuit tote # L5
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: IDComputerCircuitboard
+        #- id: FundingAllocationComputerCircuitboard # DeltaV - HoP doesn't have funding access
+        - id: FundingAllocationComputerCircuitboard
+        - id: ServiceTechFabCircuitboard # DeltaV
+
+- type: entity
+  parent: BoxStamps
+  id: BoxHoPStamps
+  name: hospitality director's stamp box # L5
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: RubberStampApproved
+        - id: RubberStampDenied
+        - id: RubberStampHop
+
+- type: entity
+  parent: ToteBase
+  id: BoxHoSCircuitboards
+  name: security circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SecurityTechFabCircuitboard
+        - id: CargoRequestSecurityComputerCircuitboard
+        - id: IDComputerCircuitboard # DeltaV
+
+- type: entity
+  parent: ToteBase
+  id: BoxQMCircuitboards
+  name: cargo circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CargoBountyComputerCircuitboard
+        - id: CargoRequestComputerCircuitboard
+        - id: CargoSaleComputerCircuitboard
+        - id: CargoShuttleConsoleCircuitboard
+        - id: SalvageMagnetMachineCircuitboard
+        - id: SalvageJobBoardComputerCircuitboard
+        - id: MailTeleporterMachineCircuitboard
+        # DeltaV Additions
+        - id: IDComputerCircuitboard
+        - id: MiningShuttleConsoleCircuitboard
+        - id: LogisticsTechFabCircuitboard
+        - id: SalvageExpeditionsComputerCircuitboard
+        - id: FundingAllocationComputerCircuitboard # To be removed when it's in techvault on all maps
+        # END DeltaV Additions
+
+- type: entity
+  parent: BoxStamps
+  id: BoxQMStamps
+  name: chief logicistics officer's stamp box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: RubberStampApproved
+        - id: RubberStampDenied
+        - id: RubberStampQm
+
+- type: entity
+  parent: ToteBase
+  id: BoxRDCircuitboards
+  name: science circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CircuitImprinterMachineCircuitboard
+        #- id: ProtolatheMachineCircuitboard # DeltaV - Replaced with Epi fab
+        - id: ResearchComputerCircuitboard
+        - id: CargoRequestScienceComputerCircuitboard
+        - id: RoboticsConsoleCircuitboard
+        - id: AnalysisComputerCircuitboard #Because sometimes round start artis just fucking explode on the pad.
+        - id: ArtifactAnalyzerMachineCircuitboard
+        - id: StationAiFixerCircuitboard
+        - id: IDComputerCircuitboard # DeltaV
+        - id: EpistemicsTechFabCircuitboard # DeltaV

@@ -1,0 +1,57 @@
+- type: entity
+  id: StaticField
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: static field projector
+  description: A high-efficiency teslaphoretic field that blocks air, but nothing else.
+  components:
+  - type: Sprite
+    sprite: _L5/Structures/Holo/staticfield.rsi
+    drawdepth: HighFloorObjects
+    layers:
+      - state: unpowered
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    enabled: false
+    volume: 2
+    range: 3
+    sound:
+      path: /Audio/Ambience/Objects/buzzing.ogg
+  - type: ApcPowerReceiver
+    powerLoad: 2000 # Expensive to run
+    powerDisabled: true
+  - type: StaticField
+  - type: Appearance
+  - type: PointLight
+    color: "#DDAF38"
+    energy: 1
+    radius: 2
+    enabled: false
+  - type: LitOnPowered
+  - type: Airtight
+    airBlocked: false
+    noAirWhenFullyAirBlocked: false
+  - type: Machine
+    board: StaticFieldMachineCircuitboard
+  - type: DeviceLinkSink
+    ports:
+    - On
+    - Off
+    - Toggle
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { state: powered }
+          False: { state: unpowered }

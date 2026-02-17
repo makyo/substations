@@ -14,7 +14,7 @@
         Caustic: 0.85
 
 - type: entity
-  parent: [ClothingEyesBase, ShowMedicalIcons, BaseSecurityContraband]
+  parent: [ClothingEyesBase, ShowMedicalIcons, ShowSecurityIcons, BaseSecurityContraband]
   id: ClothingEyesGlassesCorpsman
   name: corpsman glasses
   description: Security glasses designed for the Corpsman for medical needs. Now with a cool blue hue*
@@ -34,11 +34,11 @@
     - GlassesCorpsman # Added for prescription glasses.
     - HamsterWearable
     - WhitelistChameleon
-    - SecDogWearable 
+    - SecDogWearable
   - type: GuideHelp
     guides:
     - Security
-    - Antagonists
+    #- Antagonists # L5 - guides removed
     - Medical
   - type: IdentityBlocker
     coverage: EYES

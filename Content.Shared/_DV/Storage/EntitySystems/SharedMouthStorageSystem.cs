@@ -1,6 +1,7 @@
 using Content.Shared.Actions;
 using Content.Shared.CombatMode;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 using Content.Shared._DV.Storage.Components;
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
@@ -56,7 +57,7 @@ public abstract class SharedMouthStorageSystem : EntitySystem
             _actionsSystem.AddAction(uid, ref component.Action, component.OpenStorageAction, mouth);
     }
 
-    private void DropAllContents(EntityUid uid, MouthStorageComponent component, EntityEventArgs args)
+    private void DropAllContents<T>(EntityUid uid, MouthStorageComponent component, ref T _)
     {
         if (component.MouthId == null)
             return;
@@ -71,7 +72,7 @@ public abstract class SharedMouthStorageSystem : EntitySystem
             || args.DamageDelta.GetTotal() < component.SpitDamageThreshold)
             return;
 
-        DropAllContents(uid, component, args);
+        DropAllContents(uid, component, ref args);
     }
 
     // Other people can see if this person has items in their mouth.
@@ -95,6 +96,6 @@ public abstract class SharedMouthStorageSystem : EntitySystem
 
         var firstItem = storage.Container.ContainedEntities[0];
         args.Blocker = firstItem;
-        args.Cancel();
+        args.Cancelled = true; // L5 - api change
     }
 }

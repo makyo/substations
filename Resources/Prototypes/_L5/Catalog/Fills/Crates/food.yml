@@ -1,0 +1,114 @@
+- type: entity
+  id: CrateFoodProduce
+  parent: CrateFreezer
+  name: produce crate
+  description: A freezer-chest for storing foods that need to stay cold.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillCrateFoodProduce
+
+- type: entityTable
+  id: FillCrateFoodProduce
+  table: !type:AllSelector
+    children:
+      # Normal (50%)
+    - id: FoodCarrot
+      amount: 3
+      prob: 0.5
+    - id: FoodTomato
+      amount: 2
+      prob: 0.5
+    - id: FoodPotato
+      amount: 2
+      prob: 0.5
+    - id: FoodEggplant
+      amount: 3
+      prob: 0.5
+    - id: FoodCorn
+      amount: 2
+      prob: 0.5
+    - id: FoodOrange
+      amount: 3
+      prob: 0.5
+    - id: FoodLemon
+      amount: 3
+      prob: 0.5
+    - id: FoodLime
+      amount: 3
+      prob: 0.5
+    - id: FoodApple
+      amount: 3
+      prob: 0.5
+    - id: FoodBerries
+      amount: 3
+      prob: 0.5
+      # Uncommon (10%)
+    - id: FoodOnion
+      amount: 3
+      prob: 0.1
+    - id: FoodGarlic
+      amount: 3
+      prob: 0.1
+    - id: FoodChiliPepper
+      amount: 3
+      prob: 0.1
+    - id: FoodWatermelon
+      amount: 2
+      prob: 0.1
+    - id: FoodPineapple
+      amount: 3
+      prob: 0.1
+    - id: FoodPeaPod
+      amount: 4
+      prob: 0.1
+    - id: FoodPear
+      amount: 3
+      prob: 0.1
+    - id: FoodEggplant # Extras
+      amount: 6
+      prob: 0.1
+    - id: FoodCorn # Extras
+      amount: 4
+      prob: 0.1
+    - id: FoodCarrot # Extras
+      amount: 6
+      prob: 0.1
+    - id: FoodTomato # Extras
+      amount: 4
+      prob: 0.1
+    - id: FoodOrange # Extras
+      amount: 6
+      prob: 0.1
+    - id: FoodLemon # Extras
+      amount: 6
+      prob: 0.1
+    - id: FoodLime # Extras
+      amount: 6
+      prob: 0.1
+      # Rare (5%)
+    - id: FoodOnionRed
+      amount: 3
+      prob: 0.5
+    - id: FoodOnionRed
+      amount: 3
+      prob: 0.5
+    - id: FoodMushroom
+      amount: 3
+      prob: 0.5
+    - id: FoodCherry
+      amount: 3
+      prob: 0.5
+    - id: FoodPumpkin
+      amount: 2
+      prob: 0.5
+      # Surprise (1%)
+    - id: FoodLemoon
+      amount: 3
+      prob: 0.01
+    - id: FoodMimana
+      amount: 3
+      prob: 0.01
+
+

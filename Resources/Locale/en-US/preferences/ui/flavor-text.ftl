@@ -1,1 +1,1 @@
-flavor-text-placeholder = Use this to provide sensory descriptions of your character — things you can see, hear, smell, and so on. These are the things someone my know about you without having spoken with you.
+flavor-text-placeholder = Use this to provide sensory descriptions of your character — things you can see, hear, smell, and so on. These are the things someone may know about you without having spoken with you.

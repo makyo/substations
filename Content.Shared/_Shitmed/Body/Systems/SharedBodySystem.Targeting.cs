@@ -22,6 +22,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared.Inventory;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 
 // Namespace has set accessors, leaving it on the default.
 namespace Content.Shared.Body.Systems;
@@ -31,10 +33,8 @@ public partial class SharedBodySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    private readonly ProtoId<DamageTypePrototype>[] _severingDamageTypes = { "Slash", "Piercing", "Blunt" };
     private const double IntegrityJobTime = 0.005;
     private readonly JobQueue _integrityJobQueue = new(IntegrityJobTime);
     public sealed class IntegrityJob : Job<object>
@@ -65,7 +65,7 @@ public partial class SharedBodySystem
     private void InitializeIntegrityQueue()
     {
         _queryTargeting = GetEntityQuery<TargetingComponent>();
-        SubscribeLocalEvent<BodyComponent, TryChangePartDamageEvent>(OnTryChangePartDamage);
+        SubscribeLocalEvent<BodyComponent, BeforePartDamageChangedEvent>(OnTryChangePartDamage);
         SubscribeLocalEvent<BodyComponent, DamageModifyEvent>(OnBodyDamageModify);
         SubscribeLocalEvent<BodyPartComponent, DamageModifyEvent>(OnPartDamageModify);
         SubscribeLocalEvent<BodyPartComponent, DamageChangedEvent>(OnDamageChanged);
@@ -83,7 +83,7 @@ public partial class SharedBodySystem
             && damage <= entity.Comp.IntegrityThresholds[TargetIntegrity.HeavilyWounded]
             && _queryTargeting.HasComp(body)
             && !_mobState.IsDead(body))
-            _damageable.TryChangeDamage(entity, GetHealingSpecifier(entity), canSever: false, targetPart: GetTargetBodyPart(entity));
+            Damageable.TryChangeDamage(entity.Owner, GetHealingSpecifier(entity), canSever: false, targetPart: GetTargetBodyPart(entity));
     }
 
     public override void Update(float frameTime)
@@ -107,7 +107,7 @@ public partial class SharedBodySystem
         }
     }
 
-    private void OnTryChangePartDamage(Entity<BodyComponent> ent, ref TryChangePartDamageEvent args)
+    private void OnTryChangePartDamage(Entity<BodyComponent> ent, ref BeforePartDamageChangedEvent args)
     {
         // If our target has a TargetingComponent, that means they will take limb damage
         // And if their attacker also has one, then we use that part.
@@ -203,13 +203,24 @@ public partial class SharedBodySystem
                 if (canEvade && TryEvadeDamage(entity, GetEvadeChance(targetType)))
                     continue;
 
-                var damageResult = _damageable.TryChangeDamage(part.FirstOrDefault().Id, damage * partMultiplier, ignoreResistances, canSever: canSever);
-                if (damageResult != null && damageResult.GetTotal() != 0)
-                    landed = true;
+                landed = Damageable.TryChangeDamage(part.FirstOrDefault().Id, damage * partMultiplier, ignoreResistances, canSever: canSever);
             }
         }
 
         return landed;
+    }
+
+    private bool CheckDamageThreshold(DamageSpecifier thresholds, DamageSpecifier testing)
+    {
+        foreach (var (kind, amount) in thresholds.DamageDict)
+        {
+            if (!testing.DamageDict.TryGetValue(kind, out var testAmount))
+                return false;
+
+            if (testAmount < amount)
+                return false;
+        }
+        return true;
     }
 
     private void OnDamageChanged(Entity<BodyPartComponent> partEnt, ref DamageChangedEvent args)
@@ -221,14 +232,18 @@ public partial class SharedBodySystem
         var partIdSlot = GetParentPartAndSlotOrNull(partEnt)?.Slot;
         var delta = args.DamageDelta;
 
+        // Begin DeltaV additions: fix delayed severing bug
+        bool wouldBecomeDisabledByThisDamage = partEnt.Comp.Enabled &&
+            damageable.TotalDamage >= partEnt.Comp.IntegrityThresholds[TargetIntegrity.CriticallyWounded];
+        // End DeltaV additions
+
         if (args.CanSever
             && partEnt.Comp.CanSever
             && partIdSlot is not null
             && delta != null
             && !HasComp<BodyPartReattachedComponent>(partEnt)
-            && !partEnt.Comp.Enabled
-            && damageable.TotalDamage >= partEnt.Comp.SeverIntegrity
-            && _severingDamageTypes.Any(damageType => delta.DamageDict.TryGetValue(damageType, out var value) && value > 0))
+            && (!partEnt.Comp.Enabled || wouldBecomeDisabledByThisDamage) // DeltaV: fix delayed severing bug
+            && partEnt.Comp.SeverThresholds.Any(threshold => CheckDamageThreshold(threshold, damageable.Damage)))
             severed = true;
 
         CheckBodyPart(partEnt, GetTargetBodyPart(partEnt), severed, damageable);
@@ -488,7 +503,7 @@ public partial class SharedBodySystem
             || !TryComp<StandingStateComponent>(uid, out var standingState)
             || _mobState.IsCritical(uid, mobState)
             || _mobState.IsDead(uid, mobState)
-            || standingState.CurrentState == StandingState.Lying)
+            || !standingState.Standing)
             return false;
 
         return true;

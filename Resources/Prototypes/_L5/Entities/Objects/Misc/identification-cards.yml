@@ -1,0 +1,7 @@
+- type: entity
+  parent: SyndicateIDCard
+  id: ITPIDCard
+  name: ITP chemist ID card
+  components:
+  - type: Contract
+    contract: ContractITP

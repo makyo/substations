@@ -1,18 +1,26 @@
 using Content.Shared._L5.Movement.Components;
+using Content.Shared.Access.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Physics;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics;
+using Robust.Shared.Physics.Systems;
+using System.Linq;
 
 namespace Content.Shared._L5.Movement.Systems
 {
     public sealed class PilotOnBuckleSystem() : EntitySystem
     {
         [Dependency] private readonly SharedMoverController _moverController = default!;
+        [Dependency] private readonly SharedPhysicsSystem _physics = default!;
         public override void Initialize()
         {
             // When strapping into an object, update entity associations.
             SubscribeLocalEvent<PilotOnBuckleComponent, StrappedEvent>(OnStrap);
             SubscribeLocalEvent<PilotOnBuckleComponent, UnstrappedEvent>(OnUnstrap);
+            SubscribeLocalEvent<PilotOnBuckleComponent, GetAdditionalAccessEvent>(OnGetAdditionalAccess);
         }
 
         /// <summary>
@@ -27,6 +35,23 @@ namespace Content.Shared._L5.Movement.Systems
             EnsureComp<InputMoverComponent>(movedEntity);
             EnsureComp<MovementSpeedModifierComponent>(movedEntity);
 
+            // Physics 'bullshittery' necessary for object to behave properly (modified from AnimateSpellSystem)
+            // For collision layer, the Opaque CG is used over MobLayer to ensure bullets don't collide with the wheelchair (otherwise this totally becomes a moving riot shield)
+            // We *probably* don't want to change the collision states of objects that can already be collided with, otherwise we can get into a state where we accidentally makes someone immune to bullets
+            if (TryComp<FixturesComponent>(movedEntity, out var fixtures) && TryComp<PhysicsComponent>(movedEntity, out var physics) && !physics.CanCollide)
+            {
+                var xform = Transform(movedEntity);
+                var fixture = fixtures.Fixtures.First();
+
+                _physics.SetCanCollide(movedEntity, true, true, false, fixtures, physics);
+                _physics.SetCollisionMask(movedEntity, fixture.Key, fixture.Value, (int)CollisionGroup.MobMask, fixtures, physics);
+                _physics.SetCollisionLayer(movedEntity, fixture.Key, fixture.Value, (int)CollisionGroup.Opaque, fixtures, physics);
+                _physics.SetBodyType(movedEntity, BodyType.KinematicController, fixtures, physics, xform);
+                _physics.SetBodyStatus(movedEntity, physics, BodyStatus.OnGround, true);
+                _physics.SetFixedRotation(movedEntity, false, true, fixtures, physics);
+                _physics.SetHard(movedEntity, fixture.Value, true, fixtures);
+            }
+
             _moverController.SetRelay(moverEntity, movedEntity);
         }
 
@@ -40,6 +65,18 @@ namespace Content.Shared._L5.Movement.Systems
             var movedEntity = args.Strap.Owner;
             RemCompDeferred<RelayInputMoverComponent>(moverEntity);
             RemCompDeferred<MovementRelayTargetComponent>(movedEntity);
+        }
+
+        /// <summary>
+        /// Handle extending the user's access
+        /// </summary>
+        private void OnGetAdditionalAccess(Entity<PilotOnBuckleComponent> ent,
+            ref GetAdditionalAccessEvent args)
+        {
+            if (!TryComp<MovementRelayTargetComponent>(ent.Owner, out var mover))
+                return;
+
+            args.Entities.Add(mover.Source);
         }
     }
 }

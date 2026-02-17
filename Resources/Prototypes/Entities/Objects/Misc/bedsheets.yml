@@ -19,7 +19,7 @@
     slots:
     - neck
   - type: StaticPrice
-    price: 100
+    price: 12
   - type: Tag
     tags:
     - Bedsheet
@@ -163,7 +163,7 @@
 - type: entity
   id: BedsheetHOP
   parent: BedsheetBase
-  name: HOP's bedsheet
+  name: HD's bedsheet # L5
   description: It's decorated with a key emblem. For those rare moments when you can rest and cuddle with Ian without someone screaming for you over the radio.
   components:
   - type: Sprite
@@ -176,7 +176,7 @@
 - type: entity
   id: BedsheetHOS
   parent: BedsheetBase
-  name: HOS's bedsheet
+  name: CSO's bedsheet # l5
   description: A soft, slate-coloured quilt, adorned with gold trim. Not quite cozy enough to warm a cold heart. # DeltaV - change from "It's decorated with a shield emblem. While crime doesn't sleep, you do, but you are still THE LAW!"
   components:
   - type: Sprite
@@ -310,7 +310,7 @@
 
 - type: entity
   id: BedsheetSyndie
-  parent: BedsheetBase
+  parent: [ BedsheetBase, BaseSyndicateContraband ]
   name: syndicate bedsheet
   description: It has a syndicate emblem and it has an aura of evil.
   components:

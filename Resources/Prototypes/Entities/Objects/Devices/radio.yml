@@ -4,20 +4,37 @@
   parent: BaseItem
   id: RadioHandheld
   components:
+  - type: StationAiWhitelist # L5 - why not
   - type: TelecomExempt
   - type: RadioMicrophone
+    toggleOnInteract: false # L5 - handled as verb
+    toggleOnVerb: true # L5
     broadcastChannel: Handheld
   - type: RadioSpeaker
+    toggleOnInteract: false # L5 - handled as verb
+    toggleOnVerb: true # L5
     channels:
     - Handheld
   - type: Speech
     speechVerb: Robotic
+  # Begin L5 changes - use layer states
+  - type: Appearance
   - type: Sprite
     sprite: Objects/Devices/communication.rsi
     layers:
-    - state: walkietalkie
+    - state: walkietalkie-off
     - state: walkietalkie-on
-    state: walkietalkie
+      map: ["enum.RadioDeviceVisualLayers.Speaker"]
+      shader: unshaded
+      visible: false
+    state: walkietalkie-off
+  - type: GenericVisualizer
+    visuals:
+      enum.RadioDeviceVisuals.Speaker:
+        enum.RadioDeviceVisualLayers.Speaker:
+          True: { visible: true }
+          False: { visible: false }
+  # End L5 changes
   - type: Item
     sprite: Objects/Devices/communication.rsi
     heldPrefix: walkietalkie
@@ -33,6 +50,7 @@
   components:
   - type: RadioMicrophone
     broadcastChannel: Security
+    listenRange: 1
   - type: RadioSpeaker
     channels:
     - Security

@@ -1,0 +1,138 @@
+- type: latheRecipe # Base towel recipe
+  abstract: true
+  id: BaseTowelRecipe
+  categories:
+    - Towels
+  completetime: 4
+  materials:
+    Cloth: 400
+
+# all the dang towels(except the NT, syndie, and CC towels)
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorWhite
+  result: TowelColorWhite
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorPurple
+  result: TowelColorPurple
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorBlue
+  result: TowelColorBlue
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorDarkBlue
+  result: TowelColorDarkBlue
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorLightBlue
+  result: TowelColorLightBlue
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorTeal
+  result: TowelColorTeal
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorBrown
+  result: TowelColorBrown
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorLightBrown
+  result: TowelColorLightBrown
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorGray
+  result: TowelColorGray
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorGreen
+  result: TowelColorGreen
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorDarkGreen
+  result: TowelColorDarkGreen
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorGold
+  result: TowelColorGold
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorOrange
+  result: TowelColorOrange
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorBlack
+  result: TowelColorBlack
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorPink
+  result: TowelColorPink
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorYellow
+  result: TowelColorYellow
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorMaroon
+  result: TowelColorMaroon
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorSilver
+  result: TowelColorSilver
+
+- type: latheRecipe
+  parent: BaseTowelRecipe
+  id: TowelColorMime
+  result: TowelColorMime
+
+# Aprons ahoy
+- type: latheRecipe
+  id: BaseApronRecipe
+  abstract: true
+  categories:
+  - Aprons
+  completetime: 4
+  materials:
+    Cloth: 250
+
+- type: latheRecipe
+  parent: BaseApronRecipe
+  name: clothing-outer-apron-bar
+  id: ClothingOuterApronBar
+  result: ClothingOuterApronBar
+
+- type: latheRecipe
+  parent: BaseApronRecipe
+  name: clothing-outer-apron-botanist
+  id: ClothingOuterApronBotanist
+  result: ClothingOuterApronBotanist
+
+- type: latheRecipe
+  parent: BaseApronRecipe
+  name: clothing-outer-apron-chef
+  id: ClothingOuterApronChef
+  result: ClothingOuterApronChef
+
+- type: latheRecipe
+  parent: BaseApronRecipe
+  name: clothing-outer-apron-chemist
+  id: ClothingOuterApronChemist
+  result: ClothingOuterApronChemist

@@ -16,6 +16,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Server.Shuttles.Systems;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -25,10 +26,9 @@ namespace Content.Server.Cargo.Systems;
 public sealed partial class CargoSystem
 {
     [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly ShuttleConsoleSystem _console = default!;
 
     public EntityUid? CargoMap;
 
@@ -66,7 +66,7 @@ public sealed partial class CargoSystem
 
         var mapUid = _map.CreateMap(out var mapId);
         // Oh boy oh boy, hardcoded paths!
-        var path = new ResPath("/Maps/Shuttles/trading_outpost.yml");
+        var path = new ResPath("/Maps/_DV/trading_outpost_dv.yml"); // DeltaV - Made ATS DV specific, Was: /Maps/Shuttles/trading_outpost.yml
         if (!_mapLoader.TryLoadGrid(mapId, path, out var grid))
         {
             Log.Error($"Loading ATS from {path} failed!");
@@ -84,20 +84,16 @@ public sealed partial class CargoSystem
             EnsureComp<StationMemberComponent>(gridUid).Station = arg.Station;
         }
 
-        var shuttleComp = EnsureComp<ShuttleComponent>(gridUid);
-        shuttleComp.AngularDamping = 10000;
-        shuttleComp.LinearDamping = 10000;
-
         var ftl = EnsureComp<FTLDestinationComponent>(mapUid);
         ftl.Whitelist = new EntityWhitelist()
         {
             Components =
             [
-                _factory.GetComponentName(typeof(CargoShuttleComponent))
+                Factory.GetComponentName<CargoShuttleComponent>()
             ]
         };
 
-        _metaSystem.SetEntityName(mapUid, $"Automated Trade Station {_random.Next(1000):000}");
+        _metaSystem.SetEntityName(mapUid, $"UN Automated Trade Station {_random.Next(1000):000}"); // L5
 
         _console.RefreshShuttleConsoles();
     }

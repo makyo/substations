@@ -17,7 +17,7 @@
 #       color: "#e8b59b"
 #       sprite: Nyanotrasen/Mobs/Species/Golem/cult.rsi
 #       state: cultgolem_head
-#     - map: [ "enum.ToggleVisuals.Layer" ]
+#     - map: [ "enum.ToggleableVisuals.Layer" ] # L5 - wizden renamed
 #       sprite: Nyanotrasen/Mobs/Species/Golem/cult.rsi
 #       state: lights
 #       visible: false
@@ -93,7 +93,7 @@
 #     - reagents: [Water, SpaceCleaner]
 #       methods: [Touch]
 #       effects:
-#       - !type:WashCreamPieReaction
+#       - !type:WashCreamPie
 #   - type: Flashable
 #   - type: Polymorphable
 #   - type: Identity
@@ -237,8 +237,8 @@
 #   - type: Golem
 #   - type: GenericVisualizer
 #     visuals:
-#       enum.ToggleVisuals.Toggled:
-#         enum.ToggleVisuals.Layer:
+#       enum.ToggleableVisuals.Enabled: # L5 - wizden renamed
+#         enum.ToggleableVisuals.Layer: # L5 - wizden renamed
 #           True: { visible: true }
 #           False: { visible: false }
 #       enum.CreamPiedVisuals.Creamed:
@@ -254,8 +254,8 @@
 #         toggleAction:
 #           name: action-name-show-laws
 #           description: action-description-show-laws
-#           icon: Structures/Wallmounts/posters.rsi/poster11_legit.png #someone wanna make new icons?
-#           iconOn: Structures/Wallmounts/posters.rsi/poster11_legit.png
+#           icon: { sprite: Structures/Wallmounts/posters.rsi, state: poster11_legit } #someone wanna make new icons?
+#           iconOn: { sprite: Structures/Wallmounts/posters.rsi, state: poster11_legit }
 #           keywords: [ "AI", "console", "interface", "laws", "borg" ]
 #           priority: -3
 #           event: !type:ToggleIntrinsicUIEvent
@@ -294,7 +294,7 @@
 #       color: "#e8b59b"
 #       sprite: Nyanotrasen/Mobs/Species/Golem/wood.rsi
 #       state: head
-#     - map: [ "enum.ToggleVisuals.Layer" ]
+#     - map: [ "enum.ToggleableVisuals.Layer" ] # L5 - wizden renamed
 #       sprite: Nyanotrasen/Mobs/Species/Golem/wood.rsi
 #       state: lights
 #       visible: false
@@ -377,7 +377,7 @@
 #     - reagents: [Water, SpaceCleaner]
 #       methods: [Touch]
 #       effects:
-#       - !type:WashCreamPieReaction
+#       - !type:WashCreamPie
 #   - type: Construction
 #     graph: GolemWood
 #     node: golem
@@ -395,7 +395,7 @@
 #       available:
 #         - enum.DamageStateVisualLayers.Base:
 #             silver_base: ""
-#           enum.ToggleVisuals.Layer:
+#           enum.ToggleableVisuals.Layer: # L5 - wizden renamed
 #             lights: Sixteen
 #     - type: Sprite
 #       drawdepth: Mobs
@@ -408,7 +408,7 @@
 #           sprite: Objects/Misc/handcuffs.rsi
 #           state: body-overlay-2
 #           visible: false
-#         - map: [ "enum.ToggleVisuals.Layer" ]
+#         - map: [ "enum.ToggleableVisuals.Layer" ] # L5 - wizden renamed
 #           sprite: Nyanotrasen/Mobs/Species/Golem/silver.rsi
 #           state: lights
 #           color: "#40a7d7"

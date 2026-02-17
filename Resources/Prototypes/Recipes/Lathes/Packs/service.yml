@@ -21,10 +21,18 @@
   - FoodPlateMuffinTin
   - FoodKebabSkewer
   - SprayBottle
+  - TrashBag
+  - LightReplacer
   - MopItem
   - Holoprojector
   - WetFloorSign
-  - DiseaseSwab # botanists can make swabs at their fab now
+  - WireBrush
+  - DiseaseSwab # L5 botanists can make swabs at their fab now
+  - CrewManifest # L5 craftable PDA carts
+  - NanoChat # ditto
+  - NanoTask # ditto 2x
+  - Notekeeper # ditto 3x
+  - NewsReader # ditto 4x combo
 
 - type: latheRecipePack
   parent:
@@ -38,6 +46,8 @@
   - ElectricGrillMachineCircuitboard
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
+  - SmartFridgeCircuitboard
+  - PrinterDocMachineCircuitboard # Corvax
 
 ## Dynamic
 
@@ -53,6 +63,7 @@
   id: Instruments
   recipes:
   - SynthesizerInstrument
+  - PushHorn
 
 - type: latheRecipePack
   parent:

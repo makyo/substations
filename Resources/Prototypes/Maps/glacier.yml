@@ -13,23 +13,22 @@
       - type: StationNameSetup
         mapNameTemplate: '{0} Glacier Station {1}'
         nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: 'NY'
+          !type:SysConNameGenerator
+          stationType: S # for 'Station'
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/_DV/Shuttles/NTES_Vertex.yml
+        emergencyShuttlePath: /Maps/_DV/Shuttles/Evac/ntes_vertex.yml
       - type: StationPlanetSpawner
         planet: GlacierSurface
         gridPath: /Maps/_DV/Nonstations/glacier_surface_outpost.yml
       - type: StationJobs
         availableJobs:
           Captain: [ 1, 1 ]
-          AdministrativeAssistant: [ 1, 1 ]
           StationAi: [ 1, 1 ]
         #service
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 2, 2 ]
           Botanist: [ 2, 3 ]
-          Boxer: [ 1, 2 ]
+          #Boxer: [ 1, 2 ]
           Chef: [ 2, 3 ]
           Clown: [ 1, 2 ]
           Librarian: [ 1, 1 ]

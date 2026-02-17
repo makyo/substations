@@ -4,7 +4,7 @@ figurines-adminassistant-3 = Wait I have a job?
 figurines-adminassistant-4 = wait why do you want me to set it to code red again?
 
 figurines-cj-1 = Prisoners must be provided with food, water, clothing, free movement within the brig, adequate medical care, access to the Common and Prison radio channels, and moral, spiritual, or legal counseling if requested and available.
-figurines-cj-2 = Hos, demote the Warden.
+figurines-cj-2 = Hos, demote the Armorer.
 figurines-cj-3 = ORDER!!
 
 figurines-clerk-1 = HOLY $!?& A TRIAL!
@@ -23,8 +23,9 @@ figurines-mantis-2 = please stop using psionics...
 figurines-mantis-3 = I need to mindbreak the mime.
 figurines-mantis-4 = Pulse is useless.
 
+# L5 - warden to sec
 figurines-prisoner-1 = Plushies and weed please.
-figurines-prisoner-2 = Warden is abusing me!
+figurines-prisoner-2 = Sec is abusing me!
 figurines-prisoner-3 = Hissssss.
 
 figurines-prisonguard-1 = What do you mean I need to stay in Perma.
@@ -60,3 +61,12 @@ figurines-neuroticist-1 = Borgs shall control the station.
 figurines-neuroticist-2 = MUAHAHAHAHAHAHA.
 figurines-neuroticist-3 = I have come to make an announcement.
 figurines-neuroticist-4 = You work for me now.
+
+figurines-cosmiccultist-1 = This is the end.
+figurines-cosmiccultist-2 = It's lambda, not delta.
+figurines-cosmiccultist-3 = Nothing to see here.
+figurines-cosmiccultist-4 = I know, I'm simply breathtaking.
+figurines-cosmiccultist-5 = My cult so cosmic!
+figurines-cosmiccultist-6 = Wanna go stargazing?
+figurines-cosmiccultist-7 = No, I don't know where the rift went.
+figurines-cosmiccultist-8 = Join us. We've got lollipops.

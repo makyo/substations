@@ -148,7 +148,74 @@ MetempsychoticMachine: null
 MetempsychoticMachineCircuitboard: null
 
 # 2025-03-12
-SmartFridge: DVSmartFridgeMedical
+# L5
+#SmartFridge: DVSmartFridgeMedical
 
 # 2025-03-23
 DrinkDaiquiriGlass: DrinkDaiquiri
+
+# 2025-03-25
+# L5
+#Autolathe: MachineFrameDestroyed
+#AutolatheHyperConvection: MachineFrameDestroyed
+#Protolathe: MachineFrameDestroyed
+#ProtolatheHyperConvection: MachineFrameDestroyed
+#AutolatheMachineCircuitboard: null
+#AutolatheHyperConvectionMachineCircuitboard: null
+#ProtolatheMachineCircuitboard: null
+#ProtolatheHyperConvectionMachineCircuitboard: null
+
+# 2025-05-03
+SignCansScience: SignCans
+BorgModuleGrapplingGun: BorgModuleTraversal
+
+# 2025-05-21
+SpawnMobDrone: null
+SignBath: null
+# these were never ported
+SpawnMobReindeerBuck: null
+SpawnMobReindeerDoe: null
+
+# 2025-05-28
+# L5
+#SpawnPointAdminAssistant: null
+#LockerAdministrativeAssistantFilled: null
+#RubberStampAdminAssistant: null
+#ClothingHeadHatAdministrasive: ClothingHeadHatSecretary
+#ClothingUniformJumpsuitAdminAssistant: ClothingUniformJumpsuitSecretary
+#ClothingUniformJumpskirtAdminAssistant: ClothingUniformJumpskirtSecretary
+#ToyFigurineAdminAssistant: ToyFigurineSecretary
+
+# 2025-08-23
+CrateOilPack: null
+Oilpack: null
+Oilpack1: null
+
+# 2025-10-11
+ClosetWallOrangeFilled: ClosetWallWardrobePrisonFilled
+
+# 2025-11-13
+PaperWrittenSubscriptionNotice: PaperWrittenGorlexGirlfriendsSubscriptionNotice
+
+# 2025-11-19
+AirlockChapelStandardGlassLocked: AirlockChapelGlassLocked
+
+# 2025-12-10
+Musket: WeaponRifleMusket
+
+# 2025-11-22
+SoapBorg: SoapNT
+CableApcStackLingering10: CableApcStack
+
+# 2025-11-28
+HoloprojectorEngineeringEmpty: HoloprojectorEngineering
+
+# 2025-12-21
+DresserCaptainFilled: DresserCaptainFilledDV
+DresserChiefEngineerFilled: DresserChiefEngineerFilledDV
+DresserChiefMedicalOfficerFilled: DresserChiefMedicalOfficerFilledDV
+DresserHeadOfPersonnelFilled: DresserHeadOfPersonnelFilledDV
+DresserHeadOfSecurityFilled: DresserHeadOfSecurityFilledDV
+DresserQuarterMasterFilled: DresserQuarterMasterFilledDV
+DresserResearchDirectorFilled: DresserResearchDirectorFilledDV
+DresserWardenFilled: DresserWardenFilledDV

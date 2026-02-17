@@ -69,6 +69,13 @@
     ClothingUniformDressRed: 1
     ClothingHeadHatCake: 2
     ClothingUniformSchoolGakuranBlack: 2
+    ClothingUniformJumpskirtWaitstaffFormal: 2
+    ClothingUniformJumpsuitWaitstaffFormal: 2
+    ClothingUniformJumpsuitWorkvest: 2
+    ClothingOuterDusterCoat: 2
+    ClothingOuterCoatNavalCoat: 2
+    ClothingNeckCloakWitchCloak: 2
+    ClothingNeckCopperNecklace: 2
     UniformSchoolgirlBlack: 1
     UniformSchoolgirlBlue: 1
     UniformSchoolgirlCyan: 1
@@ -115,6 +122,19 @@
     ClothingHeadPropellerHat: 2
     ClothingUniformLittleGuyOveralls: 2
     ClothingOuterWinterLongMime: 1
+    # Festive
+    ClothingHeadHatRedRibbon: 2
+    ClothingHeadHatFestiveHatRed: 2
+    ClothingUniformJumpskirtFestiveDressRed: 2
+    ClothingHeadHatFestiveHatGreen: 2
+    ClothingHeadHatReindeer: 2
+    ClothingHeadHatCandyCane: 2
+    ClothingHeadHatStar: 2
+    ClothingHeadHatFestiveLights: 2
+    ClothingHeadHatElf: 4
+    ClothingUniformElf: 2
+    ClothingUniformJumpskirtElf: 2
+    ClothingShoesMiscElf: 4
     # End DeltaV Additions
     ClothingHeadHatCowboyBrown: 1
     ClothingHeadHatCowboyBlack: 1
@@ -133,7 +153,7 @@
     ClothingHeadHatRichard: 1
     ToyFigurineBoxer: 1
     ToyFigurineMusician: 1
-  emaggedInventory:
+    ClothingShoesClownMoffers: 1 # DeltaV
     ClothingShoesBling: 1
     ClothingShoesBootsCowboyFancy: 1
     ClothingOuterDogi: 1

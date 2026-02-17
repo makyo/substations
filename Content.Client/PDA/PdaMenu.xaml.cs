@@ -32,7 +32,10 @@ namespace Content.Client.PDA
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
-        
+        private string _currentDate = Loc.GetString("comp-pda-ui-unknown"); // DeltaV - PDA date
+        private string _contractName = Loc.GetString("comp-pda-ui-unknown"); // L5
+        private string _contractDesc = Loc.GetString("comp-pda-ui-unknown"); // L5
+
 
         private int _currentView;
 
@@ -117,7 +120,7 @@ namespace Content.Client.PDA
             StationTimeButton.OnPressed += _ =>
             {
                 var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
-                _clipboard.SetText((stationTime.ToString("hh\\:mm\\:ss")));
+                _clipboard.SetText((stationTime.ToString(@"d\.hh\:mm\:ss")));
             };
 
             StationAlertLevelInstructionsButton.OnPressed += _ =>
@@ -125,8 +128,24 @@ namespace Content.Client.PDA
                 _clipboard.SetText(_instructions);
             };
 
-            
+            // Begin DeltaV additions
+            CurrentDateButton.OnPressed += _ =>
+            {
+                _clipboard.SetText(_currentDate);
+            };
+            // End DeltaV additions
 
+            // Begin L5 additions
+            ContractNameButton.OnPressed += _ =>
+            {
+                _clipboard.SetText(_contractName);
+            };
+
+            ContractDescButton.OnPressed += _ =>
+            {
+                _clipboard.SetText(_contractDesc);
+            };
+            // End L5 additions
 
             HideAllViews();
             ToHomeScreen();
@@ -162,15 +181,29 @@ namespace Content.Client.PDA
                 IdInfoLabel.SetMarkup(Loc.GetString("comp-pda-ui-blank"));
             }
 
+            // L5 — contracts
+            _contractName = state.PdaOwnerInfo.ContractName != null
+                ? Loc.GetString(state.PdaOwnerInfo.ContractName)
+                : Loc.GetString("contract-unknown-name");
+            ContractNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-contract-name",
+                ("contractName", _contractName)));
+
+            _contractDesc = state.PdaOwnerInfo.ContractDesc != null
+                ? Loc.GetString(state.PdaOwnerInfo.ContractDesc)
+                :  Loc.GetString("contract-unknown-desc");
+            ContractDescLabel.SetMarkup(Loc.GetString("comp-pda-ui-contract-desc",
+                ("contractDesc", _contractDesc)));
+            // End L5 — contracts
+
             _stationName = state.StationName ?? Loc.GetString("comp-pda-ui-unknown");
             StationNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-station",
                 ("station", _stationName)));
-            
+
 
             var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
-                ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+                ("time", stationTime.ToString(@"d\.hh\:mm\:ss"))));
 
             var alertLevel = state.PdaOwnerInfo.StationAlertLevel;
             var alertColor = state.PdaOwnerInfo.StationAlertColor;
@@ -187,6 +220,14 @@ namespace Content.Client.PDA
                 "comp-pda-ui-station-alert-level-instructions",
                 ("instructions", _instructions))
             );
+            // Begin DeltaV additions
+            if (state.PdaOwnerInfo.CurrentDate is { } curDate)
+                _currentDate = curDate.ToString("dd MMMM yyyy");
+                CurrentDateLabel.SetMarkup(Loc.GetString(
+                    "comp-pda-ui-current-date",
+                    ("date", _currentDate)
+                ));
+            // End DeltaV additions
 
             AddressLabel.Text = state.Address?.ToUpper() ?? " - ";
 
@@ -344,7 +385,7 @@ namespace Content.Client.PDA
             var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
-                ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+                ("time", stationTime.ToString(@"d\.hh\:mm\:ss"))));
         }
     }
 }

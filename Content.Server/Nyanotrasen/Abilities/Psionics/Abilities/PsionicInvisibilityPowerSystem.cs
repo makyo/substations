@@ -1,7 +1,7 @@
 using Content.Shared.Actions;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Abilities.Psionics;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Stunnable;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
@@ -11,6 +11,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using Content.Server.Mind;
+using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
 using Robust.Shared.Audio.Systems;
 
@@ -42,9 +43,9 @@ namespace Content.Server.Abilities.Psionics
         private void OnInit(EntityUid uid, PsionicInvisibilityPowerComponent component, ComponentInit args)
         {
             _actions.AddAction(uid, ref component.PsionicInvisibilityActionEntity, component.PsionicInvisibilityActionId );
-            _actions.TryGetActionData( component.PsionicInvisibilityActionEntity, out var actionData );
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(component.PsionicInvisibilityActionEntity);
+
+            // L5 - modified for action ECS
+            _actions.StartUseDelay(component.PsionicInvisibilityActionEntity);
             if (TryComp<PsionicComponent>(uid, out var psionic) && psionic.PsionicAbility == null)
             {
                 psionic.PsionicAbility = component.PsionicInvisibilityActionEntity;
@@ -66,13 +67,13 @@ namespace Content.Server.Abilities.Psionics
             if (HasComp<PsionicInvisibilityUsedComponent>(uid))
                 return;
 
-            ToggleInvisibility(args.Performer);
-            var action = Spawn(PsionicInvisibilityUsedComponent.PsionicInvisibilityUsedActionPrototype);
-            _actions.AddAction(uid, action, action);
-            _actions.TryGetActionData( action, out var actionData );
-            if (actionData is { UseDelay: not null })
-                _actions.StartUseDelay(action);
-
+            // Begin L5 modifications - action ECS
+            var usedComp = AddComp<PsionicInvisibilityUsedComponent>(uid);
+            _actions.AddAction(uid,
+                ref usedComp.PsionicInvisibilityUsedActionEntity,
+                usedComp.PsionicInvisibilityUsedActionId);
+            _actions.StartUseDelay(usedComp.PsionicInvisibilityUsedActionEntity);
+            // End L5 modifications
             _psionics.LogPowerUsed(uid, "psionic invisibility");
             args.Handled = true;
         }
@@ -108,7 +109,8 @@ namespace Content.Server.Abilities.Psionics
             //Pretty sure this DOESN'T work as intended.
             _actions.RemoveAction(uid, component.PsionicInvisibilityUsedActionEntity);
 
-            _stunSystem.TryParalyze(uid, TimeSpan.FromSeconds(8), false);
+            // L5 - new stun system:
+            _stunSystem.TryAddParalyzeDuration(uid, TimeSpan.FromSeconds(8));
             DirtyEntity(uid);
         }
 

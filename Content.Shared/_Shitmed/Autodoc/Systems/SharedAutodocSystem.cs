@@ -28,10 +28,10 @@ public abstract class SharedAutodocSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly LabelSystem _label = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedLabelSystem _label = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedSurgerySystem _surgery = default!;
     [Dependency] private readonly SleepingSystem _sleeping = default!;
@@ -243,10 +243,8 @@ public abstract class SharedAutodocSystem : EntitySystem
 
     public EntityUid GetHeldOrThrow(Entity<AutodocComponent, HandsComponent> ent)
     {
-        if (!_hands.TryGetHand(ent, ent.Comp1.ItemSlot, out var hand, ent.Comp2))
-            throw new AutodocError("item-unavailable");
-
-        if (hand.HeldEntity is not {} item)
+        // L5 - hands system refactor
+        if (_hands.GetHeldItem((ent, ent.Comp2), ent.Comp1.ItemSlot) is not {} item)
             throw new AutodocError("item-unavailable");
 
         return item;

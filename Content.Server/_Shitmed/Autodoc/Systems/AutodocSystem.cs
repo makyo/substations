@@ -1,18 +1,19 @@
-using Content.Server.Body.Components;
-using Content.Server.Body.Systems;
 using Content.Server.Chat;
 using Content.Server.Chat.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared._Shitmed.Autodoc.Components;
 using Content.Shared._Shitmed.Autodoc.Systems;
+using Content.Shared.Chat;
 
 namespace Content.Server._Shitmed.Autodoc.Systems;
 
 public sealed class AutodocSystem : SharedAutodocSystem
 {
-    [Dependency] private readonly InternalsSystem _internals = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly SharedInternalsSystem _internals = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
 
     public override void Update(float frameTime)

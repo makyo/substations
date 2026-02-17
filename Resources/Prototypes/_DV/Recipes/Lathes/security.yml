@@ -88,7 +88,6 @@
   materials:
     Plastic: 1250
     Steel: 75
-    Bluespace: 75
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -97,8 +96,16 @@
   materials:
     Plastic: 300
     Steel: 200
-    Bluespace: 200
     Glass: 100
+
+# Tools
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: RadioHandheldSecurity
+  result: RadioHandheldSecurity
+  materials:
+    Plastic: 200
+    Steel: 200
 
 # Rubber ammo, removed from upstream
 
@@ -125,6 +132,22 @@
   materials:
     Steel: 25
     Plastic: 500
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolSubMachineGunRubber
+  result: MagazinePistolSubMachineGunRubber
+  materials:
+    Steel: 25
+    Plastic: 360
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolHighCapacityRubber
+  result: MagazinePistolHighCapacityRubber
+  materials:
+    Steel: 25
+    Plastic: 240
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -162,6 +185,40 @@
   materials:
     Plastic: 750
 
+
+# Machine pistol mags, aside from rubber
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolHighCapacity
+  result: MagazinePistolHighCapacity
+  materials:
+    Steel: 210
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolHighCapacityPractice
+  result: MagazinePistolHighCapacityPractice
+  materials:
+    Steel: 125
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolHighCapacityIncendiary
+  result: MagazinePistolHighCapacityIncendiary
+  materials:
+    Steel: 25
+    Plastic: 225
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolHighCapacityUranium
+  result: MagazinePistolHighCapacityUranium
+  materials:
+    Steel: 25
+    Plastic: 200
+    Uranium: 200
+
 # Armour vests
 
 - type: latheRecipe
@@ -179,6 +236,23 @@
   materials:
     Steel: 500
     Plastic: 1000
+
+- type: latheRecipe
+  id: ClothingOuterArmorDuraVestK9
+  result: ClothingOuterArmorDuraVestK9
+  completetime: 10
+  materials:
+    Steel: 500
+    Plastic: 1000
+
+- type: latheRecipe
+  id: ClothingOuterArmorReflective
+  result: ClothingOuterArmorReflective
+  completetime: 10
+  materials:
+    Steel: 500
+    Plastic: 1250
+    Glass: 250
 
 - type: latheRecipe
   id: ClothingHeadCage
@@ -204,6 +278,14 @@
     Steel: 300
     Glass: 100
     Plastic: 100
+
+- type: latheRecipe
+  id: ClothingBeltBandolier
+  result: ClothingBeltBandolier
+  completetime: 2
+  materials:
+    Steel: 300
+    Cloth: 200
 
 # Weapons
 
@@ -319,3 +401,46 @@
     Glass: 1000
     Gold: 500
     Plasma: 500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponSwordSilver
+  result: SilverSword
+  materials:
+    Silver: 1500
+    Gold: 500
+    Wood: 300
+
+# .40 Anti-materiel Ammo for the NT-3
+
+- type: latheRecipe
+  id: MagazineBoxLMGAntiMateriel
+  result: MagazineBoxLMGAntiMateriel
+  completetime: 4
+  materials:
+    Steel: 1000
+    Uranium: 250
+
+- type: latheRecipe
+  id: PyroLeftArm
+  result: PyroLeftArm
+  categories:
+  - Robotics
+  completetime: 5
+  materials:
+    Steel: 1500
+    Silver: 100
+    Plasma: 500
+    Bluespace: 300
+
+- type: latheRecipe
+  id: ZapLeftArm
+  result: ZapLeftArm
+  categories:
+  - Robotics
+  completetime: 5
+  materials:
+    Steel: 1500
+    Silver: 100
+    Plasma: 500
+    Bluespace: 300

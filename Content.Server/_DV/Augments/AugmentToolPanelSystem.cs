@@ -9,6 +9,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Containers;
+using Robust.Shared.Utility;
 
 namespace Content.Server._DV.Augments;
 
@@ -57,23 +58,28 @@ public sealed class AugmentToolPanelSystem : EntitySystem
                 _ => throw new InvalidOperationException(),
             };
 
-            var desiredHand = hands.Hands.Values.FirstOrDefault(hand => hand.Location == handLocation);
-            if (desiredHand == null)
+            // Begin L5 changes - hands system refactor
+            var maybeHandPair = hands.Hands
+                .FirstOrNull(hand => hand.Value.Location == handLocation);
+
+            if (maybeHandPair is not { Key: var desiredHandId })
                 continue;
 
+            var heldEntity = _hands.GetHeldItem((body, hands), desiredHandId);
+
             // if we have a tool that's currently out
-            if (HasComp<AugmentToolPanelActiveItemComponent>(desiredHand.HeldEntity))
+            if (HasComp<AugmentToolPanelActiveItemComponent>(heldEntity))
             {
                 // deposit it back into the storage
-                RemComp<AugmentToolPanelActiveItemComponent>(desiredHand.HeldEntity!.Value);
+                RemComp<AugmentToolPanelActiveItemComponent>(heldEntity.Value);
 
-                if (!_storage.PlayerInsertEntityInWorld(augment.Owner, body, desiredHand.HeldEntity!.Value))
+                if (!_storage.PlayerInsertEntityInWorld(augment.Owner, body, heldEntity.Value))
                 {
-                    EnsureComp<AugmentToolPanelActiveItemComponent>(desiredHand.HeldEntity!.Value);
+                    EnsureComp<AugmentToolPanelActiveItemComponent>(heldEntity.Value);
                     return;
                 }
             }
-            else if (desiredHand.HeldEntity is not null)
+            else if (heldEntity is not null)
             {
                 _popup.PopupCursor(Loc.GetString("augment-tool-panel-hand-full"), body);
                 return;
@@ -82,7 +88,8 @@ public sealed class AugmentToolPanelSystem : EntitySystem
             if (GetEntity(args.DesiredTool) is not {} desiredTool)
                 return;
 
-            if (!_hands.TryPickup(body, desiredTool, desiredHand))
+            if (!_hands.TryPickup(body, desiredTool, desiredHandId))
+                // End L5 changes
             {
                 _popup.PopupCursor(Loc.GetString("augment-tool-panel-cannot-pick-up"), body);
                 return;

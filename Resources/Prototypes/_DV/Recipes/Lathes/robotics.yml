@@ -19,13 +19,37 @@
   result: BorgModuleSecurityBastion
 
 - type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleSecurityDetective
+  result: BorgModuleSecurityDetective
+  materials:
+    Steel: 500
+    Glass: 500
+    Plastic: 250
+    Gold: 50
+
+- type: latheRecipe
   parent: BaseRoboticsRecipe
-  id: IdChipBasic
-  result: IdChipBasic
+  id: IdChipBorgAA
+  result: IdChipBorgAA
   materials:
     Steel: 300
     Glass: 600
     Silver: 200
+
+- type: latheRecipe
+  parent: BaseRoboticsRecipe
+  id: ClothingEyesHudDiagnostic
+  result: ClothingEyesHudDiagnostic
+  materials:
+    Steel: 200
+    Plastic: 100
+    Glass: 300
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleDecoration
+  result: BorgModuleDecoration
 
 # Robo Neuroling recipes
 
@@ -36,12 +60,12 @@
   - Robotics
   completetime: 10
   materials:
-    Steel: 1500
-    Glass: 3000
-    Plasteel: 1500
-    Gold: 1500
+    Steel: 1000
+    Glass: 1000
+    Gold: 500
+    Silver: 500
     Plastic: 1000
-    Uranium: 1000
+    Uranium: 500
     Plasma: 1000
 
 - type: latheRecipe
@@ -68,17 +92,6 @@
     Glass: 1000
     Plastic: 1000
     Silver: 500
-
-- type: latheRecipe
-  id: BorgModuleBlades
-  result: BorgModuleBlades
-  categories:
-  - Robotics
-  completetime: 5
-  materials:
-    Steel: 1500
-    Glass: 500
-    Plastic: 500
 
 - type: latheRecipe
   id: BorgModuleCHIMP
@@ -151,8 +164,33 @@
     Steel: 1200
     Glass: 1000
     Gold: 1000
-    Plastic: 2000
+    Plastic: 1000
     Uranium: 1000
+
+- type: latheRecipe
+  id: BorgModuleBuccaneer
+  result: BorgModuleBuccaneer
+  categories:
+  - Robotics
+  completetime: 10
+  materials:
+    Steel: 1200
+    Glass: 1000
+    Plastic: 1000
+    Silver: 200
+
+- type: latheRecipe
+  id: BorgModuleSleeper
+  result: BorgModuleSleeper
+  categories:
+  - Robotics
+  completetime: 10
+  materials:
+    Steel: 1200
+    Glass: 1000
+    Plastic: 1500
+    Silver: 300
+    Gold: 300
 
 - type: latheRecipe
   parent: BaseRoboticsRecipe
@@ -162,8 +200,8 @@
     Steel: 300
     Glass: 600
     Silver: 200
-    Gold: 200
-    Plasma: 100
+    Gold: 50
+    Plasma: 50
 
 - type: latheRecipe
   parent: IdChipSyndie
@@ -204,3 +242,49 @@
   parent: BaseBorgModuleRecipe
   id: AugmentPaperworkPanelElectronics
   result: AugmentPaperworkPanelElectronics
+
+- type: latheRecipe
+  parent: BaseIPCOrganRecipe
+  id: OrganIPCSpacePump
+  result: OrganIPCSpacePump
+  materials:
+    Steel: 2000
+    Plasma: 1000
+    Plastic: 1000
+    Gold: 500
+
+- type: latheRecipe
+  id: ForcewallLeftArm
+  result: ForcewallLeftArm
+  categories:
+  - Robotics
+  completetime: 5
+  materials:
+    Steel: 1500
+    Silver: 100
+    Plasma: 500
+    Bluespace: 300
+
+- type: latheRecipe
+  id: DispelLeftArm
+  result: DispelLeftArm
+  categories:
+  - Robotics
+  completetime: 5
+  materials:
+    Steel: 1500
+    Silver: 100
+    Plasma: 500
+    Bluespace: 300
+
+- type: latheRecipe
+  id: RecallLeftArm
+  result: RecallLeftArm
+  categories:
+  - Robotics
+  completetime: 5
+  materials:
+    Steel: 1500
+    Silver: 100
+    Plasma: 500
+    Bluespace: 300

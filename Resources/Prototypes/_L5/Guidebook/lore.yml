@@ -1,0 +1,24 @@
+- type: guideEntry
+  id: Lore
+  name: guide-entry-lore
+  priority: 1 # Right after server rules
+  text: "/ServerInfo/Guidebook/_L5/Lore/Basics.xml"
+  children:
+  - LoreTimeline
+  - LoreInfolife
+  - LoreOrganizations
+
+- type: guideEntry
+  id: LoreTimeline
+  name: guide-entry-lore-timeline
+  text: "/ServerInfo/Guidebook/_L5/Lore/Timeline.xml"
+
+- type: guideEntry
+  id: LoreInfolife
+  name: guide-entry-lore-infolife
+  text: "/ServerInfo/Guidebook/_L5/Lore/Infolife.xml"
+
+- type: guideEntry
+  id: LoreOrganizations
+  name: guide-entry-lore-organizations
+  text: "/ServerInfo/Guidebook/_L5/Lore/Organizations.xml"

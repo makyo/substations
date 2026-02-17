@@ -58,11 +58,17 @@
   name: clown duffel bag
   description: A large duffel bag for holding extra honk goods.
   components:
-    - type: Sprite
-      sprite: Clothing/Back/Duffels/clown.rsi
-    - type: Storage
-      storageOpenSound:
-        collection: BikeHorn
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/clown.rsi
+  - type: Storage
+    storageOpenSound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+    storageInsertSound:
+      collection: FootstepClown
+      params:
+        variation: 0.125
 
 - type: entity
   parent: [ClothingBackpackDuffel, BaseSecurityContraband]
@@ -115,12 +121,11 @@
   name: mime duffel bag
   description: A large duffel bag for holding... mime... stuff.
   components:
-    - type: Sprite
-      sprite: Clothing/Back/Duffels/mime.rsi
-      storageOpenSound:
-        collection: null
-      storageInsertSound:
-        collection: null
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/mime.rsi
+  - type: Storage
+    storageOpenSound: null
+    storageInsertSound: null
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -179,7 +184,7 @@
     - ClothingBackpackSatchelHolding
 
 - type: entity
-  parent: ClothingBackpackDuffelSyndicate
+  parent: [ ClothingBackpackDuffelSyndicate, BaseSyndicateContraband ]
   id: ClothingBackpackDuffelSyndicateBundle
   abstract: true
   components:
@@ -187,9 +192,16 @@
       tags: [] # ignore "WhitelistChameleon" tag
 
 - type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelBundle
+  abstract: true
+  components:
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+
+- type: entity
   parent: ClothingBackpackDuffelSyndicate
   id: ClothingBackpackDuffelSyndicateAmmo
-  name: syndicate duffel bag
   components:
     - type: Sprite
       sprite: Clothing/Back/Duffels/syndicate.rsi
@@ -210,7 +222,6 @@
 - type: entity
   parent: ClothingBackpackDuffelSyndicate
   id: ClothingBackpackDuffelSyndicateMedical
-  name: syndicate duffel bag
   components:
     - type: Sprite
       sprite: Clothing/Back/Duffels/syndicate.rsi

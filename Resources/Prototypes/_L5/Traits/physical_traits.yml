@@ -1,0 +1,46 @@
+# Nnrgh I hate how the internal category ID is "Disabilities" but that's how
+# it's specified by upstream. User-facing label we changed but still it irks
+# me. At least I get to rename this file. —Perry
+
+- type: trait
+  id: LowMobility
+  abstract: true # New Impaired Mobility trait from upstream supplants this.
+  name: trait-lowmobility-name
+  description: trait-lowmobility-desc
+  traitGear: BaseWheelchair
+  category: Disabilities
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: LowMobility
+
+- type: trait
+  id: HardOfHearing
+  name: trait-hard-of-hearing-name
+  description: trait-hard-of-hearing-desc
+  category: Disabilities
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: HardOfHearing
+
+- type: trait
+  id: ProfoundlyDeaf
+  name: trait-profoundly-deaf-name
+  description: trait-profoundly-deaf-desc
+  category: Disabilities
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: HardOfHearing
+      profoundlyDeaf: true
+
+- type: trait
+  id: MessyDrinker
+  name: trait-messy-drinker-name
+  description: trait-messy-drinker-desc
+  category: Disabilities # Yes, this is not a disability, but via l10n, we've renamed disabilities to physical traits
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessyDrinker
