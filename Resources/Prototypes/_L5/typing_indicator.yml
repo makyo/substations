@@ -1,0 +1,6 @@
+- type: typingIndicator
+  id: sign
+  spritePath: /Textures/_L5/Effects/sign_lang.rsi
+  typingState: default0
+  idleState: default0
+  offset: -0.1, 0.2 # 0625
