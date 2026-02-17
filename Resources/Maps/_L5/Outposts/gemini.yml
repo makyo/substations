@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/17/2026 03:55:11
-  entityCount: 6520
+  time: 02/17/2026 04:38:57
+  entityCount: 6523
 maps:
 - 1
 grids:
@@ -31043,8 +31043,6 @@ entities:
       pos: -42.5,-50.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 4
     - type: AtmosPipeLayers
@@ -33170,8 +33168,6 @@ entities:
       pos: -42.5,-50.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 5916
     components:
     - type: Transform
@@ -34326,8 +34322,6 @@ entities:
       pos: -45.5,-50.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: DeviceLinkSource
       linkedPorts:
         5915:
@@ -35189,6 +35183,24 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -38.5,4.5
+      parent: 2
+  - uid: 6521
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -38.5,-29.5
+      parent: 2
+  - uid: 6522
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -38.5,-19.5
+      parent: 2
+  - uid: 6523
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -38.5,-9.5
       parent: 2
 - proto: SurveillanceCameraRouterBladeServerGeneral
   entities:

@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/17/2026 04:02:45
-  entityCount: 458
+  time: 02/17/2026 04:37:59
+  entityCount: 459
 maps:
 - 1
 grids:
@@ -1014,6 +1014,8 @@ entities:
     - type: Transform
       pos: -2.5,4.5
       parent: 2
+    - type: FaxMachine
+      name: SCCS Nucleus
 - proto: FireAlarm
   entities:
   - uid: 135
@@ -2656,6 +2658,13 @@ entities:
     components:
     - type: Transform
       pos: 2.5,-0.5
+      parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 459
+    components:
+    - type: Transform
+      pos: -0.5,-1.5
       parent: 2
 - proto: SpawnPointLawyer
   entities:
