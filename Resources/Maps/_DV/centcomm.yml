@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/17/2026 03:54:00
-  entityCount: 7240
-maps:
-- 6630
+  time: 02/17/2026 08:35:42
+  entityCount: 7239
+maps: []
 grids:
 - 1668
-orphans: []
+orphans:
+- 1668
 nullspace: []
 tilemap:
   0: Space
@@ -44,7 +44,7 @@ entities:
     - type: MetaData
       name: Central Administrator
     - type: Transform
-      parent: 6630
+      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:
@@ -2825,16 +2825,6 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
-  - uid: 6630
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: OccluderTree
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 1455

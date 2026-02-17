@@ -18,7 +18,7 @@
           Captain: [ 1, 1 ]
           PrincipalArchitect: [ 1, 1 ]
           AdministrativeAssistant: [ 0, -1 ]
-          StationAi: [ 1, 1 ]
+          #StationAi: [ 1, 1 ] # This is now to be built by the crew
           #service
           HeadOfPersonnel: [ 1, -1 ]
           Bartender: [ 0, -1 ]
