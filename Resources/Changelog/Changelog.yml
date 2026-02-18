@@ -1,33 +1,4 @@
 ﻿Entries:
-- author: SignalSender
-  changes:
-  - message: Musicians now have a Stage Name
-    type: Tweak
-  id: 9020
-  time: '2025-10-01T11:46:34.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/40640
-- author: Velcroboy
-  changes:
-  - message: Shutters, blast doors, and lights can now be linked using the "Link Defaults"
-      button.
-    type: Tweak
-  id: 9021
-  time: '2025-10-01T20:22:50.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37690
-- author: YoungThugSS14
-  changes:
-  - message: The Prisoner Eva Suit now has the same stats as an emergency eva suit.
-    type: Tweak
-  id: 9022
-  time: '2025-10-01T20:23:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36696
-- author: K-Dynamic
-  changes:
-  - message: Puddles now spill over at 50u instead of 20u.
-    type: Add
-  id: 9023
-  time: '2025-10-01T20:28:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38044
 - author: Mixelz
   changes:
   - message: Circuit Totes, a new type of box to compactly carry conspicous chunks
@@ -3703,13 +3674,6 @@
   id: 9487
   time: '2026-02-03T20:12:55.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/42764
-- author: Admiral-Obvious-001
-  changes:
-  - message: EXPERIMENTAL Removed blunt and burn based gibbing.
-    type: Remove
-  id: 9488
-  time: '2026-02-04T04:49:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42474
 - author: veprolet
   changes:
   - message: Volumetric devices now respect their pressure limits more.
@@ -3993,3 +3957,41 @@
   id: 9526
   time: '2026-02-15T11:16:02.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/42927
+- author: ScarKy0
+  changes:
+  - message: Drinking blood as non-animal species makes you sick again.
+    type: Fix
+  - message: Injecting someone else's blood is now slightly poisonous.
+    type: Add
+  id: 9527
+  time: '2026-02-16T17:25:45.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42942
+- author: Synthestra
+  changes:
+  - message: Thieves' "Steal the HUDs" objective can now be completed with the thieving
+      beacon
+    type: Fix
+  id: 9528
+  time: '2026-02-16T20:43:08.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42945
+- author: Steel
+  changes:
+  - message: Jetpacks now turn off when another jetpack is activated.
+    type: Fix
+  id: 9529
+  time: '2026-02-16T22:03:05.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42689
+- author: nekokiwa
+  changes:
+  - message: Barber Scissors no longer misgender the target when blocked by a hat.
+    type: Fix
+  id: 9530
+  time: '2026-02-16T23:03:26.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42948
+- author: Pgriha
+  changes:
+  - message: Added new emote for moths. They can flaps their wings!
+    type: Add
+  id: 9531
+  time: '2026-02-18T00:04:52.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/42912
