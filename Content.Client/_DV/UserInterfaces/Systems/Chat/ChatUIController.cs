@@ -20,6 +20,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
     private static readonly ProtoId<TypingIndicatorPrototype> EmoteID = "emote";
     private static readonly ProtoId<TypingIndicatorPrototype> OocID = "ooc";
     private static readonly ProtoId<TypingIndicatorPrototype> RadioID = "radio";
+    private static readonly ProtoId<TypingIndicatorPrototype> SignID = "sign";
 
     /// <summary>
     ///     Gets Invoked whenever the autofilled highlights have changed.
@@ -129,6 +130,10 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
             case ChatSelectChannel.Emotes:
                 _typingIndicator?.ClientAlternateTyping(EmoteID);
+                break;
+
+            case ChatSelectChannel.Sign: // L5
+                _typingIndicator?.ClientAlternateTyping(SignID);
                 break;
 
             case ChatSelectChannel.LOOC:
