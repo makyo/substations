@@ -1169,3 +1169,9 @@ Entries:
       message: Small updates to outpost maps
   id: 164
   time: '2026-02-17T09:08:53.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: There's now a separate typing indicator for sign language.
+  id: 165
+  time: '2026-02-18T06:23:13.0000000+00:00'
