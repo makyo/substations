@@ -1,0 +1,9 @@
+- type: soundCollection
+  id: VulpkaninGekker
+  files:
+  - /Audio/_Floof/Voice/Vulpkanin/gekker.ogg
+
+- type: soundCollection
+  id: VulpkaninYap
+  files:
+  - /Audio/_Floof/Voice/Vulpkanin/yap.ogg
