@@ -1,232 +1,203 @@
+- type: latheRecipe
+  id: BaseDocumentL5
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+  completetime: 2
+
 # Letterhead
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterhead
   result: PrintedDocumentSCLetterhead
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterheadMedical
   result: PrintedDocumentSCLetterheadMedical
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterheadSecurity
   result: PrintedDocumentSCLetterheadSecurity
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterheadScience
   result: PrintedDocumentSCLetterheadScience
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterheadLogistics
   result: PrintedDocumentSCLetterheadLogistics
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterheadEngi
   result: PrintedDocumentSCLetterheadEngi
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterheadService
   result: PrintedDocumentSCLetterheadService
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterheadJustice
   result: PrintedDocumentSCLetterheadJustice
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCLetterheadLeadership
   result: PrintedDocumentSCLetterheadLeadership
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadCentral
+  result: PrintedDocumentSCLetterheadCentral
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentUNLetterhead
   result: PrintedDocumentUNLetterhead
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentUNFormalCommunique
   result: PrintedDocumentUNFormalCommunique
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentCNZLetterhead
   result: PrintedDocumentCNZLetterhead
   categories:
   - DocumentsLetterhead
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 # Medical
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCMedicalPrescription
   result: PrintedDocumentSCMedicalPrescription
   categories:
   - DocumentsMedical
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCMedicalDirective
   result: PrintedDocumentSCMedicalDirective
   categories:
   - DocumentsMedical
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCSurgeryRequest
   result: PrintedDocumentSCSurgeryRequest
   categories:
   - DocumentsMedical
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCMedicalBayGuide
   result: PrintedDocumentSCMedicalBayGuide
   categories:
   - DocumentsMedical
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 # Security
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCArmoryInventory
   result: PrintedDocumentSCArmoryInventory
   categories:
   - DocumentsSecurity
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCWeaponsPermit
   result: PrintedDocumentSCWeaponsPermit
   categories:
   - DocumentsSecurity
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 # Justice
 
 - type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCAffidavit
+  result: PrintedDocumentSCAffidavit
+  categories:
+  - DocumentsJustice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCArrestWarrant
   result: PrintedDocumentSCArrestWarrant
   categories:
   - DocumentsJustice
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCComplaint
   result: PrintedDocumentSCComplaint
   categories:
   - DocumentsJustice
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCCourtOrder
   result: PrintedDocumentSCCourtOrder
   categories:
   - DocumentsJustice
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCHearingDecision
   result: PrintedDocumentSCHearingDecision
   categories:
   - DocumentsJustice
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCIndictment
   result: PrintedDocumentSCIndictment
   categories:
   - DocumentsJustice
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCParoleDecision
   result: PrintedDocumentSCParoleDecision
   categories:
   - DocumentsJustice
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
 
 - type: latheRecipe
+  parent: BaseDocumentL5
   id: PrintedDocumentSCSearchWarrant
   result: PrintedDocumentSCSearchWarrant
   categories:
   - DocumentsJustice
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
