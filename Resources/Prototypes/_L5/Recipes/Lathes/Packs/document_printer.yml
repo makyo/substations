@@ -15,6 +15,7 @@
   - PrintedDocumentSCSurgeryRequest
   - PrintedDocumentSCArmoryInventory
   - PrintedDocumentSCWeaponsPermit
+  - PrintedDocumentSCAffidavit
   - PrintedDocumentSCArrestWarrant
   - PrintedDocumentSCComplaint
   - PrintedDocumentSCCourtOrder
@@ -26,6 +27,7 @@
 - type: latheRecipePack
   id: DocumentPrinterStaticEmagL5
   recipes:
+  - PrintedDocumentSCLetterheadCentral
   - PrintedDocumentUNLetterhead
   - PrintedDocumentUNFormalCommunique
   - PrintedDocumentCNZLetterhead

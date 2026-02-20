@@ -33,6 +33,14 @@
 
 - type: entity
   parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadCentral
+  name: Central Administration letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-central-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
   id: PrintedDocumentSCLetterheadMedical
   name: medical department letterhead
   components:
@@ -148,6 +156,14 @@
     content: doc-text-printer-sc-sec-weapons-permit
 
 ## Justice documents
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCAffidavit
+  name: affidavit
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-affidavit
 
 - type: entity
   parent: PrintedDocumentSC

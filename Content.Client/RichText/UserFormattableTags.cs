@@ -16,7 +16,7 @@ public static class UserFormattableTags
     [
         typeof(BoldItalicTag),
         typeof(BoldTag),
-        typeof(BulletTag),
+        typeof(_L5.UserInterface.RichText.L5BulletTag), // L5 — use our bullet tag
         typeof(ColorTag),
         typeof(HeadingTag),
         typeof(ItalicTag),

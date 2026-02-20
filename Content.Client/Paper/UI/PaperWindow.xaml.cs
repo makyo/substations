@@ -50,7 +50,7 @@ namespace Content.Client.Paper.UI
         [
             typeof(BoldItalicTag),
             typeof(BoldTag),
-            typeof(BulletTag),
+            typeof(L5BulletTag), // L5 — use our bullet tag
             typeof(ColorTag),
             typeof(HeadingTag),
             typeof(ItalicTag),
