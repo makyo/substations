@@ -6,12 +6,12 @@
   components:
   - type: Tag
     tags:
-      - MagazinePistol
+    - MagazinePistol
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+      - CartridgePistol
     capacity: 10
   - type: Item
     size: Small
@@ -39,12 +39,12 @@
   components:
   - type: Tag
     tags:
-      - MagazinePistolHighCapacity
+    - MagazinePistolHighCapacity
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+      - CartridgePistol
     capacity: 15
   - type: Item
     size: Small
@@ -72,12 +72,12 @@
   components:
   - type: Tag
     tags:
-      - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgePistol
+      - CartridgePistol
     capacity: 30
   - type: Item
     size: Small
@@ -108,7 +108,7 @@
     storedRotation: 90
   - type: Tag
     tags:
-      - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
   - type: BallisticAmmoProvider
     mayTransfer: true
     proto: CartridgePistol
@@ -118,11 +118,11 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag_top_mounted.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-unshaded-1
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: MagazineVisuals
     magState: mag
     steps: 6
@@ -338,19 +338,20 @@
       - state: inhand-right-stripe
         color: "#dbdbdb"
 
-- type: entity
-  id: MagazinePistolHighCapacityRubber
-  name: machine pistol magazine (.35 auto rubber)
-  parent: BaseMagazinePistolHighCapacity
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgePistolRubber # DeltaV: upstream still has this for some reason but not using rubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
+# DeltaV
+#- type: entity
+#  id: MagazinePistolHighCapacityRubber
+#  name: machine pistol magazine (.35 auto rubber)
+#  parent: BaseMagazinePistolHighCapacity
+#  components:
+#  - type: BallisticAmmoProvider
+#    proto: CartridgePistolRubber # DeltaV: upstream still has this for some reason but not using rubber
+#  - type: Sprite
+#    layers:
+#    - state: rubber
+#      map: ["enum.GunVisualLayers.Base"]
+#    - state: mag-1
+#      map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
   parent: BaseMagazinePistolSubMachineGun

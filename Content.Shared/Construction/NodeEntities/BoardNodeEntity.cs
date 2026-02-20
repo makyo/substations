@@ -1,3 +1,5 @@
+using Content.Shared._Moffstation.BladeServer;
+using Content.Shared._NF.Construction.Components; // Moffstation
 using Content.Shared.Construction.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
@@ -15,6 +17,9 @@ public sealed partial class BoardNodeEntity : IGraphNodeEntity
     [DataField]
     public string Container { get; private set; } = string.Empty;
 
+    [DataField]
+    public ComputerType Computer { get; private set; } = ComputerType.Default; // Frontier
+
     public string? GetId(EntityUid? uid, EntityUid? userUid, GraphNodeEntityArgs args)
     {
         if (uid == null)
@@ -28,6 +33,30 @@ public sealed partial class BoardNodeEntity : IGraphNodeEntity
 
         var board = container.ContainedEntities[0];
 
+        // Moffstation - Begin - Blade Server construction
+        // Check if the construction is a Blade Server Frame first so that we don't accidentally return machine frame info.
+        if (args.EntityManager.HasComponent<BladeServerFrameComponent>(uid) &&
+            args.EntityManager.TryGetComponent<BladeServerBoardComponent>(board, out var bladeServer ))
+            return bladeServer.Prototype;
+        // Moffstation - End
+
+        // Frontier - alternative computer variants
+        switch (Computer)
+        {
+            case ComputerType.Tabletop:
+                if (args.EntityManager.TryGetComponent(board, out ComputerTabletopBoardComponent? tabletopComputer))
+                    return tabletopComputer.Prototype;
+                break;
+            case ComputerType.Wallmount:
+                if (args.EntityManager.TryGetComponent(board, out ComputerWallmountBoardComponent? wallmountComputer))
+                    return wallmountComputer.Prototype;
+                break;
+            case ComputerType.Default:
+            default:
+                break;
+        }
+        // End Frontier
+
         // There should not be a case where more than one of these components exist on the same entity
         if (args.EntityManager.TryGetComponent(board, out MachineBoardComponent? machine))
             return machine.Prototype;
@@ -40,4 +69,13 @@ public sealed partial class BoardNodeEntity : IGraphNodeEntity
 
         return null;
     }
+
+    // Frontier: support for multiple computer types
+    public enum ComputerType : byte
+    {
+        Default, // Default machines
+        Tabletop,
+        Wallmount
+    }
+    // End Frontier
 }

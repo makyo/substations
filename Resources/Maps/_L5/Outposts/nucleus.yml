@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 271.1.0
+  engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/29/2026 05:10:07
-  entityCount: 448
+  time: 02/17/2026 04:37:59
+  entityCount: 459
 maps:
 - 1
 grids:
@@ -336,6 +336,39 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,0.5
       parent: 2
+- proto: BladeServerRack
+  entities:
+  - uid: 130
+    components:
+    - type: Transform
+      pos: 2.5,6.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        blade-server-rack-slot-0: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 234
+        blade-server-rack-slot-1: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 252
+        blade-server-rack-slot-2: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: 257
+        blade-server-rack-slot-3: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: BlastDoor
   entities:
   - uid: 443
@@ -777,6 +810,13 @@ entities:
     - type: Transform
       pos: -3.5,2.5
       parent: 2
+- proto: ChemistryHotplate
+  entities:
+  - uid: 276
+    components:
+    - type: Transform
+      pos: -1.5,2.5
+      parent: 2
 - proto: ChemMaster
   entities:
   - uid: 114
@@ -833,56 +873,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,-4.5
       parent: 2
-- proto: ComputerCargoOrders
-  entities:
-  - uid: 121
-    components:
-    - type: Transform
-      pos: -1.5,6.5
-      parent: 2
-- proto: ComputerComms
-  entities:
-  - uid: 122
-    components:
-    - type: Transform
-      pos: 0.5,6.5
-      parent: 2
-- proto: ComputerCrewMonitoring
-  entities:
-  - uid: 123
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,5.5
-      parent: 2
-- proto: ComputerId
-  entities:
-  - uid: 124
-    components:
-    - type: Transform
-      pos: 1.5,6.5
-      parent: 2
 - proto: ComputerPowerMonitoring
   entities:
   - uid: 125
     components:
     - type: Transform
       pos: -0.5,-4.5
-      parent: 2
-- proto: ComputerResearchAndDevelopment
-  entities:
-  - uid: 126
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,4.5
-      parent: 2
-- proto: ComputerShuttle
-  entities:
-  - uid: 127
-    components:
-    - type: Transform
-      pos: -0.5,6.5
       parent: 2
 - proto: ComputerShuttleCargo
   entities:
@@ -891,6 +887,64 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,-0.5
+      parent: 2
+- proto: ComputerTabletopCargoOrders
+  entities:
+  - uid: 451
+    components:
+    - type: Transform
+      pos: -1.5,6.5
+      parent: 2
+- proto: ComputerTabletopComms
+  entities:
+  - uid: 453
+    components:
+    - type: Transform
+      pos: 0.5,6.5
+      parent: 2
+- proto: ComputerTabletopId
+  entities:
+  - uid: 454
+    components:
+    - type: Transform
+      pos: 1.5,6.5
+      parent: 2
+- proto: ComputerTabletopResearchAndDevelopment
+  entities:
+  - uid: 456
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,5.5
+      parent: 2
+    - type: TechnologyDatabase
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
+      - Biochemical
+- proto: ComputerTabletopShuttle
+  entities:
+  - uid: 452
+    components:
+    - type: Transform
+      pos: -0.5,6.5
+      parent: 2
+- proto: ComputerWallmountCrewMonitoring
+  entities:
+  - uid: 258
+    components:
+    - type: Transform
+      pos: 2.5,3.5
+      parent: 2
+- proto: ComputerWallmountRadar
+  entities:
+  - uid: 449
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,4.5
       parent: 2
 - proto: CrateMaterialPlasteel
   entities:
@@ -907,13 +961,21 @@ entities:
         moles:
           Oxygen: 1.7459903
           Nitrogen: 6.568249
-- proto: CrewMonitoringServer
+- proto: CrateStationAiCore
   entities:
-  - uid: 130
+  - uid: 458
     components:
     - type: Transform
-      pos: -2.5,6.5
+      pos: -4.5,-6.5
       parent: 2
+- proto: CrewMonitoringBladeServer
+  entities:
+  - uid: 234
+    components:
+    - type: Transform
+      parent: 130
+    - type: Physics
+      canCollide: False
 - proto: CryogenicSleepUnitSpawnerLateJoin
   entities:
   - uid: 131
@@ -945,6 +1007,15 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: FaxMachineBase
+  entities:
+  - uid: 455
+    components:
+    - type: Transform
+      pos: -2.5,4.5
+      parent: 2
+    - type: FaxMachine
+      name: SCCS Nucleus
 - proto: FireAlarm
   entities:
   - uid: 135
@@ -1706,14 +1777,6 @@ entities:
     - type: Transform
       pos: 0.5,-0.5
       parent: 2
-- proto: Intellicard
-  entities:
-  - uid: 234
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -4.4956403,-6.2317233
-      parent: 2
 - proto: JanitorialTrolley
   entities:
   - uid: 38
@@ -2019,13 +2082,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: MedTekCartridge
-  entities:
-  - uid: 252
-    components:
-    - type: Transform
-      pos: -1.425445,2.4967933
-      parent: 2
 - proto: MiningVoucher
   entities:
   - uid: 253
@@ -2060,22 +2116,20 @@ entities:
       parent: 2
     - type: Physics
       bodyType: Static
+- proto: PaperBin20SC
+  entities:
+  - uid: 450
+    components:
+    - type: Transform
+      pos: -2.5,6.5
+      parent: 2
 - proto: PhoneInstrument
   entities:
-  - uid: 257
+  - uid: 300
     components:
     - type: Transform
-      pos: -2.5065641,4.630128
+      pos: -2.4988306,6.1681337
       parent: 2
-- proto: PlayerStationAi
-  entities:
-  - uid: 258
-    components:
-    - type: Transform
-      pos: -3.5,-6.5
-      parent: 2
-    - type: Battery
-      lastCharge: 300000
 - proto: PowerCellMedium
   entities:
   - uid: 37
@@ -2195,13 +2249,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,-2.5
       parent: 2
-- proto: ResearchAndDevelopmentServer
+- proto: ResearchAndDevelopmentBladeServer
   entities:
-  - uid: 276
+  - uid: 252
     components:
     - type: Transform
-      pos: 2.5,6.5
-      parent: 2
+      parent: 130
+    - type: Physics
+      canCollide: False
 - proto: SalvageMagnet
   entities:
   - uid: 277
@@ -2209,6 +2264,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -4.5,4.5
+      parent: 2
+- proto: SecureCabinetCommand
+  entities:
+  - uid: 126
+    components:
+    - type: Transform
+      pos: -1.5,4.5
       parent: 2
 - proto: SheetGlass
   entities:
@@ -2428,11 +2490,11 @@ entities:
       lastCharge: 8000000
 - proto: SpareIdCabinetFilled
   entities:
-  - uid: 300
+  - uid: 457
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,4.5
+      rot: 3.141592653589793 rad
+      pos: -2.5,3.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -2596,6 +2658,13 @@ entities:
     components:
     - type: Transform
       pos: 2.5,-0.5
+      parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 459
+    components:
+    - type: Transform
+      pos: -0.5,-1.5
       parent: 2
 - proto: SpawnPointLawyer
   entities:
@@ -2914,13 +2983,14 @@ entities:
       - SurveillanceCameraGeneral
       nameSet: True
       id: Starboard Fore
-- proto: SurveillanceCameraRouterGeneral
+- proto: SurveillanceCameraRouterBladeServerGeneral
   entities:
-  - uid: 361
+  - uid: 257
     components:
     - type: Transform
-      pos: -4.5,-6.5
-      parent: 2
+      parent: 130
+    - type: Physics
+      canCollide: False
 - proto: Table
   entities:
   - uid: 362
@@ -2931,6 +3001,36 @@ entities:
       parent: 2
 - proto: TableReinforced
   entities:
+  - uid: 121
+    components:
+    - type: Transform
+      pos: 1.5,6.5
+      parent: 2
+  - uid: 122
+    components:
+    - type: Transform
+      pos: -0.5,6.5
+      parent: 2
+  - uid: 123
+    components:
+    - type: Transform
+      pos: -2.5,5.5
+      parent: 2
+  - uid: 124
+    components:
+    - type: Transform
+      pos: -1.5,6.5
+      parent: 2
+  - uid: 127
+    components:
+    - type: Transform
+      pos: 0.5,6.5
+      parent: 2
+  - uid: 361
+    components:
+    - type: Transform
+      pos: -2.5,6.5
+      parent: 2
   - uid: 363
     components:
     - type: Transform

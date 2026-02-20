@@ -26,7 +26,7 @@ public sealed partial class EncryptionKeyHolderComponent : Component
     ///     The tool required to extract the encryption keys from the headset.
     /// </summary>
     [DataField]
-    public ProtoId<ToolQualityPrototype> KeysExtractionMethod = "Screwing";
+    public ProtoId<ToolQualityPrototype>? KeysExtractionMethod = "Screwing"; // Frontier: nullable
 
     [DataField]
     public int KeySlots = 2;

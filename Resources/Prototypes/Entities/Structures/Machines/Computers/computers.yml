@@ -176,6 +176,26 @@
       state: generic_panel_open
   - type: Computer
     board: ShuttleConsoleCircuitboard
+  # Frontier: shuttle intercom
+  - type: UserInterface
+    interfaces:
+      enum.ShuttleConsoleUiKey.Key:
+        type: ShuttleConsoleBoundUserInterface
+      enum.IntercomUiKey.Key:
+        type: IntercomBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+        ents: []
+      disk_slot: !type:ContainerSlot {}
+      key_slots: !type:Container
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyTraffic
+  # End Frontier
 
 - type: entity
   parent: BaseComputerShuttle

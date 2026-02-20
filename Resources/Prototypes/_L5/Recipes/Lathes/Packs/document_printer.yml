@@ -1,0 +1,33 @@
+- type: latheRecipePack
+  id: DocumentPrinterStaticL5
+  recipes:
+  - PrintedDocumentSCLetterhead
+  - PrintedDocumentSCLetterheadMedical
+  - PrintedDocumentSCLetterheadSecurity
+  - PrintedDocumentSCLetterheadScience
+  - PrintedDocumentSCLetterheadLogistics
+  - PrintedDocumentSCLetterheadEngi
+  - PrintedDocumentSCLetterheadService
+  - PrintedDocumentSCLetterheadJustice
+  - PrintedDocumentSCLetterheadLeadership
+  - PrintedDocumentSCMedicalPrescription
+  - PrintedDocumentSCMedicalDirective
+  - PrintedDocumentSCSurgeryRequest
+  - PrintedDocumentSCArmoryInventory
+  - PrintedDocumentSCWeaponsPermit
+  - PrintedDocumentSCAffidavit
+  - PrintedDocumentSCArrestWarrant
+  - PrintedDocumentSCComplaint
+  - PrintedDocumentSCCourtOrder
+  - PrintedDocumentSCHearingDecision
+  - PrintedDocumentSCIndictment
+  - PrintedDocumentSCParoleDecision
+  - PrintedDocumentSCSearchWarrant
+
+- type: latheRecipePack
+  id: DocumentPrinterStaticEmagL5
+  recipes:
+  - PrintedDocumentSCLetterheadCentral
+  - PrintedDocumentUNLetterhead
+  - PrintedDocumentUNFormalCommunique
+  - PrintedDocumentCNZLetterhead

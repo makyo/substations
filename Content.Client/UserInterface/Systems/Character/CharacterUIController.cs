@@ -55,6 +55,8 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
         _window.OnClose += DeactivateButton;
         _window.OnOpen += ActivateButton;
+        _window.DetailExaminableTextEdit.OnTextChanged += OnDetailExaminableChanged; // L5
+        _window.DetailExaminableSubmitButton.OnPressed += OnDetailExaminableSubmit; // Persistence
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenCharacterMenu,
@@ -66,6 +68,10 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     {
         if (_window != null)
         {
+            _window.OnClose -= DeactivateButton;
+            _window.OnOpen -= ActivateButton;
+            _window.DetailExaminableTextEdit.OnTextChanged -= OnDetailExaminableChanged; // L5
+            _window.DetailExaminableSubmitButton.OnPressed -= OnDetailExaminableSubmit; // Persistence
             _window.Close();
             _window = null;
         }
@@ -113,6 +119,9 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         }
 
         CharacterButton.Pressed = false;
+
+        // L5 — also deactivate changed button.
+        _window?.DetailExaminableSubmitButton.Disabled = true;
     }
 
     private void ActivateButton()
@@ -132,7 +141,8 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName) = data;
+        // Persistence: detail examinable editing
+        var (entity, job, objectives, briefing, detailExaminable, entityName) = data;
 
         _window.SpriteView.SetEntity(entity);
 
@@ -142,6 +152,12 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.SubText.Text = job;
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
+
+        // Persistence: detail examinable editing
+        if (detailExaminable != null)
+        {
+            _window.DetailExaminableTextEdit.TextRope = new Rope.Leaf(detailExaminable);
+        }
 
         foreach (var (groupId, conditions) in objectives)
         {
@@ -211,7 +227,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             _window.Objectives.AddChild(control);
         }
 
-        _window.RolePlaceholder.Visible = briefing == null && !controls.Any() && !objectives.Any();
+        _window.RolePlaceholder.Visible = false;  // Persistence: briefing == null && !controls.Any() && !objectives.Any(); < false;
     }
 
     private void OnRoleTypeChanged(MindRoleTypeChangedEvent ev, EntitySessionEventArgs _)
@@ -269,5 +285,25 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             _characterInfo.RequestCharacterInfo();
             _window.Open();
         }
+    }
+
+    // Persistence: update examine text in-game
+    private void OnDetailExaminableSubmit(ButtonEventArgs args)
+    {
+        if (_window == null)
+            return;
+
+        var text = Rope.Collapse(_window.DetailExaminableTextEdit.TextRope).Trim();
+        _window.DetailExaminableSubmitButton.Disabled = true; // L5
+        _characterInfo.UpdateDetailExaminable(text);
+    }
+
+    // L5: only enable update button when text changed
+    private void OnDetailExaminableChanged(TextEdit.TextEditEventArgs args)
+    {
+        if (_window == null)
+            return;
+
+        _window.DetailExaminableSubmitButton.Disabled = false;
     }
 }

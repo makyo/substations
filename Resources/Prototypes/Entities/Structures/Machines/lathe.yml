@@ -250,7 +250,7 @@
     alwaysRandomize: true
   - type: StationAiWhitelist
   - type: MaterialStorageMagnetPickup
-    magnetEnabled: True
+    magnetEnabled: False # L5
     range: 0.30
   # End DeltaV additions
 

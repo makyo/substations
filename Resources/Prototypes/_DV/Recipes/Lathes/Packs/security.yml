@@ -18,6 +18,7 @@
   recipes:
   - MagazineBoxSpecialPractice
   - SpeedLoaderSpecialPractice
+  - MagazinePistolHighCapacityPractice
 
 - type: latheRecipePack
   id: SecurityAmmoStaticDeltaV
@@ -30,6 +31,7 @@
   - BoxShellTranquilizer
   - MagazineShotgunBeanbag
   - MagazineLaser
+  - MagazinePistolHighCapacity
 
 - type: latheRecipePack
   id: SecurityShotgunDrumsStatic
@@ -51,6 +53,8 @@
   - MagazineBoxLightRifleRubber
   - MagazineBoxRifleRubber
   - MagazineBoxSpecialRubber
+  - MagazinePistolSubMachineGunRubber
+  - MagazinePistolHighCapacityRubber
 
 - type: latheRecipePack
   parent: SecurityDisablers
@@ -70,6 +74,8 @@
   - MagazineBoxSpecialHoly
   - MagazineBoxSpecialMindbreaker
   - GamblagatorCapacitor
+  - MagazinePistolHighCapacityUranium
+  - MagazinePistolHighCapacityIncendiary
 
 - type: latheRecipePack
   parent: SecurityHardsuits

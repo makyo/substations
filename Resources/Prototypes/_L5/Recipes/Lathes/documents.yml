@@ -1,0 +1,204 @@
+- type: latheRecipe
+  id: BaseDocumentL5
+  abstract: true
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+  completetime: 2
+
+# Letterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterhead
+  result: PrintedDocumentSCLetterhead
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadMedical
+  result: PrintedDocumentSCLetterheadMedical
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadSecurity
+  result: PrintedDocumentSCLetterheadSecurity
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadScience
+  result: PrintedDocumentSCLetterheadScience
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadLogistics
+  result: PrintedDocumentSCLetterheadLogistics
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadEngi
+  result: PrintedDocumentSCLetterheadEngi
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadService
+  result: PrintedDocumentSCLetterheadService
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadJustice
+  result: PrintedDocumentSCLetterheadJustice
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadLeadership
+  result: PrintedDocumentSCLetterheadLeadership
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCLetterheadCentral
+  result: PrintedDocumentSCLetterheadCentral
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentUNLetterhead
+  result: PrintedDocumentUNLetterhead
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentUNFormalCommunique
+  result: PrintedDocumentUNFormalCommunique
+  categories:
+  - DocumentsLetterhead
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentCNZLetterhead
+  result: PrintedDocumentCNZLetterhead
+  categories:
+  - DocumentsLetterhead
+
+# Medical
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCMedicalPrescription
+  result: PrintedDocumentSCMedicalPrescription
+  categories:
+  - DocumentsMedical
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCMedicalDirective
+  result: PrintedDocumentSCMedicalDirective
+  categories:
+  - DocumentsMedical
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCSurgeryRequest
+  result: PrintedDocumentSCSurgeryRequest
+  categories:
+  - DocumentsMedical
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCMedicalBayGuide
+  result: PrintedDocumentSCMedicalBayGuide
+  categories:
+  - DocumentsMedical
+
+# Security
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCArmoryInventory
+  result: PrintedDocumentSCArmoryInventory
+  categories:
+  - DocumentsSecurity
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCWeaponsPermit
+  result: PrintedDocumentSCWeaponsPermit
+  categories:
+  - DocumentsSecurity
+
+# Justice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCAffidavit
+  result: PrintedDocumentSCAffidavit
+  categories:
+  - DocumentsJustice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCArrestWarrant
+  result: PrintedDocumentSCArrestWarrant
+  categories:
+  - DocumentsJustice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCComplaint
+  result: PrintedDocumentSCComplaint
+  categories:
+  - DocumentsJustice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCCourtOrder
+  result: PrintedDocumentSCCourtOrder
+  categories:
+  - DocumentsJustice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCHearingDecision
+  result: PrintedDocumentSCHearingDecision
+  categories:
+  - DocumentsJustice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCIndictment
+  result: PrintedDocumentSCIndictment
+  categories:
+  - DocumentsJustice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCParoleDecision
+  result: PrintedDocumentSCParoleDecision
+  categories:
+  - DocumentsJustice
+
+- type: latheRecipe
+  parent: BaseDocumentL5
+  id: PrintedDocumentSCSearchWarrant
+  result: PrintedDocumentSCSearchWarrant
+  categories:
+  - DocumentsJustice

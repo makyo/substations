@@ -4,30 +4,36 @@ concurrency:
   group: publish
   cancel-in-progress: true
 
+# L5 — we can just have it publish whenever the PR is closed rather than on a schedule, because
+# a) slower dev cycle, and
+# b) we choose when rounds end, anyway.
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 10 * * *'
+  pull_request_target:
+    types: [closed]
+#  workflow_dispatch:
+#  schedule:
+#    - cron: '0 10 * * *'
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Fail if we are attempting to run on the master branch
-      if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
-      run: exit 1
+# L5 — not needed
+#    - name: Fail if we are attempting to run on the master branch
+#      if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
+#      run: exit 1
 
-#    - name: Install dependencies
-#      run: sudo apt-get install -y python3-paramiko python3-lxml
-#
-#    - uses: actions/checkout@v4.2.2
-#      with:
-#        submodules: 'recursive'
-#    - name: Setup .NET Core
-#      uses: actions/setup-dotnet@v4.1.0
-#      with:
-#        dotnet-version: 10.0.x
+    - name: Install dependencies
+      run: sudo apt-get install -y python3-paramiko python3-lxml
+
+    - uses: actions/checkout@v4.2.2
+      with:
+        submodules: 'recursive'
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4.1.0
+      with:
+        dotnet-version: 10.0.x
 
     - name: Get Engine Tag
       run: |
@@ -59,8 +65,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
 
-    - name: Publish changelog (RSS)
-      continue-on-error: true
-      run: Tools/actions_changelog_rss.py
-      env:
-        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
+#    - name: Publish changelog (RSS)
+#      continue-on-error: true
+#      run: Tools/actions_changelog_rss.py
+#      env:
+#        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}

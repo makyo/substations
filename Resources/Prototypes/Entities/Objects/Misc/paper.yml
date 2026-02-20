@@ -61,7 +61,10 @@
           Quantity: 1
   - type: Item
     size: Tiny
+  - type: Material # Corvax-Printer-Start
   - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 100 # Corvax-Printer-End
 
 - type: entity
   name: paper
@@ -91,6 +94,7 @@
         type: PaperBoundUserInterface
   - type: FaxableObject
   - type: PaperVisuals
+  - type: StationAiWhitelist
 
 - type: entity
   name: paper scrap
@@ -470,3 +474,4 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: StationAiWhitelist

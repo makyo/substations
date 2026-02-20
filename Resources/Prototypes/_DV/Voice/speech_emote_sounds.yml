@@ -263,7 +263,7 @@
     Cough:
       collection: MaleCoughs
     Yawn:
-      collection: MaleYawn
+      collection: VulpkaninYawns
     Snore:
       collection: Snores
     Honk:
@@ -294,6 +294,10 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+    Gekker: #Floof
+      collection: VulpkaninGekker
+    Yap: #Floof
+      collection: VulpkaninYap
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -311,7 +315,7 @@
     Cough:
       collection: FemaleCoughs
     Yawn:
-      collection: FemaleYawn
+      collection: VulpkaninYawns
     Snore:
       collection: Snores
     Honk:
@@ -346,6 +350,10 @@
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+    Gekker: #Floof
+      collection: VulpkaninGekker
+    Yap: #Floof
+      collection: VulpkaninYap
 
 - type: emoteSounds
   id: MobDog
@@ -364,6 +372,8 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Yap: #Floof
+      collection: VulpkaninYap
 
 - type: emoteSounds
   id: MaleRodentia
@@ -632,6 +642,10 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+    Gekker: #Floof
+      collection: VulpkaninGekker
+    Yap: #Floof
+      collection: VulpkaninYap
 
 - type: emoteSounds
   id: FemaleKitsune
@@ -678,6 +692,10 @@
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+    Gekker: #Floof
+      collection: VulpkaninGekker
+    Yap: #Floof
+      collection: VulpkaninYap
 
 - type: emoteSounds
   id: WhimperletSounds

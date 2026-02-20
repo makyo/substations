@@ -17,6 +17,7 @@ public abstract partial class SharedSubdermalImplantSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeRelay();
 
         SubscribeLocalEvent<SubdermalImplantComponent, EntGotInsertedIntoContainerMessage>(OnInsert);
         SubscribeLocalEvent<SubdermalImplantComponent, ContainerGettingRemovedAttemptEvent>(OnRemoveAttempt);

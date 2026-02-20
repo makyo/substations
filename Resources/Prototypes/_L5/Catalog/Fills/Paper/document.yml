@@ -1,0 +1,247 @@
+- type: entity
+  parent: Paper
+  id: PrintedDocument
+  abstract: true
+  description: Bureaucratic unit. A document printed on a printer.
+  components:
+  - type: Paper
+
+- type: entity
+  parent: PaperSysCon
+  id: PrintedDocumentSC
+  abstract: true
+  description: Bureaucratic unit. A document printed on a printer. This one is on SysCon letterhead.
+  components:
+  - type: Paper
+
+- type: entity
+  parent: PaperUN
+  id: PrintedDocumentUN
+  abstract: true
+  description: Bureaucratic unit. A document printed on a printer. This one is on UN letterhead. Very official.
+  components:
+  - type: Paper
+
+# SysCon documents
+
+## Letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterhead
+  name: System Consortium letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadCentral
+  name: Central Administration letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-central-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadMedical
+  name: medical department letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-med-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadSecurity
+  name: security department letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-sec-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadScience
+  name: science department letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-sci-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadLogistics
+  name: logistics department letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-logi-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadEngi
+  name: engineering department letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-engi-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadService
+  name: service department letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-serv-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadJustice
+  name: justice department letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-letterhead
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCLetterheadLeadership
+  name: leadership letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-lead-letterhead
+
+## Medical
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCMedicalPrescription
+  name: prescription slip
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-med-prescription
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCMedicalDirective
+  name: medical advance directive
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-med-advance-directive
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCSurgeryRequest
+  name: request for elective surgery
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-med-surgery-request
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCMedicalBayGuide
+  name: medical bay standards and expectations
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-med-bay-guidelines
+
+## Security
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCArmoryInventory
+  name: armory inventory
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-sec-armory-inventory
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCWeaponsPermit
+  name: weapons permit
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-sec-weapons-permit
+
+## Justice documents
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCAffidavit
+  name: affidavit
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-affidavit
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCArrestWarrant
+  name: arrest warrant
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-arrest-warrant
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCComplaint
+  name: complaint
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-complaint
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCCourtOrder
+  name: court order
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-court-order
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCHearingDecision
+  name: hearing decision
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-hearing-decision
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCIndictment
+  name: indictment
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-indictment
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCParoleDecision
+  name: parole decision
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-parole-decision
+
+- type: entity
+  parent: PrintedDocumentSC
+  id: PrintedDocumentSCSearchWarrant
+  name: search warrant
+  components:
+  - type: Paper
+    content: doc-text-printer-sc-just-search-warrant
+
+# UN documents
+
+- type: entity
+  parent: PrintedDocumentUN
+  id: PrintedDocumentUNLetterhead
+  name: United Nations letterhead
+
+- type: entity
+  parent: PrintedDocumentUN
+  id: PrintedDocumentUNFormalCommunique
+  name: formal UN communiqué
+  components:
+  - type: Paper
+    content: doc-text-printer-un-letterhead
+
+# Syndicate documents
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCNZLetterhead
+  name: Conclave of New Zealots letterhead
+  components:
+  - type: Paper
+    content: doc-text-printer-cnz-letterhead

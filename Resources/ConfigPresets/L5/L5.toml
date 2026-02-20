@@ -12,6 +12,7 @@ cryo_sleep_rejoining    = true
 hostname_in_titlebar    = true
 tabletop_place          = true # Worth the risk.
 current_year_offset     = 526 # We've been playing in the 2550s
+defaultpreset           = "Greenshift"
 
 [nf14.respawn]
 time = 0
@@ -81,7 +82,7 @@ limit = 10.0
 
 [admin]
 see_own_notes               = true
-deadmin_on_join             = true
+deadmin_on_join             = false
 allow_multi_server_play     = true
 admins_count_in_playercount = true
 [admin.alert]

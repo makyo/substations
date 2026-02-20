@@ -177,7 +177,8 @@
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
   - type: FootPrints # DeltaV port from EE, blood splatter
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
-  - type: Carriable #
+  - type: Carriable # DeltaV
+  - type: Operable # L5
 
 - type: entity
   abstract: true
