@@ -1,5 +1,6 @@
 - type: latheRecipe
   id: BaseDocumentL5
+  abstract: true
   applyMaterialDiscount: false
   materials:
     SheetPrinter: 100
