@@ -1,0 +1,10 @@
+  # RMC-14 Barricade Modifers
+
+  # Base Barricade
+  - type: damageModifierSet
+    id: CMBarricade
+    coefficients:
+      Heat: 1.15
+      Shock: 1.15
+      Cold: 1.15
+      Caustic: 1.15
