@@ -100,7 +100,7 @@
 - type: entity
   parent: CMPlatformBaseDestructible
   id: CMPlatformCorner
-  name: platform
+  name: platform corner # L5
   description: A square metal surface resting on four legs.
   placement:
     mode: SnapgridCenter
@@ -135,7 +135,8 @@
 - type: entity
   parent: CMPlatformBaseDestructible
   id: RMCPlatformCornerSmall
-  name: platform
+  name: platform corner # L5
+  suffix: small # L5
   description: A square metal surface resting on four legs.
   placement:
     mode: SnapgridCenter
@@ -205,6 +206,7 @@
 - type: entity
   parent: CMPlatform
   id: RMCPlatformStairRight
+  suffix: stair, right # L5
   components:
   - type: Sprite
     state: platform_stair
@@ -212,6 +214,7 @@
 - type: entity
   parent: CMPlatform
   id: RMCPlatformStairLeft
+  suffix: stair, left # L5
   components:
   - type: Sprite
     state: platform_stair_alt
@@ -220,6 +223,7 @@
   parent: CMPlatform
   id: RMCPlatformKutjevo
   name: raised metal edge
+  suffix: Kutjevo # L5
   description: A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
   components:
   - type: Sprite
@@ -231,6 +235,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformKutjevoBroken
+  suffix: Kutjevo # L5
   components:
   - type: Sprite
     state: kutjevo_platform_broken
@@ -242,6 +247,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformKutjevoCornerSmall
   name: raised metal corner
+  suffix: Kutjevo, small # L5
   description: The corner of what appears to be raised piece of metal, often used to imply the illusion of elevation in non-Euclidean 2d spaces. But you don't know that, you're just a spaceman with a rifle.
   components:
   - type: Sprite
@@ -251,6 +257,7 @@
   parent: CMPlatform
   id: RMCPlatformKutjevoSM
   name: raised metal edge
+  suffix: Kutjevo, small # L5
   description: A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
   components:
   - type: Sprite
@@ -263,6 +270,7 @@
   parent: CMPlatformCorner
   id: RMCPlatformKutjevoSMCorner
   name: raised metal edge
+  suffix: Kutjevo, small # L5
   description: A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
   components:
   - type: Sprite
@@ -272,6 +280,7 @@
   parent: RMCPlatformRound
   id: RMCPlatformKutjevoSMRound
   name: raised metal edge
+  suffix: Kutjevo, small # L5
   description: A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
   components:
   - type: Sprite
@@ -281,6 +290,7 @@
   parent: CMPlatform
   id: RMCPlatformKutjevoStairRight
   name: raised metal edge
+  suffix: Kutjevo, stair, right # L5
   description: A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
   components:
   - type: Sprite
@@ -290,6 +300,7 @@
   parent: CMPlatform
   id: RMCPlatformKutjevoStairLeft
   name: raised metal edge
+  suffix: Kutjevo, stair, left # L5
   description: A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
   components:
   - type: Sprite
@@ -322,7 +333,7 @@
 - type: entity
   parent: RMCPlatformCornerSmall
   id: RMCPlatformShivaCornerSmall
-  name: raised rubber cord platform
+  name: raised rubber cord platform corner # L5
   description: Reliable steel and a polymer rubber substitute. Doesn't crack under cold weather.
   components:
   - type: Sprite
@@ -369,6 +380,7 @@
   parent: CMPlatform
   id: RMCPlatformHybrisaEdge
   name: raised metal edge
+  suffix: Hybrisa # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -380,6 +392,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformHybrisaEdgeBroken
+  suffix: Hybrisa, edge # L5
   components:
   - type: Sprite
     state: hybrisametal_broken
@@ -391,6 +404,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformHybrisaEdgeCornerSmall
   name: raised metal corner
+  suffix: Hybrisa, edge # L5
   description: A raised level of metal, often used to elevate areas above others. This is the corner.
   components:
   - type: Sprite
@@ -411,6 +425,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformHybrisaBroken
+  suffix: Hybrisa # L5
   components:
   - type: Sprite
     state: hybrisametal_broken
@@ -422,6 +437,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformHybrisaCornerSmall
   name: raised metal corner
+  suffix: Hybrisa # L5
   description: A raised level of metal, often used to elevate areas above others. This is the corner.
   components:
   - type: Sprite
@@ -431,6 +447,7 @@
   parent: CMPlatform
   id: RMCPlatformHybrisaTwo
   name: raised metal platform
+  suffix: Hybrisa 2 # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -442,6 +459,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformHybrisa2Broken
+  suffix: Hybrisa 2 # L5
   components:
   - type: Sprite
     state: hybrisaplatform2_broken
@@ -453,6 +471,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformHybrisaTwoCornerSmall
   name: raised metal corner
+  suffix: Hybrisa 2 # L5
   description: A raised level of metal, often used to elevate areas above others. This is the corner.
   components:
   - type: Sprite
@@ -462,6 +481,7 @@
   parent: CMPlatform
   id: RMCPlatformHybrisaThree
   name: raised metal platform
+  suffix: Hybrisa 3 # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -473,6 +493,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformHybrisa3Broken
+  suffix: Hybrisa 3 # L5
   components:
   - type: Sprite
     state: hybrisaplatform3_broken
@@ -483,7 +504,8 @@
 - type: entity
   parent: CMPlatformCorner
   id: RMCPlatformHybrisaThreeCorner
-  name: raised metal platform
+  name: raised metal platform corner # L5
+  suffix: Hybrisa 3 # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -493,6 +515,7 @@
   parent: CMPlatform
   id: RMCPlatformHybrisaThreeStair
   name: raised metal platform
+  suffix: Hybrisa 3, stair # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -502,6 +525,7 @@
   parent: CMPlatform
   id: RMCPlatformHybrisaThreeStairAlt
   name: raised metal platform
+  suffix: Hybrisa 3, stair, alt # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -511,6 +535,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformHybrisaThreeCornerSmall
   name: raised metal corner
+  suffix: Hybrisa 3 # L5
   description: A raised level of metal, often used to elevate areas above others. This is the corner.
   components:
   - type: Sprite
@@ -520,6 +545,7 @@
   parent: CMPlatform
   id: RMCPlatformHybrisaRock
   name: raised rock edges
+  suffix: Hybrisa # L5
   description: A collection of stones and rocks that provide ample grappling and vaulting opportunity. Indicates a change in elevation. You could probably climb it.
   components:
   - type: Sprite
@@ -531,6 +557,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformHybrisaRockBroken
+  suffix: Hybrisa # L5
   components:
   - type: Sprite
     state: kutjevo_rockdark_broken
@@ -542,6 +569,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformHybrisaRockCornerSmall
   name: raised rock corner
+  suffix: Hybrisa # L5
   description: A collection of stones and rocks that cap the edge of some conveniently 1-meter-long lengths of perfectly climbable chest high walls.
   components:
   - type: Sprite
@@ -551,6 +579,7 @@
   parent: CMPlatform
   id: RMCPlatformHybrisaStone
   name: raised stone platform
+  suffix: Hybrisa # L5
   description: A raised level of stone, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -562,6 +591,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformHybrisaStoneBroken
+  suffix: Hybrisa # L5
   components:
   - type: Sprite
     state: stone_broken
@@ -573,6 +603,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformHybrisaStoneCornerSmall
   name: raised stone corner
+  suffix: Hybrisa # L5
   description: A raised level of stone, often used to elevate areas above others. This is the corner.
   components:
   - type: Sprite
@@ -616,6 +647,7 @@
   parent: CMPlatform
   id: RMCPlatformSandstoneStairRight
   name: sandstone platform stair
+  suffix: right # L5
   components:
   - type: Sprite
     state: stone_stair
@@ -625,6 +657,7 @@
   parent: CMPlatform
   id: RMCPlatformSandstoneStairLeft
   name: sandstone platform stair
+  suffix: left # L5
   components:
   - type: Sprite
     state: stone_stair_alt
@@ -653,6 +686,7 @@
 - type: entity
   parent: RMCPlatformAlmayer
   id: RMCPlatformAlmayerStairs
+  suffix: Almayer, stair # L5
   components:
   - type: Sprite
     state: platform_sm_stair
@@ -660,6 +694,7 @@
 - type: entity
   parent: RMCPlatformAlmayer
   id: RMCPlatformAlmayerStairsAlt
+  suffix: stair, alt # L5
   components:
   - type: Sprite
     state: platform_sm_stair_alt

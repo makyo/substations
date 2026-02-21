@@ -4,6 +4,7 @@
   parent: CMPlatform
   id: RMCPlatformStrata
   name: raised metal edge
+  suffix: Strata # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -15,6 +16,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformStrataBroken
+  suffix: Strata # L5
   components:
   - type: Sprite
     state: strata_metalplatform_broken
@@ -25,6 +27,7 @@
 - type: entity
   parent: RMCPlatformStrata
   id: RMCPlatformStrataStair
+  suffix: Strata, stair # L5
   components:
   - type: Sprite
     state: strata_metalplatform_stair
@@ -32,6 +35,7 @@
 - type: entity
   parent: RMCPlatformStrata
   id: RMCPlatformStrataStairAlt
+  suffix: Strata, stair, alt # L5
   components:
   - type: Sprite
     state: strata_metalplatform_stair_alt
@@ -40,6 +44,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformStrataCornerSmall
   name: raised metal corner
+  suffix: Strata # L5
   description: A raised level of metal, often used to elevate areas above others. This is the corner.
   components:
   - type: Sprite
@@ -49,6 +54,7 @@
   parent: CMPlatform
   id: RMCPlatformStrataTwo
   name: raised metal edge
+  suffix: Strata 2 # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -60,6 +66,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformStrata2Broken
+  suffix: Strata 2 # L5
   components:
   - type: Sprite
     state: strata_metalplatform2_broken
@@ -71,6 +78,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformStrataTwoCornerSmall
   name: raised metal corner
+  suffix: Strata 2 # L5
   description: A raised level of metal, often used to elevate areas above others. This is the corner.
   components:
   - type: Sprite
@@ -80,6 +88,7 @@
   parent: CMPlatform
   id: RMCPlatformStrataThree
   name: raised metal edge
+  suffix: Strata 3 # L5
   description: A raised level of metal, often used to elevate areas above others. You could probably climb it.
   components:
   - type: Sprite
@@ -91,6 +100,7 @@
 - type: entity
   parent: CMPlatformBroken
   id: RMCPlatformStrata3Broken
+  suffix: Strata 3 # L5
   components:
   - type: Sprite
     state: strata_metalplatform3_broken
@@ -102,6 +112,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformStrataThreeCornerSmall
   name: raised metal corner
+  suffix: Strata 3 # L5
   description: A raised level of metal, often used to elevate areas above others. This is the corner.
   components:
   - type: Sprite
@@ -112,6 +123,7 @@
   parent: CMPlatform
   id: RMCPlatformStrataRock
   name: rock edge
+  suffix: Strata # L5
   description: A solid chunk of desolate rocks. Looks like you could climb it with some difficulty.
   components:
   - type: Sprite
@@ -124,6 +136,7 @@
   parent: CMPlatformBroken
   id: RMCPlatformStrataRockBroken
   name: destroyed rock edge
+  suffix: Strata # L5
   description: A solid chunk of desolate rocks. Looks like you could climb it with some difficulty. It has been destroyed.
   components:
   - type: Sprite
@@ -136,6 +149,7 @@
   parent: RMCPlatformCornerSmall
   id: RMCPlatformStrataRockCornerSmall
   name: rock corner
+  suffix: Strata # L5
   description: A solid chunk of desolate rocks.
   components:
   - type: Sprite
