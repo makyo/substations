@@ -1,11 +1,16 @@
+# 2025-04-04
+PosterLegitNoERP: null
+
 # 2026-01-13 - Readd Admin Ass.
 ClothingHeadHatSecretary: ClothingHeadHatAdministrasive
 ClothingUniformJumpsuitSecretary: ClothingUniformJumpsuitAdminAssistant
 ClothingUniformJumpskirtSecretary: ClothingUniformJumpskirtAdminAssistant
 ToyFigurineSecretary: ToyFigurineAdminAssistant
-PosterLegitNoERP: null
 
 # 2026-01-18 - Snowball fixes
 SpawnPointHeadOfSecurityWeapon: null
 SpawnPointWardenWeapon: null
 CargoMailTeleporter: MailTeleporter
+
+# 2026-02-22 - Hasn't existed in centuries
+BedsheetUSA: BedsheetSpawner

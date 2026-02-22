@@ -24,7 +24,7 @@
     sound:
       path: /Audio/Ambience/Objects/buzzing.ogg
   - type: ApcPowerReceiver
-    powerLoad: 2000 # Expensive to run
+    powerLoad: 500 # Reasonably expensive to run
     powerDisabled: true
   - type: StaticField
   - type: Appearance

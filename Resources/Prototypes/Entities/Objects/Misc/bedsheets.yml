@@ -321,6 +321,7 @@
 
 - type: entity
   id: BedsheetUSA
+  abstract: true # L5 — hasn't existed in centuries
   parent: BedsheetBase
   name: USA bedsheet
   components:

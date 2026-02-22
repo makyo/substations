@@ -42,8 +42,8 @@
     - id: BoxCaptainCircuitboards
     - id: DoorRemoteCustom
     #- id: MedalCase # DeltaV - Moved to dresser
-    - id: NukeDisk
-    - id: PinpointerNuclear
+    #- id: NukeDisk # L5 — no nukies
+    #- id: PinpointerNuclear # L5 — no nukies
     #- id: PlushieNuke # DeltaV - Moved to dresser
     #  prob: 0.1
     - id: RubberStampCaptain
@@ -51,7 +51,7 @@
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
     - id: BoxFolderCentComThreePapers
-    - id: HeadSkeleton # A skull to accompany your skeleton crew
+    #- id: HeadSkeleton # A skull to accompany your skeleton crew # L5 — or not
       conditions:
       - !type:PlayerCountCondition
         max: 15
@@ -108,7 +108,7 @@
       entity_storage: !type:AllSelector
         children:
         - !type:NestedSelector
-          tableId: LockerFillCaptainNoLaser # DeltaV - no laser
+          tableId: LockerFillCaptainLaser
         - !type:NestedSelector
           tableId: FillCaptainHardsuit
 
@@ -286,6 +286,7 @@
     - id: RubberStampRd
     - id: BibleMystagogue  # DeltaV - steal objective and source of abilities
     - id: PrinterDocFlatpack  # Corvax-Printer
+    - id: BoxAICircuitboards # L5 — boards required for building SSR
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
