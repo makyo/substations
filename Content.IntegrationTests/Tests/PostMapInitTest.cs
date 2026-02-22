@@ -86,6 +86,8 @@ namespace Content.IntegrationTests.Tests
             "TestTeg",
             "CentComm",
             "MeteorArena",
+            "Snowball", // Wizden via L5
+
             "Academy", //DeltaV
             "Arena", // DeltaV
             "ArenaMedieval", //DeltaV
@@ -103,15 +105,16 @@ namespace Content.IntegrationTests.Tests
             "Pebble", // DeltaV
             "PebbleHiring", // DeltaV
             "Shoukou", // DeltaV
-            "Snowball", // Wizden via L5
             "Submarine", //DeltaV
             "Terra", //DeltaV
             "TheHive", // DeltaV
             "Tortuga", // DeltaV
+
+            "Gemini", // L5
+            "Lepus", // L5
             "Nucleus", // L5
             "Omphalos", // L5
             "Omphalos2", // L5
-            "Gemini", // L5
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
