@@ -321,9 +321,8 @@
 
 - type: entity
   id: BedsheetUSA
-  abstract: true # L5 — hasn't existed in centuries
   parent: BedsheetBase
-  name: USA bedsheet
+  name: Antique bedsheet # L5
   components:
   - type: Sprite
     state: sheetUSA
