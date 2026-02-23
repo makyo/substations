@@ -1,0 +1,94 @@
+- type: entity
+  id: MatBox
+  name: materials box
+  description: A large storage container for holding raw materials.
+  parent: BaseStructureDynamic
+  components:
+  - type: StaticPrice
+    price: 500
+  - type: Anchorable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+
+  # matbox-specific
+  - type: Sprite
+    noRot: true
+    sprite: /Textures/_L5/Structures/Storage/matbox.rsi
+    layers:
+    - state: matbox
+    - state: matbox-top
+      map: [ top ]
+      visible: true
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        top:
+          True: { visible: false }
+          False: { visible: true }
+  - type: Storage
+    grid:
+    - 0,0,19,9
+    maxItemSize: Normal
+    storageOpenSound: /Audio/Effects/closetopen.ogg
+    storageCloseSound: /Audio/Effects/closetclose.ogg
+    whitelist:
+      tags:
+      - ConstructionMaterial
+      - RawMaterial
+      - Sheet
+  - type: MagnetPickup
+    range: 2
+  - type: Dumpable
+  - type: ItemToggle
+    soundActivate: &soundActivate
+      collection: sparks
+      params:
+        variation: 0.25
+    soundDeactivate: *soundActivate
+  - type: ItemToggleExamine
+    on: magnet-pickup-component-magnet-on
+    off: magnet-pickup-component-magnet-off
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        # very not dense to make it easy to pull
+        density: 20
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
