@@ -1,0 +1,13 @@
+- type: entity
+  name: SSR circuit tote
+  parent: ToteBase
+  id: BoxAICircuitboards
+  description: A Tote filled with circuit boards required for building the Station Sys-side Repersentative.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: StationAiFixerCircuitboard
+        - id: StationAiUploadCircuitboard
+        - id: StationAiCoreElectronics

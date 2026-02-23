@@ -322,7 +322,7 @@
 - type: entity
   id: BedsheetUSA
   parent: BedsheetBase
-  name: USA bedsheet
+  name: Antique bedsheet # L5
   components:
   - type: Sprite
     state: sheetUSA
