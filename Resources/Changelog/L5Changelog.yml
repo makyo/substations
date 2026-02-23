@@ -1187,3 +1187,11 @@ Entries:
       message: Platforms, stairs, and handrailsported from RMC14
   id: 167
   time: '2026-02-21T03:47:39.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        New Outpost starting station, the SCSS Lepus. Revamp a (very) dated
+        support station into a full host station for a System Shard!
+  id: 168
+  time: '2026-02-23T06:27:33.0000000+00:00'
