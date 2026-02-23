@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: CargoMatBox
+  icon:
+    sprite:  /Textures/_L5/Structures/Storage/matbox.rsi
+    state: matbox
+  product: MatBox
+  cost: 500
+  category: cargoproduct-category-name-logistics
+  group: market
