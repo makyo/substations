@@ -1195,3 +1195,11 @@ Entries:
         support station into a full host station for a System Shard!
   id: 168
   time: '2026-02-23T06:27:33.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        New mats box for hauling around building materials. Includes a magnet
+        functionality like the orebox.
+  id: 169
+  time: '2026-02-23T06:27:57.0000000+00:00'
