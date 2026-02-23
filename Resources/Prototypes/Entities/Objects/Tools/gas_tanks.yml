@@ -32,6 +32,13 @@
       volume: 5
       temperature: 293.15
     tankLowPressure: 30.0
+    # L5 - SCUBA tanks hold 237 bar (23700 kPa). Previously, tanks were filled to 10 bar max by a canister, and at 30 bar (3000 kPa),
+    # the tank starts leaking. I get that this makes sense on rounds that are two hours long, but when our rounds last weeks or
+    # months, it just feels too limiting. I've struck a middle-ground: canisters have been bumped up to dispensing to 100 bar,
+    # and thus tanks have similarly had their limits increased by a factor of ten.
+    tankLeakPressure: 30397.5
+    tankRupturePressure: 40530
+    tankFragmentPressure: 50662.5
   - type: Explosive
     explosionType: MicroBomb
     maxIntensity: 20

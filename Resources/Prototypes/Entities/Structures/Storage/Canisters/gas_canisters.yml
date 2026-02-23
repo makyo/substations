@@ -115,6 +115,7 @@
           volume: 1
     - type: GasPortable
     - type: GasCanister
+      maxReleasePressure: 10132.5 # L5 - was 1013; bump from 10 bar to 100 bar.
       gasTankSlot:
         name: comp-gas-canister-slot-name-gas-tank
         ejectOnBreak: true
