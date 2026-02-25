@@ -221,7 +221,7 @@
   description: bounty-description-lemon
   entries:
   - name: bounty-item-lemon
-    amount: 7
+    amount: 13 # L5 — clashes with our produce box
     whitelist:
       tags:
       - Lemon

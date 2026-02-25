@@ -1,0 +1,15 @@
+- type: entity
+  parent: CrateChemistrySecure
+  id: CrateChemistryNE
+  name: chemicals crate (non-elementals)
+  description: Contains non-elemental chemicals. Requires Chemistry access to open.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: JugBlood # Little bit for the giggle, little bit for our synths to activate artifacts
+        - id: JugEthanol
+        - id: JugSugar
+        - id: JugWater
+        - id: JugWeldingFuel
