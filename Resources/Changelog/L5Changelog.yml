@@ -1203,3 +1203,11 @@ Entries:
         functionality like the orebox.
   id: 169
   time: '2026-02-23T06:27:57.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        New non-elementals chemicals crate for getting sugar, ethanol, and so
+        on.
+  id: 170
+  time: '2026-02-25T21:02:38.0000000+00:00'
