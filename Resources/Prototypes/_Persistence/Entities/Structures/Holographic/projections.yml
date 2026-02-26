@@ -1,0 +1,143 @@
+# L5 — added inheritance, use DV sprites
+
+- type: entity
+  id: HCDConstructBase
+  name: HCD constructible
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: PointLight
+    radius: 1.5
+    energy: 1.2
+    softness: 0.8
+    color: "#00f2ff"
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Clickable
+
+- type: entity
+  id: HCDWall
+  parent: HCDConstructBase
+  name: holographic wall
+  description: A flickering projection of a wall.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/Structures/Walls/solid.rsi
+    drawdepth: Overlays
+    layers:
+    - state: full
+      color: "#00f2ff99" # Adjusts the color to a ghostly blue
+
+- type: entity
+  id: HCDWallReinforced
+  parent: HCDConstructBase
+  name: holographic reinforced wall
+  description: A flickering blue projection of a reinforced wall.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/Structures/Walls/solid.rsi
+    drawdepth: Overlays
+    layers:
+    - state: rgeneric
+      color: "#00f2ff99"
+
+- type: entity
+  id: HCDGrille
+  parent: HCDConstructBase
+  name: holographic grille
+  description: A flickering blue projection of a grille.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Structures/Walls/grille.rsi
+    drawdepth: Overlays
+    layers:
+    - state: grille
+      color: "#00f2ff99"
+
+- type: entity
+  id: HCDWindow
+  parent: HCDConstructBase
+  name: holographic window
+  description: A flickering blue projection of a window.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/Structures/Windows/window.rsi
+    drawdepth: Overlays
+    layers:
+    - state: full
+      color: "#00f2ff99"
+
+- type: entity
+  id: HCDWindowReinforced
+  parent: HCDConstructBase
+  name: holographic reinforced window
+  description: A flickering blue projection of a reinforced window.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/Structures/Windows/reinforced_window.rsi
+    drawdepth: Overlays
+    layers:
+    - state: full
+      color: "#00f2ff99"
+
+- type: entity
+  id: HCDWindowDirectional
+  parent: HCDConstructBase
+  name: holographic directional window
+  description: A flickering blue projection of a directional window.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/Structures/Windows/directional.rsi
+    drawdepth: Overlays
+    layers:
+    - state: window
+      color: "#00f2ff99"
+
+- type: entity
+  id: HCDAirlock
+  parent: HCDConstructBase
+  name: holographic airlock
+  description: A flickering blue projection of an airlock.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _DV/Structures/Doors/Airlocks/Standard/basic.rsi
+    drawdepth: Overlays
+    layers:
+    - state: closed
+      color: "#00f2ff99"

@@ -1,0 +1,9 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: HCD
+  result: HCD
+  completetime: 4
+  materials:
+    Steel: 600
+    Plastic: 200
+    Glass: 100 # L5 - because hologram...
