@@ -39,7 +39,7 @@ public sealed class RCDSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private readonly PowerCellSystem _powerCell = default!; // Persistence
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -302,6 +302,7 @@ public sealed class RCDSystem : EntitySystem
 
         // Play audio and consume charges
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
+        // Persistence — use charges from a battery if the cost is 0 (HCD)
         switch (args.Cost)
         {
             case > 0:
@@ -311,6 +312,7 @@ public sealed class RCDSystem : EntitySystem
                 _powerCell.TryUseCharge(uid, component.ChargeUse);
                 break;
         }
+        // End Persistence
     }
 
     private void OnRCDconstructionGhostRotationEvent(RCDConstructionGhostRotationEvent ev, EntitySessionEventArgs session)
@@ -349,7 +351,8 @@ public sealed class RCDSystem : EntitySystem
         var charges = _sharedCharges.GetCurrentCharges(uid);
 
         // Both of these were messages were suppose to be predicted, but HasInsufficientCharges wasn't being checked on the client for some reason?
-        if (prototype.Cost > 0) // Persistence
+        // Persistence — only give popups if we're using compressed matter charges (non-HCD case)
+        if (prototype.Cost > 0)
         {
             if (charges == 0)
             {
@@ -366,7 +369,8 @@ public sealed class RCDSystem : EntitySystem
 
                 return false;
             }
-        } // End persistence if block
+        }
+        // End persistence
 
         // Exit if the target / target location is obstructed
         var unobstructed = (target == null)
