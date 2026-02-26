@@ -1,0 +1,7 @@
+- type: parallax
+  id: NeoMars
+  layers:
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/Parallaxes/land.png"
+

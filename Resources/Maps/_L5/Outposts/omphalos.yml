@@ -216,16 +216,38 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
-      parallax: Sky
+      parallax: NeoMars
     - type: MapAtmosphere
       space: False
       mixture:
         volume: 2500
         immutable: True
-        temperature: 213.15
+        temperature: 285.15
         moles:
-          Oxygen: 21.824879
-          Nitrogen: 82.10312
+          Oxygen: 20.824879
+          Nitrogen: 80.10312
+          CarbonDioxide: 1.18
+          WaterVapor: 2.12
+    - type: WeatherScheduler
+      stages:
+      - duration: # 20-25 minutes of calm
+          min: 1200
+          max: 1500
+      - weather: Sandstorm
+        message: haboob-telegraph
+        duration:
+          min: 30
+          max: 45
+      - weather: SandstormHeavy
+        message: haboob-alert
+        duration:
+          min: 60
+          max: 120
+      - weather: Sandstorm
+        message: haboob-clearing
+        duration:
+          min: 30
+          max: 45
 - proto: AirAlarm
   entities:
   - uid: 2

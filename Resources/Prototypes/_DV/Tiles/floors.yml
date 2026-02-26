@@ -38,9 +38,9 @@
   footstepSounds:
     collection: FootstepGrass
   heatCapacity: 10000
-  weather: true
-- type: tile
+#  weather: true # L5
 
+- type: tile
   id: FloorGrassLightIndoors
   name: tiles-light-grass-floor-indoors
   sprite: /Textures/Tiles/grasslight.png
@@ -55,4 +55,4 @@
   footstepSounds:
     collection: FootstepGrass
   heatCapacity: 10000
-  weather: true
+#  weather: true # L5
