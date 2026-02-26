@@ -57,4 +57,10 @@ public sealed partial class RCDComponent : Component
     /// </remarks>
     [ViewVariables(VVAccess.ReadOnly)]
     public Transform ConstructionTransform { get; private set; }
+
+    /// <summary>
+    /// Persistence - charge usages for HCDs
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("chargeUse")]
+    public float ChargeUse = 5f;
 }

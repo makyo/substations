@@ -34,7 +34,7 @@
   id: MatterEnergyConversion
   name: research-technology-matter-energy-conversion
   icon:
-    sprite: Objects/Tools/rcd.rsi
+    sprite: _DV/Objects/Tools/RCD_experimental.rsi
     state: icon
   discipline: Industrial
   tier: 3

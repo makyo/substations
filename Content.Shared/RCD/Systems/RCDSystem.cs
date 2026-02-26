@@ -10,6 +10,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
+using Content.Shared.PowerCell; // Persistence
 using Content.Shared.RCD.Components;
 using Content.Shared.Tag;
 using Content.Shared.Tiles;
@@ -38,6 +39,7 @@ public sealed class RCDSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly PowerCellSystem _powerCell = default!; // Persistence
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -300,7 +302,17 @@ public sealed class RCDSystem : EntitySystem
 
         // Play audio and consume charges
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
-        _sharedCharges.AddCharges(uid, -args.Cost);
+        // Persistence — use charges from a battery if the cost is 0 (HCD)
+        switch (args.Cost)
+        {
+            case > 0:
+                _sharedCharges.AddCharges(uid, -args.Cost);
+                break;
+            case 0:
+                _powerCell.TryUseCharge(uid, component.ChargeUse);
+                break;
+        }
+        // End Persistence
     }
 
     private void OnRCDconstructionGhostRotationEvent(RCDConstructionGhostRotationEvent ev, EntitySessionEventArgs session)
@@ -339,21 +351,26 @@ public sealed class RCDSystem : EntitySystem
         var charges = _sharedCharges.GetCurrentCharges(uid);
 
         // Both of these were messages were suppose to be predicted, but HasInsufficientCharges wasn't being checked on the client for some reason?
-        if (charges == 0)
+        // Persistence — only give popups if we're using compressed matter charges (non-HCD case)
+        if (prototype.Cost > 0)
         {
-            if (popMsgs)
-                _popup.PopupClient(Loc.GetString("rcd-component-no-ammo-message"), uid, user);
+            if (charges == 0)
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-no-ammo-message"), uid, user);
 
-            return false;
+                return false;
+            }
+
+            if (prototype.Cost > charges)
+            {
+                if (popMsgs)
+                    _popup.PopupClient(Loc.GetString("rcd-component-insufficient-ammo-message"), uid, user);
+
+                return false;
+            }
         }
-
-        if (prototype.Cost > charges)
-        {
-            if (popMsgs)
-                _popup.PopupClient(Loc.GetString("rcd-component-insufficient-ammo-message"), uid, user);
-
-            return false;
-        }
+        // End persistence
 
         // Exit if the target / target location is obstructed
         var unobstructed = (target == null)
