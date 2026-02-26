@@ -1211,3 +1211,13 @@ Entries:
         on.
   id: 170
   time: '2026-02-25T21:02:38.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        The new HCD lets you plan out building projects by placing holograms of
+        what you intend to build.
+    - type: Tweak
+      message: You can now research and print the plain RCD (as well as the HCD).
+  id: 171
+  time: '2026-02-26T21:31:57.0000000+00:00'
