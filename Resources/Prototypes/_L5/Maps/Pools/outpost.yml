@@ -1,7 +1,8 @@
 - type: gameMapPool
   id: OutpostMapPool
   maps:
+  - Gemini
+  - Lepus
   - Nucleus
   - Omphalos
   - Omphalos2
-  - Gemini
