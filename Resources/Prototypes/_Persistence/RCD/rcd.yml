@@ -1,0 +1,100 @@
+# L5 — use DV variants; 0.5s doafter; fx using EffectRCDConstruct1
+
+# Holo Walls
+
+- type: rcd
+  id: HCDWall
+  category: WallsAndFlooring
+  sprite: /Textures/Interface/Radial/RCD/solid_wall.png
+  mode: ConstructObject
+  prototype: HCDWall
+  collisionMask: FullTileMask
+  cost: 0
+  delay: 0.5
+  rotation: Fixed
+  fx: EffectRCDConstruct1
+
+# L5
+- type: rcd
+  id: HCDWallReinforced
+  category: WallsAndFlooring
+  sprite: /Textures/_DV/Interface/Radial/RCD/reinforced_wall.png
+  mode: ConstructObject
+  prototype: HCDWallReinforced
+  collisionMask: FullTileMask
+  cost: 0
+  delay: 0.5
+  rotation: Fixed
+  fx: EffectRCDConstruct1
+
+- type: rcd
+  id: HCDGrille
+  category: WindowsAndGrilles
+  sprite: /Textures/Interface/Radial/RCD/grille.png
+  mode: ConstructObject
+  prototype: HCDGrille
+  cost: 0
+  delay: 0.5
+  collisionMask: FullTileMask
+  rotation: Fixed
+  fx: EffectRCDConstruct1
+
+# Holo Windows
+
+- type: rcd
+  id: HCDWindow
+  category: WindowsAndGrilles
+  sprite: /Textures/_DV/Interface/Radial/RCD/window.png
+  mode: ConstructObject
+  prototype: HCDWindow
+  cost: 0
+  delay: 0.5
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  rotation: Fixed
+  fx: EffectRCDConstruct1
+
+# L5
+- type: rcd
+  id: HCDWindowReinforced
+  category: WindowsAndGrilles
+  sprite: /Textures/_DV/Interface/Radial/RCD/window_reinforced.png
+  mode: ConstructObject
+  prototype: HCDWindowReinforced
+  cost: 0
+  delay: 0.5
+  collisionMask: Impassable
+  rules:
+  - IsWindow
+  rotation: Fixed
+  fx: EffectRCDConstruct1
+
+- type: rcd
+  id: HCDWindowDirectional
+  category: WindowsAndGrilles
+  sprite: /Textures/Interface/Radial/RCD/directional.png
+  mode: ConstructObject
+  prototype: HCDWindowDirectional
+  cost: 0
+  delay: 0.5
+  collisionMask: Impassable
+  collisionBounds: "-0.23,-0.49,0.23,-0.36"
+  rules:
+  - IsWindow
+  rotation: User
+  fx: EffectRCDConstruct1
+
+# Holo airlock
+
+- type: rcd
+  id: HCDAirlock
+  category: Airlocks
+  sprite: /Textures/_DV/Interface/Radial/RCD/airlock.png
+  mode: ConstructObject
+  prototype: HCDAirlock
+  collisionMask: FullTileMask
+  cost: 0
+  delay: 0.5
+  rotation: Fixed
+  fx: EffectRCDConstruct1
