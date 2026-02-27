@@ -25,6 +25,8 @@
   - type: Speech
     speechVerb: Moth
     allowedEmotes: ['Chitter', 'Squeak']
+  - type: BodyEmotes
+    soundsId: MothBodyEmotes
   - type: TypingIndicator
     proto: moth
   - type: Butcherable
