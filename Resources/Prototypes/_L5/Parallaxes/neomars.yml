@@ -1,0 +1,12 @@
+- type: parallax
+  id: NeoMars
+  layers:
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_L5/Parallaxes/neomars/land.png"
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/_L5/Parallaxes/neomars/clouds.png"
+    slowness: 0.1
+    scrolling: "0.2, -0.01"
+

@@ -1,3 +1,5 @@
+# L5 - commented out weather for all tiles
+
 # Metal Tiles
 - type: tile
   id: FloorMetalBlue
@@ -11,7 +13,7 @@
   itemDrop: FloorTileItemMetalBlue
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalBlueSolid
@@ -25,7 +27,7 @@
   itemDrop: FloorTileItemMetalBlueSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalGreen
@@ -39,7 +41,7 @@
   itemDrop: FloorTileItemMetalGreen
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalGreenSolid
@@ -53,7 +55,7 @@
   itemDrop: FloorTileItemMetalGreenSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalGrey
@@ -67,7 +69,7 @@
   itemDrop: FloorTileItemMetalGrey
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalGreySolid
@@ -81,7 +83,7 @@
   itemDrop: FloorTileItemMetalGreySolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalGreyDark
@@ -95,7 +97,7 @@
   itemDrop: FloorTileItemMetalGreyDark
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalGreyDarkSolid
@@ -109,7 +111,7 @@
   itemDrop: FloorTileItemMetalGreyDarkSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalPurple
@@ -123,7 +125,7 @@
   itemDrop: FloorTileItemMetalPurple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalPurpleSolid
@@ -137,7 +139,7 @@
   itemDrop: FloorTileItemMetalPurpleSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalRed
@@ -151,7 +153,7 @@
   itemDrop: FloorTileItemMetalRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalRedSolid
@@ -165,7 +167,7 @@
   itemDrop: FloorTileItemMetalRedSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalTeal
@@ -179,7 +181,7 @@
   itemDrop: FloorTileItemMetalTeal
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalTealSolid
@@ -193,7 +195,7 @@
   itemDrop: FloorTileItemMetalTealSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalWhite
@@ -207,7 +209,7 @@
   itemDrop: FloorTileItemMetalWhite
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalWhiteSolid
@@ -221,7 +223,7 @@
   itemDrop: FloorTileItemMetalWhiteSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalYellow
@@ -235,7 +237,7 @@
   itemDrop: FloorTileItemMetalYellow
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalYellowSolid
@@ -249,7 +251,7 @@
   itemDrop: FloorTileItemMetalYellowSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalFreezer
@@ -263,7 +265,7 @@
   itemDrop: FloorTileItemMetalFreezer
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalTunnel
@@ -276,7 +278,7 @@
     collection: N14FootstepMetalHollow
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalTunnelRusty
@@ -289,7 +291,7 @@
     collection: N14FootstepMetalHollow
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMetalTunnelWasteland
@@ -304,7 +306,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # MS13 Metal Tiles
 - type: tile
@@ -321,7 +323,7 @@
     collection: N14FootstepMetalHollow
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13MetalTile
@@ -337,7 +339,7 @@
     collection: N14FootstepMetalHollow
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13MetalGrate
@@ -353,7 +355,7 @@
     collection: N14FootstepMetalHollow
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13MetalSolid
@@ -369,7 +371,7 @@
     collection: N14FootstepMetalSolid
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # Interior
 - type: tile
@@ -386,7 +388,7 @@
   itemDrop: FloorTileItemWoodOak
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorWoodOakBroken
@@ -401,7 +403,7 @@
     collection: N14FootstepWood
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorWoodHouse
@@ -417,7 +419,7 @@
   itemDrop: FloorTileItemWoodHouse
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorWoodHouseBroken
@@ -432,7 +434,7 @@
     collection: N14FootstepWood
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorWoodBurntBroken
@@ -447,7 +449,7 @@
     collection: N14FootstepWood
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorWoodMaple
@@ -463,7 +465,7 @@
   itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # MS13 wood
 - type: tile
@@ -480,7 +482,7 @@
   # itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13WoodCommonDamaged
@@ -496,7 +498,7 @@
   # itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13WoodFancy
@@ -512,7 +514,7 @@
   # itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13WoodFancyDamaged
@@ -528,7 +530,7 @@
   # itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13WoodMosaic
@@ -544,7 +546,7 @@
   # itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13WoodMosaicDamaged
@@ -560,7 +562,7 @@
   # itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13WoodWide
@@ -576,7 +578,7 @@
   # itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13WoodWideDamaged
@@ -592,7 +594,7 @@
   # itemDrop: FloorTileItemWoodMaple
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # Carpet
 - type: tile
@@ -607,7 +609,7 @@
   itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # MS13 Carpet
 - type: tile
@@ -622,7 +624,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13CarpetFancyRed
@@ -636,7 +638,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 
 - type: tile
@@ -651,7 +653,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13CarpetBlue
@@ -665,7 +667,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13CarpetFancyBlue
@@ -679,7 +681,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13CarpetFancyBlueDiamond
@@ -693,7 +695,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13CarpetGreen
@@ -707,7 +709,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13CarpetFancyGreen
@@ -721,7 +723,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13CarpetViolet
@@ -735,7 +737,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13CarpetVioletDiamond
@@ -749,7 +751,7 @@
   # itemDrop: FloorTileItemCarpetRed
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # Paths and Roads
 # Concrete
@@ -765,7 +767,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorConcreteTileGoon
@@ -778,7 +780,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorConcreteGreyBay
@@ -791,7 +793,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorConcreteHexacrete
@@ -804,7 +806,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorConcreteHexacreteDark
@@ -816,7 +818,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorConcreteDark
@@ -830,7 +832,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorConcreteRoad
@@ -844,7 +846,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # MS13 Concrete & Brick
 - type: tile
@@ -859,7 +861,7 @@
     collection: N14FootstepConcreteBroken
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13BrickHorizontal
@@ -886,7 +888,7 @@
     collection: N14FootstepConcreteBroken
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13Concrete
@@ -898,7 +900,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13ConcreteIndustrial
@@ -910,7 +912,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13ConcreteIndustrialAlt
@@ -922,7 +924,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13ConcreteIndustrialSplit
@@ -934,7 +936,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileConcreteSmall
@@ -948,7 +950,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # MS13 Tiles
 - type: tile
@@ -961,7 +963,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileSierra
@@ -973,7 +975,7 @@
     collection: N14FootstepConcrete
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileSierraBroken
@@ -987,7 +989,7 @@
     collection: N14FootstepConcreteBroken
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileBlack
@@ -1001,7 +1003,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileBlackFull
@@ -1015,7 +1017,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileBlackLarge
@@ -1029,7 +1031,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileLongBlue
@@ -1043,7 +1045,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileBrown
@@ -1057,7 +1059,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileCafe
@@ -1071,7 +1073,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileCeramic
@@ -1083,7 +1085,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileCeramicBroken
@@ -1097,7 +1099,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileCheck
@@ -1111,7 +1113,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileGreen
@@ -1125,7 +1127,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileGreenFull
@@ -1139,7 +1141,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileGrey
@@ -1153,7 +1155,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileGreyLarge
@@ -1167,7 +1169,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileGreyLong
@@ -1181,7 +1183,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileNavy
@@ -1195,7 +1197,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileNavyFull
@@ -1209,7 +1211,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileNavyLarge
@@ -1223,7 +1225,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileWhiteLarge
@@ -1237,7 +1239,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileWhiteFull
@@ -1251,7 +1253,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorMS13TileOrnate
@@ -1265,7 +1267,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # Roads
 - type: tile
@@ -1278,7 +1280,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterMiddlePath
@@ -1290,7 +1292,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadCorner1
@@ -1302,7 +1304,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadCorner2
@@ -1314,7 +1316,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadCorner3
@@ -1326,7 +1328,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadCorner4
@@ -1338,7 +1340,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadBottom
@@ -1350,7 +1352,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadLeft
@@ -1362,7 +1364,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadRight
@@ -1374,7 +1376,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTop
@@ -1386,7 +1388,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterTurnNorth
@@ -1398,7 +1400,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterTurnSouth
@@ -1410,7 +1412,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterTurnWest
@@ -1422,7 +1424,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterTurnEast
@@ -1434,7 +1436,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterCorner1
@@ -1446,7 +1448,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterCorner2
@@ -1458,7 +1460,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterCorner3
@@ -1470,7 +1472,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadOuterCorner4
@@ -1482,7 +1484,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadInnerTurn1
@@ -1494,7 +1496,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadInnerTurn2
@@ -1506,7 +1508,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadInnerTurn3
@@ -1518,7 +1520,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadInnerTurn4
@@ -1530,7 +1532,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTinyCornerHorizontal1
@@ -1542,7 +1544,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTinyCornerHorizontal2
@@ -1554,7 +1556,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTinyCornerHorizontal3
@@ -1566,7 +1568,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTinyCornerHorizontal4
@@ -1578,7 +1580,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTinyCornerVertical1
@@ -1590,7 +1592,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTinyCornerVertical2
@@ -1602,7 +1604,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTinyCornerVertical3
@@ -1614,7 +1616,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: N14FloorRoadTinyCornerVertical4
@@ -1626,7 +1628,7 @@
     collection: FootstepFloor
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 # Wasteland
 - type: tile
@@ -1641,7 +1643,7 @@
     collection: N14FootstepDirt
   thermalConductivity: 0.04
   heatCapacity: 10000
-  weather: true
+#  weather: true
   indestructible: true
 
 - type: tile
@@ -1663,7 +1665,7 @@
   footstepSounds:
     collection: N14FootstepDirt
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorDirtIndoors
@@ -1706,7 +1708,7 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
-  weather: true
+#  weather: true
 
 - type: tile
   id: FloorRubbleIndoors
@@ -1728,4 +1730,4 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
-  weather: true
+#  weather: true
