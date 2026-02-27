@@ -1221,3 +1221,11 @@ Entries:
       message: You can now research and print the plain RCD (as well as the HCD).
   id: 171
   time: '2026-02-26T21:31:57.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: >-
+        Rather than over Europa, the Omphalos is now over Mars, now with a
+        completely different atmosphere and weather system
+  id: 172
+  time: '2026-02-27T02:23:20.0000000+00:00'
