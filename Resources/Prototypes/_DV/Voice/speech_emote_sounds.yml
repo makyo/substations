@@ -259,7 +259,7 @@
       params:
         variation: 0.05 # L5 - reduce variance
     Sneeze:
-      collection: MaleSneezes
+      collection: VulpkaninSneeze
     Cough:
       collection: MaleCoughs
     Yawn:
@@ -311,7 +311,7 @@
       params:
         variation: 0.05 # L5 - reduce variance
     Sneeze:
-      collection: FemaleSneezes
+      collection: VulpkaninSneeze
     Cough:
       collection: FemaleCoughs
     Yawn:
