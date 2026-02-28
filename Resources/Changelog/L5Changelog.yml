@@ -1255,3 +1255,11 @@ Entries:
       message: Doors and lockers that can be locked to a specific ID have been added
   id: 176
   time: '2026-02-28T10:04:48.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        You can now interact with players in more ways than just hugging through
+        the verb menu.
+  id: 177
+  time: '2026-02-28T21:45:35.0000000+00:00'
