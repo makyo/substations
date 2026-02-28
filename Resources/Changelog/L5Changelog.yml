@@ -1237,3 +1237,9 @@ Entries:
         HUD to accept.
   id: 173
   time: '2026-02-28T07:10:45.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Robodoggy! Quadborgs are now a choice from chassis selection.
+  id: 174
+  time: '2026-02-28T08:05:00.0000000+00:00'
