@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/28/2026 21:51:25
-  entityCount: 1029
+  time: 02/28/2026 22:11:40
+  entityCount: 1027
 maps:
 - 1
 grids:
@@ -2806,16 +2806,14 @@ entities:
   - uid: 369
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 12.5,-20.5
+      pos: 12.5,-22.5
       parent: 2
 - proto: GasMinerOxygen
   entities:
   - uid: 370
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 12.5,-22.5
+      pos: 12.5,-20.5
       parent: 2
 - proto: GasMixerEnabledFlipped
   entities:
@@ -2828,7 +2826,7 @@ entities:
     - type: GasMixer
       inletTwoConcentration: 0.75
       inletOneConcentration: 0.25
-      targetPressure: 4500
+      targetPressure: 101.3
     - type: AtmosPipeColor
       color: '#0055CCFF'
 - proto: GasOutletInjector
@@ -4507,6 +4505,8 @@ entities:
       pos: 10.5,-27.5
       parent: 2
     - type: DeviceNetwork
+      configurators:
+      - invalid
       deviceLists:
       - 4
     - type: AtmosPipeLayers
@@ -5250,20 +5250,10 @@ entities:
         ​
 - proto: PottedPlantRandom
   entities:
-  - uid: 653
-    components:
-    - type: Transform
-      pos: -1.5,-17.5
-      parent: 2
   - uid: 654
     components:
     - type: Transform
       pos: 4.5,-22.5
-      parent: 2
-  - uid: 1014
-    components:
-    - type: Transform
-      pos: -1.5,-26.5
       parent: 2
 - proto: PowerCellRecharger
   entities:
@@ -5509,17 +5499,17 @@ entities:
       canCollide: False
 - proto: RandomVendingDrinks
   entities:
-  - uid: 686
+  - uid: 653
     components:
     - type: Transform
-      pos: 6.5,-27.5
+      pos: -1.5,-26.5
       parent: 2
 - proto: RandomVendingSnacks
   entities:
-  - uid: 687
+  - uid: 686
     components:
     - type: Transform
-      pos: 6.5,-26.5
+      pos: -1.5,-17.5
       parent: 2
 - proto: Recycler
   entities:
