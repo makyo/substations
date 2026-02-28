@@ -1,5 +1,7 @@
 using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Floof.InteractionVerbs.Actions;
 
@@ -29,6 +31,6 @@ public sealed partial class ModifyHealthAction : InteractionAction
     {
         var damage = Damage * RandomFactor.Random(deps.Random); // Floof
         return deps.EntMan.System<DamageableSystem>()
-            .TryChangeDamage(args.Target, damage, IgnoreResistance, origin: args.User) is not null; // Floof - changed Damage to damage
+            .TryChangeDamage(args.Target, damage, IgnoreResistance, origin: args.User); // Floof - changed Damage to damage
     }
 }
