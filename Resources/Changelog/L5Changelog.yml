@@ -1249,3 +1249,9 @@ Entries:
       message: So, *so* many plushies...
   id: 175
   time: '2026-02-28T09:37:44.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: Doors and lockers that can be locked to a specific ID have been added
+  id: 176
+  time: '2026-02-28T10:04:48.0000000+00:00'
