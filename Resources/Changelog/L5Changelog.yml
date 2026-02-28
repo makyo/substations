@@ -1229,3 +1229,11 @@ Entries:
         completely different atmosphere and weather system
   id: 172
   time: '2026-02-27T02:23:20.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Add
+      message: >-
+        Skunks& offers "item offering" to you. Click the "Offer" icon in your
+        HUD to accept.
+  id: 173
+  time: '2026-02-28T07:10:45.0000000+00:00'
