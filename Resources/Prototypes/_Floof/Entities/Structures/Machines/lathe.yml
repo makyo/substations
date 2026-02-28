@@ -12,8 +12,9 @@
     sound:
       path: /Audio/Ambience/Objects/vending_machine_hum.ogg
   - type: LitOnPowered
-  - type: ApcPowerReceiver
-    powerLoad: 600
+# L5
+#  - type: ApcPowerReceiver
+#    powerLoad: 600
   - type: Vocalizer
     minVocalizeInterval: 1m
     maxVocalizeInterval: 5m
@@ -42,4 +43,3 @@
     runningState: icon
     staticPacks:
     - PrizesStatic
-
