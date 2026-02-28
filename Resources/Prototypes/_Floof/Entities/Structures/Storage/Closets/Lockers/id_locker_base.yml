@@ -7,8 +7,12 @@
     revealInfo: false
     lockSound:
       path: /Audio/Effects/double_beep.ogg
+      params: # L5
+        volume: -6
     unlockSound:
       path: /Audio/Effects/double_beep.ogg
+      params: # L5
+        volume: -6
 
 # A base nanotrasen-aligned lockable entity that can be privitized using an ID card.
 # Inheritors should provide additional masterAccesses based on the department.
