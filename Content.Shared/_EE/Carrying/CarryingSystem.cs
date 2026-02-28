@@ -310,7 +310,8 @@ public sealed partial class CarryingSystem : EntitySystem
         // Euphoria section end
     }
 
-    private void DropCarried(EntityUid carrier, EntityUid carried)
+    // Euphoria — made public
+    public void DropCarried(EntityUid carrier, EntityUid carried)
     {
         Drop(carried);
         CleanupCarrier(carrier, carried);
@@ -352,7 +353,8 @@ public sealed partial class CarryingSystem : EntitySystem
         _slowdown.SetModifier(carrier, modifier);
     }
 
-    private bool CanCarry(EntityUid carrier, Entity<CarriableComponent> carried)
+    // Euphoria — made public
+    public bool CanCarry(EntityUid carrier, Entity<CarriableComponent> carried)
     {
         // cant carry yourself, no tower of spacemen or stack overflow
         if (carrier == carried.Owner ||
