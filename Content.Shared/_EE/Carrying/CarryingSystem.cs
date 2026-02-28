@@ -31,6 +31,8 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 // imp:
 using Content.Shared._Impstation.Carrying;
+// Euphoria:
+using Content.Shared._Floof.OfferItem;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Item;
 
@@ -171,14 +173,15 @@ public sealed partial class CarryingSystem : EntitySystem
     /// </summary>
     private void OnInteractionAttempt(Entity<BeingCarriedComponent> ent, ref InteractionAttemptEvent args)
     {
-        if (args.Target is not { } target)
-            return;
-
-        var targetParent = Transform(target).ParentUid;
-
-        var carrier = ent.Comp.Carrier;
-        if (target != carrier && targetParent != carrier && targetParent != ent.Owner)
-            args.Cancelled = true;
+        // Euphoria - no - this prevents the person from escaping and more.
+        // if (args.Target is not {} target)
+        //     return;
+        //
+        // var targetParent = Transform(target).ParentUid;
+        //
+        // var carrier = ent.Comp.Carrier;
+        // if (target != carrier && targetParent != carrier && targetParent != ent.Owner)
+        //     args.Cancelled = true;
     }
 
     private void OnMoveAttempt(Entity<BeingCarriedComponent> ent, ref UpdateCanMoveEvent args)
@@ -193,8 +196,9 @@ public sealed partial class CarryingSystem : EntitySystem
 
     private void OnInteractedWith(Entity<BeingCarriedComponent> ent, ref GettingInteractedWithAttemptEvent args)
     {
-        if (args.Uid != ent.Comp.Carrier)
-            args.Cancelled = true;
+        // Euphoria - why?
+        // if (args.Uid != ent.Comp.Carrier)
+        //     args.Cancelled = true;
     }
 
     private void OnPullAttempt(Entity<BeingCarriedComponent> ent, ref PullAttemptEvent args)
@@ -231,7 +235,8 @@ public sealed partial class CarryingSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void StartCarryDoAfter(EntityUid carrier, Entity<CarriableComponent> carried)
+    // Euphoria - made public
+    public void StartCarryDoAfter(EntityUid carrier, Entity<CarriableComponent> carried)
     {
         // NF: change arbitrary doafter length cancel to a mass check
         if (!TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
@@ -297,11 +302,16 @@ public sealed partial class CarryingSystem : EntitySystem
             return;
 
         _virtualItem.DeleteInHandsMatching(carrier, carried); // imp: pick up people you're dragging
-        _virtualItem.TrySpawnVirtualItemInHand(carried, carrier);
-        _virtualItem.TrySpawnVirtualItemInHand(carried, carrier);
+        // Euphoria - store virtual items and add a special component to them
+        if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out var virt))
+            EnsureComp<OfferableVirtualItemComponent>(virt.Value);
+        if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out virt))
+            EnsureComp<OfferableVirtualItemComponent>(virt.Value);
+        // Euphoria section end
     }
 
-    private void DropCarried(EntityUid carrier, EntityUid carried)
+    // Euphoria — made public
+    public void DropCarried(EntityUid carrier, EntityUid carried)
     {
         Drop(carried);
         CleanupCarrier(carrier, carried);
@@ -343,7 +353,8 @@ public sealed partial class CarryingSystem : EntitySystem
         _slowdown.SetModifier(carrier, modifier);
     }
 
-    private bool CanCarry(EntityUid carrier, Entity<CarriableComponent> carried)
+    // Euphoria — made public
+    public bool CanCarry(EntityUid carrier, Entity<CarriableComponent> carried)
     {
         // cant carry yourself, no tower of spacemen or stack overflow
         if (carrier == carried.Owner ||
