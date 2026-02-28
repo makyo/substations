@@ -35,7 +35,7 @@
   - type: AccessReader
     access: [["Command"], ["Robotics"], ["Security"]]
   - type: Crawler
-  - type: UnderTableCrawling
+  #- type: UnderTableCrawling # L5
   radioChannels:
   - Science
   - Security
@@ -93,7 +93,7 @@
   - type: AccessReader
     access: [["Command"], ["Robotics"], ["Salvage"]]
   - type: Crawler
-  - type: UnderTableCrawling
+  #- type: UnderTableCrawling # L5
   radioChannels:
   - Supply
   - Science
@@ -167,9 +167,9 @@
   - type: AccessReader # DeltaV - departmental access
     access: [["Command"], ["Robotics"], ["Medical"]]
   - type: Crawler
-  - type: UnderTableCrawling
+  #- type: UnderTableCrawling # L5
   - type: SurgeryTarget # Shitmed
-  - type: Sanitized # Shitmed  
+  - type: Sanitized # Shitmed
   # Visual
   clientComponents:
   - type: Sprite
@@ -225,7 +225,7 @@
   - type: AccessReader
     access: [["Command"], ["Robotics"], ["Service"]]
   - type: Crawler
-  - type: UnderTableCrawling
+  #- type: UnderTableCrawling # L5
   # Visual
   clientComponents:
   - type: Sprite
