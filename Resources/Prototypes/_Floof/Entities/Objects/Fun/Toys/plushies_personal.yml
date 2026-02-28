@@ -122,24 +122,25 @@
     state: kobolt
   - type: UseDelay
     delay: 1.5
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
-      params:
-        volume: 1
-  - type: EmitSoundOnLand
-    sound: &landCj
-      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
-      params:
-        volume: 2
-        variation: 0.1
-  - type: EmitSoundOnCollide
-    sound: *landCj
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
-      params:
-        volume: 1
+# L5
+#  - type: EmitSoundOnUse
+#    sound:
+#      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+#      params:
+#        volume: 1
+#  - type: EmitSoundOnLand
+#    sound: &landCj
+#      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+#      params:
+#        volume: 2
+#        variation: 0.1
+#  - type: EmitSoundOnCollide
+#    sound: *landCj
+#  - type: EmitSoundOnActivate
+#    sound:
+#      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+#      params:
+#        volume: 1
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
@@ -160,22 +161,22 @@
     delay: 3.0
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Floof/Voice/Avali/avali_1.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_1.ogg # L5
       params:
         volume: 1
   - type: EmitSoundOnLand
     sound: &landAvali
-      path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_scream.ogg # L5
   - type: EmitSoundOnCollide
     sound: *landAvali
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/_Floof/Voice/Avali/avali_1.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_1.ogg # L5
       params:
         volume: 1
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_scream.ogg # L5
       params:
         variation: 0.05
         volume: 4
@@ -310,7 +311,7 @@
         volume: 2
   - type: EmitSoundOnLand
     sound: &landLo
-      path: /Audio/_Floof/Voice/Rodentia/Rat_Scream_01.ogg
+      path: /Audio/Items/Toys/mousesqueek.ogg # L5
   - type: EmitSoundOnCollide
     sound: *landLo
   - type: EmitSoundOnActivate
@@ -320,7 +321,7 @@
         volume: 2
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/_Floof/Voice/Rodentia/Rat_Scream_01.ogg
+      path: /Audio/Items/Toys/mousesqueek.ogg # L5
       params:
         variation: 0.05
         volume: 4
@@ -343,7 +344,7 @@
         volume: 2
   - type: EmitSoundOnLand
     sound: &landCmo
-      path: /Audio/_Floof/Voice/Rodentia/Rat_Scream_01.ogg
+      path: /Audio/Items/Toys/mousesqueek.ogg # L5
   - type: EmitSoundOnCollide
     sound: *landCmo
   - type: EmitSoundOnActivate
@@ -353,7 +354,7 @@
         volume: 2
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/_Floof/Voice/Rodentia/Rat_Scream_01.ogg
+      path: /Audio/Items/Toys/mousesqueek.ogg # L5
       params:
         variation: 0.05
         volume: 4
@@ -371,22 +372,22 @@
     delay: 3.0
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Floof/Voice/Avali/avali_1.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_1.ogg
       params:
         volume: 1
   - type: EmitSoundOnLand
     sound: &landResomi
-      path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_scream.ogg
   - type: EmitSoundOnCollide
     sound: *landResomi
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/_Floof/Voice/Avali/avali_1.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_1.ogg
       params:
         volume: 1
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_scream.ogg
       params:
         variation: 0.05
         volume: 4
@@ -426,7 +427,7 @@
         volume: 4
 
 - type: entity
-  parent: [PlushieHuman, BaseFleshlight]
+  parent: PlushieHuman # L5 - was [PlushieHuman, BaseFleshlight]
   id: PlushieBunnyStressRelief
   name: Bunny stress relief plushie
   description: This plushie smells sweet and feels super soft to the touch. Great for relieving stress in every way.
@@ -457,37 +458,38 @@
       params:
         variation: 0.05
         volume: 1.2
-  - type: Edible
-    edible: Drink
-    destroyOnEmpty: false
-    utensil: None
-    solution: fleshlight
-  - type: SolutionContainerManager
-    solutions:
-      fleshlight:
-        maxVol: 10
-  - type: SolutionTransfer
-    transferAmount: 5
-    maxTransferAmount: 10
-    minTransferAmount: 1
-    canChangeTransferAmount: true
-  - type: UserInterface
-    interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
-  - type: Spillable
-    solution: fleshlight
-  - type: DrawableSolution
-    solution: fleshlight
-  - type: RefillableSolution
-    solution: fleshlight
-  - type: DrainableSolution
-    solution: fleshlight
-  - type: ExaminableSolution
-    solution: fleshlight
-  - type: Tag
-    tags:
-    - Fleshlight
+# L5
+#  - type: Edible
+#    edible: Drink
+#    destroyOnEmpty: false
+#    utensil: None
+#    solution: fleshlight
+#  - type: SolutionContainerManager
+#    solutions:
+#      fleshlight:
+#        maxVol: 10
+#  - type: SolutionTransfer
+#    transferAmount: 5
+#    maxTransferAmount: 10
+#    minTransferAmount: 1
+#    canChangeTransferAmount: true
+#  - type: UserInterface
+#    interfaces:
+#      enum.TransferAmountUiKey.Key:
+#        type: TransferAmountBoundUserInterface
+#  - type: Spillable
+#    solution: fleshlight
+#  - type: DrawableSolution
+#    solution: fleshlight
+#  - type: RefillableSolution
+#    solution: fleshlight
+#  - type: DrainableSolution
+#    solution: fleshlight
+#  - type: ExaminableSolution
+#    solution: fleshlight
+#  - type: Tag
+#    tags:
+#    - Fleshlight
 
 - type: entity
   parent: PlushieHuman
@@ -802,12 +804,12 @@
     delay: 3.0
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/_Floof/Voice/Harpy/harpy_coo3.ogg
+      path: /Audio/_DV/Voice/Harpy/chirp1.ogg # L5
       params:
         volume: 2
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Floof/Voice/Harpy/harpy_coo3.ogg
+      path: /Audio/_DV/Voice/Harpy/chirp1.ogg # L5
       params:
         volume: 2
   - type: EmitSoundOnLand
@@ -934,12 +936,12 @@
     delay: 3.0
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      path: /Audio/Voice/Vulpkanin/dog_bark1.ogg # L5
       params:
         volume: 2
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      path: /Audio/Voice/Vulpkanin/dog_bark2.ogg # L5
       params:
         volume: 2
   - type: EmitSoundOnLand
@@ -984,37 +986,38 @@
         variation: 0.05
         volume: 4
   - type: MultiHandedItem
-  - type: Edible
-    edible: Drink
-    destroyOnEmpty: false
-    utensil: None
-    solution: fleshlight
-  - type: SolutionContainerManager
-    solutions:
-      fleshlight:
-        maxVol: 10
-  - type: SolutionTransfer
-    transferAmount: 5
-    maxTransferAmount: 10
-    minTransferAmount: 1
-    canChangeTransferAmount: true
-  - type: UserInterface
-    interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
-  - type: Spillable
-    solution: fleshlight
-  - type: DrawableSolution
-    solution: fleshlight
-  - type: RefillableSolution
-    solution: fleshlight
-  - type: DrainableSolution
-    solution: fleshlight
-  - type: ExaminableSolution
-    solution: fleshlight
-  - type: Tag
-    tags:
-    - Fleshlight
+# L5
+#  - type: Edible
+#    edible: Drink
+#    destroyOnEmpty: false
+#    utensil: None
+#    solution: fleshlight
+#  - type: SolutionContainerManager
+#    solutions:
+#      fleshlight:
+#        maxVol: 10
+#  - type: SolutionTransfer
+#    transferAmount: 5
+#    maxTransferAmount: 10
+#    minTransferAmount: 1
+#    canChangeTransferAmount: true
+#  - type: UserInterface
+#    interfaces:
+#      enum.TransferAmountUiKey.Key:
+#        type: TransferAmountBoundUserInterface
+#  - type: Spillable
+#    solution: fleshlight
+#  - type: DrawableSolution
+#    solution: fleshlight
+#  - type: RefillableSolution
+#    solution: fleshlight
+#  - type: DrainableSolution
+#    solution: fleshlight
+#  - type: ExaminableSolution
+#    solution: fleshlight
+#  - type: Tag
+#    tags:
+#    - Fleshlight
 
 - type: entity
   parent: PlushieHuman
@@ -1085,7 +1088,7 @@
     delay: 2.0
   - type: EmitSoundOnActivate
     sound: &reptYip
-      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      path: /Audio/_DV/Voice/Kitsune/fox_squeal1.ogg # L5
       params:
         volume: 2
   - type: EmitSoundOnUse

@@ -49,9 +49,9 @@
     solution: absorbed
   - type: Edible
     edible: Drink
+    destroyOnEmpty: false
+    utensil: None
     solution: absorbed
-    #examinable: false
-    ignoreEmpty: true
 
 - type: entity
   parent: BaseHypnoTempPlush
