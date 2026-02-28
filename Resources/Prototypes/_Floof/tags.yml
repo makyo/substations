@@ -1,2 +1,8 @@
 - type: Tag
   id: CakeBase
+
+- type: Tag
+  id: EnergySabre
+
+- type: Tag
+  id: ShirtlessClothing
