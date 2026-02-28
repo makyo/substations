@@ -61,6 +61,9 @@
         acts: ["Destruction"]
   - type: Occluder
   - type: BlockWeather
+  - type: InteractionVerbs
+    allowedVerbs:
+      - KnockOn
 
 - type: entity
   abstract: true
