@@ -4505,8 +4505,6 @@ entities:
       pos: 10.5,-27.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 4
     - type: AtmosPipeLayers
@@ -4696,8 +4694,6 @@ entities:
       pos: 10.5,-20.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 4
     - type: Construction
