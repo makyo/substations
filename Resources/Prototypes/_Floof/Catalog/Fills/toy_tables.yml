@@ -173,6 +173,7 @@
     - id: PlushieDetectiveVulps
     - id: PlushieJester
     - id: PlushieSlips
+    - id: PlushSkunk # L5
     - !type:GroupSelector # Hypnotemp
       children:
       - id: PlushieHypnoTempLO

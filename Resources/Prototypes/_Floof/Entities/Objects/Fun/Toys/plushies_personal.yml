@@ -1519,3 +1519,26 @@
         density: 10
         mask:
         - ItemMask
+
+### L5
+- type: entity
+  parent: BasePlushie
+  id: PlushSkunk
+  name: Slow Hours Plushie
+  description: "She's so tired. She's so tired all the time."
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: skunk
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound: *toySqueak
+  - type: EmitSoundOnUse
+    sound: *toySqueak
+  - type: EmitSoundOnLand
+    sound: *toySqueak
+  - type: EmitSoundOnCollide
+    sound: *toySqueak
+  - type: MeleeWeapon
+    soundHit: *toySqueak
