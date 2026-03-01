@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/17/2026 04:02:05
-  entityCount: 884
+  time: 03/01/2026 07:39:04
+  entityCount: 876
 maps:
 - 752
 grids:
@@ -3959,216 +3959,48 @@ entities:
           ent: null
     - type: Lock
       locked: False
-- proto: LockerSteel
+- proto: LockerSteelIdLockable
   entities:
+  - uid: 452
+    components:
+    - type: Transform
+      pos: -4.2561865,-6.5
+      parent: 1
   - uid: 462
     components:
     - type: Transform
-      pos: -2.267468,-0.5
+      pos: -2.7168605,-0.5
       parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.1462
-        moles:
-          Oxygen: 1.606311
-          Nitrogen: 6.042789
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 778
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: Lock
-      locked: False
   - uid: 463
     components:
     - type: Transform
-      pos: -2.283093,-6.5
+      pos: -2.705625,-6.5
       parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.1462
-        moles:
-          Oxygen: 1.606311
-          Nitrogen: 6.042789
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 808
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: Lock
-      locked: False
   - uid: 464
     components:
     - type: Transform
-      pos: -4.2724533,-0.5
+      pos: -2.233715,-6.5
       parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.1462
-        moles:
-          Oxygen: 1.606311
-          Nitrogen: 6.042789
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 809
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: Lock
-      locked: False
   - uid: 465
     components:
     - type: Transform
-      pos: -4.7724533,-0.5
+      pos: -4.739332,-6.5
       parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.7459903
-          Nitrogen: 6.568249
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 810
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: Lock
-      locked: False
   - uid: 466
     components:
     - type: Transform
-      pos: -2.751843,-0.5
+      pos: -2.233715,-0.5
       parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.6174853
-          Nitrogen: 6.0848265
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 811
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: Lock
-      locked: False
   - uid: 467
     components:
     - type: Transform
-      pos: -2.751843,-6.5
+      pos: -4.7618046,-0.5
       parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.7459903
-          Nitrogen: 6.568249
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 812
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: Lock
-      locked: False
   - uid: 468
     components:
     - type: Transform
-      pos: -4.3193283,-6.5
+      pos: -4.289894,-0.5
       parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.7459903
-          Nitrogen: 6.568249
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 813
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: Lock
-      locked: False
-  - uid: 469
-    components:
-    - type: Transform
-      pos: -4.7880783,-6.5
-      parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.1462
-        moles:
-          Oxygen: 1.606311
-          Nitrogen: 6.042789
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 814
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: Lock
-      locked: False
 - proto: LootSpawnerRandomCrateEngineering
   entities:
   - uid: 693
@@ -4262,64 +4094,6 @@ entities:
     - type: Transform
       pos: 5.371244,9.542093
       parent: 1
-- proto: PlushieMothRandom
-  entities:
-  - uid: 778
-    components:
-    - type: Transform
-      parent: 462
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 808
-    components:
-    - type: Transform
-      parent: 463
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 809
-    components:
-    - type: Transform
-      parent: 464
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 810
-    components:
-    - type: Transform
-      parent: 465
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 811
-    components:
-    - type: Transform
-      parent: 466
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 812
-    components:
-    - type: Transform
-      parent: 467
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 813
-    components:
-    - type: Transform
-      parent: 468
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 814
-    components:
-    - type: Transform
-      parent: 469
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: PoweredLightBlueInterior
   entities:
   - uid: 476
@@ -5831,6 +5605,9 @@ entities:
     - type: Transform
       pos: 6.5,-10.5
       parent: 1
+    - type: AccessReader
+      accessListsOriginal:
+      - - Salvage
 - proto: WallShuttle
   entities:
   - uid: 572

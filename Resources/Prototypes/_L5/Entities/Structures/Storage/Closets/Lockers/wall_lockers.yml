@@ -1,0 +1,9 @@
+# TODO: unique appearence, maybe?
+# A generic secure wall locker that starts with an ID lock.
+- type: entity
+  id: WallLockerIdLockable
+  suffix: ID lock
+  parent: [IdLockableBase, BaseWallLockerDeltaV]
+  components:
+  - type: IdLock
+    enabled: true
