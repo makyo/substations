@@ -3,7 +3,7 @@
   id: GasVentPumpInlet
   name: air vent
   suffix: Inlet/Distro
-  description: Has a valve and a pump attached to it. This one has 'DISTRO' scribbled on it in paint pen.
+  description: "Has a valve and a pump attached to it. This one has 'DISTRO' scribbled on it in paint pen."
   components:
   - type: GasVentPump
     underPressureLockoutThreshold: 30
@@ -22,7 +22,7 @@
   id: GasVentPumpOutlet
   name: air vent
   suffix: Outlet/Waste
-  description: Has a valve and a pump attached to it. This one has 'WASTE' scribbled on it in paint pen.
+  description: "Has a valve and a pump attached to it. This one has 'WASTE' scribbled on it in paint pen."
   components:
   - type: GasVentPump # Lockout is disabled in code
     flowmos: Outlet
