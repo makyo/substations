@@ -1269,3 +1269,9 @@ Entries:
       message: Inlets and outlets are properly placed on Lepus
   id: 178
   time: '2026-03-01T04:52:57.0000000+00:00'
+- author: makyo
+  changes:
+    - type: Tweak
+      message: Mat boxes can now pick up cables and tiles
+  id: 179
+  time: '2026-03-02T02:08:25.0000000+00:00'
