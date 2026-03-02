@@ -60,6 +60,9 @@
       - ConstructionMaterial
       - RawMaterial
       - Sheet
+      - CableCoil
+      components:
+      - FloorTile
   - type: MagnetPickup
     range: 2
   - type: Dumpable
