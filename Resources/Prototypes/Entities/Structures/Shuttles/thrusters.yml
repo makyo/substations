@@ -18,8 +18,8 @@
           - MachineLayer
     - type: AmbientSound
       enabled: false
-      range: 4
-      volume: -4
+      range: 8 # L5 — sound only when thrusting, thus can hear from further away
+      volume: 4 # L5 — sound only when thrusting, thus louder
       sound:
         path: /Audio/Effects/shuttle_thruster.ogg
     - type: Transform

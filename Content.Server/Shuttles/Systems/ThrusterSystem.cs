@@ -326,7 +326,8 @@ public sealed class ThrusterSystem : EntitySystem
             _light.SetEnabled(uid, true, pointLightComponent);
         }
 
-        _ambient.SetAmbience(uid, true);
+        // L5 — sound only when thrusting
+        //_ambient.SetAmbience(uid, true);
         RefreshCenter(uid, shuttleComponent);
     }
 
@@ -414,7 +415,8 @@ public sealed class ThrusterSystem : EntitySystem
             _light.SetEnabled(uid, false, pointLightComponent);
         }
 
-        _ambient.SetAmbience(uid, false);
+        // L5 — sound only when thrusting
+        //_ambient.SetAmbience(uid, false);
 
         if (TryComp(uid, out PhysicsComponent? physicsComponent))
         {
@@ -522,6 +524,7 @@ public sealed class ThrusterSystem : EntitySystem
             comp.Firing = true;
             appearanceQuery.TryGetComponent(uid, out var appearance);
             _appearance.SetData(uid, ThrusterVisualState.Thrusting, true, appearance);
+            _ambient.SetAmbience(uid, true); // L5 — sound only when thrusting
         }
     }
 
@@ -547,6 +550,7 @@ public sealed class ThrusterSystem : EntitySystem
             appearanceQuery.TryGetComponent(uid, out var appearance);
             comp.Firing = false;
             _appearance.SetData(uid, ThrusterVisualState.Thrusting, false, appearance);
+            _ambient.SetAmbience(uid, false); // L5 — sound only when thrusting
         }
     }
 
@@ -575,6 +579,7 @@ public sealed class ThrusterSystem : EntitySystem
                 appearanceQuery.TryGetComponent(uid, out var appearance);
                 comp.Firing = true;
                 _appearance.SetData(uid, ThrusterVisualState.Thrusting, true, appearance);
+                _ambient.SetAmbience(uid, true); // L5 — sound only when thrusting
             }
         }
         else
@@ -587,6 +592,7 @@ public sealed class ThrusterSystem : EntitySystem
                 appearanceQuery.TryGetComponent(uid, out var appearance);
                 comp.Firing = false;
                 _appearance.SetData(uid, ThrusterVisualState.Thrusting, false, appearance);
+                _ambient.SetAmbience(uid, false); // L5 — sound only when thrusting
             }
         }
     }
