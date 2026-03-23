@@ -12,3 +12,39 @@
   components:
   - type: Pda
     id: ITPIDCard
+
+- type: entity
+  parent: SyndiPDA
+  id: CNZSupervisorPDA
+  name: CNZ supervisor PDA
+  description: CNZ commander PDA
+  components:
+  - type: Pda
+    id: CNZSupervisorIDCard
+
+- type: entity
+  parent: SyndiPDA
+  id: CNZContractorPDA
+  name: CNZ contractor PDA
+  description: CNZ contractor PDA
+  components:
+  - type: Pda
+    id: CNZContractorIDCard
+
+- type: entity
+  parent: SyndiPDA
+  id: GEXMemberPDA
+  name: GEX member PDA
+  description: GEX member PDA
+  components:
+  - type: Pda
+    id: GEXMemberIDCard
+
+- type: entity
+  parent: SyndiPDA
+  id: GEXContractorPDA
+  name: GEX contractor PDA
+  description: GEX contractor PDA
+  components:
+  - type: Pda
+    id: GEXContractorIDCard

@@ -135,6 +135,7 @@
     containers:
       key_slots:
       - EncryptionKeySyndie
+      - EncryptionKeyFreelance # L5
   - type: Sprite
     sprite: Clothing/Ears/Headsets/syndicate.rsi
   - type: Clothing

@@ -38,3 +38,98 @@
   loadouts:
   - HoPGloves
   - InspectionGloves
+
+# Antag
+
+## CNZ
+
+### Commander
+- type: loadoutGroup
+  id: CNZCommanderHead
+  name: loadout-group-cnz-commander-head
+  loadouts:
+  - ClothingHeadHatSyndieMAA
+  - ClothingHeadHatSyndie
+  - ClothingHeadHatBeretFrench
+
+- type: loadoutGroup
+  id: CNZCommanderJumpsuit
+  name: loadout-group-cnz-commander-jumpsuit
+  loadouts:
+  - ClothingUniformJumpsuitSyndieFormal
+  - ClothingUniformJumpskirtSynideFormalDress
+  - ClothingUniformJumpsuitSuitBrownAlt
+
+- type: loadoutGroup
+  id: CNZCommanderOuter
+  name: loadout-group-cnz-commander-outer
+  loadouts:
+  - ClothingOuterCoatSyndieCap
+  - ClothingOuterCoatSyndieCapArmored
+  - ClothingOuterWinterSyndieCap
+  - ClothingOuterCoatRyuzo
+
+- type: loadoutGroup
+  id: CNZCommanderShoes
+  name: lodout-group-cnz-commander-shoes
+  loadouts:
+  - ClothingShoesBootsCombatFilled
+  - ClothingShoesBootsWinterSyndicate
+  - ClothingShoesBootsRyuzo
+  - LaceupShoes
+
+- type: loadoutGroup
+  id: CNZCommanderNeck
+  name: lodout-group-cnz-commander-neck
+  loadouts:
+  - ClothingNeckMantleRyuzo
+  - ClothingNeckScarfStripedSyndieRed
+  - ClothingNeckScarfStripedSyndieGreen
+
+### Contractor
+- type: loadoutGroup
+  id: CNZContractorHead
+  loadouts:
+  - ClothingHeadHatSyndie
+  - ClothingHeadHatBeret
+  - ClothingHeadHatSurgcapCybersun
+
+- type: loadoutGroup
+  id: CNZContractorJumpsuit
+  name: loadout-group-cnz-contractor-jumpsuit
+  loadouts:
+  - ClothingUniformJumpsuitOperative
+  - ClothingUniformJumpskirtOperative
+  - ClothingUniformCybersunAttorney
+  - ClothingUniformCybersunCasual
+  - ClothingUniformCybersunRND
+  - ClothingUniformJumpsuitRoboNeuroticist
+  - ClothingUniformJumpskirtRoboNeuroticist
+  - ClothingUniformJumpsuitParamedicSyndie
+  - ClothingUniformInterdyneChemist
+  - UniformScrubsColorCybersun
+  - ClothingUniformJumpsuitRepairmanSyndie
+  - ClothingUniformJumpsuitRecruitSyndie
+
+- type: loadoutGroup
+  id: CNZContractorOuter
+  name: loadout-group-cnz-contractor-outer
+  loadouts:
+  - ClothingOuterWinterSyndie
+  - ClothingOuterCybersunOvercoat
+  - ClothingOuterCoatCybersunWindbreaker
+
+- type: loadoutGroup
+  id: CNZContractorShoes
+  name: lodout-group-cnz-contractor-shoes
+  loadouts:
+  - ClothingShoesBootsCombatFilled
+  - ClothingShoesBootsWinterSyndicate
+  - clothingShoesColorBlack
+
+- type: loadoutGroup
+  id: CNZContractorNeck
+  name: lodout-group-cnz-contractor-neck
+  loadouts:
+  - ClothingNeckScarfStripedSyndieRed
+  - ClothingNeckScarfStripedSyndieGreen

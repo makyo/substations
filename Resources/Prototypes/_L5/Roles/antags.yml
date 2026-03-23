@@ -1,0 +1,158 @@
+# Conclave of New Zealots
+
+- type: department
+  id: CNZ
+  name: department-CNZ-name
+  description: department-CNZ-desc
+  roles:
+  - CNZSupervisor
+  - CNZContractor
+
+## CNZ Commander
+
+- type: job
+  id: CNZSupervisor
+  playTimeTracker: JobCNZSupervisor
+  weight: 10
+  startingGear: CNZSupervisorGear
+  icon: JobIconSyndicate
+  access:
+  - Syndicate
+  - CNZSupervisor
+  - CNZContractor
+
+- type: playTimeTracker
+  id: JobCNZSupervisor
+
+- type: startingGear
+  id: CNZSupervisorGear
+  equipment:
+    id: CNZSupervisorPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetAltSyndicate
+    back: ClothingBackpackDuffelSyndicateAmmo
+
+- type: roleLoadout
+  id: JobCNZSupervisor
+  groups:
+  - SurvivalSyndicate
+  - CNZSupervisorJumpsuit
+  - CNZSupervisorOuter
+  - CNZSupervisorHead
+  - CNZSupervisorNeck
+  - CNZSupervisorShoes
+
+## CNZ Contractor
+
+- type: job
+  id: CNZContractor
+  playTimeTracker: JobCNZContractor
+  weight: 20
+  startingGear: CNZContractorGear
+  icon: JobIconSyndicate
+  access:
+  - Syndicate
+  - CNZContractor
+
+- type: playTimeTracker
+  id: JobCNZContractor
+
+- type: startingGear
+  id: CNZContractorGear
+  equipment:
+    id: CNZContractorPDA
+    ears: ClothingHeadsetFreelance
+    back: ClothingBackpackDuffelSyndicate
+
+- type: roleLoadout
+  id: JobCNZContractor
+  groups:
+  - SurvivalSyndicate
+  - CNZContractorJumpsuit
+  - CNZContractorOuter
+  - CNZContractorHead
+  - CNZContractorNeck
+  - CNZContractorShoes
+
+# Greater Expansionist Collective
+- type: department
+  id: GEX
+  name: department-GEX-name
+  description: department-GEX-desc
+  roles:
+  - GEXMember
+  - GEXContractor
+
+## GEX Member
+
+- type: job
+  id: GEXMember
+  playTimeTracker: JobGEXMember
+  weight: 10
+  startingGear: GEXMemberGear
+  icon: JobIconSyndicate
+  access:
+  - Syndicate
+  - GEXMember
+  - GEXContractor
+
+- type: playTimeTracker
+  id: JobGEXMember
+
+- type: startingGear
+  id: GEXMemberGear
+  equipment:
+    id: GEXMemberPDA
+    ears: ClothingHeadsetAltSyndicate
+    eyes: ClothingEyesGlassesMercenary
+    back: ClothingBackpackMerc
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    shoes: ClothingShoesBootsMercFilled
+    gloves: ClothingHandsMercGlovesCombat
+    outerClothing: ClothingOuterVestWebMerc
+    belt: ClothingBeltMercWebbing
+    neck: ClothingNeckScarfPilot
+    head: ClothingHeadHatBeretMerc
+  storage:
+    back:
+    - ClothingMaskBandMerc
+
+- type: roleLoadout
+  id: JobGEXMember
+  groups:
+  - SurvivalSyndicate
+
+## GEX Contractor
+
+- type: job
+  id: GEXContractor
+  playTimeTracker: JobGEXContractor
+  weight: 20
+  startingGear: GEXContractorGear
+  icon: JobIconSyndicate
+  access:
+  - Syndicate
+  - GEXContractor
+
+- type: playTimeTracker
+  id: JobGEXContractor
+
+- type: startingGear
+  id: GEXContractorGear
+  equipment:
+    id: GEXContractorPDA
+    ears: ClothingHeadsetAltSyndicate
+    eyes: ClothingEyesGlassesMercenary
+    back: ClothingBackpackMerc
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    shoes: ClothingShoesBootsMercFilled
+    gloves: ClothingHandsMercGlovesCombat
+    neck: ClothingNeckScarfPilot
+  storage:
+    back:
+    - ClothingMaskBandMerc
+
+- type: roleLoadout
+  id: JobGEXContractor
+  groups:
+  - SurvivalSyndicate

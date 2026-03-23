@@ -1,0 +1,26 @@
+- type: entity
+  id: StandardSysConStation
+  parent: StandardNanotrasenStation
+  components:
+  - type: NpcFactionMember
+    factions:
+    - SysCon
+    - Nanotrasen # Legacy
+
+- type: entity
+  id: StandardCNZStation
+  parent: StandardNanotrasenStation
+  components:
+  - type: NpcFactionMember
+    factions:
+    - CNZ
+    - Syndicate # Legacy
+
+- type: entity
+  id: StandardGEXStation
+  parent: StandardNanotrasenStation
+  components:
+  - type: NpcFactionMember
+    factions:
+    - GEX
+    - Syndicate # Legacy

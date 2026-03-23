@@ -1,0 +1,47 @@
+- type: entity
+  parent: SyndicateIDCard
+  id: ITPIDCard
+  name: ITP chemist ID card
+  components:
+  - type: Contract
+    contract: ContractITP
+
+- type: entity
+  parent: SyndicateIDCard
+  id: CNZCommanderIDCard
+  name: CNZ commander ID card
+  components:
+  - type: Contract
+    contract: ContractCNZ
+  - type: PresetIDCard
+    job: CNZCommander
+
+- type: entity
+  parent: SyndicateIDCard
+  id: CNZContractorIDCard
+  name: CNZ contractor ID card
+  components:
+  - type: Contract
+    contract: ContractCNZ
+  - type: PresetIDCard
+    job: CNZContractor
+
+- type: entity
+  parent: SyndicateIDCard
+  id: GEXMemberIDCard
+  name: GEX member ID card
+  components:
+  - type: Contract
+    contract: ContractGEX
+  - type: PresetIDCard
+    job: GEXMember
+
+- type: entity
+  parent: SyndicateIDCard
+  id: GEXContractorIDCard
+  name: GEX contractor ID card
+  components:
+  - type: Contract
+    contract: ContractGEX
+  - type: PresetIDCard
+    job: GEXContractor

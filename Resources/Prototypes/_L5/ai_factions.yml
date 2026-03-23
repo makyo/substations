@@ -1,0 +1,26 @@
+- type: npcFaction
+  id: UN
+  friendly: # They don't attack anyone by default
+  - SysCon
+  - CNZ
+  - GEX
+  - Syndicate # Legacy
+
+- type: npcFaction
+  id: SysCon
+  hostile:
+  - CNZ
+  - GEX
+  - Syndicate # Legacy
+
+- type: npcFaction
+  id: CNZ
+  hostile:
+  - SysCon
+
+- type: npcFaction
+  id: GEX
+  hostile:
+  - SysCon
+  - UN
+  - CNZ

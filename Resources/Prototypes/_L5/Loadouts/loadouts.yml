@@ -1,0 +1,104 @@
+- type: loadout
+  id: ClothingHeadHatSyndieMAA
+  equipment:
+    jumpsuit: ClothingHeadHatSyndieMAA
+
+- type: loadout
+  id: ClothingHeadHatSyndie
+  equipment:
+    jumpsuit: ClothingHeadHatSyndie
+
+- type: loadout
+  id: ClothingHeadHatBeretFrench
+  equipment:
+    jumpsuit: ClothingHeadHatBeretFrench
+
+- type: loadout
+  id: ClothingHeadHatBeret
+  equipment:
+    jumpsuit: ClothingHeadHatBeret
+
+- type: loadout
+  id: ClothingHeadHatSurgcapCybersun
+  equipment:
+    jumpsuit: ClothingHeadHatSurgcapCybersun
+
+- type: loadout
+  id: ClothingHeadHatBeretMerc
+  equipment:
+    jumpsuit: ClothingHeadHatBeretMerc
+
+- type: loadout
+  id: ClothingUniformJumpsuitSyndieFormal
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSyndieFormal
+
+- type: loadout
+  id: ClothingUniformJumpskirtSynideFormalDress
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSynideFormalDress
+
+- type: loadout
+  id: ClothingUniformJumpsuitSuitBrownAlt
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSuitBrownAlt
+
+- type: loadout
+  id: ClothingUniformJumpsuitOperative
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+
+- type: loadout
+  id: ClothingUniformJumpskirtOperative
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtOperative
+
+- type: loadout
+  id: ClothingUniformCybersunAttorney
+  equipment:
+    jumpsuit: ClothingUniformCybersunAttorney
+
+- type: loadout
+  id: ClothingUniformCybersunCasual
+  equipment:
+    jumpsuit: ClothingUniformCybersunCasual
+
+- type: loadout
+  id: ClothingUniformCybersunRND
+  equipment:
+    jumpsuit: ClothingUniformCybersunRND
+
+- type: loadout
+  id: ClothingUniformJumpsuitRoboNeuroticist
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRoboNeuroticist
+
+- type: loadout
+  id: ClothingUniformJumpskirtRoboNeuroticist
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtRoboNeuroticist
+
+- type: loadout
+  id: ClothingUniformJumpsuitParamedicSyndie
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitParamedicSyndie
+
+- type: loadout
+  id: ClothingUniformInterdyneChemist
+  equipment:
+    jumpsuit: ClothingUniformInterdyneChemist
+
+- type: loadout
+  id: UniformScrubsColorCybersun
+  equipment:
+    jumpsuit: UniformScrubsColorCybersun
+
+- type: loadout
+  id: ClothingUniformJumpsuitRepairmanSyndie
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRepairmanSyndie
+
+- type: loadout
+  id: ClothingUniformJumpsuitRecruitSyndie
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitRecruitSyndie

@@ -44,7 +44,7 @@
   id: PrincipalArchitectGear
   equipment:
     id: PAPDA
-    eyes: ClothingEyesGlassesMeson
+    eyes: ClothingEyesGlassesCE
     ears: ClothingHeadsetCE
     belt: ClothingBeltUtilityEngineering
   storage:

@@ -1,0 +1,15 @@
+- type: accessLevel
+  id: CNZCommander
+  name: id-card-access-level-cnz-commander
+
+- type: accessLevel
+  id: CNZContractor
+  name: id-card-access-level-cnz-contractor
+
+- type: accessLevel
+  id: GEXMember
+  name: id-card-access-level-gex-member
+
+- type: accessLevel
+  id: GEXContractor
+  name: id-card-access-level-gex-contractor
