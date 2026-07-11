@@ -100,3 +100,9 @@ storage_limit = 2
 
 [discord]
 rich_main_icon_id = "l5"
+
+[hub]
+hub_urls = "https://hub.playss14.com"
+
+[auth]
+server = "https://auth.playss14.com"
